@@ -96,13 +96,18 @@
   }
 
   .text-brushed-steel {
-    background: linear-gradient(to bottom, #E8E8E8 0%, #9CA3AF 50%, #6B7280 100%);
+    background-image: linear-gradient(
+      to bottom,
+      #334155 0%,
+      #1E293B 40%,
+      #64748B 52%,
+      #1E293B 62%,
+      #0F172A 100%
+    );
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
-  }
-
-  .logo-transparent {
-    mix-blend-mode: multiply;
+    color: transparent;
+    text-shadow: none;
   }
 }
