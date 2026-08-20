@@ -24,7 +24,7 @@ function HomePage() {
             <ScrollReveal key={i} delay={i * 0.1}>
               <AnimatedCard>
                 <item.icon className="text-ssc-gold mb-6" size={40} />
-                <h3 className="text-xl text-ssc-navy mb-4">{item.title}</h3>
+                <h3 className="text-2xl font-heading text-ssc-navy mb-4">{item.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
               </AnimatedCard>
             </ScrollReveal>

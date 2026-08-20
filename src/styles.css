@@ -39,8 +39,10 @@
   --color-ssc-gray-light: oklch(0.97 0.005 260); /* #F7F8FA */
   --color-ssc-gray-steel: oklch(0.94 0.01 260);  /* #EDEFF2 */
   
-  --font-heading: "Poppins", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: "Archivo Black", "Bebas Neue", "Poppins", sans-serif;
+  --font-display: "Bebas Neue", "Archivo Black", sans-serif;
+  --font-body: "Inter", "Work Sans", sans-serif;
+  --font-technical: "Poppins", "Inter", sans-serif;
   
   --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   --shadow-premium-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
@@ -81,16 +83,55 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-body);
+    line-height: 1.6;
   }
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  /* Typography Scale Classes */
+  .h1-fluid {
+    font-size: clamp(2.25rem, 8vw, 6rem); /* 36px-96px */
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .h2-fluid {
+    font-size: clamp(1.75rem, 5vw, 3.5rem); /* 28px-56px */
+    line-height: 1.1;
+  }
+
+  .text-eyebrow {
+    font-family: var(--font-technical);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: clamp(0.8125rem, 2vw, 0.875rem); /* 13px-14px */
+  }
+
+  .text-body-large {
+    font-size: clamp(1.125rem, 2.5vw, 1.25rem); /* 18px-20px */
+    line-height: 1.7;
+  }
+
+  .text-number {
+    font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
 }
 
 @layer utilities {
+  .tracking-engineered {
+    letter-spacing: 0.1em;
+  }
+  
+  .font-heading { font-family: var(--font-heading); }
+  .font-display { font-family: var(--font-display); }
+  .font-body { font-family: var(--font-body); }
+  .font-technical { font-family: var(--font-technical); }
   .glass-effect {
     @apply bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm;
   }
