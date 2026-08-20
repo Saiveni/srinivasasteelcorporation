@@ -136,13 +136,13 @@ export const TrustStatsBar = () => {
             initial={{ opacity: 0, y: 14 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute inset-0 translate-y-[8px] sm:translate-y-[10px] bg-black/40 blur-[20px] rounded-[2px] pointer-events-none" 
+            className="absolute inset-0 translate-y-[10px] sm:translate-y-[12px] bg-black/50 blur-[24px] rounded-[2px] pointer-events-none" 
           />
           
-          {/* 6. PANEL EDGE DEPTH (The side thickness) */}
-          <div className="absolute inset-0 translate-y-[6px] bg-[#050910] pointer-events-none"
+          {/* 6. LOWER EXTRUSION EDGE (Darker thickness) */}
+          <div className="absolute inset-0 translate-y-[8px] bg-[#05090F] pointer-events-none"
                style={{ 
-                 clipPath: 'polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px)' 
+                 clipPath: 'polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px)' 
                }} 
           />
 
@@ -151,58 +151,80 @@ export const TrustStatsBar = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.75, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative bg-[#111C2F] overflow-hidden"
+            className="relative bg-[#111C2F] overflow-hidden group"
             style={{
-              clipPath: 'polygon(8px 0, calc(100% - 8px) 0, 100% 8px, 100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0 calc(100% - 8px), 0 8px)',
-              boxShadow: 'inset 0 0 0 1px rgba(255,255,255,0.05)'
+              clipPath: 'polygon(12px 0, calc(100% - 12px) 0, 100% 12px, 100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0 calc(100% - 12px), 0 12px)',
             }}
           >
-            {/* 2. OUTER METAL FRAME (Multi-layered bevel) */}
-            <div className="absolute inset-0 border-[8px] lg:border-[12px] border-transparent pointer-events-none z-10"
+            {/* CNC-MACHINED OUTER FRAME */}
+            <div className="absolute inset-0 border-[10px] lg:border-[14px] border-transparent pointer-events-none z-10"
                  style={{
-                   borderImageSource: 'linear-gradient(135deg, #1A2638 0%, #2A384D 25%, #15233A 50%, #2A384D 75%, #1A2638 100%)',
-                   borderImageSlice: 1,
-                   opacity: 0.9
+                   background: 'linear-gradient(135deg, #1A2638 0%, #2A384D 25%, #15233A 50%, #2A384D 75%, #1A2638 100%)',
+                   maskImage: 'linear-gradient(#fff, #fff), linear-gradient(#fff, #fff)',
+                   maskClip: 'content-box, border-box',
+                   maskComposite: 'exclude',
+                   WebkitMaskComposite: 'xor',
+                   padding: '10px'
                  }}
             />
 
-            {/* 3. INNER GOLD ACCENT LINE */}
-            <div className="absolute inset-[8px] lg:inset-[12px] border-[1px] border-ssc-gold/30 pointer-events-none z-10" />
+            {/* TOP-EDGE LIGHT REFLECTION (Extreme subtle highlight) */}
+            <div className="absolute top-0 left-0 w-full h-[2px] bg-white/10 pointer-events-none z-20 mix-blend-overlay" />
+            
+            {/* INNER BEVEL & GOLD REGISTRATION MARKS */}
+            <div className="absolute inset-[10px] lg:inset-[14px] pointer-events-none z-10">
+              {/* Microscopic inner bevel */}
+              <div className="absolute inset-0 border-[1px] border-black/40 rounded-[1px]" />
+              <div className="absolute inset-0 border-[1px] border-white/5 -translate-y-[0.5px] rounded-[1px]" />
+              
+              {/* Gold Registration Marks (Corners) */}
+              <div className="absolute top-0 left-0 w-1 h-[1px] bg-ssc-gold/40" />
+              <div className="absolute top-0 left-0 w-[1px] h-1 bg-ssc-gold/40" />
+              <div className="absolute top-0 right-0 w-1 h-[1px] bg-ssc-gold/40" />
+              <div className="absolute top-0 right-0 w-[1px] h-1 bg-ssc-gold/40" />
+            </div>
 
-            {/* 4. DEPTH / BEVEL HIGHLIGHTS */}
-            <div className="absolute inset-0 pointer-events-none z-10 border-t-[1px] border-white/10" />
-            <div className="absolute inset-0 pointer-events-none z-10 border-b-[1px] border-black/40" />
-            <div className="absolute inset-0 pointer-events-none z-10 border-l-[1px] border-white/5" />
-            <div className="absolute inset-0 pointer-events-none z-10 border-r-[1px] border-black/20" />
+            {/* PRECISION GOLD ACCENT (Inner thin line) */}
+            <div className="absolute inset-[11px] lg:inset-[15px] border-[0.5px] border-ssc-gold/20 pointer-events-none z-10" />
 
-            {/* 2. PREMIUM STEEL SURFACE: Brushed grain */}
-            <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-[0.04] z-0" 
-                 style={{ 
-                   backgroundImage: 'repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 0, transparent 2px)',
-                   backgroundSize: '100% 2px'
-                 }} 
-            />
+            {/* METALLIC MEASUREMENT TICKS (Integrated into frame) */}
+            <div className="absolute top-0 left-[20%] w-[1px] h-[4px] bg-white/10 z-20" />
+            <div className="absolute top-0 left-[40%] w-[1px] h-[4px] bg-white/10 z-20" />
+            <div className="absolute top-0 left-[60%] w-[1px] h-[4px] bg-white/10 z-20" />
+            <div className="absolute top-0 left-[80%] w-[1px] h-[4px] bg-white/10 z-20" />
 
-            {/* 7. ENGINEERING GRID: Stops at inner frame */}
-            <div className="absolute inset-[9px] lg:inset-[13px] pointer-events-none opacity-[0.02] z-0" 
+            {/* SURFACE MATERIAL: Brushed grain + subtle depth gradient */}
+            <div className="absolute inset-0 pointer-events-none z-0">
+              <div className="absolute inset-0 mix-blend-overlay opacity-[0.05]" 
+                   style={{ 
+                     backgroundImage: 'repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 0, transparent 2px)',
+                     backgroundSize: '100% 2px'
+                   }} 
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-10" />
+            </div>
+
+            {/* ENGINEERING GRID: Precision cut */}
+            <div className="absolute inset-[12px] lg:inset-[16px] pointer-events-none opacity-[0.03] z-0" 
                  style={{ 
                    backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
                    backgroundSize: '60px 60px'
                  }} 
             />
 
-            {/* 5. CORNER DETAILS & TECHNICAL MARKERS (Integrated into frame) */}
-            <div className="absolute top-[3px] left-[14px] lg:left-[18px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">A-01</div>
-            <div className="absolute top-[3px] right-[14px] lg:right-[18px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">SSC / SPEC-01</div>
-            <div className="absolute bottom-[3px] left-[14px] lg:left-[18px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">ENGINEERING DATA</div>
-            <div className="absolute bottom-[3px] right-[14px] lg:right-[18px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">METRIC / PERFORMANCE</div>
+            {/* TECHNICAL MARKERS (Integrated into frame padding) */}
+            <div className="absolute top-[3px] left-[18px] lg:left-[22px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">A-01</div>
+            <div className="absolute top-[3px] right-[18px] lg:right-[22px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">SSC / SPEC-01</div>
+            <div className="absolute bottom-[3px] left-[18px] lg:left-[22px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">ENGINEERING DATA</div>
+            <div className="absolute bottom-[3px] right-[18px] lg:right-[22px] text-[7px] font-technical font-bold text-white/30 tracking-[0.2em] uppercase z-20">METRIC / PERFORMANCE</div>
 
-            {/* 9. GOLD CENTER MARKER */}
+            {/* GOLD CENTER MARKER with measurement line */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-20">
-               <div className="w-[12px] h-[1px] bg-ssc-gold" />
-               <div className="w-[1px] h-[8px] bg-ssc-gold -mt-[4px]" />
-               <div className="w-[40px] h-[0.5px] bg-white/5 -mt-[4px]" />
+               <div className="w-[14px] h-[1px] bg-ssc-gold" />
+               <div className="w-[1px] h-[10px] bg-ssc-gold -mt-[5px]" />
+               <div className="w-[80px] h-[0.5px] bg-ssc-gold/10 -mt-[5px]" />
             </div>
+
 
 
             <div className="px-5 py-8 sm:px-6 sm:py-10 lg:py-14">
