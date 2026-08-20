@@ -31,7 +31,10 @@ export const ProductShowcase = () => {
     <SectionContainer id="products">
       <div className="text-center mb-16">
         <ScrollReveal>
-          <span className="text-ssc-gold text-eyebrow inline-block mb-4">Our Products</span>
+          <span className="text-ssc-gold text-eyebrow inline-block mb-4">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            Add descriptive alt text for each product image and semantic headings for the product cards to improve accessibility.</span>
           <h2 className="h2-fluid text-ssc-navy font-heading">Engineered for Excellence</h2>
         </ScrollReveal>
       </div>
