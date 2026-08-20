@@ -13,7 +13,7 @@ interface StatItemProps {
 const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -40,81 +40,30 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
       
       return () => clearInterval(timer);
     }
-    return undefined;
   }, [isInView, number, shouldReduceMotion]);
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 12 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any, delay: index * 0.1 + 0.1 }
-    }
-  };
-
-  const iconVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any, delay: index * 0.1 }
-    }
-  };
-
-  const labelVariants = {
-    hidden: { opacity: 0, y: 8 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any, delay: index * 0.1 + 0.2 }
-    }
-  };
 
   return (
     <div ref={ref} className="flex flex-col items-center text-center relative px-4 group">
-      {/* Icon: Gold, Thin stroke, minimal */}
-      <motion.div 
-        variants={iconVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="text-ssc-gold mb-5"
-      >
-        <Icon size={28} strokeWidth={1} />
-      </motion.div>
+      {/* Icon: Gold, Thin stroke */}
+      <div className="text-ssc-gold mb-4 opacity-90">
+        <Icon size={24} strokeWidth={1.5} />
+      </div>
 
-      {/* Number: Dark navy, premium modern sans-serif */}
-      <motion.div
-        variants={itemVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="text-[44px] sm:text-[52px] lg:text-[64px] font-heading font-[500] text-[#111C2F] leading-none mb-3 tracking-tight"
-      >
+      {/* Number: White, precise sans-serif */}
+      <div className="text-[48px] sm:text-[52px] lg:text-[60px] font-heading font-[500] text-white leading-none mb-2 tracking-tight">
         {count}{suffix}
-      </motion.div>
+      </div>
 
-      {/* Label: Muted dark navy/gray, uppercase, letter-spacing */}
-      <motion.div
-        variants={labelVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className="text-[10px] sm:text-[11px] lg:text-[12px] text-[#475569] font-technical font-[600] uppercase tracking-[0.22em] whitespace-nowrap mb-4"
-      >
+      {/* Label: Muted cool gray, uppercase, letter-spacing */}
+      <div className="text-[10px] lg:text-[11px] text-[#94A3B8] font-technical font-[600] uppercase tracking-[0.24em] whitespace-nowrap">
         {label}
-      </motion.div>
-
-      {/* Measurement line (Technical Detail) */}
-      <motion.div 
-        initial={{ scaleX: 0, opacity: 0 }}
-        animate={isInView ? { scaleX: 1, opacity: 1 } : {}}
-        transition={{ duration: 0.8, delay: index * 0.1 + 0.3 }}
-        className="w-8 h-[1px] bg-ssc-gold/40"
-      />
+      </div>
       
-      {/* Desktop Vertical Technical Divider */}
+      {/* Desktop Vertical Technical Divider (Measurement Marks) */}
       {index < 3 && (
-        <div className="hidden lg:flex absolute -right-[50%] top-1/2 -translate-y-1/2 items-center justify-center">
-          <div className="h-[70px] w-[1px] bg-[#111C2F]/10" />
-          <div className="absolute h-1 w-1 bg-ssc-gold rotate-45" />
+        <div className="hidden lg:block absolute -right-[1px] top-1/2 -translate-y-1/2 h-[60%] w-[1px] bg-white/10">
+          <div className="absolute top-0 -left-[2px] w-[5px] h-[1px] bg-white/20" />
+          <div className="absolute bottom-0 -left-[2px] w-[5px] h-[1px] bg-white/20" />
         </div>
       )}
     </div>
@@ -129,65 +78,82 @@ export const TrustStatsBar = () => {
     { number: 100, suffix: "%", label: "ON-TIME DELIVERY", icon: Truck },
   ];
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: 8 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }
-    }
-  };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="w-full bg-[#E7EBF0] relative overflow-hidden flex flex-col items-center z-20">
-      {/* CSS Brushed Metal Texture & Engineering Grid */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.04]" 
-           style={{ 
-             backgroundImage: 'linear-gradient(to right, #111C2F 1px, transparent 1px), linear-gradient(to bottom, #111C2F 1px, transparent 1px), repeating-linear-gradient(0deg, #111C2F, #111C2F 1px, transparent 1px, transparent 2px)',
-             backgroundSize: '80px 80px, 80px 80px, 100% 2px'
-           }} 
-      />
-      
-      {/* Blueprint Coordinate Marks */}
-      <div className="absolute top-4 left-4 text-[8px] font-mono text-[#111C2F]/20 select-none">32.441 N / 81.229 E</div>
-      <div className="absolute bottom-4 right-4 text-[8px] font-mono text-[#111C2F]/20 select-none">MEASUREMENT: METRIC (MM)</div>
+    <section className="w-full relative z-20 bg-[#E7EBF0]">
+      {/* 
+          1. HERO → STATS TRANSITION 
+          Dark navy angular shape extending downward from the Hero.
+      */}
+      <div className="absolute top-0 left-0 w-full h-[120px] bg-ssc-navy pointer-events-none" 
+           style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60px, 0 100%)' }} />
 
-      {/* Top Separator Band */}
-      <div className="w-full h-[1px] bg-[#111C2F]/20 relative">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 px-4 bg-[#E7EBF0]">
-          <div className="w-2 h-2 bg-ssc-gold rotate-45 border-[1px] border-[#111C2F]/20" />
-        </div>
-      </div>
-
-      <div className="container mx-auto px-6 lg:px-12 max-w-[1400px] py-[64px] sm:py-[72px] lg:py-[84px]">
-        {/* Technical Header */}
-        <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={headerVariants}
-          className="flex flex-col items-center mb-12 sm:mb-16"
+      {/* 
+          2. FLOATING PANEL (STEEL PERFORMANCE INDEX)
+          Deep navy panel overlapping the transition.
+      */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1400px] relative">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="relative top-[-60px] bg-[#111C2F] border-[1px] border-white/10 border-t-ssc-gold shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-[2px] overflow-hidden"
         >
-          <span className="text-ssc-gold text-[11px] sm:text-[12px] font-technical font-bold tracking-[0.22em] uppercase mb-4">
-            ENGINEERED FOR PERFORMANCE
-          </span>
-          <div className="flex items-center gap-4 w-full max-w-[200px]">
-            <div className="h-[1px] flex-1 bg-[#111C2F]/10" />
-            <div className="w-1.5 h-1.5 bg-ssc-gold rounded-full" />
-            <div className="h-[1px] flex-1 bg-[#111C2F]/10" />
+          {/* Subtle engineering details */}
+          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
+               style={{ 
+                 backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
+                 backgroundSize: '40px 40px'
+               }} 
+          />
+          {/* Technical horizontal calibration lines */}
+          <div className="absolute top-1/4 left-0 w-full h-[1px] bg-white/5" />
+          <div className="absolute top-3/4 left-0 w-full h-[1px] bg-white/5" />
+          
+          {/* Center Marker: Tiny gold crosshair */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center">
+             <div className="w-[1px] h-3 bg-ssc-gold/40" />
+             <div className="w-2 h-[1px] bg-ssc-gold/40 -mt-1.5" />
+          </div>
+
+          {/* Coordinate Marks (Subtle) */}
+          <div className="absolute top-2 right-4 text-[8px] font-mono text-white/20 select-none tracking-widest uppercase">
+            REF. INDEX SSC_2026
+          </div>
+
+          <div className="px-6 py-12 lg:py-16">
+            {/* Panel Header */}
+            <div className="flex flex-col items-center mb-12 text-center">
+              <span className="text-ssc-gold text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.28em] uppercase mb-2">
+                STEEL PERFORMANCE INDEX
+              </span>
+              <span className="text-[#94A3B8] text-[9px] lg:text-[10px] font-technical tracking-[0.2em] uppercase opacity-80">
+                ENGINEERED FOR RELIABLE DELIVERY
+              </span>
+            </div>
+
+            {/* Statistics Grid */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 lg:gap-0 items-center justify-center">
+              {stats.map((stat, index) => (
+                <StatItem 
+                  key={index} 
+                  {...stat} 
+                  index={index}
+                />
+              ))}
+            </div>
           </div>
         </motion.div>
-
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-[56px] gap-x-6 lg:gap-0 items-center justify-center">
-          {stats.map((stat, index) => (
-            <StatItem 
-              key={index} 
-              {...stat} 
-              index={index}
-            />
-          ))}
-        </div>
       </div>
+
+      {/* 
+          3. VISIBLE LIGHT BACKGROUND GAP 
+          Breathing space before Products.
+      */}
+      <div className="h-[80px] lg:h-[120px]" />
     </section>
   );
 };
