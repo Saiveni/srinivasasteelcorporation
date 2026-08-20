@@ -34,6 +34,7 @@ const StatItem = ({ number, suffix, label, icon: Icon, delay }: StatItemProps) =
       
       return () => clearInterval(timer);
     }
+    return undefined;
   }, [isInView, number]);
 
   return (
