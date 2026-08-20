@@ -20,8 +20,8 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-3">
               <img src={sscLogo.url} alt="SSC Logo" className="h-14 w-14 brightness-0 invert" />
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold tracking-tighter leading-none">SRINIVASA</span>
-                <span className="text-sm font-bold tracking-[0.2em] text-ssc-gold leading-none">STEEL CORP</span>
+                <span className="text-xl font-heading tracking-tight leading-none">SRINIVASA</span>
+                <span className="text-xs font-technical font-semibold tracking-[0.2em] text-ssc-gold leading-none mt-1">CORPORATION</span>
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
@@ -31,7 +31,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-ssc-gold font-bold uppercase tracking-widest text-sm mb-6">Quick Links</h4>
+            <h4 className="text-ssc-gold text-eyebrow mb-6">Quick Links</h4>
             <ul className="space-y-4 text-white/70">
               <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">About Us</Link></li>
@@ -43,7 +43,7 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-ssc-gold font-bold uppercase tracking-widest text-sm mb-6">Contact Us</h4>
+            <h4 className="text-ssc-gold text-eyebrow mb-6">Contact Us</h4>
             <ul className="space-y-4 text-white/70">
               <li className="flex gap-3">
                 <MapPin className="text-ssc-gold shrink-0" size={20} />
@@ -62,7 +62,7 @@ export const Footer = () => {
 
           {/* Trusted Partners */}
           <div>
-            <h4 className="text-ssc-gold font-bold uppercase tracking-widest text-sm mb-6">Our Partners</h4>
+            <h4 className="text-ssc-gold text-eyebrow mb-6">Our Partners</h4>
             <div className="grid grid-cols-2 gap-4">
               {partners.map((partner) => (
                 <div key={partner.name} className="bg-white/5 rounded-lg p-3 flex items-center justify-center hover:bg-white/10 transition-colors group">
@@ -73,7 +73,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold text-white/40 uppercase tracking-widest">
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] font-technical font-medium text-white/40 uppercase tracking-[0.15em]">
           <p>© {currentYear} SRINIVASA STEEL CORPORATION. ALL RIGHTS RESERVED.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-ssc-gold transition-colors">Privacy Policy</a>

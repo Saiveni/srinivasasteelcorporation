@@ -41,10 +41,10 @@ export const Navbar = () => {
             className="h-11 w-11 md:h-13 md:w-13 object-contain shrink-0"
           />
           <div className="flex flex-col justify-center">
-            <span className="text-lg md:text-xl font-extrabold tracking-tight text-brushed-steel leading-[0.95] uppercase">
+            <span className="text-lg md:text-xl font-heading tracking-tight text-brushed-steel leading-[0.95] uppercase">
               SRINIVASA STEEL
             </span>
-            <span className="text-[10px] md:text-xs font-black tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5">
+            <span className="text-[10px] md:text-xs font-technical font-semibold tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5">
               CORPORATION
             </span>
           </div>
@@ -57,13 +57,13 @@ export const Navbar = () => {
             <Link
               key={link.name}
               to={link.href}
-              className="text-sm font-bold text-ssc-navy/80 hover:text-ssc-gold transition-colors uppercase tracking-wider"
+              className="text-sm font-technical font-semibold text-ssc-navy/80 hover:text-ssc-gold transition-colors uppercase tracking-[0.15em]"
               activeProps={{ className: "text-ssc-gold" }}
             >
               {link.name}
             </Link>
           ))}
-          <Button className="bg-ssc-gold hover:bg-ssc-gold/90 text-white font-bold rounded-xl px-6 py-2 shadow-premium hover:shadow-premium-hover transition-all hover:-translate-y-0.5">
+          <Button className="bg-ssc-gold hover:bg-ssc-gold/90 text-white font-display font-black uppercase rounded-xl px-6 py-2 shadow-premium hover:shadow-premium-hover transition-all hover:-translate-y-0.5 tracking-wide">
             Get Quote
           </Button>
         </div>

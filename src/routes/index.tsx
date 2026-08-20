@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <div style={{ "--page-accent": "oklch(0.4 0.1 240)" } as any}>
+    <div className="font-body" style={{ "--page-accent": "oklch(0.4 0.1 240)" } as any}>
       <HeroSection />
 
 
