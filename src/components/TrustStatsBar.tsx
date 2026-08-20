@@ -40,31 +40,47 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
       
       return () => clearInterval(timer);
     }
-    return () => {};
   }, [isInView, number, shouldReduceMotion]);
 
   return (
     <div ref={ref} className="flex flex-col items-center text-center relative px-4 group">
-      {/* Icon: Gold, Thin stroke */}
-      <div className="text-ssc-gold mb-4 opacity-90">
-        <Icon size={24} strokeWidth={1.5} />
-      </div>
+      {/* 3. ICONS: Gold, Thin stroke */}
+      <motion.div 
+        initial={{ opacity: 0, y: 10 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        className="text-ssc-gold mb-5 opacity-90"
+      >
+        <Icon size={24} strokeWidth={1.25} />
+      </motion.div>
 
-      {/* Number: White, precise sans-serif */}
-      <div className="text-[48px] sm:text-[52px] lg:text-[60px] font-heading font-[500] text-white leading-none mb-2 tracking-tight">
+      {/* 2. STATISTIC HIERARCHY: LARGE NUMBER */}
+      <motion.div 
+        initial={{ opacity: 0, y: 12 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.65, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="text-[40px] sm:text-[46px] lg:text-[56px] font-heading font-[500] text-white leading-none mb-3 tracking-tight"
+      >
         {count}{suffix}
-      </div>
+      </motion.div>
 
-      {/* Label: Muted cool gray, uppercase, letter-spacing */}
-      <div className="text-[10px] lg:text-[11px] text-[#94A3B8] font-technical font-[600] uppercase tracking-[0.24em] whitespace-nowrap">
+      {/* 4. STAT LABELS: Muted cool gray, uppercase, letter-spacing */}
+      <motion.div 
+        initial={{ opacity: 0, y: 8 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        className="text-[9px] sm:text-[10px] lg:text-[11px] text-[#94A3B8] font-technical font-[600] uppercase tracking-[0.2em] lg:tracking-[0.24em] whitespace-nowrap"
+      >
         {label}
-      </div>
+      </motion.div>
       
-      {/* Desktop Vertical Technical Divider (Measurement Marks) */}
+      {/* 5. ENGINEERING DIVIDERS: Vertical measurement lines (Desktop Only) */}
       {index < 3 && (
-        <div className="hidden lg:block absolute -right-[1px] top-1/2 -translate-y-1/2 h-[60%] w-[1px] bg-white/10">
-          <div className="absolute top-0 -left-[2px] w-[5px] h-[1px] bg-white/20" />
-          <div className="absolute bottom-0 -left-[2px] w-[5px] h-[1px] bg-white/20" />
+        <div className="hidden lg:block absolute -right-[1px] top-1/2 -translate-y-1/2 h-[70px] w-[1px] bg-white/5">
+          {/* tiny gold tick at top */}
+          <div className="absolute top-0 -left-[2px] w-[5px] h-[1px] bg-ssc-gold/40" />
+          {/* tiny muted tick at bottom */}
+          <div className="absolute bottom-0 -left-[2px] w-[5px] h-[1px] bg-white/10" />
         </div>
       )}
     </div>
