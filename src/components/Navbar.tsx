@@ -32,18 +32,20 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group">
-          <img
-            src={sscLogo.url}
-            alt="SSC Logo"
-            className="h-12 w-12 object-contain transition-transform group-hover:rotate-12"
-          />
-          <div className="flex flex-col">
-            <span className="text-xl font-extrabold tracking-tighter text-ssc-navy leading-none">
-              SRINIVASA
+        <Link to="/" className="flex items-center gap-3 group py-1">
+          <div className="relative h-11 w-11 md:h-13 md:w-13">
+            <img
+              src={sscLogo.url}
+              alt="SSC Logo"
+              className="h-full w-full object-contain transition-transform group-hover:rotate-12 logo-transparent"
+            />
+          </div>
+          <div className="flex flex-col justify-center">
+            <span className="text-lg md:text-xl font-extrabold tracking-tight text-brushed-steel leading-[0.9] uppercase italic">
+              SRINIVASA STEEL
             </span>
-            <span className="text-sm font-bold tracking-[0.2em] text-ssc-gold leading-none">
-              STEEL CORP
+            <span className="text-[10px] md:text-xs font-black tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5">
+              CORPORATION
             </span>
           </div>
         </Link>

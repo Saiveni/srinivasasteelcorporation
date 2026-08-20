@@ -94,4 +94,15 @@
   .glass-effect {
     @apply bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm;
   }
+
+  .text-brushed-steel {
+    background: linear-gradient(to bottom, #E8E8E8 0%, #9CA3AF 50%, #6B7280 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5));
+  }
+
+  .logo-transparent {
+    mix-blend-mode: multiply;
+  }
 }
