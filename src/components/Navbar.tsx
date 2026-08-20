@@ -114,7 +114,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 z-[90] lg:hidden bg-white flex flex-col"
+            className="fixed inset-0 z-[90] lg:hidden bg-white flex flex-col pt-[68px] md:pt-[76px]"
           >
             {/* Safe area padding for top bar */}
             <div className="h-[68px] md:h-[76px] w-full" />
