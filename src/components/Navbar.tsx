@@ -1,22 +1,41 @@
 import { useState, useEffect } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { location } = useRouterState();
 
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location.pathname]);
+
+  // Handle ESC key to close
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  // Prevent background scrolling
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
     } else {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
     }
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
     };
   }, [isOpen]);
 
@@ -43,7 +62,8 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 sm:gap-3 py-1 select-none relative z-[70]">
+        {/* Logo Section */}
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 py-1 select-none relative z-[100]">
           <img
             src={sscLogo.url}
             alt="Srinivasa Steel Corporation logo"
@@ -59,8 +79,7 @@ export const Navbar = () => {
           </div>
         </Link>
 
-
-        {/* Desktop Nav */}
+        {/* Desktop Nav - Hidden below 1024px (lg) */}
         <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
@@ -77,9 +96,9 @@ export const Navbar = () => {
           </Button>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle Button - 44x44px min target */}
         <button
-          className="lg:hidden text-ssc-navy p-3 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-[70]"
+          className="lg:hidden text-ssc-navy p-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-[100] transition-transform active:scale-95"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
@@ -87,30 +106,34 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Premium Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-[60] lg:hidden bg-white pt-24 pb-12 px-6 flex flex-col overflow-y-auto"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            className="fixed inset-0 z-[90] lg:hidden bg-white flex flex-col"
           >
-            <div className="flex flex-col gap-8 items-center text-center w-full">
+            {/* Header spacer to prevent overlap with logo/toggle which are at z-100 */}
+            <div className="h-[68px] md:h-[76px] w-full shrink-0" />
+            
+            <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6 pb-12 overflow-y-auto w-full">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-3xl font-heading text-ssc-navy hover:text-ssc-gold transition-colors tracking-tight uppercase"
+                  className="text-3xl font-heading text-ssc-navy hover:text-ssc-gold active:text-ssc-gold transition-colors tracking-tight uppercase"
                 >
                   {link.name}
                 </Link>
               ))}
+              
               <Button 
                 onClick={() => setIsOpen(false)}
-                className="w-full max-w-xs bg-ssc-gold text-white font-display font-black uppercase py-8 rounded-xl text-lg shadow-xl mt-4"
+                className="w-full max-w-sm bg-ssc-gold text-white font-display font-black uppercase py-8 rounded-xl text-xl shadow-xl mt-4 active:scale-[0.98] transition-transform"
               >
                 Get Quote
               </Button>
