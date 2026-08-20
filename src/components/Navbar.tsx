@@ -3,7 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import sscLogo from "@/assets/ssc-logo.png.asset.json";
+import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
