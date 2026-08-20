@@ -104,7 +104,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative isolate min-h-[78vh] sm:min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden flex items-center bg-[#050B18]"
+      className="relative isolate min-h-[calc(100svh-68px)] sm:min-h-[calc(100svh-74px)] lg:min-h-[90vh] w-full overflow-hidden flex items-center bg-[#050B18]"
     >
       {/* Background Motion */}
       <motion.div 
@@ -120,29 +120,34 @@ export const HeroSection = () => {
           className="w-full h-full object-cover object-center sm:object-right-center"
           initial={{ scale: 1, opacity: 0 }}
           animate={shouldReduceMotion ? { opacity: 1 } : { 
-            scale: isMobile ? 1.01 : 1.025, 
+            scale: 1.02, 
             opacity: 1 
           }}
           transition={{ 
             scale: {
-              duration: isMobile ? 12 : 18,
+              duration: isMobile ? 0 : 18,
               ease: "linear",
               repeat: Infinity,
               repeatType: "reverse"
             },
-            opacity: { duration: 1.5, ease: "easeOut" }
+            opacity: { duration: 0.7, ease: "easeOut" }
           }}
         />
       </motion.div>
 
       {/* Cinematic Overlays */}
-      <div className="absolute inset-0 -z-10 pointer-events-none">
-        {/* Main Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/95 via-[#050B18]/60 to-transparent" />
+      <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
+        {/* Directional Overlay: Deep navy/charcoal on left, medium center, lighter right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18] via-[#050B18]/60 to-[#050B18]/20 sm:from-[#050B18] sm:via-[#050B18]/70 sm:to-transparent lg:from-[#050B18]/95 lg:via-[#050B18]/70 lg:to-[#050B18]/30" />
+        
+        {/* Left Side Calm: Specific dark block to suppress sparks behind text */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/60 via-transparent to-transparent max-w-[40%]" />
+        
         {/* Bottom Fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-[#050B18]/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-transparent opacity-80" />
+
         {/* Mobile Specific Overlay refinement */}
-        {isMobile && <div className="absolute inset-0 bg-gradient-to-b from-[#050B18]/70 via-[#050B18]/40 to-[#050B18]/80" />}
+        {isMobile && <div className="absolute inset-0 bg-gradient-to-b from-[#050B18]/40 via-transparent to-[#050B18]/80" />}
       </div>
 
       <motion.div
@@ -152,63 +157,65 @@ export const HeroSection = () => {
           opacity: scrollOpacity,
           translateY: scrollY
         }}
-        className="container mx-auto px-6 sm:px-12 py-20 relative z-10"
+        className="container mx-auto px-5 sm:px-12 py-12 sm:py-20 relative z-10"
       >
         <motion.div 
           initial="hidden" 
           animate="visible" 
           variants={containerVariants}
-          className="max-w-4xl text-left"
+          className="max-w-[1500px] mx-auto"
         >
-          {/* Eyebrow */}
-          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6 sm:mb-8">
-            <span className="w-8 sm:w-12 h-[2px] bg-ssc-gold" />
-            <span className="text-ssc-gold text-[12px] sm:text-[14px] tracking-[0.22em] font-technical font-bold uppercase">
-              SINCE 1994
-            </span>
-          </motion.div>
+          <div className="max-w-[680px] text-left">
+            {/* Eyebrow */}
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-[24px] sm:mb-[32px]">
+              <span className="w-8 h-[2px] bg-ssc-gold" />
+              <span className="text-ssc-gold text-[12px] sm:text-[13px] tracking-[0.22em] font-technical font-bold uppercase">
+                SINCE 1994
+              </span>
+            </motion.div>
 
-          {/* Headline Reveal line by line */}
-          <h1 className="text-white mb-8 sm:mb-10 leading-[0.98] sm:leading-[1.02] font-heading text-[clamp(42px,11.5vw,60px)] lg:text-[clamp(64px,6.5vw,108px)] font-[700] tracking-[-0.025em] lg:tracking-[-0.035em]">
-            <motion.span variants={headlineVariants} className="block">
-              The Strength
-            </motion.span>
-            <motion.span variants={headlineVariants} className="block">
-              Behind
-            </motion.span>
-            <motion.span 
-              variants={headlineVariants} 
-              className="block text-ssc-gold"
-            >
-              Success.
-            </motion.span>
-          </h1>
+            {/* Headline Reveal line by line */}
+            <h1 className="text-white mb-[28px] sm:mb-[36px] leading-[0.96] sm:leading-[0.98] font-heading text-[clamp(42px,11vw,58px)] lg:text-[clamp(76px,6vw,100px)] font-[600] tracking-[-0.025em] lg:tracking-[-0.03em]">
+              <motion.span variants={headlineVariants} className="block">
+                The Strength
+              </motion.span>
+              <motion.span variants={headlineVariants} className="block">
+                Behind
+              </motion.span>
+              <motion.span 
+                variants={headlineVariants} 
+                className="block text-ssc-gold"
+              >
+                Success.
+              </motion.span>
+            </h1>
 
-          {/* Paragraph */}
-          <motion.p
-            variants={itemVariants}
-            className="text-[14px] sm:text-[18px] text-white/80 max-w-2xl mb-10 sm:mb-12 leading-[1.65] font-[450]"
-          >
-            Powering India's infrastructure with premium TMT rebars and industrial supplies. 
-            Three decades of engineering excellence and unmatched reliability.
-          </motion.p>
+            {/* Paragraph */}
+            <motion.p
+              variants={itemVariants}
+              className="text-[16px] sm:text-[18px] lg:text-[19px] text-white/80 max-w-[650px] mb-[32px] sm:mb-[42px] leading-[1.6] sm:leading-[1.65] font-[450]"
+            >
+              Powering India's infrastructure with premium TMT rebars and industrial supplies. 
+              Three decades of engineering excellence and unmatched reliability.
+            </motion.p>
 
-          {/* Buttons Stack on Mobile */}
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-            <Button
-              size="lg"
-              className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-white px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-[13px] shadow-premium active:scale-[0.98] transition-all font-heading font-bold uppercase tracking-[0.04em]"
-            >
-              View Products <ArrowRight className="ml-2 w-5 h-5" />
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto border-white/20 bg-white/5 text-white px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-[13px] backdrop-blur-sm hover:bg-white hover:text-[#050B18] active:scale-[0.98] transition-all font-heading font-bold uppercase tracking-[0.04em]"
-            >
-              Get Quote
-            </Button>
-          </motion.div>
+            {/* Buttons Stack on Mobile */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-[12px] sm:gap-[16px] w-full sm:w-auto">
+              <Button
+                size="lg"
+                className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-[#050B18] px-[28px] sm:px-[34px] h-[54px] sm:h-[58px] rounded-sm text-[13px] font-heading font-bold uppercase tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px]"
+              >
+                View Products <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="w-full sm:w-auto border-white/20 bg-white/5 text-white px-[28px] sm:px-[34px] h-[54px] sm:h-[58px] rounded-sm text-[13px] backdrop-blur-sm hover:bg-white/10 hover:border-white/40 transition-all duration-250 font-heading font-bold uppercase tracking-[0.04em]"
+              >
+                Get Quote
+              </Button>
+            </motion.div>
+          </div>
         </motion.div>
       </motion.div>
 
@@ -219,16 +226,16 @@ export const HeroSection = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2, duration: 1 }}
-            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
+            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
           >
-            <span className="text-[10px] font-technical font-bold text-white/40 tracking-[0.3em] uppercase">
+            <span className="text-[9px] font-technical font-bold text-white/30 tracking-[0.3em] uppercase">
               Scroll to Explore
             </span>
             <motion.div
-              animate={shouldReduceMotion ? {} : { y: [0, 8, 0] }}
+              animate={shouldReduceMotion ? {} : { y: [0, 6, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             >
-              <ChevronDown className="text-ssc-gold w-5 h-5 opacity-60" />
+              <ChevronDown className="text-ssc-gold w-4 h-4 opacity-40" />
             </motion.div>
           </motion.div>
         )}
