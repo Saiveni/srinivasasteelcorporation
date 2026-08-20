@@ -7,22 +7,22 @@ const products = [
   {
     name: "TMT Rebars",
     description: "Premium grade thermo-mechanically treated steel bars for superior strength.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2069&auto=format&fit=crop", // Close-up bundled rebar
+    image: "/src/assets/hero-steel.jpg", // Realistic photograph of bundled ribbed TMT reinforcement steel bars
   },
   {
     name: "Binding Wire",
     description: "High-tensile annealed wire for secure reinforcement anchoring.",
-    image: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=2070&auto=format&fit=crop", // Coiled wire roll
+    image: "https://images.pexels.com/photos/15059762/pexels-photo-15059762.jpeg?auto=compress&cs=tinysrgb&w=800", // Realistic photograph of black annealed construction binding wire coils
   },
   {
     name: "Oil Rods",
     description: "Industrial-grade rods engineered for specialized mechanical applications.",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop", // Smooth steel rods
+    image: "/src/assets/hero-steel.jpg", // Industrial precision steel rods
   },
   {
     name: "Decoiling Services",
     description: "Precision coil straightening and cutting to custom length specifications.",
-    image: "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2070&auto=format&fit=crop", // Industrial decoiling/straightening equipment
+    image: "https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=800", // Industrial machinery for decoiling and straightening
   },
 ];
 
