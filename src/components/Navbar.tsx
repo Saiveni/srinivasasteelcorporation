@@ -32,16 +32,16 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group py-1">
-          <div className="relative h-11 w-11 md:h-13 md:w-13">
-            <img
-              src={sscLogo.url}
-              alt="SSC Logo"
-              className="h-full w-full object-contain transition-transform group-hover:rotate-12 logo-transparent"
-            />
-          </div>
+        <Link to="/" className="flex items-center gap-3 py-1 select-none">
+          <img
+            src={sscLogo.url}
+            alt="Srinivasa Steel Corporation logo"
+            width={52}
+            height={52}
+            className="h-11 w-11 md:h-13 md:w-13 object-contain shrink-0"
+          />
           <div className="flex flex-col justify-center">
-            <span className="text-lg md:text-xl font-extrabold tracking-tight text-brushed-steel leading-[0.9] uppercase italic">
+            <span className="text-lg md:text-xl font-extrabold tracking-tight text-brushed-steel leading-[0.95] uppercase">
               SRINIVASA STEEL
             </span>
             <span className="text-[10px] md:text-xs font-black tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5">
@@ -49,6 +49,7 @@ export const Navbar = () => {
             </span>
           </div>
         </Link>
+
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
