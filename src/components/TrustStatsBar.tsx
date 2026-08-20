@@ -40,51 +40,36 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
       
       return () => clearInterval(timer);
     }
-    return () => {};
   }, [isInView, number, shouldReduceMotion]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center text-center relative px-4 group">
+    <motion.div 
+      ref={ref} 
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className="flex flex-col items-center text-center relative px-2 sm:px-4 group cursor-default"
+    >
       {/* 3. ICONS: Gold, Thin stroke */}
-      <motion.div 
-        initial={{ opacity: 0, y: 10 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="text-ssc-gold mb-5 opacity-90"
-      >
-        <Icon size={24} strokeWidth={1.25} />
-      </motion.div>
+      <div className="text-ssc-gold mb-3 lg:mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:brightness-125">
+        <Icon size={20} strokeWidth={1.5} />
+      </div>
 
-      {/* 2. STATISTIC HIERARCHY: LARGE NUMBER */}
-      <motion.div 
-        initial={{ opacity: 0, y: 12 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.65, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        className="text-[40px] sm:text-[46px] lg:text-[56px] font-heading font-[500] text-white leading-none mb-3 tracking-tight"
-      >
+      {/* 2. STATISTIC HIERARCHY: Sophisticated Number */}
+      <div className="text-[32px] sm:text-[38px] lg:text-[46px] font-heading font-[300] text-white leading-none mb-2 tracking-tight transition-transform duration-500 group-hover:-translate-y-1">
         {count}{suffix}
-      </motion.div>
+      </div>
 
-      {/* 4. STAT LABELS: Muted cool gray, uppercase, letter-spacing */}
-      <motion.div 
-        initial={{ opacity: 0, y: 8 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="text-[9px] sm:text-[10px] lg:text-[11px] text-[#94A3B8] font-technical font-[600] uppercase tracking-[0.2em] lg:tracking-[0.24em] whitespace-nowrap"
-      >
+      {/* 4. STAT LABELS: Muted uppercase */}
+      <div className="text-[8px] sm:text-[9px] lg:text-[10px] text-white/50 font-technical font-[600] uppercase tracking-[0.2em] whitespace-nowrap">
         {label}
-      </motion.div>
+      </div>
       
-      {/* 5. ENGINEERING DIVIDERS: Vertical measurement lines (Desktop Only) */}
+      {/* 5. COLUMN DIVIDERS: Glass separators */}
       {index < 3 && (
-        <div className="hidden lg:block absolute -right-[1px] top-1/2 -translate-y-1/2 h-[70px] w-[1px] bg-white/5">
-          {/* tiny gold tick at top */}
-          <div className="absolute top-0 -left-[2px] w-[5px] h-[1px] bg-ssc-gold/40" />
-          {/* tiny muted tick at bottom */}
-          <div className="absolute bottom-0 -left-[2px] w-[5px] h-[1px] bg-white/10" />
-        </div>
+        <div className="hidden lg:block absolute -right-[1px] top-1/2 -translate-y-1/2 h-16 w-[1px] bg-white/10" />
       )}
-    </div>
+    </motion.div>
   );
 };
 
