@@ -10,7 +10,8 @@ import {
 } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-steel.jpg";
+const desktopHero = "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000";
+const mobileHero = "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?auto=format&fit=crop&q=80&w=1000";
 
 export const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -114,17 +115,17 @@ export const HeroSection = () => {
         className="absolute inset-0 -z-20 will-change-transform"
       >
         <motion.img
-          src={heroImage}
-          alt="Premium industrial steel bundles"
-          className="w-full h-full object-cover object-center md:object-[center_30%]"
+          src={isMobile ? mobileHero : desktopHero}
+          alt="Premium industrial steel processing facility"
+          className="w-full h-full object-cover object-center sm:object-right-center"
           initial={{ scale: 1, opacity: 0 }}
           animate={shouldReduceMotion ? { opacity: 1 } : { 
-            scale: isMobile ? 1.02 : 1.04, 
+            scale: isMobile ? 1.01 : 1.025, 
             opacity: 1 
           }}
           transition={{ 
             scale: {
-              duration: isMobile ? 15 : 20,
+              duration: isMobile ? 12 : 18,
               ease: "linear",
               repeat: Infinity,
               repeatType: "reverse"
@@ -137,11 +138,11 @@ export const HeroSection = () => {
       {/* Cinematic Overlays */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
         {/* Main Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/90 via-[#050B18]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/95 via-[#050B18]/60 to-transparent" />
         {/* Bottom Fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-[#050B18]/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-[#050B18]/30" />
         {/* Mobile Specific Overlay refinement */}
-        {isMobile && <div className="absolute inset-0 bg-[#050B18]/40" />}
+        {isMobile && <div className="absolute inset-0 bg-gradient-to-b from-[#050B18]/70 via-[#050B18]/40 to-[#050B18]/80" />}
       </div>
 
       <motion.div
