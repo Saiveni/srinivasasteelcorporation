@@ -53,24 +53,24 @@ export const HeroSection = () => {
         <motion.div initial="hidden" animate="visible" className="max-w-3xl">
           <motion.div custom={0} variants={lineVariants} className="flex items-center gap-3 mb-6">
             <span className="w-12 h-[2px] bg-ssc-gold" />
-            <span className="text-ssc-gold font-bold uppercase tracking-[0.4em] text-xs">
+            <span className="text-ssc-gold text-eyebrow">
               Since 1994
             </span>
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white mb-8 leading-[0.95] drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
+          <h1 className="h1-fluid text-white mb-8 drop-shadow-[0_2px_20px_rgba(0,0,0,0.5)]">
             <motion.span custom={1} variants={lineVariants} className="block">
               The Strength
             </motion.span>
             <motion.span custom={2} variants={lineVariants} className="block">
-              Behind <span className="text-ssc-gold">Success.</span>
+              Behind <span className="text-ssc-gold font-heading">Success.</span>
             </motion.span>
           </h1>
 
           <motion.p
             custom={3}
             variants={lineVariants}
-            className="text-lg sm:text-xl md:text-2xl text-white/80 max-w-2xl leading-relaxed mb-10"
+            className="text-body-large text-white/80 max-w-2xl mb-10"
           >
             Premium TMT bars and industrial supplies for India's largest infrastructure projects.
           </motion.p>
@@ -78,14 +78,14 @@ export const HeroSection = () => {
           <motion.div custom={4.5} variants={lineVariants} className="flex flex-wrap gap-4">
             <Button
               size="lg"
-              className="bg-ssc-gold hover:bg-ssc-gold/90 text-white font-extrabold px-8 py-7 rounded-xl text-lg shadow-premium transition-transform hover:-translate-y-1"
+              className="bg-ssc-gold hover:bg-ssc-gold/90 text-white font-black uppercase px-8 py-7 rounded-xl text-lg shadow-premium transition-transform hover:-translate-y-1 font-display tracking-wide"
             >
               View Products <ArrowRight className="ml-2" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white/70 bg-white/5 text-white font-extrabold px-8 py-7 rounded-xl text-lg backdrop-blur-sm hover:bg-white hover:text-ssc-navy transition-colors"
+              className="border-white/70 bg-white/5 text-white font-black uppercase px-8 py-7 rounded-xl text-lg backdrop-blur-sm hover:bg-white hover:text-ssc-navy transition-colors font-display tracking-wide"
             >
               Get Quote
             </Button>
