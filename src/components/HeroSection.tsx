@@ -1,39 +1,23 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { 
   motion, 
   useScroll, 
   useTransform, 
   useSpring, 
   useMotionValue,
-  useReducedMotion 
+  useReducedMotion,
+  AnimatePresence
 } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-steel.jpg";
-
-const lineVariants = {
-  hidden: { 
-    opacity: 0, 
-    y: 30,
-    filter: "blur(8px)"
-  },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { 
-      delay: 0.8 + i * 0.2, 
-      duration: 1.2, 
-      ease: [0.22, 1, 0.36, 1] as const 
-    },
-  }),
-};
 
 export const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
   const shouldReduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
   
-  // Mouse Parallax Setup
+  // Mouse Parallax Setup (Desktop Only)
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -41,9 +25,6 @@ export const HeroSection = () => {
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
   
-  // Parallax ranges (limited to ~10px)
-  const bgMouseX = useTransform(smoothMouseX, [-0.5, 0.5], ["10px", "-10px"]);
-  const bgMouseY = useTransform(smoothMouseY, [-0.5, 0.5], ["10px", "-10px"]);
   const textMouseX = useTransform(smoothMouseX, [-0.5, 0.5], ["-4px", "4px"]);
   const textMouseY = useTransform(smoothMouseY, [-0.5, 0.5], ["-4px", "4px"]);
 
@@ -53,74 +34,113 @@ export const HeroSection = () => {
     offset: ["start start", "end start"] 
   });
 
-  const scrollScale = useTransform(scrollYProgress, [0, 1], [1, 0.95]);
+  const scrollScale = useTransform(scrollYProgress, [0, 1], [1, 0.98]);
   const scrollOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
   const scrollY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
-  const bgParallax = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    
     const handleMouseMove = (e: MouseEvent) => {
+      if (window.innerWidth < 768) return;
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
       mouseX.set(clientX / innerWidth - 0.5);
       mouseY.set(clientY / innerHeight - 0.5);
     };
 
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    if (!shouldReduceMotion && !isMobile && window.matchMedia("(pointer: fine)").matches) {
+    if (!shouldReduceMotion && window.matchMedia("(pointer: fine)").matches) {
       window.addEventListener("mousemove", handleMouseMove);
     }
     
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, [mouseX, mouseY, shouldReduceMotion]);
+
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
+
+  const headlineVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
 
   return (
     <section
       ref={ref}
-      className="relative isolate min-h-[75vh] sm:min-h-[85vh] lg:min-h-[92vh] w-full overflow-hidden flex items-center bg-[#050B18]"
+      className="relative isolate min-h-[78vh] sm:min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden flex items-center bg-[#050B18]"
     >
-      {/* Background image container with Scroll Parallax + Scale */}
+      {/* Background Motion */}
       <motion.div 
         style={{ 
-          y: bgParallax,
           scale: scrollScale,
           opacity: scrollOpacity
         }} 
         className="absolute inset-0 -z-20 will-change-transform"
       >
-        <motion.div
-          style={{
-            x: shouldReduceMotion ? 0 : bgMouseX,
-            y: shouldReduceMotion ? 0 : bgMouseY,
+        <motion.img
+          src={heroImage}
+          alt="Premium industrial steel bundles"
+          className="w-full h-full object-cover object-center md:object-[center_30%]"
+          initial={{ scale: 1, opacity: 0 }}
+          animate={shouldReduceMotion ? { opacity: 1 } : { 
+            scale: isMobile ? 1.02 : 1.04, 
+            opacity: 1 
           }}
-          className="w-full h-full relative"
-        >
-          <motion.img
-            src={heroImage}
-            alt="Premium TMT steel rebars"
-            className="h-[120%] w-[120%] -left-[10%] -top-[10%] relative object-cover object-center lg:object-center"
-            initial={{ scale: 1.05, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ 
-              duration: 2.5, 
-              ease: [0.22, 1, 0.36, 1],
-              opacity: { duration: 1.5, delay: 0.2 }
-            }}
-          />
-        </motion.div>
+          transition={{ 
+            scale: {
+              duration: isMobile ? 15 : 20,
+              ease: "linear",
+              repeat: Infinity,
+              repeatType: "reverse"
+            },
+            opacity: { duration: 1.5, ease: "easeOut" }
+          }}
+        />
       </motion.div>
 
       {/* Cinematic Overlays */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        {/* Main Gradient */}
-        <motion.div
-          style={{ opacity: scrollOpacity }}
-          className="absolute inset-0 bg-gradient-to-r from-[#050B18] via-[#050B18]/60 lg:via-[#050B18]/60 to-[#050B18]/40 lg:to-transparent"
-        />
-        {/* Bottom Fade for section transition */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-[#050B18]/40" />
-        {/* Cinematic Vignette */}
-        <div className="absolute inset-0 shadow-[inset_0_0_150px_rgba(0,0,0,0.8)]" />
+        {/* Main Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/90 via-[#050B18]/60 to-transparent" />
+        {/* Bottom Fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-[#050B18]/20" />
+        {/* Mobile Specific Overlay refinement */}
+        {isMobile && <div className="absolute inset-0 bg-[#050B18]/40" />}
       </div>
 
       <motion.div
@@ -130,37 +150,32 @@ export const HeroSection = () => {
           opacity: scrollOpacity,
           translateY: scrollY
         }}
-        className="container mx-auto px-6 py-20 sm:py-28 md:py-32 relative z-10"
+        className="container mx-auto px-6 sm:px-12 py-20 relative z-10"
       >
-        <motion.div initial="hidden" animate="visible" className="max-w-4xl">
+        <motion.div 
+          initial="hidden" 
+          animate="visible" 
+          variants={containerVariants}
+          className="max-w-4xl text-left"
+        >
           {/* Eyebrow */}
-          <motion.div custom={0} variants={lineVariants} className="flex items-center gap-3 mb-8">
-            <span className="w-12 h-[2px] bg-ssc-gold" />
-            <span className="text-ssc-gold text-eyebrow tracking-[0.2em] font-semibold">
+          <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6 sm:mb-8">
+            <span className="w-8 sm:w-12 h-[2px] bg-ssc-gold" />
+            <span className="text-ssc-gold text-[12px] sm:text-eyebrow tracking-[0.2em] font-technical font-bold uppercase">
               SINCE 1994
             </span>
           </motion.div>
 
-          {/* Headline */}
-          <h1 className="text-white mb-10 leading-[1.1] drop-shadow-2xl font-heading text-[clamp(42px,13vw,64px)] lg:text-8xl">
-            <motion.span custom={1} variants={lineVariants} className="block">
+          {/* Headline Reveal line by line */}
+          <h1 className="text-white mb-8 sm:mb-10 leading-[1.05] font-heading text-[clamp(42px,12vw,64px)] lg:text-8xl tracking-tight">
+            <motion.span variants={headlineVariants} className="block">
               The Strength
             </motion.span>
-            <motion.span custom={2} variants={lineVariants} className="block">
+            <motion.span variants={headlineVariants} className="block">
               Behind
             </motion.span>
             <motion.span 
-              custom={3} 
-              variants={{
-                ...lineVariants,
-                visible: (i: number) => ({
-                  ...lineVariants.visible(i),
-                  transition: { 
-                    ...lineVariants.visible(i).transition,
-                    duration: 1.5
-                  }
-                })
-              }} 
+              variants={headlineVariants} 
               className="block text-ssc-gold"
             >
               Success.
@@ -169,32 +184,54 @@ export const HeroSection = () => {
 
           {/* Paragraph */}
           <motion.p
-            custom={4}
-            variants={lineVariants}
-            className="text-[16px] sm:text-body-large text-white/70 max-w-2xl mb-12 leading-relaxed"
+            variants={itemVariants}
+            className="text-[17px] sm:text-body-large text-white/80 max-w-2xl mb-10 sm:mb-12 leading-relaxed"
           >
             Powering India's infrastructure with premium TMT rebars and industrial supplies. 
             Three decades of engineering excellence and unmatched reliability.
           </motion.p>
 
-          {/* Buttons */}
-          <motion.div custom={5} variants={lineVariants} className="flex flex-col sm:flex-row gap-6">
+          {/* Buttons Stack on Mobile */}
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
             <Button
               size="lg"
-              className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-white font-black uppercase px-10 py-8 rounded-xl text-lg shadow-2xl transition-all hover:scale-105 active:scale-95 font-display tracking-widest min-h-[44px]"
+              className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-white font-black uppercase px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-lg shadow-premium active:scale-[0.98] transition-all font-display tracking-widest"
             >
-              View Products <ArrowRight className="ml-2 w-6 h-6" />
+              View Products <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto border-white/30 bg-white/5 text-white font-black uppercase px-10 py-8 rounded-xl text-lg backdrop-blur-md hover:bg-white hover:text-[#050B18] transition-all font-display tracking-widest min-h-[44px]"
+              className="w-full sm:w-auto border-white/20 bg-white/5 text-white font-black uppercase px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-lg backdrop-blur-sm hover:bg-white hover:text-[#050B18] active:scale-[0.98] transition-all font-display tracking-widest"
             >
               Get Quote
             </Button>
           </motion.div>
         </motion.div>
       </motion.div>
+
+      {/* Scroll Indicator */}
+      <AnimatePresence>
+        {!isMobile && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 2, duration: 1 }}
+            className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
+          >
+            <span className="text-[10px] font-technical font-bold text-white/40 tracking-[0.3em] uppercase">
+              Scroll to Explore
+            </span>
+            <motion.div
+              animate={shouldReduceMotion ? {} : { y: [0, 8, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <ChevronDown className="text-ssc-gold w-5 h-5 opacity-60" />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
+
