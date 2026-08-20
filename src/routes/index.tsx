@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ScrollReveal, SectionContainer, AnimatedCard } from "@/components/SharedLayout";
 import { HeroSection } from "@/components/HeroSection";
+import { TrustStatsBar } from "@/components/TrustStatsBar";
+import { ProductShowcase } from "@/components/ProductShowcase";
+import { PartnerStrip } from "@/components/PartnerStrip";
 import { Shield, Award, Users } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -11,9 +14,10 @@ function HomePage() {
   return (
     <div className="font-body" style={{ "--page-accent": "oklch(0.4 0.1 240)" } as any}>
       <HeroSection />
-
-
-      {/* Feature Foundation */}
+      <TrustStatsBar />
+      
+      <ProductShowcase />
+      <PartnerStrip />
       <SectionContainer accent>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[

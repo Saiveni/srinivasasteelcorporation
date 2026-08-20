@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import sscLogo from "@/assets/ssc-logo.png.asset.json";
+import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {
@@ -18,7 +18,7 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3">
-              <img src={sscLogo.url} alt="SSC Logo" className="h-14 w-14 brightness-0 invert" />
+              <img src={sscLogo.url} alt="SSC Logo" className="h-14 w-14 object-contain" />
               <div className="flex flex-col">
                 <span className="text-xl font-heading tracking-tight leading-none">SRINIVASA</span>
                 <span className="text-xs font-technical font-semibold tracking-[0.2em] text-ssc-gold leading-none mt-1">CORPORATION</span>
