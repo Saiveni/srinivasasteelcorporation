@@ -115,12 +115,12 @@ export const HeroSection = () => {
         className="absolute inset-0 -z-20 will-change-transform"
       >
         <motion.img
-          src={heroImage}
-          alt="Premium industrial steel bundles"
-          className="w-full h-full object-cover object-center md:object-[center_30%]"
+          src={isMobile ? mobileHero : desktopHero}
+          alt="Premium industrial steel processing facility"
+          className="w-full h-full object-cover object-center sm:object-right-center"
           initial={{ scale: 1, opacity: 0 }}
           animate={shouldReduceMotion ? { opacity: 1 } : { 
-            scale: isMobile ? 1.02 : 1.04, 
+            scale: isMobile ? 1.01 : 1.025, 
             opacity: 1 
           }}
           transition={{ 
