@@ -48,7 +48,7 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay: index * 0.1 + 0.1 }
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any, delay: index * 0.1 + 0.1 }
     }
   };
 
@@ -57,7 +57,7 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay: index * 0.1 }
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any, delay: index * 0.1 }
     }
   };
 
@@ -66,7 +66,7 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { duration: 0.6, ease: "easeOut", delay: index * 0.1 + 0.2 }
+      transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as any, delay: index * 0.1 + 0.2 }
     }
   };
 
