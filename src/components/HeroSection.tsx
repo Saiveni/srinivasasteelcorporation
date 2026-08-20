@@ -162,13 +162,13 @@ export const HeroSection = () => {
           {/* Eyebrow */}
           <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6 sm:mb-8">
             <span className="w-8 sm:w-12 h-[2px] bg-ssc-gold" />
-            <span className="text-ssc-gold text-[12px] sm:text-eyebrow tracking-[0.2em] font-technical font-bold uppercase">
+            <span className="text-ssc-gold text-[12px] sm:text-[14px] tracking-[0.22em] font-technical font-bold uppercase">
               SINCE 1994
             </span>
           </motion.div>
 
           {/* Headline Reveal line by line */}
-          <h1 className="text-white mb-8 sm:mb-10 leading-[1.05] font-heading text-[clamp(42px,12vw,64px)] lg:text-8xl tracking-tight">
+          <h1 className="text-white mb-8 sm:mb-10 leading-[0.98] sm:leading-[1.02] font-heading text-[clamp(42px,11.5vw,60px)] lg:text-[clamp(64px,6.5vw,108px)] font-[700] tracking-[-0.025em] lg:tracking-[-0.035em]">
             <motion.span variants={headlineVariants} className="block">
               The Strength
             </motion.span>
@@ -186,7 +186,7 @@ export const HeroSection = () => {
           {/* Paragraph */}
           <motion.p
             variants={itemVariants}
-            className="text-[17px] sm:text-body-large text-white/80 max-w-2xl mb-10 sm:mb-12 leading-relaxed"
+            className="text-[14px] sm:text-[18px] text-white/80 max-w-2xl mb-10 sm:mb-12 leading-[1.65] font-[450]"
           >
             Powering India's infrastructure with premium TMT rebars and industrial supplies. 
             Three decades of engineering excellence and unmatched reliability.
@@ -196,14 +196,14 @@ export const HeroSection = () => {
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
             <Button
               size="lg"
-              className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-white font-black uppercase px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-lg shadow-premium active:scale-[0.98] transition-all font-display tracking-widest"
+              className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-white px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-[13px] shadow-premium active:scale-[0.98] transition-all font-heading font-bold uppercase tracking-[0.04em]"
             >
               View Products <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto border-white/20 bg-white/5 text-white font-black uppercase px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-lg backdrop-blur-sm hover:bg-white hover:text-[#050B18] active:scale-[0.98] transition-all font-display tracking-widest"
+              className="w-full sm:w-auto border-white/20 bg-white/5 text-white px-8 sm:px-10 h-[56px] sm:h-[64px] rounded-xl text-[13px] backdrop-blur-sm hover:bg-white hover:text-[#050B18] active:scale-[0.98] transition-all font-heading font-bold uppercase tracking-[0.04em]"
             >
               Get Quote
             </Button>
