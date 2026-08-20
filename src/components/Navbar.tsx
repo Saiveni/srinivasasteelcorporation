@@ -116,11 +116,10 @@ export const Navbar = () => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="fixed inset-0 z-[90] lg:hidden bg-white flex flex-col"
           >
-            {/* Header spacer to prevent overlap with logo/X button */}
+            {/* Header spacer to prevent overlap with logo/toggle which are at z-100 */}
             <div className="h-[68px] md:h-[76px] w-full shrink-0" />
             
             <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6 pb-12 overflow-y-auto w-full">
-
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
