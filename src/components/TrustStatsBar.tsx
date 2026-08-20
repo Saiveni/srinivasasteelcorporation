@@ -40,6 +40,7 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
       
       return () => clearInterval(timer);
     }
+    return () => {};
   }, [isInView, number, shouldReduceMotion]);
 
   return (
