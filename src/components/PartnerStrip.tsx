@@ -41,7 +41,58 @@ export const PartnerStrip = () => {
         <ScrollReveal>
           <div className="text-center mb-16">
             <span className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.4em]">
-              Trusted By / Authorized Dealer For
+              '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            Continue from the current Srinivasa Steel Corporation homepage.
+
+Make ONLY one change: improve the partner/brand presentation.
+
+Do NOT change anything else on the website.
+
+Keep these three partner names:
+
+VIZAG STEEL — RINL
+
+JINDAL PANTHER — TMT REBARS
+
+SIMHADRI TMT — STEEL
+
+Remove the current generic pill-shaped grey backgrounds.
+
+Create a clean premium industrial partner strip using restrained typographic wordmarks.
+
+If verified official logo assets already exist in the project, use those assets.
+
+If official logo assets are not available, DO NOT invent or fabricate logos. Use elegant typography instead.
+
+Design direction:
+
+minimal
+
+premium
+
+B2B industrial
+
+monochrome/steel-grey
+
+generous spacing
+
+subtle divider
+
+no oversized icons
+
+no fake logos
+
+no colorful badges
+
+no pill containers
+
+Preserve the current section position, spacing and overall page structure.
+
+Do not modify the hero, products, statistics, cards, navigation or footer.
+
+Verify desktop and mobile before finishing.
             </span>
           </div>
           
