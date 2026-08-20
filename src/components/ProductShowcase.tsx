@@ -8,7 +8,7 @@ const products = [
     name: "TMT Rebars",
     description: "Premium grade thermo-mechanically treated steel bars for superior strength.",
     image: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&w=800&q=80",
-    alt: "Bundled ribbed TMT reinforcement steel bars in an industrial warehouse setting"
+    alt: "Premium industrial photography of bundled ribbed TMT reinforcement steel bars in a warehouse"
   },
   {
     name: "Binding Wire",
@@ -20,13 +20,13 @@ const products = [
     name: "Oil Rods",
     description: "Industrial-grade rods engineered for specialized mechanical applications.",
     image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
-    alt: "Bundled precision industrial steel rods"
+    alt: "Bundles of precision cylindrical steel rods in a professional industrial environment"
   },
   {
     name: "Decoiling Services",
     description: "Precision coil straightening and cutting to custom length specifications.",
-    image: "https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=800",
-    alt: "Industrial steel decoiling and straightening machinery processing a steel coil"
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    alt: "Professional industrial manufacturing line showing a steel coil decoiling and processing system"
   },
 ];
 
