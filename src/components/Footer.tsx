@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import sscLogo from "@/assets/ssc-logo.png.asset.json";
-import { FacebookIcon, TwitterIcon, LinkedinIcon, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
