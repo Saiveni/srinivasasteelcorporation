@@ -83,78 +83,122 @@ export const TrustStatsBar = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="w-full relative z-20 bg-[#E7EBF0]">
+    <section className="w-full relative z-20 bg-[#E7EBF0] overflow-hidden">
+      {/* 11. BACKGROUND AROUND PANEL: Subtle diagonal engineering lines */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.02]" 
+           style={{ 
+             backgroundImage: 'repeating-linear-gradient(45deg, #111C2F 0, #111C2F 1px, transparent 0, transparent 40px)',
+           }} 
+      />
+      <div className="absolute inset-0 pointer-events-none opacity-[0.015]" 
+           style={{ 
+             backgroundImage: 'linear-gradient(to right, #111C2F 1px, transparent 1px), linear-gradient(to bottom, #111C2F 1px, transparent 1px)',
+             backgroundSize: '200px 200px'
+           }} 
+      />
+
       {/* 
-          1. HERO → STATS TRANSITION 
-          Dark navy angular shape extending downward from the Hero.
+          12. HERO → PANEL TRANSITION 
+          Precision architectural cut (angular geometry).
       */}
-      <div className="absolute top-0 left-0 w-full h-[120px] bg-ssc-navy pointer-events-none" 
-           style={{ clipPath: 'polygon(0 0, 100% 0, 100% 60px, 0 100%)' }} />
+      <div className="absolute top-0 left-0 w-full h-[140px] bg-ssc-navy pointer-events-none" 
+           style={{ clipPath: 'polygon(0 0, 100% 0, 100% 40px, 0 120px)' }} />
 
       {/* 
           2. FLOATING PANEL (STEEL PERFORMANCE INDEX)
-          Deep navy panel overlapping the transition.
+          Deep premium navy panel with brushed-steel grain.
       */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1400px] relative">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          className="relative top-[-60px] bg-[#111C2F] border-[1px] border-white/10 border-t-ssc-gold shadow-[0_20px_50px_rgba(0,0,0,0.3)] rounded-[2px] overflow-hidden"
-        >
-          {/* Subtle engineering details */}
-          <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
-               style={{ 
-                 backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
-                 backgroundSize: '40px 40px'
-               }} 
-          />
-          {/* Technical horizontal calibration lines */}
-          <div className="absolute top-1/4 left-0 w-full h-[1px] bg-white/5" />
-          <div className="absolute top-3/4 left-0 w-full h-[1px] bg-white/5" />
+      <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1500px] relative">
+        <div className="relative top-[-70px]">
+          {/* 9. BACKING PLATE: Physically mounted feel */}
+          <div className="absolute inset-0 translate-y-[6px] bg-[#0A121F] rounded-[2px]" />
           
-          {/* Center Marker: Tiny gold crosshair */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center">
-             <div className="w-[1px] h-3 bg-ssc-gold/40" />
-             <div className="w-2 h-[1px] bg-ssc-gold/40 -mt-1.5" />
-          </div>
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              background: 'linear-gradient(110deg, #111C2F 0%, #15233A 100%)',
+            }}
+            className="relative bg-[#111C2F] border-[1px] border-white/5 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.4)] rounded-[2px] overflow-hidden"
+          >
+            {/* 2. PREMIUM STEEL SURFACE: Subtle brushed grain */}
+            <div className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-[0.03]" 
+                 style={{ 
+                   backgroundImage: 'repeating-linear-gradient(0deg, #fff 0, #fff 1px, transparent 0, transparent 2px)',
+                   backgroundSize: '100% 2px'
+                 }} 
+            />
 
-          {/* Coordinate Marks (Subtle) */}
-          <div className="absolute top-2 right-4 text-[8px] font-mono text-white/20 select-none tracking-widest uppercase">
-            REF. INDEX SSC_2026
-          </div>
+            {/* 7. ENGINEERING GRID: Barely noticeable (2-4%) */}
+            <div className="absolute inset-0 pointer-events-none opacity-[0.02]" 
+                 style={{ 
+                   backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
+                   backgroundSize: '60px 60px'
+                 }} 
+            />
 
-          <div className="px-6 py-12 lg:py-16">
-            {/* Panel Header */}
-            <div className="flex flex-col items-center mb-12 text-center">
-              <span className="text-ssc-gold text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.28em] uppercase mb-2">
-                STEEL PERFORMANCE INDEX
-              </span>
-              <span className="text-[#94A3B8] text-[9px] lg:text-[10px] font-technical tracking-[0.2em] uppercase opacity-80">
-                ENGINEERED FOR RELIABLE DELIVERY
-              </span>
+            {/* 3. PANEL SHAPE: Tiny precision chamfers at top corners (8px) */}
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+              <div className="absolute top-0 left-0 w-2 h-2 bg-[#E7EBF0]" style={{ clipPath: 'polygon(0 0, 100% 0, 0 100%)' }} />
+              <div className="absolute top-0 right-0 w-2 h-2 bg-[#E7EBF0]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }} />
             </div>
 
-            {/* Statistics Grid */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 lg:gap-0 items-center justify-center">
-              {stats.map((stat, index) => (
-                <StatItem 
-                  key={index} 
-                  {...stat} 
-                  index={index}
-                />
-              ))}
+            {/* 4. SIGNATURE TOP EDGE: Thin gold line + center marker */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-ssc-gold/40" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 flex flex-col items-center">
+               {/* Tiny gold crosshair marker */}
+               <div className="w-[10px] h-[1px] bg-ssc-gold" />
+               <div className="w-[1px] h-[6px] bg-ssc-gold -mt-[3.5px]" />
             </div>
-          </div>
-        </motion.div>
+
+            {/* 8. TECHNICAL MICRO DETAILS */}
+            <div className="absolute top-3 left-4 text-[7px] font-technical font-bold text-white/40 tracking-[0.2em] uppercase">A-01</div>
+            <div className="absolute top-3 right-4 text-[7px] font-technical font-bold text-white/40 tracking-[0.2em] uppercase">SSC / SPEC-01</div>
+            <div className="absolute bottom-3 left-4 text-[7px] font-technical font-bold text-white/40 tracking-[0.2em] uppercase">ENGINEERING DATA</div>
+            <div className="absolute bottom-3 right-4 text-[7px] font-technical font-bold text-white/40 tracking-[0.2em] uppercase">METRIC / PERFORMANCE</div>
+
+            <div className="px-6 py-10 lg:py-14">
+              {/* 5. PANEL HEADER */}
+              <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 border-b border-white/5 pb-6">
+                <div className="text-left">
+                  <h3 className="text-ssc-gold text-[11px] lg:text-[12px] font-technical font-bold tracking-[0.3em] uppercase mb-1">
+                    STEEL PERFORMANCE INDEX
+                  </h3>
+                  <p className="text-[#94A3B8] text-[9px] lg:text-[10px] font-technical font-medium tracking-[0.15em] uppercase opacity-70">
+                    ENGINEERED FOR RELIABLE DELIVERY
+                  </p>
+                </div>
+                <div className="mt-4 lg:mt-0 text-left lg:text-right">
+                  <span className="text-[#64748B] text-[8px] font-technical font-bold tracking-[0.2em] uppercase">
+                    REF. SSC / 1994–2026
+                  </span>
+                </div>
+              </div>
+
+              {/* 6. TECHNICAL HEADER LINE: Thin muted line + gold dot */}
+              <div className="relative w-full h-[1px] bg-white/5 mb-12 flex items-center justify-center">
+                <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold shadow-[0_0_8px_rgba(212,162,76,0.4)]" />
+              </div>
+
+              {/* Statistics Grid */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 lg:gap-0 items-center justify-center">
+                {stats.map((stat, index) => (
+                  <StatItem 
+                    key={index} 
+                    {...stat} 
+                    index={index}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
 
-      {/* 
-          3. VISIBLE LIGHT BACKGROUND GAP 
-          Breathing space before Products.
-      */}
-      <div className="h-[80px] lg:h-[120px]" />
+      {/* 3. VISIBLE LIGHT BACKGROUND GAP */}
+      <div className="h-[40px] lg:h-[80px]" />
     </section>
   );
 };
