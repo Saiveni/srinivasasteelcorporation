@@ -110,16 +110,17 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
+            exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 z-[90] lg:hidden bg-white flex flex-col pt-[68px] md:pt-[76px]"
+            className="fixed inset-0 z-[90] lg:hidden bg-white flex flex-col"
           >
-            {/* Safe area padding for top bar */}
-            <div className="h-[68px] md:h-[76px] w-full" />
+            {/* Header spacer to prevent overlap with logo/X button */}
+            <div className="h-[68px] md:h-[76px] w-full shrink-0" />
             
-            <div className="flex-1 flex flex-col items-center justify-center gap-6 px-6 pb-12 overflow-y-auto">
+            <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6 pb-12 overflow-y-auto w-full">
+
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
