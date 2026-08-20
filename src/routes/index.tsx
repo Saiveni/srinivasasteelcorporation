@@ -19,7 +19,7 @@ function HomePage() {
       <ProductShowcase />
       <PartnerStrip />
       <SectionContainer accent>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 gap-8">
           {[
             { icon: Shield, title: "Unmatched Quality", desc: "Certified premium grade steel meeting international standards." },
             { icon: Award, title: "30+ Years Trust", desc: "A legacy built on reliability and long-term partnerships." },
