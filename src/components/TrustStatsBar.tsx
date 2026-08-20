@@ -100,7 +100,7 @@ export const TrustStatsBar = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="w-full relative z-20 bg-[#E7EBF0] overflow-hidden">
+    <section className="w-full relative z-20 bg-[#E7EBF0]">
       {/* 11. BACKGROUND AROUND PANEL: Subtle diagonal engineering lines */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.02]" 
            style={{ 
@@ -126,7 +126,11 @@ export const TrustStatsBar = () => {
           Deep premium navy panel with brushed-steel grain.
       */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-12 max-w-[1500px] relative">
-        <div className="relative top-[-30px] sm:top-[-40px] lg:top-[-70px]">
+        {/* 
+            FIX: Adjusted top positioning to prevent clipping. 
+            The panel is moved downward (less negative offset) and overflow:hidden is removed from the section.
+        */}
+        <div className="relative top-[-25px] sm:top-[-30px] lg:top-[-35px]">
           {/* 9. BACKING PLATE: Physically mounted feel */}
           <motion.div 
             initial={{ opacity: 0, y: 14 }}
