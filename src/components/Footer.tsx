@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import sscLogo from "@/assets/ssc-logo.png.asset.json";
-import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -27,13 +27,6 @@ export const Footer = () => {
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Building the nation's foundation since 1994. Premium TMT steel and industrial supply solutions for enterprise-grade infrastructure.
             </p>
-            <div className="flex gap-4">
-              {[Facebook, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-ssc-gold transition-colors">
-                  <Icon size={18} />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Quick Links */}
