@@ -69,7 +69,7 @@ export const TrustStatsBar = () => {
   return (
     <div className="w-full bg-ssc-navy py-12 border-y border-white/5">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <StatItem key={index} {...stat} delay={index * 0.1} />
           ))}

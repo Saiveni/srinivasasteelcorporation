@@ -10,6 +10,17 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
@@ -27,24 +38,22 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect ${
-        scrolled ? "py-3 shadow-md" : "py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect h-[68px] md:h-[76px] flex items-center ${
+        scrolled ? "shadow-md" : ""
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 py-1 select-none">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 py-1 select-none relative z-[70]">
           <img
             src={sscLogo.url}
             alt="Srinivasa Steel Corporation logo"
-            width={52}
-            height={52}
-            className="h-11 w-11 md:h-13 md:w-13 object-contain shrink-0"
+            className="h-9 w-9 sm:h-11 sm:w-11 md:h-13 md:w-13 object-contain shrink-0"
           />
           <div className="flex flex-col justify-center">
-            <span className="text-lg md:text-xl font-heading tracking-tight text-brushed-steel leading-[0.95] uppercase">
+            <span className="text-base sm:text-lg md:text-xl font-heading tracking-tight text-brushed-steel leading-[0.95] uppercase whitespace-nowrap">
               SRINIVASA STEEL
             </span>
-            <span className="text-[10px] md:text-xs font-technical font-semibold tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5">
+            <span className="text-[8px] sm:text-[10px] md:text-xs font-technical font-semibold tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5 whitespace-nowrap">
               CORPORATION
             </span>
           </div>
@@ -70,10 +79,11 @@ export const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-ssc-navy p-2"
+          className="lg:hidden text-ssc-navy p-3 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-[70]"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={32} /> : <Menu size={32} />}
         </button>
       </div>
 
@@ -81,25 +91,27 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 lg:hidden bg-white pt-24 px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[60] lg:hidden bg-white pt-24 pb-12 px-6 flex flex-col overflow-y-auto"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-8 items-center text-center w-full">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-2xl font-bold text-ssc-navy flex items-center justify-between group"
+                  className="text-3xl font-heading text-ssc-navy hover:text-ssc-gold transition-colors tracking-tight uppercase"
                 >
                   {link.name}
-                  <ChevronRight className="text-ssc-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               ))}
-              <Button className="w-full bg-ssc-gold text-white font-bold py-4 rounded-xl mt-4">
+              <Button 
+                onClick={() => setIsOpen(false)}
+                className="w-full max-w-xs bg-ssc-gold text-white font-display font-black uppercase py-8 rounded-xl text-lg shadow-xl mt-4"
+              >
                 Get Quote
               </Button>
             </div>

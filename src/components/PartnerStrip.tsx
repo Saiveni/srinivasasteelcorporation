@@ -39,17 +39,17 @@ export const PartnerStrip = () => {
     <div className="w-full bg-ssc-gray-light py-20 border-y border-black/5">
       <div className="container mx-auto px-6">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.4em]">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.4em] px-4 block">
               Trusted By Industrial Leaders
             </span>
           </div>
           
-          <div className="flex flex-wrap items-center justify-center gap-16 md:gap-32">
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-32">
             {partners.map((partner) => (
               <div 
                 key={partner.name} 
-                className="group flex items-center transition-all duration-700 hover:scale-105"
+                className="group flex items-center transition-all duration-700 hover:scale-105 w-full sm:w-auto justify-center"
               >
                 <div className="flex items-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100">
                   {partner.icon}

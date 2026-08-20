@@ -66,7 +66,8 @@ export const HeroSection = () => {
       mouseY.set(clientY / innerHeight - 0.5);
     };
 
-    if (!shouldReduceMotion && window.matchMedia("(pointer: fine)").matches) {
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    if (!shouldReduceMotion && !isMobile && window.matchMedia("(pointer: fine)").matches) {
       window.addEventListener("mousemove", handleMouseMove);
     }
     
@@ -76,7 +77,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={ref}
-      className="relative isolate min-h-[92vh] w-full overflow-hidden flex items-center bg-[#050B18]"
+      className="relative isolate min-h-[75vh] sm:min-h-[85vh] lg:min-h-[92vh] w-full overflow-hidden flex items-center bg-[#050B18]"
     >
       {/* Background image container with Scroll Parallax + Scale */}
       <motion.div 
@@ -92,12 +93,12 @@ export const HeroSection = () => {
             x: shouldReduceMotion ? 0 : bgMouseX,
             y: shouldReduceMotion ? 0 : bgMouseY,
           }}
-          className="w-full h-full"
+          className="w-full h-full relative"
         >
           <motion.img
             src={heroImage}
             alt="Premium TMT steel rebars"
-            className="h-[120%] w-[110%] -left-[5%] -top-[10%] relative object-cover object-center"
+            className="h-[120%] w-[120%] -left-[10%] -top-[10%] relative object-cover object-center lg:object-center"
             initial={{ scale: 1.05, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ 
@@ -114,7 +115,7 @@ export const HeroSection = () => {
         {/* Main Gradient */}
         <motion.div
           style={{ opacity: scrollOpacity }}
-          className="absolute inset-0 bg-gradient-to-r from-[#050B18] via-[#050B18]/60 to-transparent"
+          className="absolute inset-0 bg-gradient-to-r from-[#050B18] via-[#050B18]/60 lg:via-[#050B18]/60 to-[#050B18]/40 lg:to-transparent"
         />
         {/* Bottom Fade for section transition */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-[#050B18]/40" />
@@ -129,7 +130,7 @@ export const HeroSection = () => {
           opacity: scrollOpacity,
           translateY: scrollY
         }}
-        className="container mx-auto px-6 py-28 md:py-32 relative z-10"
+        className="container mx-auto px-6 py-20 sm:py-28 md:py-32 relative z-10"
       >
         <motion.div initial="hidden" animate="visible" className="max-w-4xl">
           {/* Eyebrow */}
@@ -141,7 +142,7 @@ export const HeroSection = () => {
           </motion.div>
 
           {/* Headline */}
-          <h1 className="h1-fluid text-white mb-10 leading-[1.1] drop-shadow-2xl">
+          <h1 className="text-white mb-10 leading-[1.1] drop-shadow-2xl font-heading text-[clamp(42px,13vw,64px)] lg:text-8xl">
             <motion.span custom={1} variants={lineVariants} className="block">
               The Strength
             </motion.span>
@@ -156,11 +157,11 @@ export const HeroSection = () => {
                   ...lineVariants.visible(i),
                   transition: { 
                     ...lineVariants.visible(i).transition,
-                    duration: 1.5 // Climax slower reveal
+                    duration: 1.5
                   }
                 })
               }} 
-              className="block text-ssc-gold font-heading"
+              className="block text-ssc-gold"
             >
               Success.
             </motion.span>
@@ -170,24 +171,24 @@ export const HeroSection = () => {
           <motion.p
             custom={4}
             variants={lineVariants}
-            className="text-body-large text-white/70 max-w-2xl mb-12 leading-relaxed"
+            className="text-[16px] sm:text-body-large text-white/70 max-w-2xl mb-12 leading-relaxed"
           >
             Powering India's infrastructure with premium TMT rebars and industrial supplies. 
             Three decades of engineering excellence and unmatched reliability.
           </motion.p>
 
           {/* Buttons */}
-          <motion.div custom={5} variants={lineVariants} className="flex flex-wrap gap-6">
+          <motion.div custom={5} variants={lineVariants} className="flex flex-col sm:flex-row gap-6">
             <Button
               size="lg"
-              className="bg-ssc-gold hover:bg-ssc-gold/90 text-white font-black uppercase px-10 py-8 rounded-xl text-lg shadow-2xl transition-all hover:scale-105 active:scale-95 font-display tracking-widest"
+              className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-white font-black uppercase px-10 py-8 rounded-xl text-lg shadow-2xl transition-all hover:scale-105 active:scale-95 font-display tracking-widest min-h-[44px]"
             >
               View Products <ArrowRight className="ml-2 w-6 h-6" />
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-white/30 bg-white/5 text-white font-black uppercase px-10 py-8 rounded-xl text-lg backdrop-blur-md hover:bg-white hover:text-[#050B18] transition-all font-display tracking-widest"
+              className="w-full sm:w-auto border-white/30 bg-white/5 text-white font-black uppercase px-10 py-8 rounded-xl text-lg backdrop-blur-md hover:bg-white hover:text-[#050B18] transition-all font-display tracking-widest min-h-[44px]"
             >
               Get Quote
             </Button>
