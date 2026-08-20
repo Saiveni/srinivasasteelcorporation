@@ -39,8 +39,8 @@ export const PartnerStrip = () => {
     <div className="w-full bg-ssc-gray-light py-20 border-y border-black/5">
       <div className="container mx-auto px-6">
         <ScrollReveal>
-          <div className="text-center mb-16">
-            <span className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.4em]">
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.4em] px-4 block">
               Trusted By Industrial Leaders
             </span>
           </div>

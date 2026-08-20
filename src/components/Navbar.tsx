@@ -43,19 +43,17 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 py-1 select-none">
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 py-1 select-none relative z-[70]">
           <img
             src={sscLogo.url}
             alt="Srinivasa Steel Corporation logo"
-            width={52}
-            height={52}
-            className="h-11 w-11 md:h-13 md:w-13 object-contain shrink-0"
+            className="h-9 w-9 sm:h-11 sm:w-11 md:h-13 md:w-13 object-contain shrink-0"
           />
           <div className="flex flex-col justify-center">
-            <span className="text-lg md:text-xl font-heading tracking-tight text-brushed-steel leading-[0.95] uppercase">
+            <span className="text-base sm:text-lg md:text-xl font-heading tracking-tight text-brushed-steel leading-[0.95] uppercase whitespace-nowrap">
               SRINIVASA STEEL
             </span>
-            <span className="text-[10px] md:text-xs font-technical font-semibold tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5">
+            <span className="text-[8px] sm:text-[10px] md:text-xs font-technical font-semibold tracking-[0.25em] text-ssc-gold leading-none uppercase mt-0.5 whitespace-nowrap">
               CORPORATION
             </span>
           </div>
@@ -81,7 +79,7 @@ export const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-ssc-navy p-3 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-50"
+          className="lg:hidden text-ssc-navy p-3 min-w-[44px] min-h-[44px] flex items-center justify-center relative z-[70]"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
@@ -93,37 +91,30 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="fixed inset-0 z-40 lg:hidden bg-white pt-24 pb-12 px-6 flex flex-col overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[60] lg:hidden bg-white pt-24 pb-12 px-6 flex flex-col overflow-y-auto"
           >
-            <div className="flex flex-col gap-8 items-center text-center">
+            <div className="flex flex-col gap-8 items-center text-center w-full">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-3xl font-heading text-ssc-navy hover:text-ssc-gold transition-colors tracking-tight"
+                  className="text-3xl font-heading text-ssc-navy hover:text-ssc-gold transition-colors tracking-tight uppercase"
                 >
                   {link.name}
                 </Link>
               ))}
               <Button 
                 onClick={() => setIsOpen(false)}
-                className="w-full max-w-xs bg-ssc-gold text-white font-display font-black uppercase py-6 rounded-xl text-lg shadow-xl"
+                className="w-full max-w-xs bg-ssc-gold text-white font-display font-black uppercase py-8 rounded-xl text-lg shadow-xl mt-4"
               >
                 Get Quote
               </Button>
             </div>
-            
-            {/* Close button at bottom for easier reachability if needed, 
-                but we already have the hamburger 'X' at top right which is common. 
-                The requirements say "close when a navigation item is selected" (done)
-                and "close when the close button is clicked". 
-                The toggle button becomes an 'X' via line 76 logic. 
-            */}
           </motion.div>
         )}
       </AnimatePresence>

@@ -130,7 +130,7 @@ export const HeroSection = () => {
           opacity: scrollOpacity,
           translateY: scrollY
         }}
-        className="container mx-auto px-6 py-28 md:py-32 relative z-10"
+        className="container mx-auto px-6 py-20 sm:py-28 md:py-32 relative z-10"
       >
         <motion.div initial="hidden" animate="visible" className="max-w-4xl">
           {/* Eyebrow */}
@@ -171,7 +171,7 @@ export const HeroSection = () => {
           <motion.p
             custom={4}
             variants={lineVariants}
-            className="text-body-large text-white/70 max-w-2xl mb-12 leading-relaxed"
+            className="text-[16px] sm:text-body-large text-white/70 max-w-2xl mb-12 leading-relaxed"
           >
             Powering India's infrastructure with premium TMT rebars and industrial supplies. 
             Three decades of engineering excellence and unmatched reliability.
