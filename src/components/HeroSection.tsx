@@ -125,7 +125,7 @@ export const HeroSection = () => {
           }}
           transition={{ 
             scale: {
-              duration: isMobile ? 15 : 20,
+              duration: isMobile ? 12 : 18,
               ease: "linear",
               repeat: Infinity,
               repeatType: "reverse"
