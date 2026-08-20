@@ -39,10 +39,10 @@
   --color-ssc-gray-light: oklch(0.97 0.005 260); /* #F7F8FA */
   --color-ssc-gray-steel: oklch(0.94 0.01 260);  /* #EDEFF2 */
   
-  --font-heading: "Archivo Black", "Bebas Neue", "Poppins", sans-serif;
-  --font-display: "Bebas Neue", "Archivo Black", sans-serif;
+  --font-heading: "Manrope", "Plus Jakarta Sans", "Inter", sans-serif;
+  --font-display: "Manrope", "Plus Jakarta Sans", sans-serif;
   --font-body: "Inter", "Work Sans", sans-serif;
-  --font-technical: "Poppins", "Inter", sans-serif;
+  --font-technical: "Manrope", "Inter", sans-serif;
   
   --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   --shadow-premium-hover: 0 20px 40px -15px rgba(0, 0, 0, 0.15);
