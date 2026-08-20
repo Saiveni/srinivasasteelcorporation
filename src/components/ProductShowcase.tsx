@@ -7,22 +7,26 @@ const products = [
   {
     name: "TMT Rebars",
     description: "Premium grade thermo-mechanically treated steel bars for superior strength.",
-    image: "/src/assets/hero-steel.jpg", // Realistic photograph of bundled ribbed TMT reinforcement steel bars
+    image: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&w=800&q=80",
+    alt: "Bundled ribbed TMT reinforcement steel bars in an industrial warehouse setting"
   },
   {
     name: "Binding Wire",
     description: "High-tensile annealed wire for secure reinforcement anchoring.",
-    image: "https://images.pexels.com/photos/15059762/pexels-photo-15059762.jpeg?auto=compress&cs=tinysrgb&w=800", // Realistic photograph of black annealed construction binding wire coils
+    image: "https://images.pexels.com/photos/15059762/pexels-photo-15059762.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Coils of black annealed construction binding wire"
   },
   {
     name: "Oil Rods",
     description: "Industrial-grade rods engineered for specialized mechanical applications.",
-    image: "/src/assets/hero-steel.jpg", // Industrial precision steel rods
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80",
+    alt: "Bundled precision industrial steel rods"
   },
   {
     name: "Decoiling Services",
     description: "Precision coil straightening and cutting to custom length specifications.",
-    image: "https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=800", // Industrial machinery for decoiling and straightening
+    image: "https://images.pexels.com/photos/190574/pexels-photo-190574.jpeg?auto=compress&cs=tinysrgb&w=800",
+    alt: "Industrial steel decoiling and straightening machinery processing a steel coil"
   },
 ];
 
@@ -31,10 +35,7 @@ export const ProductShowcase = () => {
     <SectionContainer id="products">
       <div className="text-center mb-16">
         <ScrollReveal>
-          <span className="text-ssc-gold text-eyebrow inline-block mb-4">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-                                        
-                                            
-                                            Add descriptive alt text for each product image and semantic headings for the product cards to improve accessibility.</span>
+          <span className="text-ssc-gold text-eyebrow inline-block mb-4 uppercase tracking-widest">Our Products</span>
           <h2 className="h2-fluid text-ssc-navy font-heading">Engineered for Excellence</h2>
         </ScrollReveal>
       </div>
@@ -51,7 +52,7 @@ export const ProductShowcase = () => {
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
                   src={product.image}
-                  alt={product.name}
+                  alt={product.alt}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-ssc-navy/0 group-hover:bg-ssc-navy/10 transition-colors duration-500" />
