@@ -40,14 +40,14 @@ export const ProductShowcase = () => {
         </ScrollReveal>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {products.map((product, index) => (
           <ScrollReveal key={index} delay={index * 0.1}>
             <motion.div
               whileHover={{ y: -10 }}
               className="group bg-white rounded-2xl overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-500 border border-white/20 h-full flex flex-col"
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative h-[210px] sm:aspect-[4/3] sm:h-auto overflow-hidden">
                 <motion.img
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.6 }}
