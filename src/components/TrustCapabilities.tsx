@@ -42,7 +42,7 @@ export const TrustCapabilities = () => {
       />
       
       {/* Subtle Gold Rule (Technical Detail) */}
-      <div className="absolute top-0 left-[10%] w-[1px] h-full bg-gradient-to-b from-[#D9A000]/20 via-transparent to-transparent hidden lg:block" />
+      <div className="absolute top-0 left-[10%] w-[1px] h-full bg-gradient-to-b from-[#C5A059]/20 via-transparent to-transparent hidden lg:block" />
 
       <div className="container-wide relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch mb-24 lg:mb-32">
@@ -57,7 +57,7 @@ export const TrustCapabilities = () => {
             >
               {/* Top Branded Label */}
               <div className="flex items-center gap-4 mb-10">
-                <span className="text-[11px] font-technical font-bold tracking-[0.4em] text-[#D9A000] uppercase">
+                <span className="text-[11px] font-technical font-bold tracking-[0.4em] text-[#C5A059] uppercase">
                   EST. 1994
                 </span>
                 <div className="w-12 h-[1px] bg-[#0B1B33]/15" />
@@ -69,12 +69,12 @@ export const TrustCapabilities = () => {
               {/* Main Headline: Dark Navy with Gold Accents */}
               <h2 className="text-[clamp(32px,6vw,54px)] font-heading font-extrabold text-[#0B1B33] leading-[1.05] mb-10 tracking-tight">
                 BUILT ON <br />
-                <span className="text-[#D9A000]">30+</span> YEARS OF <br />
-                <span className="text-[#D9A000]">TRUST.</span>
+                <span className="text-[#C5A059]">30+</span> YEARS OF <br />
+                <span className="text-[#C5A059]">TRUST.</span>
               </h2>
 
               {/* Business Description */}
-              <p className="text-[18px] text-[#0B1B33]/70 max-w-[540px] leading-[1.75] font-normal mb-0 border-l-2 border-[#D9A000]/20 pl-6 lg:pl-8">
+              <p className="text-[18px] text-[#0B1B33]/70 max-w-[540px] leading-[1.75] font-normal mb-0 border-l-2 border-[#C5A059]/20 pl-6 lg:pl-8">
                 Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements, specializing in TMT rebars, steel products, wire products and decoiling solutions.
               </p>
             </motion.div>
@@ -103,7 +103,7 @@ export const TrustCapabilities = () => {
               />
               
               {/* Bottom Gold Architectural Accent */}
-              <div className="absolute bottom-0 left-0 w-full h-1.5 bg-[#D9A000] z-30" />
+              <div className="absolute bottom-0 left-0 w-full h-1.5 bg-[#C5A059] z-30" />
               
               {/* Micro technical labels */}
               <div className="absolute bottom-6 left-8 z-30 flex flex-col gap-1">
@@ -130,7 +130,7 @@ export const TrustCapabilities = () => {
             >
               {/* Index and Gold Progressive Indicator */}
               <div className="flex items-center gap-3 mb-8">
-                <span className="text-[12px] font-technical font-extrabold text-[#D9A000] tracking-wider bg-[#F4F6F8] pr-4 relative z-10">
+                <span className="text-[12px] font-technical font-extrabold text-[#C5A059] tracking-wider bg-[#F4F6F8] pr-4 relative z-10">
                   {cap.index}
                 </span>
                 <div className="flex-grow h-[1px] bg-[#0B1B33]/10 relative overflow-hidden">
@@ -139,7 +139,7 @@ export const TrustCapabilities = () => {
                     whileInView={{ x: "0%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.5 + idx * 0.1 }}
-                    className="absolute inset-0 bg-[#D9A000]/40 group-hover:bg-[#D9A000]"
+                    className="absolute inset-0 bg-[#C5A059]/40 group-hover:bg-[#C5A059]"
                   />
                 </div>
               </div>
@@ -150,7 +150,7 @@ export const TrustCapabilities = () => {
                   <h3 className="text-[16px] font-heading font-extrabold text-[#0B1B33] tracking-wider uppercase">
                     {cap.title}
                   </h3>
-                  <cap.icon className="w-4 h-4 text-[#0B1B33]/20 group-hover:text-[#D9A000] transition-colors duration-300" strokeWidth={1.5} />
+                  <cap.icon className="w-4 h-4 text-[#0B1B33]/20 group-hover:text-[#C5A059] transition-colors duration-300" strokeWidth={1.5} />
                 </div>
 
                 <p className="text-[14px] text-[#0B1B33]/60 leading-relaxed font-normal">
