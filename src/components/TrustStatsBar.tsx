@@ -107,8 +107,8 @@ export const TrustStatsBar = () => {
             ref={ref}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full mx-auto backdrop-blur-[12px] bg-[#0C1828]/94 rounded-[24px] shadow-[0_40px_80px_-20px_rgba(0,0,0,0.4)] overflow-hidden border border-white/10"
+            transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+            className="relative w-full mx-auto backdrop-blur-[12px] bg-[#0C1828]/94 rounded-[24px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden border border-white/10"
             style={{ 
               background: 'linear-gradient(135deg, #16283E 0%, #0B1728 100%)',
             }}
