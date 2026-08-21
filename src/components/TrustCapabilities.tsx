@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, Variants, Easing } from "framer-motion";
 import { useRef } from "react";
 
 export const TrustCapabilities = () => {
@@ -11,12 +11,16 @@ export const TrustCapabilities = () => {
   });
 
   const parallaxY = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const imageReveal = {
+  
+  // Custom easing for smooth cinematic feel
+  const cubicBezier: Easing = [0.16, 1, 0.3, 1];
+
+  const imageReveal: Variants = {
     hidden: { clipPath: "inset(0% 100% 0% 0%)", opacity: 0 },
     visible: { 
       clipPath: "inset(0% 0% 0% 0%)", 
       opacity: 1,
-      transition: { duration: 1.6, ease: [0.16, 1, 0.3, 1] }
+      transition: { duration: 1.6, ease: cubicBezier }
     }
   };
 
@@ -69,7 +73,7 @@ export const TrustCapabilities = () => {
               <motion.h2
                 variants={{
                   hidden: { opacity: 0, y: 30 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.4 } }
+                  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: cubicBezier, delay: 0.4 } }
                 }}
                 className="text-[42px] lg:text-[76px] font-heading font-extrabold text-white leading-[0.95] mb-8 tracking-tighter uppercase"
               >
