@@ -120,7 +120,7 @@ const ProductShowcase = () => {
                 Steel Products
               </h2>
               <p className="text-[#4A5568] text-base lg:text-lg leading-relaxed font-[450]">
-                QUALITY MATERIAL FOR CONSTRUCTION & INDUSTRIAL REQUIREMENTS
+                Industrial steel products for construction and manufacturing requirements.
               </p>
             </motion.div>
           </div>
