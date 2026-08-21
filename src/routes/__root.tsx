@@ -14,7 +14,7 @@ import { Footer } from "@/components/Footer";
 import { BrandPreloader } from "@/components/BrandPreloader";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportAppError } from "../lib/app-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -42,7 +42,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportAppError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", href: "https://id-preview--4b9b68cc-4e82-4582-9138-a2357282acba.lovable.app/lovable-uploads/29486c75-b3e3-47a2-9457-37a5b3068e82.png" },
     ],
   }),
   shellComponent: RootShell,
