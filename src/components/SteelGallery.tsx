@@ -33,13 +33,6 @@ const galleryItems = [
     size: "medium",
   },
   {
-    id: 3,
-    category: "TMT REBARS",
-    image: assets.rebarDetail,
-    title: "Ribbed Reinforcement Detail",
-    size: "tall",
-  },
-  {
     id: 4,
     category: "DECOILING",
     image: assets.steelCoils,
