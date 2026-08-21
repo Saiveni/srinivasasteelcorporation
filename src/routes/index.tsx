@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ScrollReveal, SectionContainer, AnimatedCard } from "@/components/SharedLayout";
 import { HeroSection } from "@/components/HeroSection";
 import { TrustStatsBar } from "@/components/TrustStatsBar";
-import { ProductShowcase } from "@/components/ProductShowcase";
+import ProductShowcase from "@/components/ProductShowcase";
 import { PartnerStrip } from "@/components/PartnerStrip";
 import { Shield, Award, Users } from "lucide-react";
 
