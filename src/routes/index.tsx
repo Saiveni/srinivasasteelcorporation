@@ -23,7 +23,26 @@ function HomePage() {
       
       <AboutSection />
       <BrandStrip />
-      <SteelGallery />
+      <div className="bg-white section-spacing">
+        <div className="container-wide">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
+            <div>
+              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
+                OUR GALLERY
+              </span>
+              <h2 className="text-[38px] lg:text-[56px] text-ssc-navy font-heading leading-[1.1] font-semibold tracking-tight uppercase">
+                STEEL IN <span className="text-ssc-gold">ELEMENT.</span>
+              </h2>
+            </div>
+            <div className="flex flex-col items-start lg:items-end">
+              <p className="text-ssc-navy/60 text-lg mb-6 max-w-sm lg:text-right">
+                A closer look at our products and stock operations.
+              </p>
+            </div>
+          </div>
+          <SteelGallery />
+        </div>
+      </div>
       
     </div>
   );
