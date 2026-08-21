@@ -6,6 +6,7 @@ import { Link } from '@tanstack/react-router';
 const products = [
   {
     index: "01",
+    id: "TMT REBARS",
     name: "TMT Rebars",
     description: "Premium bundles of ribbed TMT reinforcement steel bars. Available in 5mm, 5.5mm, and 6mm TMT specifications.",
     image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800&auto=format&fit=crop",
@@ -13,13 +14,15 @@ const products = [
   },
   {
     index: "02",
-    name: "Wire Products",
+    id: "BINDING WIRE",
+    name: "Binding Wire",
     description: "Industrial grade steel wire and binding wire coils designed for precise reinforcement anchoring.",
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop",
     alt: "High-quality industrial steel wire and binding wire coils"
   },
   {
     index: "03",
+    id: "OIL RODS",
     name: "Oil Rods",
     description: "High-performance steel oil rods engineered for specialized industrial and mechanical applications.",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
@@ -27,6 +30,7 @@ const products = [
   },
   {
     index: "04",
+    id: "DECOILED STEEL",
     name: "Decoiled Steel",
     description: "Precision steel coil processing (2mm–4.5mm), straightening and cut-to-length services (10–40 feet).",
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop",
@@ -78,10 +82,11 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
 
         {/* View Details */}
         <Link 
-          to="/products"
+          to="/contact"
+          search={{ product: product.id }}
           className="inline-flex items-center gap-2 text-[10px] font-technical font-bold text-ssc-gold uppercase tracking-[0.25em] group/link"
         >
-          View Details
+          Enquire Now
           <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover/link:translate-x-[5px]" />
         </Link>
       </div>

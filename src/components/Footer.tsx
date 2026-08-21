@@ -55,14 +55,14 @@ export const Footer = () => {
               <li className="flex gap-3 pt-2">
                 <Phone className="text-ssc-gold shrink-0" size={20} />
                 <div className="flex flex-col">
-                  <span className="text-sm">9440170453 (M.S.V. Bhaskar)</span>
-                  <span className="text-sm">9849600403 (M.V. Ramana Kumar)</span>
-                  <span className="text-sm">8125397453 (M.V.N.M. Yeshwanth)</span>
+                  <a href="tel:9440170453" className="text-sm hover:text-ssc-gold transition-colors">9440170453 (M.S.V. Bhaskar)</a>
+                  <a href="tel:9849600403" className="text-sm hover:text-ssc-gold transition-colors">9849600403 (M.V. Ramana Kumar)</a>
+                  <a href="tel:8125397453" className="text-sm hover:text-ssc-gold transition-colors">8125397453 (M.V.N.M. Yeshwanth)</a>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">
                 <Mail className="text-ssc-gold shrink-0" size={20} />
-                <span className="text-sm">srinivasasteelcorporationvja@gmail.com</span>
+                <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-sm hover:text-ssc-gold transition-colors">srinivasasteelcorporationvja@gmail.com</a>
               </li>
             </ul>
           </div>
