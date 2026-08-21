@@ -179,11 +179,17 @@ export const SteelGallery = () => {
                     ${item.size === 'wide' ? 'lg:col-span-8 lg:row-span-2' : ''}
                   `}
                 >
-                  <img 
-                    src={item.image} 
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-[500ms] group-hover:scale-[1.03]"
-                  />
+                  {item.image ? (
+                    <img 
+                      src={item.image} 
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-[500ms] group-hover:scale-[1.03]"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-ssc-navy/5 flex items-center justify-center">
+                      <ImageIcon className="text-ssc-navy/20" size={48} />
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-ssc-navy/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
                     <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.3em] uppercase mb-2">
                       {item.category}
