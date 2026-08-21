@@ -40,7 +40,7 @@ function HomePage() {
               </p>
             </div>
           </div>
-          <SteelGallery />
+          <SteelGallery isHomePage={true} />
         </div>
       </div>
       
