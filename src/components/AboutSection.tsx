@@ -203,8 +203,8 @@ export const AboutSection = () => {
                 className={`flex flex-col relative ${milestone.align === 'top' ? 'lg:pb-32' : 'lg:pt-32'}`}
               >
                 {/* Mobile Machined Node */}
-                <div className="absolute left-[-68px] top-6 lg:hidden w-10 h-12 bg-gradient-to-b from-[#4a505c] to-[#1a1d22] rounded-md flex items-center justify-center shadow-xl">
-                  <div className="w-3 h-3 rounded-full bg-[#C5A059] shadow-[0_0_20px_rgba(197,160,89,0.6)]" />
+                <div className="absolute left-[-68px] top-6 lg:hidden w-8 h-12 bg-gradient-to-b from-[#333] to-[#1a1d22] rounded-[4px] flex items-center justify-center shadow-xl border border-white/5">
+                  <div className="w-3 h-3 rounded-full bg-[#C5A059] shadow-[0_0_15px_rgba(197,160,89,0.8)] border border-white/20" />
                 </div>
 
                 {/* Content Box - Placed strategically relative to the rod */}
