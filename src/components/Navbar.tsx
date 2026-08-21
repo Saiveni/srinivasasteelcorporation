@@ -99,6 +99,8 @@ export const Navbar = () => {
         <button
           className="lg:hidden text-[#0B1B33] p-4 relative z-[100] min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
