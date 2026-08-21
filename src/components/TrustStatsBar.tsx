@@ -22,11 +22,11 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
       transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col items-center lg:items-start text-center lg:text-left px-6 py-4 group"
     >
-      <div className="text-[10px] font-technical tracking-[0.2em] text-ssc-gold/60 uppercase mb-4">
+      <div className="text-[10px] font-technical tracking-[0.2em] text-[#C5A059]/60 uppercase mb-4">
         {subLabel}
       </div>
 
-      <div className="text-ssc-gold mb-6 transition-transform duration-500 group-hover:scale-110">
+      <div className="text-[#C5A059] mb-6 transition-transform duration-500 group-hover:scale-110">
         <Icon size={20} strokeWidth={1.5} />
       </div>
 
@@ -87,12 +87,12 @@ export const TrustStatsBar = () => {
         >
           {/* Inner Highlight & Gold Accent */}
           <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-[#C5A059] shadow-[0_0_15px_rgba(197,160,89,0.3)]" />
 
           <div className="px-8 py-12 lg:px-16 lg:py-20">
             {/* Header Area */}
             <div className="mb-16 border-b border-white/5 pb-12">
-              <h3 className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4">
+              <h3 className="text-[#C5A059] text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4">
                 STEEL PERFORMANCE INDEX
               </h3>
               <h2 className="text-white text-[24px] lg:text-[28px] font-heading font-semibold tracking-tight uppercase">

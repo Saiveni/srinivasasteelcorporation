@@ -52,19 +52,19 @@ export const HeroSection = () => {
   const imagePos = currentImage?.position || "center center";
 
   const imageElement = (
-    <AnimatePresence mode="wait">
+    <AnimatePresence mode="popLayout">
       <motion.div
         key={currentIndex}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.2, ease: "linear" }}
+        transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1] }}
         className="absolute inset-0"
       >
         <motion.img
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.04 }}
-          transition={{ duration: 5, ease: "linear" }}
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 5.5, ease: "linear" }}
           src={imageUrl}
           alt={imageAlt}
           className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
@@ -107,7 +107,7 @@ export const HeroSection = () => {
                   SINCE 1994
                 </span>
                 <span className="text-white/20 lg:text-[#0B1B33]/20">—</span>
-                <span className="text-[11px] font-technical font-semibold tracking-[0.15em] text-[#D9A000] uppercase">
+                <span className="text-[11px] font-technical font-semibold tracking-[0.15em] text-[#C5A059] uppercase">
                   VIJAYAWADA • VIZAG • GANNAVARAM
                 </span>
               </div>
@@ -116,7 +116,7 @@ export const HeroSection = () => {
               <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[64px] font-heading font-semibold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.03em]">
                 <span className="block mb-1">STRONGER STEEL.</span>
                 <span className="block">
-                  STRONGER <span className="text-[#D9A000]">TOMORROW.</span>
+                  STRONGER <span className="text-[#C5A059]">TOMORROW.</span>
                 </span>
               </h1>
               

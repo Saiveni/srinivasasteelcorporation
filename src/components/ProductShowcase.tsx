@@ -62,14 +62,14 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
       <div className="p-7 lg:p-8">
         {/* Product Number */}
         <div className="mb-4">
-          <span className="text-[11px] font-technical font-bold text-ssc-gold tracking-[0.2em]">
+          <span className="text-[11px] font-technical font-bold text-[#C5A059] tracking-[0.2em]">
             {product.index}
           </span>
         </div>
         
         {/* Title */}
         <div className="flex gap-4 items-start mb-4">
-          <div className="w-[1px] h-6 bg-ssc-gold/40 mt-1 flex-shrink-0" />
+          <div className="w-[1px] h-6 bg-[#C5A059]/40 mt-1 flex-shrink-0" />
           <h3 className="text-[22px] lg:text-[26px] font-heading font-medium text-ssc-navy leading-tight tracking-tight">
             {product.name}
           </h3>
@@ -84,7 +84,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
         <Link 
           to="/contact"
           search={{ product: product.id }}
-          className="inline-flex items-center gap-2 text-[10px] font-technical font-bold text-ssc-gold uppercase tracking-[0.25em] group/link"
+          className="inline-flex items-center gap-2 text-[10px] font-technical font-bold text-[#C5A059] uppercase tracking-[0.25em] group/link"
         >
           Enquire Now
           <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover/link:translate-x-[5px]" />
@@ -119,7 +119,7 @@ const ProductShowcase = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-ssc-gold text-[12px] lg:text-[13px] font-technical font-bold uppercase tracking-[0.25em] mb-4 block">
+              <span className="text-[#C5A059] text-[12px] lg:text-[13px] font-technical font-bold uppercase tracking-[0.25em] mb-4 block">
                 CATALOGUE
               </span>
               <h2 className="text-[38px] lg:text-[56px] text-ssc-navy font-heading leading-[1.1] mb-6 font-[500] tracking-tight uppercase">
@@ -139,7 +139,7 @@ const ProductShowcase = () => {
             className="hidden lg:flex flex-col items-end text-right border-l border-black/10 pl-10"
           >
             <span className="text-[11px] font-technical uppercase tracking-[0.2em] text-[#A0AEC0] mb-2">SSC / PRODUCT SPECIFICATIONS</span>
-            <span className="text-[11px] font-technical uppercase tracking-[0.2em] text-ssc-gold/60 font-bold">EST. 1994</span>
+            <span className="text-[11px] font-technical uppercase tracking-[0.2em] text-[#C5A059]/60 font-bold">EST. 1994</span>
           </motion.div>
         </div>
 

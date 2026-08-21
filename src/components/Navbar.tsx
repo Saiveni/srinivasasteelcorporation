@@ -57,7 +57,7 @@ export const Navbar = () => {
             <span className="text-[15px] sm:text-[17px] font-heading font-bold tracking-[0.05em] text-[#0B1B33] leading-none uppercase">
               SRINIVASA <span className="text-[#0B1B33]/90 font-medium">STEEL</span>
             </span>
-            <span className="text-[10px] sm:text-[11px] font-technical font-extrabold tracking-[0.3em] text-[#D9A000] leading-none uppercase mt-1.5 opacity-90">
+            <span className="text-[10px] sm:text-[11px] font-technical font-extrabold tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-1.5 opacity-90">
               CORPORATION
             </span>
           </div>
