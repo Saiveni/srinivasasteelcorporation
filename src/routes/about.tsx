@@ -12,7 +12,7 @@ const locations = [
   {
     city: "VIJAYAWADA",
     type: "GODOWN",
-    address: "Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
+    address: "Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
   },
   {
     city: "VIZAG",
@@ -22,7 +22,7 @@ const locations = [
   {
     city: "GANNAVARAM",
     type: "YARD",
-    address: "Gannavaram Yard, Nuzividu Road, 521101",
+    address: "Gannavaram Yard, Nuzividu Road, Gannavaram – 521101",
   }
 ];
 
