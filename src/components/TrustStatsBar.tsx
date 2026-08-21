@@ -102,7 +102,7 @@ export const TrustStatsBar = () => {
       <div className="absolute top-0 right-10 w-[1px] h-full bg-ssc-navy/5 hidden lg:block" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1280px] relative">
-        <div className="relative mt-[-45px] sm:mt-[-55px] lg:mt-[-85px] mb-8 lg:mb-0">
+        <div className="relative mt-8 sm:mt-12 lg:mt-[-85px] mb-8 lg:mb-0">
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 30 }}
