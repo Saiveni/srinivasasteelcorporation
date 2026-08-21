@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { HeroSection } from "@/components/HeroSection";
+import { TrustCapabilities } from "@/components/TrustCapabilities";
 import { TrustStatsBar } from "@/components/TrustStatsBar";
 import ProductShowcase from "@/components/ProductShowcase";
 import { DecoilingSection } from "@/components/DecoilingSection";
