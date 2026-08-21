@@ -12,7 +12,7 @@ interface StatItemProps {
 }
 
 const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatItemProps) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(number && !isNaN(parseInt(number)) ? parseInt(number) : 0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
   const shouldReduceMotion = useReducedMotion();
