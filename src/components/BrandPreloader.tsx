@@ -85,55 +85,44 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="fixed inset-0 z-[9999] bg-[#050505] flex flex-col items-center justify-center overflow-hidden"
+          className="fixed inset-0 z-[9999] bg-[#000000] flex flex-col items-center justify-center overflow-hidden"
         >
-          <div className="flex flex-col items-center w-full max-w-[90vw] sm:max-w-none">
-            {/* Logo and Name Lockup */}
+          <div className="flex flex-col items-center text-center">
+            {/* Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
-              className="flex items-center gap-4 sm:gap-6 mb-12"
+              transition={{ 
+                duration: 1.2, 
+                ease: [0.16, 1, 0.3, 1] 
+              }}
+              className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] flex items-center justify-center mb-8"
             >
-              {/* Logo */}
-              <div className="w-[70px] h-[70px] sm:w-[100px] sm:h-[100px] flex items-center justify-center">
-                <img
-                  src={sscLogo.url}
-                  alt="SSC Logo"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              {/* Text Lockup */}
-              <div className="flex flex-col justify-center border-l border-white/10 pl-4 sm:pl-6 py-1">
-                <h1 className="text-white text-[18px] sm:text-[24px] font-heading font-semibold tracking-[0.15em] leading-tight uppercase">
-                  SRINIVASA STEEL
-                </h1>
-                <h2 className="text-[#D9A400] text-[10px] sm:text-[12px] font-technical font-bold tracking-[0.3em] leading-tight uppercase mt-1">
-                  CORPORATION
-                </h2>
-              </div>
+              <img
+                src={sscLogo.url}
+                alt="SSC Logo"
+                className="w-full h-full object-contain"
+              />
             </motion.div>
 
-            {/* Loading Bar Section */}
-            <div className="w-[200px] sm:w-[280px] flex flex-col items-center">
-              <div className="w-full h-[1px] bg-white/10 relative overflow-hidden">
-                <motion.div
-                  className="absolute top-0 left-0 h-full bg-[#D9A400]"
-                  style={{ width: `${progress}%` }}
-                  transition={{ ease: "linear" }}
-                />
-              </div>
-              
-              <motion.span 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-                className="mt-4 text-[8px] sm:text-[9px] text-white/40 font-technical tracking-[0.25em] uppercase"
-              >
-                INITIALIZING EXPERIENCE
-              </motion.span>
-            </div>
+            {/* Company Name */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                delay: 0.6, 
+                duration: 1, 
+                ease: "easeOut" 
+              }}
+              className="flex flex-col items-center"
+            >
+              <h1 className="text-white text-[20px] sm:text-[28px] font-heading font-semibold tracking-[0.15em] leading-tight uppercase">
+                SRINIVASA STEEL
+              </h1>
+              <h2 className="text-[#D9A400] text-[11px] sm:text-[14px] font-technical font-bold tracking-[0.4em] leading-tight uppercase mt-2">
+                CORPORATION
+              </h2>
+            </motion.div>
           </div>
         </motion.div>
       )}
