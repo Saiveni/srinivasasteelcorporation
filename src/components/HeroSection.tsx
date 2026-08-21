@@ -112,7 +112,7 @@ export const HeroSection = () => {
                 </span>
                 <span className="text-white/20 lg:text-[#0B1B33]/20">—</span>
                 <span className="text-[11px] font-technical font-semibold tracking-[0.15em] text-[#D9A000] uppercase">
-                  VIJAYAWADA • VIZAG • GANNAVARAM
+                  VIJAYAWADA • VIZAG • GANNAVARAM • RAIPUR • ORISSA
                 </span>
               </div>
               
@@ -126,7 +126,7 @@ export const HeroSection = () => {
               
               {/* Description */}
               <p className="text-[17px] text-white/90 lg:text-[#0B1B33]/70 max-w-[500px] mb-8 leading-[1.65] font-normal">
-                Trusted supplier of TMT rebars, steel products and decoiling solutions for construction and industrial requirements.
+                Trusted supplier of TMT rebars, steel products and decoiling solutions for construction and industrial requirements since 1994.
               </p>
               
               {/* CTA Buttons */}
