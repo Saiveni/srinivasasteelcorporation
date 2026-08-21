@@ -7,29 +7,29 @@ const products = [
     index: "01",
     name: "TMT Rebars",
     description: "Premium grade thermo-mechanically treated steel bars engineered for superior structural integrity.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=1000",
-    alt: "Premium ribbed TMT reinforcement steel bars close-up in an organized industrial environment"
+    image: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&q=80&w=800",
+    alt: "Premium industrial photography of bundled ribbed TMT reinforcement steel bars"
   },
   {
     index: "02",
     name: "Binding Wire",
     description: "High-tensile annealed wire coils designed for precise and secure reinforcement anchoring.",
-    image: "https://images.unsplash.com/photo-1533035350221-afc0331c4b78?auto=format&fit=crop&q=80&w=1000",
+    image: "https://images.pexels.com/photos/15059762/pexels-photo-15059762.jpeg?auto=compress&cs=tinysrgb&w=800",
     alt: "Macro industrial view of high-quality annealed steel binding wire coils"
   },
   {
     index: "03",
     name: "Oil Rods",
     description: "Precision-engineered industrial steel rods optimized for specialized mechanical and structural applications.",
-    image: "https://images.unsplash.com/photo-1563285797-47671181f440?auto=format&fit=crop&q=80&w=1000",
-    alt: "Bundles of precision cylindrical industrial steel rods in a high-end manufacturing environment"
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800",
+    alt: "Precision industrial steel rods and machined components"
   },
   {
     index: "04",
     name: "Decoiling Services",
     description: "Advanced industrial steel coil processing, straightening and precision cutting to custom specifications.",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1000",
-    alt: "Professional industrial steel decoiling machinery processing high-grade metal coils"
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+    alt: "Professional industrial steel decoiling and coil processing facility"
   },
 ];
 
