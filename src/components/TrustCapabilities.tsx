@@ -34,7 +34,7 @@ export const TrustCapabilities = () => {
   const imageUrl = (rebarStraight as any)?.url || "";
 
   return (
-    <section className="relative w-full bg-[#F8F9FA] py-24 lg:py-32 overflow-hidden">
+    <section className="relative w-full bg-[#F4F6F8] py-24 lg:py-32 overflow-hidden border-t border-[#0B1B33]/5">
       {/* Technical Engineering Grid Overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]" 
            style={{ 
