@@ -40,7 +40,7 @@ export const AboutSection = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.3em] uppercase mb-4 block">
+              <span className="text-[#C5A059] text-[12px] font-technical font-bold tracking-[0.3em] uppercase mb-4 block">
                 Heritage & Presence
               </span>
               <h2 className="text-[38px] lg:text-[56px] text-ssc-navy font-heading leading-[1.1] mb-8 font-[600] tracking-tight uppercase">
@@ -62,7 +62,7 @@ export const AboutSection = () => {
                   <span className="text-[24px] font-heading text-ssc-navy font-bold">1994</span>
                   <span className="text-[10px] font-technical text-ssc-navy/40 uppercase tracking-widest">Established</span>
                 </div>
-                <div className="w-12 h-[1px] bg-ssc-gold/40" />
+                <div className="w-12 h-[1px] bg-[#C5A059]/40" />
                 <div className="flex flex-col">
                   <span className="text-[24px] font-heading text-ssc-navy font-bold">PRESENT</span>
                   <span className="text-[10px] font-technical text-ssc-navy/40 uppercase tracking-widest">Growth</span>
