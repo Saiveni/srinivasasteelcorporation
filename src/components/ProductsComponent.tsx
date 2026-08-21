@@ -343,15 +343,13 @@ export const ProductsComponent = () => {
                 </div>
               </div>
               
-              <Button 
-                onClick={() => {
-                  setSelectedProduct(null);
-                  setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                }}
-                className="w-full h-[70px] bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-2xl shadow-xl shadow-ssc-navy/10"
-              >
-                REQUEST A QUOTE <ArrowRight className="ml-3" size={20} />
-              </Button>
+              <Link to="/contact" onClick={() => setSelectedProduct(null)}>
+                <Button 
+                  className="w-full h-[70px] bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-2xl shadow-xl shadow-ssc-navy/10"
+                >
+                  REQUEST A QUOTE <ArrowRight className="ml-3" size={20} />
+                </Button>
+              </Link>
             </div>
           </div>
         </DialogContent>
