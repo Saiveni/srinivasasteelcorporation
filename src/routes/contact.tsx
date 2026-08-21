@@ -34,7 +34,7 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>) => {
     return {
-      product: (search['product'] as string) || undefined,
+      product: (search['product'] as string) || "",
     };
   },
   component: ContactPage,

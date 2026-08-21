@@ -88,7 +88,7 @@ export const Navbar = () => {
             })}
           </div>
           
-          <Link to="/contact">
+          <Link to="/contact" search={{ product: "" }}>
             <Button>
               GET A QUOTE <ArrowRight size={14} />
             </Button>
@@ -124,7 +124,7 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/contact" className="w-full" onClick={() => setIsOpen(false)}>
+              <Link to="/contact" search={{ product: "" }} className="w-full" onClick={() => setIsOpen(false)}>
                 <Button className="w-full">
                   GET A QUOTE
                 </Button>
