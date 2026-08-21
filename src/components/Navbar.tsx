@@ -33,9 +33,7 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center bg-[#F7F7F4] transition-all duration-300 ${
-        scrolled ? "h-[80px] shadow-sm border-b border-[#0B1B33]/5" : "h-[80px] border-b border-[#0B1B33]/5"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center bg-[#F7F7F4] transition-all duration-300 h-[80px] border-b border-[#0B1B33]/5 shadow-sm`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo Section */}

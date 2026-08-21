@@ -5,28 +5,19 @@ import { Button } from "@/components/ui/button";
 export const HeroSection = () => {
   return (
     <section className="relative w-full bg-[#F7F7F4] pt-[80px] overflow-hidden">
-      {/* Background Engineering Grid (Subtle) */}
-      <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.02]" 
-        style={{ 
-          backgroundImage: 'radial-gradient(#0B1B33 1px, transparent 1px)', 
-          backgroundSize: '40px 40px' 
-        }} 
-      />
-      
       <div className="container mx-auto px-6 max-w-[1440px]">
-        <div className="flex flex-col lg:flex-row items-stretch min-h-[600px] lg:min-h-[650px]">
+        <div className="flex flex-col lg:flex-row items-stretch min-h-[580px] lg:h-[620px]">
           
-          {/* Left Content: Fixed Safe Area for Typography */}
-          <div className="w-full lg:w-[46%] flex flex-col justify-center py-12 lg:py-16 z-10 lg:pl-16 lg:pr-12 relative">
+          {/* Left Content: 46% Width */}
+          <div className="w-full lg:w-[46%] flex flex-col justify-center py-12 lg:py-0 z-10 lg:pl-16 relative">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-[560px]"
             >
               {/* Eyebrow Label */}
-              <div className="flex items-center gap-3 mb-8">
+              <div className="flex items-center gap-3 mb-6">
                 <span className="text-[11px] font-heading font-semibold tracking-[0.25em] text-[#0B1B33] uppercase">
                   SINCE 1994
                 </span>
@@ -36,16 +27,16 @@ export const HeroSection = () => {
                 </span>
               </div>
               
-              {/* Headline: Sophisticated Architectural Hierarchy */}
-              <h1 className="text-[42px] sm:text-[52px] lg:text-[66px] font-heading font-medium leading-[1.0] text-[#0B1B33] mb-8 tracking-tight">
-                <span className="block mb-2">STRONGER STEEL.</span>
+              {/* Headline */}
+              <h1 className="text-[42px] sm:text-[52px] lg:text-[66px] font-heading font-semibold leading-[0.98] text-[#0B1B33] mb-7 tracking-tight">
+                <span className="block mb-1">STRONGER STEEL.</span>
                 <span className="block">
                   STRONGER <span className="text-[#D9A000]">TOMORROW.</span>
                 </span>
               </h1>
               
               {/* Description */}
-              <p className="text-[17px] text-[#0B1B33]/70 max-w-[500px] mb-12 leading-[1.65] font-normal">
+              <p className="text-[17px] text-[#0B1B33]/70 max-w-[500px] mb-8 leading-[1.65] font-normal">
                 Trusted supplier of TMT rebars, steel products and decoiling solutions for construction and industrial requirements.
               </p>
               
@@ -58,7 +49,7 @@ export const HeroSection = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-[#0B1B33]/15 bg-white text-[#0B1B33] hover:bg-[#0B1B33]/5 px-9 h-[56px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em]"
+                  className="border-[#0B1B33] bg-white text-[#0B1B33] hover:bg-[#0B1B33]/5 px-9 h-[56px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em]"
                 >
                   GET A QUOTE
                 </Button>
@@ -66,42 +57,46 @@ export const HeroSection = () => {
             </motion.div>
           </div>
           
-          {/* Right Image Container: Dominate 54% */}
-          <div className="w-full lg:w-[54%] relative mt-8 lg:mt-0 min-h-[450px] lg:min-h-full overflow-hidden lg:overflow-visible">
-            {/* Custom Architectural Sweeping Curve (Concave) */}
-            <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[400px] -ml-[200px] z-20 pointer-events-none">
+          {/* Right Image Content: 54% Width */}
+          <div className="w-full lg:w-[54%] relative mt-8 lg:mt-0 min-h-[400px] lg:min-h-full overflow-hidden">
+            {/* Custom Concave Architectural Sweeping Curve */}
+            <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[300px] -ml-[1px] z-20 pointer-events-none">
               <svg 
                 viewBox="0 0 100 100" 
                 preserveAspectRatio="none" 
                 className="w-full h-full fill-[#F7F7F4]"
               >
-                <path d="M100,0 Q30,0 30,50 T100,100 L100,100 L100,0 Z" transform="scale(-1, 1) translate(-100, 0)" />
+                {/* 
+                  Curve logic:
+                  Starts at top-right (relative to container) and sweeps concave toward bottom-right.
+                  Matches the requirement: begins upper-middle, sweeps lower-middle.
+                */}
+                <path d="M0,0 L100,0 C30,0 30,100 100,100 L0,100 Z" />
+              </svg>
+              {/* Gold Accent Line */}
+              <svg 
+                viewBox="0 0 100 100" 
+                preserveAspectRatio="none" 
+                className="absolute inset-0 w-full h-full pointer-events-none"
+              >
+                <path d="M100,0 C30,0 30,100 100,100" fill="none" stroke="#D9A000" strokeWidth="0.5" opacity="0.4" />
               </svg>
             </div>
             
             {/* Steel Image Content */}
             <motion.div 
-              initial={{ opacity: 0, scale: 1.05 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full h-full relative overflow-hidden bg-[#0B1B33] lg:rounded-l-[0px]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2 }}
+              className="w-full h-full relative"
             >
               <img
                 src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop"
                 alt="Bundles of premium ribbed TMT reinforcement steel bars"
-                className="w-full h-full object-cover grayscale-[0.1] contrast-[1.15] brightness-[0.85] origin-center"
+                className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
               />
-              
-              {/* Metallic Color Grade Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1B33]/40 via-transparent to-transparent mix-blend-overlay" />
-              
-              {/* Subtle Gold Line Highlight on the Curve (Desktop) */}
-              <div 
-                className="hidden lg:block absolute left-0 top-0 bottom-0 w-[1px] bg-[#D9A000]/30 z-30 opacity-40" 
-                style={{ 
-                  clipPath: 'path("M1,0 Q0.3,0 0.3,50 T1,100")',
-                }} 
-              />
+              {/* Metallic Overlay */}
+              <div className="absolute inset-0 bg-[#0B1B33]/10 mix-blend-multiply" />
             </motion.div>
           </div>
 
