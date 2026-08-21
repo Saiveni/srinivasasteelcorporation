@@ -98,7 +98,10 @@ export const SteelGallery = () => {
     if (nextIndex < 0) nextIndex = galleryItems.length - 1;
     if (nextIndex >= galleryItems.length) nextIndex = 0;
     
-    setSelectedImage(galleryItems[nextIndex].id);
+    const nextItem = galleryItems[nextIndex];
+    if (nextItem) {
+      setSelectedImage(nextItem.id);
+    }
   };
 
   return (
