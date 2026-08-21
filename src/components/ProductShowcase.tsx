@@ -14,7 +14,7 @@ const products = [
     index: "02",
     name: "Binding Wire",
     description: "High-tensile annealed wire coils designed for precise and secure reinforcement anchoring.",
-    image: "https://images.unsplash.com/photo-1530124560677-bdaedba6960d?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800",
     alt: "Macro industrial view of high-quality annealed steel binding wire coils"
   },
   {
