@@ -103,8 +103,8 @@ export const AboutSection = () => {
         <div className="relative min-h-[600px] lg:min-h-0 pt-10 pb-20 lg:pt-32 lg:pb-32">
           
           {/* THE STEEL ROD (Desktop & Mobile) */}
-          <div className="absolute top-0 bottom-0 left-6 lg:left-0 lg:top-1/2 lg:bottom-auto lg:w-full lg:h-16 lg:-translate-y-1/2 z-10 flex items-center">
-            <div className="relative w-full h-full lg:h-16">
+          <div className="absolute top-0 bottom-0 left-6 lg:left-0 lg:top-1/2 lg:bottom-auto lg:w-full lg:h-12 lg:-translate-y-1/2 z-10 flex items-center">
+            <div className="relative w-full h-full lg:h-12">
               
               {/* TMT REBAR BODY */}
               <motion.div 
@@ -112,39 +112,45 @@ export const AboutSection = () => {
                   width: "100%", 
                   opacity: rodOpacity,
                 }}
-                className="absolute inset-0 rounded-full overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] w-8 lg:w-full"
+                className="absolute inset-0 w-6 lg:w-full shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
               >
-                {/* 3D Steel Texture - Improved contrast for realism */}
-                <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-b from-[#1a1c20] via-[#464c57] to-[#121417]" />
+                {/* 3D Steel Cylinder Base */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-b from-[#0f1115] via-[#3a3f47] to-[#0a0c10] border-t border-white/5" />
                 
-                {/* Real TMT Ribbing - High definition pattern */}
-                <div className="absolute inset-0 opacity-60 mix-blend-overlay" 
+                {/* High-Realism Ribbing Pattern */}
+                <div className="absolute inset-0 opacity-80 mix-blend-overlay rounded-full" 
                      style={{ 
-                       backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 12px, rgba(0,0,0,0.8) 12px, rgba(0,0,0,0.8) 15px)',
+                       backgroundImage: `repeating-linear-gradient(
+                         135deg, 
+                         transparent, 
+                         transparent 8px, 
+                         rgba(0,0,0,0.9) 8px, 
+                         rgba(0,0,0,0.9) 12px, 
+                         rgba(255,255,255,0.05) 12px, 
+                         rgba(255,255,255,0.05) 14px
+                       )`,
                        backgroundSize: '40px 100%'
                      }} 
                 />
-                
-                {/* Steel Grain/Noise */}
-                <div className="absolute inset-0 opacity-[0.1] mix-blend-soft-light bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
 
-                {/* Sheen Highlight */}
+                {/* Metallic Longitudinal Ribs (Horizontal Lines) */}
+                <div className="absolute top-[20%] left-0 w-full h-[1px] bg-black/40" />
+                <div className="absolute bottom-[20%] left-0 w-full h-[1px] bg-white/5" />
+                
+                {/* Steel Grain and Weathering */}
+                <div className="absolute inset-0 opacity-[0.15] mix-blend-soft-light bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] rounded-full" />
+
+                {/* Animated Sheen Highlight */}
                 <motion.div 
                   animate={{ 
                     x: ["-100%", "200%"],
                   }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-20deg]"
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-30deg]"
                 />
 
-                {/* Scroll Reveal Animation Overlay */}
-                <motion.div 
-                  style={{ 
-                    scaleX: rodReveal, 
-                    transformOrigin: "left"
-                  }}
-                  className="absolute inset-0 bg-[#C5A059]/20 mix-blend-screen hidden lg:block"
-                />
+                {/* End Cap (Conical effect for desktop) */}
+                <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-black/80 to-transparent rounded-r-full hidden lg:block" />
               </motion.div>
 
               {/* MACHINED NODES (Desktop only for horizontal) */}
@@ -159,18 +165,23 @@ export const AboutSection = () => {
                       transition: { delay: 0.5 + (i * 0.2), duration: 0.8, ease: cubicBezier }
                     }}
                     viewport={{ once: true }}
-                    className="relative w-10 h-16 flex items-center justify-center group"
+                    className="relative w-8 h-20 flex items-center justify-center group"
                   >
-                    {/* Machine collar sleeve */}
-                    <div className="absolute w-full h-full bg-gradient-to-b from-[#4a505c] via-[#2b3039] to-[#1a1d22] rounded-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.4)]" />
+                    {/* Machine connection point */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#333] via-[#555] to-[#222] rounded-[4px] border border-white/10 shadow-2xl" />
+                    
+                    {/* The "O-Ring" / Pin */}
                     <motion.div 
                       whileInView={{ 
                         backgroundColor: "#C5A059",
-                        boxShadow: "0 0 25px rgba(197,160,89,0.8)",
+                        boxShadow: "0 0 20px rgba(197,160,89,0.8)",
                         transition: { delay: 0.7 + (i * 0.2), duration: 1 }
                       }}
-                      className="w-4 h-4 rounded-full bg-[#111] z-10 transition-colors border border-white/20" 
-                    />
+                      className="w-4 h-4 rounded-full bg-[#111] z-10 border border-white/20 relative" 
+                    >
+                      {/* Gold ring around pin */}
+                      <div className="absolute -inset-1 rounded-full border border-[#C5A059]/40" />
+                    </motion.div>
                   </motion.div>
                 ))}
               </div>
@@ -192,8 +203,8 @@ export const AboutSection = () => {
                 className={`flex flex-col relative ${milestone.align === 'top' ? 'lg:pb-32' : 'lg:pt-32'}`}
               >
                 {/* Mobile Machined Node */}
-                <div className="absolute left-[-68px] top-6 lg:hidden w-10 h-12 bg-gradient-to-b from-[#4a505c] to-[#1a1d22] rounded-md flex items-center justify-center shadow-xl">
-                  <div className="w-3 h-3 rounded-full bg-[#C5A059] shadow-[0_0_20px_rgba(197,160,89,0.6)]" />
+                <div className="absolute left-[-68px] top-6 lg:hidden w-8 h-12 bg-gradient-to-b from-[#333] to-[#1a1d22] rounded-[4px] flex items-center justify-center shadow-xl border border-white/5">
+                  <div className="w-3 h-3 rounded-full bg-[#C5A059] shadow-[0_0_15px_rgba(197,160,89,0.8)] border border-white/20" />
                 </div>
 
                 {/* Content Box - Placed strategically relative to the rod */}
