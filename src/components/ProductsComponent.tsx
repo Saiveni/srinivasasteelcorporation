@@ -63,14 +63,14 @@ export const ProductsComponent = () => {
   return (
     <div className="bg-[#F4F6F8] min-h-screen">
       {/* Product Page Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white border-b border-black/5">
+      <section className="relative pt-32 pb-14 lg:pt-48 lg:pb-24 overflow-hidden bg-white border-b border-black/5">
         <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none"
              style={{ 
                backgroundImage: 'linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)',
                backgroundSize: '100px 100px'
              }} 
         />
-        <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
+        <div className="container-wide relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
             <div className="w-full lg:w-1/2">
               <motion.div
@@ -90,7 +90,6 @@ export const ProductsComponent = () => {
                 </p>
                 <Button 
                   onClick={() => document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-bold uppercase rounded-none px-10 h-[60px] text-[13px] tracking-[0.2em]"
                 >
                   VIEW CATALOGUE <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -101,7 +100,7 @@ export const ProductsComponent = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="relative aspect-[4/3] lg:aspect-[5/4] rounded-[24px] overflow-hidden border border-black/5 shadow-2xl"
+                className="relative aspect-[4/3] lg:aspect-[5/4] rounded-[24px] overflow-hidden border border-black/5 shadow-2xl shadow-ssc-navy/5"
               >
                 <img 
                   src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" 
@@ -116,8 +115,8 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Product Category Grid */}
-      <section id="product-grid" className="py-24 lg:py-32">
-        <div className="container mx-auto px-6 max-w-[1280px]">
+      <section id="product-grid" className="section-spacing">
+        <div className="container-wide">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {products.map((product, index) => (
               <motion.div
@@ -129,7 +128,7 @@ export const ProductsComponent = () => {
                 className="group cursor-pointer"
                 onClick={() => setSelectedProduct(product)}
               >
-                <div className="bg-white rounded-[20px] border border-black/[0.04] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden transition-all duration-500 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] group-hover:-translate-y-2">
+                <div className="bg-white rounded-[24px] border border-black/[0.04] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden transition-all duration-500 group-hover:shadow-[0_16px_48px_rgba(0,0,0,0.06)] group-hover:-translate-y-1">
                   <div className="aspect-[16/9] overflow-hidden bg-[#F8FAFC]">
                     <motion.img 
                       src={product.image} 
@@ -158,7 +157,7 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Decoiling Feature Section */}
-      <section className="relative py-24 lg:py-32 bg-[#0A121E] overflow-hidden">
+      <section className="relative section-spacing bg-[#0A121E] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={(rebarCoils as any)?.url || "/placeholder.svg"} 
@@ -167,7 +166,7 @@ export const ProductsComponent = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A121E] via-[#0A121E]/90 to-transparent" />
         </div>
-        <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
+        <div className="container-wide relative z-10">
           <div className="max-w-[700px]">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -186,9 +185,7 @@ export const ProductsComponent = () => {
                 We provide high-precision decoiling solutions for applicable steel sizes and lengths, ensuring your material is straightened and cut to meet exact project specifications.
               </p>
               <Link to="/contact" search={{ product: "DECOILED STEEL" }}>
-                <Button 
-                  className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-bold uppercase rounded-none px-10 h-[60px] text-[13px] tracking-[0.2em]"
-                >
+                <Button className="w-full sm:w-auto">
                   ENQUIRE ABOUT DECOILING <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
@@ -198,8 +195,8 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Brands / Supply Partners */}
-      <section className="py-24 bg-white border-y border-black/5">
-        <div className="container mx-auto px-6 max-w-[1280px]">
+      <section className="py-14 bg-white border-y border-black/5">
+        <div className="container-wide">
           <div className="text-center mb-16">
             <span className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
               SUPPLY NETWORK
@@ -231,8 +228,8 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Product Quality Section */}
-      <section className="py-24 lg:py-32 bg-[#F4F6F8]">
-        <div className="container mx-auto px-6 max-w-[1280px]">
+      <section className="section-spacing bg-[#F4F6F8]">
+        <div className="container-wide">
           <div className="text-center mb-20">
             <h2 className="text-[32px] lg:text-[42px] text-ssc-navy font-heading font-semibold tracking-tight uppercase">
               QUALITY. AVAILABILITY. <span className="text-ssc-gold">SUPPLY.</span>
@@ -264,13 +261,13 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 lg:py-32 bg-ssc-navy relative overflow-hidden text-white text-center">
+      <section className="section-spacing bg-ssc-navy relative overflow-hidden text-white text-center">
         <div className="absolute inset-0 z-0 opacity-10"
              style={{ 
                backgroundImage: 'radial-gradient(circle at center, #D9A000 0%, transparent 70%)',
              }} 
         />
-        <div className="container mx-auto px-6 max-w-[900px] relative z-10">
+        <div className="container-wide relative z-10 flex flex-col items-center">
           <h2 className="text-[42px] lg:text-[64px] font-heading font-semibold leading-[1.1] mb-8 tracking-tight uppercase">
             LOOKING FOR THE <br />
             <span className="text-ssc-gold">RIGHT STEEL?</span>
@@ -279,17 +276,17 @@ export const ProductsComponent = () => {
             Tell us your requirement and our team can help you with the appropriate steel product or decoiling solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact" search={{ product: "" }}>
+            <Link to="/contact" search={{ product: "" }} className="w-full sm:w-auto">
               <Button 
-                className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest w-full sm:w-auto"
+                className="w-full"
               >
                 GET A QUOTE <ArrowRight className="ml-3" size={20} />
               </Button>
             </Link>
-            <Link to="/contact" search={{ product: "" }}>
+            <Link to="/contact" search={{ product: "" }} className="w-full sm:w-auto">
               <Button 
                 variant="outline"
-                className="border-white/20 hover:bg-white/5 text-white font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest w-full sm:w-auto"
+                className="w-full border-white/20 hover:bg-white/5 text-white"
               >
                 CONTACT US
               </Button>
