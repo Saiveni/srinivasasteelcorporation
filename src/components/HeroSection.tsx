@@ -12,30 +12,24 @@ import rebarWarehouse from "@/assets/rebar-warehouse.jpg.asset.json";
 // @ts-ignore
 import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
 
-interface HeroImage {
-  url: string;
-  alt: string;
-  position: string;
-}
-
-const HERO_IMAGES: HeroImage[] = [
+const HERO_IMAGES = [
   {
-    url: rebarCoils?.url || "",
+    url: (rebarCoils as { url: string })?.url || "",
     alt: "Premium TMT reinforcement steel coils",
     position: "center center"
   },
   {
-    url: rebarStraight?.url || "",
+    url: (rebarStraight as { url: string })?.url || "",
     alt: "Bundled TMT steel bars ready for dispatch",
     position: "center center"
   },
   {
-    url: rebarWarehouse?.url || "",
+    url: (rebarWarehouse as { url: string })?.url || "",
     alt: "Industrial steel reinforcement stock warehouse",
     position: "center center"
   },
   {
-    url: rebarDetail?.url || "",
+    url: (rebarDetail as { url: string })?.url || "",
     alt: "High-quality ribbed TMT reinforcement steel detail",
     position: "center center"
   }
