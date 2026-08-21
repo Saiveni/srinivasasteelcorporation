@@ -121,9 +121,10 @@ export const AboutSection = () => {
     target: sectionRef,
     offset: ["start end", "end start"]
   });
-
-  const rodReveal = useTransform(scrollYProgress, [0.05, 0.4], ["0%", "100%"]);
-  const rodOpacity = useTransform(scrollYProgress, [0.05, 0.1], [0, 1]);
+  
+  // Refined scroll triggers to match the reference animation feel
+  const rodReveal = useTransform(scrollYProgress, [0.1, 0.4], ["0%", "100%"]);
+  const rodOpacity = useTransform(scrollYProgress, [0.1, 0.15], [0, 1]);
   
   const milestones = [
     {
@@ -160,23 +161,19 @@ export const AboutSection = () => {
     >
       {/* INDUSTRIAL ARCHITECTURAL AMBIANCE */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle Engineering Grid (Blueprint Style) */}
-        <div className="absolute inset-0 opacity-[0.015]" 
+        {/* Engineering Grid (Matches Reference) */}
+        <div className="absolute inset-0 opacity-[0.03]" 
              style={{ 
                backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
-               backgroundSize: '120px 120px'
+               backgroundSize: '100px 100px'
              }} 
         />
-        {/* Volumetric Dark Gradients */}
-        <div className="absolute top-0 left-0 w-full h-[300px] bg-gradient-to-b from-black to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-[300px] bg-gradient-to-t from-black to-transparent" />
-        
-        {/* Deep Steel Atmosphere */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-[#0A1A2F] rounded-full blur-[200px] opacity-40" />
+        {/* Volumetric atmosphere from the image */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(20,30,50,1)_0%,rgba(5,10,20,1)_100%)] opacity-60" />
       </div>
 
       <div className="container-wide relative z-10">
-        {/* HEADER BLOCK */}
+        {/* HEADER BLOCK - EXACTLY AS REFERENCE */}
         <div className="text-center mb-40 lg:mb-64">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -185,17 +182,18 @@ export const AboutSection = () => {
             transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-8 h-[1px] bg-[#C5A059]/30" />
-              <span className="text-[#C5A059] text-xs font-technical font-bold tracking-[0.6em] uppercase">
+              <div className="w-8 h-[1px] bg-[#C5A059]/40" />
+              <span className="text-[#C5A059] text-[11px] font-technical font-bold tracking-[0.5em] uppercase">
                 OUR JOURNEY
               </span>
-              <div className="w-8 h-[1px] bg-[#C5A059]/30" />
+              <div className="w-8 h-[1px] bg-[#C5A059]/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold leading-[1] mb-12 tracking-tight uppercase">
+            <h2 className="text-[48px] lg:text-[96px] text-white font-heading font-extrabold leading-[1] mb-12 tracking-tight uppercase">
               STRONG ROOTS.<br />
-              <span className="text-[#C5A059]">STRONGER FUTURE.</span>
+              <span className="text-white">STRONGER </span>
+              <span className="text-[#C5A059]">FUTURE.</span>
             </h2>
-            <p className="text-white/60 text-base lg:text-[18px] font-medium max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/70 text-base lg:text-[20px] font-medium max-w-2xl mx-auto leading-relaxed">
               From a strong beginning in 1994 to becoming a trusted steel supplier across multiple locations, our journey is built on quality, trust and consistent delivery.
             </p>
           </motion.div>
@@ -204,80 +202,84 @@ export const AboutSection = () => {
         {/* TIMELINE INSTALLATION */}
         <div className="relative pb-40">
           
-          {/* THE 3D TMT REINFORCEMENT STEEL ROD */}
+          {/* THE 3D TMT REINFORCEMENT STEEL ROD (Silver/Steel as requested) */}
           <div className="relative lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-20 z-10 flex justify-center mb-32 lg:mb-0">
             <div className="relative w-full max-w-[1300px] h-full flex justify-center lg:block">
               
-              {/* DESKTOP: Cylindrical TMT Rebar */}
+              {/* DESKTOP: Cylindrical Silver/Steel TMT Rebar */}
               <div className="hidden lg:block relative w-full h-16 group">
                 <motion.div 
                   style={{ width: rodReveal, opacity: rodOpacity }}
-                  className="absolute inset-0 shadow-[0_30px_60px_rgba(0,0,0,0.9)] rounded-full overflow-hidden"
+                  className="absolute inset-0 shadow-[0_40px_80px_rgba(0,0,0,0.8)] rounded-full overflow-hidden"
                 >
-                  {/* Heavy Steel Base Cylinder (Gold TMT Rod) */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#8A6D3B] via-[#F5D48E] to-[#8A6D3B] shadow-[inset_0_2px_10px_rgba(255,255,255,0.4)]" />
+                  {/* Heavy Steel/Silver Base Cylinder */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#333b45] via-[#a1a8b5] to-[#242b33] shadow-[inset_0_2px_15px_rgba(255,255,255,0.4)]" />
                   
-                  {/* High-Definition TMT Reinforcement Ribs (Diagonal) */}
-                  <div className="absolute inset-0 opacity-80 mix-blend-multiply" 
+                  {/* High-Definition TMT Reinforcement Ribs (Silver) */}
+                  <div className="absolute inset-0 opacity-100 mix-blend-overlay" 
                        style={{ 
                          backgroundImage: `repeating-linear-gradient(
                            125deg, 
                            transparent, 
                            transparent 12px, 
-                           rgba(0,0,0,0.5) 12px, 
-                           rgba(0,0,0,0.5) 16px
+                           rgba(0,0,0,0.8) 12px, 
+                           rgba(0,0,0,0.8) 18px, 
+                           rgba(255,255,255,0.2) 18px, 
+                           rgba(255,255,255,0.2) 20px
                          )`,
-                         backgroundSize: '40px 100%'
+                         backgroundSize: '50px 100%'
                        }} 
                   />
 
-                  {/* Dual Longitudinal Main Ribs (Gold) */}
-                  <div className="absolute top-[30%] left-0 w-full h-[2px] bg-[#C5A059] shadow-[0_1px_2px_rgba(0,0,0,0.3)]" />
-                  <div className="absolute bottom-[30%] left-0 w-full h-[2px] bg-[#C5A059] shadow-[0_-1px_2px_rgba(0,0,0,0.3)]" />
+                  {/* Dual Longitudinal Main Ribs (Steel) */}
+                  <div className="absolute top-[30%] left-0 w-full h-[3px] bg-[#5a626d] shadow-[0_2px_4px_rgba(0,0,0,0.4)]" />
+                  <div className="absolute bottom-[30%] left-0 w-full h-[2px] bg-[#3a4149] shadow-[0_-1px_2px_rgba(0,0,0,0.4)]" />
 
                   {/* "SSC TMT 500 D" Stamped on Rod */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-8 opacity-40">
-                    <span className="text-[14px] font-black text-black tracking-[1em]">SSC TMT 500 D</span>
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-8 opacity-60">
+                    <span className="text-[16px] font-black text-[#1a1f26] tracking-[1.2em]">SSC TMT 500 D</span>
                   </div>
                   
-                  {/* Cinematic Highlights (Curved Surface) */}
-                  <div className="absolute top-0 inset-x-0 h-[20%] bg-white/30" />
+                  {/* Cinematic Silver Highlights */}
+                  <div className="absolute top-0 inset-x-0 h-[30%] bg-white/40" />
                   
                   {/* Animated Steel Shine Sweep */}
                   <motion.div 
                     animate={{ x: ["-100%", "200%"] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-30deg]"
+                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-[-30deg]"
                   />
 
-                  {/* Industrial End Caps */}
-                  <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-black/80 to-transparent" />
-                  <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-black/80 to-transparent" />
+                  {/* Industrial End Caps (Rounded like reference) */}
+                  <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-black/60 to-transparent rounded-l-full" />
+                  <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-black/60 to-transparent rounded-r-full" />
                 </motion.div>
               </div>
 
-              {/* MOBILE: Vertical Gold TMT Rebar */}
+              {/* MOBILE: Vertical Silver TMT Rebar (Matches phone view in reference) */}
               <div className="lg:hidden relative w-14 h-[1200px]">
                 <motion.div 
                   style={{ height: rodReveal, opacity: rodOpacity }}
-                  className="absolute inset-0 shadow-[20px_0_40px_rgba(0,0,0,0.9)] rounded-full overflow-hidden"
+                  className="absolute inset-0 shadow-[20px_0_40px_rgba(0,0,0,0.8)] rounded-full overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#8A6D3B] via-[#F5D48E] to-[#8A6D3B]" />
-                  <div className="absolute inset-0 opacity-80 mix-blend-multiply" 
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#333b45] via-[#a1a8b5] to-[#242b33]" />
+                  <div className="absolute inset-0 opacity-100 mix-blend-overlay" 
                        style={{ 
                          backgroundImage: `repeating-linear-gradient(
                            35deg, 
                            transparent, 
                            transparent 12px, 
-                           rgba(0,0,0,0.5) 12px, 
-                           rgba(0,0,0,0.5) 16px
+                           rgba(0,0,0,0.8) 12px, 
+                           rgba(0,0,0,0.8) 18px, 
+                           rgba(255,255,255,0.2) 18px, 
+                           rgba(255,255,255,0.2) 20px
                          )`,
-                         backgroundSize: '100% 40px'
+                         backgroundSize: '100% 50px'
                        }} 
                   />
-                  {/* Vertical Ribs */}
-                  <div className="absolute left-[30%] top-0 h-full w-[2px] bg-[#C5A059]" />
-                  <div className="absolute right-[30%] top-0 h-full w-[2px] bg-[#C5A059]" />
+                  {/* Vertical Reinforcement Ribs */}
+                  <div className="absolute left-[30%] top-0 h-full w-[3px] bg-[#5a626d]" />
+                  <div className="absolute right-[30%] top-0 h-full w-[2px] bg-[#3a4149]" />
                 </motion.div>
               </div>
             </div>
@@ -285,15 +287,15 @@ export const AboutSection = () => {
 
           {/* HANGING INSTALLATION GRID */}
           <div className="relative z-20">
-            {/* Desktop Presentation */}
-            <div className="hidden lg:grid grid-cols-4 gap-12 pt-36 max-w-[1300px] mx-auto">
+            {/* Desktop Presentation (Matches Reference Layout) */}
+            <div className="hidden lg:grid grid-cols-4 gap-12 pt-48 max-w-[1300px] mx-auto">
               {milestones.map((m, i) => (
                 <MilestoneCard key={i} index={i} {...m} />
               ))}
             </div>
 
-            {/* Mobile Presentation */}
-            <div className="lg:hidden flex flex-col items-center pl-24">
+            {/* Mobile Presentation (Matches Phone view in Reference) */}
+            <div className="lg:hidden flex flex-col items-center pl-24 pt-20">
               {milestones.map((m, i) => (
                 <MilestoneCard key={i} index={i} {...m} isMobile />
               ))}
@@ -301,19 +303,19 @@ export const AboutSection = () => {
           </div>
         </div>
 
-        {/* TRUST ACCREDITATION FOOTER */}
-        <div className="mt-20 pt-20 border-t border-white/5">
+        {/* BOTTOM ICON STRIP (EXACTLY AS REFERENCE) */}
+        <div className="mt-20 pt-20 border-t border-white/10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 1.2 }}
-            className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8"
+            className="flex flex-wrap justify-center lg:justify-between items-center gap-12 lg:gap-8 max-w-[1100px] mx-auto"
           >
-            <TrustIcon icon={ShieldCheck} text="30+ Years of Trust" />
-            <TrustIcon icon={Construction} text="Premium Steel Products" />
-            <TrustIcon icon={Award} text="Quality & Reliability" />
-            <TrustIcon icon={Truck} text="Timely Supply Pan India" />
+            <TrustIcon icon={ShieldCheck} text="30+ YEARS OF TRUST" />
+            <TrustIcon icon={Construction} text="PREMIUM STEEL PRODUCTS" />
+            <TrustIcon icon={Award} text="QUALITY & RELIABILITY" />
+            <TrustIcon icon={Truck} text="TIMELY SUPPLY PAN INDIA" />
           </motion.div>
         </div>
       </div>
