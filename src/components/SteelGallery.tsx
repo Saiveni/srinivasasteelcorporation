@@ -14,7 +14,7 @@ const assets = {
   steelCoils: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
   steelStock: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
   steelLoading: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-  wireProducts: "https://images.unsplash.com/photo-1530982011887-3cc11bb8641a?q=80&w=1200&auto=format&fit=crop",
+  wireProducts: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?q=80&w=1200&auto=format&fit=crop",
 };
 
 const galleryItems = [
