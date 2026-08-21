@@ -83,9 +83,7 @@ export const HeroSection = () => {
               <img
                 src="https://images.unsplash.com/photo-1541625602330-2277a4c4b28d?q=80&w=2000&auto=format&fit=crop"
                 alt="Premium bundles of ribbed TMT reinforcement steel bars in industrial stockyard"
-                className="w-full h-full object-cover contrast-[1.08] brightness-[0.98] transition-opacity duration-500"
-                onLoad={(e) => (e.currentTarget.style.opacity = "1")}
-                style={{ opacity: 0 }}
+                className="w-full h-full object-cover contrast-[1.08] brightness-[0.98]"
               />
               {/* Subtle lighting overlay for depth */}
               <div className="absolute inset-0 bg-gradient-to-r from-[#F7F7F4]/20 via-transparent to-transparent lg:from-[#F7F7F4]/30" />
