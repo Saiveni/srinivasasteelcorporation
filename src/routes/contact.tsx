@@ -108,7 +108,7 @@ function ContactPage() {
           <div className="absolute inset-0 bg-gradient-to-r from-ssc-navy via-ssc-navy/80 to-transparent" />
         </div>
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container-wide relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -130,8 +130,8 @@ function ContactPage() {
       </section>
 
       {/* Quote Form & Team Info */}
-      <section className="py-20 bg-[#F7F7F4]">
-        <div className="container mx-auto px-6 max-w-[1280px]">
+      <section className="section-spacing bg-[#F7F7F4]">
+        <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
             {/* Quote Form - Left Column */}
@@ -143,7 +143,7 @@ function ContactPage() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
-                    className="bg-white rounded-[32px] p-12 shadow-sm border border-black/5 text-center"
+                    className="bg-white rounded-[24px] p-8 lg:p-12 shadow-sm border border-black/5 text-center"
                   >
                     <div className="w-20 h-20 bg-ssc-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
                       <Check className="text-ssc-gold" size={40} />
@@ -156,7 +156,6 @@ function ContactPage() {
                     </p>
                     <Button 
                       asChild
-                      className="bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-bold uppercase rounded-xl px-10 h-14"
                     >
                       <Link to="/">BACK TO HOME</Link>
                     </Button>
@@ -166,7 +165,7 @@ function ContactPage() {
                     key="form"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5"
+                    className="bg-white rounded-[24px] p-6 sm:p-8 md:p-12 shadow-sm border border-black/5"
                   >
                     <h2 id="quote-form" className="text-3xl font-heading font-bold text-ssc-navy mb-10 tracking-tight uppercase">
                       REQUEST A QUOTE
@@ -288,9 +287,9 @@ function ContactPage() {
                       <Button 
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full h-16 bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3 disabled:opacity-70"
+                        className="w-full flex items-center justify-center gap-3 disabled:opacity-70"
                       >
-                        {isSubmitting ? "SENDING..." : "REQUEST QUOTE"} <ArrowRight size={20} className="text-ssc-gold" />
+                        {isSubmitting ? "SENDING..." : "REQUEST QUOTE"} <ArrowRight size={20} className="text-[#0B1B33]" />
                       </Button>
                     </form>
                   </motion.div>
@@ -310,7 +309,7 @@ function ContactPage() {
                 </h3>
                 <div className="space-y-6">
                   {team.map((person) => (
-                    <div key={person.phone} className="flex items-center gap-5 p-6 bg-white rounded-2xl border border-black/5 hover:border-ssc-gold/30 transition-all group">
+                    <div key={person.phone} className="flex items-center gap-5 p-6 bg-white rounded-[24px] border border-black/5 hover:border-ssc-gold/30 transition-all group">
                       <div className="w-12 h-12 rounded-full bg-ssc-navy/5 flex items-center justify-center group-hover:bg-ssc-navy transition-colors">
                         <User size={20} className="text-ssc-navy group-hover:text-white" />
                       </div>
@@ -322,7 +321,7 @@ function ContactPage() {
                       </div>
                     </div>
                   ))}
-                  <div className="flex items-center gap-5 p-6 bg-white rounded-2xl border border-black/5 hover:border-ssc-gold/30 transition-all group">
+                  <div className="flex items-center gap-5 p-6 bg-white rounded-[24px] border border-black/5 hover:border-ssc-gold/30 transition-all group">
                     <div className="w-12 h-12 rounded-full bg-ssc-navy/5 flex items-center justify-center group-hover:bg-ssc-navy transition-colors">
                       <Mail size={20} className="text-ssc-navy group-hover:text-white" />
                     </div>
