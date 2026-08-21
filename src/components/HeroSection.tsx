@@ -109,10 +109,7 @@ export const HeroSection = () => {
               {/* Eyebrow Label */}
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-[11px] font-heading font-semibold tracking-[0.25em] text-white lg:text-[#0B1B33] uppercase">
-                  '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-                                        
-                                            
-                                            Please remove this attached hero section image
+                  SINCE 1994
                 </span>
                 <span className="text-white/20 lg:text-[#0B1B33]/20">—</span>
                 <span className="text-[11px] font-technical font-semibold tracking-[0.15em] text-[#D9A000] uppercase">
