@@ -340,7 +340,7 @@ export const ProductsComponent = () => {
                 </div>
               </div>
               
-              <Link to="/contact" search={{ product: selectedProduct?.name }} onClick={() => setSelectedProduct(null)}>
+              <Link to="/contact" search={{ product: selectedProduct?.name || "" }} onClick={() => setSelectedProduct(null)}>
                 <Button className="w-full h-16 bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3">
                   REQUEST QUOTE <ArrowRight size={20} className="text-ssc-gold" />
                 </Button>
