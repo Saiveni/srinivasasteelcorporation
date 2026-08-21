@@ -12,7 +12,7 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 // Premium industrial photography of TMT bars in a yard
-const tmtHeroImage = "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=2000";
+const tmtHeroImage = "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000";
 
 export const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
