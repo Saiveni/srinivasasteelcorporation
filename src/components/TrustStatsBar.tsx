@@ -12,49 +12,13 @@ interface StatItemProps {
 }
 
 const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatItemProps) => {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const shouldReduceMotion = useReducedMotion();
-
-  useEffect(() => {
-    if (!number || isNaN(parseInt(number))) {
-      return;
-    }
-
-    if (shouldReduceMotion) {
-      setCount(parseInt(number));
-      return;
-    }
-
-    if (isInView) {
-      let start = 0;
-      const end = parseInt(number);
-      const duration = 1400;
-      const increment = end / (duration / 16);
-      
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-      
-      return () => clearInterval(timer);
-    }
-    return () => {};
-  }, [isInView, number, shouldReduceMotion]);
-
-  const displayValue = number && !isNaN(parseInt(number)) ? count : number;
+  const displayValue = number;
 
   return (
     <motion.div 
-      ref={ref} 
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col items-center lg:items-start text-center lg:text-left px-6 py-4 group"
     >
@@ -80,7 +44,7 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
 export const TrustStatsBar = () => {
   const stats = [
     { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / QUALITY", icon: Award },
-    { number: "3", suffix: "", label: "Locations", subLabel: "02 / NETWORK", icon: MapPin },
+    { number: "3", suffix: "", label: "Business Locations", subLabel: "02 / NETWORK", icon: MapPin },
     { number: "TMT", suffix: "", label: "Steel Products", subLabel: "03 / MATERIAL", icon: Factory },
     { number: "STEEL", suffix: "", label: "Products", subLabel: "04 / DISTRIBUTION", icon: Settings2 },
   ];

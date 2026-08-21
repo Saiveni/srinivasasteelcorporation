@@ -23,7 +23,7 @@ const CAPABILITIES = [
   {
     index: "04",
     title: "DIRECT LOADS & SUPPLY",
-    description: "Supply support for requirements across the company's established service locations.",
+    description: "Supply support for industrial and construction requirements across the company's service locations.",
     icon: Truck
   }
 ];
@@ -75,7 +75,7 @@ export const TrustCapabilities = () => {
 
               {/* Business Description */}
               <p className="text-[18px] text-[#0B1B33]/70 max-w-[540px] leading-[1.75] font-normal mb-0 border-l-2 border-[#D9A000]/20 pl-6 lg:pl-8">
-                Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements, with expertise in TMT rebars, steel products, wire products and decoiling solutions.
+                Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements, specializing in TMT rebars, steel products, wire products and decoiling solutions.
               </p>
             </motion.div>
           </div>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export const BrandStrip = () => {
   const brands = [
-    { name: "Vizag Steel", logo: "VIZAG STEEL", subtitle: "RINL MoU Partner" },
+    { name: "Vizag Steel", logo: "VIZAG STEEL", subtitle: "MoU Dealer" },
     { name: "Jindal Panther", logo: "JINDAL PANTHER", subtitle: "TMT Rebars Dealer" },
     { name: "Simhadri TMT", logo: "SIMHADRI TMT", subtitle: "Supply Partner" }
   ];

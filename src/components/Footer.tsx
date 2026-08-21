@@ -25,7 +25,7 @@ export const Footer = () => {
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
-              Building the nation's foundation since 1994. Premium TMT steel and industrial supply solutions for enterprise-grade infrastructure.
+              Trusted steel and TMT supplier serving construction and industrial requirements since 1994.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export const Footer = () => {
                 <div className="flex flex-col">
                   <span className="text-sm">9440170453 (M.S.V. Bhaskar)</span>
                   <span className="text-sm">9849600403 (M.V. Ramana Kumar)</span>
-                  <span className="text-sm">8125397453 (M. Yeswanth)</span>
+                  <span className="text-sm">8125397453 (M.V.N.M. Yeshwanth)</span>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">

@@ -112,7 +112,7 @@ export const SteelGallery = () => {
                 IN ITS ELEMENT.
               </h1>
               <p className="text-ssc-navy/60 text-lg max-w-md">
-                A closer look at our products, steel stock and processing capabilities.
+                A closer look at our products, steel stock and decoiling capabilities.
               </p>
             </div>
             <div className="w-full lg:w-1/2 h-[400px] rounded-[32px] overflow-hidden shadow-2xl">
@@ -206,7 +206,7 @@ export const SteelGallery = () => {
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-ssc-gold/[0.05] to-transparent" />
         <div className="container mx-auto px-6 max-w-[1280px] relative z-10 text-center">
           <h2 className="text-[32px] lg:text-[48px] font-heading font-medium tracking-tight text-white uppercase mb-6">
-            LOOKING FOR STEEL FOR YOUR <br />NEXT REQUIREMENT?
+            LOOKING FOR STEEL FOR YOUR NEXT REQUIREMENT?
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-12 font-technical tracking-wide">
             Talk to Srinivasa Steel Corporation about TMT, steel products and decoiling requirements.
