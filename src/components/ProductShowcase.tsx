@@ -65,7 +65,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
         {/* Title with vertical accent line */}
         <div className="flex gap-4 items-start mb-4">
           <div className="w-[1px] h-6 bg-ssc-gold/40 mt-1 flex-shrink-0" />
-          <h3 className="text-[20px] lg:text-[24px] font-heading font-medium text-ssc-navy leading-tight tracking-tight group-hover:text-ssc-navy/80 transition-colors duration-300">
+          <h3 className="text-[22px] lg:text-[26px] font-heading font-medium text-ssc-navy leading-tight tracking-tight group-hover:text-ssc-navy/80 transition-colors duration-300">
             {product.name}
           </h3>
         </div>
