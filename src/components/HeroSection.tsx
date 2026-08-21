@@ -100,5 +100,3 @@ export const HeroSection = () => {
     </section>
   );
 };
-  );
-};
