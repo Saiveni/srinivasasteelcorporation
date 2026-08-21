@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as DecoilingRouteImport } from './routes/decoiling'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ProductsRouteImport } from './routes/products'
 
@@ -22,6 +23,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DecoilingRoute = DecoilingRouteImport.update({
+  id: '/decoiling',
+  path: '/decoiling',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GalleryRoute = GalleryRouteImport.update({
@@ -38,12 +44,14 @@ const ProductsRoute = ProductsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/decoiling': typeof DecoilingRoute
   '/gallery': typeof GalleryRoute
   '/products': typeof ProductsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/decoiling': typeof DecoilingRoute
   '/gallery': typeof GalleryRoute
   '/products': typeof ProductsRoute
 }
@@ -51,20 +59,22 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/decoiling': typeof DecoilingRoute
   '/gallery': typeof GalleryRoute
   '/products': typeof ProductsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/gallery' | '/products'
+  fullPaths: '/' | '/about' | '/decoiling' | '/gallery' | '/products'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/gallery' | '/products'
-  id: '__root__' | '/' | '/about' | '/gallery' | '/products'
+  to: '/' | '/about' | '/decoiling' | '/gallery' | '/products'
+  id: '__root__' | '/' | '/about' | '/decoiling' | '/gallery' | '/products'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  DecoilingRoute: typeof DecoilingRoute
   GalleryRoute: typeof GalleryRoute
   ProductsRoute: typeof ProductsRoute
 }
@@ -83,6 +93,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/decoiling': {
+      id: '/decoiling'
+      path: '/decoiling'
+      fullPath: '/decoiling'
+      preLoaderRoute: typeof DecoilingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gallery': {
@@ -105,6 +122,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  DecoilingRoute: DecoilingRoute,
   GalleryRoute: GalleryRoute,
   ProductsRoute: ProductsRoute,
 }
