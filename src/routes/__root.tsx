@@ -131,10 +131,6 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const [showPreloader, setShowPreloader] = useEffect(() => {
-    // We only show it on initial mount of the app root
-    return undefined;
-  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
