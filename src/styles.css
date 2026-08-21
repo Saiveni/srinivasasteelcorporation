@@ -34,10 +34,10 @@
   --color-ring: var(--ring);
   
   /* SSC Industrial Palette */
-  --color-ssc-navy: oklch(0.24 0.04 260); /* #0B1E3D range */
-  --color-ssc-gold: oklch(0.72 0.15 78);  /* #D4A24C range */
-  --color-ssc-gray-light: oklch(0.97 0.005 260); /* #F7F8FA */
-  --color-ssc-gray-steel: oklch(0.94 0.01 260);  /* #EDEFF2 */
+  --color-ssc-navy: #0B1B33;
+  --color-ssc-gold: #D9A000;
+  --color-ssc-gray-light: #F7F7F4;
+  --color-ssc-gray-steel: #E8EBEF;
   
   --font-heading: "Manrope", "Plus Jakarta Sans", "Inter", sans-serif;
   --font-display: "Manrope", "Plus Jakarta Sans", sans-serif;
