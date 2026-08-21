@@ -49,7 +49,7 @@ export const Footer = () => {
                 <MapPin className="text-ssc-gold shrink-0" size={20} />
                 <div className="flex flex-col">
                   <span className="text-[13px] font-bold text-white mb-1">Head Office</span>
-                  <span className="text-sm">Plot No. 90, Iron Complex, Bhavanipuram, Vijayawada – 520012</span>
+                  <span className="text-sm">Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012</span>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">
