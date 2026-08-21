@@ -7,7 +7,7 @@ const products = [
     index: "01",
     name: "TMT Rebars",
     description: "Premium bundles of ribbed TMT reinforcement steel bars. Available in 5mm, 5.5mm, and 6mm TMT specifications.",
-    image: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1541625602330-2277a4c4b28d?q=80&w=800&auto=format&fit=crop",
     alt: "Bundles of high-quality ribbed TMT reinforcement bars in a professional steel yard"
   },
   {
