@@ -89,7 +89,7 @@ export const SteelGallery = () => {
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, idx) => (
               <motion.div
-                key={item.title}
+                key={`${item.title}-${idx}`}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
