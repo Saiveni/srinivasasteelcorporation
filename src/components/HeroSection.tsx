@@ -10,8 +10,9 @@ import {
 } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const desktopHero = "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=2000";
-const mobileHero = "https://images.unsplash.com/photo-1536431311719-398b6704d4cc?auto=format&fit=crop&q=80&w=1000";
+
+// Premium industrial photography of TMT bars in a yard
+const tmtHeroImage = "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop";
 
 export const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -26,8 +27,8 @@ export const HeroSection = () => {
   const smoothMouseX = useSpring(mouseX, springConfig);
   const smoothMouseY = useSpring(mouseY, springConfig);
   
-  const textMouseX = useTransform(smoothMouseX, [-0.5, 0.5], ["-4px", "4px"]);
-  const textMouseY = useTransform(smoothMouseY, [-0.5, 0.5], ["-4px", "4px"]);
+  const textMouseX = useTransform(smoothMouseX, [-0.5, 0.5], ["-2px", "2px"]);
+  const textMouseY = useTransform(smoothMouseY, [-0.5, 0.5], ["-2px", "2px"]);
 
   // Scroll Animations
   const { scrollYProgress } = useScroll({ 
@@ -35,19 +36,18 @@ export const HeroSection = () => {
     offset: ["start start", "end start"] 
   });
 
-  const scrollScale = useTransform(scrollYProgress, [0, 1], [1, 0.98]);
   const scrollOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-  const scrollY = useTransform(scrollYProgress, [0, 1], ["0%", "-10%"]);
+  const scrollY = useTransform(scrollYProgress, [0, 1], ["0%", "-5%"]);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
     checkMobile();
     window.addEventListener("resize", checkMobile);
     
     const handleMouseMove = (e: MouseEvent) => {
-      if (window.innerWidth < 768) return;
+      if (window.innerWidth < 1024) return;
       const { clientX, clientY } = e;
       const { innerWidth, innerHeight } = window;
       mouseX.set(clientX / innerWidth - 0.5);
@@ -64,183 +64,162 @@ export const HeroSection = () => {
     };
   }, [mouseX, mouseY, shouldReduceMotion]);
 
-  // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2
+        staggerChildren: 0.12,
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 15 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1] as any
+        duration: 0.7,
+        ease: [0.16, 1, 0.3, 1] as any
       }
     }
   };
-
-  const headlineVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: [0.22, 1, 0.36, 1] as any
-      }
-    }
-  };
-
 
   return (
     <section
       ref={ref}
-      className="relative isolate min-h-[calc(100svh-68px)] sm:min-h-[calc(100svh-74px)] lg:min-h-[90vh] w-full overflow-hidden flex items-center bg-[#050B18]"
+      className="relative min-h-[85vh] lg:min-h-[90vh] w-full flex items-center bg-[#F8F9FA] overflow-hidden"
     >
-      {/* Background Motion */}
-      <motion.div 
-        style={{ 
-          scale: scrollScale,
-          opacity: scrollOpacity
-        }} 
-        className="absolute inset-0 -z-20 will-change-transform"
-      >
-        <motion.img
-          src={isMobile ? mobileHero : desktopHero}
-          alt="Premium industrial steel processing facility"
-          className="w-full h-full object-cover object-center sm:object-right-center"
-          initial={{ scale: 1, opacity: 0 }}
-          animate={shouldReduceMotion ? { opacity: 1 } : { 
-            scale: 1.02, 
-            opacity: 1 
-          }}
-          transition={{ 
-            scale: {
-              duration: isMobile ? 0 : 18,
-              ease: "linear",
-              repeat: Infinity,
-              repeatType: "reverse"
-            },
-            opacity: { duration: 0.7, ease: "easeOut" }
-          }}
-        />
-      </motion.div>
-
-      {/* Cinematic Overlays */}
-      <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
-        {/* Directional Overlay: Deep navy/charcoal on left, medium center, lighter right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18] via-[#050B18]/60 to-[#050B18]/20 sm:from-[#050B18] sm:via-[#050B18]/70 sm:to-transparent lg:from-[#050B18]/95 lg:via-[#050B18]/70 lg:to-[#050B18]/30" />
+      {/* Background Content Layout */}
+      <div className="absolute inset-0 flex flex-col lg:flex-row">
+        {/* Left Content Area (Light) */}
+        <div className="w-full lg:w-[45%] bg-[#F8F9FA]" />
         
-        {/* Left Side Calm: Specific dark block to suppress sparks behind text */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B18]/60 via-transparent to-transparent max-w-[40%]" />
-        
-        {/* Bottom Fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050B18] via-transparent to-transparent opacity-80" />
-
-        {/* Mobile Specific Overlay refinement */}
-        {isMobile && <div className="absolute inset-0 bg-gradient-to-b from-[#050B18]/40 via-transparent to-[#050B18]/80" />}
+        {/* Right Image Area with Curved Transition */}
+        <div className="relative w-full lg:w-[55%] h-[45vh] lg:h-auto overflow-hidden">
+          {/* Curved architectural transition (Desktop Only) */}
+          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[120px] -ml-[60px] z-10">
+            <svg 
+              viewBox="0 0 100 100" 
+              preserveAspectRatio="none" 
+              className="w-full h-full fill-[#F8F9FA]"
+            >
+              <path d="M100,0 C40,0 40,100 100,100 L100,100 L100,0 Z" transform="scale(-1, 1) translate(-100, 0)" />
+            </svg>
+          </div>
+          
+          <motion.div 
+            style={{ opacity: scrollOpacity }}
+            className="w-full h-full will-change-transform"
+          >
+            <motion.img
+              src={tmtHeroImage}
+              alt="Ribbed TMT reinforcement bars bundles in a professional steel yard"
+              className="w-full h-full object-cover grayscale-[0.2] contrast-[1.05]"
+              initial={{ scale: 1.04, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ 
+                scale: { duration: 1.5, ease: [0.16, 1, 0.3, 1] },
+                opacity: { duration: 1 }
+              }}
+            />
+            {/* Subtle overlay for realism */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#F8F9FA]/20 to-transparent lg:from-[#F8F9FA]/10" />
+            <div className="absolute inset-0 bg-black/5" />
+          </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        style={{ 
-          y: shouldReduceMotion ? 0 : textMouseY,
-          x: shouldReduceMotion ? 0 : textMouseX,
-          opacity: scrollOpacity,
-          translateY: scrollY
-        }}
-        className="container mx-auto px-5 sm:px-12 py-12 sm:py-20 relative z-10"
-      >
-        <motion.div 
-          initial="hidden" 
-          animate="visible" 
-          variants={containerVariants}
-          className="max-w-[1500px] mx-auto"
+      <div className="container mx-auto px-6 sm:px-12 relative z-20">
+        <motion.div
+          style={{ 
+            y: shouldReduceMotion ? 0 : textMouseY,
+            x: shouldReduceMotion ? 0 : textMouseX,
+            opacity: scrollOpacity,
+            translateY: scrollY
+          }}
+          className="max-w-[1400px] mx-auto"
         >
-          <div className="max-w-[680px] text-left">
+          <motion.div 
+            initial="hidden" 
+            animate="visible" 
+            variants={containerVariants}
+            className="max-w-[620px] pt-12 lg:pt-0"
+          >
+            {/* EST Detail */}
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+              <span className="text-[11px] font-technical font-bold text-ssc-gold tracking-[0.25em] uppercase">
+                EST. 1994
+              </span>
+              <span className="w-8 h-[1px] bg-ssc-gold/40" />
+              <span className="text-[11px] font-technical font-bold text-ssc-navy/40 tracking-[0.25em] uppercase">
+                STEEL / TMT / SUPPLY
+              </span>
+            </motion.div>
+
             {/* Eyebrow */}
-            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-[24px] sm:mb-[32px]">
-              <span className="w-8 h-[2px] bg-ssc-gold" />
-              <span className="text-ssc-gold text-[12px] sm:text-[13px] tracking-[0.22em] font-technical font-bold uppercase">
+            <motion.div variants={itemVariants} className="mb-4">
+              <span className="text-ssc-navy/60 text-[13px] tracking-[0.22em] font-technical font-bold uppercase">
                 SINCE 1994
               </span>
             </motion.div>
 
-            {/* Headline Reveal line by line */}
-            <h1 className="text-white mb-[28px] sm:mb-[36px] leading-[0.96] sm:leading-[0.98] font-heading text-[clamp(42px,11vw,58px)] lg:text-[clamp(76px,6vw,100px)] font-[600] tracking-[-0.025em] lg:tracking-[-0.03em]">
-              <motion.span variants={headlineVariants} className="block">
-                The Strength
+            {/* Headline */}
+            <h1 className="text-ssc-navy mb-8 leading-[1.1] font-heading text-[48px] sm:text-[64px] lg:text-[82px] font-[500] tracking-[-0.02em]">
+              <motion.span variants={itemVariants} className="block">
+                QUALITY STEEL.
               </motion.span>
-              <motion.span variants={headlineVariants} className="block">
-                Behind
-              </motion.span>
-              <motion.span 
-                variants={headlineVariants} 
-                className="block text-ssc-gold"
-              >
-                Success.
+              <motion.span variants={itemVariants} className="block">
+                RELIABLE SUPPLY.
               </motion.span>
             </h1>
 
             {/* Paragraph */}
             <motion.p
               variants={itemVariants}
-              className="text-[16px] sm:text-[18px] lg:text-[19px] text-white/80 max-w-[650px] mb-[32px] sm:mb-[42px] leading-[1.6] sm:leading-[1.65] font-[450]"
+              className="text-[16px] sm:text-[18px] lg:text-[19px] text-ssc-navy/70 max-w-[520px] mb-10 leading-[1.6] font-[400]"
             >
-              Powering India's infrastructure with premium TMT rebars and industrial supplies. 
-              Three decades of engineering excellence and unmatched reliability.
+              Trusted steel supply, TMT products and decoiling solutions for construction and industrial requirements.
             </motion.p>
 
-            {/* Buttons Stack on Mobile */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-[12px] sm:gap-[16px] w-full sm:w-auto">
+            {/* Buttons */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-ssc-gold hover:bg-ssc-gold/90 text-[#050B18] px-[28px] sm:px-[34px] h-[54px] sm:h-[58px] rounded-sm text-[13px] font-heading font-bold uppercase tracking-[0.04em] transition-all duration-250 hover:-translate-y-[2px]"
+                className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy px-10 h-[58px] rounded-sm text-[13px] font-technical font-bold uppercase tracking-[0.1em] transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               >
-                View Products <ArrowRight className="ml-2 w-5 h-5" />
+                View Products <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full sm:w-auto border-white/20 bg-white/5 text-white px-[28px] sm:px-[34px] h-[54px] sm:h-[58px] rounded-sm text-[13px] backdrop-blur-sm hover:bg-white/10 hover:border-white/40 transition-all duration-250 font-heading font-bold uppercase tracking-[0.04em]"
+                className="border-ssc-navy/10 bg-white/50 text-ssc-navy hover:bg-white px-10 h-[58px] rounded-sm text-[13px] font-technical font-bold uppercase tracking-[0.1em] transition-all duration-300"
               >
-                Get Quote
+                Get a Quote
               </Button>
             </motion.div>
-          </div>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
 
       {/* Scroll Indicator */}
-      <AnimatePresence>
-        {!isMobile && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 pointer-events-none"
+      {!isMobile && (
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.5, duration: 1 }}
+          className="absolute bottom-10 left-[22.5%] -translate-x-1/2 z-30 flex flex-col items-center gap-2 pointer-events-none"
+        >
+          <motion.div
+            animate={shouldReduceMotion ? {} : { y: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <span className="text-[9px] font-technical font-bold text-white/30 tracking-[0.3em] uppercase">
-              Scroll to Explore
-            </span>
-            <motion.div
-              animate={shouldReduceMotion ? {} : { y: [0, 6, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <ChevronDown className="text-ssc-gold w-4 h-4 opacity-40" />
-            </motion.div>
+            <ChevronDown className="text-ssc-navy/20 w-5 h-5" />
           </motion.div>
-        )}
-      </AnimatePresence>
+        </motion.div>
+      )}
     </section>
   );
 };
-

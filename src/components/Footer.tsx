@@ -47,15 +47,21 @@ export const Footer = () => {
             <ul className="space-y-4 text-white/70">
               <li className="flex gap-3">
                 <MapPin className="text-ssc-gold shrink-0" size={20} />
-                <span className="text-sm">Main Industrial Area, Hyderabad, Telangana, India</span>
+                <div className="flex flex-col">
+                  <span className="text-[13px] font-bold text-white mb-1">Head Office</span>
+                  <span className="text-sm">Plot No. 90, Iron Complex, Bhavanipuram, Vijayawada – 520012</span>
+                </div>
               </li>
-              <li className="flex gap-3">
+              <li className="flex gap-3 pt-2">
                 <Phone className="text-ssc-gold shrink-0" size={20} />
-                <span className="text-sm">+91 98765 43210</span>
+                <div className="flex flex-col">
+                  <span className="text-sm">9440170453 (M.S.V. Bhaskar)</span>
+                  <span className="text-sm">9849600403 (M.V. Ramana Kumar)</span>
+                </div>
               </li>
-              <li className="flex gap-3">
+              <li className="flex gap-3 pt-2">
                 <Mail className="text-ssc-gold shrink-0" size={20} />
-                <span className="text-sm">info@srinivasasteel.com</span>
+                <span className="text-sm">srinivasasteelcorporationvja@gmail.com</span>
               </li>
             </ul>
           </div>

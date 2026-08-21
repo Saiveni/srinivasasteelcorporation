@@ -59,7 +59,7 @@ export const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex items-center bg-white/95 backdrop-blur-md border-b border-black/5 ${
-        scrolled ? "h-[68px] md:h-[72px] shadow-sm" : "h-[74px] md:h-[84px]"
+        scrolled ? "h-[70px] shadow-sm" : "h-[84px]"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
