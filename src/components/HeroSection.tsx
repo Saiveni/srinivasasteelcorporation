@@ -3,30 +3,39 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
-// Import asset pointers
+// @ts-ignore
 import rebarCoils from "@/assets/rebar-coils.jpg.asset.json";
+// @ts-ignore
 import rebarStraight from "@/assets/rebar-straight.jpg.asset.json";
+// @ts-ignore
 import rebarWarehouse from "@/assets/rebar-warehouse.jpg.asset.json";
+// @ts-ignore
 import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
 
-const HERO_IMAGES = [
+interface HeroImage {
+  url: string;
+  alt: string;
+  position: string;
+}
+
+const HERO_IMAGES: HeroImage[] = [
   {
-    url: rebarCoils?.url ?? "",
+    url: rebarCoils?.url || "",
     alt: "Premium TMT reinforcement steel coils",
     position: "center center"
   },
   {
-    url: rebarStraight?.url ?? "",
+    url: rebarStraight?.url || "",
     alt: "Bundled TMT steel bars ready for dispatch",
     position: "center center"
   },
   {
-    url: rebarWarehouse?.url ?? "",
+    url: rebarWarehouse?.url || "",
     alt: "Industrial steel reinforcement stock warehouse",
     position: "center center"
   },
   {
-    url: rebarDetail?.url ?? "",
+    url: rebarDetail?.url || "",
     alt: "High-quality ribbed TMT reinforcement steel detail",
     position: "center center"
   }
