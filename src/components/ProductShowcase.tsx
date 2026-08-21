@@ -7,21 +7,21 @@ const products = [
     index: "01",
     name: "TMT Rebars",
     description: "Premium grade thermo-mechanically treated steel bars engineered for superior structural integrity.",
-    image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1591588582259-e675bd2e6088?auto=format&fit=crop&q=80&w=800",
     alt: "Premium industrial photography of bundled ribbed TMT reinforcement steel bars"
   },
   {
     index: "02",
     name: "Binding Wire",
     description: "High-tensile annealed wire coils designed for precise and secure reinforcement anchoring.",
-    image: "https://images.unsplash.com/photo-1535813548-6601f602d48a?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1533035350221-afc0331c4b78?auto=format&fit=crop&q=80&w=800",
     alt: "Macro industrial view of high-quality annealed steel binding wire coils"
   },
   {
     index: "03",
     name: "Oil Rods",
     description: "Precision-engineered industrial steel rods optimized for specialized mechanical and structural applications.",
-    image: "https://images.unsplash.com/photo-1563285797-47671181f440?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800",
     alt: "Precision industrial steel rods and machined components"
   },
   {
