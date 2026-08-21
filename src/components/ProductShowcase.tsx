@@ -128,13 +128,13 @@ export const ProductShowcase = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="hidden lg:flex flex-col items-end text-right border-r border-ssc-gold/20 pr-6 mb-2"
           >
-            <span className="text-[9px] text-ssc-navy/30 font-technical font-bold tracking-[0.2em] uppercase mb-1">
+            <span className="text-[9px] text-ssc-navy/20 font-technical font-bold tracking-[0.2em] uppercase mb-1">
               SSC / MATERIAL CATALOGUE
             </span>
-            <span className="text-[9px] text-ssc-navy/30 font-technical font-bold tracking-[0.2em] uppercase mb-1">
+            <span className="text-[9px] text-ssc-navy/20 font-technical font-bold tracking-[0.2em] uppercase mb-1">
               EST. 1994
             </span>
-            <span className="text-[9px] text-ssc-navy/30 font-technical font-bold tracking-[0.2em] uppercase">
+            <span className="text-[9px] text-ssc-navy/20 font-technical font-bold tracking-[0.2em] uppercase">
               INDUSTRIAL SUPPLY
             </span>
           </motion.div>
