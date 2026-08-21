@@ -214,50 +214,46 @@ export const AboutSection = () => {
                   style={{ width: rodReveal, opacity: rodOpacity }}
                   className="absolute inset-0 shadow-[0_30px_60px_rgba(0,0,0,0.9)] rounded-full overflow-hidden"
                 >
-                  {/* Heavy Steel Base Cylinder */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-[#0a0c0e] via-[#41474e] to-[#080a0c] border-t border-white/5" />
+                  {/* Heavy Steel Base Cylinder (Gold TMT Rod) */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-[#8A6D3B] via-[#F5D48E] to-[#8A6D3B] shadow-[inset_0_2px_10px_rgba(255,255,255,0.4)]" />
                   
-                  {/* High-Definition TMT Reinforcement Ribs (Geometry Marks) */}
-                  <div className="absolute inset-0 opacity-100 mix-blend-overlay" 
+                  {/* High-Definition TMT Reinforcement Ribs (Diagonal) */}
+                  <div className="absolute inset-0 opacity-80 mix-blend-multiply" 
                        style={{ 
                          backgroundImage: `repeating-linear-gradient(
                            125deg, 
                            transparent, 
                            transparent 12px, 
-                           rgba(0,0,0,0.95) 12px, 
-                           rgba(0,0,0,0.95) 18px, 
-                           rgba(255,255,255,0.06) 18px, 
-                           rgba(255,255,255,0.06) 20px
+                           rgba(0,0,0,0.5) 12px, 
+                           rgba(0,0,0,0.5) 16px
                          )`,
-                         backgroundSize: '60px 100%'
+                         backgroundSize: '40px 100%'
                        }} 
                   />
 
-                  {/* Dual Longitudinal Main Ribs (Structural Depth) */}
-                  <div className="absolute top-[22%] left-0 w-full h-[2px] bg-black/70 shadow-sm" />
-                  <div className="absolute bottom-[22%] left-0 w-full h-[1px] bg-white/5" />
+                  {/* Dual Longitudinal Main Ribs (Gold) */}
+                  <div className="absolute top-[30%] left-0 w-full h-[2px] bg-[#C5A059] shadow-[0_1px_2px_rgba(0,0,0,0.3)]" />
+                  <div className="absolute bottom-[30%] left-0 w-full h-[2px] bg-[#C5A059] shadow-[0_-1px_2px_rgba(0,0,0,0.3)]" />
 
-                  {/* Surface Steel Grain */}
-                  <div className="absolute inset-0 opacity-20 mix-blend-soft-light bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
+                  {/* "SSC TMT 500 D" Stamped on Rod */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-8 opacity-40">
+                    <span className="text-[14px] font-black text-black tracking-[1em]">SSC TMT 500 D</span>
+                  </div>
                   
                   {/* Cinematic Highlights (Curved Surface) */}
-                  <div className="absolute top-0 inset-x-0 h-[40%] bg-gradient-to-b from-white/10 to-transparent" />
+                  <div className="absolute top-0 inset-x-0 h-[20%] bg-white/30" />
                   
                   {/* Animated Steel Shine Sweep */}
                   <motion.div 
                     animate={{ x: ["-100%", "200%"] }}
-                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-[-30deg]"
+                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-30deg]"
                   />
 
-                  {/* Industrial End Cap Detail */}
-                  <div className="absolute right-0 top-0 bottom-0 w-4 bg-black/80 rounded-r-full" />
+                  {/* Industrial End Caps */}
+                  <div className="absolute left-0 top-0 bottom-0 w-6 bg-gradient-to-r from-black/80 to-transparent" />
+                  <div className="absolute right-0 top-0 bottom-0 w-6 bg-gradient-to-l from-black/80 to-transparent" />
                 </motion.div>
-                
-                {/* Micro-Annotation beneath the Rod */}
-                <div className="absolute -bottom-8 left-0 opacity-10">
-                  <span className="text-[7px] font-technical tracking-[1em] text-white">REINFORCEMENT_CORE_SPECS // 500D_FE_GRADE</span>
-                </div>
               </div>
 
               {/* MOBILE: Vertical Cylindrical TMT Rebar */}
