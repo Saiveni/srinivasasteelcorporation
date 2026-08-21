@@ -82,7 +82,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" },
     ],
     links: [
       {
@@ -102,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: "https://id-preview--4b9b68cc-4e82-4582-9138-a2357282acba.lovable.app/lovable-uploads/29486c75-b3e3-47a2-9457-37a5b3068e82.png" },
+      { rel: "icon", type: "image/png", href: "/__l5e/assets-v1/a2615c71-b746-456f-94dd-63c177509331/ssc-logo-transparent.png" },
     ],
   }),
   shellComponent: RootShell,
