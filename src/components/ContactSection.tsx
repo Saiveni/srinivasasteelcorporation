@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const contacts = [
   { name: "M.S.V. Bhaskar", phone: "9440170453" },
   { name: "M.V. Ramana Kumar", phone: "9849600403" },
-  { name: "M.V.N.M. Yeshwanth", phone: "8125397453" }
+  { name: "M. Yeswanth", phone: "8125397453" }
 ];
 
 export const ContactSection = () => {

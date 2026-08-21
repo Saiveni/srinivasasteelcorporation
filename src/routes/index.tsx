@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { TrustCapabilities } from "@/components/TrustCapabilities";
 import { TrustStatsBar } from "@/components/TrustStatsBar";
 import ProductShowcase from "@/components/ProductShowcase";
-import { DecoilingSection } from "@/components/DecoilingSection";
+
 import { AboutSection } from "@/components/AboutSection";
 import { BrandStrip } from "@/components/BrandStrip";
 import { SteelGallery } from "@/components/SteelGallery";
@@ -20,7 +20,7 @@ function HomePage() {
       <TrustCapabilities />
       <TrustStatsBar />
       <ProductShowcase />
-      <DecoilingSection />
+      
       <AboutSection />
       <BrandStrip />
       <SteelGallery />

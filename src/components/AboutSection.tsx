@@ -51,7 +51,7 @@ export const AboutSection = () => {
                   Operating since 1994, Srinivasa Steel Corporation has established itself as a trusted name in regional steel supply and distribution. Our business is built on long-standing dealer and MoU supply relationships, ensuring a consistent and reliable flow of high-quality materials.
                 </p>
                 <p>
-                  We specialize in the supply of TMT products, steel wire products, and oil rods, supported by advanced decoiling capabilities. With a strong regional presence across Vijayawada, Vizag, and Gannavaram, we serve the construction and industrial sectors with professional integrity.
+                  We specialize in the supply of TMT products, steel wire products, and oil rods. With a strong regional presence across Vijayawada, Vizag, and Gannavaram, we serve the construction and industrial sectors with professional integrity.
                 </p>
               </div>
 
