@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { BrandPreloader } from "@/components/BrandPreloader";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -130,10 +131,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const [showPreloader, setShowPreloader] = useEffect(() => {
+    // We only show it on initial mount of the app root
+    return undefined;
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
       <div className="flex flex-col min-h-screen">
+        <BrandPreloader />
         <Navbar />
         <main className="flex-grow pt-20">
           <Outlet />

@@ -37,7 +37,15 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo Section */}
-        <Link to="/" className="flex items-center gap-3 relative z-[100] group">
+        <Link 
+          to="/" 
+          onClick={() => {
+            if (location.pathname === "/") {
+              window.location.reload();
+            }
+          }}
+          className="flex items-center gap-3 relative z-[100] group"
+        >
           <div className="h-10 w-10 sm:h-11 sm:w-11 shrink-0">
             <img
               src={sscLogo.url}
