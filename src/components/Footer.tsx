@@ -79,12 +79,14 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[13px] font-technical font-medium text-white/40 uppercase tracking-[0.15em]">
-          <p>© {currentYear} SRINIVASA STEEL CORPORATION. ALL RIGHTS RESERVED.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-ssc-gold transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-ssc-gold transition-colors">Terms of Service</a>
+        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center md:items-start">
+            <p className="text-[13px] font-technical font-bold text-white tracking-[0.1em]">SRINIVASA STEEL CORPORATION</p>
+            <p className="text-[10px] font-technical text-white/40 tracking-[0.2em] mt-1 uppercase">Premium Steel Distribution Since 1994</p>
           </div>
+          <p className="text-[11px] font-technical text-white/40 uppercase tracking-[0.15em]">
+            © {currentYear} ALL RIGHTS RESERVED.
+          </p>
         </div>
       </div>
     </footer>
