@@ -25,8 +25,12 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
   head: () => ({
     meta: [
-      { title: "About Us | Srinivasa Steel Corporation" },
-      { name: "description", content: "Learn about Srinivasa Steel Corporation, established in 1994, a trusted steel supplier specializing in TMT rebars, oil rods, and decoiling solutions." },
+      { title: "About Srinivasa Steel Corporation | Established 1994" },
+      { name: "description", content: "Learn about Srinivasa Steel Corporation, established in 1994 and serving steel, TMT and related construction requirements." },
+      { property: "og:title", content: "About Srinivasa Steel Corporation | Established 1994" },
+      { property: "og:description", content: "Learn about Srinivasa Steel Corporation, established in 1994 and serving steel, TMT and related construction requirements." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });
