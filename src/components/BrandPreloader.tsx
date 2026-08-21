@@ -5,7 +5,7 @@ import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 // @ts-ignore
 import rebarCoils from "@/assets/rebar-coils.jpg.asset.json";
 // @ts-ignore
-import rebarStraight from "@/assets/rebar-straight.jpg.asset.json";
+
 // @ts-ignore
 import rebarWarehouse from "@/assets/rebar-warehouse.jpg.asset.json";
 // @ts-ignore

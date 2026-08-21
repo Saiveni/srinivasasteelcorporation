@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Shield, Zap, CheckCircle2, Truck } from "lucide-react";
-// @ts-ignore
-import rebarStraight from "@/assets/rebar-straight.jpg.asset.json";
 
 const CAPABILITIES = [
   {
