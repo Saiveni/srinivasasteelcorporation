@@ -34,14 +34,14 @@ type ContactFormData = z.infer<typeof contactSchema>;
 export const Route = createFileRoute("/contact")({
   validateSearch: (search: Record<string, unknown>) => {
     return {
-      product: (search['product'] as string) || undefined,
+      product: (search['product'] as string) || "",
     };
   },
   component: ContactPage,
   head: () => ({
     meta: [
       { title: "Contact Us | Srinivasa Steel Corporation" },
-      { name: "description", content: "Contact Srinivasa Steel Corporation for TMT rebars, oil rods, and decoiling requirements. Established in 1994, serving with 30+ years of trust." },
+      { name: "description", content: "Contact Srinivasa Steel Corporation for TMT rebars, steel products, wire products, and decoiling requirements. Established in 1994." },
     ],
   }),
 });

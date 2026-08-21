@@ -6,23 +6,18 @@ import { MapPin, ArrowUpRight } from 'lucide-react';
 const locations = [
   {
     city: "VIJAYAWADA",
-    type: "HEAD OFFICE",
-    address: "Plot No. 90, Iron Complex, Bhavanipuram, Vijayawada – 520012",
-  },
-  {
-    city: "VIJAYAWADA",
-    type: "GODOWN",
-    address: "Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
-  },
-  {
-    city: "VIZAG",
-    type: "YARD",
-    address: "S. No. 156, Plot No. 163A, 163B, AIE Pedagantyada, Vizag – 530044",
+    type: "HEAD OFFICE & GODOWN",
+    address: "Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
   },
   {
     city: "GANNAVARAM",
     type: "YARD",
     address: "Gannavaram Yard, Nuzividu Road, Gannavaram – 521101",
+  },
+  {
+    city: "VIZAG",
+    type: "YARD",
+    address: "S. No. 156, Plot No. 163A, 163B, AIE Pedagantyada, Vizag – 530044",
   }
 ];
 
@@ -31,7 +26,7 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About Us | Srinivasa Steel Corporation" },
-      { name: "description", content: "Learn about Srinivasa Steel Corporation, established in 1994, and our 30+ years of trust in steel supply." },
+      { name: "description", content: "Learn about Srinivasa Steel Corporation, established in 1994, a trusted steel supplier specializing in TMT rebars, oil rods, and decoiling solutions." },
     ],
   }),
 });

@@ -43,10 +43,10 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
 
 export const TrustStatsBar = () => {
   const stats = [
-    { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / QUALITY", icon: Award },
+    { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / HERITAGE", icon: Award },
     { number: "3", suffix: "", label: "Business Locations", subLabel: "02 / NETWORK", icon: MapPin },
-    { number: "TMT", suffix: "", label: "Steel Products", subLabel: "03 / MATERIAL", icon: Factory },
-    { number: "STEEL", suffix: "", label: "Products", subLabel: "04 / DISTRIBUTION", icon: Settings2 },
+    { number: "TMT", suffix: "", label: "Steel Supply", subLabel: "03 / MATERIAL", icon: Factory },
+    { number: "DECOILING", suffix: "", label: "Solutions", subLabel: "04 / CAPABILITY", icon: Settings2 },
   ];
 
   const ref = useRef(null);
