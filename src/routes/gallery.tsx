@@ -14,9 +14,8 @@ export const Route = createFileRoute("/gallery")({
 
 function GalleryPage() {
   return (
-    <div className="pt-20">
+    <div className="bg-white min-h-screen">
       <SteelGallery />
-      <ContactSection />
     </div>
   );
 }
