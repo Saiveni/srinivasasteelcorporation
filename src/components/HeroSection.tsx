@@ -46,6 +46,9 @@ export const HeroSection = () => {
   }, []);
 
   const currentImage = HERO_IMAGES[currentIndex] || HERO_IMAGES[0];
+  const imageUrl = currentImage?.url || "";
+  const imageAlt = currentImage?.alt || "";
+  const imagePos = currentImage?.position || "center center";
 
   return (
     <section className="relative w-full bg-[#F7F7F4] pt-[80px] overflow-hidden min-h-[720px] lg:min-h-0">
@@ -64,10 +67,10 @@ export const HeroSection = () => {
               initial={{ scale: 1 }}
               animate={{ scale: 1.035 }}
               transition={{ duration: 3, ease: "linear" }}
-              src={currentImage.url}
-              alt={currentImage.alt}
+              src={imageUrl}
+              alt={imageAlt}
               className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-              style={{ objectPosition: currentImage.position }}
+              style={{ objectPosition: imagePos }}
             />
           </motion.div>
         </AnimatePresence>
@@ -153,10 +156,10 @@ export const HeroSection = () => {
                     initial={{ scale: 1 }}
                     animate={{ scale: 1.035 }}
                     transition={{ duration: 3, ease: "linear" }}
-                    src={currentImage.url}
-                    alt={currentImage.alt}
+                    src={imageUrl}
+                    alt={imageAlt}
                     className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-                    style={{ objectPosition: currentImage.position }}
+                    style={{ objectPosition: imagePos }}
                   />
                 </motion.div>
               </AnimatePresence>
