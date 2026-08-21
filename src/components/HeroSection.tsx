@@ -6,10 +6,10 @@ export const HeroSection = () => {
   return (
     <section className="relative w-full bg-[#F7F7F4] pt-[80px] overflow-hidden">
       <div className="container mx-auto px-6 max-w-[1440px]">
-        <div className="flex flex-col lg:flex-row items-stretch min-h-[580px] lg:h-[620px]">
+        <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px]">
           
-          {/* Left Content: 46% Width */}
-          <div className="w-full lg:w-[46%] flex flex-col justify-center py-12 lg:py-0 z-30 lg:pl-16 relative">
+          {/* Left Content Area: 46% Width */}
+          <div className="w-full lg:w-[46%] flex flex-col justify-center py-16 lg:py-0 z-30 lg:pl-16 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -28,7 +28,7 @@ export const HeroSection = () => {
               </div>
               
               {/* Headline */}
-              <h1 className="text-[42px] sm:text-[52px] lg:text-[66px] font-heading font-semibold leading-[0.98] text-[#0B1B33] mb-7 tracking-tight">
+              <h1 className="text-[40px] sm:text-[52px] lg:text-[64px] font-heading font-semibold leading-[0.98] text-[#0B1B33] mb-7 tracking-tight">
                 <span className="block mb-1">STRONGER STEEL.</span>
                 <span className="block">
                   STRONGER <span className="text-[#D9A000]">TOMORROW.</span>
@@ -57,42 +57,29 @@ export const HeroSection = () => {
             </motion.div>
           </div>
           
-          {/* Right Image Content: 54% Width */}
+          {/* Right Side Steel Image: 54% Width */}
           <div className="w-full lg:w-[54%] relative mt-8 lg:mt-0 min-h-[400px] lg:min-h-full">
-            {/* Custom Concave Architectural Sweeping Curve - Matching Reference */}
-            <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[240px] -ml-[120px] z-20 pointer-events-none">
-              <svg 
-                viewBox="0 0 100 100" 
-                preserveAspectRatio="none" 
-                className="w-full h-full fill-[#F7F7F4]"
-              >
-                {/* A true concave curve sweeping from top-right toward bottom-right of the left panel */}
-                <path d="M100,0 C40,0 40,100 100,100 L100,100 L0,100 L0,0 Z" transform="scale(-1, 1) translate(-100, 0)" />
-              </svg>
-              {/* Gold Accent Line */}
-              <svg 
-                viewBox="0 0 100 100" 
-                preserveAspectRatio="none" 
-                className="absolute inset-0 w-full h-full pointer-events-none"
-              >
-                <path d="M0,0 C60,0 60,100 0,100" fill="none" stroke="#D9A000" strokeWidth="0.5" opacity="0.3" />
-              </svg>
-            </div>
-            
-            {/* Steel Image Content */}
+            {/* 
+              Clean Inward Architectural Curve 
+              We use a clip-path on the image container to create 
+              the visual transition using the panel boundary as requested.
+            */}
             <motion.div 
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
               className="w-full h-full relative overflow-hidden"
+              style={{
+                clipPath: 'ellipse(100% 100% at 100% 50%)'
+              }}
             >
               <img
                 src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop"
                 alt="Bundles of premium ribbed TMT reinforcement steel bars"
                 className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
               />
-              {/* Metallic Overlay */}
-              <div className="absolute inset-0 bg-[#0B1B33]/15 mix-blend-multiply" />
+              {/* Subtle Metallic Color Overlay */}
+              <div className="absolute inset-0 bg-[#0B1B33]/10 mix-blend-multiply" />
             </motion.div>
           </div>
 
