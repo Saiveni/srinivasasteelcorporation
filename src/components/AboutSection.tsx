@@ -17,8 +17,9 @@ export const AboutSection = () => {
             >
               <img 
                 src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" 
-                alt="Srinivasa Steel Corporation yard with bundles of TMT reinforcement bars"
+                alt="Srinivasa Steel Corporation yard with bundles of TMT reinforcement steel bars"
                 className="w-full aspect-[4/5] object-cover grayscale-[0.2] contrast-[1.05]"
+                loading="lazy"
               />
               {/* Technical marker */}
               <div className="absolute bottom-8 left-8">

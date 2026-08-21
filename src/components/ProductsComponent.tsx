@@ -104,8 +104,9 @@ export const ProductsComponent = () => {
               >
                 <img 
                   src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800&auto=format&fit=crop" 
-                  alt="Premium steel rebar bundles"
+                  alt="Premium steel reinforcement rebar bundles"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-ssc-navy/10 mix-blend-multiply" />
               </motion.div>
@@ -136,6 +137,7 @@ export const ProductsComponent = () => {
                       className="w-full h-full object-cover"
                       whileHover={{ scale: 1.04 }}
                       transition={{ duration: 0.8 }}
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-8 lg:p-10">
@@ -161,8 +163,9 @@ export const ProductsComponent = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src={(rebarCoils as any)?.url || "/placeholder.svg"} 
-            alt="Steel decoiling machine"
+            alt="Steel decoiling machine processing stock"
             className="w-full h-full object-cover opacity-10 grayscale"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A121E] via-[#0A121E]/90 to-transparent" />
         </div>

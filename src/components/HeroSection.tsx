@@ -69,6 +69,8 @@ export const HeroSection = () => {
           alt={imageAlt}
           className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
           style={{ objectPosition: imagePos }}
+          loading={currentIndex === 0 ? "eager" : "lazy"}
+          fetchPriority={currentIndex === 0 ? "high" : "low"}
         />
       </motion.div>
     </AnimatePresence>

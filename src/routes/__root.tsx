@@ -14,7 +14,7 @@ import { Footer } from "@/components/Footer";
 import { BrandPreloader } from "@/components/BrandPreloader";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { reportAppError } from "../lib/app-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -42,7 +42,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    reportAppError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -81,12 +81,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Srinivasa Steel Corporation | Premium Industrial TMT & Supplies" },
-      { name: "description", content: "Srinivasa Steel Corporation (SSC) - 30+ years of excellence in TMT steel and industrial supply in India." },
-      { property: "og:title", content: "Srinivasa Steel Corporation | SSC" },
-      { property: "og:description", content: "Premium industrial TMT steel and industrial supplies in India. 30+ years of trust." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" },
     ],
     links: [
       {
@@ -106,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "icon", type: "image/png", href: "/__l5e/assets-v1/a2615c71-b746-456f-94dd-63c177509331/ssc-logo-transparent.png" },
     ],
   }),
   shellComponent: RootShell,

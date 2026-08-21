@@ -11,6 +11,19 @@ import { SteelGallery } from "@/components/SteelGallery";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
+  head: () => ({
+    meta: [
+      { title: "Srinivasa Steel Corporation | TMT Rebars & Steel Products" },
+      { name: "description", content: "Srinivasa Steel Corporation supplies TMT rebars, steel products, wire products and decoiling solutions for construction and industrial requirements." },
+      { property: "og:title", content: "Srinivasa Steel Corporation | TMT Rebars & Steel Products" },
+      { property: "og:description", content: "Steel, TMT and decoiling solutions for construction and industrial requirements." },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Srinivasa Steel Corporation | TMT Rebars & Steel Products" },
+      { name: "twitter:description", content: "Steel, TMT and decoiling solutions for construction and industrial requirements." },
+      { name: "twitter:image", content: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" },
+    ],
+  }),
 });
 
 function HomePage() {
