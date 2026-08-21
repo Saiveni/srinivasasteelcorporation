@@ -19,7 +19,7 @@ const galleryItems = [
   },
   {
     category: "OIL RODS",
-    image: "https://images.unsplash.com/photo-1536412597336-ade7b523ec3f?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
     title: "Precision Oil Rods"
   },
   {
@@ -89,7 +89,7 @@ export const SteelGallery = () => {
           <AnimatePresence mode="popLayout">
             {filteredItems.map((item, idx) => (
               <motion.div
-                key={item.title}
+                key={`${item.title}-${idx}`}
                 layout
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
