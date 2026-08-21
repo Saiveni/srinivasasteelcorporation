@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Award, MapPin, Truck, Factory } from "lucide-react";
 
 interface StatItemProps {
@@ -112,7 +112,7 @@ export const TrustStatsBar = () => {
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative w-full mx-auto backdrop-blur-[24px] backdrop-saturate-[1.25] border border-white/20 rounded-[24px] lg:rounded-[30px] overflow-hidden"
             style={{ 
