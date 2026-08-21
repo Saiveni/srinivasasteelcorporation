@@ -107,7 +107,7 @@ export const SteelGallery = () => {
               <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.4em] uppercase mb-6 block">
                 OUR GALLERY
               </span>
-              <h1 className="text-[56px] lg:text-[72px] font-heading leading-[1] font-medium tracking-tight uppercase mb-8 text-ssc-navy">
+              <h1 className="text-[56px] lg:text-[72px] font-heading leading-[1] font-semibold tracking-tight uppercase mb-8 text-ssc-navy">
                 STEEL.<br />
                 IN ITS ELEMENT.
               </h1>
@@ -115,7 +115,7 @@ export const SteelGallery = () => {
                 A closer look at our products, steel stock and decoiling capabilities.
               </p>
             </div>
-            <div className="w-full lg:w-1/2 h-[400px] rounded-[32px] overflow-hidden shadow-2xl">
+            <div className="w-full lg:w-1/2 h-[400px] rounded-[24px] overflow-hidden shadow-2xl shadow-ssc-navy/5">
               <img 
                 src={assets.rebarWarehouse} 
                 alt="Srinivasa Steel Stock"
@@ -168,7 +168,7 @@ export const SteelGallery = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => setSelectedImage(item.id)}
-                  className={`group relative rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500
+                  className={`group relative rounded-[24px] overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500
                     ${item.size === 'large' ? 'lg:col-span-8 lg:row-span-2' : ''}
                     ${item.size === 'medium' ? 'lg:col-span-4 lg:row-span-2' : ''}
                     ${item.size === 'tall' ? 'lg:col-span-4 lg:row-span-3' : ''}
@@ -205,7 +205,7 @@ export const SteelGallery = () => {
       <section className="section-spacing bg-ssc-navy relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-ssc-gold/[0.05] to-transparent" />
         <div className="container-wide relative z-10 text-center">
-          <h2 className="text-[32px] lg:text-[48px] font-heading font-medium tracking-tight text-white uppercase mb-6">
+          <h2 className="text-[32px] lg:text-[48px] font-heading font-semibold tracking-tight text-white uppercase mb-6">
             LOOKING FOR STEEL FOR YOUR NEXT REQUIREMENT?
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-12 font-technical tracking-wide">

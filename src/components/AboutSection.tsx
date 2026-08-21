@@ -13,7 +13,7 @@ export const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-[32px] overflow-hidden shadow-2xl"
+              className="relative rounded-[24px] overflow-hidden shadow-2xl shadow-ssc-navy/10"
             >
               <img 
                 src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" 
@@ -42,11 +42,11 @@ export const AboutSection = () => {
               <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.3em] uppercase mb-4 block">
                 Heritage & Presence
               </span>
-              <h2 className="text-[38px] lg:text-[56px] text-ssc-navy font-heading leading-[1.1] mb-8 font-[500] tracking-tight uppercase">
+              <h2 className="text-[38px] lg:text-[56px] text-ssc-navy font-heading leading-[1.1] mb-8 font-[600] tracking-tight uppercase">
                 About Srinivasa Steel Corporation
               </h2>
               
-              <div className="space-y-6 text-[#4A5568] text-base lg:text-lg leading-relaxed font-[400]">
+              <div className="space-y-6 text-[#4A5568] text-base lg:text-lg leading-relaxed font-[450]">
                 <p>
                   Operating since 1994, Srinivasa Steel Corporation has established itself as a trusted name in regional steel supply and distribution. Our business is built on long-standing dealer and MoU supply relationships, ensuring a consistent and reliable flow of high-quality materials.
                 </p>
