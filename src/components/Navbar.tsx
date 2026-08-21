@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location.pathname, location.search]);
+  }, [location.pathname, location.searchStr]);
 
   const navLinks = [
     { name: "HOME", href: "/" },
