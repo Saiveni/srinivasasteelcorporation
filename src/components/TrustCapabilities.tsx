@@ -29,7 +29,7 @@ const CAPABILITIES = [
 ];
 
 export const TrustCapabilities = () => {
-  const imageUrl = (rebarStraight as any)?.url || "";
+  const imageUrl = "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop";
 
   return (
     <section className="relative w-full bg-[#F4F6F8] py-24 lg:py-32 overflow-hidden border-t border-[#0B1B33]/5">
