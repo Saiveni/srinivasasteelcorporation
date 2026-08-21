@@ -279,14 +279,14 @@ export const ProductsComponent = () => {
             Tell us your requirement and our team can help you with the appropriate steel product or decoiling solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/contact">
+            <Link to="/contact" search={{ product: undefined }}>
               <Button 
                 className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest w-full sm:w-auto"
               >
                 GET A QUOTE <ArrowRight className="ml-3" size={20} />
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact" search={{ product: undefined }}>
               <Button 
                 variant="outline"
                 className="border-white/20 hover:bg-white/5 text-white font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest w-full sm:w-auto"

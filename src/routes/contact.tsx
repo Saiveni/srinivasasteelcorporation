@@ -53,7 +53,7 @@ const team = [
 ];
 
 function ContactPage() {
-  const { product } = Route.useSearch();
+  const { product } = Route.useSearch() as { product?: string };
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
 
@@ -218,10 +218,10 @@ function ContactPage() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Product / Requirement *</label>
-                          <Select 
-                            onValueChange={(val) => setValue("product", val)} 
-                            defaultValue={product || undefined}
-                          >
+                        <Select 
+                          onValueChange={(val) => setValue("product", val)} 
+                          value={product || undefined}
+                        >
                             <SelectTrigger className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy uppercase text-[12px] tracking-wide ${errors.product ? 'border-red-500' : ''}`}>
                               <SelectValue placeholder="SELECT PRODUCT" />
                             </SelectTrigger>

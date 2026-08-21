@@ -126,7 +126,7 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/contact" className="w-full" onClick={() => setIsOpen(false)}>
+              <Link to="/contact" search={{ product: undefined }} className="w-full" onClick={() => setIsOpen(false)}>
                 <Button 
                   className="w-full bg-[#D9A000] text-white font-heading font-bold uppercase h-[60px] rounded-sm text-lg"
                 >

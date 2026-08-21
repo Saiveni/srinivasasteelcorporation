@@ -33,11 +33,11 @@ export const Footer = () => {
           <div>
             <h4 className="text-ssc-gold text-eyebrow mb-6">Quick Links</h4>
             <ul className="space-y-4 text-white/70">
-              <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">About</Link></li>
-              <li><Link to="/products" className="hover:text-white transition-colors">Products</Link></li>
-              <li><Link to="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <li><Link to="/" search={{ product: undefined }} className="hover:text-white transition-colors">Home</Link></li>
+              <li><Link to="/about" search={{ product: undefined }} className="hover:text-white transition-colors">About</Link></li>
+              <li><Link to="/products" search={{ product: undefined }} className="hover:text-white transition-colors">Products</Link></li>
+              <li><Link to="/gallery" search={{ product: undefined }} className="hover:text-white transition-colors">Gallery</Link></li>
+              <li><Link to="/contact" search={{ product: undefined }} className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
