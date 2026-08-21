@@ -178,18 +178,20 @@ function ContactPage() {
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Full Name *</label>
+                          <label htmlFor="fullName" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Full Name *</label>
                           <Input 
                             {...register("fullName")}
+                            id="fullName"
                             placeholder="YOUR NAME" 
                             className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy ${errors.fullName ? 'border-red-500' : ''}`} 
                           />
                           {errors.fullName && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.fullName.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Company Name</label>
+                          <label htmlFor="companyName" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Company Name</label>
                           <Input 
                             {...register("companyName")}
+                            id="companyName"
                             placeholder="ORGANIZATION NAME" 
                             className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
                           />
@@ -198,9 +200,10 @@ function ContactPage() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Phone Number *</label>
+                          <label htmlFor="phoneNumber" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Phone Number *</label>
                           <Input 
                             {...register("phoneNumber")}
+                            id="phoneNumber"
                             type="tel" 
                             placeholder="10-DIGIT NUMBER" 
                             className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy ${errors.phoneNumber ? 'border-red-500' : ''}`} 
@@ -208,9 +211,10 @@ function ContactPage() {
                           {errors.phoneNumber && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.phoneNumber.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Email Address</label>
+                          <label htmlFor="emailAddress" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Email Address</label>
                           <Input 
                             {...register("emailAddress")}
+                            id="emailAddress"
                             type="email" 
                             placeholder="EMAIL@DOMAIN.COM" 
                             className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy ${errors.emailAddress ? 'border-red-500' : ''}`} 
@@ -221,12 +225,12 @@ function ContactPage() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Product / Requirement *</label>
+                          <label htmlFor="product" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Product / Requirement *</label>
                         <Select 
                           onValueChange={(val) => setValue("product", val)} 
                           value={product || ""}
                         >
-                            <SelectTrigger className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy uppercase text-[12px] tracking-wide ${errors.product ? 'border-red-500' : ''}`}>
+                            <SelectTrigger id="product" className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy uppercase text-[12px] tracking-wide ${errors.product ? 'border-red-500' : ''}`}>
                               <SelectValue placeholder="SELECT PRODUCT" />
                             </SelectTrigger>
                             <SelectContent className="bg-white border-black/5">
@@ -241,9 +245,10 @@ function ContactPage() {
                           {errors.product && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.product.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Quantity</label>
+                          <label htmlFor="quantity" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Quantity</label>
                           <Input 
                             {...register("quantity")}
+                            id="quantity"
                             placeholder="E.G. 10 TONS" 
                             className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
                           />
@@ -252,17 +257,19 @@ function ContactPage() {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Required Size / Length</label>
+                          <label htmlFor="size" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Required Size / Length</label>
                           <Input 
                             {...register("size")}
+                            id="size"
                             placeholder="SPECIFICATIONS" 
                             className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
                           />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Delivery Location</label>
+                          <label htmlFor="deliveryLocation" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Delivery Location</label>
                           <Input 
                             {...register("deliveryLocation")}
+                            id="deliveryLocation"
                             placeholder="CITY / YARD" 
                             className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
                           />
@@ -270,9 +277,10 @@ function ContactPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <label className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Message / Requirement *</label>
+                        <label htmlFor="message" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Message / Requirement *</label>
                         <Textarea 
                           {...register("message")}
+                          id="message"
                           placeholder="TELL US ABOUT YOUR PROJECT REQUIREMENTS..." 
                           className={`min-h-[120px] rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy resize-none ${errors.message ? 'border-red-500' : ''}`}
                         />

@@ -97,8 +97,9 @@ export const TrustCapabilities = () => {
 
               <img 
                 src={imageUrl} 
-                alt="High-quality industrial TMT steel" 
+                alt="High-quality industrial TMT reinforcement steel" 
                 className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
+                loading="lazy"
               />
               
               {/* Bottom Gold Architectural Accent */}
