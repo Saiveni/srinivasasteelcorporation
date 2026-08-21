@@ -20,6 +20,7 @@ function HomePage() {
   return (
     <div className="font-body" style={{ "--page-accent": "oklch(0.4 0.1 240)" } as any}>
       <HeroSection />
+      <TrustCapabilities />
       <TrustStatsBar />
       
       <ProductShowcase />
