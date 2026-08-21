@@ -116,7 +116,7 @@ export const HeroSection = () => {
           >
             <motion.img
               src={tmtHeroImage}
-              alt="Ribbed TMT reinforcement bars bundles in a professional steel yard"
+              alt="Dramatic TMT bar bundle in a professional steel yard"
               className="w-full h-full object-cover grayscale-[0.2] contrast-[1.05]"
               initial={{ scale: 1.04, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}

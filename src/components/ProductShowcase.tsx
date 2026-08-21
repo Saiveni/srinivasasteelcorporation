@@ -27,7 +27,7 @@ const products = [
   {
     index: "04",
     name: "Decoiling Services",
-    description: "Precision steel coil processing, straightening and cut-to-length services for specified industrial requirements.",
+    description: "Precision steel coil processing (2mm–4.5mm), straightening and cut-to-length services (10–40 feet).",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
     alt: "Industrial steel decoiling machine processing a large steel coil"
   },

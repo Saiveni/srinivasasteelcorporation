@@ -16,7 +16,7 @@ export const DecoilingSection = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1516216628859-9bccecad13fc?auto=format&fit=crop&q=80&w=2000" 
-          alt="Industrial steel coil processing"
+          alt="Precision industrial steel coil processing line"
           className="w-full h-full object-cover opacity-20 grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A121E] via-[#0A121E]/95 to-[#0A121E]" />
@@ -84,9 +84,9 @@ export const DecoilingSection = () => {
               className="relative aspect-square sm:aspect-video lg:aspect-[4/5] rounded-[32px] overflow-hidden border border-white/10 shadow-2xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=1200" 
-                alt="High-precision steel decoiling machine and coil"
-                className="w-full h-full object-cover contrast-[1.1] grayscale-[0.2]"
+                src="https://images.unsplash.com/photo-1581092334651-ddf26d9a1930?auto=format&fit=crop&q=80&w=1200" 
+                alt="Grayscale industrial machine for steel processing"
+                className="w-full h-full object-cover contrast-[1.1] grayscale"
               />
               {/* Inner Glow/Highlight */}
               <div className="absolute inset-0 bg-gradient-to-tr from-[#0A121E]/40 via-transparent to-white/5 pointer-events-none" />
