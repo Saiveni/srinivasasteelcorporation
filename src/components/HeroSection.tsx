@@ -9,7 +9,7 @@ export const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-stretch min-h-[580px] lg:h-[620px]">
           
           {/* Left Content: 46% Width */}
-          <div className="w-full lg:w-[46%] flex flex-col justify-center py-12 lg:py-0 z-10 lg:pl-16 relative">
+          <div className="w-full lg:w-[46%] flex flex-col justify-center py-12 lg:py-0 z-30 lg:pl-16 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,20 +58,16 @@ export const HeroSection = () => {
           </div>
           
           {/* Right Image Content: 54% Width */}
-          <div className="w-full lg:w-[54%] relative mt-8 lg:mt-0 min-h-[400px] lg:min-h-full overflow-hidden">
-            {/* Custom Concave Architectural Sweeping Curve */}
-            <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[300px] -ml-[1px] z-20 pointer-events-none">
+          <div className="w-full lg:w-[54%] relative mt-8 lg:mt-0 min-h-[400px] lg:min-h-full">
+            {/* Custom Concave Architectural Sweeping Curve - Matching Reference */}
+            <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[240px] -ml-[120px] z-20 pointer-events-none">
               <svg 
                 viewBox="0 0 100 100" 
                 preserveAspectRatio="none" 
                 className="w-full h-full fill-[#F7F7F4]"
               >
-                {/* 
-                  Curve logic:
-                  Starts at top-right (relative to container) and sweeps concave toward bottom-right.
-                  Matches the requirement: begins upper-middle, sweeps lower-middle.
-                */}
-                <path d="M0,0 L100,0 C30,0 30,100 100,100 L0,100 Z" />
+                {/* A true concave curve sweeping from top-right toward bottom-right of the left panel */}
+                <path d="M100,0 C40,0 40,100 100,100 L100,100 L0,100 L0,0 Z" transform="scale(-1, 1) translate(-100, 0)" />
               </svg>
               {/* Gold Accent Line */}
               <svg 
@@ -79,7 +75,7 @@ export const HeroSection = () => {
                 preserveAspectRatio="none" 
                 className="absolute inset-0 w-full h-full pointer-events-none"
               >
-                <path d="M100,0 C30,0 30,100 100,100" fill="none" stroke="#D9A000" strokeWidth="0.5" opacity="0.4" />
+                <path d="M0,0 C60,0 60,100 0,100" fill="none" stroke="#D9A000" strokeWidth="0.5" opacity="0.3" />
               </svg>
             </div>
             
@@ -88,7 +84,7 @@ export const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1.2 }}
-              className="w-full h-full relative"
+              className="w-full h-full relative overflow-hidden"
             >
               <img
                 src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop"
@@ -96,7 +92,7 @@ export const HeroSection = () => {
                 className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
               />
               {/* Metallic Overlay */}
-              <div className="absolute inset-0 bg-[#0B1B33]/10 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-[#0B1B33]/15 mix-blend-multiply" />
             </motion.div>
           </div>
 
