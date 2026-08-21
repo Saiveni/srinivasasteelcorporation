@@ -74,7 +74,7 @@ export const HeroSection = () => {
               }}
             >
               <img
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop"
                 alt="Bundles of premium ribbed TMT reinforcement steel bars"
                 className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
               />
