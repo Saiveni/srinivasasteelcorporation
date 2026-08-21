@@ -89,10 +89,10 @@ export const ProductShowcase = () => {
   return (
     <section id="products" className="relative py-24 lg:py-32 bg-[#F4F6F8] overflow-hidden">
       {/* Engineering Background Details */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.02]" 
+      <div className="absolute inset-0 pointer-events-none opacity-[0.015]" 
            style={{ 
              backgroundImage: 'linear-gradient(to right, #111C2F 1px, transparent 1px), linear-gradient(to bottom, #111C2F 1px, transparent 1px)',
-             backgroundSize: '120px 120px'
+             backgroundSize: '100px 100px'
            }} 
       />
       <div className="absolute top-0 left-1/4 w-[1px] h-full bg-[#111C2F]/[0.03] hidden lg:block" />
