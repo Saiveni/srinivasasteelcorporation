@@ -15,45 +15,45 @@ export const HeroSection = () => {
       />
       
       <div className="container mx-auto px-6 max-w-[1400px]">
-        <div className="flex flex-col lg:flex-row items-stretch min-h-[560px] lg:min-h-[650px]">
+        <div className="flex flex-col lg:flex-row items-stretch min-h-[610px]">
           
-          {/* Left Content: 45% */}
-          <div className="w-full lg:w-[45%] flex flex-col justify-center py-12 lg:py-20 z-10">
+          {/* Left Content: ~45% */}
+          <div className="w-full lg:w-[45%] flex flex-col justify-center py-12 lg:py-16 z-10 lg:pr-[80px]">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-[12px] font-heading font-bold tracking-[0.3em] text-[#0B1B33]/60 uppercase block">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-[11px] font-heading font-semibold tracking-[0.2em] text-[#0B1B33] uppercase">
                   SINCE 1994
                 </span>
-                <div className="h-[1px] w-8 bg-[#D9A000]/40" />
-                <span className="text-[10px] font-technical font-bold tracking-[0.1em] text-[#D9A000] uppercase">
+                <span className="text-[#0B1B33]/20">—</span>
+                <span className="text-[11px] font-technical font-semibold tracking-[0.1em] text-[#D9A000]/80 uppercase">
                   TMT / STEEL / SUPPLY
                 </span>
               </div>
               
-              <h1 className="text-[48px] sm:text-[58px] lg:text-[72px] font-heading font-semibold leading-[1.05] text-[#0B1B33] mb-8 tracking-tight">
-                STRONGER <span className="text-[#0B1B33]">STEEL.</span> <br />
-                STRONGER <span className="text-[#D9A000]">TOMORROW.</span>
+              <h1 className="text-[42px] sm:text-[52px] lg:text-[64px] font-heading font-medium leading-[1.02] text-[#0B1B33] mb-8 tracking-tight">
+                <span className="block whitespace-nowrap">STRONGER STEEL.</span>
+                <span className="block mt-1">
+                  STRONGER <span className="text-[#D9A000]">TOMORROW.</span>
+                </span>
               </h1>
               
-              <p className="text-[17px] sm:text-[19px] text-[#0B1B33]/75 max-w-[520px] mb-10 leading-relaxed font-medium">
+              <p className="text-[17px] text-[#0B1B33]/70 max-w-[520px] mb-10 leading-[1.6] font-normal">
                 Trusted supplier of TMT rebars, steel products and decoiling solutions for construction and industrial requirements.
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-5">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  size="lg"
-                  className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white px-8 h-[58px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em] transition-all group shadow-lg shadow-[#D9A000]/20"
+                  className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white px-8 h-[54px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.12em] transition-all group border-none"
                 >
                   EXPLORE PRODUCTS <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
                 <Button
-                  size="lg"
                   variant="outline"
-                  className="border-[#0B1B33]/20 bg-white/50 text-[#0B1B33] hover:bg-[#0B1B33]/5 px-8 h-[58px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em] backdrop-blur-sm"
+                  className="border-[#0B1B33]/15 bg-white text-[#0B1B33] hover:bg-[#0B1B33]/5 px-8 h-[54px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.12em]"
                 >
                   GET A QUOTE
                 </Button>
@@ -61,37 +61,37 @@ export const HeroSection = () => {
             </motion.div>
           </div>
           
-          {/* Right Image Container: 55% */}
-          <div className="w-full lg:w-[55%] relative mt-8 lg:mt-0 min-h-[400px]">
-            {/* Curved Mask Transition (Desktop) */}
-            <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[180px] -ml-[90px] z-20 pointer-events-none">
+          {/* Right Image Container: ~55% */}
+          <div className="w-full lg:w-[55%] relative mt-8 lg:mt-0 min-h-[450px] lg:min-h-full">
+            {/* Architectural Curved Transition (Desktop) */}
+            <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[240px] -ml-[120px] z-20 pointer-events-none">
               <svg 
                 viewBox="0 0 100 100" 
                 preserveAspectRatio="none" 
                 className="w-full h-full fill-[#F7F7F4]"
               >
-                <path d="M100,0 C30,0 30,100 100,100 L100,100 L100,0 Z" transform="scale(-1, 1) translate(-100, 0)" />
+                <path d="M100,0 C20,0 20,100 100,100 L100,100 L100,0 Z" transform="scale(-1, 1) translate(-100, 0)" />
               </svg>
             </div>
             
             <motion.div 
-              initial={{ opacity: 0, scale: 1.03 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full h-full relative overflow-hidden bg-gray-200"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full h-full relative overflow-hidden bg-[#0B1B33]"
             >
               <img
-                src="https://images.unsplash.com/photo-1541625602330-2277a4c4b28d?q=80&w=2000&auto=format&fit=crop"
-                alt="Premium bundles of ribbed TMT reinforcement steel bars in industrial stockyard"
-                className="w-full h-full object-cover contrast-[1.08] brightness-[0.98]"
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop"
+                alt="Bundles of high-quality ribbed TMT reinforcement steel bars"
+                className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.85]"
               />
-              {/* Subtle lighting overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#F7F7F4]/20 via-transparent to-transparent lg:from-[#F7F7F4]/30" />
-              {/* Gold accent line along the curve area */}
-              <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[1px] bg-[#D9A000]/20 z-10" 
+              {/* Professional Steel Color Grade Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0B1B33]/30 via-transparent to-transparent mix-blend-multiply" />
+              
+              {/* Subtle technical line along the curve */}
+              <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-[1px] bg-[#D9A000]/30 z-10 opacity-50" 
                    style={{ 
-                     clipPath: 'path("M1,0 C0.3,0 0.3,100 1,100")',
-                     left: '0px'
+                     clipPath: 'path("M1,0 C0.2,0 0.2,100 1,100")',
                    }} />
             </motion.div>
           </div>

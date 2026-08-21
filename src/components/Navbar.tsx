@@ -49,7 +49,7 @@ export const Navbar = () => {
           </div>
           <div className="flex flex-col justify-center border-l border-[#0B1B33]/10 pl-3 h-9 sm:h-10">
             <span className="text-[14px] sm:text-[16px] font-heading font-semibold tracking-tight text-[#0B1B33] leading-none uppercase">
-              SRINIVASA STEEL
+              SRINIVASA <span className="text-[#0B1B33]">STEEL</span>
             </span>
             <span className="text-[9px] sm:text-[10px] font-technical font-bold tracking-[0.2em] text-[#D9A000] leading-none uppercase mt-1">
               CORPORATION
