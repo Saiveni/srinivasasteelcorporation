@@ -256,27 +256,28 @@ export const AboutSection = () => {
                 </motion.div>
               </div>
 
-              {/* MOBILE: Vertical Cylindrical TMT Rebar */}
-              <div className="lg:hidden relative w-14 h-[1400px]">
+              {/* MOBILE: Vertical Gold TMT Rebar */}
+              <div className="lg:hidden relative w-14 h-[1200px]">
                 <motion.div 
                   style={{ height: rodReveal, opacity: rodOpacity }}
                   className="absolute inset-0 shadow-[20px_0_40px_rgba(0,0,0,0.9)] rounded-full overflow-hidden"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c0e] via-[#41474e] to-[#080a0c] border-l border-white/5" />
-                  <div className="absolute inset-0 opacity-90 mix-blend-overlay" 
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#8A6D3B] via-[#F5D48E] to-[#8A6D3B]" />
+                  <div className="absolute inset-0 opacity-80 mix-blend-multiply" 
                        style={{ 
                          backgroundImage: `repeating-linear-gradient(
                            35deg, 
                            transparent, 
                            transparent 12px, 
-                           rgba(0,0,0,0.95) 12px, 
-                           rgba(0,0,0,0.95) 18px, 
-                           rgba(255,255,255,0.06) 18px, 
-                           rgba(255,255,255,0.06) 20px
+                           rgba(0,0,0,0.5) 12px, 
+                           rgba(0,0,0,0.5) 16px
                          )`,
-                         backgroundSize: '100% 60px'
+                         backgroundSize: '100% 40px'
                        }} 
                   />
+                  {/* Vertical Ribs */}
+                  <div className="absolute left-[30%] top-0 h-full w-[2px] bg-[#C5A059]" />
+                  <div className="absolute right-[30%] top-0 h-full w-[2px] bg-[#C5A059]" />
                 </motion.div>
               </div>
             </div>
