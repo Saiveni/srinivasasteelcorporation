@@ -11,22 +11,22 @@ import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
 
 const HERO_IMAGES = [
   {
-    url: rebarCoils.url,
+    url: rebarCoils?.url ?? "",
     alt: "Premium TMT reinforcement steel coils",
     position: "center center"
   },
   {
-    url: rebarStraight.url,
+    url: rebarStraight?.url ?? "",
     alt: "Bundled TMT steel bars ready for dispatch",
     position: "center center"
   },
   {
-    url: rebarWarehouse.url,
+    url: rebarWarehouse?.url ?? "",
     alt: "Industrial steel reinforcement stock warehouse",
     position: "center center"
   },
   {
-    url: rebarDetail.url,
+    url: rebarDetail?.url ?? "",
     alt: "High-quality ribbed TMT reinforcement steel detail",
     position: "center center"
   }
