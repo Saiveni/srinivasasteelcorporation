@@ -19,7 +19,7 @@ const galleryItems = [
   },
   {
     category: "OIL RODS",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1536412597336-ade7b523ec3f?q=80&w=800&auto=format&fit=crop",
     title: "Precision Oil Rods"
   },
   {

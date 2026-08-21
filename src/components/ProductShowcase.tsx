@@ -14,21 +14,21 @@ const products = [
     index: "02",
     name: "Wire Products",
     description: "Industrial grade steel wire and binding wire coils designed for precise reinforcement anchoring.",
-    image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop",
     alt: "High-quality industrial steel wire and binding wire coils"
   },
   {
     index: "03",
     name: "Oil Rods",
     description: "High-performance steel oil rods engineered for specialized industrial and mechanical applications.",
-    image: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1536412597336-ade7b523ec3f?q=80&w=800&auto=format&fit=crop",
     alt: "Professional grade industrial steel rods"
   },
   {
     index: "04",
     name: "Decoiling Services",
     description: "Precision steel coil processing (2mm–4.5mm), straightening and cut-to-length services (10–40 feet).",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1530229540764-5f6da595af36?q=80&w=800&auto=format&fit=crop",
     alt: "Industrial steel decoiling machine processing a large steel coil"
   },
 ];
