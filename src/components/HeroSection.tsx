@@ -4,16 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 
-// @ts-ignore
-import rebarCoils from "@/assets/rebar-coils.jpg.asset.json";
-// @ts-ignore
-import rebarWarehouse from "@/assets/rebar-warehouse.jpg.asset.json";
-// @ts-ignore
-import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
 
 const HERO_IMAGES = [
   {
-    url: (rebarCoils as any)?.url || "",
+    url: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
     alt: "Premium TMT reinforcement steel coils",
     position: "center center"
   },
@@ -23,12 +17,12 @@ const HERO_IMAGES = [
     position: "center center"
   },
   {
-    url: (rebarWarehouse as any)?.url || "",
+    url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
     alt: "Industrial steel reinforcement stock warehouse",
     position: "center center"
   },
   {
-    url: (rebarDetail as any)?.url || "",
+    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
     alt: "High-quality ribbed TMT reinforcement steel detail",
     position: "center center"
   }
