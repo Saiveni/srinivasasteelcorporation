@@ -14,7 +14,7 @@ const products = [
     index: "02",
     name: "Binding Wire",
     description: "High-tensile annealed wire coils designed for precise and secure reinforcement anchoring.",
-    image: "https://images.unsplash.com/photo-1533035350221-afc0331c4b78?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&q=80&w=800",
     alt: "Macro industrial view of high-quality annealed steel binding wire coils"
   },
   {
@@ -36,42 +36,52 @@ const products = [
 const ProductCard = ({ product, index }: { product: typeof products[0], index: number }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative bg-white rounded-[22px] border border-black/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500"
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -4 }}
+      className="group relative bg-white rounded-[20px] border border-black/[0.04] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden hover:shadow-[0_16px_48px_rgba(0,0,0,0.06)] transition-all duration-500"
     >
+      {/* Image Area - Strongest visual element */}
       <div className="aspect-[4/3] overflow-hidden relative bg-[#F8FAFC]">
         <img 
           src={product.image} 
           alt={product.alt}
-          className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-ssc-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Subtle Hover Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-ssc-navy/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
 
-      <div className="p-8">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-[10px] font-technical font-bold text-ssc-gold uppercase tracking-widest">
-            {product.index} / MATERIAL
+      <div className="p-7 lg:p-8">
+        {/* Product Number - Gold typography */}
+        <div className="mb-4">
+          <span className="text-[11px] font-technical font-bold text-ssc-gold tracking-[0.2em]">
+            {product.index}
           </span>
         </div>
         
-        <h3 className="text-xl font-heading font-semibold text-ssc-navy mb-3 group-hover:text-ssc-gold transition-colors duration-300">
-          {product.name}
-        </h3>
+        {/* Title with vertical accent line */}
+        <div className="flex gap-4 items-start mb-4">
+          <div className="w-[1px] h-6 bg-ssc-gold/40 mt-1 flex-shrink-0" />
+          <h3 className="text-[22px] lg:text-[26px] font-heading font-medium text-ssc-navy leading-tight tracking-tight group-hover:text-ssc-navy/80 transition-colors duration-300">
+            {product.name}
+          </h3>
+        </div>
         
-        <p className="text-[#64748B] text-sm leading-relaxed mb-6 line-clamp-2">
+        {/* Description */}
+        <p className="text-[#64748B] text-[15px] leading-relaxed mb-8 line-clamp-2 font-[450]">
           {product.description}
         </p>
 
+        {/* View Details - Refined link */}
         <a 
           href={`#${product.name.toLowerCase().replace(/\s+/g, '-')}`}
-          className="inline-flex items-center gap-2 text-[12px] font-technical font-bold text-ssc-navy uppercase tracking-wider group/link"
+          className="inline-flex items-center gap-2 text-[10px] font-technical font-bold text-ssc-gold uppercase tracking-[0.25em] group/link"
         >
           View Details
-          <ArrowRight className="w-4 h-4 text-ssc-gold transition-transform duration-300 group-hover/link:translate-x-1" />
+          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover/link:translate-x-[5px]" />
         </a>
       </div>
     </motion.div>
@@ -97,7 +107,7 @@ const ProductShowcase = () => {
 
       <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 lg:mb-20 gap-8">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 lg:mb-24 gap-8">
           <div className="max-w-[620px]">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -132,11 +142,28 @@ const ProductShowcase = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-20 lg:mb-24">
           {products.map((product, index) => (
             <ProductCard key={product.index} product={product} index={index} />
           ))}
         </div>
+
+        {/* Section Bottom - Catalogue Continuation */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="flex justify-center"
+        >
+          <a 
+            href="#catalogue"
+            className="group inline-flex items-center gap-3 text-[12px] font-technical font-bold text-ssc-navy uppercase tracking-[0.3em] py-3 px-6 hover:text-ssc-gold transition-colors duration-300"
+          >
+            View Complete Product Catalogue
+            <ArrowRight className="w-4 h-4 text-ssc-gold transition-transform duration-500 group-hover:translate-x-2" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
