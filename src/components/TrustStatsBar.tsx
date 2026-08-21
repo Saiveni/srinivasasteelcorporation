@@ -45,8 +45,8 @@ export const TrustStatsBar = () => {
   const stats = [
     { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / HERITAGE", icon: Award },
     { number: "3", suffix: "", label: "Business Locations", subLabel: "02 / NETWORK", icon: MapPin },
-    { number: "TMT", suffix: "", label: "Steel Supply", subLabel: "03 / MATERIAL", icon: Factory },
-    { number: "DECOILING", suffix: "", label: "Solutions", subLabel: "04 / CAPABILITY", icon: Settings2 },
+    { number: "STEEL", suffix: "", label: "Supply", subLabel: "03 / MATERIAL", icon: Factory },
+    { number: "DECOILING", suffix: "", label: "Services", subLabel: "04 / CAPABILITY", icon: Settings2 },
   ];
 
   const ref = useRef(null);
