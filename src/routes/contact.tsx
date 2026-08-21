@@ -79,7 +79,7 @@ function ContactPage() {
                 viewport={{ once: true }}
                 className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5"
               >
-                <h2 className="text-3xl font-heading font-bold text-ssc-navy mb-10 tracking-tight uppercase">
+                <h2 id="quote-form" className="text-3xl font-heading font-bold text-ssc-navy mb-10 tracking-tight uppercase">
                   REQUEST A QUOTE
                 </h2>
                 
