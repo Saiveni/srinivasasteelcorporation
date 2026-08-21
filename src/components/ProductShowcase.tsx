@@ -50,6 +50,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
           src={product.image} 
           alt={product.alt}
           className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
+          loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ssc-navy/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
       </div>
