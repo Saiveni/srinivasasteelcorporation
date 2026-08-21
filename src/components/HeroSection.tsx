@@ -87,7 +87,7 @@ export const HeroSection = () => {
               className="w-full h-full relative overflow-hidden bg-[#0B1B33] lg:rounded-l-[0px]"
             >
               <img
-                src="https://images.unsplash.com/photo-1541625602330-2277a4c4b28d?q=80&w=2000&auto=format&fit=crop"
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop"
                 alt="Bundles of premium ribbed TMT reinforcement steel bars"
                 className="w-full h-full object-cover grayscale-[0.1] contrast-[1.15] brightness-[0.85] origin-center"
               />

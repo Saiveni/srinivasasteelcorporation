@@ -14,7 +14,7 @@ const galleryItems = [
   },
   {
     category: "WIRE PRODUCTS",
-    image: "https://images.unsplash.com/photo-1530229540764-5f6da595af36?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
     title: "Industrial Wire Bundles"
   },
   {
@@ -24,7 +24,7 @@ const galleryItems = [
   },
   {
     category: "DECOILING",
-    image: "https://images.unsplash.com/photo-1530229540764-5f6da595af36?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
     title: "Professional Decoiling Line"
   },
   {
