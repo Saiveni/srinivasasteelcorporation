@@ -14,7 +14,7 @@ export const Route = createFileRoute("/products")({
 
 function ProductsPage() {
   return (
-    <div className="pt-20">
+    <div className="pt-[80px]">
       <ProductsComponent />
       
     </div>
