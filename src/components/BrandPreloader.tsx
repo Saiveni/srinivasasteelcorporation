@@ -100,9 +100,9 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
               className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] flex items-center justify-center mb-8"
             >
               <img
-                src={sscLogo3D.url}
+                src={sscLogo.url}
                 alt="SSC Logo"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain filter brightness-0 invert"
               />
             </motion.div>
 
