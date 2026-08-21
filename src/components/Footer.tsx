@@ -19,10 +19,14 @@ export const Footer = () => {
           {/* Brand */}
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3">
-              <img src={sscLogo3D.url} alt="SSC Logo" className="h-14 w-14 object-contain" />
-              <div className="flex flex-col">
-                <span className="text-xl font-heading tracking-tight leading-none">SRINIVASA</span>
-                <span className="text-xs font-technical font-semibold tracking-[0.2em] text-ssc-gold leading-none mt-1">CORPORATION</span>
+              <img src={sscLogo3D.url} alt="SSC Logo" className="h-16 w-16 object-contain" />
+              <div className="flex flex-col border-l border-white/10 pl-4 py-1">
+                <span className="text-[22px] font-heading font-bold tracking-[0.05em] leading-none uppercase text-white">
+                  SRINIVASA <span className="font-medium opacity-80 text-[20px]">STEEL</span>
+                </span>
+                <span className="text-[11px] font-technical font-extrabold tracking-[0.3em] text-ssc-gold leading-none mt-2 uppercase">
+                  CORPORATION
+                </span>
               </div>
             </Link>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">

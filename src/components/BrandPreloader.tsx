@@ -117,10 +117,10 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
               }}
               className="flex flex-col items-center mb-10"
             >
-              <h1 className="text-white text-[20px] sm:text-[28px] font-heading font-semibold tracking-[0.15em] leading-tight uppercase">
-                SRINIVASA STEEL
+              <h1 className="text-white text-[24px] sm:text-[32px] font-heading font-bold tracking-[0.1em] leading-tight uppercase">
+                SRINIVASA <span className="font-medium opacity-90">STEEL</span>
               </h1>
-              <h2 className="text-[#D9A400] text-[11px] sm:text-[14px] font-technical font-bold tracking-[0.4em] leading-tight uppercase mt-2">
+              <h2 className="text-[#D9A400] text-[12px] sm:text-[15px] font-technical font-extrabold tracking-[0.45em] leading-tight uppercase mt-3">
                 CORPORATION
               </h2>
             </motion.div>

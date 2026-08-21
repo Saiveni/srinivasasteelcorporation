@@ -53,11 +53,11 @@ export const Navbar = () => {
               className="h-full w-full object-contain filter drop-shadow-sm"
             />
           </div>
-          <div className="flex flex-col justify-center border-l border-[#0B1B33]/10 pl-3 h-9 sm:h-10">
-            <span className="text-[14px] sm:text-[16px] font-heading font-semibold tracking-tight text-[#0B1B33] leading-none uppercase">
-              SRINIVASA <span className="text-[#0B1B33]">STEEL</span>
+          <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-4 h-10 sm:h-11">
+            <span className="text-[15px] sm:text-[17px] font-heading font-bold tracking-[0.05em] text-[#0B1B33] leading-none uppercase">
+              SRINIVASA <span className="text-[#0B1B33]/90 font-medium">STEEL</span>
             </span>
-            <span className="text-[9px] sm:text-[10px] font-technical font-bold tracking-[0.2em] text-[#D9A000] leading-none uppercase mt-1">
+            <span className="text-[10px] sm:text-[11px] font-technical font-extrabold tracking-[0.3em] text-[#D9A000] leading-none uppercase mt-1.5 opacity-90">
               CORPORATION
             </span>
           </div>
