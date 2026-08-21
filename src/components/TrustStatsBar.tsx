@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { Award, MapPin, Truck, Factory } from "lucide-react";
 
 interface StatItemProps {
@@ -12,8 +12,7 @@ interface StatItemProps {
 
 const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) => {
   const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const ref = useRef<HTMLDivElement | null>(null);
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -22,35 +21,34 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
       return;
     }
 
-    if (isInView) {
-      let start = 0;
-      const end = number;
-      const duration = 1400;
-      const increment = end / (duration / 16);
-      
-      const timer = setInterval(() => {
-        start += increment;
-        if (start >= end) {
-          setCount(end);
-          clearInterval(timer);
-        } else {
-          setCount(Math.floor(start));
-        }
-      }, 16);
-      
-      return () => clearInterval(timer);
-    }
-    return () => {};
-  }, [isInView, number, shouldReduceMotion]);
+    let start = 0;
+    const end = number;
+    const duration = 1400;
+    const increment = end / (duration / 16);
+
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [number, shouldReduceMotion]);
 
   return (
     <motion.div 
       ref={ref} 
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="flex flex-col items-center text-center relative px-2 sm:px-4 group cursor-default"
     >
+
+
       {/* 3. ICONS: Gold, Thin stroke */}
       <div className="text-ssc-gold mb-3 lg:mb-4 transition-transform duration-500 group-hover:scale-110">
         <Icon size={22} strokeWidth={1.75} />
@@ -84,7 +82,7 @@ export const TrustStatsBar = () => {
   ];
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
 
   return (
     <section className="w-full relative z-20 bg-[#F1F3F6] overflow-visible">
@@ -114,7 +112,7 @@ export const TrustStatsBar = () => {
           <motion.div
             ref={ref}
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
             className="relative w-full mx-auto backdrop-blur-[24px] backdrop-saturate-[1.25] border border-white/20 rounded-[24px] lg:rounded-[30px] overflow-hidden"
             style={{ 
