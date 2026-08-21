@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
+import sscLogo3D from "@/assets/ssc-logo-3d.png.asset.json";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +48,7 @@ export const Navbar = () => {
         >
           <div className="h-10 w-10 sm:h-11 sm:w-11 shrink-0">
             <img
-              src={sscLogo.url}
+              src={sscLogo3D.url}
               alt="SSC Logo"
               className="h-full w-full object-contain filter drop-shadow-sm"
             />
