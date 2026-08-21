@@ -191,11 +191,11 @@ export const AboutSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-[#C5A059]/30" />
             </div>
-            <h2 className="text-[42px] lg:text-[88px] text-white font-heading font-extrabold leading-[0.9] mb-12 tracking-tighter uppercase">
+            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold leading-[1] mb-12 tracking-tight uppercase">
               STRONG ROOTS.<br />
-              <span className="text-[#C5A059] italic">STRONGER FUTURE.</span>
+              <span className="text-[#C5A059]">STRONGER FUTURE.</span>
             </h2>
-            <p className="text-white/40 text-base lg:text-[20px] font-light max-w-3xl mx-auto leading-relaxed">
+            <p className="text-white/60 text-base lg:text-[18px] font-medium max-w-2xl mx-auto leading-relaxed">
               From a strong beginning in 1994 to becoming a trusted steel supplier across multiple locations, our journey is built on quality, trust and consistent delivery.
             </p>
           </motion.div>
