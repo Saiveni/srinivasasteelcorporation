@@ -82,7 +82,7 @@ export const HeroSection = () => {
   );
 
   return (
-    <section className="relative w-full bg-[#F7F7F4] pt-[80px] overflow-hidden min-h-[720px] lg:min-h-0">
+    <section className="relative w-full bg-[#F7F7F4] pt-0 overflow-hidden min-h-[720px] lg:min-h-0">
       {/* Mobile Hero Background (Full Bleed Carousel) */}
       <div className="absolute inset-0 z-0 lg:hidden">
         {imageElement}
@@ -96,7 +96,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 max-w-[1440px] relative z-10 h-full">
-        <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full">
+        <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full pt-[80px] lg:pt-0">
           
           {/* Content Area: 46% Width on Desktop, Full Width on Mobile */}
           <div className="w-full lg:w-[46%] flex flex-col justify-center py-20 sm:py-24 lg:py-0 z-30 lg:pl-16 relative h-full">
@@ -148,7 +148,7 @@ export const HeroSection = () => {
           </div>
           
           {/* Right Side Steel Image Carousel: 54% Width - Desktop Only */}
-          <div className="hidden lg:block lg:w-[54%] relative min-h-full">
+          <div className="hidden lg:block lg:w-[54%] relative min-h-full -mt-2">
             <div 
               className="w-full h-full relative overflow-hidden"
               style={{
