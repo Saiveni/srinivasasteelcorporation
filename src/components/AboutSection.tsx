@@ -103,37 +103,38 @@ export const AboutSection = () => {
         <div className="relative min-h-[600px] lg:min-h-0 pt-10 pb-20 lg:pt-32 lg:pb-32">
           
           {/* THE STEEL ROD (Desktop & Mobile) */}
-          <div className="absolute top-0 bottom-0 left-6 lg:left-0 lg:top-1/2 lg:bottom-auto lg:w-full lg:h-10 lg:-translate-y-1/2 z-10">
-            <div className="relative w-full h-full lg:h-10">
+          <div className="absolute top-0 bottom-0 left-6 lg:left-0 lg:top-1/2 lg:bottom-auto lg:w-full lg:h-16 lg:-translate-y-1/2 z-10 flex items-center">
+            <div className="relative w-full h-full lg:h-16">
               
               {/* TMT REBAR BODY */}
               <motion.div 
                 style={{ 
-                  width: "100%", // Always substantial on mobile as vertical column
+                  width: "100%", 
                   opacity: rodOpacity,
-                  clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)'
                 }}
-                className="absolute inset-0 rounded-full lg:rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.6)] w-6 lg:w-full"
+                className="absolute inset-0 rounded-full overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] w-8 lg:w-full"
               >
-                {/* 3D Steel Texture */}
-                <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-b from-[#2A2E35] via-[#4A515E] to-[#1A1D22]" />
+                {/* 3D Steel Texture - Improved contrast for realism */}
+                <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-b from-[#1a1c20] via-[#464c57] to-[#121417]" />
                 
-                {/* TMT Ribbing */}
-                <div className="absolute inset-0 opacity-40 mix-blend-overlay" 
+                {/* Real TMT Ribbing - High definition pattern */}
+                <div className="absolute inset-0 opacity-60 mix-blend-overlay" 
                      style={{ 
-                       backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(0,0,0,0.5) 18px, rgba(0,0,0,0.5) 22px)',
-                       backgroundSize: '50px 100%'
+                       backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 12px, rgba(0,0,0,0.8) 12px, rgba(0,0,0,0.8) 15px)',
+                       backgroundSize: '40px 100%'
                      }} 
                 />
                 
+                {/* Steel Grain/Noise */}
+                <div className="absolute inset-0 opacity-[0.1] mix-blend-soft-light bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
+
                 {/* Sheen Highlight */}
                 <motion.div 
                   animate={{ 
                     x: ["-100%", "200%"],
-                    y: ["-100%", "200%"]
                   }}
-                  transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent skew-x-[45deg]"
+                  transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-20deg]"
                 />
 
                 {/* Scroll Reveal Animation Overlay */}
@@ -158,74 +159,67 @@ export const AboutSection = () => {
                       transition: { delay: 0.5 + (i * 0.2), duration: 0.8, ease: cubicBezier }
                     }}
                     viewport={{ once: true }}
-                    className="relative w-8 h-12 flex items-center justify-center group"
+                    className="relative w-10 h-16 flex items-center justify-center group"
                   >
-                    <div className="absolute w-full h-full bg-gradient-to-b from-[#5D6677] to-[#2B3039] rounded-sm border border-white/10 shadow-lg" />
+                    {/* Machine collar sleeve */}
+                    <div className="absolute w-full h-full bg-gradient-to-b from-[#4a505c] via-[#2b3039] to-[#1a1d22] rounded-md border border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.4)]" />
                     <motion.div 
                       whileInView={{ 
                         backgroundColor: "#C5A059",
-                        boxShadow: "0 0 20px rgba(197,160,89,0.8)",
+                        boxShadow: "0 0 25px rgba(197,160,89,0.8)",
                         transition: { delay: 0.7 + (i * 0.2), duration: 1 }
                       }}
-                      className="w-3 h-3 rounded-full bg-[#333] z-10 transition-colors" 
+                      className="w-4 h-4 rounded-full bg-[#111] z-10 transition-colors border border-white/20" 
                     />
-                    {/* Visual Connector to Content */}
-                    <div className={`absolute left-1/2 -translate-x-1/2 w-[1px] bg-[#C5A059]/30 ${
-                      i % 2 === 0 ? 'bottom-full h-24' : 'top-full h-24'
-                    }`} />
                   </motion.div>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* CONTENT GRID - Responsively Handled */}
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-12 relative z-20 pl-20 lg:pl-0">
+          {/* CONTENT GRID - Content inside "image guards" (relative positioning to nodes) */}
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-16 lg:gap-12 relative z-20 pl-24 lg:pl-0">
             {milestones.map((milestone, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, y: milestone.align === 'top' ? 20 : -20 }}
                 whileInView={{ 
                   opacity: 1, 
-                  x: 0,
+                  y: 0,
                   transition: { duration: 1, delay: 0.6 + (idx * 0.15), ease: cubicBezier }
                 }}
                 viewport={{ once: true, margin: "-50px" }}
-                className={`flex flex-col ${milestone.align === 'top' ? 'lg:mb-64' : 'lg:mt-64'}`}
+                className={`flex flex-col relative ${milestone.align === 'top' ? 'lg:pb-32' : 'lg:pt-32'}`}
               >
                 {/* Mobile Machined Node */}
-                <div className="absolute left-[-56px] top-4 lg:hidden w-8 h-10 bg-gradient-to-b from-[#5D6677] to-[#2B3039] rounded-sm flex items-center justify-center">
-                  <div className="w-2.5 h-2.5 rounded-full bg-[#C5A059] shadow-[0_0_15px_rgba(197,160,89,0.5)]" />
+                <div className="absolute left-[-68px] top-6 lg:hidden w-10 h-12 bg-gradient-to-b from-[#4a505c] to-[#1a1d22] rounded-md flex items-center justify-center shadow-xl">
+                  <div className="w-3 h-3 rounded-full bg-[#C5A059] shadow-[0_0_20px_rgba(197,160,89,0.6)]" />
                 </div>
 
-                <div className={`flex flex-col ${milestone.align === 'top' ? 'lg:justify-end flex-grow' : ''}`}>
-                  <span className="text-[12px] lg:text-[13px] font-technical font-extrabold text-[#C5A059] tracking-[0.3em] block mb-4">
-                    {milestone.label}
-                  </span>
-                  <h3 className="text-[20px] lg:text-[22px] font-heading font-bold text-white leading-tight mb-5 uppercase tracking-wide">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-[15px] lg:text-[16px] text-white/50 leading-relaxed font-light max-w-[300px]">
-                    {milestone.content}
-                  </p>
+                {/* Content Box - Placed strategically relative to the rod */}
+                <div className={`flex flex-col ${milestone.align === 'top' ? 'lg:justify-end flex-grow mb-12' : 'lg:justify-start mt-12'}`}>
+                  {/* Visual Connector Line (Vertical) */}
+                  <div className={`hidden lg:block absolute left-1/2 -translate-x-1/2 w-[1px] bg-[#C5A059]/40 ${
+                    milestone.align === 'top' ? 'bottom-[0px] h-24' : 'top-[0px] h-24'
+                  }`} />
+                  
+                  <div className="bg-[#0D1E3A]/40 backdrop-blur-sm border border-white/5 p-6 rounded-lg lg:bg-transparent lg:p-0 lg:border-0">
+                    <span className="text-[12px] lg:text-[13px] font-technical font-extrabold text-[#C5A059] tracking-[0.3em] block mb-4">
+                      {milestone.label}
+                    </span>
+                    <h3 className="text-[20px] lg:text-[22px] font-heading font-bold text-white leading-tight mb-5 uppercase tracking-wide">
+                      {milestone.title}
+                    </h3>
+                    <p className="text-[15px] lg:text-[16px] text-white/50 leading-relaxed font-light max-w-[300px]">
+                      {milestone.content}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
         </div>
-
-        {/* SECONDARY VISUAL ELEMENT - ASYMMETRIC PLACEMENT */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 0.35, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.5, delay: 1 }}
-          className="hidden lg:block absolute bottom-0 right-0 w-[20%] aspect-[3/4] grayscale contrast-[1.2] pointer-events-none"
-        >
-          <img src={steelImageUrl} alt="" className="w-full h-full object-cover rounded-sm" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0B1B33] via-transparent to-transparent" />
-        </motion.div>
       </div>
     </section>
   );
