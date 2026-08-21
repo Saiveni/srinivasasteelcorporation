@@ -87,7 +87,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
 
 export const ProductShowcase = () => {
   return (
-    <section id="products" className="relative py-24 lg:py-32 bg-[#F4F6F8] overflow-hidden">
+    <section id="products" className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#F4F6F8] overflow-hidden">
       {/* Engineering Background Details */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.015]" 
            style={{ 
