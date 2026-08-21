@@ -144,6 +144,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                   src={item.image} 
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-[500ms] group-hover:scale-[1.03]"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-full bg-ssc-navy/5 flex items-center justify-center">
@@ -248,8 +249,9 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
             <div className="w-full lg:w-1/2 h-[400px] rounded-[24px] overflow-hidden shadow-2xl shadow-ssc-navy/5">
               <img 
                 src={assets.rebarWarehouse} 
-                alt="Srinivasa Steel Stock"
+                alt="Srinivasa Steel Stock and Warehouse Operations"
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
