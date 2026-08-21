@@ -7,7 +7,7 @@ import ProductShowcase from "@/components/ProductShowcase";
 import { AboutSection } from "@/components/AboutSection";
 import { BrandStrip } from "@/components/BrandStrip";
 import { SteelGallery } from "@/components/SteelGallery";
-import { ContactSection } from "@/components/ContactSection";
+
 
 export const Route = createFileRoute("/")({
   component: HomePage,
@@ -24,7 +24,7 @@ function HomePage() {
       <AboutSection />
       <BrandStrip />
       <SteelGallery />
-      <ContactSection />
+      
     </div>
   );
 }

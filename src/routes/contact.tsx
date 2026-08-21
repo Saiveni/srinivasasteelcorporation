@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ContactSection } from "@/components/ContactSection";
+
 import { motion } from "framer-motion";
 import { Phone, Mail, User, ArrowRight, CheckCircle2, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
