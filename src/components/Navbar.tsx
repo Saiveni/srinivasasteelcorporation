@@ -34,7 +34,7 @@ export const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center bg-[#F7F7F4] transition-all duration-300 ${
-        scrolled ? "h-[80px] shadow-sm border-b border-black/5" : "h-[80px] border-b border-black/[0.03]"
+        scrolled ? "h-[80px] shadow-sm border-b border-[#0B1B33]/5" : "h-[80px] border-b border-[#0B1B33]/5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -47,7 +47,7 @@ export const Navbar = () => {
               className="h-full w-full object-contain filter drop-shadow-sm"
             />
           </div>
-          <div className="flex flex-col justify-center border-l border-black/10 pl-3 h-9 sm:h-10">
+          <div className="flex flex-col justify-center border-l border-[#0B1B33]/10 pl-3 h-9 sm:h-10">
             <span className="text-[14px] sm:text-[16px] font-heading font-semibold tracking-tight text-[#0B1B33] leading-none uppercase">
               SRINIVASA STEEL
             </span>
@@ -84,7 +84,7 @@ export const Navbar = () => {
           </div>
           
           <Button 
-            className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white font-heading font-bold uppercase rounded-sm px-6 h-[44px] text-[12px] tracking-[0.1em] shadow-sm transition-all flex items-center gap-2"
+            className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white font-heading font-bold uppercase rounded-none px-6 h-[44px] text-[12px] tracking-[0.15em] shadow-lg shadow-[#D9A000]/10 transition-all flex items-center gap-2"
           >
             GET QUOTE <ArrowRight size={14} />
           </Button>
