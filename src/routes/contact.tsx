@@ -338,11 +338,6 @@ function ContactPage() {
                       <Mail size={20} className="text-ssc-navy group-hover:text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-technical font-bold text-ssc-navy uppercase tracking-tight">General Enquiries</p>
-                      <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-lg font-heading font-medium text-ssc-navy hover:text-ssc-gold transition-colors block leading-tight mt-1 min-h-[44px] flex items-center break-all">
-                        srinivasasteelcorporationvja@gmail.com
-                      </a>
-                    </div>
                       <p className="text-sm font-technical font-bold text-ssc-navy uppercase tracking-tight">Email Inquiries</p>
                       <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-base font-heading font-medium text-ssc-navy hover:text-ssc-gold transition-colors break-all block leading-tight mt-1 min-h-[44px] flex items-center">
                         srinivasasteelcorporationvja@gmail.com
