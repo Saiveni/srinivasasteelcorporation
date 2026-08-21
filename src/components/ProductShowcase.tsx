@@ -42,12 +42,11 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="group relative bg-white rounded-[22px] border border-black/[0.06] shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] hover:-translate-y-2 transition-all duration-500"
     >
-      <div className="aspect-[4/3] overflow-hidden relative">
+      <div className="aspect-[4/3] overflow-hidden relative bg-[#F8FAFC]">
         <img 
           src={product.image} 
           alt={product.alt}
           className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
         />
         <div className="absolute inset-0 bg-ssc-navy/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
