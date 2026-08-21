@@ -7,134 +7,108 @@ const MilestoneCard = ({
   year, 
   title, 
   content, 
-  icon: Icon,
   isMobile 
 }: { 
   index: number; 
   year: string; 
   title: string; 
   content: string; 
-  icon: any;
   isMobile?: boolean;
 }) => {
   const number = (index + 1).toString().padStart(2, '0');
   
-  // Subtle vertical / angle variations to look naturally suspended
-  const yOffset = isMobile ? 0 : (index % 2 === 0 ? 0 : 15);
-  const rotateZ = isMobile ? 0 : (index % 2 === 0 ? 0.4 : -0.4);
+  // Variations to look naturally suspended
+  const yOffset = isMobile ? 0 : (index % 2 === 0 ? 0 : 40);
+  const rotateZ = isMobile ? 0 : (index % 2 === 0 ? 0.5 : -0.5);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 100 }}
       whileInView={{ 
         opacity: 1, 
         y: yOffset,
         transition: { 
-          duration: 1.2, 
-          delay: 0.8 + (index * 0.25),
+          duration: 1.5, 
+          delay: 0.5 + (index * 0.3),
           ease: [0.16, 1, 0.3, 1]
         }
       }}
       viewport={{ once: true }}
-      className={`relative flex flex-col items-center ${isMobile ? 'mb-40' : ''}`}
+      className={`relative flex flex-col items-center ${isMobile ? 'mb-32' : ''}`}
     >
       {/* 
         PHYSICAL HANGING MECHANISM 
-        Structure: Rod -> Wrap-around Clamp -> Mechanical Hook -> 3D Card
+        Matches Reference: Gold/Brass Clamp -> Gold Link -> Plaque
       */}
-      <div className={`absolute ${isMobile ? '-left-16 top-1/2 -translate-y-1/2' : '-top-[100px] left-1/2 -translate-x-1/2'} flex flex-col items-center z-30`}>
+      <div className={`absolute ${isMobile ? '-left-[4.5rem] top-1/2 -translate-y-1/2' : '-top-[100px] left-1/2 -translate-x-1/2'} flex flex-col items-center z-30`}>
         
-        {/* The ENGINEERED CLAMP (Wrapped around the cylindrical rod) */}
-        <div className="relative group">
-          {/* Main Clamp Body (Front half visible) */}
-          <div className={`${isMobile ? 'w-8 h-12' : 'w-14 h-10'} bg-gradient-to-br from-[#E8C47A] via-[#C5A059] to-[#8A6D3B] border-[0.5px] border-white/20 shadow-[0_5px_15px_rgba(0,0,0,0.6)] rounded-sm relative z-10`}>
-            {/* Clamp Detailing (Bolts/Grooves) */}
-            <div className="absolute top-1/2 left-1 w-2 h-2 rounded-full bg-black/20 border border-white/10 -translate-y-1/2" />
-            <div className="absolute top-1/2 right-1 w-2 h-2 rounded-full bg-black/20 border border-white/10 -translate-y-1/2" />
+        {/* GOLD CLAMP (Wrapped around the rod) */}
+        <div className="relative">
+          <div className={`${isMobile ? 'w-10 h-14' : 'w-16 h-10'} bg-gradient-to-br from-[#F5D48E] via-[#C5A059] to-[#8A6D3B] border-[1px] border-white/20 shadow-[0_10px_20px_rgba(0,0,0,0.6)] rounded-sm flex items-center justify-center relative z-10 overflow-hidden`}>
+            {/* Clamp highlight */}
+            <div className="absolute top-0 left-0 w-full h-[30%] bg-white/20" />
             
-            {/* Inner curve indicating it's wrapping around a cylinder */}
-            <div className={`absolute ${isMobile ? 'inset-y-0 left-0 w-2' : 'inset-x-0 top-0 h-2'} bg-black/10 rounded-full`} />
+            {/* Number on clamp as per reference */}
+            <span className="text-[10px] font-technical font-black text-black/60 relative z-20">{number}</span>
           </div>
-          
-          {/* Clamp Shadow on Rod */}
-          <div className={`absolute ${isMobile ? 'left-full top-0 w-4 h-full' : 'top-full left-0 w-full h-4'} bg-black/30 blur-sm -z-10`} />
         </div>
 
-        {/* The MECHANICAL HOOK / C-LINK */}
-        <div className={`${isMobile ? 'w-16 h-0.5' : 'w-0.5 h-16'} bg-gradient-to-b from-[#C5A059] to-[#8A6D3B] relative flex items-center justify-center`}>
-          {/* Upper Pivot Point */}
-          <div className="absolute top-0 w-2.5 h-2.5 rounded-full bg-[#8A6D3B] border border-[#C5A059]/50 shadow-inner" />
-          
-          {/* The Hook Shape (visible connection to card) */}
-          <div className={`absolute bottom-0 ${isMobile ? 'right-0' : ''} flex flex-col items-center`}>
-            {/* Loop through card lid */}
-            <div className="w-5 h-6 border-2 border-[#C5A059] border-t-0 rounded-b-full shadow-lg" />
-            <div className="w-1.5 h-1.5 rounded-full bg-[#C5A059] -mt-1 shadow-[0_0_10px_rgba(197,160,89,0.5)]" />
-          </div>
+        {/* GOLD HANGER LINE & HOOK */}
+        <div className={`${isMobile ? 'w-12 h-[2px]' : 'w-[2px] h-16'} bg-[#C5A059] shadow-[0_0_10px_rgba(197,160,89,0.3)] relative`}>
+          {/* Hook that connects to card top */}
+          <div className={`absolute ${isMobile ? 'right-0 top-1/2 -translate-y-1/2' : 'bottom-0 left-1/2 -translate-x-1/2'} w-3 h-3 rounded-full bg-[#C5A059] border border-white/20`} />
         </div>
       </div>
 
-      {/* 3D HEAVY METAL PLAQUE */}
+      {/* 3D PREMIUM METAL PLAQUE */}
       <motion.div 
         animate={{ 
-          rotateZ: [rotateZ, rotateZ + 0.2, rotateZ],
-          y: [yOffset, yOffset - 2, yOffset],
-          rotateX: [0, 1, 0]
+          rotateZ: [rotateZ, rotateZ + 0.3, rotateZ],
+          y: [yOffset, yOffset - 3, yOffset],
         }}
         transition={{ 
-          duration: 6, 
+          duration: 8, 
           repeat: Infinity, 
           ease: "easeInOut",
-          delay: index * 0.7
+          delay: index * 0.5
         }}
-        className="w-[300px] bg-[#0A121E] border-[1px] border-[#C5A059]/40 rounded-sm p-8 text-center shadow-[0_40px_80px_rgba(0,0,0,1),inset_0_2px_10px_rgba(255,255,255,0.05)] relative group preserve-3d"
+        className="w-[280px] bg-gradient-to-b from-[#161B22] to-[#0A0C10] border-[1.5px] border-[#C5A059]/40 rounded-lg p-8 text-center shadow-[0_50px_100px_rgba(0,0,0,1),inset_0_2px_15px_rgba(255,255,255,0.05)] relative group overflow-hidden"
       >
-        {/* Metal Bevel (Subtle inner glow on edges) */}
-        <div className="absolute inset-0 border-t border-l border-white/5 pointer-events-none" />
-        <div className="absolute inset-x-0 bottom-0 h-[2px] bg-black/60 pointer-events-none" />
+        {/* Beveled Edge Highlight */}
+        <div className="absolute inset-0 border-t border-l border-white/10 rounded-lg pointer-events-none" />
         
-        {/* 3D Underside Thickness Effect */}
-        <div className="absolute -bottom-1 left-0 w-full h-1 bg-[#1a1d22] -z-10" />
+        {/* 3D Bottom Thickness */}
+        <div className="absolute bottom-0 left-0 w-full h-[4px] bg-[#000000] rounded-b-lg shadow-[0_-2px_10px_rgba(197,160,89,0.2)]" />
 
-        {/* Brushed Metal Texture */}
-        <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-        
-        <div className="relative z-10">
-          {/* Editorial Index Header */}
-          <div className="flex justify-between items-center w-full mb-8 opacity-60">
-            <span className="text-[#C5A059] font-technical font-bold text-[9px] tracking-widest">SSC_{number}</span>
-            <div className="h-[1px] flex-grow mx-4 bg-[#C5A059]/10" />
-            <span className="text-[#C5A059] font-technical font-bold text-[9px] tracking-widest">SEC_0{index}</span>
+        <div className="relative z-10 flex flex-col items-center">
+          {/* Icon Style matches reference: Line icons in Gold */}
+          <div className="text-[#C5A059] mb-6 scale-125">
+             {index === 0 && <Factory className="w-10 h-10" strokeWidth={1} />}
+             {index === 1 && <Factory className="w-10 h-10" strokeWidth={1} />}
+             {index === 2 && <Handshake className="w-10 h-10" strokeWidth={1} />}
+             {index === 3 && <MapPin className="w-10 h-10" strokeWidth={1} />}
           </div>
           
-          {/* Icon in Recess */}
-          <div className="w-16 h-16 mx-auto mb-8 flex items-center justify-center border border-[#C5A059]/20 rounded-sm bg-black/20 shadow-inner group-hover:bg-[#C5A059]/5 transition-all duration-500">
-            <Icon className="w-8 h-8 text-[#C5A059]" strokeWidth={1.5} />
-          </div>
+          <h4 className="text-white font-heading font-extrabold text-[28px] mb-1 tracking-tight uppercase">{year}</h4>
+          <h5 className="text-[#C5A059] font-technical font-bold text-[10px] tracking-[0.2em] uppercase mb-5">{title}</h5>
           
-          <h4 className="text-[#C5A059] font-heading font-extrabold text-[34px] mb-1 tracking-tighter uppercase">{year}</h4>
-          <h5 className="text-white font-technical font-bold text-[11px] tracking-[0.3em] uppercase mb-6 opacity-80">{title}</h5>
+          <div className="w-full h-[1px] bg-white/10 mb-5" />
           
-          <div className="w-12 h-[1px] bg-[#C5A059]/40 mx-auto mb-6 shadow-[0_0_10px_rgba(197,160,89,0.3)]" />
-          
-          <p className="text-white/40 text-[15px] font-light leading-relaxed">
+          <p className="text-white/60 text-[14px] font-medium leading-relaxed max-w-[200px] mx-auto">
             {content}
           </p>
         </div>
-
-        {/* Ambient Reflective Light (Bottom edge) */}
-        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-50" />
       </motion.div>
     </motion.div>
   );
 };
 
 const TrustIcon = ({ icon: Icon, text }: { icon: any, text: string }) => (
-  <div className="flex flex-col items-center gap-3">
-    <div className="w-10 h-10 flex items-center justify-center border border-[#C5A059]/20 rounded-full bg-[#C5A059]/5">
-      <Icon className="w-5 h-5 text-[#C5A059]" />
+  <div className="flex flex-col lg:flex-row items-center gap-4 group">
+    <div className="w-12 h-12 flex items-center justify-center border border-[#C5A059]/30 rounded-full bg-[#C5A059]/5 group-hover:bg-[#C5A059]/10 transition-colors">
+      <Icon className="w-6 h-6 text-[#C5A059]" strokeWidth={1.5} />
     </div>
-    <span className="text-[10px] lg:text-xs font-technical font-bold text-white/70 tracking-widest uppercase text-center max-w-[120px]">
+    <span className="text-[11px] font-technical font-bold text-white/80 tracking-widest uppercase text-center lg:text-left">
       {text}
     </span>
   </div>
