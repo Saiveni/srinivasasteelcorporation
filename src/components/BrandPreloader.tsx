@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
+import sscLogo3D from "@/assets/ssc-logo-3d.png.asset.json";
 
 // @ts-ignore
 import rebarCoils from "@/assets/rebar-coils.jpg.asset.json";
@@ -99,7 +100,7 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
               className="w-[80px] h-[80px] sm:w-[120px] sm:h-[120px] flex items-center justify-center mb-8"
             >
               <img
-                src={sscLogo.url}
+                src={sscLogo3D.url}
                 alt="SSC Logo"
                 className="w-full h-full object-contain"
               />
@@ -114,7 +115,7 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
                 duration: 1, 
                 ease: "easeOut" 
               }}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center mb-10"
             >
               <h1 className="text-white text-[20px] sm:text-[28px] font-heading font-semibold tracking-[0.15em] leading-tight uppercase">
                 SRINIVASA STEEL
@@ -123,6 +124,15 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
                 CORPORATION
               </h2>
             </motion.div>
+
+            {/* Loading Line */}
+            <div className="w-[180px] sm:w-[240px] h-[1px] bg-white/10 relative overflow-hidden">
+              <motion.div
+                className="absolute top-0 left-0 h-full bg-[#D9A400]"
+                style={{ width: `${progress}%` }}
+                transition={{ ease: "linear" }}
+              />
+            </div>
           </div>
         </motion.div>
       )}
