@@ -40,8 +40,12 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
   head: () => ({
     meta: [
-      { title: "Contact Us | Srinivasa Steel Corporation" },
-      { name: "description", content: "Contact Srinivasa Steel Corporation for TMT rebars, steel products, wire products, and decoiling requirements. Established in 1994." },
+      { title: "Contact Us | Srinivasa Steel Corporation | Get a Quote" },
+      { name: "description", content: "Contact Srinivasa Steel Corporation for TMT, steel product and decoiling requirements." },
+      { property: "og:title", content: "Contact Us | Srinivasa Steel Corporation | Get a Quote" },
+      { property: "og:description", content: "Contact Srinivasa Steel Corporation for TMT, steel product and decoiling requirements." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });

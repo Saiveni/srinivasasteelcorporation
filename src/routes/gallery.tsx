@@ -6,8 +6,12 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
   head: () => ({
     meta: [
-      { title: "Steel Gallery | Srinivasa Steel Corporation" },
-      { name: "description", content: "Explore our gallery of TMT rebars, wire products, and industrial steel stock." },
+      { title: "Steel Products & Operations Gallery | Srinivasa Steel Corporation" },
+      { name: "description", content: "Explore TMT rebars, steel products, wire products, decoiling and steel stock associated with Srinivasa Steel Corporation." },
+      { property: "og:title", content: "Steel Products & Operations Gallery | Srinivasa Steel Corporation" },
+      { property: "og:description", content: "Explore TMT rebars, steel products, wire products, decoiling and steel stock associated with Srinivasa Steel Corporation." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
 });

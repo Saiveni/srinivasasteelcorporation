@@ -81,10 +81,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Srinivasa Steel Corporation | Premium Industrial TMT & Supplies" },
-      { name: "description", content: "Srinivasa Steel Corporation (SSC) - 30+ years of excellence in TMT steel and industrial supply in India." },
-      { property: "og:title", content: "Srinivasa Steel Corporation | SSC" },
-      { property: "og:description", content: "Premium industrial TMT steel and industrial supplies in India. 30+ years of trust." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
