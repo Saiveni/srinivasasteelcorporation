@@ -181,6 +181,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
               <button 
                 onClick={() => setSelectedImage(null)}
                 className="absolute top-8 right-8 text-white/50 hover:text-ssc-gold transition-colors z-[110]"
+                aria-label="Close gallery"
               >
                 <X size={32} />
               </button>
@@ -188,6 +189,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
               <button 
                 onClick={(e) => { e.stopPropagation(); navigateLightbox('prev'); }}
                 className="absolute left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-ssc-gold transition-colors z-[110]"
+                aria-label="Previous image"
               >
                 <ChevronLeft size={48} />
               </button>
@@ -195,6 +197,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
               <button 
                 onClick={(e) => { e.stopPropagation(); navigateLightbox('next'); }}
                 className="absolute right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-ssc-gold transition-colors z-[110]"
+                aria-label="Next image"
               >
                 <ChevronRight size={48} />
               </button>
@@ -306,6 +309,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
             <button 
               onClick={() => setSelectedImage(null)}
               className="absolute top-8 right-8 text-white/50 hover:text-ssc-gold transition-colors z-[110]"
+              aria-label="Close gallery"
             >
               <X size={32} />
             </button>
@@ -313,6 +317,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
             <button 
               onClick={(e) => { e.stopPropagation(); navigateLightbox('prev'); }}
               className="absolute left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-ssc-gold transition-colors z-[110]"
+              aria-label="Previous image"
             >
               <ChevronLeft size={48} />
             </button>
@@ -320,6 +325,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
             <button 
               onClick={(e) => { e.stopPropagation(); navigateLightbox('next'); }}
               className="absolute right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-ssc-gold transition-colors z-[110]"
+              aria-label="Next image"
             >
               <ChevronRight size={48} />
             </button>
