@@ -18,7 +18,7 @@ const HERO_IMAGES = [
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
     alt: "Bundled TMT steel bars ready for dispatch",
     position: "center center"
   },

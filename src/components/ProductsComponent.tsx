@@ -18,7 +18,7 @@ const products = [
     name: "TMT REBARS",
     description: "Steel products for construction and structural requirements.",
     longDescription: "High-strength TMT rebars engineered for superior bonding with concrete and earthquake resistance. Our stock includes a comprehensive range of sizes suitable for residential, commercial, and industrial infrastructure projects.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800&auto=format&fit=crop",
     alt: "Highly realistic close-up photograph of ribbed TMT reinforcement bars",
     specs: ["5 mm", "5.5 mm", "5.5 mm TMT", "6 mm TMT", "TMT rebars"]
   },
@@ -36,7 +36,7 @@ const products = [
     name: "OIL RODS",
     description: "Steel rods supplied for relevant industrial and construction requirements.",
     longDescription: "High-performance steel oil rods engineered for specialized mechanical and industrial applications. We provide consistent quality to meet rigorous industrial standards.",
-    image: (rebarDetail as any)?.url || "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
+    image: (rebarDetail as any)?.url || "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
     alt: "Realistic photograph of steel rods",
     specs: ["Industrial Grade", "Precision Manufactured", "Multi-industry Application"]
   },
@@ -303,7 +303,7 @@ export const ProductsComponent = () => {
           </DialogClose>
           
           <div className="flex flex-col">
-            <div className="aspect-[16/9] w-full overflow-hidden relative">
+            <div className="aspect-[16/9] w-full overflow-hidden relative bg-[#F8FAFC]">
               <img 
                 src={selectedProduct?.image} 
                 alt={selectedProduct?.alt}

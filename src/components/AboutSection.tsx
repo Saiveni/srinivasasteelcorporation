@@ -16,7 +16,7 @@ export const AboutSection = () => {
               className="relative rounded-[24px] overflow-hidden shadow-2xl shadow-ssc-navy/10"
             >
               <img 
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" 
                 alt="Srinivasa Steel Corporation yard with bundles of TMT reinforcement bars"
                 className="w-full aspect-[4/5] object-cover grayscale-[0.2] contrast-[1.05]"
               />
