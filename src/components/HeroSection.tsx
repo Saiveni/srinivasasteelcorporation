@@ -122,7 +122,7 @@ export const HeroSection = () => {
                     OUR SOLUTIONS <ArrowRight className="ml-3 w-4 h-4" />
                   </Button>
                 </Link>
-                <Link to="/contact">
+                <Link to="/contact" search={{ product: "" }}>
                   <Button variant="outline" className="h-16 px-10 rounded-none border-ssc-navy/20 text-white lg:text-ssc-navy hover:bg-ssc-navy hover:text-white transition-all duration-500 text-[13px] tracking-widest font-bold">
                     PARTNER WITH US
                   </Button>
