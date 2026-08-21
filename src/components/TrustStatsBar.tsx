@@ -45,6 +45,7 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
       
       return () => clearInterval(timer);
     }
+    return () => {};
   }, [isInView, number, shouldReduceMotion]);
 
   const displayValue = number && !isNaN(parseInt(number)) ? count : number;
