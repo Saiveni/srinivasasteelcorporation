@@ -39,9 +39,17 @@ export const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
+    // Preload images
+    HERO_IMAGES.forEach((img) => {
+      if (img.url) {
+        const image = new Image();
+        image.src = img.url;
+      }
+    });
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
-    }, 3000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -50,30 +58,34 @@ export const HeroSection = () => {
   const imageAlt = currentImage?.alt || "";
   const imagePos = currentImage?.position || "center center";
 
+  const imageElement = (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={currentIndex}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.2, ease: "linear" }}
+        className="absolute inset-0"
+      >
+        <motion.img
+          initial={{ scale: 1 }}
+          animate={{ scale: 1.04 }}
+          transition={{ duration: 5, ease: "linear" }}
+          src={imageUrl}
+          alt={imageAlt}
+          className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
+          style={{ objectPosition: imagePos }}
+        />
+      </motion.div>
+    </AnimatePresence>
+  );
+
   return (
     <section className="relative w-full bg-[#F7F7F4] pt-[80px] overflow-hidden min-h-[720px] lg:min-h-0">
       {/* Mobile Hero Background (Full Bleed Carousel) */}
       <div className="absolute inset-0 z-0 lg:hidden">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
-            className="absolute inset-0"
-          >
-            <motion.img
-              initial={{ scale: 1 }}
-              animate={{ scale: 1.035 }}
-              transition={{ duration: 3, ease: "linear" }}
-              src={imageUrl}
-              alt={imageAlt}
-              className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-              style={{ objectPosition: imagePos }}
-            />
-          </motion.div>
-        </AnimatePresence>
+        {imageElement}
         {/* Cinematic Dark Navy Overlay for Mobile */}
         <div 
           className="absolute inset-0 z-10" 
@@ -143,26 +155,7 @@ export const HeroSection = () => {
                 clipPath: 'ellipse(100% 100% at 100% 50%)'
               }}
             >
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentIndex}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.2, ease: "easeInOut" }}
-                  className="absolute inset-0"
-                >
-                  <motion.img
-                    initial={{ scale: 1 }}
-                    animate={{ scale: 1.035 }}
-                    transition={{ duration: 3, ease: "linear" }}
-                    src={imageUrl}
-                    alt={imageAlt}
-                    className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-                    style={{ objectPosition: imagePos }}
-                  />
-                </motion.div>
-              </AnimatePresence>
+              {imageElement}
               
               {/* Subtle Metallic Color Overlay */}
               <div className="absolute inset-0 bg-[#0B1B33]/10 mix-blend-multiply z-10 pointer-events-none" />
