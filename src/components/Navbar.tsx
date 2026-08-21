@@ -34,7 +34,7 @@ export const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 flex items-center bg-[#F7F7F4] transition-all duration-300 h-[80px] border-b border-[#0B1B33]/5 shadow-sm`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container-wide flex items-center justify-between">
         {/* Logo Section */}
         <Link 
           to="/" 
@@ -89,9 +89,7 @@ export const Navbar = () => {
           </div>
           
           <Link to="/contact" search={{ product: "" }}>
-            <Button 
-              className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white font-heading font-bold uppercase rounded-none px-6 h-[44px] text-[12px] tracking-[0.15em] shadow-lg shadow-[#D9A000]/10 transition-all flex items-center gap-2"
-            >
+            <Button>
               GET A QUOTE <ArrowRight size={14} />
             </Button>
           </Link>
@@ -99,7 +97,7 @@ export const Navbar = () => {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden text-[#0B1B33] p-2 relative z-[100]"
+          className="lg:hidden text-[#0B1B33] p-4 relative z-[100] min-w-[44px] min-h-[44px] flex items-center justify-center"
           onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -127,9 +125,7 @@ export const Navbar = () => {
                 </Link>
               ))}
               <Link to="/contact" search={{ product: "" }} className="w-full" onClick={() => setIsOpen(false)}>
-                <Button 
-                  className="w-full bg-[#D9A000] text-white font-heading font-bold uppercase h-[60px] rounded-sm text-lg"
-                >
+                <Button className="w-full">
                   GET A QUOTE
                 </Button>
               </Link>

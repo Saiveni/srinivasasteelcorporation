@@ -94,7 +94,7 @@ export const HeroSection = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6 max-w-[1440px] relative z-10 h-full">
+      <div className="container-wide relative z-10 h-full">
         <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full pt-[80px] lg:pt-0">
           
           {/* Content Area: 46% Width on Desktop, Full Width on Mobile */}
@@ -117,7 +117,7 @@ export const HeroSection = () => {
               </div>
               
               {/* Headline */}
-              <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[64px] font-heading font-semibold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.03em] lg:tracking-tight">
+              <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[64px] font-heading font-semibold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.03em]">
                 <span className="block mb-1">STRONGER STEEL.</span>
                 <span className="block">
                   STRONGER <span className="text-[#D9A000]">TOMORROW.</span>
@@ -131,15 +131,15 @@ export const HeroSection = () => {
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-stretch sm:items-start">
-                <Button
-                  className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white px-9 h-[56px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em] transition-all group shadow-lg shadow-[#D9A000]/15"
-                >
-                  EXPLORE PRODUCTS <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                <Link to="/products">
+                  <Button className="w-full sm:w-auto">
+                    EXPLORE PRODUCTS <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                </Link>
                 <Link to="/contact" search={{ product: "" }}>
                   <Button
                     variant="outline"
-                    className="border-white lg:border-[#0B1B33] bg-white/10 lg:bg-white text-white lg:text-[#0B1B33] hover:bg-white/20 lg:hover:bg-[#0B1B33]/5 px-9 h-[56px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em]"
+                    className="w-full sm:w-auto border-white lg:border-[#0B1B33] bg-white/10 lg:bg-white text-white lg:text-[#0B1B33] hover:bg-white/20 lg:hover:bg-[#0B1B33]/5"
                   >
                     GET A QUOTE
                   </Button>
