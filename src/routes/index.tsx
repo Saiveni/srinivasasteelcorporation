@@ -4,7 +4,11 @@ import { HeroSection } from "@/components/HeroSection";
 import { TrustStatsBar } from "@/components/TrustStatsBar";
 import ProductShowcase from "@/components/ProductShowcase";
 import { DecoilingSection } from "@/components/DecoilingSection";
-import { PartnerStrip } from "@/components/PartnerStrip";
+import { AboutSection } from "@/components/AboutSection";
+import { BrandStrip } from "@/components/BrandStrip";
+import { SteelGallery } from "@/components/SteelGallery";
+import { LocationsSection } from "@/components/LocationsSection";
+import { ContactSection } from "@/components/ContactSection";
 
 
 export const Route = createFileRoute("/")({
@@ -19,7 +23,11 @@ function HomePage() {
       
       <ProductShowcase />
       <DecoilingSection />
-      <PartnerStrip />
+      <AboutSection />
+      <BrandStrip />
+      <SteelGallery />
+      <LocationsSection />
+      <ContactSection />
     </div>
   );
 }
