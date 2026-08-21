@@ -1,21 +1,82 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
+
+// @ts-ignore
+import rebarCoils from "@/assets/rebar-coils.jpg.asset.json";
+// @ts-ignore
+import rebarStraight from "@/assets/rebar-straight.jpg.asset.json";
+// @ts-ignore
+import rebarWarehouse from "@/assets/rebar-warehouse.jpg.asset.json";
+// @ts-ignore
+import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
+
+const HERO_IMAGES = [
+  {
+    url: (rebarCoils as any)?.url || "",
+    alt: "Premium TMT reinforcement steel coils",
+    position: "center center"
+  },
+  {
+    url: (rebarStraight as any)?.url || "",
+    alt: "Bundled TMT steel bars ready for dispatch",
+    position: "center center"
+  },
+  {
+    url: (rebarWarehouse as any)?.url || "",
+    alt: "Industrial steel reinforcement stock warehouse",
+    position: "center center"
+  },
+  {
+    url: (rebarDetail as any)?.url || "",
+    alt: "High-quality ribbed TMT reinforcement steel detail",
+    position: "center center"
+  }
+];
 
 export const HeroSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const currentImage = HERO_IMAGES[currentIndex] || HERO_IMAGES[0];
+  const imageUrl = currentImage?.url || "";
+  const imageAlt = currentImage?.alt || "";
+  const imagePos = currentImage?.position || "center center";
+
   return (
     <section className="relative w-full bg-[#F7F7F4] pt-[80px] overflow-hidden min-h-[720px] lg:min-h-0">
-      {/* Mobile Hero Background (Full Bleed) */}
+      {/* Mobile Hero Background (Full Bleed Carousel) */}
       <div className="absolute inset-0 z-0 lg:hidden">
-        <img
-          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop"
-          alt="Bundles of premium ribbed TMT reinforcement steel bars"
-          className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-          style={{ objectPosition: '60% center' }}
-        />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <motion.img
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.035 }}
+              transition={{ duration: 3, ease: "linear" }}
+              src={imageUrl}
+              alt={imageAlt}
+              className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
+              style={{ objectPosition: imagePos }}
+            />
+          </motion.div>
+        </AnimatePresence>
         {/* Cinematic Dark Navy Overlay for Mobile */}
         <div 
-          className="absolute inset-0" 
+          className="absolute inset-0 z-10" 
           style={{
             background: 'linear-gradient(180deg, rgba(5,18,35,0.48) 0%, rgba(5,18,35,0.62) 55%, rgba(5,18,35,0.78) 100%)'
           }} 
@@ -74,25 +135,38 @@ export const HeroSection = () => {
             </motion.div>
           </div>
           
-          {/* Right Side Steel Image: 54% Width - Desktop Only */}
+          {/* Right Side Steel Image Carousel: 54% Width - Desktop Only */}
           <div className="hidden lg:block lg:w-[54%] relative min-h-full">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.2 }}
+            <div 
               className="w-full h-full relative overflow-hidden"
               style={{
                 clipPath: 'ellipse(100% 100% at 100% 50%)'
               }}
             >
-              <img
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop"
-                alt="Bundles of premium ribbed TMT reinforcement steel bars"
-                className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <motion.img
+                    initial={{ scale: 1 }}
+                    animate={{ scale: 1.035 }}
+                    transition={{ duration: 3, ease: "linear" }}
+                    src={imageUrl}
+                    alt={imageAlt}
+                    className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
+                    style={{ objectPosition: imagePos }}
+                  />
+                </motion.div>
+              </AnimatePresence>
+              
               {/* Subtle Metallic Color Overlay */}
-              <div className="absolute inset-0 bg-[#0B1B33]/10 mix-blend-multiply" />
-            </motion.div>
+              <div className="absolute inset-0 bg-[#0B1B33]/10 mix-blend-multiply z-10 pointer-events-none" />
+            </div>
           </div>
 
         </div>
