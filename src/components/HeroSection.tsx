@@ -14,22 +14,22 @@ import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
 
 const HERO_IMAGES = [
   {
-    url: (rebarCoils as { url: string })?.url || "",
+    url: (rebarCoils as any)?.url || "",
     alt: "Premium TMT reinforcement steel coils",
     position: "center center"
   },
   {
-    url: (rebarStraight as { url: string })?.url || "",
+    url: (rebarStraight as any)?.url || "",
     alt: "Bundled TMT steel bars ready for dispatch",
     position: "center center"
   },
   {
-    url: (rebarWarehouse as { url: string })?.url || "",
+    url: (rebarWarehouse as any)?.url || "",
     alt: "Industrial steel reinforcement stock warehouse",
     position: "center center"
   },
   {
-    url: (rebarDetail as { url: string })?.url || "",
+    url: (rebarDetail as any)?.url || "",
     alt: "High-quality ribbed TMT reinforcement steel detail",
     position: "center center"
   }
@@ -44,6 +44,8 @@ export const HeroSection = () => {
     }, 3000);
     return () => clearInterval(timer);
   }, []);
+
+  const currentImage = HERO_IMAGES[currentIndex] || HERO_IMAGES[0];
 
   return (
     <section className="relative w-full bg-[#F7F7F4] pt-[80px] overflow-hidden min-h-[720px] lg:min-h-0">
@@ -62,10 +64,10 @@ export const HeroSection = () => {
               initial={{ scale: 1 }}
               animate={{ scale: 1.035 }}
               transition={{ duration: 3, ease: "linear" }}
-              src={HERO_IMAGES[currentIndex].url}
-              alt={HERO_IMAGES[currentIndex].alt}
+              src={currentImage.url}
+              alt={currentImage.alt}
               className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-              style={{ objectPosition: HERO_IMAGES[currentIndex].position }}
+              style={{ objectPosition: currentImage.position }}
             />
           </motion.div>
         </AnimatePresence>
@@ -151,10 +153,10 @@ export const HeroSection = () => {
                     initial={{ scale: 1 }}
                     animate={{ scale: 1.035 }}
                     transition={{ duration: 3, ease: "linear" }}
-                    src={HERO_IMAGES[currentIndex].url}
-                    alt={HERO_IMAGES[currentIndex].alt}
+                    src={currentImage.url}
+                    alt={currentImage.alt}
                     className="w-full h-full object-cover grayscale-[0.2] contrast-[1.1] brightness-[0.9]"
-                    style={{ objectPosition: HERO_IMAGES[currentIndex].position }}
+                    style={{ objectPosition: currentImage.position }}
                   />
                 </motion.div>
               </AnimatePresence>
