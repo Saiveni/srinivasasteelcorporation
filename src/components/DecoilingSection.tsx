@@ -15,7 +15,7 @@ export const DecoilingSection = () => {
       {/* Background Photography with dark overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop" 
+          src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop" 
           alt="Precision industrial steel coil processing line"
           className="w-full h-full object-cover opacity-20 grayscale"
         />
@@ -84,7 +84,7 @@ export const DecoilingSection = () => {
               className="relative aspect-square sm:aspect-video lg:aspect-[4/5] rounded-[32px] overflow-hidden border border-white/10 shadow-2xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop" 
                 alt="Grayscale industrial machine for steel processing"
                 className="w-full h-full object-cover contrast-[1.1] grayscale"
               />
