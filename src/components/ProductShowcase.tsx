@@ -90,7 +90,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
 
 const ProductShowcase = () => {
   return (
-    <section id="products" className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#F4F6F8] overflow-hidden">
+    <section id="products" className="relative section-spacing bg-[#F4F6F8] overflow-hidden">
       {/* Architectural Background Grid */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.015]" 
@@ -103,7 +103,7 @@ const ProductShowcase = () => {
         }} 
       />
 
-      <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
+      <div className="container-wide relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 lg:mb-24 gap-8">
           <div className="max-w-[620px]">

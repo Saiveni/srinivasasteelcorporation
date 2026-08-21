@@ -100,8 +100,8 @@ export const SteelGallery = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-[#F4F6F8]">
-        <div className="container mx-auto px-6 max-w-[1280px]">
+      <section className="pt-32 pb-14 lg:pb-24 bg-[#F4F6F8]">
+        <div className="container-wide">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">
               <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.4em] uppercase mb-6 block">
@@ -127,8 +127,8 @@ export const SteelGallery = () => {
       </section>
 
       {/* Gallery Section */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-6 max-w-[1280px]">
+      <section className="section-spacing bg-white">
+        <div className="container-wide">
           <div className="mb-12">
              <p className="text-[15px] text-ssc-navy/60 font-technical uppercase tracking-widest border-l-2 border-ssc-gold pl-6 py-1 italic max-w-2xl">
               "From reinforcement steel to decoiling and stock handling, every image reflects the materials and capabilities behind Srinivasa Steel Corporation."
@@ -202,9 +202,9 @@ export const SteelGallery = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-ssc-navy relative overflow-hidden">
+      <section className="section-spacing bg-ssc-navy relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-ssc-gold/[0.05] to-transparent" />
-        <div className="container mx-auto px-6 max-w-[1280px] relative z-10 text-center">
+        <div className="container-wide relative z-10 text-center">
           <h2 className="text-[32px] lg:text-[48px] font-heading font-medium tracking-tight text-white uppercase mb-6">
             LOOKING FOR STEEL FOR YOUR NEXT REQUIREMENT?
           </h2>
@@ -214,14 +214,14 @@ export const SteelGallery = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Button 
               asChild
-              className="h-[64px] px-10 bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy rounded-xl font-technical font-black uppercase tracking-widest transition-all hover:scale-105"
+              className="w-full sm:w-auto"
             >
               <Link to="/contact" search={{ product: "" }}>GET A QUOTE <ArrowRight className="ml-2" size={18} /></Link>
             </Button>
             <Button 
               asChild
               variant="outline"
-              className="h-[64px] px-10 border-white/20 text-white hover:bg-white/10 rounded-xl font-technical font-bold uppercase tracking-widest"
+              className="w-full sm:w-auto border-white/20 text-white hover:bg-white/10"
             >
               <Link to="/products" search={{ product: "" }}>VIEW PRODUCTS</Link>
             </Button>

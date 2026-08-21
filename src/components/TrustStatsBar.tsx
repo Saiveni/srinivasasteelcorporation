@@ -53,7 +53,7 @@ export const TrustStatsBar = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="w-full relative z-20 bg-[#0A121E] py-24 lg:py-32 overflow-hidden border-t border-white/5">
+    <section className="w-full relative z-20 bg-[#0A121E] section-spacing overflow-hidden border-t border-white/5">
       {/* Technical Blueprint Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.05]" 
            style={{ 
@@ -77,7 +77,7 @@ export const TrustStatsBar = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 max-w-[1280px] relative">
+      <div className="container-wide relative">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}

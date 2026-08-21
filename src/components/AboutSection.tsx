@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="relative py-24 lg:py-32 bg-[#F8F9FA] overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1280px]">
+    <section id="about" className="relative section-spacing bg-[#F8F9FA] overflow-hidden">
+      <div className="container-wide">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           {/* Left: Editorial Image */}
           <div className="w-full lg:w-1/2">

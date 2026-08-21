@@ -32,7 +32,7 @@ export const TrustCapabilities = () => {
   const imageUrl = "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop";
 
   return (
-    <section className="relative w-full bg-[#F4F6F8] py-24 lg:py-32 overflow-hidden border-t border-[#0B1B33]/5">
+    <section className="relative w-full bg-[#F4F6F8] section-spacing overflow-hidden border-t border-[#0B1B33]/5">
       {/* Technical Editorial Grid Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.04]" 
            style={{ 
@@ -44,7 +44,7 @@ export const TrustCapabilities = () => {
       {/* Subtle Gold Rule (Technical Detail) */}
       <div className="absolute top-0 left-[10%] w-[1px] h-full bg-gradient-to-b from-[#D9A000]/20 via-transparent to-transparent hidden lg:block" />
 
-      <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
+      <div className="container-wide relative z-10">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-stretch mb-24 lg:mb-32">
           
           {/* Left Content Area: Editorial Layout */}

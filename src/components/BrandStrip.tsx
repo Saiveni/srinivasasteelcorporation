@@ -9,8 +9,8 @@ export const BrandStrip = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-y border-black/5 overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1280px]">
+    <section className="py-14 bg-white border-y border-black/5 overflow-hidden">
+      <div className="container-wide">
         <motion.div 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
