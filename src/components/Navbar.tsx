@@ -88,7 +88,7 @@ export const Navbar = () => {
             })}
           </div>
           
-          <Link to="/contact">
+          <Link to="/contact" search={{ product: undefined }}>
             <Button 
               className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white font-heading font-bold uppercase rounded-none px-6 h-[44px] text-[12px] tracking-[0.15em] shadow-lg shadow-[#D9A000]/10 transition-all flex items-center gap-2"
             >

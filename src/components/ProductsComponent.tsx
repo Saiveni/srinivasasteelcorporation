@@ -146,9 +146,9 @@ export const ProductsComponent = () => {
                     <p className="text-[#64748B] text-base leading-relaxed mb-8 font-[450]">
                       {product.description}
                     </p>
-                    <div className="inline-flex items-center gap-2 text-[11px] font-technical font-bold text-ssc-gold uppercase tracking-[0.25em]">
+                    <Link to="/contact" search={{ product: product.name }} className="inline-flex items-center gap-2 text-[11px] font-technical font-bold text-ssc-gold uppercase tracking-[0.25em]">
                       ENQUIRE NOW <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </motion.div>
@@ -185,7 +185,7 @@ export const ProductsComponent = () => {
               <p className="text-white/60 text-lg leading-relaxed mb-10 font-[400]">
                 We provide high-precision decoiling solutions for applicable steel sizes and lengths, ensuring your material is straightened and cut to meet exact project specifications.
               </p>
-              <Link to="/contact">
+              <Link to="/contact" search={{ product: "DECOILED STEEL" }}>
                 <Button 
                   className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-bold uppercase rounded-none px-10 h-[60px] text-[13px] tracking-[0.2em]"
                 >
@@ -343,8 +343,11 @@ export const ProductsComponent = () => {
                 </div>
               </div>
               
-              <Link to="/contact" onClick={() => setSelectedProduct(null)}>
-                <Button 
+              <Link to="/contact" search={{ product: selectedProduct?.name }} onClick={() => setSelectedProduct(null)}>
+                <Button className="w-full h-14 bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-bold uppercase rounded-xl tracking-widest">
+                  REQUEST QUOTE
+                </Button>
+              </Link>
                   className="w-full h-[70px] bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-2xl shadow-xl shadow-ssc-navy/10"
                 >
                   REQUEST A QUOTE <ArrowRight className="ml-3" size={20} />
