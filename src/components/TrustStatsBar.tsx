@@ -79,9 +79,9 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
 
 export const TrustStatsBar = () => {
   const stats = [
-    { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / TRUST", icon: Award },
-    { number: "3", suffix: "", label: "Operating Locations", subLabel: "02 / NETWORK", icon: MapPin },
-    { number: "TMT", suffix: "", label: "Steel Products", subLabel: "03 / PRODUCTS", icon: Factory },
+    { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / QUALITY", icon: Award },
+    { number: "3", suffix: "", label: "Locations", subLabel: "02 / NETWORK", icon: MapPin },
+    { number: "TMT", suffix: "", label: "Steel Products", subLabel: "03 / MATERIAL", icon: Factory },
     { number: "DECOILING", suffix: "", label: "Services", subLabel: "04 / PROCESSING", icon: Settings2 },
   ];
 
