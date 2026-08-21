@@ -13,7 +13,7 @@ import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
 
 const HERO_IMAGES = [
   (rebarCoils as any)?.url,
-  "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
   (rebarWarehouse as any)?.url,
   (rebarDetail as any)?.url,
 ].filter(Boolean);

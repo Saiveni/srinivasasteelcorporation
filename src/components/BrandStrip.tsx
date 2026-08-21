@@ -9,8 +9,8 @@ export const BrandStrip = () => {
   ];
 
   return (
-    <section className="py-24 bg-white border-y border-black/5 overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1280px]">
+    <section className="py-14 bg-white border-y border-black/5 overflow-hidden">
+      <div className="container-wide">
         <motion.div 
           initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +20,7 @@ export const BrandStrip = () => {
           <span className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
             Dealer & MoU Supply Relationships
           </span>
-          <h2 className="text-[28px] lg:text-[32px] text-ssc-navy font-heading font-medium tracking-tight uppercase">
+          <h2 className="text-[28px] lg:text-[32px] text-ssc-navy font-heading font-semibold tracking-tight uppercase">
             Brands We Supply
           </h2>
         </motion.div>

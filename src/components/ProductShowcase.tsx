@@ -8,7 +8,7 @@ const products = [
     index: "01",
     name: "TMT Rebars",
     description: "Premium bundles of ribbed TMT reinforcement steel bars. Available in 5mm, 5.5mm, and 6mm TMT specifications.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800&auto=format&fit=crop",
     alt: "Bundles of high-quality ribbed TMT reinforcement bars in a professional steel yard"
   },
   {
@@ -22,7 +22,7 @@ const products = [
     index: "03",
     name: "Oil Rods",
     description: "High-performance steel oil rods engineered for specialized industrial and mechanical applications.",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
     alt: "Professional grade industrial steel rods"
   },
   {
@@ -90,7 +90,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
 
 const ProductShowcase = () => {
   return (
-    <section id="products" className="relative pt-32 pb-24 lg:pt-48 lg:pb-32 bg-[#F4F6F8] overflow-hidden">
+    <section id="products" className="relative section-spacing bg-[#F4F6F8] overflow-hidden">
       {/* Architectural Background Grid */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.015]" 
@@ -103,7 +103,7 @@ const ProductShowcase = () => {
         }} 
       />
 
-      <div className="container mx-auto px-6 max-w-[1280px] relative z-10">
+      <div className="container-wide relative z-10">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 lg:mb-24 gap-8">
           <div className="max-w-[620px]">

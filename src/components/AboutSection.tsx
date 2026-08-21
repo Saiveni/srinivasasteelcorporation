@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="relative py-24 lg:py-32 bg-[#F8F9FA] overflow-hidden">
-      <div className="container mx-auto px-6 max-w-[1280px]">
+    <section id="about" className="relative section-spacing bg-[#F8F9FA] overflow-hidden">
+      <div className="container-wide">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
           {/* Left: Editorial Image */}
           <div className="w-full lg:w-1/2">
@@ -13,10 +13,10 @@ export const AboutSection = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-[32px] overflow-hidden shadow-2xl"
+              className="relative rounded-[24px] overflow-hidden shadow-2xl shadow-ssc-navy/10"
             >
               <img 
-                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop" 
                 alt="Srinivasa Steel Corporation yard with bundles of TMT reinforcement bars"
                 className="w-full aspect-[4/5] object-cover grayscale-[0.2] contrast-[1.05]"
               />
@@ -42,11 +42,11 @@ export const AboutSection = () => {
               <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.3em] uppercase mb-4 block">
                 Heritage & Presence
               </span>
-              <h2 className="text-[38px] lg:text-[56px] text-ssc-navy font-heading leading-[1.1] mb-8 font-[500] tracking-tight uppercase">
+              <h2 className="text-[38px] lg:text-[56px] text-ssc-navy font-heading leading-[1.1] mb-8 font-[600] tracking-tight uppercase">
                 About Srinivasa Steel Corporation
               </h2>
               
-              <div className="space-y-6 text-[#4A5568] text-base lg:text-lg leading-relaxed font-[400]">
+              <div className="space-y-6 text-[#4A5568] text-base lg:text-lg leading-relaxed font-[450]">
                 <p>
                   Operating since 1994, Srinivasa Steel Corporation has established itself as a trusted name in regional steel supply and distribution. Our business is built on long-standing dealer and MoU supply relationships, ensuring a consistent and reliable flow of high-quality materials.
                 </p>

@@ -38,7 +38,7 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <div className="pt-20">
+    <div className="pt-[80px]">
       <AboutSection />
       
       {/* Inline Locations Section */}
@@ -69,7 +69,7 @@ function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.1 }}
-                  className="group p-8 rounded-2xl bg-[#F8F9FA] border border-black/5 hover:border-ssc-gold/30 hover:shadow-xl hover:shadow-ssc-navy/[0.02] transition-all duration-500"
+                  className="group p-8 rounded-[24px] bg-[#F8F9FA] border border-black/5 hover:border-ssc-gold/30 hover:shadow-xl hover:shadow-ssc-navy/[0.02] transition-all duration-500"
                 >
                   <div className="flex justify-between items-start mb-6">
                     <div className="bg-white w-12 h-12 rounded-xl flex items-center justify-center shadow-sm group-hover:bg-ssc-navy group-hover:text-white transition-colors duration-500">

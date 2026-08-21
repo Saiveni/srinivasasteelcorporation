@@ -30,7 +30,7 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
         <Icon size={20} strokeWidth={1.5} />
       </div>
 
-      <div className="text-[32px] sm:text-[38px] lg:text-[42px] font-heading font-[400] text-white leading-none mb-3 tracking-tight">
+      <div className="text-[32px] sm:text-[38px] lg:text-[42px] font-heading font-medium text-white leading-none mb-3 tracking-tight">
         {displayValue}{suffix}
       </div>
 
@@ -53,7 +53,7 @@ export const TrustStatsBar = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="w-full relative z-20 bg-[#0A121E] py-24 lg:py-32 overflow-hidden border-t border-white/5">
+    <section className="w-full relative z-20 bg-[#0A121E] section-spacing overflow-hidden border-t border-white/5">
       {/* Technical Blueprint Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.05]" 
            style={{ 
@@ -77,7 +77,7 @@ export const TrustStatsBar = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 max-w-[1280px] relative">
+      <div className="container-wide relative">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
@@ -95,7 +95,7 @@ export const TrustStatsBar = () => {
               <h3 className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4">
                 STEEL PERFORMANCE INDEX
               </h3>
-              <h2 className="text-white text-[24px] lg:text-[28px] font-heading font-[400] tracking-tight uppercase">
+              <h2 className="text-white text-[24px] lg:text-[28px] font-heading font-semibold tracking-tight uppercase">
                 BUILT AROUND QUALITY, SUPPLY & SERVICE
               </h2>
             </div>
