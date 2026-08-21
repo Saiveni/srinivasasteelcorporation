@@ -41,7 +41,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact Us | Srinivasa Steel Corporation" },
-      { name: "description", content: "Contact Srinivasa Steel Corporation for TMT rebars, oil rods, and decoiling requirements. Established in 1994, serving with 30+ years of trust." },
+      { name: "description", content: "Contact Srinivasa Steel Corporation for TMT rebars, steel products, wire products, and decoiling requirements. Established in 1994." },
     ],
   }),
 });

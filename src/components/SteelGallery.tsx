@@ -6,10 +6,10 @@ import { Link } from "@tanstack/react-router";
 
 // Business-accurate assets from src/assets/
 const assets = {
-  rebarCoils: "/__l5e/assets-v1/9ef7dec9-abc6-4ce5-9c16-6a23ce6690a0/rebar-coils.jpg",
-  rebarDetail: "/__l5e/assets-v1/78d0b873-517d-4e9e-94e3-16a1777f3314/rebar-detail.jpg",
+  rebarCoils: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
+  rebarDetail: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
   rebarStraight: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
-  rebarWarehouse: "/__l5e/assets-v1/a0858a50-e67d-4b6f-8d47-99f99d27c286/rebar-warehouse.jpg",
+  rebarWarehouse: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
   // Fallbacks for variety using specific Unsplash steel imagery that meets the "Steel visible" rule
   steelCoils: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
   steelStock: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",

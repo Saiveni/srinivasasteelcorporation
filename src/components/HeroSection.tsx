@@ -112,7 +112,7 @@ export const HeroSection = () => {
                 </span>
                 <span className="text-white/20 lg:text-[#0B1B33]/20">—</span>
                 <span className="text-[11px] font-technical font-semibold tracking-[0.15em] text-[#D9A000] uppercase">
-                  VIJAYAWADA • VIZAG • GANNAVARAM • RAIPUR • ORISSA
+                  VIJAYAWADA • VIZAG • GANNAVARAM
                 </span>
               </div>
               
