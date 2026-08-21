@@ -13,7 +13,7 @@ interface StatItemProps {
 const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -5% 0px" });
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -47,10 +47,12 @@ const StatItem = ({ number, suffix, label, icon: Icon, index }: StatItemProps) =
     <motion.div 
       ref={ref} 
       initial={{ opacity: 0, y: 20 }}
-      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "0px 0px -5% 0px" }}
       transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       className="flex flex-col items-center text-center relative px-2 sm:px-4 group cursor-default"
     >
+
       {/* 3. ICONS: Gold, Thin stroke */}
       <div className="text-ssc-gold mb-3 lg:mb-4 transition-transform duration-500 group-hover:scale-110">
         <Icon size={22} strokeWidth={1.75} />
