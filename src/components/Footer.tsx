@@ -36,8 +36,8 @@ export const Footer = () => {
               <li><Link to="/" className="hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">About</Link></li>
               <li><Link to="/products" className="hover:text-white transition-colors">Products</Link></li>
-              <li><Link to="/decoiling" className="hover:text-white transition-colors">Decoiling & Services</Link></li>
               <li><Link to="/gallery" className="hover:text-white transition-colors">Gallery</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -57,6 +57,7 @@ export const Footer = () => {
                 <div className="flex flex-col">
                   <span className="text-sm">9440170453 (M.S.V. Bhaskar)</span>
                   <span className="text-sm">9849600403 (M.V. Ramana Kumar)</span>
+                  <span className="text-sm">8125397453 (M. Yeswanth)</span>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">

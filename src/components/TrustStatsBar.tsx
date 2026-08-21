@@ -82,7 +82,7 @@ export const TrustStatsBar = () => {
     { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / QUALITY", icon: Award },
     { number: "3", suffix: "", label: "Locations", subLabel: "02 / NETWORK", icon: MapPin },
     { number: "TMT", suffix: "", label: "Steel Products", subLabel: "03 / MATERIAL", icon: Factory },
-    { number: "DECOILING", suffix: "", label: "Services", subLabel: "04 / PROCESSING", icon: Settings2 },
+    { number: "STEEL", suffix: "", label: "Products", subLabel: "04 / DISTRIBUTION", icon: Settings2 },
   ];
 
   const ref = useRef(null);

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, X, Phone, Mail, FileText, Shield, Zap, Truck, CheckCircle2 } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
 
@@ -184,12 +185,13 @@ export const ProductsComponent = () => {
               <p className="text-white/60 text-lg leading-relaxed mb-10 font-[400]">
                 We provide high-precision decoiling solutions for applicable steel sizes and lengths, ensuring your material is straightened and cut to meet exact project specifications.
               </p>
-              <Button 
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-bold uppercase rounded-none px-10 h-[60px] text-[13px] tracking-[0.2em]"
-              >
-                ENQUIRE ABOUT DECOILING <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
+              <Link to="/contact">
+                <Button 
+                  className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-bold uppercase rounded-none px-10 h-[60px] text-[13px] tracking-[0.2em]"
+                >
+                  ENQUIRE ABOUT DECOILING <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
@@ -277,19 +279,21 @@ export const ProductsComponent = () => {
             Tell us your requirement and our team can help you with the appropriate steel product or decoiling solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest"
-            >
-              GET A QUOTE <ArrowRight className="ml-3" size={20} />
-            </Button>
-            <Button 
-              variant="outline"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-white/20 hover:bg-white/5 text-white font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest"
-            >
-              CONTACT US
-            </Button>
+            <Link to="/contact">
+              <Button 
+                className="bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest w-full sm:w-auto"
+              >
+                GET A QUOTE <ArrowRight className="ml-3" size={20} />
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button 
+                variant="outline"
+                className="border-white/20 hover:bg-white/5 text-white font-technical font-black uppercase h-[70px] px-12 text-lg tracking-widest w-full sm:w-auto"
+              >
+                CONTACT US
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -339,15 +343,13 @@ export const ProductsComponent = () => {
                 </div>
               </div>
               
-              <Button 
-                onClick={() => {
-                  setSelectedProduct(null);
-                  setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 300);
-                }}
-                className="w-full h-[70px] bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-2xl shadow-xl shadow-ssc-navy/10"
-              >
-                REQUEST A QUOTE <ArrowRight className="ml-3" size={20} />
-              </Button>
+              <Link to="/contact" onClick={() => setSelectedProduct(null)}>
+                <Button 
+                  className="w-full h-[70px] bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-2xl shadow-xl shadow-ssc-navy/10"
+                >
+                  REQUEST A QUOTE <ArrowRight className="ml-3" size={20} />
+                </Button>
+              </Link>
             </div>
           </div>
         </DialogContent>

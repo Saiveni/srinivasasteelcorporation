@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ProductsComponent } from "@/components/ProductsComponent";
-import { ContactSection } from "@/components/ContactSection";
+
 
 export const Route = createFileRoute("/products")({
   component: ProductsPage,
@@ -16,7 +16,7 @@ function ProductsPage() {
   return (
     <div className="pt-20">
       <ProductsComponent />
-      <ContactSection />
+      
     </div>
   );
 }

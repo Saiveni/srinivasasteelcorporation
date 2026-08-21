@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 
 const products = [
   {
@@ -26,7 +27,7 @@ const products = [
   },
   {
     index: "04",
-    name: "Decoiling Services",
+    name: "Decoiled Steel",
     description: "Precision steel coil processing (2mm–4.5mm), straightening and cut-to-length services (10–40 feet).",
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop",
     alt: "Industrial steel decoiling machine processing a large steel coil"
@@ -75,13 +76,13 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
         </p>
 
         {/* View Details */}
-        <a 
-          href={`#${product.name.toLowerCase().replace(/\s+/g, '-')}`}
+        <Link 
+          to="/products"
           className="inline-flex items-center gap-2 text-[10px] font-technical font-bold text-ssc-gold uppercase tracking-[0.25em] group/link"
         >
           View Details
           <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover/link:translate-x-[5px]" />
-        </a>
+        </Link>
       </div>
     </motion.div>
   );

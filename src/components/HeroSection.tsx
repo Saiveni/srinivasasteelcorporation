@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 
 // @ts-ignore
@@ -111,7 +112,7 @@ export const HeroSection = () => {
                 </span>
                 <span className="text-white/20 lg:text-[#0B1B33]/20">—</span>
                 <span className="text-[11px] font-technical font-semibold tracking-[0.15em] text-[#D9A000] uppercase">
-                  TMT / STEEL / SUPPLY
+                  VIJAYAWADA • VIZAG • GANNAVARAM
                 </span>
               </div>
               
@@ -135,12 +136,14 @@ export const HeroSection = () => {
                 >
                   EXPLORE PRODUCTS <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button
-                  variant="outline"
-                  className="border-white lg:border-[#0B1B33] bg-white/10 lg:bg-white text-white lg:text-[#0B1B33] hover:bg-white/20 lg:hover:bg-[#0B1B33]/5 px-9 h-[56px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em]"
-                >
-                  GET A QUOTE
-                </Button>
+                <Link to="/contact">
+                  <Button
+                    variant="outline"
+                    className="border-white lg:border-[#0B1B33] bg-white/10 lg:bg-white text-white lg:text-[#0B1B33] hover:bg-white/20 lg:hover:bg-[#0B1B33]/5 px-9 h-[56px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em]"
+                  >
+                    GET A QUOTE
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>

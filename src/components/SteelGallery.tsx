@@ -216,7 +216,7 @@ export const SteelGallery = () => {
               asChild
               className="h-[64px] px-10 bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy rounded-xl font-technical font-black uppercase tracking-widest transition-all hover:scale-105"
             >
-              <a href="#contact">GET A QUOTE <ArrowRight className="ml-2" size={18} /></a>
+              <Link to="/contact">GET A QUOTE <ArrowRight className="ml-2" size={18} /></Link>
             </Button>
             <Button 
               asChild

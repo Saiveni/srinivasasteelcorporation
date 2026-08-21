@@ -26,8 +26,8 @@ export const Navbar = () => {
     { name: "HOME", href: "/" },
     { name: "ABOUT", href: "/about" },
     { name: "PRODUCTS", href: "/products" },
-    { name: "DECOILING & SERVICES", href: "/decoiling" },
     { name: "GALLERY", href: "/gallery" },
+    { name: "CONTACT", href: "/contact" },
   ];
 
   return (
@@ -88,11 +88,13 @@ export const Navbar = () => {
             })}
           </div>
           
-          <Button 
-            className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white font-heading font-bold uppercase rounded-none px-6 h-[44px] text-[12px] tracking-[0.15em] shadow-lg shadow-[#D9A000]/10 transition-all flex items-center gap-2"
-          >
-            GET QUOTE <ArrowRight size={14} />
-          </Button>
+          <Link to="/contact">
+            <Button 
+              className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white font-heading font-bold uppercase rounded-none px-6 h-[44px] text-[12px] tracking-[0.15em] shadow-lg shadow-[#D9A000]/10 transition-all flex items-center gap-2"
+            >
+              GET QUOTE <ArrowRight size={14} />
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -124,11 +126,13 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button 
-                className="mt-4 w-full bg-[#D9A000] text-white font-heading font-bold uppercase h-[60px] rounded-sm text-lg"
-              >
-                GET QUOTE
-              </Button>
+              <Link to="/contact" className="w-full" onClick={() => setIsOpen(false)}>
+                <Button 
+                  className="w-full bg-[#D9A000] text-white font-heading font-bold uppercase h-[60px] rounded-sm text-lg"
+                >
+                  GET QUOTE
+                </Button>
+              </Link>
             </div>
           </motion.div>
         )}

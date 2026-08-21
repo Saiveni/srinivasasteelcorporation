@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SteelGallery } from "@/components/SteelGallery";
-import { ContactSection } from "@/components/ContactSection";
+
 
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
