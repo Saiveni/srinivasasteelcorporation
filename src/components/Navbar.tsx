@@ -48,9 +48,9 @@ export const Navbar = () => {
         >
           <div className="h-10 w-10 sm:h-11 sm:w-11 shrink-0">
             <img
-              src={sscLogo3D.url}
+              src={sscLogo.url}
               alt="SSC Logo"
-              className="h-full w-full object-contain filter drop-shadow-sm"
+              className="h-full w-full object-contain filter brightness-0"
             />
           </div>
           <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-4 h-10 sm:h-11">
