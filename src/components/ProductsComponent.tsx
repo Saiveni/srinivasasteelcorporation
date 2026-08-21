@@ -5,8 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
 
 // @ts-ignore
-import rebarStraight from "@/assets/rebar-straight.jpg.asset.json";
-// @ts-ignore
 import rebarCoils from "@/assets/rebar-coils.jpg.asset.json";
 // @ts-ignore
 import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
@@ -19,7 +17,7 @@ const products = [
     name: "TMT REBARS",
     description: "Reinforcement steel products for construction and structural requirements.",
     longDescription: "High-strength TMT rebars engineered for superior bonding with concrete and earthquake resistance. Our stock includes a comprehensive range of sizes suitable for residential, commercial, and industrial infrastructure projects.",
-    image: (rebarStraight as any)?.url || "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
     alt: "Highly realistic close-up photograph of ribbed TMT reinforcement bars",
     specs: ["5 mm", "5.5 mm", "5.5 mm TMT", "6 mm TMT", "TMT rebars"]
   },
@@ -105,7 +103,7 @@ export const ProductsComponent = () => {
                 className="relative aspect-[4/3] lg:aspect-[5/4] rounded-[24px] overflow-hidden border border-black/5 shadow-2xl"
               >
                 <img 
-                  src={(rebarStraight as any)?.url || "/placeholder.svg"} 
+                  src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" 
                   alt="Premium steel rebar bundles"
                   className="w-full h-full object-cover"
                 />

@@ -8,7 +8,7 @@ import { Link } from "@tanstack/react-router";
 const assets = {
   rebarCoils: "/__l5e/assets-v1/9ef7dec9-abc6-4ce5-9c16-6a23ce6690a0/rebar-coils.jpg",
   rebarDetail: "/__l5e/assets-v1/78d0b873-517d-4e9e-94e3-16a1777f3314/rebar-detail.jpg",
-  rebarStraight: "/__l5e/assets-v1/101bdc6a-039b-4ee6-a74f-e5066ea1b13f/rebar-straight.jpg",
+  rebarStraight: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
   rebarWarehouse: "/__l5e/assets-v1/a0858a50-e67d-4b6f-8d47-99f99d27c286/rebar-warehouse.jpg",
   // Fallbacks for variety using specific Unsplash steel imagery that meets the "Steel visible" rule
   steelCoils: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",

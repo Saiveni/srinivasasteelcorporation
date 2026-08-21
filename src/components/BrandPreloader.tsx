@@ -5,7 +5,7 @@ import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 // @ts-ignore
 import rebarCoils from "@/assets/rebar-coils.jpg.asset.json";
 // @ts-ignore
-import rebarStraight from "@/assets/rebar-straight.jpg.asset.json";
+
 // @ts-ignore
 import rebarWarehouse from "@/assets/rebar-warehouse.jpg.asset.json";
 // @ts-ignore
@@ -13,7 +13,7 @@ import rebarDetail from "@/assets/rebar-detail.jpg.asset.json";
 
 const HERO_IMAGES = [
   (rebarCoils as any)?.url,
-  (rebarStraight as any)?.url,
+  "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1200&auto=format&fit=crop",
   (rebarWarehouse as any)?.url,
   (rebarDetail as any)?.url,
 ].filter(Boolean);
