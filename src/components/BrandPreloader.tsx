@@ -31,8 +31,9 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
     // Lock scroll
     document.body.style.overflow = "hidden";
 
-    // Preload images
+    // Preload images (Browser-only)
     const preloadAssets = async () => {
+      if (typeof window === "undefined") return;
       const promises = HERO_IMAGES.map((url) => {
         return new Promise((resolve) => {
           const img = new Image();
