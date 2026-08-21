@@ -136,7 +136,7 @@ export const HeroSection = () => {
                 >
                   EXPLORE PRODUCTS <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Link to="/contact" search={{ product: undefined }}>
+                <Link to="/contact" search={{ product: "" }}>
                   <Button
                     variant="outline"
                     className="border-white lg:border-[#0B1B33] bg-white/10 lg:bg-white text-white lg:text-[#0B1B33] hover:bg-white/20 lg:hover:bg-[#0B1B33]/5 px-9 h-[56px] rounded-none text-[13px] font-heading font-bold uppercase tracking-[0.15em]"

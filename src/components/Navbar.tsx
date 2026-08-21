@@ -20,7 +20,7 @@ export const Navbar = () => {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, location.search]);
 
   const navLinks = [
     { name: "HOME", href: "/" },
@@ -88,7 +88,7 @@ export const Navbar = () => {
             })}
           </div>
           
-          <Link to="/contact" search={{ product: undefined }}>
+          <Link to="/contact" search={{ product: "" }}>
             <Button 
               className="bg-[#D9A000] hover:bg-[#D9A000]/90 text-white font-heading font-bold uppercase rounded-none px-6 h-[44px] text-[12px] tracking-[0.15em] shadow-lg shadow-[#D9A000]/10 transition-all flex items-center gap-2"
             >
@@ -126,7 +126,7 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Link to="/contact" search={{ product: undefined }} className="w-full" onClick={() => setIsOpen(false)}>
+              <Link to="/contact" search={{ product: "" }} className="w-full" onClick={() => setIsOpen(false)}>
                 <Button 
                   className="w-full bg-[#D9A000] text-white font-heading font-bold uppercase h-[60px] rounded-sm text-lg"
                 >

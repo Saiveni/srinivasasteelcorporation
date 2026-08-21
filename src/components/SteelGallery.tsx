@@ -216,14 +216,14 @@ export const SteelGallery = () => {
               asChild
               className="h-[64px] px-10 bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy rounded-xl font-technical font-black uppercase tracking-widest transition-all hover:scale-105"
             >
-              <Link to="/contact" search={{ product: undefined }}>GET A QUOTE <ArrowRight className="ml-2" size={18} /></Link>
+              <Link to="/contact" search={{ product: "" }}>GET A QUOTE <ArrowRight className="ml-2" size={18} /></Link>
             </Button>
             <Button 
               asChild
               variant="outline"
               className="h-[64px] px-10 border-white/20 text-white hover:bg-white/10 rounded-xl font-technical font-bold uppercase tracking-widest"
             >
-              <Link to="/products" search={{ product: undefined }}>VIEW PRODUCTS</Link>
+              <Link to="/products" search={{ product: "" }}>VIEW PRODUCTS</Link>
             </Button>
           </div>
         </div>
