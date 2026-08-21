@@ -82,7 +82,7 @@ export const TrustStatsBar = () => {
   ];
 
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
 
   return (
     <section className="w-full relative z-20 bg-[#F1F3F6] overflow-visible">
