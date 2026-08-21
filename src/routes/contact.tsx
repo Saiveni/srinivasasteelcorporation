@@ -79,7 +79,7 @@ function ContactPage() {
                 viewport={{ once: true }}
                 className="bg-white rounded-[32px] p-8 md:p-12 shadow-sm border border-black/5"
               >
-                <h2 className="text-3xl font-heading font-bold text-ssc-navy mb-10 tracking-tight uppercase">
+                <h2 id="quote-form" className="text-3xl font-heading font-bold text-ssc-navy mb-10 tracking-tight uppercase">
                   REQUEST A QUOTE
                 </h2>
                 
@@ -250,30 +250,150 @@ function ContactPage() {
         </div>
       </section>
 
-      {/* Trust Section */}
-      <section className="py-24 border-t border-black/5 bg-white">
-        <div className="container mx-auto px-6 text-center">
+      {/* Our Locations Section */}
+      <section className="py-24 bg-white border-t border-black/5">
+        <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-7xl font-heading font-extrabold text-ssc-navy mb-6 tracking-tight uppercase">
-              30+ YEARS OF <span className="text-ssc-gold">TRUST.</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-ssc-navy mb-4 tracking-tight uppercase">
+              OUR <span className="text-ssc-gold">LOCATIONS</span>
             </h2>
-            <p className="text-ssc-navy/60 text-lg md:text-xl font-light max-w-2xl mx-auto">
-              Serving steel and TMT requirements since 1994.
-            </p>
+            <div className="w-20 h-1 bg-ssc-gold mx-auto" />
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {/* Head Office */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-ssc-navy/5 flex items-center justify-center mb-8 group-hover:bg-ssc-navy transition-colors">
+                <MapPin size={24} className="text-ssc-navy group-hover:text-white" />
+              </div>
+              <h3 className="text-[12px] font-technical font-bold tracking-[0.2em] text-ssc-gold uppercase mb-6">HEAD OFFICE</h3>
+              <p className="text-ssc-navy font-heading font-medium leading-relaxed">
+                Plot No. 90,<br />
+                Iron Complex,<br />
+                Godown Block No. 36/3,<br />
+                Bhavanipuram,<br />
+                Vijayawada – 520012
+              </p>
+            </motion.div>
+
+            {/* Gannavaram Yard */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-ssc-navy/5 flex items-center justify-center mb-8 group-hover:bg-ssc-navy transition-colors">
+                <MapPin size={24} className="text-ssc-navy group-hover:text-white" />
+              </div>
+              <h3 className="text-[12px] font-technical font-bold tracking-[0.2em] text-ssc-gold uppercase mb-6">GANNAVARAM YARD</h3>
+              <p className="text-ssc-navy font-heading font-medium leading-relaxed">
+                Gannavaram Yard,<br />
+                Nuzividu Road,<br />
+                Gannavaram – 521101
+              </p>
+            </motion.div>
+
+            {/* Vizag Branch */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-ssc-navy/5 flex items-center justify-center mb-8 group-hover:bg-ssc-navy transition-colors">
+                <MapPin size={24} className="text-ssc-navy group-hover:text-white" />
+              </div>
+              <h3 className="text-[12px] font-technical font-bold tracking-[0.2em] text-ssc-gold uppercase mb-6">VIZAG BRANCH</h3>
+              <p className="text-ssc-navy font-heading font-medium leading-relaxed">
+                S. No. 156,<br />
+                Plot No. 163A, 163B,<br />
+                AIE Pedagantyada,<br />
+                Vizag – 530044
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Heritage Bar */}
+      <section className="py-12 bg-[#F7F7F4] border-t border-black/5">
+        <div className="container mx-auto px-6 text-center">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-12"
+          >
+            <div>
+              <span className="text-ssc-navy font-heading font-black text-3xl uppercase tracking-tighter">30+ YEARS</span>
+              <p className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest mt-1">OF INDUSTRY TRUST</p>
+            </div>
+            <div className="hidden md:block w-px h-12 bg-black/10" />
+            <div>
+              <span className="text-ssc-navy font-heading font-black text-3xl uppercase tracking-tighter">EST. 1994</span>
+              <p className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest mt-1">SRINIVASA STEEL CORP</p>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Final CTA / Address */}
-      <section className="bg-ssc-navy py-12">
+      {/* Final CTA Closing Section */}
+      <section className="bg-ssc-navy py-24 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:40px_40px]" />
+        </div>
+        
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
+          >
+            <h2 className="text-4xl md:text-6xl font-heading font-extrabold text-white mb-6 tracking-tight uppercase">
+              HAVE A STEEL <span className="text-ssc-gold">REQUIREMENT?</span>
+            </h2>
+            <p className="text-white/70 text-lg md:text-xl mb-12 font-light leading-relaxed">
+              Tell us what you need. Our team is ready to discuss your steel, TMT or decoiling requirement.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+              <Button 
+                onClick={() => window.scrollTo({ top: document.getElementById('quote-form')?.offsetTop || 500, behavior: 'smooth' })}
+                className="w-full sm:w-auto h-16 bg-ssc-gold hover:bg-ssc-gold/90 text-ssc-navy font-technical font-black uppercase px-12 text-lg tracking-[0.2em] rounded-xl transition-all shadow-xl shadow-ssc-gold/10"
+              >
+                REQUEST A QUOTE →
+              </Button>
+              <a 
+                href="tel:9440170453"
+                className="w-full sm:w-auto h-16 flex items-center justify-center bg-white/5 hover:bg-white/10 text-white font-technical font-black uppercase px-12 text-lg tracking-[0.2em] rounded-xl border border-white/20 transition-all"
+              >
+                CALL OUR TEAM
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Minimal Footer Info */}
+      <section className="bg-ssc-navy border-t border-white/10 py-12">
         <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="text-center md:text-left">
-            <h4 className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.3em] uppercase mb-2">HEAD OFFICE</h4>
-            <p className="text-white text-sm">Plot No. 90, Iron Complex, Bhavanipuram, Vijayawada – 520012</p>
+            <h4 className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.3em] uppercase mb-2">SRINIVASA STEEL CORPORATION</h4>
+            <p className="text-white/50 text-xs">Serving industrial and construction requirements since 1994.</p>
           </div>
           <Button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
