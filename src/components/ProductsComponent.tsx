@@ -16,7 +16,7 @@ const products = [
   {
     id: "tmt-rebars",
     name: "TMT REBARS",
-    description: "Reinforcement steel products for construction and structural requirements.",
+    description: "Steel products for construction and structural requirements.",
     longDescription: "High-strength TMT rebars engineered for superior bonding with concrete and earthquake resistance. Our stock includes a comprehensive range of sizes suitable for residential, commercial, and industrial infrastructure projects.",
     image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop",
     alt: "Highly realistic close-up photograph of ribbed TMT reinforcement bars",
@@ -52,9 +52,9 @@ const products = [
 ];
 
 const brands = [
-  { name: "VIZAG STEEL", subtitle: "RINL MoU Partner" },
-  { name: "SIMHADRI TMT", subtitle: "Supply Partner" },
-  { name: "JINDAL PANTHER TMT REBARS", subtitle: "TMT Rebars Dealer" }
+  { name: "VIZAG STEEL", subtitle: "MoU Dealer" },
+  { name: "SIMHADRI TMT", subtitle: "Dealer" },
+  { name: "JINDAL PANTHER", subtitle: "Dealer" }
 ];
 
 export const ProductsComponent = () => {
@@ -86,7 +86,7 @@ export const ProductsComponent = () => {
                   <span className="text-ssc-gold">WITH CONFIDENCE.</span>
                 </h1>
                 <p className="text-[#64748B] text-lg lg:text-xl leading-relaxed mb-10 font-[400] max-w-[540px]">
-                  Quality steel products and TMT solutions for construction and industrial requirements.
+                  Steel products and TMT solutions for construction and industrial requirements.
                 </p>
                 <Button 
                   onClick={() => document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth' })}
@@ -235,7 +235,7 @@ export const ProductsComponent = () => {
         <div className="container mx-auto px-6 max-w-[1280px]">
           <div className="text-center mb-20">
             <h2 className="text-[32px] lg:text-[42px] text-ssc-navy font-heading font-semibold tracking-tight uppercase">
-              QUALITY. AVAILABILITY. <span className="text-ssc-gold">RELIABLE SUPPLY.</span>
+              QUALITY. AVAILABILITY. <span className="text-ssc-gold">SUPPLY.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
