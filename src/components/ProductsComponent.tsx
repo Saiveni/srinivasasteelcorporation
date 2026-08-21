@@ -103,7 +103,7 @@ export const ProductsComponent = () => {
                 className="relative aspect-[4/3] lg:aspect-[5/4] rounded-[24px] overflow-hidden border border-black/5 shadow-2xl shadow-ssc-navy/5"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" 
+                  src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=800&auto=format&fit=crop" 
                   alt="Premium steel rebar bundles"
                   className="w-full h-full object-cover"
                 />
