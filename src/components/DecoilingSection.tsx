@@ -16,6 +16,7 @@ export const DecoilingSection = () => {
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop" 
+
           alt="Precision industrial steel coil processing line"
           className="w-full h-full object-cover opacity-20 grayscale"
         />
@@ -85,6 +86,7 @@ export const DecoilingSection = () => {
             >
               <img 
                 src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop" 
+
                 alt="Grayscale industrial machine for steel processing"
                 className="w-full h-full object-cover contrast-[1.1] grayscale"
               />
