@@ -396,7 +396,7 @@ export const AboutSection = () => {
               whileInView={{ height: '100%', opacity: 1 }}
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="h-[1400px] sm:h-[1300px] relative"
+              className="h-[1200px] sm:h-[1300px] relative"
             >
               <SteelRod orientation="vertical" />
               
