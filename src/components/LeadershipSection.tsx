@@ -112,7 +112,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0C121E] overflow-hidden">
+    <section id="leadership" className="relative py-20 lg:py-24 bg-[#0C121E] overflow-hidden">
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle vertical steel structures */}

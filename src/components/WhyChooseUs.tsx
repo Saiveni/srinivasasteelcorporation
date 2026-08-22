@@ -167,9 +167,10 @@ export const WhyChooseUs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 1, duration: 1.2 }}
-            className="mt-32 text-center"
+            transition={{ delay: 0.8, duration: 1 }}
+            className="mt-20 lg:mt-24 text-center"
           >
+
             <div className="inline-block p-[1px] bg-gradient-to-r from-transparent via-ssc-navy/20 to-transparent w-full max-w-4xl mb-16" />
             <h3 className="text-ssc-navy text-3xl lg:text-5xl font-heading font-extrabold italic uppercase mb-10 tracking-tighter">
               READY TO <span className="text-ssc-gold">STRENGTHEN</span> YOUR PROJECT?

@@ -90,7 +90,7 @@ export const IndustrialNetwork = () => {
   const [activeNode, setActiveNode] = useState<string | null>(null);
 
   return (
-    <section id="locations" className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden">
+    <section id="locations" className="relative py-20 lg:py-24 bg-[#050A14] overflow-hidden">
       {/* Background Engineering Grid */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />

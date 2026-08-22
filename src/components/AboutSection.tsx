@@ -319,7 +319,7 @@ export const AboutSection = () => {
     <section
       id="about-timeline"
       ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden"
+      className="relative py-20 lg:py-24 bg-[#050A14] overflow-hidden"
     >
       {/* Architectural background */}
       <div className="absolute inset-0 pointer-events-none">
