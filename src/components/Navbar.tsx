@@ -142,99 +142,126 @@ export const Navbar = () => {
       {/* Mobile Menu Overlay - Premium Rebuild */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-[110] lg:hidden bg-[#0A0F1A]"
-          >
-            {/* Engineering Grid & Brushed Surface Overlay */}
-            <div 
-              className="absolute inset-0 opacity-[0.07] pointer-events-none" 
-              style={{ 
-                backgroundImage: `linear-gradient(to right, #C5A059 1px, transparent 1px), linear-gradient(to bottom, #C5A059 1px, transparent 1px)`,
-                backgroundSize: '40px 40px'
-              }} 
+          <>
+            {/* Backdrop Blur */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsOpen(false)}
+              className="fixed inset-0 z-[105] lg:hidden bg-black/20 backdrop-blur-sm"
             />
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.02] pointer-events-none" />
             
-            {/* Overlay Header Lockup */}
-            <div className="flex items-center px-6 sm:px-8 h-[82px] border-b border-white/5 relative z-10">
-              <div className="flex items-center gap-3">
-                <div className="h-9 w-9 shrink-0 grayscale invert brightness-200">
-                  <img src={sscLogo.url} alt="SSC Logo" className="h-full w-full object-contain" />
+            <motion.div
+              initial={{ y: -20, opacity: 0, scale: 0.98 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: -20, opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="fixed top-[8px] right-[8px] left-[8px] z-[110] lg:hidden 
+                         bg-[#F7F7F4] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] 
+                         border border-[#0B1B33]/10 overflow-hidden max-h-[calc(100vh-16px)]"
+            >
+              {/* Engineering/Steel Texture Overlay */}
+              <div 
+                className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                style={{ 
+                  backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
+                  backgroundSize: '32px 32px'
+                }} 
+              />
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.05] pointer-events-none" />
+              
+              {/* Menu Header Area - Clean & Transparent Logo */}
+              <div className="flex items-center justify-between px-6 sm:px-8 h-[82px] border-b border-[#0B1B33]/5 relative z-10">
+                <div className="flex items-center gap-3">
+                  <div className="h-9 w-9 shrink-0">
+                    <img 
+                      src={sscLogo.url} 
+                      alt="SSC Logo" 
+                      className="h-full w-full object-contain filter brightness-0" 
+                    />
+                  </div>
+                  <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-3 h-9">
+                    <span className="text-[14px] font-heading font-bold tracking-[0.05em] text-[#0B1B33] leading-none uppercase">
+                      SRINIVASA <span className="text-[#0B1B33]/90 font-medium">STEEL</span>
+                    </span>
+                    <span className="text-[10px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1">
+                      CORPORATION
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col justify-center border-l border-white/10 pl-3 h-9">
-                  <span className="text-[14px] font-heading font-bold tracking-[0.05em] text-white leading-none uppercase">
-                    SRINIVASA <span className="text-white/60 font-medium">STEEL</span>
-                  </span>
-                  <span className="text-[10px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1">
-                    CORPORATION
-                  </span>
-                </div>
-              </div>
-            </div>
 
-            {/* Premium Navigation List */}
-            <div className="flex flex-col h-[calc(100%-82px)] justify-between py-12 px-8 sm:px-12 overflow-y-auto relative z-10">
-              <div className="flex flex-col gap-8 sm:gap-10 mt-4">
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: -40 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
-                  >
-                    <Link
-                      to={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="group flex items-baseline gap-5"
-                    >
-                      <motion.span 
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.6 }}
-                        transition={{ delay: 0.15 + i * 0.1 }}
-                        className="text-[11px] font-technical font-bold text-[#C5A059] tracking-[0.3em]"
+                {/* Close Button - Engineered Control */}
+                <button 
+                  onClick={() => setIsOpen(false)}
+                  className="relative w-10 h-10 rounded-full flex items-center justify-center 
+                             bg-white border border-[#C5A059]/30 shadow-sm
+                             hover:bg-[#F7F7F4] active:scale-95 transition-all"
+                >
+                  <X className="text-[#0B1B33]" size={18} strokeWidth={2.5} />
+                  <div className="absolute inset-0 rounded-full shadow-inner opacity-10 pointer-events-none" />
+                </button>
+              </div>
+
+              {/* Navigation Items */}
+              <div className="flex flex-col py-10 px-8 relative z-10">
+                <div className="flex flex-col gap-6">
+                  {navLinks.map((link, i) => {
+                    const Icon = link.icon;
+                    return (
+                      <motion.div
+                        key={link.name}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
                       >
-                        0{i + 1}
-                      </motion.span>
-                      <span className="text-[2.75rem] sm:text-[3.5rem] font-heading font-bold text-white uppercase tracking-[-0.04em] group-hover:text-[#C5A059] group-hover:pl-2 transition-all duration-300">
-                        {link.name}
-                      </span>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
+                        <Link
+                          to={link.href}
+                          onClick={() => setIsOpen(false)}
+                          className="group flex items-center gap-4 py-1"
+                        >
+                          <div className="w-8 h-8 rounded-lg bg-[#0B1B33]/5 flex items-center justify-center group-hover:bg-[#C5A059]/10 transition-colors">
+                            <Icon size={16} className="text-[#C5A059]" strokeWidth={2} />
+                          </div>
+                          <span className="text-[1.25rem] font-heading font-semibold text-[#0B1B33] uppercase tracking-[0.02em] group-hover:text-[#C5A059] transition-colors">
+                            {link.name}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
+                </div>
 
-              <div className="mt-16 sm:mt-24 space-y-12">
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7, duration: 0.5 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
+                  className="mt-12"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[72px] text-[16px] tracking-[0.3em] font-technical font-bold bg-[#C5A059] hover:bg-[#B38E48] text-[#0A0F1A] border-none shadow-[0_12px_40px_rgba(197,160,89,0.25)] rounded-none relative overflow-hidden group">
-                      <span className="relative z-10">GET A QUOTE</span>
-                      <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                    <Button className="w-full h-[60px] text-[14px] tracking-[0.2em] font-technical font-bold 
+                                     bg-[#C5A059] hover:bg-[#B38E48] text-[#0A0F1A] border-none 
+                                     shadow-[0_8px_25px_rgba(197,160,89,0.3)] rounded-xl relative overflow-hidden group">
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        GET A QUOTE <ArrowRight size={16} />
+                      </span>
                     </Button>
                   </Link>
                 </motion.div>
                 
-                {/* Architectural Brand Footnote */}
-                <div className="border-t border-white/5 pt-8 flex items-center justify-between">
-                  <div className="flex items-center gap-4 text-[10px] font-technical font-bold text-white/20 uppercase tracking-[0.5em]">
-                    <div className="w-10 h-[1px] bg-[#C5A059]/30" />
-                    ENGINEERED PRECISION
-                  </div>
-                  <span className="text-[9px] font-technical text-white/10 tracking-[0.2em]">© 2024 SSC</span>
+                {/* Architectural Accent */}
+                <div className="mt-8 flex items-center gap-3">
+                  <div className="flex-1 h-[1px] bg-[#0B1B33]/5" />
+                  <span className="text-[9px] font-technical font-bold text-[#0B1B33]/20 uppercase tracking-[0.4em]">
+                    Quality Engineering
+                  </span>
+                  <div className="flex-1 h-[1px] bg-[#0B1B33]/5" />
                 </div>
               </div>
-            </div>
-
-            {/* Depth Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0A0F1A] via-transparent to-transparent opacity-60 pointer-events-none" />
-          </motion.div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
         )}
       </AnimatePresence>
     </nav>
