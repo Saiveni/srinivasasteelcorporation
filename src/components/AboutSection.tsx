@@ -390,7 +390,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <div className="lg:hidden min-h-[1600px] sm:min-h-[1500px] w-full overflow-visible relative flex justify-center py-20">
+          <div className="lg:hidden min-h-[1400px] sm:min-h-[1500px] w-full overflow-visible relative flex justify-center py-20">
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
