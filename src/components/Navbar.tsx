@@ -185,7 +185,8 @@ export const Navbar = () => {
 
           {/* Custom Machined Gold Menu Trigger - Mobile/Tablet Only */}
           <motion.button
-            variants={itemVariants}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className="md:hidden relative z-[120] group outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
