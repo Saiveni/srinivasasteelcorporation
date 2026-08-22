@@ -153,7 +153,7 @@ export const Navbar = () => {
             {navLinks.map((link) => {
               const isActive = location.pathname === link.href;
               return (
-                <motion.div key={link.name} variants={itemVariants}>
+                <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
                   <Link
                     to={link.href}
                     className={`relative text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.1em] lg:tracking-[0.15em] transition-all py-2 whitespace-nowrap ${
