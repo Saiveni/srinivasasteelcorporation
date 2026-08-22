@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone } from "lucide-react";
+import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone, Settings, Shield, Zap, Box, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 import sscLogo3D from "@/assets/ssc-logo-3d.png.asset.json";
