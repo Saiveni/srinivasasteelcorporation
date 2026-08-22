@@ -157,49 +157,53 @@ export const Navbar = () => {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -20, opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-[8px] right-[8px] left-[8px] z-[110] lg:hidden 
-                         bg-[#F7F7F4] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] 
-                         border border-[#0B1B33]/10 overflow-hidden max-h-[calc(100vh-16px)]"
+              className="fixed top-[12px] right-[12px] left-[12px] z-[110] lg:hidden 
+                         bg-[#F7F7F4] rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.18)] 
+                         border border-[#0B1B33]/15 overflow-hidden max-h-[calc(100vh-24px)] flex flex-col"
             >
-              {/* Engineering/Steel Texture Overlay */}
+              {/* Engineering Texture Overlays */}
               <div 
-                className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                className="absolute inset-0 opacity-[0.04] pointer-events-none" 
                 style={{ 
                   backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
-                  backgroundSize: '32px 32px'
+                  backgroundSize: '40px 40px'
                 }} 
               />
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.05] pointer-events-none" />
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.06] pointer-events-none" />
               
-              {/* Menu Header Area - Clean & Transparent Logo */}
-              <div className="flex items-center justify-between px-6 sm:px-8 h-[82px] border-b border-[#0B1B33]/5 relative z-10">
+              {/* Subtle TMT Ribbing inspired detail at the bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 opacity-[0.08] pointer-events-none" 
+                   style={{ background: 'repeating-linear-gradient(45deg, #0B1B33, #0B1B33 2px, transparent 2px, transparent 8px)' }} />
+
+              {/* Menu Header Area */}
+              <div className="flex items-center justify-between px-5 sm:px-7 h-[72px] border-b border-[#0B1B33]/10 relative z-10 bg-white/50 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 shrink-0">
+                  <div className="h-8 w-8 shrink-0">
                     <img 
                       src={sscLogo.url} 
                       alt="SSC Logo" 
                       className="h-full w-full object-contain filter brightness-0" 
                     />
                   </div>
-                  <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-3 h-9">
-                    <span className="text-[14px] font-heading font-bold tracking-[0.05em] text-[#0B1B33] leading-none uppercase">
-                      SRINIVASA <span className="text-[#0B1B33]/90 font-medium">STEEL</span>
+                  <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-3 h-8">
+                    <span className="text-[13px] font-heading font-bold tracking-[0.04em] text-[#0B1B33] leading-none uppercase">
+                      SRINIVASA <span className="text-[#0B1B33]/80 font-medium">STEEL</span>
                     </span>
-                    <span className="text-[10px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1">
+                    <span className="text-[9px] font-technical font-extrabold tracking-[0.2em] text-[#C5A059] leading-none uppercase mt-0.5">
                       CORPORATION
                     </span>
                   </div>
                 </div>
 
-                {/* Close Button - Engineered Control */}
+                {/* Close Button - Machined Metal Look */}
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="relative w-10 h-10 rounded-full flex items-center justify-center 
-                             bg-white border border-[#C5A059]/30 shadow-sm
-                             hover:bg-[#F7F7F4] active:scale-95 transition-all"
+                  className="relative w-9 h-9 rounded-lg flex items-center justify-center 
+                             bg-white border border-[#0B1B33]/15 shadow-sm
+                             hover:bg-[#F7F7F4] active:scale-95 transition-all group"
                 >
-                  <X className="text-[#0B1B33]" size={18} strokeWidth={2.5} />
-                  <div className="absolute inset-0 rounded-full shadow-inner opacity-10 pointer-events-none" />
+                  <X className="text-[#0B1B33]/70 group-hover:text-[#0B1B33]" size={16} strokeWidth={2} />
+                  <div className="absolute inset-0 rounded-lg border border-white/40 pointer-events-none" />
                 </button>
               </div>
 
