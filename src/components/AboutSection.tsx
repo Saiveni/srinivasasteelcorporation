@@ -341,7 +341,7 @@ export const AboutSection = () => {
       </div>
 
       <div className="container-wide relative z-10">
-        <div className="text-center mb-16 lg:mb-36 px-4">
+        <div className="text-center mb-10 sm:mb-16 lg:mb-36 px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
