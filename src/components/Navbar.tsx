@@ -69,7 +69,7 @@ export const Navbar = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}
-      className={`fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-0`}
+      className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-0"
     >
       {/* Premium Engineered Steel Header Panel */}
       <div className={`
@@ -86,7 +86,7 @@ export const Navbar = () => {
         
         {/* Realistic Metal Texture (Brushed) */}
         <div 
-          className="absolute inset-0 opacity-[0.3] pointer-events-none z-[1]" 
+          className="absolute inset-0 opacity-[0.35] pointer-events-none z-[1]" 
           style={{ 
             backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
             backgroundSize: '300px 300px',
@@ -94,9 +94,9 @@ export const Navbar = () => {
           }} 
         />
 
-        {/* Integrated TMT Rebar Imagery - Low opacity, part of background */}
+        {/* Integrated TMT Rebar Imagery - Part of Background */}
         <div 
-          className="absolute inset-0 opacity-[0.08] mix-blend-multiply pointer-events-none grayscale z-[2]"
+          className="absolute inset-0 opacity-[0.09] mix-blend-multiply pointer-events-none grayscale z-[2]"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
             backgroundSize: 'cover',
@@ -107,13 +107,10 @@ export const Navbar = () => {
         
         {/* Premium Highlights & Tonal Depth */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-black/5 pointer-events-none z-[3]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/30 via-transparent to-black/5 pointer-events-none z-[3]" />
         
         {/* Refined Metallic Bevel Edge */}
         <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-white/90 pointer-events-none z-[4]" />
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/15 pointer-events-none z-[4]" />
-        <div className="absolute top-0 bottom-0 left-0 w-[1px] bg-white/50 pointer-events-none z-[4]" />
-        <div className="absolute top-0 bottom-0 right-0 w-[1px] bg-black/10 pointer-events-none z-[4]" />
 
         {/* Logo & Brand Section */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 py-2">
@@ -124,24 +121,24 @@ export const Navbar = () => {
                 window.location.reload();
               }
             }}
-            className="flex items-center gap-2.5 sm:gap-4 relative group shrink-0"
+            className="flex items-center gap-3 sm:gap-4 relative group shrink-0"
           >
-            <div className="h-8 w-8 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               <img
                 src={sscLogo.url}
                 alt="SSC Logo"
-                className="h-full w-full object-contain opacity-90"
+                className="h-full w-full object-contain opacity-95"
               />
             </div>
             
-            {/* Metallic Divider */}
-            <div className="w-[1.5px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
+            {/* Metallic Vertical Divider */}
+            <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
 
             <div className="flex flex-col justify-center">
-              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
+              <span className="text-[13px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
                 SRINIVASA <span className="font-bold">STEEL</span>
               </span>
-              <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-technical font-black tracking-[0.25em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-1 sm:mt-1 drop-shadow-sm">
+              <span className="text-[9px] sm:text-[10px] lg:text-[12px] font-technical font-black tracking-[0.25em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-1 sm:mt-1 drop-shadow-sm">
                 CORPORATION
               </span>
             </div>
@@ -194,16 +191,16 @@ export const Navbar = () => {
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             <div className={`
-              relative w-11 h-11 sm:w-13 sm:h-13 rounded-xl
+              relative w-11 h-10 sm:w-13 sm:h-12 rounded-[12px]
               flex flex-col items-center justify-center
               transition-all duration-300
               ${isOpen ? 'rotate-90' : 'hover:-translate-y-[1px] active:translate-y-[0.5px]'}
-              bg-gradient-to-b from-[#EBC678] via-[#D4AF37] to-[#8C6F12]
-              shadow-[0_4px_10px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.5),inset_0_-1.5px_1px_rgba(0,0,0,0.2)]
+              bg-gradient-to-b from-[#F2D7A5] via-[#D4AF37] to-[#B8860B]
+              shadow-[0_4px_12px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1.5px_1px_rgba(0,0,0,0.2)]
               border border-[#8B6914]/40
             `}>
               {/* Machined Bevel Inset */}
-              <div className="absolute inset-[1.5px] rounded-[10px] border border-white/30 pointer-events-none" />
+              <div className="absolute inset-[1.5px] rounded-[10.5px] border border-white/30 pointer-events-none" />
               
               <AnimatePresence mode="wait">
                 {!isOpen ? (
@@ -214,9 +211,9 @@ export const Navbar = () => {
                     exit={{ opacity: 0, scale: 0.8 }}
                     className="flex flex-col gap-[4px]"
                   >
-                    <span className="w-5 h-[2px] bg-[#0B1B33] rounded-full block shadow-sm" />
-                    <span className="w-5 h-[2px] bg-[#0B1B33] rounded-full block shadow-sm" />
-                    <span className="w-5 h-[2px] bg-[#0B1B33] rounded-full block shadow-sm" />
+                    <span className="w-5 h-[2px] bg-[#0B1B33] rounded-full block shadow-[0_0.5px_1px_rgba(255,255,255,0.3)]" />
+                    <span className="w-5 h-[2px] bg-[#0B1B33] rounded-full block shadow-[0_0.5px_1px_rgba(255,255,255,0.3)]" />
+                    <span className="w-5 h-[2px] bg-[#0B1B33] rounded-full block shadow-[0_0.5px_1px_rgba(255,255,255,0.3)]" />
                   </motion.div>
                 ) : (
                   <motion.div
