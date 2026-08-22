@@ -327,38 +327,44 @@ export const AboutSection = () => {
         {/* THE STEEL ROD + CLAMPS + CARDS */}
         <div className="relative flex justify-center pb-80 lg:pb-[500px]">
           {/* Desktop: horizontal rod */}
-          <motion.div
-            style={{ width: rodReveal, opacity: rodOpacity }}
-            className="hidden lg:block max-w-[1300px] w-full overflow-visible relative"
-          >
-            <div className="w-[1300px] relative">
+          <div className="hidden lg:block max-w-[1300px] w-full overflow-visible relative">
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: '100%', opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              className="w-[1300px] relative"
+            >
               <SteelRod orientation="horizontal" />
               
               {/* Clamps & Cards placed across the rod */}
-              <ClampHook position="12%" orientation="horizontal" delay={0.6} cardData={milestones[0]!} />
-              <ClampHook position="37%" orientation="horizontal" delay={0.8} cardData={milestones[1]!} />
-              <ClampHook position="62%" orientation="horizontal" delay={1.0} cardData={milestones[2]!} />
-              <ClampHook position="87%" orientation="horizontal" delay={1.2} cardData={milestones[3]!} />
+              <ClampHook position="12%" orientation="horizontal" delay={0.8} cardData={milestones[0]!} />
+              <ClampHook position="37%" orientation="horizontal" delay={1.1} cardData={milestones[1]!} />
+              <ClampHook position="62%" orientation="horizontal" delay={1.4} cardData={milestones[2]!} />
+              <ClampHook position="87%" orientation="horizontal" delay={1.7} cardData={milestones[3]!} />
 
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <motion.div
-            style={{ height: rodReveal, opacity: rodOpacity }}
-            className="lg:hidden h-[1200px] overflow-visible relative"
-          >
-            <div className="h-[1200px] relative">
+          <div className="lg:hidden h-[1300px] overflow-visible relative">
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              whileInView={{ height: '100%', opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              className="h-[1300px] relative"
+            >
               <SteelRod orientation="vertical" />
               
               {/* Clamps & Cards placed along the rod */}
-              <ClampHook position="10%" orientation="vertical" delay={0.6} cardData={milestones[0]!} />
-              <ClampHook position="35%" orientation="vertical" delay={0.8} cardData={milestones[1]!} />
-              <ClampHook position="60%" orientation="vertical" delay={1.0} cardData={milestones[2]!} />
-              <ClampHook position="85%" orientation="vertical" delay={1.2} cardData={milestones[3]!} />
+              <ClampHook position="10%" orientation="vertical" delay={0.8} cardData={milestones[0]!} />
+              <ClampHook position="35%" orientation="vertical" delay={1.1} cardData={milestones[1]!} />
+              <ClampHook position="60%" orientation="vertical" delay={1.4} cardData={milestones[2]!} />
+              <ClampHook position="85%" orientation="vertical" delay={1.7} cardData={milestones[3]!} />
 
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
