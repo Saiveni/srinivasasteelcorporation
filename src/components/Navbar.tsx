@@ -142,8 +142,7 @@ export const Navbar = () => {
               animate={{ y: 0 }}
               exit={{ y: "-100%" }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed inset-0 z-[110] lg:hidden 
-                         bg-[#F7F7F4] flex flex-col"
+              className="fixed inset-0 z-[110] lg:hidden bg-[#F7F7F4] flex flex-col"
             >
               {/* Engineering Texture Overlays */}
               <div 
