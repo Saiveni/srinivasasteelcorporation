@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone, Settings, Shield, Zap, Box, Layers } from "lucide-react";
+import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 import sscLogo3D from "@/assets/ssc-logo-3d.png.asset.json";
+import steelIconsAsset from "@/assets/steel-menu-icons.png.asset.json";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,11 +25,11 @@ export const Navbar = () => {
   }, [location.pathname, location.searchStr]);
 
   const navLinks = [
-    { name: "HOME", href: "/", icon: Layers },
-    { name: "ABOUT", href: "/about", icon: Shield },
-    { name: "PRODUCTS", href: "/products", icon: Box },
-    { name: "GALLERY", href: "/gallery", icon: Zap },
-    { name: "CONTACT", href: "/contact", icon: Settings },
+    { name: "HOME", href: "/", icon: 0 },
+    { name: "ABOUT", href: "/about", icon: 1 },
+    { name: "PRODUCTS", href: "/products", icon: 2 },
+    { name: "GALLERY", href: "/gallery", icon: 3 },
+    { name: "CONTACT", href: "/contact", icon: 4 },
   ];
 
   return (
@@ -208,7 +209,6 @@ export const Navbar = () => {
               <div className="flex flex-col py-8 px-6 sm:px-8 relative z-10">
                 <div className="flex flex-col gap-4 sm:gap-5">
                   {navLinks.map((link, i) => {
-                    const Icon = link.icon;
                     return (
                       <motion.div
                         key={link.name}
@@ -221,9 +221,21 @@ export const Navbar = () => {
                           onClick={() => setIsOpen(false)}
                           className="group flex items-center gap-4 py-0.5"
                         >
-                          <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-[#E8E8E8] to-[#C0C0C0] flex items-center justify-center 
-                                        border border-[#0B1B33]/20 group-hover:border-[#C5A059]/50 transition-all shadow-[0_2px_4px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.8)]">
-                            <Icon size={14} className="text-[#0B1B33]" strokeWidth={2.5} />
+                          <div className="w-12 h-12 rounded-sm flex items-center justify-center 
+                                        transition-all duration-300 group-hover:scale-110 active:scale-95 px-1">
+                            <div className="w-full h-full overflow-hidden relative">
+                              <img 
+                                src={steelIconsAsset.url} 
+                                alt={link.name}
+                                className="absolute max-w-none transition-transform duration-500"
+                                style={{
+                                  height: '500%', // 5 icons vertically
+                                  top: `-${link.icon * 100}%`,
+                                  left: '0',
+                                  width: 'auto'
+                                }}
+                              />
+                            </div>
                           </div>
                           <span className="text-[1.15rem] font-heading font-semibold text-[#0B1B33] uppercase tracking-[0.03em] group-hover:text-[#C5A059] transition-colors">
                             {link.name}
