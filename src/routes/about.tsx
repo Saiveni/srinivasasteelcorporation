@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AboutSection } from "@/components/AboutSection";
 import { AboutHero } from "@/components/AboutHero";
+import { AboutBusinessCards } from "@/components/AboutBusinessCards";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { IndustrialNetwork } from "@/components/IndustrialNetwork";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
@@ -24,8 +25,11 @@ function AboutPage() {
     <div className="bg-[#050A14] flex flex-col">
       {/* 01 — PREMIUM ABOUT OPENING & 02 — COMPANY STORY */}
       <AboutHero />
-      
-      {/* 03 — LEADERSHIP / PROMOTERS */}
+
+      {/* 03 — BUSINESS AREAS / SPECIFICATION PANELS */}
+      <AboutBusinessCards />
+
+      {/* 04 — LEADERSHIP / PROMOTERS */}
       <LeadershipSection />
       
       {/* 04 — INDUSTRIAL TIMELINE */}
