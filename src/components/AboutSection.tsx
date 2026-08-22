@@ -95,6 +95,7 @@ const MetalCard = ({
   description,
   delay = 0,
   orientation = 'horizontal',
+  isLeft = false,
 }: {
   number: string;
   year: string;
