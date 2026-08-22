@@ -150,7 +150,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-4 xl:gap-10 relative z-10">
           {/* Desktop/Tablet Navigation Links */}
           <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-10">
-            {navLinks.map((link) => {
+            {navLinks.map((link, i) => {
               const isActive = location.pathname === link.href;
               return (
                 <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
