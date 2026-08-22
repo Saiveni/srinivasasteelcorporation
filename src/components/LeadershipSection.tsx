@@ -112,51 +112,34 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-20 lg:py-24 bg-[#0C121E] overflow-hidden">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0C121E] overflow-hidden">
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Subtle vertical steel structures */}
-        <div className="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-        
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
-        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
         <div className="absolute inset-0 opacity-[0.02]" 
-             style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+             style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
       </div>
 
-
-
-      {/* Horizontal Steel Rebar Element (Foundation) */}
-      <div className="absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 overflow-hidden opacity-20 hidden lg:block">
-        <div className="w-full h-full bg-gradient-to-r from-transparent via-ssc-gold/30 to-transparent" />
-        <motion.div 
-          animate={{ x: ['-100%', '100%'] }}
-          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-ssc-gold to-transparent opacity-50"
-        />
-      </div>
-
-      <div className="container-wide relative z-10 px-6">
-        <div className="text-center mb-20 lg:mb-32">
+      <div className="container-wide relative z-10 px-6 max-w-[1280px] mx-auto">
+        <div className="text-center mb-24 lg:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            <span className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
-              The Pillars
-            </span>
-            <h2 className="text-[38px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic">
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+                The People
+              </span>
+              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+            </div>
+            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
               OUR <span className="text-ssc-gold">LEADERSHIP</span>
             </h2>
-            <div className="h-[2px] w-24 bg-ssc-gold/20 mx-auto mt-8" />
           </motion.div>
         </div>
-
-        {/* Vertical Foundation Line for Mobile */}
-        <div className="absolute left-1/2 top-[300px] bottom-20 w-[1px] bg-white/[0.05] lg:hidden -translate-x-1/2" />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 max-w-[1200px] mx-auto relative">
           {leaders.map((leader, idx) => (
@@ -168,14 +151,15 @@ export const LeadershipSection = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 1, duration: 1.5 }}
-          className="text-center mt-12 lg:mt-20"
+          transition={{ delay: 0.5, duration: 1.5 }}
+          className="text-center mt-20"
         >
-          <span className="text-white/20 text-[10px] font-technical font-bold tracking-[0.8em] uppercase">
+          <span className="text-white/10 text-[10px] font-technical font-bold tracking-[0.6em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION
           </span>
         </motion.div>
       </div>
     </section>
+
   );
 };

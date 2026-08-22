@@ -1,73 +1,96 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Clock, Award, Zap, Building2, Package } from 'lucide-react';
+import { Shield, Clock, Award, Zap, Building2, Package, Settings, Layers } from 'lucide-react';
 
 const trustPoints = [
   {
     title: "30+ YEARS EXPERIENCE",
     description: "Built on a foundation of trust and industrial expertise since 1994.",
     icon: Clock,
-    angle: 0
-  },
-  {
-    title: "MOU DEALER STATUS",
-    description: "Direct supply relationships ensuring material authenticity and availability.",
-    icon: Award,
-    angle: 60
-  },
-  {
-    title: "DECOILING SOLUTIONS",
-    description: "Precision engineered processing for custom industrial requirements.",
-    icon: Zap,
-    angle: 120
+    label: "FOUNDATION-94",
+    x: -340, y: -180
   },
   {
     title: "STEEL & TMT SUPPLY",
     description: "Comprehensive range of high-grade construction and structural steel.",
     icon: Shield,
-    angle: 180
-  },
-  {
-    title: "REGIONAL PRESENCE",
-    description: "Strategically located yards in Vijayawada, Gannavaram, and Vizag.",
-    icon: Building2,
-    angle: 240
+    label: "SPEC-550D",
+    x: 340, y: -180
   },
   {
     title: "WIRE PRODUCTS",
     description: "Extensive inventory of high-quality industrial and construction wire.",
     icon: Package,
-    angle: 300
+    label: "WIRE-SEC-01",
+    x: -380, y: 0
+  },
+  {
+    title: "DECOILING SOLUTIONS",
+    description: "Precision engineered processing for custom industrial requirements.",
+    icon: Layers,
+    label: "PROC-DECOIL",
+    x: 380, y: 0
+  },
+  {
+    title: "MOU / DEALER RELATIONS",
+    description: "Direct supply relationships ensuring material authenticity and availability.",
+    icon: Award,
+    label: "PARTNER-CERT",
+    x: -340, y: 180
+  },
+  {
+    title: "REGIONAL PRESENCE",
+    description: "Strategically located yards in Vijayawada, Gannavaram, and Vizag.",
+    icon: Building2,
+    label: "DIST-NETWORK",
+    x: 340, y: 180
   }
 ];
 
-const TrustPoint = ({ point, index }: { point: typeof trustPoints[0], index: number }) => {
+const InfoPanel = ({ point, index }: { point: typeof trustPoints[0], index: number }) => {
+  const isLeft = point.x < 0;
+  
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, x: isLeft ? -30 : 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      transition={{ delay: 0.6 + index * 0.1, duration: 0.8 }}
-      className="relative group"
+      transition={{ delay: 0.2 + index * 0.1, duration: 0.8 }}
+      className="absolute z-20"
+      style={{ 
+        left: `calc(50% + ${point.x}px)`, 
+        top: `calc(50% + ${point.y}px)`,
+        transform: 'translate(-50%, -50%)'
+      }}
     >
-      <div className="bg-[#0C121E] border border-white/5 p-6 rounded-2xl relative overflow-hidden group-hover:border-ssc-gold/30 transition-all duration-500 hover:translate-y-[-5px]">
-        {/* Subtle metal texture */}
+      <div className="w-[280px] bg-[#0C121E] border border-ssc-gold/20 p-5 rounded-xl shadow-2xl relative group hover:border-ssc-gold/50 transition-all duration-500">
+        {/* Technical Label */}
+        <div className="absolute -top-3 left-4 px-2 bg-[#0C121E] border-x border-ssc-gold/30">
+          <span className="text-ssc-gold/40 text-[8px] font-technical font-bold tracking-[0.3em] uppercase">
+            {point.label}
+          </span>
+        </div>
+
+        {/* Brushed metal overlay */}
         <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
         
         <div className="relative z-10">
-          <div className="w-10 h-10 rounded-lg bg-ssc-gold/10 flex items-center justify-center mb-4 group-hover:bg-ssc-gold/20 transition-colors">
-            <point.icon className="text-ssc-gold w-5 h-5" />
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-8 h-8 rounded bg-ssc-gold/10 flex items-center justify-center border border-ssc-gold/20">
+              <point.icon className="text-ssc-gold w-4 h-4" />
+            </div>
+            <h4 className="text-white font-heading font-bold text-[13px] tracking-[0.05em] uppercase leading-tight">
+              {point.title}
+            </h4>
           </div>
-          <h4 className="text-white font-heading font-bold text-sm tracking-[0.1em] uppercase mb-3">
-            {point.title}
-          </h4>
-          <p className="text-white/50 text-xs leading-relaxed font-medium">
+          <p className="text-white/50 text-[11px] leading-relaxed font-medium">
             {point.description}
           </p>
         </div>
 
-        {/* Connection node point */}
-        <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-ssc-gold/20 group-hover:bg-ssc-gold transition-colors" />
+        {/* Machined connection point */}
+        <div className={`absolute top-1/2 -translate-y-1/2 w-4 h-[1px] bg-ssc-gold/30 ${isLeft ? '-right-4' : '-left-4'}`} />
+        <div className={`absolute top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full border border-ssc-gold/50 bg-[#0C121E] ${isLeft ? '-right-5' : '-left-5'}`} />
       </div>
     </motion.div>
   );
@@ -75,112 +98,154 @@ const TrustPoint = ({ point, index }: { point: typeof trustPoints[0], index: num
 
 export const WhyChooseUs = () => {
   return (
-    <section id="why-ssc" className="relative py-20 lg:py-24 bg-[#E8EBEF] overflow-hidden">
-      {/* Background Engineering Elements */}
+    <section id="why-ssc" className="relative py-24 lg:py-32 bg-[#E8EBEF] overflow-hidden min-h-[900px] flex flex-col items-center">
+      {/* Engineered Background System */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
-        <div className="absolute inset-0 opacity-[0.08] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-        <div className="absolute inset-0 opacity-[0.02]" 
-             style={{ backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
-        {/* Soft metallic gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
-
+        {/* Precision Engineering Grid */}
+        <div className="absolute inset-0 opacity-[0.05]" 
+             style={{ 
+               backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)', 
+               backgroundSize: '80px 80px' 
+             }} />
+        
+        {/* Technical Depth Lines */}
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-navy/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-navy/10 to-transparent" />
       </div>
 
-
-      <div className="container-wide relative z-10 px-6">
-        <div className="max-w-[1200px] mx-auto">
-          
-          <div className="text-center mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-            >
-              <span className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
+      <div className="container-wide relative z-10 px-6 max-w-[1400px] w-full">
+        {/* Section Header */}
+        <div className="text-center mb-20 lg:mb-32">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-10 h-[1px] bg-ssc-navy/20" />
+              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
                 The Advantage
               </span>
-              <h2 className="text-[38px] lg:text-[72px] text-ssc-navy font-heading font-extrabold tracking-tighter uppercase italic leading-[0.9]">
-                WHY BUILD WITH <span className="text-ssc-gold">SRINIVASA STEEL?</span>
-              </h2>
-              <p className="text-ssc-navy/60 text-base lg:text-xl leading-relaxed font-medium mt-8 max-w-2xl mx-auto">
-                A dependable steel supply partner built around quality, relationships and consistent service.
-              </p>
+              <div className="w-10 h-[1px] bg-ssc-navy/20" />
+            </div>
+            
+            <h2 className="text-[42px] lg:text-[72px] text-ssc-navy font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85] mb-8">
+              WHY BUILD WITH <br />
+              <span className="text-ssc-gold">SRINIVASA STEEL?</span>
+            </h2>
+          </motion.div>
+        </div>
+
+        {/* Premium Structural Composition (Desktop) */}
+        <div className="hidden lg:block relative h-[600px] w-full max-w-[1200px] mx-auto">
+          {/* Central Rebar/Steel Foundation Element */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8, rotate: -15 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              className="relative w-[320px] h-[320px] flex items-center justify-center"
+            >
+              {/* Radial Technical Grid Background */}
+              <div className="absolute inset-0 rounded-full border border-ssc-navy/[0.03] animate-spin-slow" />
+              
+              {/* Machined Steel Foundation */}
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-[#1A2333] to-[#050A14] border-2 border-ssc-gold/30 shadow-[0_0_80px_rgba(197,160,89,0.15)] flex items-center justify-center relative overflow-hidden group">
+                <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
+                
+                {/* Structural Rebar Ribbing Effect */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
+                   {[...Array(18)].map((_, i) => (
+                     <div 
+                       key={i} 
+                       className="absolute w-full h-[2px] bg-ssc-gold/40 origin-center"
+                       style={{ transform: `rotate(${i * 20}deg)` }}
+                     />
+                   ))}
+                </div>
+
+                <div className="relative z-10 flex flex-col items-center">
+                  <span className="text-ssc-gold text-6xl font-heading font-black italic tracking-tighter drop-shadow-2xl">SSC</span>
+                  <div className="mt-2 h-[1px] w-12 bg-ssc-gold/50" />
+                  <span className="text-white/30 text-[9px] font-technical font-bold tracking-[0.5em] uppercase mt-2">Foundation</span>
+                </div>
+              </div>
+
+              {/* Connecting Steel Rods to Panels */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
+                {trustPoints.map((point, i) => (
+                  <motion.line
+                    key={i}
+                    x1="50%" y1="50%"
+                    x2={`calc(50% + ${point.x}px)`} y2={`calc(50% + ${point.y}px)`}
+                    stroke="rgba(197,160,89,0.2)"
+                    strokeWidth="1"
+                    strokeDasharray="5 5"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    whileInView={{ pathLength: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.5 + i * 0.1, duration: 1 }}
+                  />
+                ))}
+              </svg>
             </motion.div>
           </div>
 
-          <div className="relative">
-            {/* Central Foundation Element (Desktop) */}
-            <div className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] items-center justify-center">
-              {/* Machined Steel Ring */}
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.8, rotate: -45 }}
-                whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
-                className="w-full h-full rounded-full border border-ssc-gold/10 relative flex items-center justify-center"
-              >
-                <div className="w-[85%] h-[85%] rounded-full border border-ssc-gold/20 flex items-center justify-center">
-                   <div className="w-[70%] h-[70%] rounded-full bg-gradient-to-br from-[#1A2333] to-[#050A14] border border-ssc-gold/30 shadow-[0_0_50px_rgba(197,160,89,0.1)] flex items-center justify-center overflow-hidden relative">
-                      {/* Technical detail: radial lines */}
-                      <div className="absolute inset-0 opacity-10">
-                        {[...Array(12)].map((_, i) => (
-                          <div 
-                            key={i} 
-                            className="absolute top-1/2 left-1/2 w-full h-[1px] bg-white origin-left"
-                            style={{ transform: `rotate(${i * 30}deg)` }}
-                          />
-                        ))}
-                      </div>
-                      <span className="text-ssc-gold text-4xl font-heading font-black italic tracking-tighter z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">SSC</span>
-                   </div>
-                </div>
-                
-                {/* Connection lines to cards (simplified as CSS pseudo-elements or absolute divs) */}
-                <div className="absolute inset-0 pointer-events-none">
-                  {[...Array(6)].map((_, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ scaleX: 0 }}
-                      whileInView={{ scaleX: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 1, duration: 1 }}
-                      className="absolute top-1/2 left-1/2 w-[300px] h-[1px] bg-gradient-to-r from-ssc-gold/40 to-transparent origin-left"
-                      style={{ transform: `rotate(${i * 60}deg)` }}
-                    />
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
-            {/* Benefit Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-20">
-              {trustPoints.map((point, idx) => (
-                <TrustPoint key={point.title} point={point} index={idx} />
-              ))}
-            </div>
-          </div>
-
-          {/* Strong CTA (End of Story) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="mt-20 lg:mt-24 text-center"
-          >
-
-            <div className="inline-block p-[1px] bg-gradient-to-r from-transparent via-ssc-navy/20 to-transparent w-full max-w-4xl mb-16" />
-            <h3 className="text-ssc-navy text-3xl lg:text-5xl font-heading font-extrabold italic uppercase mb-10 tracking-tighter">
-              READY TO <span className="text-ssc-gold">STRENGTHEN</span> YOUR PROJECT?
-            </h3>
-            <button className="bg-ssc-gold text-ssc-navy px-12 py-5 rounded-full font-heading font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all duration-500 shadow-[0_20px_40px_rgba(197,160,89,0.2)] hover:shadow-[0_25px_50px_rgba(197,160,89,0.3)] hover:scale-105">
-              GET A CUSTOM QUOTE
-            </button>
-          </motion.div>
-
+          {/* Engineered Info Panels */}
+          {trustPoints.map((point, idx) => (
+            <InfoPanel key={point.title} point={point} index={idx} />
+          ))}
         </div>
+
+        {/* Mobile Layout (Precision Industrial List) */}
+        <div className="lg:hidden flex flex-col gap-6 w-full max-w-[480px] mx-auto px-4 pb-20">
+           {trustPoints.map((point, idx) => (
+             <motion.div
+               key={point.title}
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               viewport={{ once: true }}
+               transition={{ delay: idx * 0.1 }}
+               className="bg-[#0C121E] border border-ssc-gold/20 p-6 rounded-2xl relative overflow-hidden"
+             >
+                <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-ssc-gold/10 rounded-tr-2xl" />
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-ssc-gold/10 flex items-center justify-center border border-ssc-gold/20">
+                    <point.icon size={20} className="text-ssc-gold" />
+                  </div>
+                  <div>
+                    <span className="text-ssc-gold/40 text-[8px] font-technical font-bold tracking-[0.3em] uppercase block mb-1">
+                      {point.label}
+                    </span>
+                    <h4 className="text-white font-heading font-bold text-base tracking-[0.05em] uppercase">
+                      {point.title}
+                    </h4>
+                  </div>
+                </div>
+                <p className="text-white/50 text-[13px] leading-relaxed font-medium">
+                  {point.description}
+                </p>
+             </motion.div>
+           ))}
+        </div>
+
+        {/* Final CTA / Strong Foundation Message */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.5, duration: 1 }}
+          className="text-center pt-20 border-t border-ssc-navy/5"
+        >
+          <h3 className="text-ssc-navy text-[32px] lg:text-[56px] font-heading font-extrabold italic uppercase mb-10 tracking-tighter leading-tight">
+            READY TO <span className="text-ssc-gold">STRENGTHEN</span> <br className="lg:hidden" /> YOUR PROJECT?
+          </h3>
+          <button className="bg-ssc-navy text-white px-12 py-5 rounded-full font-heading font-black text-sm tracking-[0.2em] uppercase hover:bg-ssc-gold hover:text-ssc-navy transition-all duration-500 shadow-2xl hover:scale-105 active:scale-95">
+            GET A CUSTOM QUOTE
+          </button>
+        </motion.div>
       </div>
     </section>
   );
