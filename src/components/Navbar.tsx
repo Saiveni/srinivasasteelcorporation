@@ -116,9 +116,9 @@ export const Navbar = () => {
                   exit={{ opacity: 0, scale: 0.8 }}
                   className="flex flex-col gap-[5px]"
                 >
-                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
-                  <span className="w-4 h-[1.5px] bg-white rounded-full block" />
-                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
+                  <span className="w-5 h-[1.5px] bg-[#0B1B33] rounded-full block" />
+                  <span className="w-4 h-[1.5px] bg-[#0B1B33] rounded-full block" />
+                  <span className="w-5 h-[1.5px] bg-[#0B1B33] rounded-full block" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -127,7 +127,7 @@ export const Navbar = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                 >
-                  <X className="text-white" size={20} strokeWidth={2} />
+                  <X className="text-[#0B1B33]" size={20} strokeWidth={2} />
                 </motion.div>
               )}
             </AnimatePresence>
