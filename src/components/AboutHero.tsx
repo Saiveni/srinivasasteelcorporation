@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import rebarWarehouse from '@/assets/rebar-warehouse.jpg.asset.json';
 
 export const AboutHero = () => {
-  // Animation variants
-  const containerVariants = {
+  // Animation variants with explicit types to satisfy TS
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -15,7 +15,7 @@ export const AboutHero = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -24,7 +24,7 @@ export const AboutHero = () => {
     }
   };
 
-  const headlineVariants = {
+  const headlineVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: (i: number) => ({
       opacity: 1,
@@ -37,7 +37,7 @@ export const AboutHero = () => {
     })
   };
 
-  const visualVariants = {
+  const visualVariants: Variants = {
     hidden: { 
       opacity: 0, 
       scale: 1.05,
@@ -55,7 +55,7 @@ export const AboutHero = () => {
     }
   };
 
-  const techDetailVariants = {
+  const techDetailVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -67,8 +67,6 @@ export const AboutHero = () => {
     <section className="relative min-h-[80vh] lg:min-h-[90vh] bg-[#0A111F] flex items-center overflow-hidden pt-20 lg:pt-24 pb-12 lg:pb-20">
       {/* Sophisticated Industrial Background */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Deep Graphite/Navy base already handled by bg color */}
-        
         {/* Subtle Engineering Grid */}
         <div 
           className="absolute inset-0 opacity-[0.03]"
@@ -148,7 +146,7 @@ export const AboutHero = () => {
                 </div>
                 <div className="w-[1px] h-10 bg-white/10" />
                 <div className="flex flex-col">
-                  <span className="text-white text-2xl lg:text-3xl font-heading font-bold uppercase tracking-tight italic">Quality</span>
+                  <span className="text-white text-2xl lg:text-3xl font-heading font-bold uppercase tracking-tight italic text-ssc-gold">Quality</span>
                   <span className="text-white/40 text-[9px] font-technical font-bold uppercase tracking-[0.2em]">Core Standard</span>
                 </div>
               </div>
