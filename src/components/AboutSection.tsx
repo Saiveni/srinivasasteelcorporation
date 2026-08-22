@@ -245,7 +245,7 @@ const ClampHook = ({
         >
           {/* Heavy metal vertical chain/rod */}
           <div
-            className={`${isH ? 'w-[10px] h-[75px]' : 'h-[10px] w-[45px]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
+            className={`${isH ? 'w-[10px] h-[75px]' : 'h-[10px] w-[calc(var(--hook-width)-35px)]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
             style={{
               background: isH 
                 ? 'linear-gradient(90deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)'
