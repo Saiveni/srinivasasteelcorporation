@@ -121,15 +121,18 @@ const MetalCard = ({
       }}
       className={`absolute ${
         isH 
-          ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' 
-          : 'left-[calc(50%+45px)] sm:left-[calc(50%+80px)] -translate-y-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
+          ? 'top-[calc(50%+108px)] left-1/2 -translate-x-1/2 w-[280px]' 
+          : 'top-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
       }`}
+      style={!isH ? {
+        left: '50%',
+        transform: isLeft 
+          ? 'translate(calc(-100% - 45px), -50%)' 
+          : 'translate(45px, -50%)'
+      } : {}}
     >
       <div className="relative group">
-        {/* Hanging Eyelets (where hooks connect) */}
-        <div className="absolute -top-[14px] left-1/2 -translate-x-1/2 flex gap-12 z-20">
-          <div className="w-4 h-4 rounded-full border-[3px] border-[#c5a059] bg-[#0c0f13] shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
-        </div>
+        {/* Hanging Eyelets removed per user request */}
 
         {/* The Card Body (3D Metal Plaque) */}
         <div className="relative bg-[#0c0f13] rounded-[18px] p-4 sm:p-5 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
@@ -243,39 +246,29 @@ const ClampHook = ({
                 : 'top-1/2 right-0 -translate-y-1/2 flex items-center'
           }`}
         >
-          {/* Heavy metal vertical chain/rod */}
+          {/* Heavy metal vertical chain/rod - simplified connection */}
           <div
-            className={`${isH ? 'w-[10px] h-[75px]' : 'h-[10px] w-[calc(var(--hook-width)-35px)]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
+            className={`${isH ? 'w-[10px] h-[108px]' : 'h-[10px] w-[var(--hook-width)]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
             style={{
               background: isH 
                 ? 'linear-gradient(90deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)'
                 : 'linear-gradient(0deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)',
             }}
           />
-          {/* The Hook Hooking into the Eyelet */}
-          <div
-            className={`${
-              isH 
-                ? 'w-[32px] h-[32px] rounded-full border-[8px] border-t-transparent -mt-3' 
-                : `w-[32px] h-[32px] rounded-full border-[8px] ${isLeft ? 'border-r-transparent -mr-3' : 'border-l-transparent -ml-3'}`
-            } shadow-[4px_4px_15px_rgba(0,0,0,0.7)] z-30`}
-            style={{ 
-              borderColor: '#f4d088', 
-              borderTopColor: isH ? 'transparent' : undefined, 
-              borderLeftColor: isH ? undefined : isLeft ? undefined : 'transparent',
-              borderRightColor: isLeft ? 'transparent' : undefined
-            }}
-          >
-            {/* Inner ring for realism */}
-            <div className="absolute inset-[2px] rounded-full border-2 border-[#8a6d3b]/50" />
-          </div>
+          
+          {/* Decorative end cap instead of hook loop per user request */}
+          {!isH && (
+            <div 
+              className={`w-[6px] h-[14px] bg-[#f4d088] shadow-lg z-20 ${isLeft ? '-mr-[2px]' : '-ml-[2px]'}`}
+            />
+          )}
         </motion.div>
 
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] opacity-60" />
       </motion.div>
 
       {/* The Information Card */}
-      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+45px)] sm:-translate-x-[calc(100%+80px)]' : '') : ''}>
+      <div>
         <MetalCard
           {...cardData}
           delay={delay}
