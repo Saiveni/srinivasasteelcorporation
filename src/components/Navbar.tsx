@@ -105,8 +105,6 @@ export const Navbar = () => {
             transition-all duration-300
             ${isOpen ? 'rotate-90' : 'hover:scale-105 active:scale-95'}
           `}>
-            {/* Removal of structural detail line for cleaner look */}
-            
             <AnimatePresence mode="wait">
               {!isOpen ? (
                 <motion.div 
@@ -120,19 +118,8 @@ export const Navbar = () => {
                   <span className="w-4 h-[1.5px] bg-[#0B1B33] rounded-full block" />
                   <span className="w-5 h-[1.5px] bg-[#0B1B33] rounded-full block" />
                 </motion.div>
-              ) : (
-                <motion.div
-                  key="close"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                >
-                  <X className="text-[#0B1B33]" size={20} strokeWidth={2} />
-                </motion.div>
-              )}
+              ) : null}
             </AnimatePresence>
-            
-            {/* Removal of physical depth layer for cleaner look */}
           </div>
         </button>
       </div>
@@ -151,13 +138,12 @@ export const Navbar = () => {
             />
             
             <motion.div
-              initial={{ y: -20, opacity: 0, scale: 0.98 }}
-              animate={{ y: 0, opacity: 1, scale: 1 }}
-              exit={{ y: -20, opacity: 0, scale: 0.98 }}
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "-100%" }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-[12px] right-[12px] left-[12px] z-[110] lg:hidden 
-                         bg-[#F7F7F4] rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.18)] 
-                         border border-[#0B1B33]/15 overflow-hidden max-h-[calc(100vh-24px)] flex flex-col"
+              className="fixed inset-0 z-[110] lg:hidden 
+                         bg-[#F7F7F4] flex flex-col"
             >
               {/* Engineering Texture Overlays */}
               <div 
