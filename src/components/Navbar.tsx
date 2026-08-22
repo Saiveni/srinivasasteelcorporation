@@ -262,8 +262,6 @@ export const Navbar = () => {
           </>
         )}
       </AnimatePresence>
-        )}
-      </AnimatePresence>
     </nav>
   );
 };
