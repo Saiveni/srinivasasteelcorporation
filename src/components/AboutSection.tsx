@@ -360,7 +360,7 @@ export const AboutSection = () => {
               <span className="text-white">STRONGER </span>
               <span className="text-[#C5A059]">FUTURE.</span>
             </h2>
-            <p className="text-white/70 text-base lg:text-[20px] font-medium max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/70 text-sm sm:text-base lg:text-[20px] font-medium max-w-2xl mx-auto leading-relaxed px-4">
               From a strong beginning in 1994 to becoming a trusted steel supplier across multiple
               locations, our journey is built on quality, trust and consistent delivery.
             </p>
