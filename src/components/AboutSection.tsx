@@ -362,7 +362,7 @@ export const AboutSection = () => {
         </div>
 
         {/* THE STEEL ROD + CLAMPS + CARDS */}
-        <div className="relative flex justify-center pb-80 lg:pb-[500px]">
+        <div className="relative flex justify-center pb-20 lg:pb-[500px]">
           {/* Desktop: horizontal rod */}
           <div className="hidden lg:block max-w-[1300px] w-full overflow-visible relative">
             <motion.div
@@ -384,13 +384,13 @@ export const AboutSection = () => {
           </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <div className="lg:hidden min-h-[1400px] sm:min-h-[1500px] w-full overflow-visible relative flex justify-center py-20">
+          <div className="lg:hidden min-h-[1100px] w-full overflow-visible relative flex justify-center py-20">
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="h-[1400px] sm:h-[1500px] relative"
+              className="h-[1100px] relative"
             >
               <SteelRod orientation="vertical" />
               

@@ -44,51 +44,59 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ y: -4 }}
-      className="group relative bg-white rounded-[20px] border border-black/[0.04] shadow-[0_4px_24px_rgba(0,0,0,0.02)] overflow-hidden hover:shadow-[0_16px_48px_rgba(0,0,0,0.06)] transition-all duration-500"
+      transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+      className="group relative h-[450px] w-full perspective-1000"
     >
-      {/* Image Area */}
-      <div className="aspect-[4/3] overflow-hidden relative bg-[#F8FAFC]">
-        <img 
-          src={product.image} 
-          alt={product.alt}
-          className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-105"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-ssc-navy/15 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-      </div>
+      <div className="relative w-full h-full transition-all duration-700 preserve-3d group-hover:rotate-y-12">
+        {/* Main Card Surface */}
+        <div className="absolute inset-0 bg-white rounded-[24px] border border-black/[0.04] shadow-[0_8px_32px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col">
+          {/* Top 3D Indicator */}
+          <div className="absolute top-6 right-8 z-20">
+            <span className="text-[10px] font-technical font-bold text-[#C5A059] tracking-[0.3em] opacity-60">
+              {product.index}
+            </span>
+          </div>
 
-      <div className="p-7 lg:p-8">
-        {/* Product Number */}
-        <div className="mb-4">
-          <span className="text-[11px] font-technical font-bold text-[#C5A059] tracking-[0.2em]">
-            {product.index}
-          </span>
-        </div>
-        
-        {/* Title */}
-        <div className="flex gap-4 items-start mb-4">
-          <div className="w-[1px] h-6 bg-[#C5A059]/40 mt-1 flex-shrink-0" />
-          <h3 className="text-[22px] lg:text-[26px] font-heading font-medium text-ssc-navy leading-tight tracking-tight">
-            {product.name}
-          </h3>
-        </div>
-        
-        {/* Description */}
-        <p className="text-[#64748B] text-[15px] leading-relaxed mb-8 line-clamp-2 font-[450]">
-          {product.description}
-        </p>
+          {/* Image Area with 3D Float Effect */}
+          <div className="h-[240px] w-full overflow-hidden relative bg-[#F8FAFC]">
+            <motion.img 
+              src={product.image} 
+              alt={product.alt}
+              className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-ssc-navy/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+            
+            {/* Animated Industrial Overlay */}
+            <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-10 transition-opacity duration-500">
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+            </div>
+          </div>
 
-        {/* View Details */}
-        <Link 
-          to="/contact"
-          search={{ product: product.id }}
-          className="inline-flex items-center gap-2 text-[10px] font-technical font-bold text-[#C5A059] uppercase tracking-[0.25em] group/link"
-        >
-          Enquire Now
-          <ArrowRight className="w-3.5 h-3.5 transition-transform duration-500 ease-out group-hover/link:translate-x-[5px]" />
-        </Link>
+          {/* Content Area */}
+          <div className="flex-1 p-8 relative">
+            {/* 3D Label */}
+            <div className="inline-block px-3 py-1 rounded-full bg-[#C5A059]/10 mb-4">
+              <span className="text-[9px] font-technical font-bold text-[#C5A059] uppercase tracking-widest">
+                PREMIUM GRADE
+              </span>
+            </div>
+            
+            <h3 className="text-[24px] font-heading font-bold text-ssc-navy leading-tight tracking-tight mb-3 group-hover:text-ssc-gold transition-colors duration-500">
+              {product.name}
+            </h3>
+            
+            <p className="text-[#64748B] text-[14px] leading-relaxed line-clamp-2 font-[450]">
+              {product.description}
+            </p>
+
+            {/* Bottom Glow */}
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C5A059]/0 to-transparent group-hover:via-[#C5A059]/40 transition-all duration-700" />
+          </div>
+        </div>
+
+        {/* 3D Depth Shadows */}
+        <div className="absolute -inset-2 bg-black/5 blur-2xl -z-10 rounded-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 translate-y-4" />
       </div>
     </motion.div>
   );
