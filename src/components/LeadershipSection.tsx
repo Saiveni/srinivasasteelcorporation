@@ -169,7 +169,7 @@ export const LeadershipSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 1.5 }}
-          className="text-center mt-20 lg:mt-32"
+          className="text-center mt-12 lg:mt-20"
         >
           <span className="text-white/20 text-[10px] font-technical font-bold tracking-[0.8em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION
