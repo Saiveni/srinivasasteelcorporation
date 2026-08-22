@@ -33,13 +33,13 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "h-[70px] bg-[#F7F7F4]/95 backdrop-blur-md border-b border-[#0B1B33]/10 shadow-lg" 
-          : "h-[80px] bg-[#F7F7F4] border-b border-[#0B1B33]/5"
+          ? "h-[72px] bg-[#F7F7F4]/98 backdrop-blur-md border-b border-[#0B1B33]/15 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)]" 
+          : "h-[82px] bg-[#F7F7F4] border-b border-[#0B1B33]/5"
       }`}
     >
-      <div className="container-wide flex items-center justify-between">
+      <div className="container-wide h-full flex items-center justify-between px-6 sm:px-8">
         {/* Logo Section */}
         <Link 
           to="/" 
