@@ -104,8 +104,7 @@ export const Navbar = () => {
             transition-all duration-300
             ${isOpen ? 'rotate-90' : 'hover:scale-105 active:scale-95'}
           `}>
-            {/* Structural Detail Line */}
-            <div className="absolute top-[6px] left-3 right-3 h-[1px] bg-[#C5A059]/20" />
+            {/* Removal of structural detail line for cleaner look */}
             
             <AnimatePresence mode="wait">
               {!isOpen ? (
