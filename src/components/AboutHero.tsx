@@ -65,7 +65,7 @@ export const AboutHero = () => {
 
   return (
     <>
-      <section className="relative min-h-[70vh] lg:min-h-[85vh] bg-[#0A111F] flex items-center overflow-hidden pt-24 lg:pt-32 pb-12 lg:pb-16">
+      <section className="relative min-h-[70vh] lg:min-h-[85vh] bg-[#0A111F] flex items-center overflow-hidden pt-24 lg:pt-32 pb-12 lg:pb-16 border-b border-white/5">
         {/* Sophisticated Industrial Background */}
         <div className="absolute inset-0 pointer-events-none">
           {/* Subtle Engineering Grid */}
