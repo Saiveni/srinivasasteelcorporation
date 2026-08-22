@@ -157,73 +157,78 @@ export const Navbar = () => {
               animate={{ y: 0, opacity: 1, scale: 1 }}
               exit={{ y: -20, opacity: 0, scale: 0.98 }}
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-              className="fixed top-[8px] right-[8px] left-[8px] z-[110] lg:hidden 
-                         bg-[#F7F7F4] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] 
-                         border border-[#0B1B33]/10 overflow-hidden max-h-[calc(100vh-16px)]"
+              className="fixed top-[12px] right-[12px] left-[12px] z-[110] lg:hidden 
+                         bg-[#F7F7F4] rounded-xl shadow-[0_30px_60px_rgba(0,0,0,0.18)] 
+                         border border-[#0B1B33]/15 overflow-hidden max-h-[calc(100vh-24px)] flex flex-col"
             >
-              {/* Engineering/Steel Texture Overlay */}
+              {/* Engineering Texture Overlays */}
               <div 
-                className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                className="absolute inset-0 opacity-[0.04] pointer-events-none" 
                 style={{ 
                   backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
-                  backgroundSize: '32px 32px'
+                  backgroundSize: '40px 40px'
                 }} 
               />
-              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.05] pointer-events-none" />
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.06] pointer-events-none" />
               
-              {/* Menu Header Area - Clean & Transparent Logo */}
-              <div className="flex items-center justify-between px-6 sm:px-8 h-[82px] border-b border-[#0B1B33]/5 relative z-10">
+              {/* Subtle TMT Ribbing inspired detail at the bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-1.5 opacity-[0.08] pointer-events-none" 
+                   style={{ background: 'repeating-linear-gradient(45deg, #0B1B33, #0B1B33 2px, transparent 2px, transparent 8px)' }} />
+
+              {/* Menu Header Area */}
+              <div className="flex items-center justify-between px-5 sm:px-7 h-[72px] border-b border-[#0B1B33]/10 relative z-10 bg-white/50 backdrop-blur-sm">
                 <div className="flex items-center gap-3">
-                  <div className="h-9 w-9 shrink-0">
+                  <div className="h-8 w-8 shrink-0">
                     <img 
                       src={sscLogo.url} 
                       alt="SSC Logo" 
                       className="h-full w-full object-contain filter brightness-0" 
                     />
                   </div>
-                  <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-3 h-9">
-                    <span className="text-[14px] font-heading font-bold tracking-[0.05em] text-[#0B1B33] leading-none uppercase">
-                      SRINIVASA <span className="text-[#0B1B33]/90 font-medium">STEEL</span>
+                  <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-3 h-8">
+                    <span className="text-[13px] font-heading font-bold tracking-[0.04em] text-[#0B1B33] leading-none uppercase">
+                      SRINIVASA <span className="text-[#0B1B33]/80 font-medium">STEEL</span>
                     </span>
-                    <span className="text-[10px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1">
+                    <span className="text-[9px] font-technical font-extrabold tracking-[0.2em] text-[#C5A059] leading-none uppercase mt-0.5">
                       CORPORATION
                     </span>
                   </div>
                 </div>
 
-                {/* Close Button - Engineered Control */}
+                {/* Close Button - Machined Metal Look */}
                 <button 
                   onClick={() => setIsOpen(false)}
-                  className="relative w-10 h-10 rounded-full flex items-center justify-center 
-                             bg-white border border-[#C5A059]/30 shadow-sm
-                             hover:bg-[#F7F7F4] active:scale-95 transition-all"
+                  className="relative w-9 h-9 rounded-lg flex items-center justify-center 
+                             bg-white border border-[#0B1B33]/15 shadow-sm
+                             hover:bg-[#F7F7F4] active:scale-95 transition-all group"
                 >
-                  <X className="text-[#0B1B33]" size={18} strokeWidth={2.5} />
-                  <div className="absolute inset-0 rounded-full shadow-inner opacity-10 pointer-events-none" />
+                  <X className="text-[#0B1B33]/70 group-hover:text-[#0B1B33]" size={16} strokeWidth={2} />
+                  <div className="absolute inset-0 rounded-lg border border-white/40 pointer-events-none" />
                 </button>
               </div>
 
-              {/* Navigation Items */}
-              <div className="flex flex-col py-10 px-8 relative z-10">
-                <div className="flex flex-col gap-6">
+              {/* Navigation Items - Compact & Refined */}
+              <div className="flex flex-col py-8 px-6 sm:px-8 relative z-10">
+                <div className="flex flex-col gap-4 sm:gap-5">
                   {navLinks.map((link, i) => {
                     const Icon = link.icon;
                     return (
                       <motion.div
                         key={link.name}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
                       >
                         <Link
                           to={link.href}
                           onClick={() => setIsOpen(false)}
-                          className="group flex items-center gap-4 py-1"
+                          className="group flex items-center gap-4 py-0.5"
                         >
-                          <div className="w-8 h-8 rounded-lg bg-[#0B1B33]/5 flex items-center justify-center group-hover:bg-[#C5A059]/10 transition-colors">
-                            <Icon size={16} className="text-[#C5A059]" strokeWidth={2} />
+                          <div className="w-8 h-8 rounded bg-[#0B1B33]/5 flex items-center justify-center 
+                                        border border-[#0B1B33]/5 group-hover:border-[#C5A059]/30 transition-all shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]">
+                            <Icon size={14} className="text-[#C5A059]" strokeWidth={2} />
                           </div>
-                          <span className="text-[1.25rem] font-heading font-semibold text-[#0B1B33] uppercase tracking-[0.02em] group-hover:text-[#C5A059] transition-colors">
+                          <span className="text-[1.15rem] font-heading font-semibold text-[#0B1B33] uppercase tracking-[0.03em] group-hover:text-[#C5A059] transition-colors">
                             {link.name}
                           </span>
                         </Link>
@@ -233,29 +238,32 @@ export const Navbar = () => {
                 </div>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
-                  className="mt-12"
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="mt-8"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[60px] text-[14px] tracking-[0.2em] font-technical font-bold 
+                    <Button className="w-full h-[56px] text-[13px] tracking-[0.25em] font-technical font-bold 
                                      bg-[#C5A059] hover:bg-[#B38E48] text-[#0A0F1A] border-none 
-                                     shadow-[0_8px_25px_rgba(197,160,89,0.3)] rounded-xl relative overflow-hidden group">
+                                     shadow-[0_8px_20px_rgba(197,160,89,0.25)] rounded-lg relative overflow-hidden group">
                       <span className="relative z-10 flex items-center justify-center gap-2">
-                        GET A QUOTE <ArrowRight size={16} />
+                        GET A QUOTE <ArrowRight size={14} />
                       </span>
+                      <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                     </Button>
                   </Link>
                 </motion.div>
                 
-                {/* Architectural Accent */}
-                <div className="mt-8 flex items-center gap-3">
-                  <div className="flex-1 h-[1px] bg-[#0B1B33]/5" />
-                  <span className="text-[9px] font-technical font-bold text-[#0B1B33]/20 uppercase tracking-[0.4em]">
-                    Quality Engineering
-                  </span>
-                  <div className="flex-1 h-[1px] bg-[#0B1B33]/5" />
+                {/* Engineering Detail Footer */}
+                <div className="mt-8 pt-6 border-t border-[#0B1B33]/5 flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-[1px] bg-[#C5A059]/40" />
+                    <span className="text-[8px] font-technical font-bold text-[#0B1B33]/30 uppercase tracking-[0.4em]">
+                      Precision Built
+                    </span>
+                  </div>
+                  <span className="text-[8px] font-technical text-[#0B1B33]/20 tracking-[0.1em]">VER. 2.4.0</span>
                 </div>
               </div>
             </motion.div>
