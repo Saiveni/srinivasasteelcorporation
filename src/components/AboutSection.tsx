@@ -107,17 +107,22 @@ const MetalCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: -60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: delay + 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ 
+        delay: delay + 0.6, 
+        duration: 1.2, 
+        ease: [0.16, 1, 0.3, 1],
+        y: { type: "spring", stiffness: 40, damping: 15 } // Settling movement
+      }}
       className={`absolute ${
         isH ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' : 'left-[calc(50%+115px)] -translate-y-1/2 w-[240px]'
       }`}
     >
       <div className="relative group">
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-8 border border-[#c5a059]/30 shadow-[0_20px_40px_rgba(0,0,0,0.8),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-8 border border-[#c5a059]/30 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
@@ -144,7 +149,7 @@ const MetalCard = ({
         </div>
 
         {/* Realistic extrusion shadow */}
-        <div className="absolute -inset-[2px] bg-black/40 blur-[4px] -z-10 rounded-[20px]" />
+        <div className="absolute -inset-[2px] bg-black/50 blur-[8px] -z-10 rounded-[20px] translate-y-4" />
       </div>
     </motion.div>
   );
@@ -175,15 +180,15 @@ const ClampHook = ({
     >
       {/* Clamp & Hook Structure */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0, scale: 0.9, y: isH ? -10 : 0, x: isH ? 0 : -10 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ delay: delay + 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
         {/* The Clamp (Collar) */}
         <div
-          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[68px] h-[48px]'} rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.6)] overflow-hidden`}
+          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[68px] h-[48px]'} rounded-[4px] shadow-[0_15px_35px_rgba(0,0,0,0.7)] overflow-hidden`}
           style={{
             background: isH
               ? 'linear-gradient(to bottom, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)'
@@ -202,7 +207,13 @@ const ClampHook = ({
         </div>
 
         {/* The Connection Hook */}
-        <div className={`absolute ${isH ? 'left-1/2 -bottom-[50px] -translate-x-1/2 flex flex-col items-center' : 'top-1/2 -right-[50px] -translate-y-1/2 flex items-center'}`}>
+        <motion.div 
+          initial={{ height: 0, width: 0, opacity: 0 }}
+          whileInView={isH ? { height: '55px', opacity: 1 } : { width: '55px', opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: delay + 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className={`absolute ${isH ? 'left-1/2 -bottom-[55px] -translate-x-1/2 flex flex-col items-center' : 'top-1/2 -right-[55px] -translate-y-1/2 flex items-center'}`}
+        >
           <div
             className={`${isH ? 'w-[8px] h-[35px]' : 'h-[8px] w-[35px]'} shadow-[4px_0_10px_rgba(0,0,0,0.4)]`}
             style={{
@@ -210,10 +221,10 @@ const ClampHook = ({
             }}
           />
           <div
-            className={`${isH ? 'w-[20px] h-[20px] rounded-full border-[6px] border-t-transparent -mt-1' : 'w-[20px] h-[20px] rounded-full border-[6px] border-l-transparent -ml-1'} shadow-[2px_2px_8px_rgba(0,0,0,0.5)]`}
+            className={`${isH ? 'w-[24px] h-[24px] rounded-full border-[7px] border-t-transparent -mt-2' : 'w-[24px] h-[24px] rounded-full border-[7px] border-l-transparent -ml-2'} shadow-[2px_2px_12px_rgba(0,0,0,0.6)]`}
             style={{ borderColor: '#c5a059', borderTopColor: 'transparent', borderLeftColor: isH ? undefined : 'transparent' }}
           />
-        </div>
+        </motion.div>
 
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] opacity-60" />
       </motion.div>
@@ -232,13 +243,8 @@ const ClampHook = ({
 export const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
+  // Animation constants removed as we use simple whileInView reveals per user request
 
-  const rodReveal = useTransform(scrollYProgress, [0.08, 0.45], ['0%', '100%']);
-  const rodOpacity = useTransform(scrollYProgress, [0.06, 0.14], [0, 1]);
 
   const milestones = [
     {
@@ -316,38 +322,44 @@ export const AboutSection = () => {
         {/* THE STEEL ROD + CLAMPS + CARDS */}
         <div className="relative flex justify-center pb-80 lg:pb-[500px]">
           {/* Desktop: horizontal rod */}
-          <motion.div
-            style={{ width: rodReveal, opacity: rodOpacity }}
-            className="hidden lg:block max-w-[1300px] w-full overflow-visible relative"
-          >
-            <div className="w-[1300px] relative">
+          <div className="hidden lg:block max-w-[1300px] w-full overflow-visible relative">
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: '100%', opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              className="w-[1300px] relative"
+            >
               <SteelRod orientation="horizontal" />
               
               {/* Clamps & Cards placed across the rod */}
-              <ClampHook position="12%" orientation="horizontal" delay={0.6} cardData={milestones[0]!} />
-              <ClampHook position="37%" orientation="horizontal" delay={0.8} cardData={milestones[1]!} />
-              <ClampHook position="62%" orientation="horizontal" delay={1.0} cardData={milestones[2]!} />
-              <ClampHook position="87%" orientation="horizontal" delay={1.2} cardData={milestones[3]!} />
+              <ClampHook position="12%" orientation="horizontal" delay={0.8} cardData={milestones[0]!} />
+              <ClampHook position="37%" orientation="horizontal" delay={1.1} cardData={milestones[1]!} />
+              <ClampHook position="62%" orientation="horizontal" delay={1.4} cardData={milestones[2]!} />
+              <ClampHook position="87%" orientation="horizontal" delay={1.7} cardData={milestones[3]!} />
 
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <motion.div
-            style={{ height: rodReveal, opacity: rodOpacity }}
-            className="lg:hidden h-[1200px] overflow-visible relative"
-          >
-            <div className="h-[1200px] relative">
+          <div className="lg:hidden h-[1300px] overflow-visible relative">
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              whileInView={{ height: '100%', opacity: 1 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              className="h-[1300px] relative"
+            >
               <SteelRod orientation="vertical" />
               
               {/* Clamps & Cards placed along the rod */}
-              <ClampHook position="10%" orientation="vertical" delay={0.6} cardData={milestones[0]!} />
-              <ClampHook position="35%" orientation="vertical" delay={0.8} cardData={milestones[1]!} />
-              <ClampHook position="60%" orientation="vertical" delay={1.0} cardData={milestones[2]!} />
-              <ClampHook position="85%" orientation="vertical" delay={1.2} cardData={milestones[3]!} />
+              <ClampHook position="10%" orientation="vertical" delay={0.8} cardData={milestones[0]!} />
+              <ClampHook position="35%" orientation="vertical" delay={1.1} cardData={milestones[1]!} />
+              <ClampHook position="60%" orientation="vertical" delay={1.4} cardData={milestones[2]!} />
+              <ClampHook position="85%" orientation="vertical" delay={1.7} cardData={milestones[3]!} />
 
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>
