@@ -243,13 +243,8 @@ const ClampHook = ({
 export const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ['start end', 'end start'],
-  });
+  // Animation constants removed as we use simple whileInView reveals per user request
 
-  const rodReveal = useTransform(scrollYProgress, [0.08, 0.45], ['0%', '100%']);
-  const rodOpacity = useTransform(scrollYProgress, [0.06, 0.14], [0, 1]);
 
   const milestones = [
     {
