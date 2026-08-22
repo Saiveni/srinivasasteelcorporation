@@ -180,15 +180,15 @@ const ClampHook = ({
     >
       {/* Clamp & Hook Structure */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        initial={{ opacity: 0, scale: 0.9, y: isH ? -10 : 0, x: isH ? 0 : -10 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ delay: delay + 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
         {/* The Clamp (Collar) */}
         <div
-          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[68px] h-[48px]'} rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.6)] overflow-hidden`}
+          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[68px] h-[48px]'} rounded-[4px] shadow-[0_15px_35px_rgba(0,0,0,0.7)] overflow-hidden`}
           style={{
             background: isH
               ? 'linear-gradient(to bottom, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)'
@@ -207,7 +207,13 @@ const ClampHook = ({
         </div>
 
         {/* The Connection Hook */}
-        <div className={`absolute ${isH ? 'left-1/2 -bottom-[50px] -translate-x-1/2 flex flex-col items-center' : 'top-1/2 -right-[50px] -translate-y-1/2 flex items-center'}`}>
+        <motion.div 
+          initial={{ height: 0, width: 0, opacity: 0 }}
+          whileInView={isH ? { height: '55px', opacity: 1 } : { width: '55px', opacity: 1 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: delay + 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className={`absolute ${isH ? 'left-1/2 -bottom-[55px] -translate-x-1/2 flex flex-col items-center' : 'top-1/2 -right-[55px] -translate-y-1/2 flex items-center'}`}
+        >
           <div
             className={`${isH ? 'w-[8px] h-[35px]' : 'h-[8px] w-[35px]'} shadow-[4px_0_10px_rgba(0,0,0,0.4)]`}
             style={{
@@ -215,10 +221,10 @@ const ClampHook = ({
             }}
           />
           <div
-            className={`${isH ? 'w-[20px] h-[20px] rounded-full border-[6px] border-t-transparent -mt-1' : 'w-[20px] h-[20px] rounded-full border-[6px] border-l-transparent -ml-1'} shadow-[2px_2px_8px_rgba(0,0,0,0.5)]`}
+            className={`${isH ? 'w-[24px] h-[24px] rounded-full border-[7px] border-t-transparent -mt-2' : 'w-[24px] h-[24px] rounded-full border-[7px] border-l-transparent -ml-2'} shadow-[2px_2px_12px_rgba(0,0,0,0.6)]`}
             style={{ borderColor: '#c5a059', borderTopColor: 'transparent', borderLeftColor: isH ? undefined : 'transparent' }}
           />
-        </div>
+        </motion.div>
 
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] opacity-60" />
       </motion.div>
