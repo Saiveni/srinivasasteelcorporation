@@ -201,7 +201,7 @@ const ClampHook = ({
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: isH ? -10 : 0, x: isH ? 0 : isLeft ? 10 : -10 }}
         whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
         transition={{ delay: delay + 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
