@@ -75,7 +75,7 @@ const TrustPoint = ({ point, index }: { point: typeof trustPoints[0], index: num
 
 export const WhyChooseUs = () => {
   return (
-    <section id="why-ssc" className="relative py-24 lg:py-32 bg-[#E8EBEF] overflow-hidden">
+    <section id="why-ssc" className="relative py-20 lg:py-24 bg-[#E8EBEF] overflow-hidden">
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
