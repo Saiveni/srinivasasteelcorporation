@@ -124,35 +124,45 @@ const MetalCard = ({
       }`}
     >
       <div className="relative group">
+        {/* Hanging Eyelets (where hooks connect) */}
+        <div className="absolute -top-[14px] left-1/2 -translate-x-1/2 flex gap-12 z-20">
+          <div className="w-4 h-4 rounded-full border-[3px] border-[#c5a059] bg-[#0c0f13] shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
+        </div>
+
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-6 lg:p-8 border border-[#c5a059]/30 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-6 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
-          <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
+          <div className="absolute inset-0 opacity-[0.18] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
-          {/* Subtle gold edge highlight (simulated bevel) */}
-          <div className="absolute inset-[1px] border border-white/5 rounded-[17px] pointer-events-none" />
+          {/* Beveled edge simulation */}
+          <div className="absolute inset-0 border-[0.5px] border-white/10 rounded-[18px] pointer-events-none" />
           
           <div className="relative z-10">
-            <span className="block text-[#C5A059] text-[12px] font-technical font-bold tracking-widest mb-3 lg:mb-4 opacity-70">
-              {number}
-            </span>
-            <h3 className="text-white text-[24px] lg:text-[28px] font-heading font-bold mb-2 tracking-tight">
+            <div className="flex justify-between items-start mb-4">
+              <span className="text-[#C5A059] text-[12px] font-technical font-bold tracking-widest opacity-80 bg-[#C5A059]/10 px-2 py-0.5 rounded">
+                {number}
+              </span>
+              {/* Decorative corner element */}
+              <div className="w-2 h-2 border-t border-r border-[#C5A059]/30" />
+            </div>
+            
+            <h3 className="text-white text-[26px] lg:text-[32px] font-heading font-extrabold mb-1 tracking-tight">
               {year}
             </h3>
-            <h4 className="text-[#C5A059] text-[12px] lg:text-[13px] font-technical font-bold uppercase tracking-wider mb-4 lg:mb-5">
+            <h4 className="text-[#C5A059] text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-5 border-b border-[#C5A059]/20 pb-2">
               {title}
             </h4>
-            <p className="text-white/60 text-[14px] lg:text-[15px] leading-relaxed font-medium">
+            <p className="text-white/70 text-[14px] lg:text-[15px] leading-relaxed font-medium">
               {description}
             </p>
           </div>
 
-          {/* Bottom sheen effect */}
-          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#c5a059]/40 to-transparent" />
+          {/* Bottom gold bar */}
+          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#c5a059] to-transparent shadow-[0_0_15px_rgba(197,160,89,0.3)]" />
         </div>
 
-        {/* Realistic extrusion shadow */}
-        <div className="absolute -inset-[2px] bg-black/50 blur-[8px] -z-10 rounded-[20px] translate-y-4" />
+        {/* Realistic drop shadow for depth */}
+        <div className="absolute -inset-[4px] bg-black/60 blur-[12px] -z-10 rounded-[22px] translate-y-8" />
       </div>
     </motion.div>
   );
@@ -215,39 +225,48 @@ const ClampHook = ({
 
         {/* The Connection Hook */}
         <motion.div 
-          initial={{ height: 0, width: 0, opacity: 0 }}
+          initial={{ height: 0, opacity: 0 }}
           whileInView={
             isH 
-              ? { height: '55px', opacity: 1 } 
-              : { width: '55px', opacity: 1, x: isLeft ? -55 : 0 }
+              ? { height: '108px', opacity: 1 } 
+              : { width: '80px', opacity: 1, x: isLeft ? -80 : 0 }
           }
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ delay: delay + 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ delay: delay + 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className={`absolute ${
             isH 
-              ? 'left-1/2 -bottom-[55px] -translate-x-1/2 flex flex-col items-center' 
+              ? 'left-1/2 -bottom-[108px] -translate-x-1/2 flex flex-col items-center' 
               : isLeft
                 ? 'top-1/2 left-0 -translate-y-1/2 flex items-center flex-row-reverse'
                 : 'top-1/2 right-0 -translate-y-1/2 flex items-center'
           }`}
         >
+          {/* Heavy metal vertical chain/rod */}
           <div
-            className={`${isH ? 'w-[8px] h-[35px]' : 'h-[8px] w-[35px]'} shadow-[4px_0_10px_rgba(0,0,0,0.4)]`}
+            className={`${isH ? 'w-[10px] h-[75px]' : 'h-[10px] w-[45px]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
             style={{
               background: isH 
-                ? 'linear-gradient(90deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%)'
-                : 'linear-gradient(0deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%)',
+                ? 'linear-gradient(90deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)'
+                : 'linear-gradient(0deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)',
             }}
           />
+          {/* The Hook Hooking into the Eyelet */}
           <div
-            className={`${isH ? 'w-[24px] h-[24px] rounded-full border-[7px] border-t-transparent -mt-2' : `w-[24px] h-[24px] rounded-full border-[7px] ${isLeft ? 'border-r-transparent -mr-2' : 'border-l-transparent -ml-2'}`} shadow-[2px_2px_12px_rgba(0,0,0,0.6)]`}
+            className={`${
+              isH 
+                ? 'w-[32px] h-[32px] rounded-full border-[8px] border-t-transparent -mt-3' 
+                : `w-[32px] h-[32px] rounded-full border-[8px] ${isLeft ? 'border-r-transparent -mr-3' : 'border-l-transparent -ml-3'}`
+            } shadow-[4px_4px_15px_rgba(0,0,0,0.7)] z-30`}
             style={{ 
-              borderColor: '#c5a059', 
+              borderColor: '#f4d088', 
               borderTopColor: isH ? 'transparent' : undefined, 
               borderLeftColor: isH ? undefined : isLeft ? undefined : 'transparent',
               borderRightColor: isLeft ? 'transparent' : undefined
             }}
-          />
+          >
+            {/* Inner ring for realism */}
+            <div className="absolute inset-[2px] rounded-full border-2 border-[#8a6d3b]/50" />
+          </div>
         </motion.div>
 
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] opacity-60" />
@@ -333,7 +352,7 @@ export const AboutSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-[#C5A059]/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[88px] text-white font-heading font-extrabold leading-[1] mb-10 tracking-tight uppercase">
+            <h2 className="text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[0.95] mb-12 tracking-tighter uppercase italic">
               STRONG ROOTS.<br />
               <span className="text-white">STRONGER </span>
               <span className="text-[#C5A059]">FUTURE.</span>
