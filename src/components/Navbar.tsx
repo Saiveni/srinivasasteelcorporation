@@ -66,9 +66,9 @@ export const Navbar = () => {
 
   return (
     <motion.nav 
-      initial="hidden"
-      animate="visible"
-      variants={containerVariants}
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}
       className={`fixed left-0 right-0 z-[100] transition-all duration-500 top-0 sm:px-4 md:px-0`}
     >
       {/* Premium Engineered Steel Header Panel */}
@@ -114,7 +114,7 @@ export const Navbar = () => {
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/20 pointer-events-none z-[4]" />
 
         {/* Logo & Brand Section */}
-        <motion.div variants={itemVariants} className="relative z-10">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10">
           <Link 
             to="/" 
             onClick={() => {
@@ -150,10 +150,10 @@ export const Navbar = () => {
         <div className="flex items-center gap-4 xl:gap-10 relative z-10">
           {/* Desktop/Tablet Navigation Links */}
           <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-10">
-            {navLinks.map((link) => {
+            {navLinks.map((link, i) => {
               const isActive = location.pathname === link.href;
               return (
-                <motion.div key={link.name} variants={itemVariants}>
+                <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
                   <Link
                     to={link.href}
                     className={`relative text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.1em] lg:tracking-[0.15em] transition-all py-2 whitespace-nowrap ${
@@ -174,7 +174,7 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop/Tablet CTA */}
-          <motion.div variants={itemVariants} className="hidden md:block">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="hidden md:block">
             <Link to="/contact" search={{ product: "" }}>
               <Button className="h-10 lg:h-11 px-4 lg:px-6 bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-lg text-[10px] lg:text-[11px] tracking-[0.1em] font-technical font-bold group shadow-sm hover:shadow-md transition-all">
                 GET A QUOTE
@@ -185,7 +185,8 @@ export const Navbar = () => {
 
           {/* Custom Machined Gold Menu Trigger - Mobile/Tablet Only */}
           <motion.button
-            variants={itemVariants}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className="md:hidden relative z-[120] group outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
@@ -235,88 +236,95 @@ export const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
+            initial={{ opacity: 0, y: "-100%" }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[90] bg-[#0B1B33] flex flex-col pt-[80px] sm:pt-[100px]"
+            className="fixed inset-0 z-[110] bg-white flex flex-col"
           >
-            {/* Engineering Texture Overlays */}
-            <div 
-              className="absolute inset-0 opacity-[0.05] pointer-events-none z-0" 
-              style={{ 
-                backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
-                backgroundSize: '400px 400px',
-                filter: 'invert(1)'
-              }} 
-            />
-            
-            <div 
-              className="absolute inset-0 opacity-[0.03] pointer-events-none z-0"
-              style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                filter: 'grayscale(1) invert(1)'
-              }}
-            />
+            {/* Header Mirror for Overlay - Maintains Continuity */}
+            <div className="h-[74px] sm:h-[82px] w-full flex items-center justify-between px-4 sm:px-8 bg-[#D8DCE3] border-b border-black/10 relative">
+              <div 
+                className="absolute inset-0 opacity-[0.45] pointer-events-none z-[1]" 
+                style={{ 
+                  backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
+                  backgroundSize: '400px 400px',
+                }} 
+              />
+              <div className="flex items-center gap-2 sm:gap-4 relative z-10">
+                <div className="h-8 w-8 sm:h-12 sm:w-12">
+                  <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain filter brightness-[0.2]" />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-[12px] sm:text-[18px] font-heading font-extrabold text-[#0B1B33] uppercase">SRINIVASA STEEL</span>
+                  <span className="text-[8px] sm:text-[10px] font-technical font-black text-[#C5A059] uppercase tracking-[0.2em]">CORPORATION</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-lg bg-gradient-to-b from-[#F2D7A5] via-[#D4AF37] to-[#B8860B] shadow-md relative z-10"
+              >
+                <X className="text-[#0B1B33] w-5 h-5 sm:w-6 sm:h-6" strokeWidth={2.5} />
+              </button>
+            </div>
 
-            {/* Thin Metallic Lines */}
-            <div className="absolute top-0 left-[10%] bottom-0 w-[1px] bg-white/5 z-0" />
-            <div className="absolute top-0 left-[90%] bottom-0 w-[1px] bg-white/5 z-0" />
-
-            {/* Navigation Items */}
-            <div className="flex-1 flex flex-col py-8 px-6 sm:px-12 relative z-10 overflow-y-auto">
-              <div className="flex flex-col gap-2">
-                {navLinks.map((link, i) => {
-                  return (
+            {/* Steel Grid Background for Menu Body */}
+            <div className="flex-1 relative overflow-hidden bg-white">
+              <div 
+                className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+                style={{ 
+                  backgroundImage: `url('https://www.transparenttextures.com/patterns/graphy.png')`,
+                  backgroundSize: '200px 200px'
+                }} 
+              />
+              
+              {/* Navigation Items */}
+              <div className="relative z-10 h-full flex flex-col py-6 px-6 sm:px-12 overflow-y-auto">
+                <div className="flex flex-col gap-1">
+                  {navLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
-                      initial={{ opacity: 0, x: 20 }}
+                      initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
                     >
                       <Link
                         to={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="group flex items-center justify-between py-5 border-b border-white/5"
+                        className="group flex items-center gap-6 py-4 border-b border-black/5"
                       >
-                        <span className="text-[1.5rem] sm:text-[1.8rem] font-heading font-black text-white/90 uppercase tracking-[0.15em] group-hover:text-[#C5A059] transition-colors leading-tight">
+                        {/* 3D Rounded Icons - Sliced from Spritesheet */}
+                        <div className="w-12 h-12 rounded-full bg-[#D8DCE3] border border-black/10 shadow-inner flex items-center justify-center overflow-hidden shrink-0">
+                          <div 
+                            className="w-8 h-8 scale-[1.2]"
+                            style={{
+                              backgroundImage: `url('${steelIconsAsset.url}')`,
+                              backgroundSize: '100% 500%',
+                              backgroundPosition: `0 ${link.icon * 25}%`,
+                            }}
+                          />
+                        </div>
+                        <span className="text-[1.2rem] sm:text-[1.5rem] font-heading font-black text-[#0B1B33] uppercase tracking-[0.1em] group-hover:text-[#C5A059] transition-colors">
                           {link.name}
                         </span>
-                        <ArrowRight size={20} className="text-[#C5A059] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
                       </Link>
                     </motion.div>
-                  );
-                })}
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="mt-10"
-              >
-                <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                  <Button className="w-full h-[60px] text-[12px] tracking-[0.2em] font-technical font-black 
-                                   bg-gradient-to-r from-[#C5A059] to-[#997232] hover:from-[#D4AF37] hover:to-[#B8860B]
-                                   text-[#0B1B33] border-none shadow-xl rounded-xl relative overflow-hidden group">
-                    <span className="relative z-10 flex items-center justify-center gap-3">
-                      GET A QUOTE <ArrowRight size={18} />
-                    </span>
-                  </Button>
-                </Link>
-              </motion.div>
-              
-              {/* Engineering Detail Footer */}
-              <div className="mt-auto pt-10 pb-8">
-                <div className="flex items-center justify-center gap-4 border-t border-white/5 pt-8">
-                  <div className="w-6 h-[1px] bg-[#C5A059]/40" />
-                  <span className="text-[9px] font-technical font-bold text-white/30 uppercase tracking-[0.5em]">
-                    SRINIVASA STEEL
-                  </span>
-                  <div className="w-6 h-[1px] bg-[#C5A059]/40" />
+                  ))}
                 </div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="mt-8 mb-12"
+                >
+                  <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
+                    <Button className="w-full h-[56px] text-[12px] tracking-[0.2em] font-technical font-black 
+                                     bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-xl shadow-lg group">
+                      GET A QUOTE <ArrowRight size={18} className="ml-2" />
+                    </Button>
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>
