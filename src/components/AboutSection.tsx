@@ -31,7 +31,7 @@ const SteelRod = ({ orientation = 'horizontal' }: { orientation?: 'horizontal' |
         <div
           className="absolute inset-0 opacity-90"
           style={{
-            backgroundImage: `repeating-linear-gradient(${isH ? '118deg' : '28deg'},
+            backgroundImage: `repeating-linear-gradient(${isH ? '118deg' : '208deg'},
               rgba(0,0,0,0) 0px,
               rgba(0,0,0,0) 9px,
               rgba(0,0,0,0.55) 12px,
