@@ -24,11 +24,11 @@ export const Navbar = () => {
   }, [location.pathname, location.searchStr]);
 
   const navLinks = [
-    { name: "HOME", href: "/", icon: Home },
-    { name: "ABOUT", href: "/about", icon: Info },
-    { name: "PRODUCTS", href: "/products", icon: Package },
-    { name: "GALLERY", href: "/gallery", icon: ImageIcon },
-    { name: "CONTACT", href: "/contact", icon: Phone },
+    { name: "HOME", href: "/", icon: Layers },
+    { name: "ABOUT", href: "/about", icon: Shield },
+    { name: "PRODUCTS", href: "/products", icon: Box },
+    { name: "GALLERY", href: "/gallery", icon: Zap },
+    { name: "CONTACT", href: "/contact", icon: Settings },
   ];
 
   return (
