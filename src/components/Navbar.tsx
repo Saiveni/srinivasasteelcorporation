@@ -74,9 +74,21 @@ export const Navbar = () => {
         {/* Realistic Brushed Metal Surface */}
         <div className="absolute inset-0 bg-[#E2E4E9]" />
         
+        {/* TMT Bar Background Pattern (Right Side) */}
+        <div 
+          className="absolute top-0 right-0 bottom-0 w-[60%] opacity-[0.08] mix-blend-multiply pointer-events-none grayscale z-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=600&auto=format&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'right center',
+            maskImage: 'linear-gradient(to left, black 20%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)'
+          }}
+        />
+
         {/* Extremely subtle horizontal brushed-metal texture */}
         <div 
-          className="absolute inset-0 opacity-[0.35] pointer-events-none" 
+          className="absolute inset-0 opacity-[0.25] pointer-events-none z-[1]" 
           style={{ 
             backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
             backgroundSize: '400px 400px'
@@ -84,8 +96,9 @@ export const Navbar = () => {
         />
         
         {/* Tonal variations & highlights */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none z-[2]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-[2]" />
+
         
         {/* Subtle Edge Reflection */}
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50 pointer-events-none" />
