@@ -1,87 +1,108 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, ArrowUpRight } from 'lucide-react';
+import { MapPin, ArrowUpRight, Building2, Warehouse, Factory } from 'lucide-react';
 
 const locations = [
   {
     id: "vijayawada",
     city: "VIJAYAWADA",
     type: "HEAD OFFICE & GODOWN",
+    icon: Building2,
     address: "Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
-    coords: { x: "25%", y: "30%" },
+    coords: { x: "28%", y: "25%" },
     mobileOrder: 1
   },
   {
     id: "gannavaram",
     city: "GANNAVARAM",
     type: "YARD",
+    icon: Warehouse,
     address: "Gannavaram Yard, Nuzividu Road, Gannavaram – 521101",
-    coords: { x: "25%", y: "70%" },
+    coords: { x: "32%", y: "65%" },
     mobileOrder: 2
   },
   {
     id: "vizag",
     city: "VIZAG",
     type: "YARD",
+    icon: Factory,
     address: "S. No. 156, Plot No. 163A, 163B, AIE Pedagantyada, Vizag – 530044",
-    coords: { x: "75%", y: "70%" },
+    coords: { x: "72%", y: "60%" },
     mobileOrder: 3
   }
 ];
 
 const LocationNode = ({ location, isHovered, onHover, onLeave }: any) => {
+  const Icon = location.icon;
+  
   return (
     <div 
-      className="absolute z-30 -translate-x-1/2 -translate-y-1/2 cursor-pointer"
+      className="absolute z-30 -translate-x-1/2 -translate-y-1/2"
       style={{ left: location.coords.x, top: location.coords.y }}
-      onMouseEnter={() => onHover(location.id)}
-      onMouseLeave={onLeave}
     >
-      {/* Machined Steel Node */}
-      <div className="relative w-8 h-8 flex items-center justify-center">
-        {/* Outer Ring */}
-        <div className={`absolute inset-0 rounded-full border border-ssc-gold/30 transition-all duration-500 ${isHovered ? 'scale-150 opacity-0' : 'scale-100 opacity-100'}`} />
-        
-        {/* Core Node */}
-        <div className={`w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(197,160,89,0.5)] transition-transform duration-500 ${isHovered ? 'scale-125' : 'scale-100'}`} />
-        
-        {/* Technical Label */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 whitespace-nowrap">
-          <span className="text-[10px] font-technical font-bold text-white tracking-[0.2em] uppercase opacity-60">
-            {location.city}
-          </span>
+      <div 
+        className="relative group cursor-pointer"
+        onMouseEnter={() => onHover(location.id)}
+        onMouseLeave={onLeave}
+      >
+        {/* Connection Node */}
+        <div className="relative w-12 h-12 flex items-center justify-center">
+          {/* Animated Pulse */}
+          <motion.div 
+            animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0, 0.3] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute inset-0 rounded-full border border-ssc-gold/40"
+          />
+          
+          {/* Machined Steel Node */}
+          <div className={`w-8 h-8 rounded-full bg-[#0C121E] border-2 border-ssc-gold flex items-center justify-center shadow-[0_0_20px_rgba(197,160,89,0.3)] transition-all duration-500 ${isHovered ? 'scale-110 shadow-ssc-gold/50' : ''}`}>
+            <Icon size={14} className="text-ssc-gold" />
+          </div>
+          
+          {/* Technical Label */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
+            <span className="text-[9px] font-technical font-bold text-white tracking-[0.2em] uppercase opacity-40 group-hover:opacity-100 transition-opacity">
+              {location.city}
+            </span>
+          </div>
         </div>
-      </div>
-      
-      {/* Floating Info Panel (Desktop) */}
-      <AnimatePresence>
+
+        {/* Info Panel (Desktop) */}
+        <AnimatePresence>
         {isHovered && (
           <motion.div
-            initial={{ opacity: 0, y: 10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="absolute top-16 left-1/2 -translate-x-1/2 w-[280px] bg-[#0C121E] border border-ssc-gold/30 p-6 rounded-xl shadow-2xl backdrop-blur-xl"
+            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 10 }}
+            className={`absolute z-[100] w-[300px] bg-[#0C121E]/95 backdrop-blur-xl border border-ssc-gold/30 p-6 rounded-xl shadow-2xl pointer-events-none
+              ${parseFloat(location.coords.x) > 50 ? '-left-[320px]' : 'left-16'}
+              ${parseFloat(location.coords.y) > 70 ? 'bottom-0' : 'top-0'}
+            `}
           >
             <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
             <div className="relative z-10">
-              <span className="text-ssc-gold text-[9px] font-technical font-black tracking-[0.2em] uppercase mb-2 block">
-                {location.type}
-              </span>
-              <h4 className="text-white font-heading font-bold text-lg mb-3 tracking-tight">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-1 h-3 bg-ssc-gold" />
+                <span className="text-ssc-gold text-[9px] font-technical font-black tracking-[0.2em] uppercase">
+                  {location.type}
+                </span>
+              </div>
+              <h4 className="text-white font-heading font-bold text-lg mb-2 tracking-tight">
                 {location.city}
               </h4>
-              <p className="text-white/60 text-xs leading-relaxed mb-4 font-medium">
+              <p className="text-white/60 text-xs leading-relaxed mb-4 font-medium italic">
                 {location.address}
               </p>
-              <div className="flex items-center gap-2 text-[9px] font-technical font-bold text-ssc-gold uppercase tracking-widest cursor-pointer hover:opacity-80 transition-opacity">
-                GET DIRECTIONS <ArrowUpRight size={12} />
+              <div className="flex items-center gap-2 text-[9px] font-technical font-bold text-ssc-gold/60 uppercase tracking-widest">
+                COORDINATES: {location.coords.x} / {location.coords.y}
               </div>
             </div>
-            {/* Corner Accent */}
             <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-ssc-gold/20 rounded-tr-xl" />
           </motion.div>
         )}
-      </AnimatePresence>
+
+        </AnimatePresence>
+      </div>
     </div>
   );
 };
@@ -89,83 +110,140 @@ const LocationNode = ({ location, isHovered, onHover, onLeave }: any) => {
 export const IndustrialNetwork = () => {
   const [activeNode, setActiveNode] = useState<string | null>(null);
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3 }
+    }
+  };
+
+  const lineVariants = {
+    hidden: { pathLength: 0, opacity: 0 },
+    visible: { 
+      pathLength: 1, 
+      opacity: 1,
+      transition: { duration: 1.5, ease: "easeInOut" as const }
+    }
+  };
+
+
   return (
-    <section id="locations" className="relative py-20 lg:py-24 bg-[#050A14] overflow-hidden">
-      {/* Background Engineering Grid */}
+    <section id="locations" className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden min-h-[800px]">
+      {/* Engineered Background System */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
-        <div className="absolute inset-0 opacity-[0.03]" 
+        {/* Top Gold Divider */}
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/30 to-transparent" />
+        
+        {/* Technical Grid */}
+        <div className="absolute inset-0 opacity-[0.05]" 
              style={{ 
                backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', 
-               backgroundSize: '80px 80px' 
+               backgroundSize: '60px 60px' 
              }} />
-        {/* Sophisticated industrial network/grid overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(11,27,51,0.8)_0%,rgba(5,10,20,1)_100%)]" />
-
+        
+        {/* Radial Depth */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(12,18,30,0.8)_0%,rgba(5,10,20,1)_100%)]" />
+        
+        {/* Industrial Markers */}
+        <div className="absolute top-10 left-10 text-white/5 font-technical text-[10px] tracking-[0.5em] uppercase vertical-text">
+          SSC-NETWORK-DENSITY-01
+        </div>
+        <div className="absolute bottom-10 right-10 text-white/5 font-technical text-[10px] tracking-[0.5em] uppercase">
+          SEC-LOCATIONS-VERIFIED-3
+        </div>
       </div>
 
-
-      <div className="container-wide relative z-10 px-6">
-        <div className="max-w-[1280px] mx-auto">
-          <div className="flex flex-col lg:flex-row gap-20 items-center">
-            
-            {/* Text Content */}
-            <div className="w-full lg:w-1/3 text-center lg:text-left">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1 }}
-              >
-                <span className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
+      <div className="container-wide relative z-10 px-6 max-w-[1400px] mx-auto">
+        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+          
+          {/* Left: Regional Presence */}
+          <div className="w-full lg:w-[40%] text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="flex items-center gap-3 justify-center lg:justify-start mb-6">
+                <div className="w-8 h-[1px] bg-ssc-gold" />
+                <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
                   Regional Presence
                 </span>
-                <h2 className="text-[38px] lg:text-[64px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.9] mb-8">
-                  OUR INDUSTRIAL <span className="text-ssc-gold">NETWORK</span>
-                </h2>
-                <p className="text-white/60 text-base lg:text-lg leading-relaxed font-medium mb-10 max-w-md mx-auto lg:mx-0">
-                  Strategically positioned to support construction and industrial requirements across our operating region.
-                </p>
-                <div className="h-[1px] w-24 bg-ssc-gold/30 mx-auto lg:mx-0" />
-                
-                <div className="mt-12 hidden lg:flex flex-col gap-4">
-                  {['STRATEGIC PRESENCE', 'FAST SUPPLY', 'REGIONAL CONNECTIVITY'].map((stat) => (
-                    <div key={stat} className="flex items-center gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold" />
-                      <span className="text-[10px] font-technical font-bold text-white/40 tracking-[0.3em] uppercase">{stat}</span>
+              </div>
+              
+              <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85] mb-8">
+                OUR INDUSTRIAL<br />
+                <span className="text-ssc-gold">NETWORK</span>
+              </h2>
+              
+              <p className="text-white/60 text-base lg:text-lg leading-relaxed font-medium mb-12 max-w-lg mx-auto lg:mx-0">
+                A precision-engineered distribution infrastructure designed for rapid material deployment and logistical excellence across the region.
+              </p>
+              
+              <div className="grid grid-cols-1 gap-6 max-w-sm mx-auto lg:mx-0">
+                {[
+                  { label: 'STRATEGIC PRESENCE', desc: 'Primary hubs at Bhavanipuram & Vizag' },
+                  { label: 'FAST SUPPLY', desc: 'Integrated logistics for TMT & Structural' },
+                  { label: 'REGIONAL CONNECTIVITY', desc: 'Direct access to major industrial zones' }
+                ].map((item) => (
+                  <div key={item.label} className="group flex items-start gap-4">
+                    <div className="mt-1 w-2 h-2 rounded-full border border-ssc-gold group-hover:bg-ssc-gold transition-colors" />
+                    <div className="text-left">
+                      <span className="text-[11px] font-technical font-bold text-white tracking-[0.3em] uppercase block mb-1">
+                        {item.label}
+                      </span>
+                      <span className="text-[10px] text-white/30 uppercase font-medium tracking-wider">
+                        {item.desc}
+                      </span>
                     </div>
-                  ))}
-                </div>
-              </motion.div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right: Network Visualization (Desktop) */}
+          <div className="w-full lg:w-[60%] hidden lg:block relative aspect-[16/11] bg-white/[0.02] border border-white/5 rounded-[20px] overflow-hidden group/network">
+            {/* Engineering Grid Lines */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 bottom-0 left-[25%] w-[1px] bg-white/50" />
+              <div className="absolute top-0 bottom-0 left-[50%] w-[1px] bg-white/50" />
+              <div className="absolute top-0 bottom-0 left-[75%] w-[1px] bg-white/50" />
+              <div className="absolute left-0 right-0 top-[25%] h-[1px] bg-white/50" />
+              <div className="absolute left-0 right-0 top-[50%] h-[1px] bg-white/50" />
+              <div className="absolute left-0 right-0 top-[75%] h-[1px] bg-white/50" />
             </div>
 
-            {/* Network Visualization (Desktop) */}
-            <div className="w-full lg:w-2/3 hidden lg:block aspect-[4/3] relative bg-white/[0.02] border border-white/5 rounded-[40px] overflow-hidden">
-              {/* Fine technical lines */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-0 bottom-0 left-[25%] w-[1px] bg-white" />
-                <div className="absolute top-0 bottom-0 left-[75%] w-[1px] bg-white" />
-                <div className="absolute left-0 right-0 top-[30%] h-[1px] bg-white" />
-                <div className="absolute left-0 right-0 top-[70%] h-[1px] bg-white" />
-              </div>
+            {/* Connecting Lines SVG */}
+            <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
+              <motion.path
+                d="M 28% 25% L 32% 65% L 72% 60%"
+                fill="none"
+                stroke="url(#lineGradient)"
+                strokeWidth="2"
+                variants={lineVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+              />
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#C5A059" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="#C5A059" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#C5A059" stopOpacity="0.2" />
+                </linearGradient>
+              </defs>
+            </svg>
 
-              {/* Connecting Lines */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none">
-                {/* Vijayawada to Gannavaram */}
-                <line 
-                  x1="25%" y1="30%" x2="25%" y2="70%" 
-                  className={`stroke-ssc-gold/20 transition-all duration-500 ${activeNode === 'vijayawada' || activeNode === 'gannavaram' ? 'stroke-ssc-gold opacity-100' : ''}`}
-                  strokeWidth="2" 
-                />
-                {/* Gannavaram to Vizag */}
-                <line 
-                  x1="25%" y1="70%" x2="75%" y2="70%" 
-                  className={`stroke-ssc-gold/20 transition-all duration-500 ${activeNode === 'gannavaram' || activeNode === 'vizag' ? 'stroke-ssc-gold opacity-100' : ''}`}
-                  strokeWidth="2" 
-                />
-              </svg>
-
-              {/* Nodes */}
+            {/* Node Rendering */}
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="absolute inset-0"
+            >
               {locations.map((loc) => (
                 <LocationNode 
                   key={loc.id} 
@@ -175,44 +253,56 @@ export const IndustrialNetwork = () => {
                   onLeave={() => setActiveNode(null)}
                 />
               ))}
-            </div>
+            </motion.div>
+          </div>
 
-            {/* Network Visualization (Mobile) */}
-            <div className="w-full lg:hidden flex flex-col items-center relative">
-              {/* Vertical Route Line */}
-              <div className="absolute top-0 bottom-0 left-1/2 w-[1px] bg-ssc-gold/20 -translate-x-1/2" />
-              
-              <div className="flex flex-col gap-12 w-full max-w-[340px] relative z-10">
-                {locations.sort((a,b) => a.mobileOrder - b.mobileOrder).map((loc) => (
+          {/* Network Visualization (Mobile: Vertical Supply Route) */}
+          <div className="w-full lg:hidden flex flex-col items-center relative py-10">
+            {/* Vertical Supply Route Line */}
+            <div className="absolute top-0 bottom-0 left-[24px] w-[2px] bg-gradient-to-b from-transparent via-ssc-gold/40 to-transparent" />
+            
+            <div className="flex flex-col gap-12 w-full relative z-10 px-4">
+              {locations.sort((a,b) => a.mobileOrder - b.mobileOrder).map((loc, idx) => {
+                const Icon = loc.icon;
+                return (
                   <motion.div
                     key={loc.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
-                    className="relative"
+                    transition={{ delay: idx * 0.2 }}
+                    className="flex items-start gap-8"
                   >
-                    {/* Central Node Dot */}
-                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-ssc-gold z-20 shadow-[0_0_10px_rgba(197,160,89,0.5)]" />
+                    {/* Node Dot with Icon */}
+                    <div className="relative shrink-0 mt-6">
+                      <div className="w-12 h-12 rounded-full bg-[#0C121E] border border-ssc-gold flex items-center justify-center shadow-[0_0_15px_rgba(197,160,89,0.3)] z-20 relative">
+                        <Icon size={16} className="text-ssc-gold" />
+                      </div>
+                      <div className="absolute -inset-2 bg-ssc-gold/5 blur-xl rounded-full" />
+                    </div>
                     
-                    {/* Industrial Panel */}
-                    <div className="bg-[#0C121E] border border-white/5 p-6 rounded-2xl relative overflow-hidden">
+                    {/* Industrial Info Panel */}
+                    <div className="flex-1 bg-[#0C121E] border border-white/5 p-6 rounded-2xl relative overflow-hidden shadow-xl">
                       <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
-                      <span className="text-ssc-gold text-[8px] font-technical font-black tracking-[0.2em] uppercase mb-2 block">
-                        {loc.type}
-                      </span>
-                      <h4 className="text-white font-heading font-bold text-base mb-2 tracking-tight">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-1 h-3 bg-ssc-gold" />
+                        <span className="text-ssc-gold text-[9px] font-technical font-black tracking-[0.2em] uppercase">
+                          {loc.type}
+                        </span>
+                      </div>
+                      <h4 className="text-white font-heading font-bold text-lg mb-2 tracking-tight">
                         {loc.city}
                       </h4>
-                      <p className="text-white/60 text-[11px] leading-relaxed font-medium">
+                      <p className="text-white/60 text-xs leading-relaxed font-medium italic">
                         {loc.address}
                       </p>
                     </div>
                   </motion.div>
-                ))}
-              </div>
+                );
+              })}
             </div>
-
           </div>
+
         </div>
       </div>
     </section>
