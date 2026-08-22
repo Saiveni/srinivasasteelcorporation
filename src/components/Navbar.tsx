@@ -33,13 +33,13 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? "h-[70px] bg-[#F7F7F4]/95 backdrop-blur-md border-b border-[#0B1B33]/10 shadow-lg" 
-          : "h-[80px] bg-[#F7F7F4] border-b border-[#0B1B33]/5"
+          ? "h-[72px] bg-[#F7F7F4]/98 backdrop-blur-md border-b border-[#0B1B33]/15 shadow-[0_4px_20px_-5px_rgba(0,0,0,0.1)]" 
+          : "h-[82px] bg-[#F7F7F4] border-b border-[#0B1B33]/5"
       }`}
     >
-      <div className="container-wide flex items-center justify-between">
+      <div className="container-wide h-full flex items-center justify-between px-6 sm:px-8">
         {/* Logo Section */}
         <Link 
           to="/" 
@@ -93,36 +93,48 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        {/* Premium Mobile Menu Trigger */}
+        {/* Premium Mobile Menu Trigger - Engineered Hardware Look */}
         <button
-          className="lg:hidden relative z-[100] group outline-none"
+          className="lg:hidden relative z-[120] group outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <div className={`
-            relative w-11 h-11 rounded-lg flex flex-col items-center justify-center gap-1.5
-            bg-ssc-navy shadow-[0_4px_12px_rgba(11,27,51,0.3)]
-            border border-ssc-gold/40 transition-all duration-300
-            ${isOpen ? 'rotate-90 scale-95' : 'hover:scale-105'}
+            relative w-12 h-12 rounded-lg flex flex-col items-center justify-center gap-[5px]
+            bg-[#0B1B33] shadow-[0_4px_16px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.1)]
+            border border-[#C5A059]/40 transition-all duration-300
+            ${isOpen ? 'rotate-90' : 'hover:scale-105 active:scale-95'}
           `}>
-            {/* Subtle Gold Accent Top Line */}
-            <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-ssc-gold/30" />
+            {/* Structural Detail Line */}
+            <div className="absolute top-[6px] left-3 right-3 h-[1px] bg-[#C5A059]/20" />
             
-            <motion.span 
-              animate={isOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
-              className="w-5 h-[1.5px] bg-white rounded-full block"
-            />
-            <motion.span 
-              animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-4 h-[1.5px] bg-white rounded-full block"
-            />
-            <motion.span 
-              animate={isOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
-              className="w-5 h-[1.5px] bg-white rounded-full block"
-            />
+            <AnimatePresence mode="wait">
+              {!isOpen ? (
+                <motion.div 
+                  key="hamburger"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  className="flex flex-col gap-[5px]"
+                >
+                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
+                  <span className="w-4 h-[1.5px] bg-white rounded-full block" />
+                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="close"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                >
+                  <X className="text-white" size={20} strokeWidth={2} />
+                </motion.div>
+              )}
+            </AnimatePresence>
             
-            {/* Texture/Depth Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-lg pointer-events-none" />
+            {/* Physical Depth Layer */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent rounded-lg pointer-events-none" />
           </div>
         </button>
       </div>
@@ -137,67 +149,57 @@ export const Navbar = () => {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="fixed inset-0 z-[110] lg:hidden bg-[#0A0F1A]"
           >
-            {/* Background Texture & Engineering Grid */}
+            {/* Engineering Grid & Brushed Surface Overlay */}
             <div 
-              className="absolute inset-0 opacity-[0.05] pointer-events-none" 
+              className="absolute inset-0 opacity-[0.07] pointer-events-none" 
               style={{ 
                 backgroundImage: `linear-gradient(to right, #C5A059 1px, transparent 1px), linear-gradient(to bottom, #C5A059 1px, transparent 1px)`,
-                backgroundSize: '30px 30px'
+                backgroundSize: '40px 40px'
               }} 
             />
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.03] pointer-events-none" />
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.02] pointer-events-none" />
             
-            {/* Menu Header Area */}
-            <div className="flex items-center justify-between px-6 sm:px-8 h-[80px] border-b border-white/5 relative z-10">
+            {/* Overlay Header Lockup */}
+            <div className="flex items-center px-6 sm:px-8 h-[82px] border-b border-white/5 relative z-10">
               <div className="flex items-center gap-3">
                 <div className="h-9 w-9 shrink-0 grayscale invert brightness-200">
                   <img src={sscLogo.url} alt="SSC Logo" className="h-full w-full object-contain" />
                 </div>
                 <div className="flex flex-col justify-center border-l border-white/10 pl-3 h-9">
-                  <span className="text-[13px] font-heading font-bold tracking-[0.05em] text-white leading-none uppercase">
+                  <span className="text-[14px] font-heading font-bold tracking-[0.05em] text-white leading-none uppercase">
                     SRINIVASA <span className="text-white/60 font-medium">STEEL</span>
                   </span>
-                  <span className="text-[9px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1">
+                  <span className="text-[10px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1">
                     CORPORATION
                   </span>
                 </div>
               </div>
-
-              {/* Enhanced Close Trigger - Matches the Menu Button visually */}
-              <button 
-                onClick={() => setIsOpen(false)}
-                className="relative w-11 h-11 rounded-lg flex items-center justify-center bg-ssc-navy border border-ssc-gold/40 shadow-xl"
-              >
-                <X className="text-white" size={20} strokeWidth={1.5} />
-                <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-ssc-gold/30" />
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-lg pointer-events-none" />
-              </button>
             </div>
 
-            {/* Navigation Content */}
-            <div className="flex flex-col h-[calc(100%-80px)] justify-between py-16 px-10 sm:px-14 overflow-y-auto relative z-10">
-              <div className="flex flex-col gap-10">
+            {/* Premium Navigation List */}
+            <div className="flex flex-col h-[calc(100%-82px)] justify-between py-12 px-8 sm:px-12 overflow-y-auto relative z-10">
+              <div className="flex flex-col gap-8 sm:gap-10 mt-4">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
-                    initial={{ opacity: 0, x: -30 }}
+                    initial={{ opacity: 0, x: -40 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.15 + i * 0.08, duration: 0.5 }}
+                    transition={{ delay: 0.2 + i * 0.1, duration: 0.5 }}
                   >
                     <Link
                       to={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="group flex items-baseline gap-6"
+                      className="group flex items-baseline gap-5"
                     >
                       <motion.span 
                         initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
-                        className="text-[12px] font-technical font-bold text-[#C5A059] tracking-[0.2em] opacity-80"
+                        animate={{ opacity: 0.6 }}
+                        transition={{ delay: 0.15 + i * 0.1 }}
+                        className="text-[11px] font-technical font-bold text-[#C5A059] tracking-[0.3em]"
                       >
                         0{i + 1}
                       </motion.span>
-                      <span className="text-4xl sm:text-5xl font-heading font-bold text-white uppercase tracking-tighter group-hover:text-[#C5A059] transition-all duration-300">
+                      <span className="text-[2.75rem] sm:text-[3.5rem] font-heading font-bold text-white uppercase tracking-[-0.04em] group-hover:text-[#C5A059] group-hover:pl-2 transition-all duration-300">
                         {link.name}
                       </span>
                     </Link>
@@ -205,31 +207,33 @@ export const Navbar = () => {
                 ))}
               </div>
 
-              <div className="mt-16 space-y-12">
+              <div className="mt-16 sm:mt-24 space-y-12">
                 <motion.div
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
+                  transition={{ delay: 0.7, duration: 0.5 }}
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-16 text-[15px] tracking-[0.25em] font-technical font-bold bg-[#C5A059] hover:bg-[#B38E48] text-[#0A0F1A] border-none shadow-[0_8px_32px_rgba(197,160,89,0.2)]">
-                      GET A QUOTE
+                    <Button className="w-full h-[72px] text-[16px] tracking-[0.3em] font-technical font-bold bg-[#C5A059] hover:bg-[#B38E48] text-[#0A0F1A] border-none shadow-[0_12px_40px_rgba(197,160,89,0.25)] rounded-none relative overflow-hidden group">
+                      <span className="relative z-10">GET A QUOTE</span>
+                      <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                     </Button>
                   </Link>
                 </motion.div>
                 
-                {/* Technical Footnote */}
-                <div className="border-t border-white/5 pt-8">
-                  <div className="flex items-center gap-4 text-[10px] font-technical font-bold text-white/30 uppercase tracking-[0.4em]">
-                    <div className="w-8 h-[1px] bg-ssc-gold/40" />
-                    PREMIUM INDUSTRIAL SUPPLY
+                {/* Architectural Brand Footnote */}
+                <div className="border-t border-white/5 pt-8 flex items-center justify-between">
+                  <div className="flex items-center gap-4 text-[10px] font-technical font-bold text-white/20 uppercase tracking-[0.5em]">
+                    <div className="w-10 h-[1px] bg-[#C5A059]/30" />
+                    ENGINEERED PRECISION
                   </div>
+                  <span className="text-[9px] font-technical text-white/10 tracking-[0.2em]">© 2024 SSC</span>
                 </div>
               </div>
             </div>
 
-            {/* Subtle Navy Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0F1A]/50 to-[#0A0F1A] pointer-events-none" />
+            {/* Depth Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0A0F1A] via-transparent to-transparent opacity-60 pointer-events-none" />
           </motion.div>
         )}
       </AnimatePresence>
