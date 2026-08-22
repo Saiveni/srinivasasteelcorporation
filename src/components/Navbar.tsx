@@ -121,9 +121,9 @@ export const Navbar = () => {
                 window.location.reload();
               }
             }}
-            className="flex items-center gap-3 sm:gap-4 relative group shrink-0"
+            className="flex items-center gap-2 sm:gap-4 relative group shrink-0"
           >
-            <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            <div className="h-8 w-8 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               <img
                 src={sscLogo.url}
                 alt="SSC Logo"
@@ -132,13 +132,13 @@ export const Navbar = () => {
             </div>
             
             {/* Metallic Vertical Divider */}
-            <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
+            <div className="w-[1px] h-6 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
 
             <div className="flex flex-col justify-center">
-              <span className="text-[13px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
+              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
                 SRINIVASA <span className="font-bold">STEEL</span>
               </span>
-              <span className="text-[9px] sm:text-[10px] lg:text-[12px] font-technical font-black tracking-[0.25em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-1 sm:mt-1 drop-shadow-sm">
+              <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-technical font-black tracking-[0.25em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-0.5 sm:mt-1 drop-shadow-sm">
                 CORPORATION
               </span>
             </div>
@@ -253,14 +253,14 @@ export const Navbar = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none z-[2]" />
               
-              <div className="flex items-center gap-3 sm:gap-4 relative z-10">
-                <div className="h-9 w-9 sm:h-12 sm:w-12">
+              <div className="flex items-center gap-2 sm:gap-4 relative z-10">
+                <div className="h-8 w-8 sm:h-12 sm:w-12">
                   <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain opacity-95" />
                 </div>
-                <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20" />
+                <div className="w-[1px] h-6 sm:h-10 bg-[#0B1B33]/20" />
                 <div className="flex flex-col">
-                  <span className="text-[13px] sm:text-[18px] font-heading font-extrabold text-[#0B1B33] uppercase leading-none">SRINIVASA STEEL</span>
-                  <span className="text-[9px] sm:text-[10px] font-technical font-black text-[#C5A059] uppercase tracking-[0.2em] mt-1">CORPORATION</span>
+                  <span className="text-[12px] sm:text-[18px] font-heading font-extrabold text-[#0B1B33] uppercase leading-none">SRINIVASA STEEL</span>
+                  <span className="text-[8px] sm:text-[10px] font-technical font-black text-[#C5A059] uppercase tracking-[0.2em] mt-0.5">CORPORATION</span>
                 </div>
               </div>
 
