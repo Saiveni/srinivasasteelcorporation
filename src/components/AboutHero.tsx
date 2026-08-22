@@ -4,7 +4,7 @@ import rebarWarehouse from '@/assets/rebar-warehouse.jpg.asset.json';
 
 export const AboutHero = () => {
   return (
-    <section className="relative min-h-[70vh] lg:min-h-[85vh] bg-[#050A14] flex items-center overflow-hidden pt-20 lg:pt-32">
+    <section className="relative min-h-[75vh] lg:min-h-[85vh] bg-[#050A14] flex items-center overflow-hidden pt-32 lg:pt-40">
       {/* Engineering Grid Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div 
