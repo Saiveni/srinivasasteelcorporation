@@ -341,10 +341,11 @@ export const AboutSection = () => {
               <SteelRod orientation="vertical" />
               
               {/* Clamps & Cards placed along the rod */}
-              <ClampHook position="10%" orientation="vertical" delay={0.6} cardData={milestones[0]} />
-              <ClampHook position="35%" orientation="vertical" delay={0.8} cardData={milestones[1]} />
-              <ClampHook position="60%" orientation="vertical" delay={1.0} cardData={milestones[2]} />
-              <ClampHook position="85%" orientation="vertical" delay={1.2} cardData={milestones[3]} />
+              <ClampHook position="10%" orientation="vertical" delay={0.6} cardData={milestones[0]!} />
+              <ClampHook position="35%" orientation="vertical" delay={0.8} cardData={milestones[1]!} />
+              <ClampHook position="60%" orientation="vertical" delay={1.0} cardData={milestones[2]!} />
+              <ClampHook position="85%" orientation="vertical" delay={1.2} cardData={milestones[3]!} />
+
             </div>
           </motion.div>
         </div>
