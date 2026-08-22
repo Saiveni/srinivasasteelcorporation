@@ -107,17 +107,22 @@ const MetalCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: -60 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: delay + 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ 
+        delay: delay + 0.6, 
+        duration: 1.2, 
+        ease: [0.16, 1, 0.3, 1],
+        y: { type: "spring", stiffness: 40, damping: 15 } // Settling movement
+      }}
       className={`absolute ${
         isH ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' : 'left-[calc(50%+115px)] -translate-y-1/2 w-[240px]'
       }`}
     >
       <div className="relative group">
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-8 border border-[#c5a059]/30 shadow-[0_20px_40px_rgba(0,0,0,0.8),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-8 border border-[#c5a059]/30 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
@@ -144,7 +149,7 @@ const MetalCard = ({
         </div>
 
         {/* Realistic extrusion shadow */}
-        <div className="absolute -inset-[2px] bg-black/40 blur-[4px] -z-10 rounded-[20px]" />
+        <div className="absolute -inset-[2px] bg-black/50 blur-[8px] -z-10 rounded-[20px] translate-y-4" />
       </div>
     </motion.div>
   );
