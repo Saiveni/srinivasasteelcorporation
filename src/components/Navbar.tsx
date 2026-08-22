@@ -58,7 +58,7 @@ export const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`fixed left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-[96%] max-w-[1400px] transition-all duration-500 ${scrolled ? 'top-2 sm:top-3' : 'top-3 sm:top-5'}`}
+      className={`fixed left-1/2 -translate-x-1/2 z-[100] w-[94%] sm:w-[96%] max-w-[1400px] transition-all duration-500 ${scrolled ? 'top-2 sm:top-3' : 'top-3 sm:top-5'}`}
     >
       {/* Precision Engineered Header Panel */}
       <div className={`
@@ -230,7 +230,7 @@ export const Navbar = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[100] bg-[#F4F6F8] flex flex-col pt-[100px] sm:pt-[120px]"
+            className="fixed inset-0 z-[90] bg-[#F4F6F8] flex flex-col pt-[100px] sm:pt-[120px]"
           >
             {/* Engineering Texture Overlays */}
             <div 
