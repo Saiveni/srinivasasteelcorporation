@@ -221,8 +221,8 @@ export const Navbar = () => {
                           onClick={() => setIsOpen(false)}
                           className="group flex items-center gap-4 py-0.5"
                         >
-                          <div className="w-10 h-10 rounded-sm flex items-center justify-center 
-                                        transition-all duration-300 group-hover:scale-110 active:scale-95">
+                          <div className="w-12 h-12 rounded-sm flex items-center justify-center 
+                                        transition-all duration-300 group-hover:scale-110 active:scale-95 px-1">
                             <div className="w-full h-full overflow-hidden relative">
                               <img 
                                 src={steelIconsAsset.url} 
