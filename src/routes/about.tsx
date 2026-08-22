@@ -25,8 +25,11 @@ function AboutPage() {
     <div className="bg-[#050A14] flex flex-col">
       {/* 01 — PREMIUM ABOUT OPENING & 02 — COMPANY STORY */}
       <AboutHero />
-      
-      {/* 03 — LEADERSHIP / PROMOTERS */}
+
+      {/* 03 — BUSINESS AREAS / SPECIFICATION PANELS */}
+      <AboutBusinessCards />
+
+      {/* 04 — LEADERSHIP / PROMOTERS */}
       <LeadershipSection />
       
       {/* 04 — INDUSTRIAL TIMELINE */}
