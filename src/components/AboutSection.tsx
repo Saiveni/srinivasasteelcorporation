@@ -167,11 +167,13 @@ const ClampHook = ({
   orientation = 'horizontal',
   delay = 0,
   cardData,
+  offsetSide = 'right',
 }: {
   position: string;
   orientation?: 'horizontal' | 'vertical';
   delay?: number;
   cardData: { number: string; year: string; title: string; description: string };
+  offsetSide?: 'left' | 'right';
 }) => {
 
   const isH = orientation === 'horizontal';
