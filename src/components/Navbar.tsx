@@ -174,7 +174,7 @@ export const Navbar = () => {
           </div>
 
           {/* Desktop/Tablet CTA */}
-          <motion.div variants={itemVariants} className="hidden md:block">
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="hidden md:block">
             <Link to="/contact" search={{ product: "" }}>
               <Button className="h-10 lg:h-11 px-4 lg:px-6 bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-lg text-[10px] lg:text-[11px] tracking-[0.1em] font-technical font-bold group shadow-sm hover:shadow-md transition-all">
                 GET A QUOTE
