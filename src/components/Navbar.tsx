@@ -114,7 +114,7 @@ export const Navbar = () => {
         <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/20 pointer-events-none z-[4]" />
 
         {/* Logo & Brand Section */}
-        <motion.div variants={itemVariants} className="relative z-10">
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10">
           <Link 
             to="/" 
             onClick={() => {
