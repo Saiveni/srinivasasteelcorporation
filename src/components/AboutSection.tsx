@@ -132,7 +132,7 @@ const MetalCard = ({
         </div>
 
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-6 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-4 xs:p-5 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.18] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
