@@ -145,7 +145,6 @@ export const Navbar = () => {
               className="fixed inset-0 z-[110] lg:hidden 
                          bg-[#F7F7F4] flex flex-col"
             >
-            >
               {/* Engineering Texture Overlays */}
               <div 
                 className="absolute inset-0 opacity-[0.04] pointer-events-none" 
