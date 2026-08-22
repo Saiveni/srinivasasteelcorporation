@@ -368,22 +368,21 @@ export const AboutSection = () => {
           </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <div className="lg:hidden h-[1300px] overflow-visible relative">
+          <div className="lg:hidden h-[1800px] sm:h-[1500px] overflow-visible relative flex justify-center">
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              className="h-[1300px] relative"
+              className="h-full relative"
             >
               <SteelRod orientation="vertical" />
               
-              {/* Clamps & Cards placed along the rod */}
-              <ClampHook position="10%" orientation="vertical" delay={0.8} cardData={milestones[0]!} />
-              <ClampHook position="35%" orientation="vertical" delay={1.1} cardData={milestones[1]!} />
-              <ClampHook position="60%" orientation="vertical" delay={1.4} cardData={milestones[2]!} />
-              <ClampHook position="85%" orientation="vertical" delay={1.7} cardData={milestones[3]!} />
-
+              {/* Clamps & Cards placed along the rod with alternating visual rhythm */}
+              <ClampHook position="8%" orientation="vertical" delay={0.8} cardData={milestones[0]!} offsetSide="right" />
+              <ClampHook position="32%" orientation="vertical" delay={1.1} cardData={milestones[1]!} offsetSide="left" />
+              <ClampHook position="56%" orientation="vertical" delay={1.4} cardData={milestones[2]!} offsetSide="right" />
+              <ClampHook position="80%" orientation="vertical" delay={1.7} cardData={milestones[3]!} offsetSide="left" />
             </motion.div>
           </div>
         </div>
