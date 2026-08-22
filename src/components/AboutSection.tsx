@@ -103,6 +103,7 @@ const MetalCard = ({
   description: string;
   delay?: number;
   orientation?: 'horizontal' | 'vertical';
+  isLeft?: boolean;
 }) => {
   const isH = orientation === 'horizontal';
 
