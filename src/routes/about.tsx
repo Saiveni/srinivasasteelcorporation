@@ -38,7 +38,8 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <div className="pt-[80px]">
+    <div className="bg-[#050A14]">
+      <AboutHero />
       <AboutSection />
       
       {/* Inline Locations Section */}
