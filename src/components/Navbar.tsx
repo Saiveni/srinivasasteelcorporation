@@ -239,20 +239,10 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[110] bg-[#0B1B33] flex flex-col"
+            className="fixed inset-0 z-[110] bg-white flex flex-col"
           >
-            {/* Overlay Header Mirror for Continuity */}
-            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-[#E8EAEF] relative border-b border-[#0B1B33]/20 shadow-lg shrink-0">
-              {/* Surface Mirroring Primary Header */}
-              <div 
-                className="absolute inset-0 opacity-[0.35] pointer-events-none z-[1]" 
-                style={{ 
-                  backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
-                  backgroundSize: '300px 300px',
-                }} 
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none z-[2]" />
-              
+            {/* Overlay Header Mirror */}
+            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-white relative border-b border-black/5 shrink-0">
               <div className="flex items-center gap-2 sm:gap-4 relative z-10">
                 <div className="h-8 w-8 sm:h-12 sm:w-12">
                   <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain opacity-95" />
@@ -264,59 +254,44 @@ export const Navbar = () => {
                 </div>
               </div>
 
-              {/* Gold Machined Close Button at Top */}
+              {/* Close Button Trigger */}
               <button 
                 onClick={() => setIsOpen(false)}
-                className="w-11 h-10 sm:w-13 sm:h-12 flex items-center justify-center rounded-[12px] bg-gradient-to-b from-[#F2D7A5] via-[#D4AF37] to-[#B8860B] shadow-[0_4px_10px_rgba(0,0,0,0.25),inset_0_1px_0_rgba(255,255,255,0.4)] border border-[#8B6914]/40 relative z-10"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-black/10 bg-white shadow-sm relative z-10"
               >
-                <div className="absolute inset-[1.5px] rounded-[10.5px] border border-white/20 pointer-events-none" />
-                <X className="text-[#0B1B33] w-5 h-5 sm:w-6 sm:h-6" strokeWidth={3} />
+                <X className="text-black/40 w-5 h-5" strokeWidth={2} />
               </button>
             </div>
 
-            {/* Content Area with Deep Navy / Steel Blue Background */}
-            <div className="flex-1 relative overflow-hidden bg-[#0B1B33]">
-              {/* Engineering Grid Lines */}
+            {/* Content Area with White Engineering Grid */}
+            <div className="flex-1 relative overflow-hidden bg-[#FAFAF9]">
               <div 
-                className="absolute inset-0 opacity-[0.08] pointer-events-none z-[1]" 
+                className="absolute inset-0 opacity-[0.2] pointer-events-none z-[1]" 
                 style={{ 
-                  backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0)`,
-                  backgroundSize: '32px 32px'
+                  backgroundImage: `linear-gradient(to right, #e5e7eb 1px, transparent 1px), linear-gradient(to bottom, #e5e7eb 1px, transparent 1px)`,
+                  backgroundSize: '40px 40px'
                 }} 
               />
               
-              {/* Subtle TMT/Rebar Texture */}
-              <div 
-                className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none grayscale z-[2]"
-                style={{
-                  backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              />
-
-              {/* Restrained Gold Accents */}
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059]/30 to-transparent z-[3]" />
-              
-              {/* Navigation Items - Sequential Reveal */}
-              <div className="relative z-10 h-full flex flex-col py-8 px-6 sm:px-12 overflow-y-auto">
-                <div className="flex flex-col gap-3">
+              {/* Navigation Items */}
+              <div className="relative z-10 h-full flex flex-col py-6 px-8 overflow-y-auto">
+                <div className="flex flex-col gap-1">
                   {navLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
-                      initial={{ opacity: 0, x: -25 }}
+                      initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.15 + i * 0.08, duration: 0.5, ease: "easeOut" }}
+                      transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
                     >
                       <Link
                         to={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="group flex items-center gap-6 py-4 border-b border-white/[0.05]"
+                        className="group flex items-center gap-5 py-3"
                       >
-                        {/* 3D Realistic Metallic Steel Icons - Circular Form */}
-                        <div className="w-14 h-14 rounded-full border border-white/10 bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center overflow-hidden shrink-0 shadow-[0_4px_15px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.05)] group-hover:border-[#C5A059]/40 transition-all duration-300">
+                        {/* 3D Realistic Metallic Icons */}
+                        <div className="w-12 h-12 flex items-center justify-center shrink-0">
                           <div 
-                            className="w-10 h-10 scale-[1.3] drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
+                            className="w-10 h-10 scale-[1.1] drop-shadow-[0_4px_6px_rgba(0,0,0,0.15)]"
                             style={{
                               backgroundImage: `url('${steelIconsAssetV2.url}')`,
                               backgroundSize: '100% 500%',
@@ -324,7 +299,7 @@ export const Navbar = () => {
                             }}
                           />
                         </div>
-                        <span className="text-[1.4rem] sm:text-[1.7rem] font-heading font-black text-white uppercase tracking-[0.08em] group-hover:text-[#C5A059] transition-colors duration-300">
+                        <span className="text-[1.1rem] font-heading font-bold text-[#0B1B33] tracking-[0.02em] group-hover:text-[#C5A059] transition-colors">
                           {link.name}
                         </span>
                       </Link>
@@ -332,21 +307,26 @@ export const Navbar = () => {
                   ))}
                 </div>
 
-                {/* Bottom CTA - GET A QUOTE */}
+                {/* GET A QUOTE Button */}
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.55, duration: 0.6 }}
-                  className="mt-12 mb-10"
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="mt-8 mb-10"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[64px] text-[14px] tracking-[0.25em] font-technical font-black 
-                                     bg-[#C5A059] text-[#0B1B33] hover:bg-[#D6B570] rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.4)] group transition-all border border-[#C5A059]/20">
-                      GET A QUOTE 
-                      <ArrowRight size={22} className="ml-3 group-hover:translate-x-1.5 transition-transform" />
+                    <Button className="w-full h-[54px] text-[13px] tracking-[0.1em] font-technical font-bold 
+                                     bg-[#C5A059] text-white hover:bg-[#D6B570] rounded-2xl shadow-md border-b-4 border-[#B8860B] active:border-b-0 active:translate-y-1 transition-all">
+                      GET A QUOTE <ArrowRight size={18} className="ml-2" />
                     </Button>
                   </Link>
                 </motion.div>
+                
+                {/* Precision Built Label */}
+                <div className="mt-auto pb-4 flex items-center justify-between opacity-30">
+                  <span className="text-[8px] font-technical tracking-[0.2em] uppercase">PRECISION BUILT</span>
+                  <span className="text-[8px] font-technical tracking-[0.2em] uppercase">VER 2.4.0</span>
+                </div>
               </div>
             </div>
           </motion.div>
