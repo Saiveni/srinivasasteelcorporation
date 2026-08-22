@@ -355,7 +355,7 @@ export const AboutSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-[#C5A059]/40" />
             </div>
-            <h2 className="text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[0.95] mb-12 tracking-tighter uppercase italic">
+            <h2 className="text-[32px] sm:text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[1.1] sm:leading-[0.95] mb-8 lg:mb-12 tracking-tighter uppercase italic">
               STRONG ROOTS.<br />
               <span className="text-white">STRONGER </span>
               <span className="text-[#C5A059]">FUTURE.</span>
