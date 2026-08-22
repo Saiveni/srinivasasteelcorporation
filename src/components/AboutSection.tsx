@@ -31,7 +31,7 @@ const SteelRod = ({ orientation = 'horizontal' }: { orientation?: 'horizontal' |
         <div
           className="absolute inset-0 opacity-90"
           style={{
-            backgroundImage: `repeating-linear-gradient(${isH ? '118deg' : '28deg'},
+            backgroundImage: `repeating-linear-gradient(${isH ? '118deg' : '208deg'},
               rgba(0,0,0,0) 0px,
               rgba(0,0,0,0) 9px,
               rgba(0,0,0,0.55) 12px,
@@ -95,6 +95,7 @@ const MetalCard = ({
   description,
   delay = 0,
   orientation = 'horizontal',
+  isLeft = false,
 }: {
   number: string;
   year: string;
@@ -102,14 +103,15 @@ const MetalCard = ({
   description: string;
   delay?: number;
   orientation?: 'horizontal' | 'vertical';
+  isLeft?: boolean;
 }) => {
   const isH = orientation === 'horizontal';
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : 60 }}
+      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : isLeft ? -100 : 100 }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ 
         delay: delay + 0.6, 
         duration: 1.2, 
@@ -120,7 +122,7 @@ const MetalCard = ({
       className={`absolute ${
         isH 
           ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' 
-          : 'left-[calc(50%+80px)] -translate-y-1/2 w-[240px]'
+          : 'left-[calc(50%+65px)] sm:left-[calc(50%+80px)] -translate-y-1/2 w-[180px] xs:w-[220px] sm:w-[240px]'
       }`}
     >
       <div className="relative group">
@@ -130,7 +132,7 @@ const MetalCard = ({
         </div>
 
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-6 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-4 xs:p-5 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.18] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
@@ -146,13 +148,13 @@ const MetalCard = ({
               <div className="w-2 h-2 border-t border-r border-[#C5A059]/30" />
             </div>
             
-            <h3 className="text-white text-[26px] lg:text-[32px] font-heading font-extrabold mb-1 tracking-tight">
+            <h3 className="text-white text-[18px] xs:text-[22px] sm:text-[26px] lg:text-[32px] font-heading font-extrabold mb-0.5 sm:mb-1 tracking-tight">
               {year}
             </h3>
-            <h4 className="text-[#C5A059] text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-5 border-b border-[#C5A059]/20 pb-2">
+            <h4 className="text-[#C5A059] text-[9px] xs:text-[10px] sm:text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-3 sm:mb-5 border-b border-[#C5A059]/20 pb-1 sm:pb-2">
               {title}
             </h4>
-            <p className="text-white/70 text-[14px] lg:text-[15px] leading-relaxed font-medium">
+            <p className="text-white/70 text-[11px] xs:text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed font-medium">
               {description}
             </p>
           </div>
@@ -192,14 +194,14 @@ const ClampHook = ({
 
   return (
     <div
-      className="absolute z-20"
+      className="absolute z-20 [--hook-width:65px] sm:[--hook-width:80px]"
       style={isH ? { left: position, top: '50%', transform: 'translateY(-50%)' } : { top: position, left: '50%', transform: 'translateX(-50%)' }}
     >
       {/* Clamp & Hook Structure */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9, y: isH ? -10 : 0, x: isH ? 0 : isLeft ? 10 : -10 }}
         whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
         transition={{ delay: delay + 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         className="relative"
       >
@@ -229,9 +231,9 @@ const ClampHook = ({
           whileInView={
             isH 
               ? { height: '108px', opacity: 1 } 
-              : { width: '80px', opacity: 1, x: isLeft ? -80 : 0 }
+              : { width: 'var(--hook-width)', opacity: 1, x: isLeft ? 'calc(-1 * var(--hook-width))' : 0 }
           }
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ delay: delay + 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className={`absolute ${
             isH 
@@ -243,7 +245,7 @@ const ClampHook = ({
         >
           {/* Heavy metal vertical chain/rod */}
           <div
-            className={`${isH ? 'w-[10px] h-[75px]' : 'h-[10px] w-[45px]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
+            className={`${isH ? 'w-[10px] h-[75px]' : 'h-[10px] w-[calc(var(--hook-width)-35px)]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
             style={{
               background: isH 
                 ? 'linear-gradient(90deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)'
@@ -273,11 +275,12 @@ const ClampHook = ({
       </motion.div>
 
       {/* The Information Card */}
-      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+80px)]' : '') : ''}>
+      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+65px)] sm:-translate-x-[calc(100%+80px)]' : '') : ''}>
         <MetalCard
           {...cardData}
           delay={delay}
           orientation={orientation}
+          isLeft={isLeft}
         />
       </div>
     </div>
@@ -338,7 +341,7 @@ export const AboutSection = () => {
       </div>
 
       <div className="container-wide relative z-10">
-        <div className="text-center mb-24 lg:mb-36">
+        <div className="text-center mb-16 lg:mb-36 px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -352,12 +355,12 @@ export const AboutSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-[#C5A059]/40" />
             </div>
-            <h2 className="text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[0.95] mb-12 tracking-tighter uppercase italic">
+            <h2 className="text-[32px] sm:text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[1.1] sm:leading-[0.95] mb-8 lg:mb-12 tracking-tighter uppercase italic">
               STRONG ROOTS.<br />
               <span className="text-white">STRONGER </span>
               <span className="text-[#C5A059]">FUTURE.</span>
             </h2>
-            <p className="text-white/70 text-base lg:text-[20px] font-medium max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white/70 text-sm sm:text-base lg:text-[20px] font-medium max-w-2xl mx-auto leading-relaxed px-4">
               From a strong beginning in 1994 to becoming a trusted steel supplier across multiple
               locations, our journey is built on quality, trust and consistent delivery.
             </p>
@@ -387,13 +390,13 @@ export const AboutSection = () => {
           </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <div className="lg:hidden h-[1800px] sm:h-[1500px] overflow-visible relative flex justify-center">
+          <div className="lg:hidden min-h-[1600px] sm:min-h-[1500px] w-full overflow-visible relative flex justify-center py-20">
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              className="h-full relative"
+              viewport={{ once: true, margin: "-10px" }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
+              className="h-[1400px] sm:h-[1300px] relative"
             >
               <SteelRod orientation="vertical" />
               
