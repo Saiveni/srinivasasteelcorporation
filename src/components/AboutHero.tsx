@@ -181,17 +181,7 @@ export const AboutHero = () => {
               </motion.div>
             </motion.div>
 
-            {/* Floating Technical Element */}
-            <motion.div 
-              variants={techDetailVariants}
-              className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#0E1626] border border-ssc-gold/20 rounded-xl z-20 hidden lg:flex flex-col items-center justify-center overflow-hidden shadow-2xl"
-            >
-              <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-              <span className="text-ssc-gold text-[12px] font-technical font-bold block mb-1">TMT</span>
-              <span className="text-white/40 text-[8px] font-technical font-bold uppercase tracking-[0.2em]">PRECISION</span>
-            </motion.div>
           </div>
-
         </motion.div>
       </div>
 
@@ -200,8 +190,67 @@ export const AboutHero = () => {
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] lg:h-[60px] fill-[#F7F7F4]">
           <path d="M0,120 C300,100 900,100 1200,120 L1200,120 L0,120 Z" />
         </svg>
-
       </div>
     </section>
+
+    {/* SECTION 2 — COMPANY STORY (Lighter Industrial) */}
+    <section className="relative py-20 lg:py-24 bg-[#F7F7F4] overflow-hidden">
+      {/* Blueprint background texture */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
+        <div 
+          className="absolute inset-0"
+          style={{ 
+            backgroundImage: 'linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }} 
+        />
+        {/* Technical measurement lines */}
+        <div className="absolute top-10 left-10 w-[2px] h-[100px] bg-ssc-navy" />
+        <div className="absolute top-10 left-10 w-[100px] h-[2px] bg-ssc-navy" />
+      </div>
+
+      <div className="container-wide relative z-10">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-1/2"
+          >
+            <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.3em] uppercase mb-4 block">Our Foundation</span>
+            <h2 className="text-[32px] lg:text-[56px] text-ssc-navy font-heading font-extrabold tracking-tighter uppercase mb-8 leading-[1.1]">
+              A LEGACY BUILT ON <span className="text-ssc-gold">PRECISION</span> AND TRUST.
+            </h2>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="w-full lg:w-1/2"
+          >
+            <div className="max-w-xl">
+              <p className="text-ssc-navy/70 text-base lg:text-lg leading-relaxed font-medium mb-8">
+                Since our inception, Srinivasa Steel Corporation has been at the forefront of the steel industry, bridging the gap between quality manufacturing and reliable construction supply. Our journey is defined by a commitment to excellence, technological adoption in decoiling, and fostering long-term partnerships with India's leading steel producers.
+              </p>
+              
+              <div className="grid grid-cols-2 gap-8 border-t border-ssc-navy/10 pt-8">
+                <div>
+                  <span className="text-ssc-navy text-2xl lg:text-3xl font-heading font-bold block mb-1">100k+</span>
+                  <span className="text-ssc-navy/40 text-[9px] font-technical font-bold uppercase tracking-[0.2em]">Tons Delivered</span>
+                </div>
+                <div>
+                  <span className="text-ssc-navy text-2xl lg:text-3xl font-heading font-bold block mb-1">500+</span>
+                  <span className="text-ssc-navy/40 text-[9px] font-technical font-bold uppercase tracking-[0.2em]">Major Projects</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  </>
   );
 };
