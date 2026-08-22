@@ -132,27 +132,15 @@ export const IndustrialNetwork = () => {
     <section id="locations" className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden min-h-[800px]">
       {/* Engineered Background System */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Top Gold Divider */}
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/30 to-transparent" />
-        
-        {/* Technical Grid */}
         <div className="absolute inset-0 opacity-[0.05]" 
              style={{ 
                backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', 
-               backgroundSize: '60px 60px' 
+               backgroundSize: '80px 80px' 
              }} />
         
-        {/* Radial Depth */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(12,18,30,0.8)_0%,rgba(5,10,20,1)_100%)]" />
-        
-        {/* Industrial Markers */}
-        <div className="absolute top-10 left-10 text-white/5 font-technical text-[10px] tracking-[0.5em] uppercase vertical-text">
-          SSC-NETWORK-DENSITY-01
-        </div>
-        <div className="absolute bottom-10 right-10 text-white/5 font-technical text-[10px] tracking-[0.5em] uppercase">
-          SEC-LOCATIONS-VERIFIED-3
-        </div>
       </div>
+
 
       <div className="container-wide relative z-10 px-6 max-w-[1400px] mx-auto">
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">

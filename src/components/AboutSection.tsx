@@ -319,86 +319,68 @@ export const AboutSection = () => {
     <section
       id="about-timeline"
       ref={sectionRef}
-      className="relative py-20 lg:py-24 bg-[#050A14] overflow-hidden"
+      className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden"
     >
-      {/* Architectural background */}
+      {/* Engineered Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
+        <div className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage:
               'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
             backgroundSize: '80px 80px',
           }}
         />
-        {/* Atmospheric lighting around the steel */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,160,89,0.05)_0%,rgba(5,10,20,1)_85%)]" />
       </div>
 
-
-
-      <div className="container-wide relative z-10">
-        <div className="text-center mb-10 sm:mb-16 lg:mb-36 px-4">
+      <div className="container-wide relative z-10 px-6 max-w-[1280px] mx-auto">
+        <div className="text-center mb-24 lg:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-8 h-[1px] bg-[#C5A059]/40" />
-              <span className="text-[#C5A059] text-[11px] font-technical font-bold tracking-[0.5em] uppercase">
-                OUR JOURNEY
+            <div className="flex items-center justify-center gap-3 mb-6">
+              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+                The Journey
               </span>
-              <div className="w-8 h-[1px] bg-[#C5A059]/40" />
+              <div className="w-8 h-[1px] bg-ssc-gold/40" />
             </div>
-            <h2 className="text-[28px] xs:text-[36px] sm:text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[1.1] sm:leading-[0.95] mb-6 lg:mb-12 tracking-tighter uppercase italic px-2">
+            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
               STRONG ROOTS.<br />
-              <span className="text-white">STRONGER </span>
-              <span className="text-[#C5A059]">FUTURE.</span>
+              <span className="text-ssc-gold">STRONGER FUTURE.</span>
             </h2>
-            <p className="text-white/70 text-sm sm:text-base lg:text-[20px] font-medium max-w-2xl mx-auto leading-relaxed px-4">
-              From a strong beginning in 1994 to becoming a trusted steel supplier across multiple
-              locations, our journey is built on quality, trust and consistent delivery.
-            </p>
           </motion.div>
         </div>
 
-        {/* THE STEEL ROD + CLAMPS + CARDS */}
         <div className="relative flex justify-center pb-20 lg:pb-[500px]">
-          {/* Desktop: horizontal rod */}
-          <div className="hidden lg:block max-w-[1300px] w-full overflow-visible relative">
+          <div className="hidden lg:block w-full relative">
             <motion.div
               initial={{ width: 0, opacity: 0 }}
               whileInView={{ width: '100%', opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-[1300px] relative"
+              className="relative"
             >
               <SteelRod orientation="horizontal" />
-              
-              {/* Clamps & Cards placed across the rod */}
               <ClampHook position="12%" orientation="horizontal" delay={0.8} cardData={milestones[0]!} />
               <ClampHook position="37%" orientation="horizontal" delay={1.1} cardData={milestones[1]!} />
               <ClampHook position="62%" orientation="horizontal" delay={1.4} cardData={milestones[2]!} />
               <ClampHook position="87%" orientation="horizontal" delay={1.7} cardData={milestones[3]!} />
-
             </motion.div>
           </div>
 
-          {/* Mobile / tablet: vertical rod */}
-          <div className="lg:hidden min-h-[1100px] w-full overflow-visible relative flex justify-center py-20">
+          <div className="lg:hidden min-h-[1100px] w-full relative flex justify-center py-10">
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
-              viewport={{ once: true, margin: "-10px" }}
-              transition={{ duration: 1.2, ease: "easeOut" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.2 }}
               className="h-[1100px] relative"
             >
               <SteelRod orientation="vertical" />
-              
-              {/* Clamps & Cards placed along the rod with alternating visual rhythm */}
               <ClampHook position="8%" orientation="vertical" delay={0.8} cardData={milestones[0]!} offsetSide="right" />
               <ClampHook position="32%" orientation="vertical" delay={1.1} cardData={milestones[1]!} offsetSide="left" />
               <ClampHook position="56%" orientation="vertical" delay={1.4} cardData={milestones[2]!} offsetSide="right" />
@@ -408,6 +390,7 @@ export const AboutSection = () => {
         </div>
       </div>
     </section>
+
   );
 };
 
