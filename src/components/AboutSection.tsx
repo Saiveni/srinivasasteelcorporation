@@ -122,7 +122,7 @@ const MetalCard = ({
       className={`absolute ${
         isH 
           ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' 
-          : 'left-[calc(50%+65px)] sm:left-[calc(50%+80px)] -translate-y-1/2 w-[180px] xs:w-[220px] sm:w-[240px]'
+          : 'left-[calc(50%+45px)] sm:left-[calc(50%+80px)] -translate-y-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
       }`}
     >
       <div className="relative group">
@@ -132,7 +132,7 @@ const MetalCard = ({
         </div>
 
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-4 xs:p-5 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-4 sm:p-5 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.18] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
@@ -140,21 +140,21 @@ const MetalCard = ({
           <div className="absolute inset-0 border-[0.5px] border-white/10 rounded-[18px] pointer-events-none" />
           
           <div className="relative z-10">
-            <div className="flex justify-between items-start mb-4">
-              <span className="text-[#C5A059] text-[12px] font-technical font-bold tracking-widest opacity-80 bg-[#C5A059]/10 px-2 py-0.5 rounded">
+            <div className="flex justify-between items-start mb-3 sm:mb-4">
+              <span className="text-[#C5A059] text-[10px] sm:text-[12px] font-technical font-bold tracking-widest opacity-80 bg-[#C5A059]/10 px-2 py-0.5 rounded">
                 {number}
               </span>
               {/* Decorative corner element */}
               <div className="w-2 h-2 border-t border-r border-[#C5A059]/30" />
             </div>
             
-            <h3 className="text-white text-[18px] xs:text-[22px] sm:text-[26px] lg:text-[32px] font-heading font-extrabold mb-0.5 sm:mb-1 tracking-tight">
+            <h3 className="text-white text-[16px] xs:text-[20px] sm:text-[26px] lg:text-[32px] font-heading font-extrabold mb-0.5 sm:mb-1 tracking-tight">
               {year}
             </h3>
-            <h4 className="text-[#C5A059] text-[9px] xs:text-[10px] sm:text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-3 sm:mb-5 border-b border-[#C5A059]/20 pb-1 sm:pb-2">
+            <h4 className="text-[#C5A059] text-[8px] xs:text-[9px] sm:text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-2 sm:mb-5 border-b border-[#C5A059]/20 pb-1 sm:pb-2">
               {title}
             </h4>
-            <p className="text-white/70 text-[11px] xs:text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed font-medium">
+            <p className="text-white/70 text-[10px] xs:text-[12px] sm:text-[14px] lg:text-[15px] leading-snug xs:leading-relaxed font-medium">
               {description}
             </p>
           </div>
@@ -194,7 +194,7 @@ const ClampHook = ({
 
   return (
     <div
-      className="absolute z-20 [--hook-width:65px] sm:[--hook-width:80px]"
+      className="absolute z-20 [--hook-width:45px] sm:[--hook-width:80px]"
       style={isH ? { left: position, top: '50%', transform: 'translateY(-50%)' } : { top: position, left: '50%', transform: 'translateX(-50%)' }}
     >
       {/* Clamp & Hook Structure */}
@@ -275,7 +275,7 @@ const ClampHook = ({
       </motion.div>
 
       {/* The Information Card */}
-      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+65px)] sm:-translate-x-[calc(100%+80px)]' : '') : ''}>
+      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+45px)] sm:-translate-x-[calc(100%+80px)]' : '') : ''}>
         <MetalCard
           {...cardData}
           delay={delay}
@@ -341,7 +341,7 @@ export const AboutSection = () => {
       </div>
 
       <div className="container-wide relative z-10">
-        <div className="text-center mb-16 lg:mb-36 px-4">
+        <div className="text-center mb-10 sm:mb-16 lg:mb-36 px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -355,7 +355,7 @@ export const AboutSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-[#C5A059]/40" />
             </div>
-            <h2 className="text-[32px] sm:text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[1.1] sm:leading-[0.95] mb-8 lg:mb-12 tracking-tighter uppercase italic">
+            <h2 className="text-[28px] xs:text-[36px] sm:text-[46px] lg:text-[100px] text-white font-heading font-extrabold leading-[1.1] sm:leading-[0.95] mb-6 lg:mb-12 tracking-tighter uppercase italic px-2">
               STRONG ROOTS.<br />
               <span className="text-white">STRONGER </span>
               <span className="text-[#C5A059]">FUTURE.</span>
@@ -390,13 +390,13 @@ export const AboutSection = () => {
           </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <div className="lg:hidden min-h-[1600px] sm:min-h-[1500px] w-full overflow-visible relative flex justify-center py-20">
+          <div className="lg:hidden min-h-[1400px] sm:min-h-[1500px] w-full overflow-visible relative flex justify-center py-20">
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="h-[1400px] sm:h-[1300px] relative"
+              className="h-[1200px] sm:h-[1300px] relative"
             >
               <SteelRod orientation="vertical" />
               
