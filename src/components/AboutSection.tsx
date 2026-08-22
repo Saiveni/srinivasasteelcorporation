@@ -165,6 +165,7 @@ const ClampHook = ({
   delay?: number;
   cardData: { number: string; year: string; title: string; description: string };
 }) => {
+
   const isH = orientation === 'horizontal';
 
   return (
