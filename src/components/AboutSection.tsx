@@ -394,8 +394,8 @@ export const AboutSection = () => {
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+              viewport={{ once: true, margin: "-10px" }}
+              transition={{ duration: 1.2, ease: "easeOut" }}
               className="h-full relative"
             >
               <SteelRod orientation="vertical" />
