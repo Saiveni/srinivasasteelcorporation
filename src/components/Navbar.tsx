@@ -58,23 +58,24 @@ export const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`fixed left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? 'top-0' : 'top-0'}`}
+      className={`fixed left-0 right-0 z-[100] transition-all duration-500 top-0 sm:px-4 md:px-0`}
     >
       {/* Premium Engineered Steel Header Panel */}
       <div className={`
         relative w-full flex items-center justify-between px-4 sm:px-8 xl:px-12
         transition-all duration-500 ease-in-out border-b border-white/10
         ${scrolled 
-          ? "h-[64px] sm:h-[76px] shadow-[0_4px_20px_rgba(0,0,0,0.15)]" 
-          : "h-[78px] sm:h-[82px] shadow-[0_2px_15px_rgba(0,0,0,0.1)]"
+          ? "h-[64px] sm:h-[76px] shadow-[0_4px_20px_rgba(0,0,0,0.2)]" 
+          : "h-[74px] sm:h-[82px] shadow-[0_2px_15px_rgba(0,0,0,0.15)]"
         }
+        md:rounded-none sm:rounded-b-2xl overflow-hidden
       `}>
         {/* Brushed Silver / Light Steel Surface */}
-        <div className="absolute inset-0 bg-[#E8EAEF]" />
+        <div className="absolute inset-0 bg-[#D8DCE3]" />
         
         {/* Diagonal Brushed Metal Texture */}
         <div 
-          className="absolute inset-0 opacity-[0.35] pointer-events-none z-[1]" 
+          className="absolute inset-0 opacity-[0.45] pointer-events-none z-[1]" 
           style={{ 
             backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
             backgroundSize: '400px 400px',
@@ -84,21 +85,22 @@ export const Navbar = () => {
 
         {/* Integrated TMT Rebar Imagery - Part of the Background */}
         <div 
-          className="absolute inset-0 opacity-[0.06] mix-blend-multiply pointer-events-none grayscale z-[2]"
+          className="absolute inset-0 opacity-[0.12] mix-blend-multiply pointer-events-none grayscale z-[2]"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'contrast(1.2) brightness(0.9)'
+            backgroundPosition: 'right center',
+            filter: 'contrast(1.4) brightness(0.85)'
           }}
         />
         
         {/* Depth & Tonal Highlights */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-black/5 pointer-events-none z-[3]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-black/10 pointer-events-none z-[3]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-black/5 pointer-events-none z-[3]" />
         
         {/* Refined Metallic Edges */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/70 pointer-events-none z-[4]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10 pointer-events-none z-[4]" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/80 pointer-events-none z-[4]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/20 pointer-events-none z-[4]" />
 
         {/* Logo & Brand Section */}
         <motion.div variants={itemVariants} className="relative z-10">
@@ -111,16 +113,16 @@ export const Navbar = () => {
             }}
             className="flex items-center gap-2 sm:gap-4 relative group shrink-0"
           >
-            <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            <div className="h-8 w-8 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)]">
               <img
                 src={sscLogo.url}
                 alt="SSC Logo"
-                className="h-full w-full object-contain filter brightness-[0.25]"
+                className="h-full w-full object-contain filter brightness-[0.2]"
               />
             </div>
             
             {/* Metallic Divider */}
-            <div className="w-[1px] h-7 sm:h-10 bg-black/15 shadow-[1px_0_0_rgba(255,255,255,0.4)]" />
+            <div className="w-[1px] h-7 sm:h-10 bg-black/20 shadow-[1px_0_0_rgba(255,255,255,0.4)]" />
 
             <div className="flex flex-col justify-center">
               <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.02em] text-[#0B1B33] leading-none uppercase">
