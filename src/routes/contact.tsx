@@ -100,7 +100,7 @@ function ContactPage() {
   const heroImageUrl = "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1600&auto=format&fit=crop";
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-ssc-navy min-h-screen">
       {/* Contact Hero */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden bg-ssc-navy pt-[80px]">
         <div className="absolute inset-0 z-0">
