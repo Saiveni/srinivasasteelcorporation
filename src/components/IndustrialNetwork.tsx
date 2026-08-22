@@ -122,9 +122,10 @@ export const IndustrialNetwork = () => {
     visible: { 
       pathLength: 1, 
       opacity: 1,
-      transition: { duration: 1.5, ease: "easeInOut" }
+      transition: { duration: 1.5, ease: "easeInOut" as const }
     }
   };
+
 
   return (
     <section id="locations" className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden min-h-[800px]">
