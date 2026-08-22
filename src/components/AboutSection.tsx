@@ -122,7 +122,7 @@ const MetalCard = ({
       className={`absolute ${
         isH 
           ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' 
-          : 'left-[calc(50%+80px)] -translate-y-1/2 w-[240px]'
+          : 'left-[calc(50%+65px)] sm:left-[calc(50%+80px)] -translate-y-1/2 w-[180px] xs:w-[220px] sm:w-[240px]'
       }`}
     >
       <div className="relative group">
