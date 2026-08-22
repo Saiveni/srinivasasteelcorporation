@@ -64,7 +64,7 @@ export const Navbar = () => {
       <div className={`
         relative w-full flex items-center justify-between px-4 sm:px-8 xl:px-10
         rounded-xl sm:rounded-2xl overflow-hidden
-        border border-white/20
+        border border-white/20 z-[110]
         transition-all duration-500 ease-in-out
         ${scrolled 
           ? "h-[64px] sm:h-[76px] shadow-[0_15px_30px_-10px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]" 
@@ -74,9 +74,21 @@ export const Navbar = () => {
         {/* Realistic Brushed Metal Surface */}
         <div className="absolute inset-0 bg-[#E2E4E9]" />
         
+        {/* TMT Bar Background Pattern (Right Side) */}
+        <div 
+          className="absolute top-0 right-0 bottom-0 w-[60%] opacity-[0.08] mix-blend-multiply pointer-events-none grayscale z-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=600&auto=format&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'right center',
+            maskImage: 'linear-gradient(to left, black 20%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)'
+          }}
+        />
+
         {/* Extremely subtle horizontal brushed-metal texture */}
         <div 
-          className="absolute inset-0 opacity-[0.35] pointer-events-none" 
+          className="absolute inset-0 opacity-[0.25] pointer-events-none z-[1]" 
           style={{ 
             backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
             backgroundSize: '400px 400px'
@@ -84,15 +96,15 @@ export const Navbar = () => {
         />
         
         {/* Tonal variations & highlights */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none z-[2]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-[2]" />
         
         {/* Subtle Edge Reflection */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50 pointer-events-none z-[3]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10 pointer-events-none z-[3]" />
 
         {/* Logo & Brand Section */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants} className="relative z-10">
           <Link 
             to="/" 
             onClick={() => {
@@ -100,7 +112,7 @@ export const Navbar = () => {
                 window.location.reload();
               }
             }}
-            className="flex items-center gap-2 sm:gap-4 relative z-10 group shrink-0"
+            className="flex items-center gap-2 sm:gap-4 relative group shrink-0"
           >
             <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               <img
@@ -210,110 +222,125 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Full Screen Top-Down Reveal */}
       <AnimatePresence>
         {isOpen && (
-          <>
-            {/* Backdrop Blur */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-[105] bg-black/40 backdrop-blur-md"
-              style={{ top: '-1rem', left: '-5%', width: '110vw', height: '110vh' }}
+          <motion.div
+            initial={{ y: "-100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "-100%" }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }}
+            className="fixed inset-0 z-[100] bg-[#F4F6F8] flex flex-col pt-[100px] sm:pt-[120px]"
+          >
+            {/* Engineering Texture Overlays */}
+            <div 
+              className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+              style={{ 
+                backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
+                backgroundSize: '40px 40px'
+              }} 
             />
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.98, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.98, y: 10 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as any }}
-              className="absolute top-[76px] sm:top-[90px] left-0 right-0 z-[110] 
-                         bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/5
-                         flex flex-col"
-            >
-              {/* Engineering Texture Overlays */}
-              <div 
-                className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-                style={{ 
-                  backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
-                  backgroundSize: '30px 30px'
-                }} 
-              />
-              
-              {/* Navigation Items */}
-              <div className="flex flex-col py-8 px-6 relative z-10">
-                <div className="flex flex-col gap-2">
-                  {navLinks.map((link, i) => {
-                    return (
-                      <motion.div
-                        key={link.name}
-                        initial={{ opacity: 0, x: -10 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.05 + i * 0.05, duration: 0.4 }}
+            <div 
+              className="absolute inset-0 opacity-[0.05] pointer-events-none" 
+              style={{ 
+                backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
+                backgroundSize: '400px 400px'
+              }} 
+            />
+
+            {/* Navigation Items */}
+            <div className="flex-1 flex flex-col py-8 px-6 sm:px-12 relative z-10 overflow-y-auto">
+              <div className="flex flex-col gap-4">
+                {navLinks.map((link, i) => {
+                  return (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.2 + i * 0.08, duration: 0.4 }}
+                    >
+                      <Link
+                        to={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="group flex items-center gap-6 py-4 border-b border-black/5 last:border-0"
                       >
-                        <Link
-                          to={link.href}
-                          onClick={() => setIsOpen(false)}
-                          className="group flex items-center gap-5 py-3 border-b border-black/5 last:border-0"
-                        >
-                          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#F4F6F8] flex items-center justify-center 
-                                        transition-all duration-300 group-hover:bg-[#E5E7EB] group-hover:scale-105 p-2 shadow-inner">
-                            <div className="w-full h-full overflow-hidden relative">
+                        {/* Rounded Steel Icons */}
+                        <div className="relative w-14 h-14 sm:w-16 sm:h-16 shrink-0">
+                          {/* Inner Bevel Shadow */}
+                          <div className="absolute inset-0 rounded-full bg-white shadow-[inset_0_2px_4px_rgba(0,0,0,0.1),0_1px_2px_rgba(255,255,255,0.8)] z-0" />
+                          
+                          <div className="absolute inset-[3px] rounded-full bg-[#E5E7EB] flex items-center justify-center 
+                                        transition-all duration-300 group-hover:bg-[#D1D5DB] group-hover:scale-105 p-2 shadow-md overflow-hidden z-10 border border-white/50">
+                            <div className="w-full h-full relative">
                               <img 
                                 src={steelIconsAsset.url} 
                                 alt={link.name}
-                                className="absolute max-w-none"
+                                className="absolute max-w-none w-auto"
                                 style={{
                                   height: '500%', 
                                   top: `-${link.icon * 100}%`,
-                                  left: '0',
-                                  width: 'auto'
+                                  left: '50%',
+                                  transform: 'translateX(-50%)',
                                 }}
                               />
                             </div>
                           </div>
-                          <span className="text-[1rem] sm:text-[1.1rem] font-heading font-bold text-[#0B1B33] uppercase tracking-[0.05em] group-hover:text-[#C5A059] transition-colors">
+                        </div>
+
+                        <div className="flex flex-col">
+                          <span className="text-[1.2rem] sm:text-[1.4rem] font-heading font-black text-[#0B1B33] uppercase tracking-[0.1em] group-hover:text-[#C5A059] transition-colors leading-tight">
                             {link.name}
                           </span>
-                        </Link>
-                      </motion.div>
-                    );
-                  })}
-                </div>
+                          <span className="text-[10px] font-technical font-bold text-[#0B1B33]/40 tracking-[0.2em] uppercase mt-0.5">
+                            0{i + 1}
+                          </span>
+                        </div>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 15 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
-                  className="mt-8"
-                >
-                  <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[56px] sm:h-[60px] text-[11px] sm:text-[12px] tracking-[0.2em] font-technical font-black 
-                                     bg-[#0B1B33] hover:bg-[#0B1B33]/90 text-white border-none 
-                                     shadow-lg rounded-xl relative overflow-hidden group">
-                      <span className="relative z-10 flex items-center justify-center gap-2">
-                        GET A QUOTE <ArrowRight size={14} />
-                      </span>
-                      <div className="absolute inset-0 bg-[#C5A059] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-                    </Button>
-                  </Link>
-                </motion.div>
-                
-                {/* Engineering Detail Footer */}
-                <div className="mt-8 pt-6 border-t border-black/5 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-[1px] bg-[#C5A059]/40" />
-                    <span className="text-[8px] sm:text-[9px] font-technical font-bold text-[#0B1B33]/40 uppercase tracking-[0.3em]">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="mt-12"
+              >
+                <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
+                  <Button className="w-full h-[64px] text-[12px] tracking-[0.25em] font-technical font-black 
+                                   bg-[#0B1B33] hover:bg-[#0B1B33]/90 text-white border-none 
+                                   shadow-xl rounded-2xl relative overflow-hidden group">
+                    <span className="relative z-10 flex items-center justify-center gap-3">
+                      GET A QUOTE <ArrowRight size={18} />
+                    </span>
+                    <div className="absolute inset-0 bg-[#C5A059] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                  </Button>
+                </Link>
+              </motion.div>
+              
+              {/* Engineering Detail Footer */}
+              <div className="mt-auto pt-10 pb-8 flex flex-col gap-6">
+                <div className="flex items-center justify-between border-t border-black/5 pt-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-[1px] bg-[#C5A059]" />
+                    <span className="text-[10px] font-technical font-black text-[#0B1B33]/60 uppercase tracking-[0.4em]">
                       Precision Built
                     </span>
                   </div>
-                  <span className="text-[8px] sm:text-[9px] font-technical text-[#0B1B33]/30 tracking-[0.1em]">SSC-OS 2.5</span>
+                  <span className="text-[10px] font-technical text-[#0B1B33]/40 tracking-[0.1em]">VER. 2.5.0-SSC</span>
+                </div>
+                
+                {/* Visual Engineering Marks */}
+                <div className="flex justify-between px-2">
+                  {[...Array(6)].map((_, i) => (
+                    <div key={i} className="w-[1px] h-3 bg-black/10" />
+                  ))}
                 </div>
               </div>
-            </motion.div>
-          </>
+            </div>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.nav>
