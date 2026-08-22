@@ -239,6 +239,33 @@ export const AboutSection = () => {
   const rodReveal = useTransform(scrollYProgress, [0.08, 0.45], ['0%', '100%']);
   const rodOpacity = useTransform(scrollYProgress, [0.06, 0.14], [0, 1]);
 
+  const milestones = [
+    {
+      number: '01',
+      year: '1994',
+      title: 'ESTABLISHED',
+      description: 'Founded Srinivasa Steel Corporation in Hyderabad.',
+    },
+    {
+      number: '02',
+      year: '2000s',
+      title: 'EXPANDED TO VIZAG',
+      description: 'Expanded operations to Visakhapatnam steel market.',
+    },
+    {
+      number: '03',
+      year: '2010s',
+      title: 'MOU DEALER STATUS',
+      description: 'Became MoU Dealer for Vizag Steel Plant.',
+    },
+    {
+      number: '04',
+      year: 'TODAY',
+      title: '3 LOCATIONS, 30+ YEARS',
+      description: '3 locations. 30+ years of trust. Thousands of tons delivered.',
+    },
+  ];
+
   return (
     <section
       id="about"
@@ -285,8 +312,8 @@ export const AboutSection = () => {
           </motion.div>
         </div>
 
-        {/* THE STEEL ROD + CLAMPS */}
-        <div className="relative flex justify-center pb-40 lg:pb-64">
+        {/* THE STEEL ROD + CLAMPS + CARDS */}
+        <div className="relative flex justify-center pb-80 lg:pb-[500px]">
           {/* Desktop: horizontal rod */}
           <motion.div
             style={{ width: rodReveal, opacity: rodOpacity }}
@@ -295,27 +322,27 @@ export const AboutSection = () => {
             <div className="w-[1300px] relative">
               <SteelRod orientation="horizontal" />
               
-              {/* Clamps placed across the rod */}
-              <ClampHook position="12%" orientation="horizontal" delay={0.6} />
-              <ClampHook position="37%" orientation="horizontal" delay={0.8} />
-              <ClampHook position="62%" orientation="horizontal" delay={1.0} />
-              <ClampHook position="87%" orientation="horizontal" delay={1.2} />
+              {/* Clamps & Cards placed across the rod */}
+              <ClampHook position="12%" orientation="horizontal" delay={0.6} cardData={milestones[0]} />
+              <ClampHook position="37%" orientation="horizontal" delay={0.8} cardData={milestones[1]} />
+              <ClampHook position="62%" orientation="horizontal" delay={1.0} cardData={milestones[2]} />
+              <ClampHook position="87%" orientation="horizontal" delay={1.2} cardData={milestones[3]} />
             </div>
           </motion.div>
 
           {/* Mobile / tablet: vertical rod */}
           <motion.div
             style={{ height: rodReveal, opacity: rodOpacity }}
-            className="lg:hidden h-[800px] overflow-visible relative"
+            className="lg:hidden h-[1200px] overflow-visible relative"
           >
-            <div className="h-[800px] relative">
+            <div className="h-[1200px] relative">
               <SteelRod orientation="vertical" />
               
-              {/* Clamps placed along the rod */}
-              <ClampHook position="10%" orientation="vertical" delay={0.6} />
-              <ClampHook position="35%" orientation="vertical" delay={0.8} />
-              <ClampHook position="60%" orientation="vertical" delay={1.0} />
-              <ClampHook position="85%" orientation="vertical" delay={1.2} />
+              {/* Clamps & Cards placed along the rod */}
+              <ClampHook position="10%" orientation="vertical" delay={0.6} cardData={milestones[0]} />
+              <ClampHook position="35%" orientation="vertical" delay={0.8} cardData={milestones[1]} />
+              <ClampHook position="60%" orientation="vertical" delay={1.0} cardData={milestones[2]} />
+              <ClampHook position="85%" orientation="vertical" delay={1.2} cardData={milestones[3]} />
             </div>
           </motion.div>
         </div>
@@ -323,3 +350,4 @@ export const AboutSection = () => {
     </section>
   );
 };
+
