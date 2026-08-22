@@ -64,7 +64,7 @@ export const Navbar = () => {
       <div className={`
         relative w-full flex items-center justify-between px-4 sm:px-8 xl:px-10
         rounded-xl sm:rounded-2xl overflow-hidden
-        border border-white/20
+        border border-white/20 z-[110]
         transition-all duration-500 ease-in-out
         ${scrolled 
           ? "h-[64px] sm:h-[76px] shadow-[0_15px_30px_-10px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]" 
@@ -98,14 +98,13 @@ export const Navbar = () => {
         {/* Tonal variations & highlights */}
         <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none z-[2]" />
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-[2]" />
-
         
         {/* Subtle Edge Reflection */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50 pointer-events-none" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10 pointer-events-none" />
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50 pointer-events-none z-[3]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10 pointer-events-none z-[3]" />
 
         {/* Logo & Brand Section */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants} className="relative z-10">
           <Link 
             to="/" 
             onClick={() => {
@@ -113,7 +112,7 @@ export const Navbar = () => {
                 window.location.reload();
               }
             }}
-            className="flex items-center gap-2 sm:gap-4 relative z-10 group shrink-0"
+            className="flex items-center gap-2 sm:gap-4 relative group shrink-0"
           >
             <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               <img
@@ -344,7 +343,6 @@ export const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
     </motion.nav>
   );
 };
