@@ -323,7 +323,7 @@ export const AboutSection = () => {
     >
       {/* Architectural background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-white/5" />
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
         <div
           className="absolute inset-0 opacity-[0.02]"
           style={{
@@ -332,8 +332,10 @@ export const AboutSection = () => {
             backgroundSize: '80px 80px',
           }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(22,32,52,0.4)_0%,rgba(5,10,20,1)_85%)]" />
+        {/* Atmospheric lighting around the steel */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,160,89,0.05)_0%,rgba(5,10,20,1)_85%)]" />
       </div>
+
 
 
       <div className="container-wide relative z-10">

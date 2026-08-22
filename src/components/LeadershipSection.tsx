@@ -112,14 +112,19 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0C121E] overflow-hidden border-b border-white/5">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0C121E] overflow-hidden">
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Subtle vertical steel structures */}
+        <div className="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+        
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
         <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
         <div className="absolute inset-0 opacity-[0.02]" 
              style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
       </div>
+
 
 
       {/* Horizontal Steel Rebar Element (Foundation) */}
