@@ -107,9 +107,9 @@ const MetalCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : 60 }}
+      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : isLeft ? -100 : 100 }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, margin: "-50px" }}
       transition={{ 
         delay: delay + 0.6, 
         duration: 1.2, 
