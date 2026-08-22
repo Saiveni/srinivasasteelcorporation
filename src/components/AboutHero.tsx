@@ -1,63 +1,153 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import rebarWarehouse from '@/assets/rebar-warehouse.jpg.asset.json';
 
 export const AboutHero = () => {
+  // Animation variants with explicit types to satisfy TS
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
+    }
+  };
+
+  const headlineVariants: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { 
+        duration: 0.9, 
+        delay: 0.3 + (i * 0.15),
+        ease: [0.16, 1, 0.3, 1] 
+      }
+    })
+  };
+
+  const visualVariants: Variants = {
+    hidden: { 
+      opacity: 0, 
+      scale: 1.05,
+      clipPath: 'inset(0 100% 0 0)'
+    },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      clipPath: 'inset(0 0% 0 0)',
+      transition: { 
+        duration: 1.2, 
+        delay: 0.6,
+        ease: [0.16, 1, 0.3, 1] 
+      }
+    }
+  };
+
+  const techDetailVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { duration: 0.6, delay: 1.2 }
+    }
+  };
+
   return (
-    <section className="relative min-h-[75vh] lg:min-h-[85vh] bg-[#050A14] flex items-center overflow-hidden pt-32 lg:pt-40">
-      {/* Engineering Grid Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+    <section className="relative min-h-[80vh] lg:min-h-[90vh] bg-[#0A111F] flex items-center overflow-hidden pt-20 lg:pt-24 pb-12 lg:pb-20">
+      {/* Sophisticated Industrial Background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Subtle Engineering Grid */}
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-[0.03]"
           style={{ 
             backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
+            backgroundSize: '60px 60px'
           }} 
         />
-      </div>
-
-      {/* Decorative Technical Linework */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-24 h-[1px] bg-ssc-gold/20" />
-        <div className="absolute top-[20%] right-[10%] w-[1px] h-32 bg-ssc-gold/10" />
+        
+        {/* Extremely subtle metallic texture */}
+        <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
+        
+        {/* Very faint technical lines */}
+        <div className="absolute top-1/4 left-0 w-full h-[1px] bg-white/[0.03]" />
+        <div className="absolute bottom-1/4 left-0 w-full h-[1px] bg-white/[0.03]" />
       </div>
 
       <div className="container-wide relative z-10 w-full">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16"
+        >
           
           {/* LEFT CONTENT */}
-          <div className="w-full lg:w-[46%]">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <div className="flex items-center gap-3 mb-6 lg:mb-8">
-                <span className="text-ssc-gold text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.4em] uppercase">
-                  EST. 1994 • STEEL • TMT • SUPPLY • DECOILING
-                </span>
-              </div>
+          <div className="w-full lg:w-[46%] text-left">
+            {/* 2. Small eyebrow text */}
+            <motion.div variants={itemVariants} className="flex items-center gap-3 mb-6">
+              <span className="text-ssc-gold text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.4em] uppercase">
+                EST. 1994 • STEEL • TMT • SUPPLY • DECOILING
+              </span>
+            </motion.div>
 
-              <h1 className="text-[44px] xs:text-[56px] sm:text-[72px] lg:text-[92px] leading-[0.95] font-heading font-extrabold text-white uppercase tracking-tighter mb-8 lg:mb-12 italic">
-                BUILT ON <span className="text-ssc-gold">STEEL.</span><br />
-                BUILT ON <span className="text-ssc-gold">TRUST.</span>
-              </h1>
+            {/* 3. Main headline line by line */}
+            <div className="mb-8 lg:mb-10 overflow-hidden">
+              <motion.h1 
+                custom={0}
+                variants={headlineVariants}
+                className="text-[42px] xs:text-[52px] sm:text-[68px] lg:text-[84px] leading-[1] font-heading font-extrabold text-white uppercase tracking-tight mb-2"
+              >
+                BUILT ON
+              </motion.h1>
+              <motion.h1 
+                custom={1}
+                variants={headlineVariants}
+                className="text-[42px] xs:text-[52px] sm:text-[68px] lg:text-[84px] leading-[1] font-heading font-extrabold text-ssc-gold uppercase tracking-tight mb-2"
+              >
+                STEEL.
+              </motion.h1>
+              <motion.h1 
+                custom={2}
+                variants={headlineVariants}
+                className="text-[42px] xs:text-[52px] sm:text-[68px] lg:text-[84px] leading-[1] font-heading font-extrabold text-white uppercase tracking-tight mb-2"
+              >
+                BUILT ON
+              </motion.h1>
+              <motion.h1 
+                custom={3}
+                variants={headlineVariants}
+                className="text-[42px] xs:text-[52px] sm:text-[68px] lg:text-[84px] leading-[1] font-heading font-extrabold text-ssc-gold uppercase tracking-tight"
+              >
+                TRUST.
+              </motion.h1>
+            </div>
 
-              <div className="max-w-xl">
-                <p className="text-white/70 text-base lg:text-[18px] leading-relaxed font-medium mb-8">
-                  Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements with over three decades of engineering excellence. We specialize in high-grade TMT reinforcement steel and precision decoiling services, providing the structural foundation for major infrastructure projects across the region.
-                </p>
-                
-                <div className="flex items-center gap-6">
-                  <div className="flex flex-col">
-                    <span className="text-white text-2xl lg:text-3xl font-heading font-bold">30+</span>
-                    <span className="text-white/40 text-[10px] font-technical font-bold uppercase tracking-widest">Years Experience</span>
-                  </div>
-                  <div className="w-[1px] h-10 bg-white/10" />
-                  <div className="flex flex-col">
-                    <span className="text-white text-2xl lg:text-3xl font-heading font-bold italic uppercase">Trust</span>
-                    <span className="text-white/40 text-[10px] font-technical font-bold uppercase tracking-widest">Core Value</span>
-                  </div>
+            {/* 4. Supporting paragraph */}
+            <motion.div variants={itemVariants} className="max-w-xl">
+              <p className="text-white/70 text-base lg:text-[17px] leading-relaxed font-medium mb-10">
+                Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements with over three decades of engineering excellence. We specialize in high-grade TMT reinforcement steel and precision decoiling services, providing the structural foundation for major infrastructure projects.
+              </p>
+              
+              <div className="flex items-center gap-8">
+                <div className="flex flex-col">
+                  <span className="text-white text-2xl lg:text-3xl font-heading font-bold">30+</span>
+                  <span className="text-white/40 text-[9px] font-technical font-bold uppercase tracking-[0.2em]">Years Experience</span>
+                </div>
+                <div className="w-[1px] h-10 bg-white/10" />
+                <div className="flex flex-col">
+                  <span className="text-white text-2xl lg:text-3xl font-heading font-bold uppercase tracking-tight italic text-ssc-gold">Quality</span>
+                  <span className="text-white/40 text-[9px] font-technical font-bold uppercase tracking-[0.2em]">Core Standard</span>
                 </div>
               </div>
             </motion.div>
@@ -65,51 +155,50 @@ export const AboutHero = () => {
 
           {/* RIGHT VISUAL */}
           <div className="w-full lg:w-[54%] relative">
+            {/* 5. Steel image/visual reveals with a masked slide */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95, x: 30 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative aspect-[4/3] lg:aspect-[1.4/1] rounded-[24px] overflow-hidden group shadow-[0_40px_100px_rgba(0,0,0,0.6)]"
+              variants={visualVariants}
+              className="relative aspect-[4/3] lg:aspect-[1.3/1] rounded-[20px] overflow-hidden group shadow-[0_30px_60px_rgba(0,0,0,0.5)] border border-white/10"
             >
-              {/* Metallic Border Overlay */}
-              <div className="absolute inset-0 border border-white/10 rounded-[24px] z-20 pointer-events-none" />
-              
-              {/* Image with subtle zoom effect */}
               <img 
                 src={rebarWarehouse.url} 
-                alt="Industrial Steel Warehouse Atmosphere"
-                className="w-full h-full object-cover transition-transform duration-[10s] ease-linear group-hover:scale-110"
+                alt="Premium TMT Reinforcement Steel Visualization"
+                className="w-full h-full object-cover"
               />
 
               {/* Gradient Overlay for Depth */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-ssc-navy/40 via-transparent to-white/5 mix-blend-overlay z-10" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#0A111F]/60 via-transparent to-white/5 mix-blend-overlay z-10" />
               
-              {/* Technical Detail: Precision corner */}
-              <div className="absolute bottom-6 right-6 z-30 flex items-center gap-3">
-                <div className="w-12 h-[1px] bg-ssc-gold" />
-                <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.2em] uppercase">
-                  ARCHITECTURAL GRADE
+              {/* 6. Small technical details */}
+              <motion.div 
+                variants={techDetailVariants}
+                className="absolute bottom-6 right-6 z-30 flex items-center gap-3"
+              >
+                <div className="w-8 h-[1px] bg-ssc-gold" />
+                <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.3em] uppercase">
+                  INDUSTRIAL SPECIFICATION 550D
                 </span>
-              </div>
+              </motion.div>
             </motion.div>
 
-            {/* Floating Steel Texture Element */}
-            <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-[#0c0f13] border border-ssc-gold/20 rounded-2xl z-20 hidden lg:flex items-center justify-center overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-              <div className="text-center">
-                <span className="text-ssc-gold text-[10px] font-technical font-bold block mb-1">TMT</span>
-                <span className="text-white/40 text-[8px] font-technical font-bold uppercase tracking-[0.2em]">SPEC 550D</span>
-              </div>
-            </div>
+            {/* Floating Technical Element */}
+            <motion.div 
+              variants={techDetailVariants}
+              className="absolute -bottom-6 -left-6 w-32 h-32 bg-[#0E1626] border border-ssc-gold/20 rounded-xl z-20 hidden lg:flex flex-col items-center justify-center overflow-hidden shadow-2xl"
+            >
+              <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
+              <span className="text-ssc-gold text-[12px] font-technical font-bold block mb-1">TMT</span>
+              <span className="text-white/40 text-[8px] font-technical font-bold uppercase tracking-[0.2em]">PRECISION</span>
+            </motion.div>
           </div>
 
-        </div>
+        </motion.div>
       </div>
 
-      {/* Concave architectural curve transition to next section */}
+      {/* Subtle architectural curve transition */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform translate-y-[1px]">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[60px] lg:h-[100px] fill-[#050A14]">
-          <path d="M0,0 C300,120 900,120 1200,0 L1200,120 L0,120 Z" />
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[50px] lg:h-[80px] fill-[#050A14]">
+          <path d="M0,120 C300,100 900,100 1200,120 L1200,120 L0,120 Z" />
         </svg>
       </div>
     </section>
