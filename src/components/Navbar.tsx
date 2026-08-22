@@ -288,14 +288,15 @@ export const Navbar = () => {
                         onClick={() => setIsOpen(false)}
                         className="group flex items-center gap-5 py-3"
                       >
-                        {/* 3D Realistic Metallic Icons - Background removed for direct object visibility */}
+                        {/* 3D Realistic Metallic Icons - Pure Object Visibility */}
                         <div className="w-12 h-12 flex items-center justify-center shrink-0">
                           <div 
-                            className="w-12 h-12 scale-[1.1] drop-shadow-[0_6px_10px_rgba(0,0,0,0.15)]"
+                            className="w-12 h-12 scale-[1.1] drop-shadow-[0_8px_12px_rgba(0,0,0,0.2)]"
                             style={{
                               backgroundImage: `url('${steelIconsAssetV2.url}')`,
                               backgroundSize: '100% 500%',
                               backgroundPosition: `0 ${link.icon * 25}%`,
+                              filter: 'contrast(1.05) brightness(1.02)'
                             }}
                           />
                         </div>
