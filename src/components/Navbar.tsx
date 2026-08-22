@@ -93,36 +93,48 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        {/* Premium Mobile Menu Trigger */}
+        {/* Premium Mobile Menu Trigger - Engineered Hardware Look */}
         <button
-          className="lg:hidden relative z-[100] group outline-none"
+          className="lg:hidden relative z-[120] group outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
         >
           <div className={`
-            relative w-11 h-11 rounded-lg flex flex-col items-center justify-center gap-1.5
-            bg-ssc-navy shadow-[0_4px_12px_rgba(11,27,51,0.3)]
-            border border-ssc-gold/40 transition-all duration-300
-            ${isOpen ? 'rotate-90 scale-95' : 'hover:scale-105'}
+            relative w-12 h-12 rounded-lg flex flex-col items-center justify-center gap-[5px]
+            bg-[#0B1B33] shadow-[0_4px_16px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.1)]
+            border border-[#C5A059]/40 transition-all duration-300
+            ${isOpen ? 'rotate-90' : 'hover:scale-105 active:scale-95'}
           `}>
-            {/* Subtle Gold Accent Top Line */}
-            <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-ssc-gold/30" />
+            {/* Structural Detail Line */}
+            <div className="absolute top-[6px] left-3 right-3 h-[1px] bg-[#C5A059]/20" />
             
-            <motion.span 
-              animate={isOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
-              className="w-5 h-[1.5px] bg-white rounded-full block"
-            />
-            <motion.span 
-              animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
-              className="w-4 h-[1.5px] bg-white rounded-full block"
-            />
-            <motion.span 
-              animate={isOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
-              className="w-5 h-[1.5px] bg-white rounded-full block"
-            />
+            <AnimatePresence mode="wait">
+              {!isOpen ? (
+                <motion.div 
+                  key="hamburger"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                  className="flex flex-col gap-[5px]"
+                >
+                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
+                  <span className="w-4 h-[1.5px] bg-white rounded-full block" />
+                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="close"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.8 }}
+                >
+                  <X className="text-white" size={20} strokeWidth={2} />
+                </motion.div>
+              )}
+            </AnimatePresence>
             
-            {/* Texture/Depth Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-lg pointer-events-none" />
+            {/* Physical Depth Layer */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent rounded-lg pointer-events-none" />
           </div>
         </button>
       </div>
