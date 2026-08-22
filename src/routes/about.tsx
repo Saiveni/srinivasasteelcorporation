@@ -3,8 +3,7 @@ import { AboutSection } from "@/components/AboutSection";
 import { AboutHero } from "@/components/AboutHero";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { IndustrialNetwork } from "@/components/IndustrialNetwork";
-
-const locations = []; // Removed old data structure as it's now internal to IndustrialNetwork
+import { WhyChooseUs } from "@/components/WhyChooseUs";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -23,12 +22,20 @@ export const Route = createFileRoute("/about")({
 function AboutPage() {
   return (
     <div className="bg-[#050A14]">
+      {/* 01 — PREMIUM ABOUT OPENING & 02 — COMPANY STORY */}
       <AboutHero />
+      
+      {/* 03 — LEADERSHIP / PROMOTERS */}
       <LeadershipSection />
+      
+      {/* 04 — INDUSTRIAL TIMELINE */}
       <AboutSection />
       
-      {/* Inline Locations Section */}
+      {/* 05 — REGIONAL INDUSTRIAL NETWORK */}
       <IndustrialNetwork />
+
+      {/* 06 — WHY CHOOSE SRINIVASA STEEL? & 07 — STRONG CTA */}
+      <WhyChooseUs />
     </div>
   );
 }
