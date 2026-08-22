@@ -152,7 +152,8 @@ export const AboutHero = () => {
       </section>
 
       {/* SECTION 2 — COMPANY STORY */}
-      <section className="relative py-24 lg:py-32 bg-[#F7F7F4] overflow-hidden">
+      <section id="company-story" className="relative py-24 lg:py-32 bg-[#F7F7F4] overflow-hidden">
+
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
           <div 
             className="absolute inset-0"
