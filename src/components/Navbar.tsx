@@ -20,6 +20,17 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
     setIsOpen(false);
   }, [location.pathname, location.searchStr]);
 
@@ -220,80 +231,60 @@ export const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Overlay - Full Screen Top-Down Reveal */}
+      {/* Mobile Menu Overlay - Premium Steel Interface */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ y: "-100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "-100%" }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[90] bg-[#F4F6F8] flex flex-col pt-[100px] sm:pt-[120px]"
+            className="fixed inset-0 z-[90] bg-[#0B1B33] flex flex-col pt-[80px] sm:pt-[100px]"
           >
             {/* Engineering Texture Overlays */}
             <div 
-              className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+              className="absolute inset-0 opacity-[0.05] pointer-events-none z-0" 
               style={{ 
-                backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
-                backgroundSize: '40px 40px'
+                backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
+                backgroundSize: '400px 400px',
+                filter: 'invert(1)'
               }} 
             />
             
             <div 
-              className="absolute inset-0 opacity-[0.05] pointer-events-none" 
-              style={{ 
-                backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
-                backgroundSize: '400px 400px'
-              }} 
+              className="absolute inset-0 opacity-[0.03] pointer-events-none z-0"
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                filter: 'grayscale(1) invert(1)'
+              }}
             />
+
+            {/* Thin Metallic Lines */}
+            <div className="absolute top-0 left-[10%] bottom-0 w-[1px] bg-white/5 z-0" />
+            <div className="absolute top-0 left-[90%] bottom-0 w-[1px] bg-white/5 z-0" />
 
             {/* Navigation Items */}
             <div className="flex-1 flex flex-col py-8 px-6 sm:px-12 relative z-10 overflow-y-auto">
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link, i) => {
                   return (
                     <motion.div
                       key={link.name}
-                      initial={{ opacity: 0, x: -20 }}
+                      initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.2 + i * 0.08, duration: 0.4 }}
+                      transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
                     >
                       <Link
                         to={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="group flex items-center gap-6 py-4 border-b border-black/5 last:border-0"
+                        className="group flex items-center justify-between py-5 border-b border-white/5"
                       >
-                        {/* Rounded Steel Icons */}
-                        <div className="relative w-14 h-14 sm:w-16 sm:h-16 shrink-0">
-                          {/* Inner Bevel Shadow */}
-                          <div className="absolute inset-0 rounded-full bg-white shadow-[inset_0_2px_4px_rgba(0,0,0,0.1),0_1px_2px_rgba(255,255,255,0.8)] z-0" />
-                          
-                          <div className="absolute inset-[3px] rounded-full bg-[#E5E7EB] flex items-center justify-center 
-                                        transition-all duration-300 group-hover:bg-[#D1D5DB] group-hover:scale-105 p-2 shadow-md overflow-hidden z-10 border border-white/50">
-                            <div className="w-full h-full relative">
-                              <img 
-                                src={steelIconsAsset.url} 
-                                alt={link.name}
-                                className="absolute max-w-none w-auto"
-                                style={{
-                                  height: '500%', 
-                                  top: `-${link.icon * 100}%`,
-                                  left: '50%',
-                                  transform: 'translateX(-50%)',
-                                }}
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-col">
-                          <span className="text-[1.2rem] sm:text-[1.4rem] font-heading font-black text-[#0B1B33] uppercase tracking-[0.1em] group-hover:text-[#C5A059] transition-colors leading-tight">
-                            {link.name}
-                          </span>
-                          <span className="text-[10px] font-technical font-bold text-[#0B1B33]/40 tracking-[0.2em] uppercase mt-0.5">
-                            0{i + 1}
-                          </span>
-                        </div>
+                        <span className="text-[1.5rem] sm:text-[1.8rem] font-heading font-black text-white/90 uppercase tracking-[0.15em] group-hover:text-[#C5A059] transition-colors leading-tight">
+                          {link.name}
+                        </span>
+                        <ArrowRight size={20} className="text-[#C5A059] opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all" />
                       </Link>
                     </motion.div>
                   );
@@ -303,38 +294,28 @@ export const Navbar = () => {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="mt-12"
+                transition={{ delay: 0.4, duration: 0.5 }}
+                className="mt-10"
               >
                 <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                  <Button className="w-full h-[64px] text-[12px] tracking-[0.25em] font-technical font-black 
-                                   bg-[#0B1B33] hover:bg-[#0B1B33]/90 text-white border-none 
-                                   shadow-xl rounded-2xl relative overflow-hidden group">
+                  <Button className="w-full h-[60px] text-[12px] tracking-[0.2em] font-technical font-black 
+                                   bg-gradient-to-r from-[#C5A059] to-[#997232] hover:from-[#D4AF37] hover:to-[#B8860B]
+                                   text-[#0B1B33] border-none shadow-xl rounded-xl relative overflow-hidden group">
                     <span className="relative z-10 flex items-center justify-center gap-3">
                       GET A QUOTE <ArrowRight size={18} />
                     </span>
-                    <div className="absolute inset-0 bg-[#C5A059] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                   </Button>
                 </Link>
               </motion.div>
               
               {/* Engineering Detail Footer */}
-              <div className="mt-auto pt-10 pb-8 flex flex-col gap-6">
-                <div className="flex items-center justify-between border-t border-black/5 pt-6">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-[1px] bg-[#C5A059]" />
-                    <span className="text-[10px] font-technical font-black text-[#0B1B33]/60 uppercase tracking-[0.4em]">
-                      Precision Built
-                    </span>
-                  </div>
-                  <span className="text-[10px] font-technical text-[#0B1B33]/40 tracking-[0.1em]">VER. 2.5.0-SSC</span>
-                </div>
-                
-                {/* Visual Engineering Marks */}
-                <div className="flex justify-between px-2">
-                  {[...Array(6)].map((_, i) => (
-                    <div key={i} className="w-[1px] h-3 bg-black/10" />
-                  ))}
+              <div className="mt-auto pt-10 pb-8">
+                <div className="flex items-center justify-center gap-4 border-t border-white/5 pt-8">
+                  <div className="w-6 h-[1px] bg-[#C5A059]/40" />
+                  <span className="text-[9px] font-technical font-bold text-white/30 uppercase tracking-[0.5em]">
+                    SRINIVASA STEEL
+                  </span>
+                  <div className="w-6 h-[1px] bg-[#C5A059]/40" />
                 </div>
               </div>
             </div>
