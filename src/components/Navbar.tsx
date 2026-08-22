@@ -5,6 +5,7 @@ import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone, Se
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 import sscLogo3D from "@/assets/ssc-logo-3d.png.asset.json";
+import steelIconsAsset from "@/assets/steel-menu-icons.png.asset.json";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
