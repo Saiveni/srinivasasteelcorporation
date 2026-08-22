@@ -209,7 +209,6 @@ export const Navbar = () => {
               <div className="flex flex-col py-8 px-6 sm:px-8 relative z-10">
                 <div className="flex flex-col gap-4 sm:gap-5">
                   {navLinks.map((link, i) => {
-                    const Icon = link.icon;
                     return (
                       <motion.div
                         key={link.name}
@@ -222,9 +221,21 @@ export const Navbar = () => {
                           onClick={() => setIsOpen(false)}
                           className="group flex items-center gap-4 py-0.5"
                         >
-                          <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-[#E8E8E8] to-[#C0C0C0] flex items-center justify-center 
-                                        border border-[#0B1B33]/20 group-hover:border-[#C5A059]/50 transition-all shadow-[0_2px_4px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.8)]">
-                            <Icon size={14} className="text-[#0B1B33]" strokeWidth={2.5} />
+                          <div className="w-10 h-10 rounded-sm flex items-center justify-center 
+                                        transition-all duration-300 group-hover:scale-110 active:scale-95">
+                            <div className="w-full h-full overflow-hidden relative">
+                              <img 
+                                src={steelIconsAsset.url} 
+                                alt={link.name}
+                                className="absolute max-w-none transition-transform duration-500"
+                                style={{
+                                  height: '500%', // 5 icons vertically
+                                  top: `-${link.icon * 100}%`,
+                                  left: '0',
+                                  width: 'auto'
+                                }}
+                              />
+                            </div>
                           </div>
                           <span className="text-[1.15rem] font-heading font-semibold text-[#0B1B33] uppercase tracking-[0.03em] group-hover:text-[#C5A059] transition-colors">
                             {link.name}
