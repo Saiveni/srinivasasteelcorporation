@@ -280,6 +280,7 @@ const ClampHook = ({
           {...cardData}
           delay={delay}
           orientation={orientation}
+          isLeft={isLeft}
         />
       </div>
     </div>
