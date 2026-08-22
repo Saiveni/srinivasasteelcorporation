@@ -78,10 +78,13 @@ export const WhyChooseUs = () => {
     <section id="why-ssc" className="relative py-24 lg:py-32 bg-[#E8EBEF] overflow-hidden">
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-[1px] bg-ssc-navy/10" />
-        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-        <div className="absolute inset-0 opacity-[0.03]" 
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
+        <div className="absolute inset-0 opacity-[0.08] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
+        <div className="absolute inset-0 opacity-[0.02]" 
              style={{ backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+        {/* Soft metallic gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
       </div>
 
 
