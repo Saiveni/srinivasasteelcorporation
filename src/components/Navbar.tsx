@@ -58,7 +58,7 @@ export const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`fixed left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-[96%] max-w-[1400px] transition-all duration-500 ${scrolled ? 'top-2 sm:top-3' : 'top-3 sm:top-5'}`}
+      className={`fixed left-1/2 -translate-x-1/2 z-[100] w-[94%] sm:w-[96%] max-w-[1400px] transition-all duration-500 ${scrolled ? 'top-2 sm:top-3' : 'top-3 sm:top-5'}`}
     >
       {/* Precision Engineered Header Panel */}
       <div className={`
