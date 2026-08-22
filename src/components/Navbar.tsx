@@ -131,8 +131,7 @@ export const Navbar = () => {
               )}
             </AnimatePresence>
             
-            {/* Physical Depth Layer */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent rounded-lg pointer-events-none" />
+            {/* Removal of physical depth layer for cleaner look */}
           </div>
         </button>
       </div>
