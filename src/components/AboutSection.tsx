@@ -260,7 +260,7 @@ const ClampHook = ({
           {/* Decorative end cap instead of hook loop per user request */}
           {!isH && (
             <div 
-              className={`w-[6px] h-[14px] bg-[#f4d088] shadow-lg z-20 ${isLeft ? '-mr-[2px]' : '-ml-[2px]'}`}
+              className={`w-[8px] h-[16px] bg-[#f4d088] shadow-[0_0_8px_rgba(197,160,89,0.5)] z-20 ${isLeft ? '-mr-[1px]' : '-ml-[1px]'}`}
             />
           )}
         </motion.div>
