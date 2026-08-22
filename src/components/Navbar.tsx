@@ -77,9 +77,10 @@ export const Navbar = () => {
         transition-all duration-500 ease-in-out
         ${scrolled 
           ? "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]" 
-          : "h-[68px] sm:h-[74px] md:h-[78px] shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
+          : "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]"
         }
         rounded-2xl overflow-hidden border border-white/40
+
       `}>
         {/* Brushed Silver / Aluminium Surface */}
         <div className="absolute inset-0 bg-[#E8EAEF]" />
