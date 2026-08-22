@@ -210,25 +210,37 @@ export const AboutSection = () => {
           </motion.div>
         </div>
 
-        {/* THE STEEL ROD */}
-        <div className="relative flex justify-center">
+        {/* THE STEEL ROD + CLAMPS */}
+        <div className="relative flex justify-center pb-40 lg:pb-64">
           {/* Desktop: horizontal rod */}
           <motion.div
             style={{ width: rodReveal, opacity: rodOpacity }}
-            className="hidden lg:block max-w-[1300px] w-full overflow-hidden"
+            className="hidden lg:block max-w-[1300px] w-full overflow-visible relative"
           >
-            <div className="w-[1300px]">
+            <div className="w-[1300px] relative">
               <SteelRod orientation="horizontal" />
+              
+              {/* Clamps placed across the rod */}
+              <ClampHook position="12%" orientation="horizontal" delay={0.6} />
+              <ClampHook position="37%" orientation="horizontal" delay={0.8} />
+              <ClampHook position="62%" orientation="horizontal" delay={1.0} />
+              <ClampHook position="87%" orientation="horizontal" delay={1.2} />
             </div>
           </motion.div>
 
           {/* Mobile / tablet: vertical rod */}
           <motion.div
             style={{ height: rodReveal, opacity: rodOpacity }}
-            className="lg:hidden h-[520px] overflow-hidden"
+            className="lg:hidden h-[800px] overflow-visible relative"
           >
-            <div className="h-[520px]">
+            <div className="h-[800px] relative">
               <SteelRod orientation="vertical" />
+              
+              {/* Clamps placed along the rod */}
+              <ClampHook position="10%" orientation="vertical" delay={0.6} />
+              <ClampHook position="35%" orientation="vertical" delay={0.8} />
+              <ClampHook position="60%" orientation="vertical" delay={1.0} />
+              <ClampHook position="85%" orientation="vertical" delay={1.2} />
             </div>
           </motion.div>
         </div>
