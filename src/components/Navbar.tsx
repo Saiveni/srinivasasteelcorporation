@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone } from "lucide-react";
+import { ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
-import sscLogo3D from "@/assets/ssc-logo-3d.png.asset.json";
 import steelIconsAsset from "@/assets/steel-menu-icons.png.asset.json";
 
 export const Navbar = () => {
@@ -33,15 +32,13 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1400px] transition-all duration-500"
-    >
+    <nav className="fixed top-3 sm:top-5 left-1/2 -translate-x-1/2 z-50 w-[94%] sm:w-[96%] max-w-[1400px] transition-all duration-500">
       {/* Precision Engineered Header Panel */}
       <div className={`
-        relative h-[72px] sm:h-[82px] w-full flex items-center justify-between px-6 sm:px-10
+        relative h-[68px] sm:h-[82px] w-full flex items-center justify-between px-4 sm:px-8 xl:px-10
         rounded-xl sm:rounded-2xl overflow-hidden
         border border-white/20
-        shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]
+        shadow-[0_10px_35px_-10px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]
         transition-all duration-500
       `}>
         {/* Realistic Brushed Metal Surface */}
@@ -64,9 +61,9 @@ export const Navbar = () => {
               window.location.reload();
             }
           }}
-          className="flex items-center gap-3 sm:gap-5 relative z-10 group"
+          className="flex items-center gap-2 sm:gap-4 relative z-10 group shrink-0"
         >
-          <div className="h-10 w-10 sm:h-12 sm:w-12 shrink-0 drop-shadow-sm">
+          <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-sm">
             <img
               src={sscLogo.url}
               alt="SSC Logo"
@@ -75,86 +72,99 @@ export const Navbar = () => {
           </div>
           
           {/* Metallic Divider */}
-          <div className="w-[1px] h-8 sm:h-10 bg-black/10 shadow-[1px_0_0_rgba(255,255,255,0.5)]" />
+          <div className="w-[1px] h-7 sm:h-10 bg-black/10 shadow-[1px_0_0_rgba(255,255,255,0.5)]" />
 
           <div className="flex flex-col justify-center">
-            <span className="text-[14px] sm:text-[20px] font-heading font-extrabold tracking-[0.02em] text-[#0B1B33] leading-none uppercase">
+            <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.02em] text-[#0B1B33] leading-none uppercase">
               SRINIVASA <span className="font-bold opacity-90">STEEL</span>
             </span>
-            <span className="text-[10px] sm:text-[12px] font-technical font-black tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-1.5 drop-shadow-sm">
+            <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-technical font-black tracking-[0.2em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-1 sm:mt-1.5 drop-shadow-sm">
               CORPORATION
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <div className="hidden lg:flex items-center gap-8 xl:gap-10 relative z-10">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.href;
-            return (
-              <Link
-                key={link.name}
-                to={link.href}
-                className={`relative text-[11px] font-technical font-bold tracking-[0.15em] transition-all py-2 ${
-                  isActive ? "text-[#0B1B33] scale-105" : "text-[#0B1B33]/60 hover:text-[#0B1B33]"
-                }`}
-              >
-                {link.name}
-                {isActive && (
-                  <motion.div 
-                    layoutId="activeNav"
-                    className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#C5A059] rounded-full"
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </div>
-
-        {/* Custom Machined Gold Menu Trigger */}
-        <button
-          className="relative z-[120] group outline-none"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-        >
-          <div className={`
-            relative w-11 h-11 sm:w-14 sm:h-14 rounded-lg sm:rounded-xl 
-            flex flex-col items-center justify-center gap-[5px]
-            transition-all duration-500
-            ${isOpen ? 'rotate-90' : 'hover:scale-105 active:scale-95'}
-            bg-gradient-to-b from-[#E8C57F] via-[#C5A059] to-[#A67C37]
-            shadow-[0_4px_10px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_0_rgba(0,0,0,0.2)]
-            border border-[#8B6914]/30
-          `}>
-            {/* Glossy Overlay */}
-            <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
-            
-            <AnimatePresence mode="wait">
-              {!isOpen ? (
-                <motion.div 
-                  key="hamburger"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.8 }}
-                  className="flex flex-col gap-[5px] sm:gap-[6px]"
+        {/* Navigation & CTA Section */}
+        <div className="flex items-center gap-4 xl:gap-10 relative z-10">
+          {/* Desktop/Tablet Navigation Links */}
+          <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-10">
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.href;
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={`relative text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.1em] lg:tracking-[0.15em] transition-all py-2 whitespace-nowrap ${
+                    isActive ? "text-[#0B1B33] scale-105" : "text-[#0B1B33]/60 hover:text-[#0B1B33]"
+                  }`}
                 >
-                  <span className="w-5 sm:w-6 h-[2.5px] bg-[#0B1B33] rounded-full block shadow-sm" />
-                  <span className="w-5 sm:w-6 h-[2.5px] bg-[#0B1B33] rounded-full block shadow-sm" />
-                  <span className="w-5 sm:w-6 h-[2.5px] bg-[#0B1B33] rounded-full block shadow-sm" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="close"
-                  initial={{ opacity: 0, rotate: -45 }}
-                  animate={{ opacity: 1, rotate: 0 }}
-                  exit={{ opacity: 0, rotate: 45 }}
-                >
-                  <X className="text-[#0B1B33] w-6 h-6 sm:w-7 sm:h-7" strokeWidth={2.5} />
-                </motion.div>
-              )}
-            </AnimatePresence>
+                  {link.name}
+                  {isActive && (
+                    <motion.div 
+                      layoutId="activeNav"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#C5A059] rounded-full"
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
-        </button>
+
+          {/* Desktop/Tablet CTA */}
+          <div className="hidden sm:block">
+            <Link to="/contact" search={{ product: "" }}>
+              <Button className="h-10 lg:h-11 px-4 lg:px-6 bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-lg text-[10px] lg:text-[11px] tracking-[0.1em] font-technical font-bold group">
+                GET A QUOTE
+                <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+          </div>
+
+          {/* Custom Machined Gold Menu Trigger (Mobile Always, Tablet Graceful Transition) */}
+          <button
+            className="relative z-[120] group outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+          >
+            <div className={`
+              relative w-10 h-10 sm:w-13 sm:h-13 lg:w-14 lg:h-14 rounded-lg sm:rounded-xl 
+              flex flex-col items-center justify-center gap-[4px] sm:gap-[5px]
+              transition-all duration-500
+              ${isOpen ? 'rotate-90' : 'hover:scale-105 active:scale-95'}
+              bg-gradient-to-b from-[#E8C57F] via-[#C5A059] to-[#A67C37]
+              shadow-[0_4px_10px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1px_0_rgba(0,0,0,0.2)]
+              border border-[#8B6914]/30
+            `}>
+              {/* Glossy Overlay */}
+              <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-tr from-white/20 to-transparent pointer-events-none" />
+              
+              <AnimatePresence mode="wait">
+                {!isOpen ? (
+                  <motion.div 
+                    key="hamburger"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    className="flex flex-col gap-[4px] sm:gap-[5px] md:gap-[6px]"
+                  >
+                    <span className="w-4 sm:w-5 md:w-6 h-[2px] bg-[#0B1B33] rounded-full block shadow-sm" />
+                    <span className="w-4 sm:w-5 md:w-6 h-[2px] bg-[#0B1B33] rounded-full block shadow-sm" />
+                    <span className="w-4 sm:w-5 md:w-6 h-[2px] bg-[#0B1B33] rounded-full block shadow-sm" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="close"
+                    initial={{ opacity: 0, rotate: -45 }}
+                    animate={{ opacity: 1, rotate: 0 }}
+                    exit={{ opacity: 0, rotate: 45 }}
+                  >
+                    <X className="text-[#0B1B33] w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7" strokeWidth={2.5} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -167,8 +177,8 @@ export const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 z-[105] lg:hidden bg-black/40 backdrop-blur-md"
-              style={{ top: '-1rem', left: '-2.5%', width: '105vw', height: '105vh' }}
+              className="fixed inset-0 z-[105] bg-black/40 backdrop-blur-md"
+              style={{ top: '-1rem', left: '-5%', width: '110vw', height: '110vh' }}
             />
             
             <motion.div
@@ -176,7 +186,7 @@ export const Navbar = () => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-[85px] sm:top-[95px] left-0 right-0 z-[110] lg:hidden 
+              className="absolute top-[80px] sm:top-[95px] left-0 right-0 z-[110] 
                          bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/5
                          flex flex-col"
             >
@@ -205,7 +215,7 @@ export const Navbar = () => {
                           onClick={() => setIsOpen(false)}
                           className="group flex items-center gap-5 py-3 border-b border-black/5 last:border-0"
                         >
-                          <div className="w-12 h-12 rounded-xl bg-[#F4F6F8] flex items-center justify-center 
+                          <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#F4F6F8] flex items-center justify-center 
                                         transition-all duration-300 group-hover:bg-[#E5E7EB] group-hover:scale-105 p-2 shadow-inner">
                             <div className="w-full h-full overflow-hidden relative">
                               <img 
@@ -221,7 +231,7 @@ export const Navbar = () => {
                               />
                             </div>
                           </div>
-                          <span className="text-[1.1rem] font-heading font-bold text-[#0B1B33] uppercase tracking-[0.05em] group-hover:text-[#C5A059] transition-colors">
+                          <span className="text-[1rem] sm:text-[1.1rem] font-heading font-bold text-[#0B1B33] uppercase tracking-[0.05em] group-hover:text-[#C5A059] transition-colors">
                             {link.name}
                           </span>
                         </Link>
@@ -237,7 +247,7 @@ export const Navbar = () => {
                   className="mt-8"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[60px] text-[12px] tracking-[0.2em] font-technical font-black 
+                    <Button className="w-full h-[56px] sm:h-[60px] text-[11px] sm:text-[12px] tracking-[0.2em] font-technical font-black 
                                      bg-[#0B1B33] hover:bg-[#0B1B33]/90 text-white border-none 
                                      shadow-lg rounded-xl relative overflow-hidden group">
                       <span className="relative z-10 flex items-center justify-center gap-2">
@@ -252,11 +262,11 @@ export const Navbar = () => {
                 <div className="mt-8 pt-6 border-t border-black/5 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-6 h-[1px] bg-[#C5A059]/40" />
-                    <span className="text-[9px] font-technical font-bold text-[#0B1B33]/40 uppercase tracking-[0.3em]">
+                    <span className="text-[8px] sm:text-[9px] font-technical font-bold text-[#0B1B33]/40 uppercase tracking-[0.3em]">
                       Precision Built
                     </span>
                   </div>
-                  <span className="text-[9px] font-technical text-[#0B1B33]/30 tracking-[0.1em]">SSC-OS 2.5</span>
+                  <span className="text-[8px] sm:text-[9px] font-technical text-[#0B1B33]/30 tracking-[0.1em]">SSC-OS 2.5</span>
                 </div>
               </div>
             </motion.div>
