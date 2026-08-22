@@ -155,8 +155,8 @@ export const Navbar = () => {
                 <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
                   <Link
                     to={link.href}
-                    className={`relative text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.1em] lg:tracking-[0.15em] transition-all py-2 whitespace-nowrap ${
-                      isActive ? "text-[#0B1B33]" : "text-[#0B1B33]/60 hover:text-[#0B1B33]"
+                    className={`relative text-[11px] lg:text-[12px] font-technical font-bold tracking-[0.12em] lg:tracking-[0.18em] transition-all py-2 whitespace-nowrap ${
+                      isActive ? "text-[#0B1B33]" : "text-[#0B1B33]/70 hover:text-[#0B1B33]"
                     }`}
                   >
                     {link.name}
