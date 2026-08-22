@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
@@ -31,20 +31,20 @@ export const Navbar = () => {
     { name: "CONTACT", href: "/contact", icon: 4 },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0, y: -20 },
     visible: { 
       opacity: 1, 
       y: 0,
       transition: { 
         duration: 0.6, 
-        ease: [0.22, 1, 0.36, 1],
-        staggerChildren: 0.1
+        ease: [0.22, 1, 0.36, 1] as any,
+        staggerChildren: 0.08
       }
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: -10 },
     visible: { 
       opacity: 1, 
@@ -128,7 +128,7 @@ export const Navbar = () => {
         <div className="flex items-center gap-4 xl:gap-10 relative z-10">
           {/* Desktop/Tablet Navigation Links */}
           <div className="hidden md:flex items-center gap-5 lg:gap-8 xl:gap-10">
-            {navLinks.map((link, i) => {
+            {navLinks.map((link) => {
               const isActive = location.pathname === link.href;
               return (
                 <motion.div key={link.name} variants={itemVariants}>
@@ -228,7 +228,7 @@ export const Navbar = () => {
               initial={{ opacity: 0, scale: 0.98, y: 10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.98, y: 10 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] as any }}
               className="absolute top-[76px] sm:top-[90px] left-0 right-0 z-[110] 
                          bg-white rounded-2xl overflow-hidden shadow-2xl border border-black/5
                          flex flex-col"
