@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AboutSection } from "@/components/AboutSection";
 import { AboutHero } from "@/components/AboutHero";
+import { AboutBusinessCards } from "@/components/AboutBusinessCards";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { IndustrialNetwork } from "@/components/IndustrialNetwork";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
