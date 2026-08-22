@@ -154,7 +154,7 @@ const MetalCard = ({
             <h4 className="text-[#C5A059] text-[9px] xs:text-[10px] sm:text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-3 sm:mb-5 border-b border-[#C5A059]/20 pb-1 sm:pb-2">
               {title}
             </h4>
-            <p className="text-white/70 text-[14px] lg:text-[15px] leading-relaxed font-medium">
+            <p className="text-white/70 text-[11px] xs:text-[13px] sm:text-[14px] lg:text-[15px] leading-relaxed font-medium">
               {description}
             </p>
           </div>
