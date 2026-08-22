@@ -173,10 +173,10 @@ export const Navbar = () => {
             </Link>
           </motion.div>
 
-          {/* Custom Machined Gold Menu Trigger */}
+          {/* Custom Machined Gold Menu Trigger - Mobile Only */}
           <motion.button
             variants={itemVariants}
-            className="relative z-[120] group outline-none"
+            className="md:hidden relative z-[120] group outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
