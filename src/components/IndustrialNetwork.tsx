@@ -90,16 +90,18 @@ export const IndustrialNetwork = () => {
   const [activeNode, setActiveNode] = useState<string | null>(null);
 
   return (
-    <section id="locations" className="relative py-32 lg:py-48 bg-[#050A14] overflow-hidden">
+    <section id="locations" className="relative py-24 lg:py-32 bg-[#0B1B33] overflow-hidden">
       {/* Background Engineering Grid */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.03]" 
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-ssc-gold/20" />
+        <div className="absolute inset-0 opacity-[0.05]" 
              style={{ 
                backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', 
-               backgroundSize: '80px 80px' 
+               backgroundSize: '60px 60px' 
              }} />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(22,32,52,0.8)_0%,rgba(5,10,20,1)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.02)_0%,rgba(11,27,51,1)_100%)]" />
       </div>
+
 
       <div className="container-wide relative z-10 px-6">
         <div className="max-w-[1280px] mx-auto">

@@ -319,20 +319,22 @@ export const AboutSection = () => {
     <section
       id="about-timeline"
       ref={sectionRef}
-      className="relative py-28 lg:py-44 bg-[#050A14] overflow-hidden"
+      className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden"
     >
       {/* Architectural background */}
       <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-white/5" />
         <div
-          className="absolute inset-0 opacity-[0.035]"
+          className="absolute inset-0 opacity-[0.02]"
           style={{
             backgroundImage:
               'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
-            backgroundSize: '110px 110px',
+            backgroundSize: '80px 80px',
           }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(22,32,52,0.9)_0%,rgba(5,10,20,1)_75%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(22,32,52,0.4)_0%,rgba(5,10,20,1)_85%)]" />
       </div>
+
 
       <div className="container-wide relative z-10">
         <div className="text-center mb-10 sm:mb-16 lg:mb-36 px-4">

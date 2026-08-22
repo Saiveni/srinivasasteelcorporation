@@ -64,7 +64,7 @@ export const AboutHero = () => {
   };
 
   return (
-    <section className="relative min-h-[80vh] lg:min-h-[90vh] bg-[#0A111F] flex items-center overflow-hidden pt-20 lg:pt-24 pb-12 lg:pb-20">
+    <section className="relative min-h-[70vh] lg:min-h-[85vh] bg-[#0A111F] flex items-center overflow-hidden pt-24 lg:pt-32 pb-12 lg:pb-16">
       {/* Sophisticated Industrial Background */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Subtle Engineering Grid */}
@@ -197,9 +197,10 @@ export const AboutHero = () => {
 
       {/* Subtle architectural curve transition */}
       <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform translate-y-[1px]">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[50px] lg:h-[80px] fill-[#050A14]">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] lg:h-[60px] fill-[#F7F7F4]">
           <path d="M0,120 C300,100 900,100 1200,120 L1200,120 L0,120 Z" />
         </svg>
+
       </div>
     </section>
   );
