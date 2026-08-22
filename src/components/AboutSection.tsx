@@ -107,22 +107,25 @@ const MetalCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -60 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : 60 }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ 
         delay: delay + 0.6, 
         duration: 1.2, 
         ease: [0.16, 1, 0.3, 1],
-        y: { type: "spring", stiffness: 40, damping: 15 } // Settling movement
+        y: { type: "spring", stiffness: 40, damping: 15 },
+        x: { type: "spring", stiffness: 40, damping: 15 }
       }}
       className={`absolute ${
-        isH ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' : 'left-[calc(50%+115px)] -translate-y-1/2 w-[240px]'
+        isH 
+          ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' 
+          : 'left-[calc(50%+80px)] -translate-y-1/2 w-[240px]'
       }`}
     >
       <div className="relative group">
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-8 border border-[#c5a059]/30 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-6 lg:p-8 border border-[#c5a059]/30 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
@@ -130,16 +133,16 @@ const MetalCard = ({
           <div className="absolute inset-[1px] border border-white/5 rounded-[17px] pointer-events-none" />
           
           <div className="relative z-10">
-            <span className="block text-[#C5A059] text-[12px] font-technical font-bold tracking-widest mb-4 opacity-70">
+            <span className="block text-[#C5A059] text-[12px] font-technical font-bold tracking-widest mb-3 lg:mb-4 opacity-70">
               {number}
             </span>
-            <h3 className="text-white text-[28px] font-heading font-bold mb-2 tracking-tight">
+            <h3 className="text-white text-[24px] lg:text-[28px] font-heading font-bold mb-2 tracking-tight">
               {year}
             </h3>
-            <h4 className="text-[#C5A059] text-[13px] font-technical font-bold uppercase tracking-wider mb-5">
+            <h4 className="text-[#C5A059] text-[12px] lg:text-[13px] font-technical font-bold uppercase tracking-wider mb-4 lg:mb-5">
               {title}
             </h4>
-            <p className="text-white/60 text-[15px] leading-relaxed font-medium">
+            <p className="text-white/60 text-[14px] lg:text-[15px] leading-relaxed font-medium">
               {description}
             </p>
           </div>
