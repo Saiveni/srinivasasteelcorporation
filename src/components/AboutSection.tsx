@@ -107,22 +107,25 @@ const MetalCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: -60 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : 60 }}
+      whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ 
         delay: delay + 0.6, 
         duration: 1.2, 
         ease: [0.16, 1, 0.3, 1],
-        y: { type: "spring", stiffness: 40, damping: 15 } // Settling movement
+        y: { type: "spring", stiffness: 40, damping: 15 },
+        x: { type: "spring", stiffness: 40, damping: 15 }
       }}
       className={`absolute ${
-        isH ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' : 'left-[calc(50%+115px)] -translate-y-1/2 w-[240px]'
+        isH 
+          ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' 
+          : 'left-[calc(50%+80px)] -translate-y-1/2 w-[240px]'
       }`}
     >
       <div className="relative group">
         {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-8 border border-[#c5a059]/30 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-6 lg:p-8 border border-[#c5a059]/30 shadow-[0_30px_60px_rgba(0,0,0,0.9),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
           {/* Metal Texture Overlay */}
           <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
@@ -130,16 +133,16 @@ const MetalCard = ({
           <div className="absolute inset-[1px] border border-white/5 rounded-[17px] pointer-events-none" />
           
           <div className="relative z-10">
-            <span className="block text-[#C5A059] text-[12px] font-technical font-bold tracking-widest mb-4 opacity-70">
+            <span className="block text-[#C5A059] text-[12px] font-technical font-bold tracking-widest mb-3 lg:mb-4 opacity-70">
               {number}
             </span>
-            <h3 className="text-white text-[28px] font-heading font-bold mb-2 tracking-tight">
+            <h3 className="text-white text-[24px] lg:text-[28px] font-heading font-bold mb-2 tracking-tight">
               {year}
             </h3>
-            <h4 className="text-[#C5A059] text-[13px] font-technical font-bold uppercase tracking-wider mb-5">
+            <h4 className="text-[#C5A059] text-[12px] lg:text-[13px] font-technical font-bold uppercase tracking-wider mb-4 lg:mb-5">
               {title}
             </h4>
-            <p className="text-white/60 text-[15px] leading-relaxed font-medium">
+            <p className="text-white/60 text-[14px] lg:text-[15px] leading-relaxed font-medium">
               {description}
             </p>
           </div>
@@ -164,14 +167,18 @@ const ClampHook = ({
   orientation = 'horizontal',
   delay = 0,
   cardData,
+  offsetSide = 'right',
 }: {
   position: string;
   orientation?: 'horizontal' | 'vertical';
   delay?: number;
   cardData: { number: string; year: string; title: string; description: string };
+  offsetSide?: 'left' | 'right';
 }) => {
 
   const isH = orientation === 'horizontal';
+
+  const isLeft = !isH && offsetSide === 'left';
 
   return (
     <div
@@ -180,7 +187,7 @@ const ClampHook = ({
     >
       {/* Clamp & Hook Structure */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: isH ? -10 : 0, x: isH ? 0 : -10 }}
+        initial={{ opacity: 0, scale: 0.9, y: isH ? -10 : 0, x: isH ? 0 : isLeft ? 10 : -10 }}
         whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ delay: delay + 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
@@ -188,7 +195,7 @@ const ClampHook = ({
       >
         {/* The Clamp (Collar) */}
         <div
-          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[68px] h-[48px]'} rounded-[4px] shadow-[0_15px_35px_rgba(0,0,0,0.7)] overflow-hidden`}
+          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[82px] h-[48px]'} rounded-[4px] shadow-[0_15px_35px_rgba(0,0,0,0.7)] overflow-hidden`}
           style={{
             background: isH
               ? 'linear-gradient(to bottom, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)'
@@ -209,20 +216,37 @@ const ClampHook = ({
         {/* The Connection Hook */}
         <motion.div 
           initial={{ height: 0, width: 0, opacity: 0 }}
-          whileInView={isH ? { height: '55px', opacity: 1 } : { width: '55px', opacity: 1 }}
+          whileInView={
+            isH 
+              ? { height: '55px', opacity: 1 } 
+              : { width: '55px', opacity: 1, x: isLeft ? -55 : 0 }
+          }
           viewport={{ once: true, margin: "-100px" }}
           transition={{ delay: delay + 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className={`absolute ${isH ? 'left-1/2 -bottom-[55px] -translate-x-1/2 flex flex-col items-center' : 'top-1/2 -right-[55px] -translate-y-1/2 flex items-center'}`}
+          className={`absolute ${
+            isH 
+              ? 'left-1/2 -bottom-[55px] -translate-x-1/2 flex flex-col items-center' 
+              : isLeft
+                ? 'top-1/2 left-0 -translate-y-1/2 flex items-center flex-row-reverse'
+                : 'top-1/2 right-0 -translate-y-1/2 flex items-center'
+          }`}
         >
           <div
             className={`${isH ? 'w-[8px] h-[35px]' : 'h-[8px] w-[35px]'} shadow-[4px_0_10px_rgba(0,0,0,0.4)]`}
             style={{
-              background: 'linear-gradient(90deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%)',
+              background: isH 
+                ? 'linear-gradient(90deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%)'
+                : 'linear-gradient(0deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%)',
             }}
           />
           <div
-            className={`${isH ? 'w-[24px] h-[24px] rounded-full border-[7px] border-t-transparent -mt-2' : 'w-[24px] h-[24px] rounded-full border-[7px] border-l-transparent -ml-2'} shadow-[2px_2px_12px_rgba(0,0,0,0.6)]`}
-            style={{ borderColor: '#c5a059', borderTopColor: 'transparent', borderLeftColor: isH ? undefined : 'transparent' }}
+            className={`${isH ? 'w-[24px] h-[24px] rounded-full border-[7px] border-t-transparent -mt-2' : `w-[24px] h-[24px] rounded-full border-[7px] ${isLeft ? 'border-r-transparent -mr-2' : 'border-l-transparent -ml-2'}`} shadow-[2px_2px_12px_rgba(0,0,0,0.6)]`}
+            style={{ 
+              borderColor: '#c5a059', 
+              borderTopColor: isH ? 'transparent' : undefined, 
+              borderLeftColor: isH ? undefined : isLeft ? undefined : 'transparent',
+              borderRightColor: isLeft ? 'transparent' : undefined
+            }}
           />
         </motion.div>
 
@@ -230,11 +254,13 @@ const ClampHook = ({
       </motion.div>
 
       {/* The Information Card */}
-      <MetalCard
-        {...cardData}
-        delay={delay}
-        orientation={orientation}
-      />
+      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+80px)]' : '') : ''}>
+        <MetalCard
+          {...cardData}
+          delay={delay}
+          orientation={orientation}
+        />
+      </div>
     </div>
   );
 };
@@ -342,22 +368,21 @@ export const AboutSection = () => {
           </div>
 
           {/* Mobile / tablet: vertical rod */}
-          <div className="lg:hidden h-[1300px] overflow-visible relative">
+          <div className="lg:hidden h-[1800px] sm:h-[1500px] overflow-visible relative flex justify-center">
             <motion.div
               initial={{ height: 0, opacity: 0 }}
               whileInView={{ height: '100%', opacity: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              className="h-[1300px] relative"
+              className="h-full relative"
             >
               <SteelRod orientation="vertical" />
               
-              {/* Clamps & Cards placed along the rod */}
-              <ClampHook position="10%" orientation="vertical" delay={0.8} cardData={milestones[0]!} />
-              <ClampHook position="35%" orientation="vertical" delay={1.1} cardData={milestones[1]!} />
-              <ClampHook position="60%" orientation="vertical" delay={1.4} cardData={milestones[2]!} />
-              <ClampHook position="85%" orientation="vertical" delay={1.7} cardData={milestones[3]!} />
-
+              {/* Clamps & Cards placed along the rod with alternating visual rhythm */}
+              <ClampHook position="8%" orientation="vertical" delay={0.8} cardData={milestones[0]!} offsetSide="right" />
+              <ClampHook position="32%" orientation="vertical" delay={1.1} cardData={milestones[1]!} offsetSide="left" />
+              <ClampHook position="56%" orientation="vertical" delay={1.4} cardData={milestones[2]!} offsetSide="right" />
+              <ClampHook position="80%" orientation="vertical" delay={1.7} cardData={milestones[3]!} offsetSide="left" />
             </motion.div>
           </div>
         </div>
