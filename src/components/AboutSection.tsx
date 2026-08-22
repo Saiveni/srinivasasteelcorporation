@@ -275,7 +275,7 @@ const ClampHook = ({
       </motion.div>
 
       {/* The Information Card */}
-      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+80px)]' : '') : ''}>
+      <div className={!isH ? (isLeft ? '-translate-x-[calc(100%+65px)] sm:-translate-x-[calc(100%+80px)]' : '') : ''}>
         <MetalCard
           {...cardData}
           delay={delay}
