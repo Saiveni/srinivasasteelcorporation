@@ -25,11 +25,11 @@ export const Navbar = () => {
   }, [location.pathname, location.searchStr]);
 
   const navLinks = [
-    { name: "HOME", href: "/", icon: Layers },
-    { name: "ABOUT", href: "/about", icon: Shield },
-    { name: "PRODUCTS", href: "/products", icon: Box },
-    { name: "GALLERY", href: "/gallery", icon: Zap },
-    { name: "CONTACT", href: "/contact", icon: Settings },
+    { name: "HOME", href: "/", icon: 0 },
+    { name: "ABOUT", href: "/about", icon: 1 },
+    { name: "PRODUCTS", href: "/products", icon: 2 },
+    { name: "GALLERY", href: "/gallery", icon: 3 },
+    { name: "CONTACT", href: "/contact", icon: 4 },
   ];
 
   return (
