@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone } from "lucide-react";
+import { ArrowRight, Menu, X, Home, Info, Package, Image as ImageIcon, Phone, Settings, Shield, Zap, Box, Layers } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 import sscLogo3D from "@/assets/ssc-logo-3d.png.asset.json";
@@ -24,11 +24,11 @@ export const Navbar = () => {
   }, [location.pathname, location.searchStr]);
 
   const navLinks = [
-    { name: "HOME", href: "/", icon: Home },
-    { name: "ABOUT", href: "/about", icon: Info },
-    { name: "PRODUCTS", href: "/products", icon: Package },
-    { name: "GALLERY", href: "/gallery", icon: ImageIcon },
-    { name: "CONTACT", href: "/contact", icon: Phone },
+    { name: "HOME", href: "/", icon: Layers },
+    { name: "ABOUT", href: "/about", icon: Shield },
+    { name: "PRODUCTS", href: "/products", icon: Box },
+    { name: "GALLERY", href: "/gallery", icon: Zap },
+    { name: "CONTACT", href: "/contact", icon: Settings },
   ];
 
   return (
@@ -101,12 +101,10 @@ export const Navbar = () => {
         >
           <div className={`
             relative w-12 h-12 rounded-lg flex flex-col items-center justify-center gap-[5px]
-            bg-[#0B1B33] shadow-[0_4px_16px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.1)]
-            border border-[#C5A059]/40 transition-all duration-300
+            transition-all duration-300
             ${isOpen ? 'rotate-90' : 'hover:scale-105 active:scale-95'}
           `}>
-            {/* Structural Detail Line */}
-            <div className="absolute top-[6px] left-3 right-3 h-[1px] bg-[#C5A059]/20" />
+            {/* Removal of structural detail line for cleaner look */}
             
             <AnimatePresence mode="wait">
               {!isOpen ? (
@@ -117,9 +115,9 @@ export const Navbar = () => {
                   exit={{ opacity: 0, scale: 0.8 }}
                   className="flex flex-col gap-[5px]"
                 >
-                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
-                  <span className="w-4 h-[1.5px] bg-white rounded-full block" />
-                  <span className="w-5 h-[1.5px] bg-white rounded-full block" />
+                  <span className="w-5 h-[1.5px] bg-[#0B1B33] rounded-full block" />
+                  <span className="w-4 h-[1.5px] bg-[#0B1B33] rounded-full block" />
+                  <span className="w-5 h-[1.5px] bg-[#0B1B33] rounded-full block" />
                 </motion.div>
               ) : (
                 <motion.div
@@ -128,13 +126,12 @@ export const Navbar = () => {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.8 }}
                 >
-                  <X className="text-white" size={20} strokeWidth={2} />
+                  <X className="text-[#0B1B33]" size={20} strokeWidth={2} />
                 </motion.div>
               )}
             </AnimatePresence>
             
-            {/* Physical Depth Layer */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.03] to-transparent rounded-lg pointer-events-none" />
+            {/* Removal of physical depth layer for cleaner look */}
           </div>
         </button>
       </div>
@@ -224,9 +221,9 @@ export const Navbar = () => {
                           onClick={() => setIsOpen(false)}
                           className="group flex items-center gap-4 py-0.5"
                         >
-                          <div className="w-8 h-8 rounded bg-[#0B1B33]/5 flex items-center justify-center 
-                                        border border-[#0B1B33]/5 group-hover:border-[#C5A059]/30 transition-all shadow-[inset_0_1px_2px_rgba(0,0,0,0.02)]">
-                            <Icon size={14} className="text-[#C5A059]" strokeWidth={2} />
+                          <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-[#E8E8E8] to-[#C0C0C0] flex items-center justify-center 
+                                        border border-[#0B1B33]/20 group-hover:border-[#C5A059]/50 transition-all shadow-[0_2px_4px_rgba(0,0,0,0.1),inset_0_1px_0_rgba(255,255,255,0.8)]">
+                            <Icon size={14} className="text-[#0B1B33]" strokeWidth={2.5} />
                           </div>
                           <span className="text-[1.15rem] font-heading font-semibold text-[#0B1B33] uppercase tracking-[0.03em] group-hover:text-[#C5A059] transition-colors">
                             {link.name}
