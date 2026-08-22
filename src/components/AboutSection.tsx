@@ -109,7 +109,7 @@ const MetalCard = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : isLeft ? -100 : 100 }}
+      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : isLeft ? -50 : 50 }}
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ 
@@ -125,10 +125,11 @@ const MetalCard = ({
           : 'top-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
       }`}
       style={!isH ? {
-        left: '50%',
-        transform: isLeft 
-          ? 'translate(calc(-100% - 45px), -50%)' 
-          : 'translate(45px, -50%)'
+        left: isLeft ? 'auto' : '50%',
+        right: isLeft ? '50%' : 'auto',
+        transform: 'translateY(-50%)',
+        marginRight: isLeft ? '45px' : '0',
+        marginLeft: isLeft ? '0' : '45px',
       } : {}}
     >
       <div className="relative group">
@@ -259,7 +260,7 @@ const ClampHook = ({
           {/* Decorative end cap instead of hook loop per user request */}
           {!isH && (
             <div 
-              className={`w-[6px] h-[14px] bg-[#f4d088] shadow-lg z-20 ${isLeft ? '-mr-[2px]' : '-ml-[2px]'}`}
+              className={`w-[8px] h-[16px] bg-[#f4d088] shadow-[0_0_8px_rgba(197,160,89,0.5)] z-20 ${isLeft ? '-mr-[1px]' : '-ml-[1px]'}`}
             />
           )}
         </motion.div>
@@ -389,7 +390,7 @@ export const AboutSection = () => {
               whileInView={{ height: '100%', opacity: 1 }}
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 1.2, ease: "easeOut" }}
-              className="h-[1200px] sm:h-[1300px] relative"
+              className="h-[1400px] sm:h-[1500px] relative"
             >
               <SteelRod orientation="vertical" />
               
