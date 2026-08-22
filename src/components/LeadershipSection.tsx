@@ -112,13 +112,20 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-32 lg:py-48 bg-[#050A14] overflow-hidden">
+    <section id="leadership" className="relative py-20 lg:py-24 bg-[#0C121E] overflow-hidden">
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/[0.03]" />
+        {/* Subtle vertical steel structures */}
+        <div className="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+        <div className="absolute inset-y-0 right-0 w-[1px] bg-gradient-to-b from-transparent via-white/5 to-transparent" />
+        
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
         <div className="absolute inset-0 opacity-[0.02]" 
-             style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+             style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
       </div>
+
+
 
       {/* Horizontal Steel Rebar Element (Foundation) */}
       <div className="absolute top-1/2 left-0 w-full h-[2px] -translate-y-1/2 overflow-hidden opacity-20 hidden lg:block">
@@ -162,7 +169,7 @@ export const LeadershipSection = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 1.5 }}
-          className="text-center mt-20 lg:mt-32"
+          className="text-center mt-12 lg:mt-20"
         >
           <span className="text-white/20 text-[10px] font-technical font-bold tracking-[0.8em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION

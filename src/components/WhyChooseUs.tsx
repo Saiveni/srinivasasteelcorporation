@@ -75,12 +75,18 @@ const TrustPoint = ({ point, index }: { point: typeof trustPoints[0], index: num
 
 export const WhyChooseUs = () => {
   return (
-    <section id="why-ssc" className="relative py-32 lg:py-52 bg-[#050A14] overflow-hidden">
+    <section id="why-ssc" className="relative py-20 lg:py-24 bg-[#E8EBEF] overflow-hidden">
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
+        <div className="absolute inset-0 opacity-[0.08] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
         <div className="absolute inset-0 opacity-[0.02]" 
-             style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '100px 100px' }} />
+             style={{ backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+        {/* Soft metallic gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/20 to-transparent" />
+
       </div>
+
 
       <div className="container-wide relative z-10 px-6">
         <div className="max-w-[1200px] mx-auto">
@@ -95,10 +101,10 @@ export const WhyChooseUs = () => {
               <span className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
                 The Advantage
               </span>
-              <h2 className="text-[38px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.9]">
+              <h2 className="text-[38px] lg:text-[72px] text-ssc-navy font-heading font-extrabold tracking-tighter uppercase italic leading-[0.9]">
                 WHY BUILD WITH <span className="text-ssc-gold">SRINIVASA STEEL?</span>
               </h2>
-              <p className="text-white/60 text-base lg:text-xl leading-relaxed font-medium mt-8 max-w-2xl mx-auto">
+              <p className="text-ssc-navy/60 text-base lg:text-xl leading-relaxed font-medium mt-8 max-w-2xl mx-auto">
                 A dependable steel supply partner built around quality, relationships and consistent service.
               </p>
             </motion.div>
@@ -127,7 +133,7 @@ export const WhyChooseUs = () => {
                           />
                         ))}
                       </div>
-                      <span className="text-ssc-gold text-4xl font-heading font-black italic tracking-tighter z-10">SSC</span>
+                      <span className="text-ssc-gold text-4xl font-heading font-black italic tracking-tighter z-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]">SSC</span>
                    </div>
                 </div>
                 
@@ -161,11 +167,12 @@ export const WhyChooseUs = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 1, duration: 1.2 }}
-            className="mt-32 text-center"
+            transition={{ delay: 0.8, duration: 1 }}
+            className="mt-20 lg:mt-24 text-center"
           >
-            <div className="inline-block p-[1px] bg-gradient-to-r from-transparent via-ssc-gold/40 to-transparent w-full max-w-4xl mb-16" />
-            <h3 className="text-white text-3xl lg:text-5xl font-heading font-extrabold italic uppercase mb-10 tracking-tighter">
+
+            <div className="inline-block p-[1px] bg-gradient-to-r from-transparent via-ssc-navy/20 to-transparent w-full max-w-4xl mb-16" />
+            <h3 className="text-ssc-navy text-3xl lg:text-5xl font-heading font-extrabold italic uppercase mb-10 tracking-tighter">
               READY TO <span className="text-ssc-gold">STRENGTHEN</span> YOUR PROJECT?
             </h3>
             <button className="bg-ssc-gold text-ssc-navy px-12 py-5 rounded-full font-heading font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all duration-500 shadow-[0_20px_40px_rgba(197,160,89,0.2)] hover:shadow-[0_25px_50px_rgba(197,160,89,0.3)] hover:scale-105">
