@@ -148,10 +148,10 @@ const MetalCard = ({
               <div className="w-2 h-2 border-t border-r border-[#C5A059]/30" />
             </div>
             
-            <h3 className="text-white text-[26px] lg:text-[32px] font-heading font-extrabold mb-1 tracking-tight">
+            <h3 className="text-white text-[18px] xs:text-[22px] sm:text-[26px] lg:text-[32px] font-heading font-extrabold mb-0.5 sm:mb-1 tracking-tight">
               {year}
             </h3>
-            <h4 className="text-[#C5A059] text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-5 border-b border-[#C5A059]/20 pb-2">
+            <h4 className="text-[#C5A059] text-[9px] xs:text-[10px] sm:text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-3 sm:mb-5 border-b border-[#C5A059]/20 pb-1 sm:pb-2">
               {title}
             </h4>
             <p className="text-white/70 text-[14px] lg:text-[15px] leading-relaxed font-medium">
