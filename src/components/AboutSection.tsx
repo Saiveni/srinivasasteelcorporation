@@ -362,7 +362,7 @@ export const AboutSection = () => {
         </div>
 
         {/* THE STEEL ROD + CLAMPS + CARDS */}
-        <div className="relative flex justify-center pb-80 lg:pb-[500px]">
+        <div className="relative flex justify-center pb-20 lg:pb-[500px]">
           {/* Desktop: horizontal rod */}
           <div className="hidden lg:block max-w-[1300px] w-full overflow-visible relative">
             <motion.div
