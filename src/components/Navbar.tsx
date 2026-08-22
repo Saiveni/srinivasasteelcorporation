@@ -4,7 +4,7 @@ import { motion, AnimatePresence, Variants } from "framer-motion";
 import { ArrowRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
-import steelIconsAsset from "@/assets/steel-menu-icons.png.asset.json";
+import steelIconsAssetV2 from "@/assets/steel-nav-icons-v2.png.asset.json";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -239,10 +239,10 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[110] bg-white flex flex-col"
+            className="fixed inset-0 z-[110] bg-[#0B1B33] flex flex-col"
           >
             {/* Overlay Header Mirror for Continuity */}
-            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-[#E8EAEF] relative border-b border-black/5 shadow-sm">
+            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-[#E8EAEF] relative border-b border-[#0B1B33]/20 shadow-lg shrink-0">
               {/* Surface Mirroring Primary Header */}
               <div 
                 className="absolute inset-0 opacity-[0.35] pointer-events-none z-[1]" 
@@ -274,19 +274,33 @@ export const Navbar = () => {
               </button>
             </div>
 
-            {/* Content Area with Light Steel Grid Background */}
-            <div className="flex-1 relative overflow-hidden bg-white">
+            {/* Content Area with Deep Navy / Steel Blue Background */}
+            <div className="flex-1 relative overflow-hidden bg-[#0B1B33]">
+              {/* Engineering Grid Lines */}
               <div 
-                className="absolute inset-0 opacity-[0.04] pointer-events-none" 
+                className="absolute inset-0 opacity-[0.08] pointer-events-none z-[1]" 
                 style={{ 
-                  backgroundImage: `url('https://www.transparenttextures.com/patterns/graphy.png')`,
-                  backgroundSize: '240px 240px'
+                  backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.2) 1px, transparent 0)`,
+                  backgroundSize: '32px 32px'
                 }} 
               />
               
+              {/* Subtle TMT/Rebar Texture */}
+              <div 
+                className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none grayscale z-[2]"
+                style={{
+                  backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
+
+              {/* Restrained Gold Accents */}
+              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-[#C5A059]/30 to-transparent z-[3]" />
+              
               {/* Navigation Items - Sequential Reveal */}
               <div className="relative z-10 h-full flex flex-col py-8 px-6 sm:px-12 overflow-y-auto">
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-3">
                   {navLinks.map((link, i) => (
                     <motion.div
                       key={link.name}
@@ -297,20 +311,20 @@ export const Navbar = () => {
                       <Link
                         to={link.href}
                         onClick={() => setIsOpen(false)}
-                        className="group flex items-center gap-6 py-5 border-b border-black/[0.03]"
+                        className="group flex items-center gap-6 py-4 border-b border-white/[0.05]"
                       >
-                        {/* 3D Circular Animated Icons */}
-                        <div className="w-13 h-13 rounded-full bg-gradient-to-br from-[#F5F6F8] to-[#D8DCE3] border border-black/5 shadow-[0_4px_10px_rgba(0,0,0,0.05),inset_0_2px_4px_rgba(255,255,255,1)] flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform duration-300">
+                        {/* 3D Realistic Metallic Steel Icons - Circular Form */}
+                        <div className="w-14 h-14 rounded-full border border-white/10 bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center overflow-hidden shrink-0 shadow-[0_4px_15px_rgba(0,0,0,0.3),inset_0_2px_4px_rgba(255,255,255,0.05)] group-hover:border-[#C5A059]/40 transition-all duration-300">
                           <div 
-                            className="w-9 h-9 scale-[1.2] drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]"
+                            className="w-10 h-10 scale-[1.3] drop-shadow-[0_4px_8px_rgba(0,0,0,0.4)]"
                             style={{
-                              backgroundImage: `url('${steelIconsAsset.url}')`,
+                              backgroundImage: `url('${steelIconsAssetV2.url}')`,
                               backgroundSize: '100% 500%',
                               backgroundPosition: `0 ${link.icon * 25}%`,
                             }}
                           />
                         </div>
-                        <span className="text-[1.3rem] sm:text-[1.6rem] font-heading font-black text-[#0B1B33] uppercase tracking-[0.05em] group-hover:text-[#C5A059] transition-colors duration-300">
+                        <span className="text-[1.4rem] sm:text-[1.7rem] font-heading font-black text-white uppercase tracking-[0.08em] group-hover:text-[#C5A059] transition-colors duration-300">
                           {link.name}
                         </span>
                       </Link>
@@ -318,7 +332,7 @@ export const Navbar = () => {
                   ))}
                 </div>
 
-                {/* Bottom CTA for Mobile Menu */}
+                {/* Bottom CTA - GET A QUOTE */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -326,10 +340,10 @@ export const Navbar = () => {
                   className="mt-12 mb-10"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[60px] text-[13px] tracking-[0.2em] font-technical font-black 
-                                     bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-xl shadow-[0_10px_25px_rgba(11,27,51,0.2)] group transition-all">
+                    <Button className="w-full h-[64px] text-[14px] tracking-[0.25em] font-technical font-black 
+                                     bg-[#C5A059] text-[#0B1B33] hover:bg-[#D6B570] rounded-xl shadow-[0_12px_30px_rgba(0,0,0,0.4)] group transition-all border border-[#C5A059]/20">
                       GET A QUOTE 
-                      <ArrowRight size={20} className="ml-3 group-hover:translate-x-1.5 transition-transform" />
+                      <ArrowRight size={22} className="ml-3 group-hover:translate-x-1.5 transition-transform" />
                     </Button>
                   </Link>
                 </motion.div>
