@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AboutSection } from "@/components/AboutSection";
+import { AboutHero } from "@/components/AboutHero";
 import { motion } from 'framer-motion';
 import { MapPin, ArrowUpRight } from 'lucide-react';
 
@@ -37,7 +38,8 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <div className="pt-[80px]">
+    <div className="bg-[#050A14]">
+      <AboutHero />
       <AboutSection />
       
       {/* Inline Locations Section */}

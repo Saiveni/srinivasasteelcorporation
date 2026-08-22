@@ -317,7 +317,7 @@ export const AboutSection = () => {
 
   return (
     <section
-      id="about"
+      id="about-timeline"
       ref={sectionRef}
       className="relative py-28 lg:py-44 bg-[#050A14] overflow-hidden"
     >
