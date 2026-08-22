@@ -91,7 +91,7 @@ export const HeroSection = () => {
       </div>
 
       <div className="container-wide relative z-10 h-full">
-        <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full pt-[80px] lg:pt-0">
+        <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full pt-[96px] lg:pt-0">
           
           {/* Content Area: 46% Width on Desktop, Full Width on Mobile */}
           <div className="w-full lg:w-[46%] flex flex-col justify-center py-20 sm:py-24 lg:py-0 z-30 lg:pl-16 relative h-full">

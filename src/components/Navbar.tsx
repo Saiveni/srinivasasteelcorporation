@@ -69,17 +69,17 @@ export const Navbar = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}
-      className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-0"
+      className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-4"
     >
-      {/* Premium Engineered Steel Header Panel */}
+      {/* Premium Engineered Steel Header Panel - Unified Global Design */}
       <div className={`
-        relative mx-auto w-full md:max-w-none flex items-center justify-between px-4 sm:px-8 xl:px-12
+        relative mx-auto w-full md:max-w-[95%] lg:max-w-[1400px] flex items-center justify-between px-4 sm:px-8
         transition-all duration-500 ease-in-out
         ${scrolled 
-          ? "h-[62px] sm:h-[72px] md:h-[76px] shadow-[0_8px_30px_rgba(0,0,0,0.2)]" 
-          : "h-[68px] sm:h-[78px] md:h-[82px] shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+          ? "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]" 
+          : "h-[68px] sm:h-[74px] md:h-[78px] shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
         }
-        rounded-2xl md:rounded-none overflow-hidden border border-white/40 md:border-none md:border-b md:border-white/10
+        rounded-2xl overflow-hidden border border-white/40
       `}>
         {/* Brushed Silver / Aluminium Surface */}
         <div className="absolute inset-0 bg-[#E8EAEF]" />
@@ -94,9 +94,9 @@ export const Navbar = () => {
           }} 
         />
 
-        {/* Integrated TMT Rebar Imagery - Part of Background */}
+        {/* Integrated TMT Rebar Imagery - Visual Specification */}
         <div 
-          className="absolute inset-0 opacity-[0.09] mix-blend-multiply pointer-events-none grayscale z-[2]"
+          className="absolute inset-0 opacity-[0.12] mix-blend-multiply pointer-events-none grayscale z-[2]"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
             backgroundSize: 'cover',
@@ -106,11 +106,11 @@ export const Navbar = () => {
         />
         
         {/* Premium Highlights & Tonal Depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-black/5 pointer-events-none z-[3]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-black/10 pointer-events-none z-[3]" />
         
         {/* Refined Metallic Bevel Edge */}
-        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-white/90 pointer-events-none z-[4]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/15 pointer-events-none z-[4]" />
+        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-white/95 pointer-events-none z-[4]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1.2px] bg-black/20 pointer-events-none z-[4]" />
 
         {/* Logo & Brand Section */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 py-2">
@@ -123,16 +123,16 @@ export const Navbar = () => {
             }}
             className="flex items-center gap-2 sm:gap-4 relative group shrink-0"
           >
-            <div className="h-8 w-8 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
+            <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               <img
                 src={sscLogo.url}
                 alt="SSC Logo"
-                className="h-full w-full object-contain opacity-95"
+                className="h-full w-full object-contain opacity-95 filter brightness-[0.9]"
               />
             </div>
             
             {/* Metallic Vertical Divider */}
-            <div className="w-[1px] h-6 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
+            <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
 
             <div className="flex flex-col justify-center">
               <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
@@ -155,8 +155,8 @@ export const Navbar = () => {
                 <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
                   <Link
                     to={link.href}
-                    className={`relative text-[10px] lg:text-[11px] font-technical font-bold tracking-[0.1em] lg:tracking-[0.15em] transition-all py-2 whitespace-nowrap ${
-                      isActive ? "text-[#0B1B33]" : "text-[#0B1B33]/60 hover:text-[#0B1B33]"
+                    className={`relative text-[11px] lg:text-[12px] font-technical font-bold tracking-[0.12em] lg:tracking-[0.18em] transition-all py-2 whitespace-nowrap ${
+                      isActive ? "text-[#0B1B33]" : "text-[#0B1B33]/70 hover:text-[#0B1B33]"
                     }`}
                   >
                     {link.name}
@@ -288,14 +288,15 @@ export const Navbar = () => {
                         onClick={() => setIsOpen(false)}
                         className="group flex items-center gap-5 py-3"
                       >
-                        {/* 3D Realistic Metallic Icons - Background removed for direct object visibility */}
+                        {/* 3D Realistic Metallic Icons - Pure Object Visibility */}
                         <div className="w-12 h-12 flex items-center justify-center shrink-0">
                           <div 
-                            className="w-12 h-12 scale-[1.1] drop-shadow-[0_6px_10px_rgba(0,0,0,0.15)]"
+                            className="w-12 h-12 scale-[1.1] drop-shadow-[0_8px_12px_rgba(0,0,0,0.2)]"
                             style={{
                               backgroundImage: `url('${steelIconsAssetV2.url}')`,
                               backgroundSize: '100% 500%',
                               backgroundPosition: `0 ${link.icon * 25}%`,
+                              filter: 'contrast(1.05) brightness(1.02)'
                             }}
                           />
                         </div>
