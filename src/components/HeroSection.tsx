@@ -85,7 +85,7 @@ export const HeroSection = () => {
         <div 
           className="absolute inset-0 z-10" 
           style={{
-            background: 'linear-gradient(180deg, rgba(5,18,35,0.48) 0%, rgba(5,18,35,0.62) 55%, rgba(5,18,35,0.78) 100%)'
+            background: 'linear-gradient(180deg, rgba(5,18,35,0.6) 0%, rgba(5,18,35,0.75) 55%, rgba(5,18,35,0.9) 100%)'
           }} 
         />
       </div>
@@ -113,7 +113,7 @@ export const HeroSection = () => {
               </div>
               
               {/* Headline */}
-              <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[64px] font-heading font-semibold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.03em]">
+              <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[72px] font-heading font-bold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.04em] uppercase italic">
                 <span className="block mb-1">STRONGER STEEL.</span>
                 <span className="block">
                   STRONGER <span className="text-[#C5A059]">TOMORROW.</span>
