@@ -194,7 +194,7 @@ const ClampHook = ({
 
   return (
     <div
-      className="absolute z-20"
+      className="absolute z-20 [--hook-width:65px] sm:[--hook-width:80px]"
       style={isH ? { left: position, top: '50%', transform: 'translateY(-50%)' } : { top: position, left: '50%', transform: 'translateX(-50%)' }}
     >
       {/* Clamp & Hook Structure */}
