@@ -33,7 +33,11 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center bg-[#F7F7F4] transition-all duration-300 h-[80px] border-b border-[#0B1B33]/5 shadow-sm`}
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center transition-all duration-500 ${
+        scrolled 
+          ? "h-[70px] bg-[#F7F7F4]/95 backdrop-blur-md border-b border-[#0B1B33]/10 shadow-lg" 
+          : "h-[80px] bg-[#F7F7F4] border-b border-[#0B1B33]/5"
+      }`}
     >
       <div className="container-wide flex items-center justify-between">
         {/* Logo Section */}
@@ -44,20 +48,20 @@ export const Navbar = () => {
               window.location.reload();
             }
           }}
-          className="flex items-center gap-3 relative z-[100] group"
+          className="flex items-center gap-2.5 sm:gap-3 relative z-[100] group"
         >
-          <div className="h-10 w-10 sm:h-11 sm:w-11 shrink-0">
+          <div className="h-9 w-9 sm:h-11 sm:w-11 shrink-0">
             <img
               src={sscLogo.url}
               alt="SSC Logo"
               className="h-full w-full object-contain filter brightness-0"
             />
           </div>
-          <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-4 h-10 sm:h-11">
-            <span className="text-[15px] sm:text-[17px] font-heading font-bold tracking-[0.05em] text-[#0B1B33] leading-none uppercase">
+          <div className="flex flex-col justify-center border-l border-[#0B1B33]/15 pl-3 sm:pl-4 h-9 sm:h-11">
+            <span className="text-[13px] sm:text-[17px] font-heading font-bold tracking-[0.05em] text-[#0B1B33] leading-none uppercase">
               SRINIVASA <span className="text-[#0B1B33]/90 font-medium">STEEL</span>
             </span>
-            <span className="text-[10px] sm:text-[11px] font-technical font-extrabold tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-1.5 opacity-90">
+            <span className="text-[9px] sm:text-[11px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1 sm:mt-1.5 opacity-90">
               CORPORATION
             </span>
           </div>
@@ -77,13 +81,6 @@ export const Navbar = () => {
                   }`}
                 >
                   {link.name}
-                  {isActive && link.name === "HOME" && (
-                    <motion.div
-                      layoutId="active-nav"
-                      className="absolute bottom-0 left-0 right-0 h-[2px] bg-[#D9A000]"
-                      transition={{ duration: 0.3 }}
-                    />
-                  )}
                 </Link>
               );
             })}
@@ -96,42 +93,99 @@ export const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Premium Mobile Menu Trigger */}
         <button
-          className="lg:hidden text-[#0B1B33] p-4 relative z-[100] min-w-[44px] min-h-[44px] flex items-center justify-center"
+          className="lg:hidden relative z-[100] group outline-none"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          <div className={`
+            relative w-11 h-11 rounded-lg flex flex-col items-center justify-center gap-1.5
+            bg-ssc-navy shadow-[0_4px_12px_rgba(11,27,51,0.3)]
+            border border-ssc-gold/40 transition-all duration-300
+            ${isOpen ? 'rotate-90 scale-95' : 'hover:scale-105'}
+          `}>
+            {/* Subtle Gold Accent Top Line */}
+            <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-ssc-gold/30" />
+            
+            <motion.span 
+              animate={isOpen ? { rotate: 45, y: 7.5 } : { rotate: 0, y: 0 }}
+              className="w-5 h-[1.5px] bg-white rounded-full block"
+            />
+            <motion.span 
+              animate={isOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="w-4 h-[1.5px] bg-white rounded-full block"
+            />
+            <motion.span 
+              animate={isOpen ? { rotate: -45, y: -7.5 } : { rotate: 0, y: 0 }}
+              className="w-5 h-[1.5px] bg-white rounded-full block"
+            />
+            
+            {/* Texture/Depth Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-lg pointer-events-none" />
+          </div>
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-[90] lg:hidden bg-[#F7F7F4] flex flex-col pt-[80px] px-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[90] lg:hidden bg-[#F7F7F4]"
           >
-            <div className="flex flex-col gap-6 py-12 items-center text-center">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-heading font-semibold text-[#0B1B33] uppercase tracking-wide"
-                >
-                  {link.name}
+            {/* Architectural Grid Background for Menu */}
+            <div 
+              className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+              style={{ 
+                backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
+                backgroundSize: '40px 40px'
+              }} 
+            />
+            
+            <div className="flex flex-col h-full justify-center px-10 gap-10">
+              <div className="flex flex-col gap-6">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                  >
+                    <Link
+                      to={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="group flex items-center gap-4"
+                    >
+                      <span className="text-[10px] font-technical font-bold text-ssc-gold tracking-widest opacity-60">0{i + 1}</span>
+                      <span className="text-3xl font-heading font-bold text-ssc-navy uppercase tracking-tighter group-hover:text-ssc-gold transition-colors">
+                        {link.name}
+                      </span>
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
+                  <Button className="w-full h-14 text-sm tracking-[0.2em] font-technical font-bold">
+                    GET A QUOTE
+                  </Button>
                 </Link>
-              ))}
-              <Link to="/contact" search={{ product: "" }} className="w-full" onClick={() => setIsOpen(false)}>
-                <Button className="w-full">
-                  GET A QUOTE
-                </Button>
-              </Link>
+              </motion.div>
+              
+              {/* Industrial Milestone Detail */}
+              <div className="absolute bottom-12 left-10 border-l border-ssc-navy/10 pl-6">
+                <p className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.3em]">
+                  Quality Engineering Since 1994
+                </p>
+              </div>
             </div>
           </motion.div>
         )}
