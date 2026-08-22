@@ -69,37 +69,38 @@ const LocationNode = ({ location, isHovered, onHover, onLeave }: any) => {
 
         {/* Info Panel (Desktop) */}
         <AnimatePresence>
-          {isHovered && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 10 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 10 }}
-              className={`absolute z-[100] w-[300px] bg-[#0C121E]/95 backdrop-blur-xl border border-ssc-gold/30 p-6 rounded-xl shadow-2xl pointer-events-none
-                ${parseFloat(location.coords.x) > 70 ? 'right-16' : 'left-16'}
-                ${parseFloat(location.coords.y) > 70 ? 'bottom-0' : 'top-0'}
-              `}
-            >
-              <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
-              <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="w-1 h-3 bg-ssc-gold" />
-                  <span className="text-ssc-gold text-[9px] font-technical font-black tracking-[0.2em] uppercase">
-                    {location.type}
-                  </span>
-                </div>
-                <h4 className="text-white font-heading font-bold text-lg mb-2 tracking-tight">
-                  {location.city}
-                </h4>
-                <p className="text-white/60 text-xs leading-relaxed mb-4 font-medium italic">
-                  {location.address}
-                </p>
-                <div className="flex items-center gap-2 text-[9px] font-technical font-bold text-ssc-gold/60 uppercase tracking-widest">
-                  COORDINATES: {location.coords.x} / {location.coords.y}
-                </div>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.9, y: 10 }}
+            className={`absolute z-[100] w-[300px] bg-[#0C121E]/95 backdrop-blur-xl border border-ssc-gold/30 p-6 rounded-xl shadow-2xl pointer-events-none
+              ${parseFloat(location.coords.x) > 50 ? '-left-[320px]' : 'left-16'}
+              ${parseFloat(location.coords.y) > 70 ? 'bottom-0' : 'top-0'}
+            `}
+          >
+            <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-1 h-3 bg-ssc-gold" />
+                <span className="text-ssc-gold text-[9px] font-technical font-black tracking-[0.2em] uppercase">
+                  {location.type}
+                </span>
               </div>
-              <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-ssc-gold/20 rounded-tr-xl" />
-            </motion.div>
-          )}
+              <h4 className="text-white font-heading font-bold text-lg mb-2 tracking-tight">
+                {location.city}
+              </h4>
+              <p className="text-white/60 text-xs leading-relaxed mb-4 font-medium italic">
+                {location.address}
+              </p>
+              <div className="flex items-center gap-2 text-[9px] font-technical font-bold text-ssc-gold/60 uppercase tracking-widest">
+                COORDINATES: {location.coords.x} / {location.coords.y}
+              </div>
+            </div>
+            <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-ssc-gold/20 rounded-tr-xl" />
+          </motion.div>
+        )}
+
         </AnimatePresence>
       </div>
     </div>
