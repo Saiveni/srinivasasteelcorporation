@@ -83,6 +83,76 @@ const SteelRod = ({ orientation = 'horizontal' }: { orientation?: 'horizontal' |
   );
 };
 
+
+/**
+ * Physical metal hardware: A brushed gold collar that wraps the cylindrical rod,
+ * with a bolt detail and a heavy vertical suspension hook.
+ */
+const ClampHook = ({
+  position,
+  orientation = 'horizontal',
+  delay = 0,
+}: {
+  position: string;
+  orientation?: 'horizontal' | 'vertical';
+  delay?: number;
+}) => {
+  const isH = orientation === 'horizontal';
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="absolute z-20"
+      style={isH ? { left: position, top: '50%', transform: 'translateY(-50%)' } : { top: position, left: '50%', transform: 'translateX(-50%)' }}
+    >
+      <div className="relative group">
+        {/* The Clamp (Collar) */}
+        <div
+          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[68px] h-[48px]'} rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.6)] overflow-hidden`}
+          style={{
+            background: isH
+              ? 'linear-gradient(to bottom, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)'
+              : 'linear-gradient(to right, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)',
+          }}
+        >
+          {/* Metallic highlights & brushed texture */}
+          <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] mix-blend-overlay" />
+          <div className={`absolute ${isH ? 'inset-x-0 top-0 h-[20%]' : 'inset-y-0 left-0 w-[20%]'} bg-white/30 blur-[2px]`} />
+          <div className={`absolute ${isH ? 'inset-x-0 bottom-0 h-[20%]' : 'inset-y-0 right-0 w-[20%]'} bg-black/30 blur-[2px]`} />
+
+          {/* Machined detail: Side bolts */}
+          <div className={`absolute ${isH ? 'left-1 top-[15%] w-1.5 h-1.5' : 'top-1 left-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
+          <div className={`absolute ${isH ? 'right-1 top-[15%] w-1.5 h-1.5' : 'bottom-1 left-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
+          <div className={`absolute ${isH ? 'left-1 bottom-[15%] w-1.5 h-1.5' : 'top-1 right-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
+          <div className={`absolute ${isH ? 'right-1 bottom-[15%] w-1.5 h-1.5' : 'bottom-1 right-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
+        </div>
+
+        {/* The Connection Hook */}
+        <div className={`absolute ${isH ? 'left-1/2 -bottom-[50px] -translate-x-1/2 flex flex-col items-center' : 'top-1/2 -right-[50px] -translate-y-1/2 flex items-center'}`}>
+          {/* Main shank */}
+          <div
+            className={`${isH ? 'w-[8px] h-[35px]' : 'h-[8px] w-[35px]'} shadow-[4px_0_10px_rgba(0,0,0,0.4)]`}
+            style={{
+              background: 'linear-gradient(90deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%)',
+            }}
+          />
+          {/* C-Hook end */}
+          <div
+            className={`${isH ? 'w-[20px] h-[20px] rounded-full border-[6px] border-t-transparent -mt-1' : 'w-[20px] h-[20px] rounded-full border-[6px] border-l-transparent -ml-1'} shadow-[2px_2px_8px_rgba(0,0,0,0.5)]`}
+            style={{ borderColor: '#c5a059', borderTopColor: 'transparent', borderLeftColor: isH ? undefined : 'transparent' }}
+          />
+        </div>
+
+        {/* Deep contact shadow on the rod */}
+        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] opacity-60" />
+      </div>
+    </motion.div>
+  );
+};
+
 export const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
