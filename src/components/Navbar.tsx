@@ -127,40 +127,77 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu Overlay - Premium Rebuild */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[90] lg:hidden bg-[#F7F7F4]"
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[110] lg:hidden bg-[#0A0F1A]"
           >
-            {/* Architectural Grid Background for Menu */}
+            {/* Background Texture & Engineering Grid */}
             <div 
-              className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+              className="absolute inset-0 opacity-[0.05] pointer-events-none" 
               style={{ 
-                backgroundImage: `linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)`,
-                backgroundSize: '40px 40px'
+                backgroundImage: `linear-gradient(to right, #C5A059 1px, transparent 1px), linear-gradient(to bottom, #C5A059 1px, transparent 1px)`,
+                backgroundSize: '30px 30px'
               }} 
             />
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-[0.03] pointer-events-none" />
             
-            <div className="flex flex-col h-full justify-center px-10 gap-10">
-              <div className="flex flex-col gap-6">
+            {/* Menu Header Area */}
+            <div className="flex items-center justify-between px-6 sm:px-8 h-[80px] border-b border-white/5 relative z-10">
+              <div className="flex items-center gap-3">
+                <div className="h-9 w-9 shrink-0 grayscale invert brightness-200">
+                  <img src={sscLogo.url} alt="SSC Logo" className="h-full w-full object-contain" />
+                </div>
+                <div className="flex flex-col justify-center border-l border-white/10 pl-3 h-9">
+                  <span className="text-[13px] font-heading font-bold tracking-[0.05em] text-white leading-none uppercase">
+                    SRINIVASA <span className="text-white/60 font-medium">STEEL</span>
+                  </span>
+                  <span className="text-[9px] font-technical font-extrabold tracking-[0.25em] text-[#C5A059] leading-none uppercase mt-1">
+                    CORPORATION
+                  </span>
+                </div>
+              </div>
+
+              {/* Enhanced Close Trigger - Matches the Menu Button visually */}
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="relative w-11 h-11 rounded-lg flex items-center justify-center bg-ssc-navy border border-ssc-gold/40 shadow-xl"
+              >
+                <X className="text-white" size={20} strokeWidth={1.5} />
+                <div className="absolute top-0 left-1/4 right-1/4 h-[1px] bg-ssc-gold/30" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent rounded-lg pointer-events-none" />
+              </button>
+            </div>
+
+            {/* Navigation Content */}
+            <div className="flex flex-col h-[calc(100%-80px)] justify-between py-16 px-10 sm:px-14 overflow-y-auto relative z-10">
+              <div className="flex flex-col gap-10">
                 {navLinks.map((link, i) => (
                   <motion.div
                     key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -30 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
+                    transition={{ delay: 0.15 + i * 0.08, duration: 0.5 }}
                   >
                     <Link
                       to={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="group flex items-center gap-4"
+                      className="group flex items-baseline gap-6"
                     >
-                      <span className="text-[10px] font-technical font-bold text-ssc-gold tracking-widest opacity-60">0{i + 1}</span>
-                      <span className="text-3xl font-heading font-bold text-ssc-navy uppercase tracking-tighter group-hover:text-ssc-gold transition-colors">
+                      <motion.span 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ delay: 0.1 + i * 0.08, duration: 0.4 }}
+                        className="text-[12px] font-technical font-bold text-[#C5A059] tracking-[0.2em] opacity-80"
+                      >
+                        0{i + 1}
+                      </motion.span>
+                      <span className="text-4xl sm:text-5xl font-heading font-bold text-white uppercase tracking-tighter group-hover:text-[#C5A059] transition-all duration-300">
                         {link.name}
                       </span>
                     </Link>
@@ -168,25 +205,31 @@ export const Navbar = () => {
                 ))}
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                  <Button className="w-full h-14 text-sm tracking-[0.2em] font-technical font-bold">
-                    GET A QUOTE
-                  </Button>
-                </Link>
-              </motion.div>
-              
-              {/* Industrial Milestone Detail */}
-              <div className="absolute bottom-12 left-10 border-l border-ssc-navy/10 pl-6">
-                <p className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.3em]">
-                  Quality Engineering Since 1994
-                </p>
+              <div className="mt-16 space-y-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.6, duration: 0.5 }}
+                >
+                  <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
+                    <Button className="w-full h-16 text-[15px] tracking-[0.25em] font-technical font-bold bg-[#C5A059] hover:bg-[#B38E48] text-[#0A0F1A] border-none shadow-[0_8px_32px_rgba(197,160,89,0.2)]">
+                      GET A QUOTE
+                    </Button>
+                  </Link>
+                </motion.div>
+                
+                {/* Technical Footnote */}
+                <div className="border-t border-white/5 pt-8">
+                  <div className="flex items-center gap-4 text-[10px] font-technical font-bold text-white/30 uppercase tracking-[0.4em]">
+                    <div className="w-8 h-[1px] bg-ssc-gold/40" />
+                    PREMIUM INDUSTRIAL SUPPLY
+                  </div>
+                </div>
               </div>
             </div>
+
+            {/* Subtle Navy Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A0F1A]/50 to-[#0A0F1A] pointer-events-none" />
           </motion.div>
         )}
       </AnimatePresence>
