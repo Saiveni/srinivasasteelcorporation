@@ -233,7 +233,7 @@ const ClampHook = ({
               ? { height: '108px', opacity: 1 } 
               : { width: '80px', opacity: 1, x: isLeft ? -80 : 0 }
           }
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, margin: "-50px" }}
           transition={{ delay: delay + 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           className={`absolute ${
             isH 
