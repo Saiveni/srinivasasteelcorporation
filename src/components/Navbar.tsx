@@ -58,50 +58,47 @@ export const Navbar = () => {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className={`fixed left-1/2 -translate-x-1/2 z-[100] w-[94%] sm:w-[96%] max-w-[1400px] transition-all duration-500 ${scrolled ? 'top-2 sm:top-3' : 'top-3 sm:top-5'}`}
+      className={`fixed left-0 right-0 z-[100] transition-all duration-500 ${scrolled ? 'top-0' : 'top-0'}`}
     >
-      {/* Precision Engineered Header Panel */}
+      {/* Premium Engineered Steel Header Panel */}
       <div className={`
-        relative w-full flex items-center justify-between px-4 sm:px-8 xl:px-10
-        rounded-xl sm:rounded-2xl overflow-hidden
-        border border-white/20 z-[110]
-        transition-all duration-500 ease-in-out
+        relative w-full flex items-center justify-between px-4 sm:px-8 xl:px-12
+        transition-all duration-500 ease-in-out border-b border-white/10
         ${scrolled 
-          ? "h-[64px] sm:h-[76px] shadow-[0_15px_30px_-10px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.3)]" 
-          : "h-[68px] sm:h-[82px] shadow-[0_10px_35px_-10px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.4)]"
+          ? "h-[64px] sm:h-[76px] shadow-[0_4px_20px_rgba(0,0,0,0.15)]" 
+          : "h-[78px] sm:h-[82px] shadow-[0_2px_15px_rgba(0,0,0,0.1)]"
         }
       `}>
-        {/* Realistic Brushed Metal Surface */}
-        <div className="absolute inset-0 bg-[#E2E4E9]" />
+        {/* Brushed Silver / Light Steel Surface */}
+        <div className="absolute inset-0 bg-[#E8EAEF]" />
         
-        {/* TMT Bar Background Pattern (Right Side) */}
+        {/* Diagonal Brushed Metal Texture */}
         <div 
-          className="absolute top-0 right-0 bottom-0 w-[60%] opacity-[0.08] mix-blend-multiply pointer-events-none grayscale z-0"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=600&auto=format&fit=crop')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'right center',
-            maskImage: 'linear-gradient(to left, black 20%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to left, black 20%, transparent 100%)'
-          }}
-        />
-
-        {/* Extremely subtle horizontal brushed-metal texture */}
-        <div 
-          className="absolute inset-0 opacity-[0.25] pointer-events-none z-[1]" 
+          className="absolute inset-0 opacity-[0.35] pointer-events-none z-[1]" 
           style={{ 
             backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')`,
-            backgroundSize: '400px 400px'
+            backgroundSize: '400px 400px',
+            transform: 'rotate(-5deg) scale(1.2)'
           }} 
         />
+
+        {/* Integrated TMT Rebar Imagery - Part of the Background */}
+        <div 
+          className="absolute inset-0 opacity-[0.06] mix-blend-multiply pointer-events-none grayscale z-[2]"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            filter: 'contrast(1.2) brightness(0.9)'
+          }}
+        />
         
-        {/* Tonal variations & highlights */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none z-[2]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none z-[2]" />
+        {/* Depth & Tonal Highlights */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-black/5 pointer-events-none z-[3]" />
         
-        {/* Subtle Edge Reflection */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/50 pointer-events-none z-[3]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10 pointer-events-none z-[3]" />
+        {/* Refined Metallic Edges */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-white/70 pointer-events-none z-[4]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/10 pointer-events-none z-[4]" />
 
         {/* Logo & Brand Section */}
         <motion.div variants={itemVariants} className="relative z-10">
