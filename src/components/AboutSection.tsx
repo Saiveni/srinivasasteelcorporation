@@ -85,6 +85,72 @@ const SteelRod = ({ orientation = 'horizontal' }: { orientation?: 'horizontal' |
 
 
 /**
+ * 3D Metal Information Card.
+ * Dark charcoal brushed metal with gold border and realistic depth.
+ */
+const MetalCard = ({
+  number,
+  year,
+  title,
+  description,
+  delay = 0,
+  orientation = 'horizontal',
+}: {
+  number: string;
+  year: string;
+  title: string;
+  description: string;
+  delay?: number;
+  orientation?: 'horizontal' | 'vertical';
+}) => {
+  const isH = orientation === 'horizontal';
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: delay + 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className={`absolute ${
+        isH ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' : 'left-[calc(50%+115px)] -translate-y-1/2 w-[240px]'
+      }`}
+    >
+      <div className="relative group">
+        {/* The Card Body (3D Metal Plaque) */}
+        <div className="relative bg-[#0c0f13] rounded-[18px] p-8 border border-[#c5a059]/30 shadow-[0_20px_40px_rgba(0,0,0,0.8),inset_0_0_20px_rgba(255,255,255,0.05)] overflow-hidden">
+          {/* Metal Texture Overlay */}
+          <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
+          
+          {/* Subtle gold edge highlight (simulated bevel) */}
+          <div className="absolute inset-[1px] border border-white/5 rounded-[17px] pointer-events-none" />
+          
+          <div className="relative z-10">
+            <span className="block text-[#C5A059] text-[12px] font-technical font-bold tracking-widest mb-4 opacity-70">
+              {number}
+            </span>
+            <h3 className="text-white text-[28px] font-heading font-bold mb-2 tracking-tight">
+              {year}
+            </h3>
+            <h4 className="text-[#C5A059] text-[13px] font-technical font-bold uppercase tracking-wider mb-5">
+              {title}
+            </h4>
+            <p className="text-white/60 text-[15px] leading-relaxed font-medium">
+              {description}
+            </p>
+          </div>
+
+          {/* Bottom sheen effect */}
+          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#c5a059]/40 to-transparent" />
+        </div>
+
+        {/* Realistic extrusion shadow */}
+        <div className="absolute -inset-[2px] bg-black/40 blur-[4px] -z-10 rounded-[20px]" />
+      </div>
+    </motion.div>
+  );
+};
+
+/**
  * Physical metal hardware: A brushed gold collar that wraps the cylindrical rod,
  * with a bolt detail and a heavy vertical suspension hook.
  */
@@ -92,23 +158,28 @@ const ClampHook = ({
   position,
   orientation = 'horizontal',
   delay = 0,
+  cardData,
 }: {
   position: string;
   orientation?: 'horizontal' | 'vertical';
   delay?: number;
+  cardData: { number: string; year: string; title: string; description: string };
 }) => {
   const isH = orientation === 'horizontal';
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    <div
       className="absolute z-20"
       style={isH ? { left: position, top: '50%', transform: 'translateY(-50%)' } : { top: position, left: '50%', transform: 'translateX(-50%)' }}
     >
-      <div className="relative group">
+      {/* Clamp & Hook Structure */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="relative"
+      >
         {/* The Clamp (Collar) */}
         <div
           className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[68px] h-[48px]'} rounded-[4px] shadow-[0_10px_30px_rgba(0,0,0,0.6)] overflow-hidden`}
@@ -118,7 +189,6 @@ const ClampHook = ({
               : 'linear-gradient(to right, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)',
           }}
         >
-          {/* Metallic highlights & brushed texture */}
           <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] mix-blend-overlay" />
           <div className={`absolute ${isH ? 'inset-x-0 top-0 h-[20%]' : 'inset-y-0 left-0 w-[20%]'} bg-white/30 blur-[2px]`} />
           <div className={`absolute ${isH ? 'inset-x-0 bottom-0 h-[20%]' : 'inset-y-0 right-0 w-[20%]'} bg-black/30 blur-[2px]`} />
@@ -132,26 +202,31 @@ const ClampHook = ({
 
         {/* The Connection Hook */}
         <div className={`absolute ${isH ? 'left-1/2 -bottom-[50px] -translate-x-1/2 flex flex-col items-center' : 'top-1/2 -right-[50px] -translate-y-1/2 flex items-center'}`}>
-          {/* Main shank */}
           <div
             className={`${isH ? 'w-[8px] h-[35px]' : 'h-[8px] w-[35px]'} shadow-[4px_0_10px_rgba(0,0,0,0.4)]`}
             style={{
               background: 'linear-gradient(90deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%)',
             }}
           />
-          {/* C-Hook end */}
           <div
             className={`${isH ? 'w-[20px] h-[20px] rounded-full border-[6px] border-t-transparent -mt-1' : 'w-[20px] h-[20px] rounded-full border-[6px] border-l-transparent -ml-1'} shadow-[2px_2px_8px_rgba(0,0,0,0.5)]`}
             style={{ borderColor: '#c5a059', borderTopColor: 'transparent', borderLeftColor: isH ? undefined : 'transparent' }}
           />
         </div>
 
-        {/* Deep contact shadow on the rod */}
         <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] opacity-60" />
-      </div>
-    </motion.div>
+      </motion.div>
+
+      {/* The Information Card */}
+      <MetalCard
+        {...cardData}
+        delay={delay}
+        orientation={orientation}
+      />
+    </div>
   );
 };
+
 
 export const AboutSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
