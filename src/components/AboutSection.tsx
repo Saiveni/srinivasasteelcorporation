@@ -125,10 +125,11 @@ const MetalCard = ({
           : 'top-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
       }`}
       style={!isH ? {
-        left: '50%',
-        transform: isLeft 
-          ? 'translate(calc(-100% - 45px), -50%)' 
-          : 'translate(45px, -50%)'
+        left: isLeft ? 'auto' : '50%',
+        right: isLeft ? '50%' : 'auto',
+        transform: 'translateY(-50%)',
+        marginRight: isLeft ? '45px' : '0',
+        marginLeft: isLeft ? '0' : '45px',
       } : {}}
     >
       <div className="relative group">
