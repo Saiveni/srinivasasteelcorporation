@@ -126,10 +126,7 @@ const MetalCard = ({
       }`}
     >
       <div className="relative group">
-        {/* Hanging Eyelets (where hooks connect) */}
-        <div className="absolute -top-[14px] left-1/2 -translate-x-1/2 flex gap-12 z-20">
-          <div className="w-4 h-4 rounded-full border-[3px] border-[#c5a059] bg-[#0c0f13] shadow-[0_2px_4px_rgba(0,0,0,0.5)]" />
-        </div>
+        {/* Hanging Eyelets removed per user request */}
 
         {/* The Card Body (3D Metal Plaque) */}
         <div className="relative bg-[#0c0f13] rounded-[18px] p-4 sm:p-5 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
