@@ -231,7 +231,7 @@ const ClampHook = ({
           whileInView={
             isH 
               ? { height: '108px', opacity: 1 } 
-              : { width: isLeft ? '65px' : '65px', sm: { width: '80px' }, opacity: 1, x: isLeft ? (typeof window !== 'undefined' && window.innerWidth < 640 ? -65 : -80) : 0 }
+              : { width: 'var(--hook-width)', opacity: 1, x: isLeft ? 'calc(-1 * var(--hook-width))' : 0 }
           }
           viewport={{ once: true, margin: "-50px" }}
           transition={{ delay: delay + 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
