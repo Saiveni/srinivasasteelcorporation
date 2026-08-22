@@ -230,7 +230,7 @@ export const Navbar = () => {
             animate={{ y: 0 }}
             exit={{ y: "-100%" }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[100] bg-[#F4F6F8] flex flex-col pt-[100px] sm:pt-[120px]"
+            className="fixed inset-0 z-[90] bg-[#F4F6F8] flex flex-col pt-[100px] sm:pt-[120px]"
           >
             {/* Engineering Texture Overlays */}
             <div 
