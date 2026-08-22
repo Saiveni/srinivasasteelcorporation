@@ -69,17 +69,17 @@ export const Navbar = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}
-      className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-0"
+      className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-4"
     >
-      {/* Premium Engineered Steel Header Panel */}
+      {/* Premium Engineered Steel Header Panel - Unified Global Design */}
       <div className={`
-        relative mx-auto w-full md:max-w-none flex items-center justify-between px-4 sm:px-8 xl:px-12
+        relative mx-auto w-full md:max-w-[95%] lg:max-w-[1400px] flex items-center justify-between px-4 sm:px-8
         transition-all duration-500 ease-in-out
         ${scrolled 
-          ? "h-[62px] sm:h-[72px] md:h-[76px] shadow-[0_8px_30px_rgba(0,0,0,0.2)]" 
-          : "h-[68px] sm:h-[78px] md:h-[82px] shadow-[0_4px_20px_rgba(0,0,0,0.15)]"
+          ? "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]" 
+          : "h-[68px] sm:h-[74px] md:h-[78px] shadow-[0_8px_30px_rgba(0,0,0,0.2)]"
         }
-        rounded-2xl md:rounded-none overflow-hidden border border-white/40 md:border-none md:border-b md:border-white/10
+        rounded-2xl overflow-hidden border border-white/40
       `}>
         {/* Brushed Silver / Aluminium Surface */}
         <div className="absolute inset-0 bg-[#E8EAEF]" />
@@ -94,9 +94,9 @@ export const Navbar = () => {
           }} 
         />
 
-        {/* Integrated TMT Rebar Imagery - Part of Background */}
+        {/* Integrated TMT Rebar Imagery - Visual Specification */}
         <div 
-          className="absolute inset-0 opacity-[0.09] mix-blend-multiply pointer-events-none grayscale z-[2]"
+          className="absolute inset-0 opacity-[0.12] mix-blend-multiply pointer-events-none grayscale z-[2]"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop')`,
             backgroundSize: 'cover',
@@ -106,11 +106,11 @@ export const Navbar = () => {
         />
         
         {/* Premium Highlights & Tonal Depth */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-black/5 pointer-events-none z-[3]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-black/10 pointer-events-none z-[3]" />
         
         {/* Refined Metallic Bevel Edge */}
-        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-white/90 pointer-events-none z-[4]" />
-        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-black/15 pointer-events-none z-[4]" />
+        <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-white/95 pointer-events-none z-[4]" />
+        <div className="absolute bottom-0 left-0 right-0 h-[1.2px] bg-black/20 pointer-events-none z-[4]" />
 
         {/* Logo & Brand Section */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 py-2">
