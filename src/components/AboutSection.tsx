@@ -121,9 +121,15 @@ const MetalCard = ({
       }}
       className={`absolute ${
         isH 
-          ? 'top-[calc(50%+108px)] -translate-x-1/2 w-[280px]' 
-          : 'left-[calc(50%+45px)] sm:left-[calc(50%+80px)] -translate-y-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
+          ? 'top-[calc(50%+108px)] left-1/2 -translate-x-1/2 w-[280px]' 
+          : 'top-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
       }`}
+      style={!isH ? {
+        left: '50%',
+        transform: isLeft 
+          ? 'translate(calc(-100% - 45px), -50%)' 
+          : 'translate(45px, -50%)'
+      } : {}}
     >
       <div className="relative group">
         {/* Hanging Eyelets removed per user request */}
