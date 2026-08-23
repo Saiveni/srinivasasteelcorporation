@@ -83,7 +83,7 @@ export const SteelTimeline = () => {
                 className="relative flex flex-col items-center text-center group pt-8"
               >
                 {/* Connector Point */}
-                <div className="w-3 h-3 rounded-full bg-ssc-navy border border-gray-400 absolute top-[-7px] z-10" />
+                <div className="w-3 h-3 rounded-full bg-[#f5f6f7] border border-ssc-navy/30 absolute top-[-7px] z-10" />
                 
                 <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-6 rounded-[12px] shadow-premium-strong w-full transition-all duration-500 group-hover:bg-ssc-steel-dark/90 group-hover:border-ssc-gold/30">
                   <span className="text-micro text-ssc-gold block mb-2 uppercase font-bold tracking-widest">
