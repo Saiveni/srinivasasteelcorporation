@@ -186,6 +186,7 @@ export const Navbar = () => {
             className="md:hidden relative z-[120] group outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
+            type="button"
           >
             <div className={`
               relative w-11 h-10 sm:w-13 sm:h-12 rounded-[12px]
@@ -254,6 +255,7 @@ export const Navbar = () => {
               {/* Close Button Trigger */}
               <button 
                 onClick={() => setIsOpen(false)}
+                type="button"
                 className="w-10 h-10 flex items-center justify-center rounded-full border border-black/10 bg-white shadow-sm relative z-10 cursor-pointer"
               >
                 <X className="text-black/40 w-5 h-5" strokeWidth={2} />
