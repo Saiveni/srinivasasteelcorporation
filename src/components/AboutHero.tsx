@@ -106,7 +106,7 @@ export const AboutHero = () => {
                 <motion.h1
                   custom={1}
                   variants={headlineVariants}
-                  className="text-[40px] xs:text-[48px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-body font-extrabold text-primary uppercase tracking-tighter italic"
+                  className="text-[40px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-bold text-primary uppercase tracking-tighter italic"
                 >
                   STEEL
                 </motion.h1>
