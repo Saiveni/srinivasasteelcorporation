@@ -218,7 +218,7 @@ export const ProductsComponent = () => {
                 transition={{ delay: idx * 0.15 }}
                 className="text-center"
               >
-                <div className="text-2xl lg:text-3xl font-body font-black text-foreground/80 tracking-tighter uppercase mb-2">
+                <div className="text-2xl lg:text-3xl font-body font-bold text-foreground/80 tracking-tighter uppercase mb-2">
                   {brand.name}
                 </div>
                 <div className="text-[9px] font-body font-bold text-primary tracking-[0.2em] uppercase">
@@ -252,7 +252,7 @@ export const ProductsComponent = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm border border-black/5">
+                <div className="w-16 h-16 bg-white rounded-[12px] flex items-center justify-center mx-auto mb-8 shadow-sm border border-black/5">
                   <item.icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-xl font-body font-bold text-foreground mb-4 uppercase tracking-wider">{item.title}</h3>
@@ -300,7 +300,7 @@ export const ProductsComponent = () => {
 
       {/* Product Detail Modal */}
       <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="max-w-[95vw] sm:max-w-[700px] p-0 overflow-hidden bg-white rounded-3xl border-none shadow-2xl">
+        <DialogContent className="max-w-[95vw] sm:max-w-[700px] p-0 overflow-hidden bg-white rounded-[16px] border-none shadow-2xl">
           <DialogClose className="absolute right-6 top-6 z-50 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors">
             <X size={20} />
           </DialogClose>
@@ -344,7 +344,7 @@ export const ProductsComponent = () => {
               </div>
               
               <Link to="/contact" search={{ product: selectedProduct?.name || "" }} onClick={() => setSelectedProduct(null)}>
-                <Button className="w-full h-16 bg-background hover:bg-background/90 text-white font-body font-black uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3">
+                <Button className="w-full h-16 bg-background hover:bg-background/90 text-white font-body font-bold uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3">
                   REQUEST QUOTE <ArrowRight size={20} className="text-primary" />
                 </Button>
               </Link>

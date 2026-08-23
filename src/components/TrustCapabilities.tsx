@@ -63,10 +63,10 @@ export const TrustCapabilities = () => {
                 }}
                 className="flex items-center gap-4 mb-8 lg:mb-12"
               >
-                <span className="text-[11px] lg:text-[12px] font-body font-bold tracking-[0.4em] text-[#C5A059] uppercase">
+                <span className="text-[11px] lg:text-[12px] font-body font-bold tracking-[0.4em] text-[#D4AF37] uppercase">
                   01 / COMPANY
                 </span>
-                <div className="w-8 lg:w-12 h-[1px] bg-[#C5A059]/40" />
+                <div className="w-8 lg:w-12 h-[1px] bg-[#D4AF37]/40" />
               </motion.div>
 
               {/* Heading - Reveal 2 */}
@@ -75,10 +75,10 @@ export const TrustCapabilities = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: cubicBezier, delay: 0.4 } }
                 }}
-                className="text-[42px] lg:text-[76px] font-body font-extrabold text-white leading-[0.95] mb-8 tracking-tighter uppercase"
+                className="text-[42px] lg:text-[76px] font-body font-bold text-white leading-[0.95] mb-8 tracking-tighter uppercase"
               >
                 BUILT ON <br />
-                <span className="text-[#C5A059]">30+ YEARS</span> <br />
+                <span className="text-[#D4AF37]">30+ YEARS</span> <br />
                 OF TRUST.
               </motion.h2>
 
@@ -90,7 +90,7 @@ export const TrustCapabilities = () => {
                 }}
                 className="relative pl-6 lg:pl-8"
               >
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#C5A059] to-transparent" />
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#D4AF37] to-transparent" />
                 <p className="text-[17px] lg:text-[19px] text-white/70 max-w-[500px] leading-[1.7] lg:leading-[1.75] font-light">
                   Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements, specializing in <span className="text-white font-medium">TMT rebars</span>, steel products, wire products and decoiling solutions.
                 </p>
@@ -98,12 +98,12 @@ export const TrustCapabilities = () => {
                 {/* Mobile Editorial Detail */}
                 <div className="mt-10 lg:mt-12 flex items-center gap-8">
                   <div className="flex flex-col">
-                    <span className="text-[9px] font-body text-[#C5A059] tracking-widest uppercase mb-1">Established</span>
+                    <span className="text-[9px] font-body text-[#D4AF37] tracking-widest uppercase mb-1">Established</span>
                     <span className="text-[16px] lg:text-[18px] font-body font-bold text-white tracking-wider">1994</span>
                   </div>
                   <div className="w-[1px] h-6 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-[9px] font-body text-[#C5A059] tracking-widest uppercase mb-1">Focus</span>
+                    <span className="text-[9px] font-body text-[#D4AF37] tracking-widest uppercase mb-1">Focus</span>
                     <span className="text-[16px] lg:text-[18px] font-body font-bold text-white tracking-wider uppercase">Steel Supply</span>
                   </div>
                 </div>

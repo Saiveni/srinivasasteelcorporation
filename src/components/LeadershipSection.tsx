@@ -36,7 +36,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
       className="relative group w-full"
     >
       {/* 3D Engineered Panel Card */}
-      <div className="relative bg-[#0C121E] rounded-[24px] p-8 lg:p-10 border border-white/5 shadow-2xl overflow-hidden group-hover:translate-y-[-8px] transition-all duration-500">
+      <div className="relative bg-[#1C1F26] rounded-[24px] p-8 lg:p-10 border border-white/5 shadow-2xl overflow-hidden group-hover:translate-y-[-8px] transition-all duration-500">
         
         {/* Brushed Metal Texture */}
         <div className="absolute inset-0 opacity-[0.07] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
@@ -58,14 +58,14 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
             <div className="absolute inset-0 rounded-full border-2 border-ssc-gold/20 shadow-[0_0_20px_rgba(197,160,89,0.1)]" />
             
             {/* Metallic Inner Surface */}
-            <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1A2333] to-[#050A14] flex items-center justify-center shadow-inner overflow-hidden">
+            <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1A2333] to-[#0B1320] flex items-center justify-center shadow-inner overflow-hidden">
                {/* Subtle metallic reflection line */}
                <motion.div 
                  animate={{ x: ['-100%', '100%'] }}
                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                  className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
                />
-               <span className="text-primary font-body text-2xl font-black tracking-tighter opacity-80">
+               <span className="text-primary font-body text-2xl font-bold tracking-tighter opacity-80">
                  {leader.initials}
                </span>
             </div>
@@ -145,7 +145,7 @@ export const LeadershipSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-primary/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-foreground font-body font-extrabold tracking-tighter uppercase italic leading-[0.85]">
+            <h2 className="text-[42px] lg:text-[72px] text-foreground font-body font-bold tracking-tighter uppercase italic leading-[0.85]">
               OUR <span className="text-primary">LEADERSHIP</span>
             </h2>
           </motion.div>

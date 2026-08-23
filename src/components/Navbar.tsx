@@ -79,7 +79,7 @@ export const Navbar = () => {
           ? "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]" 
           : "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]"
         }
-        rounded-2xl overflow-hidden border border-white/40
+        rounded-[12px] overflow-hidden border border-white/40
 
       `}>
         {/* Brushed Silver / Aluminium Surface */}
@@ -265,7 +265,7 @@ export const Navbar = () => {
             </div>
 
             {/* Content Area with White Engineering Grid */}
-            <div className="flex-1 relative overflow-hidden bg-[#FAFAF9]">
+            <div className="flex-1 relative overflow-hidden bg-[#E6E8EC]">
               <div 
                 className="absolute inset-0 opacity-[0.2] pointer-events-none z-[1]" 
                 style={{ 

@@ -57,7 +57,7 @@ export const PartnerStrip = () => {
                     <span className="text-xl md:text-2xl font-body leading-none text-foreground tracking-tighter">
                       {partner.brand}
                     </span>
-                    <span className="text-[8px] font-body font-black text-primary tracking-[0.2em] mt-1">
+                    <span className="text-[8px] font-body font-bold text-primary tracking-[0.2em] mt-1">
                       {partner.tagline}
                     </span>
                   </div>

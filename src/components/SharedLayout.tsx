@@ -69,7 +69,7 @@ export const AnimatedCard = ({
     whileHover={{ y: -10, scale: 1.02 }}
     transition={{ type: "spring", stiffness: 300, damping: 20 }}
     className={cn(
-      "bg-white rounded-2xl p-8 shadow-premium hover:shadow-premium-hover transition-shadow border border-white/20",
+      "bg-white rounded-[12px] p-8 shadow-premium hover:shadow-premium-hover transition-shadow border border-white/20",
       className
     )}
   >

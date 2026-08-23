@@ -17,7 +17,7 @@ export const BrandStrip = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-[#C5A059] text-[11px] font-body font-bold tracking-[0.4em] uppercase mb-4 block">
+          <span className="text-[#D4AF37] text-[11px] font-body font-bold tracking-[0.4em] uppercase mb-4 block">
             Dealer & MoU Supply Relationships
           </span>
           <h2 className="text-[28px] lg:text-[32px] text-foreground font-body font-semibold tracking-tight uppercase">
@@ -38,7 +38,7 @@ export const BrandStrip = () => {
               <div className="text-2xl lg:text-3xl font-body font-bold text-foreground/60 group-hover:text-foreground transition-colors duration-500 tracking-tighter uppercase mb-2">
                 {brand.logo}
               </div>
-              <div className="text-[9px] font-body font-bold text-[#C5A059]/60 tracking-[0.2em] uppercase">
+              <div className="text-[9px] font-body font-bold text-[#D4AF37]/60 tracking-[0.2em] uppercase">
                 {brand.subtitle}
               </div>
             </motion.div>

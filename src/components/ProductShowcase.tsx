@@ -52,7 +52,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
         <div className="absolute inset-0 bg-white rounded-[24px] border border-black/[0.04] shadow-[0_8px_32px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col">
           {/* Top 3D Indicator */}
           <div className="absolute top-6 right-8 z-20">
-            <span className="text-[10px] font-body font-bold text-[#C5A059] tracking-[0.3em] opacity-60">
+            <span className="text-[10px] font-body font-bold text-[#D4AF37] tracking-[0.3em] opacity-60">
               {product.index}
             </span>
           </div>
@@ -76,8 +76,8 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
           {/* Content Area */}
           <div className="flex-1 p-8 relative">
             {/* 3D Label */}
-            <div className="inline-block px-3 py-1 rounded-full bg-[#C5A059]/10 mb-4">
-              <span className="text-[9px] font-body font-bold text-[#C5A059] uppercase tracking-widest">
+            <div className="inline-block px-3 py-1 rounded-full bg-[#D4AF37]/10 mb-4">
+              <span className="text-[9px] font-body font-bold text-[#D4AF37] uppercase tracking-widest">
                 PREMIUM GRADE
               </span>
             </div>
@@ -91,7 +91,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
             </p>
 
             {/* Bottom Glow */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#C5A059]/0 to-transparent group-hover:via-[#C5A059]/40 transition-all duration-700" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37]/0 to-transparent group-hover:via-[#D4AF37]/40 transition-all duration-700" />
           </div>
         </div>
 
@@ -127,7 +127,7 @@ const ProductShowcase = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-[#C5A059] text-[12px] lg:text-[13px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
+              <span className="text-[#D4AF37] text-[12px] lg:text-[13px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
                 CATALOGUE
               </span>
               <h2 className="text-[38px] lg:text-[56px] text-foreground font-body leading-[1.1] mb-6 font-[500] tracking-tight uppercase">
@@ -147,7 +147,7 @@ const ProductShowcase = () => {
             className="hidden lg:flex flex-col items-end text-right border-l border-black/10 pl-10"
           >
             <span className="text-[11px] font-body uppercase tracking-[0.2em] text-[#A0AEC0] mb-2">SSC / PRODUCT SPECIFICATIONS</span>
-            <span className="text-[11px] font-body uppercase tracking-[0.2em] text-[#C5A059]/60 font-bold">EST. 1994</span>
+            <span className="text-[11px] font-body uppercase tracking-[0.2em] text-[#D4AF37]/60 font-bold">EST. 1994</span>
           </motion.div>
         </div>
 

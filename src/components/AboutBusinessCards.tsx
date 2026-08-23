@@ -128,10 +128,10 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
             loading="lazy"
             className="w-full h-full object-cover transition-transform duration-1000 ease-out lg:group-hover:scale-108"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0C121E] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#1C1F26] via-transparent to-transparent" />
 
           {/* Index Chip */}
-          <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#050A14]/70 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5 lg:group-hover:border-ssc-gold/40 transition-colors duration-500">
+          <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#0B1320]/70 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5 lg:group-hover:border-ssc-gold/40 transition-colors duration-500">
             <span className="text-primary text-micro">
               {area.index}
             </span>

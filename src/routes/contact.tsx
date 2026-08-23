@@ -122,7 +122,7 @@ function ContactPage() {
             <span className="text-primary text-[12px] font-body font-bold tracking-[0.4em] uppercase mb-6 block">
               CONTACT SRINIVASA STEEL CORPORATION
             </span>
-            <h1 className="text-[clamp(40px,7vw,72px)] font-body font-extrabold text-white leading-[0.95] mb-8 tracking-tighter uppercase">
+            <h1 className="text-[clamp(40px,7vw,72px)] font-body font-bold text-white leading-[0.95] mb-8 tracking-tighter uppercase">
               LET'S TALK <br />
               <span className="text-primary">STEEL.</span>
             </h1>
@@ -134,7 +134,7 @@ function ContactPage() {
       </section>
 
       {/* Quote Form & Team Info */}
-      <section className="section-spacing bg-[#F7F7F4]">
+      <section className="section-spacing bg-[#E6E8EC]">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
@@ -183,7 +183,7 @@ function ContactPage() {
                             {...register("fullName")}
                             id="fullName"
                             placeholder="YOUR NAME" 
-                            className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground ${errors.fullName ? 'border-red-500' : ''}`} 
+                            className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground ${errors.fullName ? 'border-red-500' : ''}`} 
                           />
                           {errors.fullName && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.fullName.message}</p>}
                         </div>
@@ -193,7 +193,7 @@ function ContactPage() {
                             {...register("companyName")}
                             id="companyName"
                             placeholder="ORGANIZATION NAME" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                       </div>
@@ -206,7 +206,7 @@ function ContactPage() {
                             id="phoneNumber"
                             type="tel" 
                             placeholder="10-DIGIT NUMBER" 
-                            className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground ${errors.phoneNumber ? 'border-red-500' : ''}`} 
+                            className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground ${errors.phoneNumber ? 'border-red-500' : ''}`} 
                           />
                           {errors.phoneNumber && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.phoneNumber.message}</p>}
                         </div>
@@ -217,7 +217,7 @@ function ContactPage() {
                             id="emailAddress"
                             type="email" 
                             placeholder="EMAIL@DOMAIN.COM" 
-                            className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground ${errors.emailAddress ? 'border-red-500' : ''}`} 
+                            className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground ${errors.emailAddress ? 'border-red-500' : ''}`} 
                           />
                           {errors.emailAddress && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.emailAddress.message}</p>}
                         </div>
@@ -230,7 +230,7 @@ function ContactPage() {
                           onValueChange={(val) => setValue("product", val)} 
                           value={product || ""}
                         >
-                            <SelectTrigger id="product" className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground uppercase text-[12px] tracking-wide ${errors.product ? 'border-red-500' : ''}`}>
+                            <SelectTrigger id="product" className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground uppercase text-[12px] tracking-wide ${errors.product ? 'border-red-500' : ''}`}>
                               <SelectValue placeholder="SELECT PRODUCT" />
                             </SelectTrigger>
                             <SelectContent className="bg-white border-black/5">
@@ -250,7 +250,7 @@ function ContactPage() {
                             {...register("quantity")}
                             id="quantity"
                             placeholder="E.G. 10 TONS" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                       </div>
@@ -262,7 +262,7 @@ function ContactPage() {
                             {...register("size")}
                             id="size"
                             placeholder="SPECIFICATIONS" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                         <div className="space-y-2">
@@ -271,7 +271,7 @@ function ContactPage() {
                             {...register("deliveryLocation")}
                             id="deliveryLocation"
                             placeholder="CITY / YARD" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                       </div>
@@ -282,7 +282,7 @@ function ContactPage() {
                           {...register("message")}
                           id="message"
                           placeholder="TELL US ABOUT YOUR PROJECT REQUIREMENTS..." 
-                          className={`min-h-[120px] rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-foreground resize-none ${errors.message ? 'border-red-500' : ''}`}
+                          className={`min-h-[120px] rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground resize-none ${errors.message ? 'border-red-500' : ''}`}
                         />
                         {errors.message && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.message.message}</p>}
                       </div>
@@ -395,7 +395,7 @@ function ContactPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-body font-extrabold text-foreground mb-4 tracking-tight uppercase">
+            <h2 className="text-4xl md:text-5xl font-body font-bold text-foreground mb-4 tracking-tight uppercase">
               OUR <span className="text-primary">LOCATIONS</span>
             </h2>
             <div className="w-20 h-1 bg-primary mx-auto" />
@@ -407,9 +407,9 @@ function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+              className="bg-[#E6E8EC] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
+              <div className="w-12 h-12 rounded-[12px] bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
                 <MapPin size={24} className="text-foreground group-hover:text-white" />
               </div>
               <h3 className="text-[12px] font-body font-bold tracking-[0.2em] text-primary uppercase mb-6">HEAD OFFICE</h3>
@@ -428,9 +428,9 @@ function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+              className="bg-[#E6E8EC] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
+              <div className="w-12 h-12 rounded-[12px] bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
                 <MapPin size={24} className="text-foreground group-hover:text-white" />
               </div>
               <h3 className="text-[12px] font-body font-bold tracking-[0.2em] text-primary uppercase mb-6">GANNAVARAM YARD</h3>
@@ -447,9 +447,9 @@ function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+              className="bg-[#E6E8EC] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
+              <div className="w-12 h-12 rounded-[12px] bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
                 <MapPin size={24} className="text-foreground group-hover:text-white" />
               </div>
               <h3 className="text-[12px] font-body font-bold tracking-[0.2em] text-primary uppercase mb-6">VIZAG BRANCH</h3>

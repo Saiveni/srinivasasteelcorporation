@@ -24,7 +24,7 @@ export const Footer = () => {
                 <span className="text-[22px] font-body font-bold tracking-[0.05em] leading-none uppercase text-white">
                   SRINIVASA <span className="font-medium opacity-80 text-[20px]">STEEL</span>
                 </span>
-                <span className="text-[11px] font-body font-extrabold tracking-[0.3em] text-[#C5A059] leading-none mt-2 uppercase">
+                <span className="text-[11px] font-body font-bold tracking-[0.3em] text-[#D4AF37] leading-none mt-2 uppercase">
                   CORPORATION
                 </span>
               </div>
@@ -36,7 +36,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[#C5A059] text-eyebrow mb-6">Quick Links</h4>
+            <h4 className="text-[#D4AF37] text-eyebrow mb-6">Quick Links</h4>
             <ul className="space-y-4 text-white/70">
               <li><Link to="/" search={{ product: "" }} className="hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" search={{ product: "" }} className="hover:text-white transition-colors">About</Link></li>
@@ -48,33 +48,33 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-[#C5A059] text-eyebrow mb-6">Contact Us</h4>
+            <h4 className="text-[#D4AF37] text-eyebrow mb-6">Contact Us</h4>
             <ul className="space-y-4 text-white/70">
               <li className="flex gap-3">
-                <MapPin className="text-[#C5A059] shrink-0" size={20} />
+                <MapPin className="text-[#D4AF37] shrink-0" size={20} />
                 <div className="flex flex-col">
                   <span className="text-[13px] font-bold text-white mb-1">Head Office</span>
                   <span className="text-sm">Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012</span>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">
-                <Phone className="text-[#C5A059] shrink-0" size={20} />
+                <Phone className="text-[#D4AF37] shrink-0" size={20} />
                 <div className="flex flex-col">
-                  <a href="tel:9440170453" className="text-sm hover:text-[#C5A059] transition-colors">9440170453 (M.S.V. Bhaskar)</a>
-                  <a href="tel:9849600403" className="text-sm hover:text-[#C5A059] transition-colors">9849600403 (M.V. Ramana Kumar)</a>
-                  <a href="tel:8125397453" className="text-sm hover:text-[#C5A059] transition-colors">8125397453 (M.V.N.M. Yeshwanth)</a>
+                  <a href="tel:9440170453" className="text-sm hover:text-[#D4AF37] transition-colors">9440170453 (M.S.V. Bhaskar)</a>
+                  <a href="tel:9849600403" className="text-sm hover:text-[#D4AF37] transition-colors">9849600403 (M.V. Ramana Kumar)</a>
+                  <a href="tel:8125397453" className="text-sm hover:text-[#D4AF37] transition-colors">8125397453 (M.V.N.M. Yeshwanth)</a>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">
-                <Mail className="text-[#C5A059] shrink-0" size={20} />
-                <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-sm hover:text-[#C5A059] transition-colors">srinivasasteelcorporationvja@gmail.com</a>
+                <Mail className="text-[#D4AF37] shrink-0" size={20} />
+                <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-sm hover:text-[#D4AF37] transition-colors">srinivasasteelcorporationvja@gmail.com</a>
               </li>
             </ul>
           </div>
 
           {/* Trusted Partners */}
           <div>
-            <h4 className="text-[#C5A059] text-eyebrow mb-6">Our Partners</h4>
+            <h4 className="text-[#D4AF37] text-eyebrow mb-6">Our Partners</h4>
             <div className="grid grid-cols-2 gap-4">
               {partners.map((partner) => (
                 <div key={partner.name} className="bg-white/5 rounded-lg p-3 flex items-center justify-center hover:bg-white/10 transition-colors group">

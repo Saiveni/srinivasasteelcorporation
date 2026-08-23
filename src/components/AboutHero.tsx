@@ -171,7 +171,7 @@ export const AboutHero = () => {
                   alt="Srinivasa Steel Corporation industrial steel warehouse with stacked TMT reinforcement bars"
                   className="w-full h-full object-cover contrast-[1.05]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050A14]/70 via-transparent to-[#050A14]/20 z-10" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1320]/70 via-transparent to-[#0B1320]/20 z-10" />
 
                 {/* Machined EST Badge */}
                 <div className="absolute top-5 left-5 z-30 flex items-center gap-3 bg-[#0A111F]/80 backdrop-blur-md border border-ssc-gold/30 rounded-full px-4 py-2">
