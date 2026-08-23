@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AboutSection } from "@/components/AboutSection";
+import { SteelTimeline } from "@/components/SteelTimeline";
 import { AboutHero } from "@/components/AboutHero";
 import { AboutBusinessCards } from "@/components/AboutBusinessCards";
 import { LeadershipSection } from "@/components/LeadershipSection";
@@ -33,7 +33,7 @@ function AboutPage() {
       <LeadershipSection />
       
       {/* 04 — INDUSTRIAL TIMELINE */}
-      <AboutSection />
+      <SteelTimeline />
       
       {/* 05 — REGIONAL INDUSTRIAL NETWORK */}
       <IndustrialNetwork />
