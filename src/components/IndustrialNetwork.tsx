@@ -167,7 +167,7 @@ export const IndustrialNetwork = () => {
         </div>
 
         {/* Mobile / Tablet Locations List */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:hidden">
+        <div className="mt-0 lg:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:hidden">
           {locations.map((loc, idx) => {
             const Icon = loc.icon;
             return (
