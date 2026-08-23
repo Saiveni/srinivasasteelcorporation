@@ -36,35 +36,49 @@ const TMTBar = ({ orientation = 'horizontal', className = "" }: { orientation?: 
   const isHorizontal = orientation === 'horizontal';
   
   return (
-    <div className={`relative ${isHorizontal ? 'h-8 w-full' : 'w-8 h-full'} ${className}`}>
-      {/* Three Parallel Bars */}
+  return (
+    <div className={`relative ${isHorizontal ? 'h-14 w-full' : 'w-14 h-full'} ${className}`}>
+      {/* Three Substantial, Realistic 3D TMT Rebars */}
       <div className={`flex ${isHorizontal ? 'flex-col justify-between h-full' : 'flex-row justify-between w-full'}`}>
         {[0, 1, 2].map((i) => (
           <div 
             key={i}
-            className={`relative rounded-full border border-white/10 overflow-hidden shadow-2xl
-              ${isHorizontal ? 'h-2 w-full' : 'w-2 h-full'}
-              bg-gradient-to-b from-[#2A2D35] via-[#3A3F47] to-[#1A1C22]
+            className={`relative rounded-full border border-[#4A4E57]/30 shadow-[inset_0_2px_4px_rgba(255,255,255,0.1),_0_10px_20px_rgba(0,0,0,0.6)] overflow-hidden
+              ${isHorizontal ? 'h-3.5 w-full' : 'w-3.5 h-full'}
+              bg-gradient-to-b from-[#32363D] via-[#4A4E57] to-[#1A1C22]
             `}
           >
-            {/* Helical Ribs */}
+            {/* Realistic Raised Helical Ribs (using repeating linear gradient with drop shadow effect) */}
             <div 
-              className="absolute inset-0 opacity-40 mix-blend-overlay"
+              className="absolute inset-0 opacity-60"
               style={{
                 backgroundImage: isHorizontal 
-                  ? 'repeating-linear-gradient(45deg, transparent, transparent 4px, #000 4px, #000 6px)'
-                  : 'repeating-linear-gradient(135deg, transparent, transparent 4px, #000 4px, #000 6px)',
-                backgroundSize: isHorizontal ? '12px 100%' : '100% 12px'
+                  ? `repeating-linear-gradient(60deg, 
+                      transparent, 
+                      transparent 6px, 
+                      rgba(0,0,0,0.4) 6px, 
+                      rgba(0,0,0,0.4) 7px,
+                      rgba(255,255,255,0.1) 8px,
+                      transparent 9px)`
+                  : `repeating-linear-gradient(150deg, 
+                      transparent, 
+                      transparent 6px, 
+                      rgba(0,0,0,0.4) 6px, 
+                      rgba(0,0,0,0.4) 7px,
+                      rgba(255,255,255,0.1) 8px,
+                      transparent 9px)`,
+                backgroundSize: isHorizontal ? '20px 100%' : '100% 20px'
               }}
             />
-            {/* Metallic Highlight */}
-            <div className={`absolute inset-0 bg-gradient-to-${isHorizontal ? 'b' : 'r'} from-white/10 via-transparent to-black/40`} />
             
-            {/* Embossed Branding (subtle) */}
+            {/* Realistic Metallic Highlight & Shadow */}
+            <div className={`absolute inset-0 bg-gradient-to-${isHorizontal ? 'b' : 'r'} from-white/20 via-transparent to-black/60`} />
+            
+            {/* Embossed Branding */}
             {i === 1 && (
-              <div className={`absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none`}>
-                <span className={`text-[4px] font-technical font-black tracking-[1em] text-white ${isHorizontal ? '' : 'rotate-90'}`}>
-                  SSC TMT
+              <div className={`absolute inset-0 flex items-center justify-center opacity-30 pointer-events-none`}>
+                <span className={`text-[5px] font-technical font-black tracking-[1.5em] text-white/80 ${isHorizontal ? '' : 'rotate-90'}`}>
+                  SSC-STEEL-TMT
                 </span>
               </div>
             )}
