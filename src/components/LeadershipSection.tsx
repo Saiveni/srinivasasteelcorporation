@@ -101,22 +101,19 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-16 lg:py-24 bg-ssc-steel-light overflow-hidden">
-      {/* Precision Blueprint Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'linear-gradient(var(--ssc-navy) 1px, transparent 1px), linear-gradient(90deg, var(--ssc-navy) 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
-          }}
-        />
-      </div>
-      {/* Background Engineering Elements */}
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-hidden">
+      {/* Dynamic Geometric Technical Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-        <div className="absolute inset-0 opacity-[0.02]" 
-             style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+        <div className="absolute inset-0 opacity-[0.05]" 
+             style={{ 
+               backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.2) 1px, transparent 0)', 
+               backgroundSize: '40px 40px' 
+             }} />
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.02]" 
+             style={{ 
+               backgroundImage: 'linear-gradient(45deg, transparent 48%, #fff 50%, transparent 52%)',
+               backgroundSize: '100px 100px'
+             }} />
       </div>
 
       <div className="container-wide relative z-10 mx-auto">
