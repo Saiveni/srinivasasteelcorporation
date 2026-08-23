@@ -33,17 +33,8 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
         duration: 0.8, 
         ease: [0.21, 1, 0.36, 1] 
       }}
-      className="relative group w-full pt-16"
+      className="relative group w-full"
     >
-      {/* Hanging Hook Visual Element */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-16 bg-gradient-to-b from-[#b8bec7] to-[#e6e8ec] z-0" />
-      <div className="absolute top-12 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#b8bec7] z-10" />
-      <div className="absolute top-[52px] left-1/2 -translate-x-1/2 w-6 h-6 z-20">
-        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-ssc-gold drop-shadow-md">
-          <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
-        </svg>
-      </div>
-
       {/* 3D Animated Card */}
       <motion.div 
         whileHover={{ rotateY: 8, rotateX: -5, translateZ: 20 }}
