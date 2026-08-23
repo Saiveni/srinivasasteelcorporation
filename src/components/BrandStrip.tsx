@@ -53,23 +53,23 @@ export const BrandStrip = () => {
                 ease: [0.21, 0.47, 0.32, 0.98]
               }}
               whileHover={{ y: -4 }}
-              className="group flex flex-col items-center text-center p-6 md:p-7 rounded-xl bg-ssc-steel-dark/40 border border-ssc-on-dark-primary/10 shadow-premium-soft hover:shadow-premium-medium hover:border-ssc-gold/30 transition-all duration-500 relative overflow-hidden"
+              className="group flex flex-col items-center text-center p-6 md:p-8 rounded-xl bg-white border border-ssc-gold/20 shadow-premium-soft hover:shadow-premium-medium hover:border-ssc-gold/40 transition-all duration-500 relative overflow-hidden"
             >
               {/* Subtle metallic sheen on hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               
-              {/* 2. LOGOS — Substantial display size */}
-              <div className="relative w-full h-32 sm:h-36 md:h-40 flex items-center justify-center mb-5">
+              {/* Increased Logo Size with White Background Card */}
+              <div className="relative w-full h-40 sm:h-48 md:h-56 flex items-center justify-center mb-6">
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}
-                  className="w-full h-full object-contain filter brightness-110 drop-shadow-md transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110"
                   loading="eager"
                 />
               </div>
 
               {/* 3. PARTNER NAME — Strong Title */}
-              <h3 className="text-body-large font-bold text-ssc-on-dark-primary tracking-tight uppercase mb-2 transition-colors duration-300 group-hover:text-ssc-gold">
+              <h3 className="text-body-large font-bold text-ssc-navy tracking-tight uppercase mb-2 transition-colors duration-300 group-hover:text-ssc-gold">
                 {brand.name}
               </h3>
 
