@@ -108,17 +108,15 @@ const HangingCard = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, rotate: -2 }}
-      whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+      initial={{ opacity: 0, x: 20 }}
+      whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ 
         delay: delay + 0.5, 
         duration: 1.2, 
-        type: "spring", 
-        stiffness: 50, 
-        damping: 12 
+        ease: [0.16, 1, 0.3, 1]
       }}
-      whileHover={{ rotate: 1, y: -5 }}
+      whileHover={{ x: 5 }}
       className="relative ml-[-4px]"
     >
       <div className="bg-[#0c0f13] border border-[#c5a059]/30 rounded-[12px] p-6 sm:p-8 w-[280px] sm:w-[380px] shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative group">
