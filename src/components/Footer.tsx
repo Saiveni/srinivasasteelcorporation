@@ -1,21 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
-import { Mail, Phone, MapPin, ShieldCheck, Truck, Users } from "lucide-react";
+import { Mail, Phone, MapPin, ShieldCheck, Truck, Users, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const products = [
-    { name: "TMT Rebars", path: "/products" },
-    { name: "Structural Steel", path: "/products" },
-    { name: "Steel Pipes", path: "/products" },
-    { name: "Steel Coils", path: "/products" },
-    { name: "Wire Products", path: "/products" },
-    { name: "Decoiling Solutions", path: "/products" },
+    { name: "TMT Rebars", path: "/products" as const },
+    { name: "Structural Steel", path: "/products" as const },
+    { name: "Steel Pipes", path: "/products" as const },
+    { name: "Steel Coils", path: "/products" as const },
+    { name: "Wire Products", path: "/products" as const },
+    { name: "Decoiling Solutions", path: "/products" as const },
   ];
 
   return (
-    <footer className="w-full">
+    <footer className="w-full font-poppins">
       <div className="hidden">
         {`'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
@@ -25,16 +25,14 @@ export const Footer = () => {
       </div>
 
       {/* UPPER FOOTER: Premium light/white industrial panel */}
-      <div className="bg-[#F8F9FA] relative overflow-hidden pt-20 pb-16 border-t border-ssc-gold/20">
-        {/* Steel/Industrial Texture Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-             style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/brushed-alum.png')` }}></div>
+      <div className="bg-[#F2F4F7] relative overflow-hidden pt-16 pb-12 border-t border-ssc-gold/20">
+        {/* Subtle steel/industrial texture */}
+        <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
+             style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/carbon-fibre.png')` }}></div>
         
-        {/* Subtle Geometric Detailing */}
-        <div className="absolute top-0 right-0 w-64 h-64 opacity-[0.05] pointer-events-none">
-          <svg viewBox="0 0 100 100" className="w-full h-full fill-ssc-navy">
-            <path d="M0 0 L100 0 L100 100 Z" />
-          </svg>
+        {/* Subtle geometric detailing - Angled gold line as per reference */}
+        <div className="absolute top-0 right-0 w-1/3 h-full pointer-events-none hidden lg:block">
+           <div className="absolute top-0 left-0 w-[2px] h-full bg-ssc-gold/40 -skew-x-[20deg] origin-top"></div>
         </div>
 
         <div className="container-wide relative z-10">
@@ -53,50 +51,43 @@ export const Footer = () => {
                   </span>
                 </div>
               </Link>
-              <div className="space-y-2">
-                <p className="text-ssc-gold font-bold text-[10px] tracking-widest uppercase">PREMIUM STEEL DISTRIBUTION SINCE 1994.</p>
-                <p className="text-ssc-navy/70 text-sm leading-relaxed max-w-xs italic">
-                  One of South India's premier steel distributors, providing uncompromising quality and structural integrity to the nation's infrastructure since 1994.
+              <div className="space-y-4">
+                <p className="text-ssc-navy text-sm leading-relaxed max-w-xs">
+                  Premium steel distribution since 1994. Committed to quality, reliability and customer satisfaction.
                 </p>
-              </div>
-              <div className="flex gap-4 pt-2">
-                <span className="text-[10px] text-ssc-navy/40 font-bold tracking-widest uppercase">Stay Connected</span>
+                <div className="flex gap-3">
+                  {[Facebook, Linkedin, Instagram, Youtube].map((Icon, i) => (
+                    <a key={i} href="#" className="w-9 h-9 rounded-full bg-ssc-navy text-white flex items-center justify-center hover:bg-ssc-gold transition-colors duration-300">
+                      <Icon size={16} />
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* QUICK LINKS */}
-            <div className="lg:pl-8">
-              <h4 className="text-ssc-navy font-bold text-xs uppercase tracking-widest mb-8 flex items-center gap-2">
-                <span className="w-6 h-[1px] bg-ssc-gold"></span>
+            <div className="lg:pl-8 border-l border-ssc-navy/5">
+              <h4 className="text-ssc-navy font-bold text-sm uppercase tracking-widest mb-8">
                 QUICK LINKS
               </h4>
               <ul className="space-y-4 text-sm font-medium">
-                {['Home', 'About Us', 'Products', 'Gallery', 'Contact Us'].map((item) => (
-                  <li key={item}>
-                    <Link 
-                      to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' us', '')}`} 
-                      className="text-ssc-navy/60 hover:text-ssc-navy hover:translate-x-1 inline-block transition-all duration-300"
-                    >
-                      {item}
-                    </Link>
-                  </li>
-                ))}
+                <li><Link to="/" className="text-ssc-navy/70 hover:text-ssc-navy transition-colors">Home</Link></li>
+                <li><Link to="/about" className="text-ssc-navy/70 hover:text-ssc-navy transition-colors">About Us</Link></li>
+                <li><Link to="/products" className="text-ssc-navy/70 hover:text-ssc-navy transition-colors">Products</Link></li>
+                <li><Link to="/gallery" className="text-ssc-navy/70 hover:text-ssc-navy transition-colors">Gallery</Link></li>
+                <li><Link to="/contact" className="text-ssc-navy/70 hover:text-ssc-navy transition-colors">Contact Us</Link></li>
               </ul>
             </div>
 
             {/* OUR PRODUCTS */}
-            <div>
-              <h4 className="text-ssc-navy font-bold text-xs uppercase tracking-widest mb-8 flex items-center gap-2">
-                <span className="w-6 h-[1px] bg-ssc-gold"></span>
+            <div className="border-l border-ssc-navy/5">
+              <h4 className="text-ssc-navy font-bold text-sm uppercase tracking-widest mb-8">
                 OUR PRODUCTS
               </h4>
-              <ul className="space-y-4 text-sm font-medium">
+              <ul className="space-y-4 text-sm font-medium text-ssc-navy/70">
                 {products.map((product) => (
                   <li key={product.name}>
-                    <Link 
-                      to={product.path as any}
-                      className="text-ssc-navy/60 hover:text-ssc-navy hover:translate-x-1 inline-block transition-all duration-300"
-                    >
+                    <Link to={product.path} className="hover:text-ssc-navy transition-colors">
                       {product.name}
                     </Link>
                   </li>
@@ -105,47 +96,40 @@ export const Footer = () => {
             </div>
 
             {/* GET IN TOUCH */}
-            <div className="relative">
-              <h4 className="text-ssc-navy font-bold text-xs uppercase tracking-widest mb-8 flex items-center gap-2">
-                <span className="w-6 h-[1px] bg-ssc-gold"></span>
+            <div className="relative lg:pl-4 border-l border-ssc-navy/5">
+              <h4 className="text-ssc-navy font-bold text-sm uppercase tracking-widest mb-8">
                 GET IN TOUCH
               </h4>
-              <ul className="space-y-6 text-sm">
-                <li className="flex gap-4 group">
-                  <div className="w-10 h-10 shrink-0 bg-white border border-ssc-gold/20 flex items-center justify-center text-ssc-gold group-hover:bg-ssc-gold group-hover:text-white transition-all duration-300">
-                    <MapPin size={18} />
-                  </div>
-                  <span className="text-ssc-navy/70 leading-snug">
-                    Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012
+              <ul className="space-y-5 text-sm text-ssc-navy/80">
+                <li className="flex gap-3 items-start group">
+                  <MapPin size={18} className="text-ssc-navy shrink-0 mt-0.5" />
+                  <span>
+                    Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada - 520012, Andhra Pradesh, India
                   </span>
                 </li>
-                <li className="flex gap-4 group">
-                  <div className="w-10 h-10 shrink-0 bg-white border border-ssc-gold/20 flex items-center justify-center text-ssc-gold group-hover:bg-ssc-gold group-hover:text-white transition-all duration-300">
-                    <Phone size={18} />
-                  </div>
-                  <div className="flex flex-col text-ssc-navy/70 font-bold">
-                    <a href="tel:9440170453" className="hover:text-ssc-gold transition-colors">9440170453</a>
-                    <a href="tel:9849600403" className="hover:text-ssc-gold transition-colors text-xs opacity-70">9849600403</a>
+                <li className="flex gap-3 items-center group">
+                  <Phone size={18} className="text-ssc-navy shrink-0" />
+                  <div className="flex flex-col">
+                    <a href="tel:+919440170453" className="hover:text-ssc-gold transition-colors">+91 9440170453 (M.S.V. Bhaskar)</a>
+                    <a href="tel:+919849600403" className="hover:text-ssc-gold transition-colors">+91 9849600403 (M.V. Ramana Kumar)</a>
+                    <a href="tel:+918125397453" className="hover:text-ssc-gold transition-colors">+91 8125397453 (M.V.N.M. Yeshwanth)</a>
                   </div>
                 </li>
-                <li className="flex gap-4 group">
-                  <div className="w-10 h-10 shrink-0 bg-white border border-ssc-gold/20 flex items-center justify-center text-ssc-gold group-hover:bg-ssc-gold group-hover:text-white transition-all duration-300">
-                    <Mail size={18} />
-                  </div>
-                  <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-ssc-navy/70 font-bold hover:text-ssc-gold transition-colors truncate">
+                <li className="flex gap-3 items-center group">
+                  <Mail size={18} className="text-ssc-navy shrink-0" />
+                  <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="hover:text-ssc-gold transition-colors truncate">
                     srinivasasteelcorporationvja@gmail.com
                   </a>
                 </li>
               </ul>
 
-              {/* INDUSTRIAL VISUAL ELEMENT: Subtle steel bars in background */}
-              <div className="absolute -bottom-16 -right-16 w-48 h-48 opacity-[0.08] pointer-events-none overflow-hidden select-none">
+              {/* INDUSTRIAL VISUAL ELEMENT: Steel rods as per reference */}
+              <div className="absolute -top-16 -right-16 w-40 h-[120%] opacity-20 pointer-events-none hidden xl:block">
                 <img 
                   src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop" 
-                  alt="Steel detail" 
-                  className="w-full h-full object-cover grayscale"
+                  alt="Steel rods" 
+                  className="w-full h-full object-cover grayscale -skew-x-[20deg]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#F8F9FA] via-transparent to-transparent"></div>
               </div>
             </div>
 
@@ -154,48 +138,53 @@ export const Footer = () => {
       </div>
 
       {/* LOWER FOOTER STRIP: Dark navy/black industrial strip */}
-      <div className="bg-[#050A14] text-white py-12 border-t border-white/5">
+      <div className="bg-[#0B1320] text-white py-8 border-t border-white/5">
         <div className="container-wide">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 border-b border-white/5 pb-12">
+          <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
             
-            {/* Credibility 1 */}
-            <div className="flex items-center gap-5 group">
-              <div className="w-12 h-12 rounded-lg bg-ssc-gold/10 border border-ssc-gold/20 flex items-center justify-center text-ssc-gold group-hover:bg-ssc-gold group-hover:text-black transition-all duration-500">
-                <ShieldCheck size={24} />
+            <div className="flex flex-wrap justify-center lg:justify-start gap-8 md:gap-12">
+              {/* Credibility 1 */}
+              <div className="flex items-center gap-4 group">
+                <div className="text-ssc-gold">
+                  <ShieldCheck size={28} />
+                </div>
+                <div>
+                  <h5 className="text-[11px] font-bold tracking-widest uppercase text-white">HIGH QUALITY STEEL</h5>
+                  <p className="text-[10px] text-white/50 uppercase">Tested. Trusted. Delivered.</p>
+                </div>
               </div>
-              <div>
-                <h5 className="text-xs font-bold tracking-widest uppercase">HIGH QUALITY STEEL</h5>
-                <p className="text-[10px] text-white/40 uppercase mt-1">Tested. Trusted. Delivered.</p>
+
+              {/* Credibility 2 */}
+              <div className="flex items-center gap-4 group">
+                <div className="text-ssc-gold">
+                  <Truck size={28} />
+                </div>
+                <div>
+                  <h5 className="text-[11px] font-bold tracking-widest uppercase text-white">TIMELY DELIVERY</h5>
+                  <p className="text-[10px] text-white/50 uppercase">On-time, Every time.</p>
+                </div>
+              </div>
+
+              {/* Credibility 3 */}
+              <div className="flex items-center gap-4 group">
+                <div className="text-ssc-gold">
+                  <Users size={28} />
+                </div>
+                <div>
+                  <h5 className="text-[11px] font-bold tracking-widest uppercase text-white">CUSTOMER FOCUSED</h5>
+                  <p className="text-[10px] text-white/50 uppercase">Building long-term trust.</p>
+                </div>
               </div>
             </div>
 
-            {/* Credibility 2 */}
-            <div className="flex items-center gap-5 group">
-              <div className="w-12 h-12 rounded-lg bg-ssc-gold/10 border border-ssc-gold/20 flex items-center justify-center text-ssc-gold group-hover:bg-ssc-gold group-hover:text-black transition-all duration-500">
-                <Truck size={24} />
-              </div>
-              <div>
-                <h5 className="text-xs font-bold tracking-widest uppercase">TIMELY DELIVERY</h5>
-                <p className="text-[10px] text-white/40 uppercase mt-1">On-time, Every time.</p>
-              </div>
+            <div className="flex flex-col items-center lg:items-end gap-1 text-[11px] tracking-widest text-white/50 uppercase border-l border-white/10 pl-10 hidden lg:flex">
+              <p>© {currentYear} Srinivasa Steel Corporation.</p>
+              <p>All Rights Reserved.</p>
             </div>
-
-            {/* Credibility 3 */}
-            <div className="flex items-center gap-5 group">
-              <div className="w-12 h-12 rounded-lg bg-ssc-gold/10 border border-ssc-gold/20 flex items-center justify-center text-ssc-gold group-hover:bg-ssc-gold group-hover:text-black transition-all duration-500">
-                <Users size={24} />
-              </div>
-              <div>
-                <h5 className="text-xs font-bold tracking-widest uppercase">CUSTOMER FOCUSED</h5>
-                <p className="text-[10px] text-white/40 uppercase mt-1">Building long-term trust.</p>
-              </div>
+            
+            <div className="lg:hidden text-[10px] tracking-widest text-white/40 uppercase text-center border-t border-white/5 pt-6 w-full">
+               <p>© {currentYear} Srinivasa Steel Corporation. All Rights Reserved.</p>
             </div>
-
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium tracking-widest opacity-40 uppercase">
-            <p>© {currentYear} Srinivasa Steel Corporation.</p>
-            <p>All Rights Reserved.</p>
           </div>
         </div>
       </div>
