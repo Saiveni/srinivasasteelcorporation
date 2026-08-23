@@ -65,8 +65,9 @@ export const IndustrialNetwork = () => {
           </motion.div>
         </div>
 
-        {/* Network Map / Interactive Visualization */}
-        <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/5 rounded-[32px] overflow-hidden group/map shadow-2xl">
+        {/* Network Map / Interactive Visualization - Desktop Only */}
+        <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/5 rounded-[32px] overflow-hidden group/map shadow-2xl hidden lg:block">
+
           {/* Map Grid Detail */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <svg className="w-full h-full">
@@ -166,7 +167,7 @@ export const IndustrialNetwork = () => {
         </div>
 
         {/* Mobile / Tablet Locations List */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:hidden">
+        <div className="mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:hidden">
           {locations.map((loc, idx) => {
             const Icon = loc.icon;
             return (
@@ -176,13 +177,14 @@ export const IndustrialNetwork = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-[#0C121E] border border-white/5 p-8 rounded-[24px] shadow-xl relative overflow-hidden"
+                className="bg-white/[0.02] border border-white/5 p-8 rounded-[24px] shadow-xl relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-ssc-gold/10 rounded-tr-[24px]" />
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-ssc-gold/10 flex items-center justify-center border border-ssc-gold/20">
-                    <Icon size={20} className="text-ssc-gold" />
+                  <div className="w-12 h-12 rounded-xl bg-ssc-gold/5 flex items-center justify-center border border-ssc-gold/10 group-hover:border-ssc-gold/30 transition-colors">
+                    <Icon size={20} className="text-ssc-gold/60 group-hover:text-ssc-gold transition-colors" />
                   </div>
+
                   <div>
                     <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.2em] uppercase">
                       {loc.type}
@@ -192,7 +194,7 @@ export const IndustrialNetwork = () => {
                     </h4>
                   </div>
                 </div>
-                <p className="text-white/50 text-[13px] leading-relaxed font-medium">
+                <p className="text-white/60 text-[13px] leading-relaxed font-medium italic">
                   {loc.address}
                 </p>
               </motion.div>
