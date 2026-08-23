@@ -9,7 +9,7 @@ const locations = [
     type: "HEAD OFFICE & GODOWN",
     icon: Building2,
     address: "Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
-    coords: { x: "52%", y: "68%" },
+    coords: { x: "50%", y: "65%" },
   },
   {
     id: "gannavaram",
@@ -17,7 +17,7 @@ const locations = [
     type: "YARD",
     icon: Warehouse,
     address: "Gannavaram Yard, Nuzividu Road, Gannavaram – 521101",
-    coords: { x: "53.5%", y: "69%" },
+    coords: { x: "52%", y: "68%" },
   },
   {
     id: "vizag",
@@ -25,7 +25,7 @@ const locations = [
     type: "YARD",
     icon: Factory,
     address: "S. No. 156, Plot No. 163A, 163B, AIE Pedagantyada, Vizag – 530044",
-    coords: { x: "58%", y: "63%" },
+    coords: { x: "62%", y: "55%" },
   }
 ];
 
@@ -67,13 +67,13 @@ export const IndustrialNetwork = () => {
 
         {/* Network Map / Interactive Visualization - Desktop Only */}
         <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/5 rounded-[32px] overflow-hidden group/map shadow-2xl hidden lg:block">
-          {/* India Map Background */}
-          <div className="absolute inset-0 opacity-[0.06] pointer-events-none flex items-center justify-center translate-y-12">
-            <svg viewBox="0 0 1024 1024" className="w-[850px] h-[850px] fill-transparent stroke-ssc-gold/30">
+          {/* India Map Background - Adjusted scaling and positioning */}
+          <div className="absolute inset-0 opacity-[0.08] pointer-events-none flex items-center justify-center translate-y-20">
+            <svg viewBox="0 0 1024 1024" className="w-[1200px] h-[1200px] fill-transparent stroke-ssc-gold/20">
               <path 
                 d="M4040 10225 c-14 -8 -40 -14 -58 -15 -64 0 -119 -22 -173 -66 -57 -47 -124 -77 -199 -89 -25 -4 -89 -29 -142 -56 l-97 -49 -17 -56 c-9 -33 -30 -71 -49 -92 -31 -34 -35 -36 -121 -42 -71 -5 -104 -13 -158 -38 -83 -39 -130 -40 -211 -7 -33 14 -91 30 -130 36 -38 6 -86 19 -106 29 -46 24 -69 26 -152 16 -65 -8 -68 -10 -82 -43 -21 -50 -19 -76 10 -103 16 -15 25 -35 25 -54 0 -17 7 -40 15 -50 22 -30 18 -58 -12 -82 -27 -21 -27 -24 -16 -65 10 -38 9 -50 -8 -88 -10 -24 -19 -51 -19 -60 0 -9 28 -44 63 -77 101 -97 102 -98 156 -95 54 2 47 11 67 -89 5 -26 12 -32 57 -44 29 -8 69 -17 90 -21 43 -7 49 -28 18 -66 -15 -19 -30 -24 -84 -27 -62 -4 -67 -6 -95 -42 -17 -20 -45 -43 -63 -50Z" 
-                transform="scale(0.08) translate(-1000, -8500)" 
-                strokeWidth="4" 
+                transform="scale(0.12) translate(-3600, -7800)" 
+                strokeWidth="2.5" 
               />
             </svg>
           </div>
@@ -81,7 +81,7 @@ export const IndustrialNetwork = () => {
           {/* Network Connection Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             <motion.path
-              d="M 52% 68% L 53.5% 69% Q 57% 67% 58% 63%"
+              d="M 50% 65% Q 58% 65% 62% 55%"
               fill="none"
               stroke="rgba(197,160,89,0.3)"
               strokeWidth="1.5"
