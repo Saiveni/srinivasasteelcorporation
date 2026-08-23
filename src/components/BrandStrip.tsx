@@ -40,7 +40,7 @@ export const BrandStrip = () => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16 items-start justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch justify-center">
           {brands.map((brand, idx) => (
             <motion.div
               key={brand.name}
@@ -52,31 +52,32 @@ export const BrandStrip = () => {
                 delay: idx * 0.15,
                 ease: [0.21, 0.47, 0.32, 0.98]
               }}
-              whileHover={{ y: -8 }}
-              className="group flex flex-col items-center text-center p-6 md:p-8 rounded-xl bg-ssc-steel-dark/30 border border-ssc-on-dark-primary/5 shadow-premium-soft hover:shadow-premium-medium hover:border-ssc-gold/20 transition-all duration-500"
+              whileHover={{ y: -4 }}
+              className="group flex flex-col items-center text-center p-6 md:p-7 rounded-xl bg-ssc-steel-dark/40 border border-ssc-on-dark-primary/10 shadow-premium-soft hover:shadow-premium-medium hover:border-ssc-gold/30 transition-all duration-500 relative overflow-hidden"
             >
-              {/* Premium Logo Container - Expanded for visual prominence, compact on mobile */}
-              <div className="relative w-full h-36 sm:h-40 md:h-56 flex items-center justify-center mb-4 md:mb-8 px-4">
-                {/* Subtle highlight effect */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                
+              {/* Subtle metallic sheen on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              {/* 2. LOGOS — Substantial display size */}
+              <div className="relative w-full h-32 sm:h-36 md:h-40 flex items-center justify-center mb-5">
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}
-                  className="w-full h-full object-contain filter brightness-110 drop-shadow-lg transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain filter brightness-110 drop-shadow-md transition-transform duration-500 group-hover:scale-105"
                   loading="eager"
                 />
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-body-large font-bold text-ssc-on-dark-primary tracking-tighter uppercase transition-colors duration-300 group-hover:text-ssc-gold">
-                  {brand.name}
-                </h3>
-                <div className="inline-block px-3 py-1 rounded-full bg-ssc-gold/5 border border-ssc-gold/10">
-                  <span className="text-[10px] font-bold text-ssc-gold uppercase tracking-widest">
-                    {brand.subtitle}
-                  </span>
-                </div>
+              {/* 3. PARTNER NAME — Strong Title */}
+              <h3 className="text-body-large font-bold text-ssc-on-dark-primary tracking-tight uppercase mb-2 transition-colors duration-300 group-hover:text-ssc-gold">
+                {brand.name}
+              </h3>
+
+              {/* 4. PARTNERSHIP TYPE — Gold accent label */}
+              <div className="inline-block px-3 py-1 rounded-full bg-ssc-gold/5 border border-ssc-gold/10">
+                <span className="text-[10px] font-bold text-ssc-gold uppercase tracking-[0.15em]">
+                  {brand.subtitle}
+                </span>
               </div>
             </motion.div>
           ))}
