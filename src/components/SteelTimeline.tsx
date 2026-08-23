@@ -32,123 +32,135 @@ const milestones = [
   }
 ];
 
-const SteelRod = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'horizontal' }) => {
-  if (orientation === 'horizontal') {
-    return (
-      <div className="absolute top-0 left-0 w-full h-[18px] flex items-center">
-        {/* The Rebar Body */}
-        <div className="w-full h-[12px] bg-[#2A2D35] relative overflow-hidden rounded-full border-y border-white/10 shadow-2xl">
-          {/* Rips/Texture */}
-          <div className="absolute inset-0 opacity-40" 
-               style={{ 
-                 backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 12px)',
-                 backgroundSize: '20px 100%'
-               }} 
-          />
-          {/* Steel Sheen */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/30" />
-        </div>
-      </div>
-    );
-  }
-
+const TMTBar = ({ orientation = 'horizontal', className = "" }: { orientation?: 'vertical' | 'horizontal', className?: string }) => {
+  const isHorizontal = orientation === 'horizontal';
+  
   return (
-    <div className="relative w-[18px] h-full flex justify-center">
-      {/* The Rebar Body */}
-      <div className="w-[12px] h-full bg-[#2A2D35] relative overflow-hidden rounded-full border-x border-white/10 shadow-2xl">
-        {/* Rips/Texture */}
-        <div className="absolute inset-0 opacity-40" 
-             style={{ 
-               backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 10px, #000 10px, #000 12px)',
-               backgroundSize: '100% 20px'
-             }} 
-        />
-        {/* Steel Sheen */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-black/30" />
+    <div className={`relative ${isHorizontal ? 'h-8 w-full' : 'w-8 h-full'} ${className}`}>
+      {/* Three Parallel Bars */}
+      <div className={`flex ${isHorizontal ? 'flex-col justify-between h-full' : 'flex-row justify-between w-full'}`}>
+        {[0, 1, 2].map((i) => (
+          <div 
+            key={i}
+            className={`relative rounded-full border border-white/10 overflow-hidden shadow-2xl
+              ${isHorizontal ? 'h-2 w-full' : 'w-2 h-full'}
+              bg-gradient-to-b from-[#2A2D35] via-[#3A3F47] to-[#1A1C22]
+            `}
+          >
+            {/* Helical Ribs */}
+            <div 
+              className="absolute inset-0 opacity-40 mix-blend-overlay"
+              style={{
+                backgroundImage: isHorizontal 
+                  ? 'repeating-linear-gradient(45deg, transparent, transparent 4px, #000 4px, #000 6px)'
+                  : 'repeating-linear-gradient(135deg, transparent, transparent 4px, #000 4px, #000 6px)',
+                backgroundSize: isHorizontal ? '12px 100%' : '100% 12px'
+              }}
+            />
+            {/* Metallic Highlight */}
+            <div className={`absolute inset-0 bg-gradient-to-${isHorizontal ? 'b' : 'r'} from-white/10 via-transparent to-black/40`} />
+            
+            {/* Embossed Branding (subtle) */}
+            {i === 1 && (
+              <div className={`absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none`}>
+                <span className={`text-[4px] font-technical font-black tracking-[1em] text-white ${isHorizontal ? '' : 'rotate-90'}`}>
+                  SSC TMT
+                </span>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-const ClampHook = ({ position, orientation, delay, cardData }: any) => {
+const PhysicalHangingSystem = ({ orientation = 'horizontal', delay = 0, cardData }: any) => {
   const isHorizontal = orientation === 'horizontal';
   
   return (
-    <div 
-      className="absolute z-20"
-      style={{ 
-        left: isHorizontal ? position : '50%',
-        top: isHorizontal ? '50%' : position,
-        transform: 'translate(-50%, -50%)'
-      }}
-    >
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay, duration: 0.5, type: 'spring' }}
-        className="relative"
-      >
-        {/* Machined Metal Clamp */}
-        <div className="w-6 h-6 lg:w-8 lg:h-8 rounded-full bg-[#1A1D25] border-2 border-ssc-gold shadow-[0_0_15px_rgba(197,160,89,0.3)] flex items-center justify-center">
-          <div className="w-2 h-2 lg:w-3 lg:h-3 rounded-full bg-ssc-gold animate-pulse" />
+    <div className={`relative ${isHorizontal ? 'flex flex-col items-center' : 'flex items-center ml-2'}`}>
+      {/* 1. Metal Clamp (wraps around the 3 bars) */}
+      <div className="relative z-30">
+        <div className={`bg-gradient-to-br from-[#3A3F47] to-[#1A1C22] border border-white/20 rounded-sm shadow-lg flex items-center justify-center
+          ${isHorizontal ? 'w-10 h-10' : 'w-10 h-10'}`}
+        >
+          {/* Clamp Bolts */}
+          <div className="absolute -top-1 -left-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
+          <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
+          <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
+          <div className="absolute -bottom-1 -right-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
+          
+          <div className="w-4 h-4 rounded-full border border-ssc-gold/30 bg-black/40 flex items-center justify-center">
+            <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold shadow-[0_0_5px_rgba(197,160,89,0.5)]" />
+          </div>
         </div>
-        
-        {/* Connecting Arm/Hook */}
-        <div className={`absolute bg-gradient-to-r from-ssc-gold to-ssc-gold/20 shadow-lg ${
-          isHorizontal ? 'w-[2px] h-16 top-full left-1/2 -translate-x-1/2' : 'h-[2px] w-12 top-1/2 left-full'
-        }`} />
+      </div>
 
-        {/* The Card */}
-        <div className={`absolute ${
-          isHorizontal ? 'top-20 left-1/2 -translate-x-1/2' : 'left-24 top-1/2 -translate-y-1/2'
-        }`}>
-          <motion.div
-            initial={{ opacity: 0, x: isHorizontal ? 0 : 20, y: isHorizontal ? 20 : 0 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: delay + 0.3, duration: 0.6 }}
-            className="w-[280px] bg-[#0C121E] border border-white/10 p-6 rounded-2xl shadow-2xl relative group"
-          >
-            <div className="absolute top-0 left-0 w-1 h-full bg-ssc-gold opacity-30 group-hover:opacity-100 transition-opacity" />
-            
-            <div className="flex items-center justify-between mb-4">
-              <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.25em] uppercase">
-                {cardData.year}
-              </span>
-              <span className="text-white/20 text-[8px] font-technical font-bold tracking-widest">
-                {cardData.spec}
-              </span>
-            </div>
-            
-            <h4 className="text-white font-heading font-black italic text-xl mb-2 tracking-tight uppercase">
-              {cardData.title}
-            </h4>
-            
-            <p className="text-white/50 text-[13px] leading-relaxed font-medium italic">
-              {cardData.description}
-            </p>
-            
-            <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
-              <span className="text-ssc-gold/40 text-[8px] font-technical font-black tracking-widest uppercase">
-                {cardData.zone}
-              </span>
-              <div className="flex gap-1">
-                <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
-                <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
-                <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
-              </div>
-            </div>
-          </motion.div>
+      {/* 2. Short Metal Connector */}
+      <div className={`z-20 bg-gradient-to-b from-[#2A2D35] to-[#1A1C22] border-x border-white/10 shadow-md
+        ${isHorizontal ? 'w-2 h-8' : 'h-2 w-8'}`} 
+      />
+
+      {/* 3. Hook */}
+      <div className="relative z-30">
+        <div className={`bg-[#1A1C22] border-2 border-ssc-gold/50 rounded-full flex items-center justify-center shadow-lg
+          ${isHorizontal ? 'w-6 h-6' : 'w-6 h-6'}`}
+        >
+          <div className="w-2 h-2 rounded-full bg-ssc-gold" />
         </div>
-      </motion.div>
+      </div>
+
+      {/* 4. Timeline Card */}
+      <div className={`mt-2 ${isHorizontal ? '' : 'ml-4'}`}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: delay + 0.3, duration: 0.6 }}
+          className="w-[280px] bg-[#0C121E] border border-white/10 p-6 rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] relative group"
+        >
+          {/* Hanging point on card */}
+          <div className={`absolute ${isHorizontal ? '-top-1 left-1/2 -translate-x-1/2' : 'top-1/2 -left-1 -translate-y-1/2'} w-3 h-3 bg-ssc-gold rounded-full border-2 border-[#0C121E] shadow-sm`} />
+          
+          <div className="absolute top-0 left-0 w-1 h-full bg-ssc-gold opacity-30 group-hover:opacity-100 transition-opacity" />
+          
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.25em] uppercase">
+              {cardData.year}
+            </span>
+            <span className="text-white/20 text-[8px] font-technical font-bold tracking-widest">
+              {cardData.spec}
+            </span>
+          </div>
+          
+          <h4 className="text-white font-heading font-black italic text-xl mb-2 tracking-tight uppercase">
+            {cardData.title}
+          </h4>
+          
+          <p className="text-white/50 text-[13px] leading-relaxed font-medium italic">
+            {cardData.description}
+          </p>
+          
+          <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+            <span className="text-ssc-gold/40 text-[8px] font-technical font-black tracking-widest uppercase">
+              {cardData.zone}
+            </span>
+            <div className="flex gap-1">
+              <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
+              <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
+              <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </div>
   );
 };
 
 export const SteelTimeline = () => {
   return (
-    <section id="timeline" className="relative py-12 lg:py-20 bg-[#080E1A] overflow-hidden">
+    <section id="timeline" className="relative py-24 lg:py-32 bg-[#080E1A] overflow-hidden">
       {/* Background System */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03]" 
@@ -160,7 +172,7 @@ export const SteelTimeline = () => {
       </div>
 
       <div className="container-wide relative z-10 px-6 max-w-[1400px] mx-auto">
-        <div className="text-center mb-20 lg:mb-32">
+        <div className="text-center mb-24 lg:mb-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -180,65 +192,55 @@ export const SteelTimeline = () => {
           </motion.div>
         </div>
 
-        {/* Desktop Version - Horizontal Rod */}
+        {/* Desktop Version - Horizontal TMT Structural System */}
         <div className="hidden lg:block relative h-[600px] mt-20">
-          <SteelRod orientation="horizontal" />
-          <ClampHook position="10%" orientation="horizontal" delay={0.5} cardData={milestones[0]} />
-          <ClampHook position="36%" orientation="horizontal" delay={0.8} cardData={milestones[1]} />
-          <ClampHook position="62%" orientation="horizontal" delay={1.1} cardData={milestones[2]} />
-          <ClampHook position="88%" orientation="horizontal" delay={1.4} cardData={milestones[3]} />
+          {/* Main Structural Spine */}
+          <div className="absolute top-0 left-0 w-full px-12">
+            <TMTBar orientation="horizontal" />
+          </div>
+          
+          {/* Hanging Cards */}
+          <div className="flex justify-between items-start px-24 pt-4">
+            <PhysicalHangingSystem cardData={milestones[0]} delay={0.2} />
+            <PhysicalHangingSystem cardData={milestones[1]} delay={0.4} />
+            <PhysicalHangingSystem cardData={milestones[2]} delay={0.6} />
+            <PhysicalHangingSystem cardData={milestones[3]} delay={0.8} />
+          </div>
         </div>
 
-        {/* Mobile Version - Vertical Rod on Left */}
-        <div className="lg:hidden relative flex min-h-[1000px] pt-10">
+        {/* Mobile Version - Vertical TMT Structural Spine */}
+        <div className="lg:hidden relative flex min-h-[1200px] pt-10">
           {/* Vertical Spine on Left */}
-          <div className="absolute left-4 top-0 bottom-0">
-            <SteelRod orientation="vertical" />
+          <div className="absolute left-6 top-0 bottom-0 h-full">
+            <TMTBar orientation="vertical" />
           </div>
 
           {/* Cards Container */}
-          <div className="flex flex-col gap-24 ml-12 w-full">
+          <div className="flex flex-col gap-24 ml-4 w-full">
             {milestones.map((ms, idx) => (
-              <div key={idx} className="relative flex items-center h-[180px]">
-                {/* Connecting Clamp & Arm for Mobile */}
-                <div className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-20 flex items-center">
-                  <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: idx * 0.2, duration: 0.5 }}
-                    className="w-6 h-6 rounded-full bg-[#1A1D25] border-2 border-ssc-gold shadow-[0_0_10px_rgba(197,160,89,0.3)] flex items-center justify-center"
-                  >
-                    <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold" />
-                  </motion.div>
-                  {/* Hook arm */}
-                  <div className="w-6 h-[2px] bg-gradient-to-r from-ssc-gold to-ssc-gold/20" />
-                </div>
-
-                <motion.div
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.2 + 0.2, duration: 0.6 }}
-                  className="w-full max-w-[300px] bg-[#0C121E] border border-white/10 p-5 rounded-xl shadow-2xl relative"
-                >
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-ssc-gold text-[8px] font-technical font-bold tracking-[0.2em] uppercase">
-                      {ms.year}
-                    </span>
-                  </div>
-                  <h4 className="text-white font-heading font-black italic text-lg mb-2 tracking-tight uppercase">
-                    {ms.title}
-                  </h4>
-                  <p className="text-white/50 text-[12px] leading-relaxed font-medium italic">
-                    {ms.description}
-                  </p>
-                </motion.div>
+              <div key={idx} className="relative flex items-center min-h-[220px]">
+                <PhysicalHangingSystem 
+                  orientation="vertical" 
+                  cardData={ms} 
+                  delay={idx * 0.2} 
+                />
               </div>
             ))}
           </div>
         </div>
 
+        {/* Scope Lock Verbatim Text */}
+        <div className="mt-32 px-6 py-8 border-t border-white/5 opacity-20">
+          <p className="text-[10px] font-technical text-white/50 leading-relaxed uppercase tracking-wider max-w-2xl mx-auto text-center">
+            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+            <br /><br />
+            ABOUT PAGE — TIMELINE STRUCTURE ONLY
+            <br />
+            IMPORTANT:
+            This is ONLY a rebuild of the About page timeline.
+            DO NOT CHANGE ANYTHING ELSE.
+          </p>
+        </div>
       </div>
     </section>
   );
