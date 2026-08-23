@@ -139,14 +139,14 @@ export const SteelTimeline = () => {
                 {/* Static Milestone Dot */}
                 <div className="absolute left-[24px] top-6 -translate-x-1/2 w-2 h-2 rounded-full bg-gray-400/50 z-10" />
                 
-                <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-5 rounded-[12px] shadow-premium-strong w-full ml-10">
+                <div className="bg-white border border-ssc-navy/5 p-6 rounded-[12px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] w-full ml-10">
                   <span className="text-micro text-ssc-gold block mb-1 uppercase font-bold tracking-widest">
                     {ms.year}
                   </span>
-                  <h4 className="text-ssc-on-dark-primary mb-2 text-sm font-bold">
+                  <h4 className="text-ssc-navy mb-2 text-base font-bold">
                     {ms.title}
                   </h4>
-                  <p className="text-xs text-ssc-on-dark-body leading-relaxed">
+                  <p className="text-sm text-ssc-gray-body leading-relaxed">
                     {ms.description}
                   </p>
                 </div>
