@@ -7,13 +7,22 @@ import heroSteelRebar from "@/assets/images/hero-steel-rebar.png.asset.json";
 import heroSteelWire from "@/assets/images/hero-steel-wire.png.asset.json";
 import heroTmtSteel from "@/assets/images/hero-tmt-steel.png.asset.json";
 
-const HERO_IMAGES = [
+interface HeroImage {
+  url: string;
+  alt: string;
+  position: {
+    desktop: string;
+    mobile: string;
+  };
+}
+
+const HERO_IMAGES: HeroImage[] = [
   {
     url: heroSteelRebar.url,
     alt: "Premium bundles of ribbed TMT reinforcement steel bars",
     position: {
       desktop: "center center",
-      mobile: "65% center" // Focus on rebar details for mobile
+      mobile: "65% center"
     }
   },
   {
@@ -29,7 +38,7 @@ const HERO_IMAGES = [
     alt: "Close-up cinematic shot of TMT 550D steel rebar stacked",
     position: {
       desktop: "center center",
-      mobile: "40% center" // Focus on stacks for mobile
+      mobile: "40% center"
     }
   }
 ];
@@ -43,12 +52,9 @@ export const HeroSection = () => {
     checkMobile();
     window.addEventListener('resize', checkMobile);
     
-    // Preload images
     HERO_IMAGES.forEach((img) => {
-      if (img.url) {
-        const image = new Image();
-        image.src = img.url;
-      }
+      const image = new Image();
+      image.src = img.url;
     });
 
     const timer = setInterval(() => {
