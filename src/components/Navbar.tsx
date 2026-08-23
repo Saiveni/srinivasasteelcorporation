@@ -288,8 +288,8 @@ export const Navbar = () => {
                           to={link.href}
                           onClick={() => setIsOpen(false)}
                           activeOptions={{ exact: link.href === '/' }}
-                          className={`group flex items-center gap-8 py-5 cursor-pointer transition-all duration-300 ${
-                            isActive ? "translate-x-3" : "hover:translate-x-2"
+                          className={`group flex items-center gap-6 py-3 cursor-pointer transition-all duration-300 ${
+                            isActive ? "translate-x-1" : "hover:translate-x-1"
                           }`}
                         >
                           {/* Premium 3D Circular Navigation Icons - Engineered Industrial Style */}
