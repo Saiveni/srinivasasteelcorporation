@@ -79,6 +79,14 @@ const StrengthCard = ({ item, isMobile = false }: { item: typeof strengths[0], i
 );
 
 export const WhyChooseUs = () => {
+  useEffect(() => {
+    // Add scroll padding to HTML for accurate scroll-to-id behavior
+    document.documentElement.style.scrollPaddingTop = '100px';
+    return () => {
+      document.documentElement.style.scrollPaddingTop = '';
+    };
+  }, []);
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -114,7 +122,7 @@ export const WhyChooseUs = () => {
         />
       </div>
 
-      <div className="container-wide relative z-10 mx-auto px-6 sm:pt-16 pt-24">
+      <div className="container-wide relative z-10 mx-auto px-6 pt-16 sm:pt-20">
         {/* Unified Heading Composition */}
         <div className="max-w-2xl mb-8 lg:mb-20">
           <motion.div
