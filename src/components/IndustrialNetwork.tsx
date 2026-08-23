@@ -65,8 +65,9 @@ export const IndustrialNetwork = () => {
           </motion.div>
         </div>
 
-        {/* Network Map / Interactive Visualization */}
-        <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/5 rounded-[32px] overflow-hidden group/map shadow-2xl">
+        {/* Network Map / Interactive Visualization - Desktop Only */}
+        <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/5 rounded-[32px] overflow-hidden group/map shadow-2xl hidden lg:block">
+
           {/* Map Grid Detail */}
           <div className="absolute inset-0 opacity-20 pointer-events-none">
             <svg className="w-full h-full">
