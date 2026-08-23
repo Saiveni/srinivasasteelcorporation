@@ -128,11 +128,11 @@ const PhysicalHangingSystem = ({ orientation = 'horizontal', delay = 0, cardData
       {/* 4. TIMELINE CARD (Physically Attached) */}
       <div className={`${isHorizontal ? '-mt-1' : '-ml-1'}`}>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: delay + 0.3, duration: 0.6 }}
-          className="w-[280px] bg-[#0C121E] border border-white/10 p-6 rounded-2xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] relative group overflow-hidden"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ delay: delay + 0.3, duration: 0.5 }}
+          className={`${isHorizontal ? 'w-[280px]' : 'w-[calc(100vw-90px)] max-w-[320px]'} bg-[#0C121E] border border-white/10 p-5 rounded-2xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] relative group overflow-hidden`}
         >
           {/* REAL HANGING POINT ON CARD (Physical Eyelet) */}
           <div className={`absolute ${isHorizontal ? '-top-3 left-1/2 -translate-x-1/2' : 'top-1/2 -left-3 -translate-y-1/2'} w-6 h-6 bg-[#1A1C22] rounded-full border border-white/10 flex items-center justify-center z-50`}>
@@ -209,37 +209,48 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Desktop Version - Horizontal TMT Structural System */}
-        <div className="hidden lg:block relative h-[600px] mt-20">
+        <div className="hidden lg:block relative mt-20">
           {/* Main Structural Spine */}
-          <div className="absolute top-0 left-0 w-full px-12">
+          <div className="w-full">
             <TMTBar orientation="horizontal" />
           </div>
           
-          {/* Hanging Cards */}
-          <div className="flex justify-between items-start px-24 pt-4">
-            <PhysicalHangingSystem cardData={milestones[0]} delay={0.2} />
-            <PhysicalHangingSystem cardData={milestones[1]} delay={0.4} />
-            <PhysicalHangingSystem cardData={milestones[2]} delay={0.6} />
-            <PhysicalHangingSystem cardData={milestones[3]} delay={0.8} />
+          {/* Hanging Cards Grid - Ensuring all 4 fit in viewport without overflow */}
+          <div className="grid grid-cols-4 gap-4 pt-4">
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[0]} delay={0.2} />
+            </div>
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[1]} delay={0.4} />
+            </div>
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[2]} delay={0.6} />
+            </div>
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[3]} delay={0.8} />
+            </div>
           </div>
         </div>
 
         {/* Mobile Version - Vertical TMT Structural Spine */}
-        <div className="lg:hidden relative flex min-h-[1200px] pt-10">
-          {/* Vertical Spine on Left */}
-          <div className="absolute left-6 top-0 bottom-0 h-full">
-            <TMTBar orientation="vertical" />
-          </div>
-
-          {/* Cards Container */}
-          <div className="flex flex-col gap-24 ml-4 w-full">
+        <div className="lg:hidden relative flex flex-col pt-10 px-2 overflow-x-hidden">
+          {/* Cards Container with Vertical Spine integrated */}
+          <div className="flex flex-col gap-20 w-full">
             {milestones.map((ms, idx) => (
-              <div key={idx} className="relative flex items-center min-h-[220px]">
-                <PhysicalHangingSystem 
-                  orientation="vertical" 
-                  cardData={ms} 
-                  delay={idx * 0.2} 
-                />
+              <div key={idx} className="relative flex min-h-[320px] w-full">
+                {/* Vertical Spine Fragment for this specific milestone */}
+                <div className="absolute left-0 top-0 bottom-0 w-14 flex justify-center">
+                  <TMTBar orientation="vertical" className="h-full" />
+                </div>
+                
+                {/* Hanging System & Card - Positioned to avoid cropping at 320px */}
+                <div className="pl-6 w-full flex items-start overflow-hidden">
+                  <PhysicalHangingSystem 
+                    orientation="vertical" 
+                    cardData={ms} 
+                    delay={idx * 0.15} 
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -250,29 +261,23 @@ export const SteelTimeline = () => {
           <p className="text-[10px] font-technical text-white/50 leading-relaxed uppercase tracking-wider max-w-2xl mx-auto text-center">
             '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
             <br /><br />
-            ABOUT PAGE TIMELINE — PART 1 ONLY
+            ABOUT PAGE TIMELINE — PART 2 ONLY
             <br /><br />
-            Fix ONLY the existing About page timeline. Do not change any other section, page, header, navigation, or responsive component.
+            Now fix ONLY the responsive behavior and positioning of the existing About page timeline.
             <br /><br />
-            The current timeline still looks like a generic UI timeline. I need it to look like a REAL INDUSTRIAL STEEL INSTALLATION.
+            Do not redesign the timeline again.
             <br /><br />
-            Use my attached TMT rebar reference as the visual reference.
+            DESKTOP: All 4 timeline cards must be completely visible inside the viewport. No fourth card cropping. No horizontal page overflow. No card extending outside the screen. The TMT bars, clamps, hooks and cards must remain physically aligned.
             <br /><br />
-            1. Replace the current thin horizontal bars with THREE substantial, realistic 3D TMT rebars.
-            <br />
-            The rebars must have: cylindrical thickness, realistic metallic steel surface, raised spiral/helical ribs, realistic highlights and shadows, rounded physical edges, visible depth.
+            MOBILE: Use the same visual design, but reflow it vertically. The TMT steel structure should run along the LEFT side. Cards must fit completely inside the mobile viewport. Test at: 320px, 375px, 390px and 430px.
             <br /><br />
-            2. The timeline cards must ACTUALLY HANG from the TMT bars.
-            <br />
-            REAL TMT BAR → METAL CLAMP → VERTICAL CONNECTOR → HOOK → TIMELINE CARD
+            There must be: no horizontal scrolling, no cropped cards, no cropped text, no disconnected hooks, no overlapping cards, no broken connectors. The cards must remain stable while scrolling.
             <br /><br />
-            3. Remove the unnecessary floating gold dots and decorative circles.
+            Remove any blur, floating movement, shifting or restructuring during scroll. Keep animation subtle: bar → clamp → hook → card gently reveal once when entering the viewport. After appearing, everything stays stable.
             <br /><br />
-            4. Keep the existing timeline content: 1994, 2000s, 2010s, Today.
+            IMPORTANT SCOPE LOCK: ONLY modify the About page timeline responsiveness and positioning. DO NOT CHANGE: header, navigation, hero, about introduction, feature cards, locations, other About sections, Home, Products, Gallery, Contact, desktop header, mobile header.
             <br /><br />
-            5. Use a premium industrial visual style: gunmetal + realistic steel + restrained metallic gold + deep navy.
-            <br /><br />
-            IMPORTANT: Only modify the About timeline. Do not touch anything else. STOP after completing these changes.
+            FINAL CHECK: Desktop = all 4 cards visible. Mobile = every card fully visible. Both versions = realistic TMT bars + physically connected hanging hooks. Zero horizontal overflow.
           </p>
         </div>
       </div>
