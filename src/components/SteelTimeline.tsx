@@ -68,7 +68,7 @@ export const SteelTimeline = () => {
             {/* Moving Gold Dot (Horizontal for Desktop) */}
             <motion.div 
               style={{ left: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-ssc-navy"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-[#f5f6f7]"
             />
           </div>
           
