@@ -55,15 +55,15 @@ export const BrandStrip = () => {
               whileHover={{ y: -8 }}
               className="group flex flex-col items-center text-center p-8 rounded-xl bg-ssc-steel-dark/30 border border-ssc-on-dark-primary/5 shadow-premium-soft hover:shadow-premium-medium hover:border-ssc-gold/20 transition-all duration-500"
             >
-              {/* Premium Logo Container - Increased height for larger logos */}
-              <div className="relative w-full h-40 flex items-center justify-center mb-6">
+              {/* Premium Logo Container - Expanded for visual prominence */}
+              <div className="relative w-full h-48 sm:h-56 flex items-center justify-center mb-8 px-4">
                 {/* Subtle highlight effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}
-                  className="w-full h-full p-2 object-contain filter brightness-110 drop-shadow-lg transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-full object-contain filter brightness-110 drop-shadow-lg transition-transform duration-500 group-hover:scale-105"
                   loading="eager"
                 />
               </div>
