@@ -72,11 +72,11 @@ export const WhyChooseUs = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-[2px] bg-foreground" />
-                <span className="text-primary text-micro">
-                  Business Strengths
+                <span className="text-micro text-primary uppercase">
+                  BUSINESS STRENGTHS
                 </span>
               </div>
-              <h2 className="text-foreground italic uppercase">
+              <h2 className="text-h2 text-foreground mb-8 uppercase">
                 WHY BUILD WITH <br />
                 <span className="text-primary">SRINIVASA STEEL?</span>
               </h2>
@@ -84,7 +84,7 @@ export const WhyChooseUs = () => {
           </div>
           
           <div className="w-full lg:w-1/2">
-            <p className="text-ssc-gray-body text-body-large max-w-xl">
+            <p className="text-body text-foreground/70 max-w-xl">
               From premium TMT rebar to industrial decoiling, we provide the physical foundation for regional infrastructure development.
             </p>
           </div>
@@ -115,12 +115,12 @@ export const WhyChooseUs = () => {
                 <div className="w-14 h-14 rounded-lg bg-ssc-steel-dark border border-primary/20 flex items-center justify-center shadow-lg group-hover:border-primary transition-colors duration-500">
                   <item.icon size={24} className="text-primary" />
                 </div>
-                <h4 className="text-white italic text-xl sm:text-2xl uppercase">
+                <h4 className="text-white text-h4 uppercase">
                   {item.title}
                 </h4>
               </div>
 
-              <p className="text-ssc-gray-muted text-small">
+              <p className="text-body text-white/60">
                 {item.description}
               </p>
 
@@ -143,7 +143,7 @@ export const WhyChooseUs = () => {
           
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left bg-ssc-steel-dark p-10 lg:p-16 rounded-[12px]">
             <div>
-              <h3 className="text-white italic uppercase leading-none tracking-tighter mb-4">
+              <h3 className="text-white text-h3 uppercase leading-none tracking-tighter mb-4">
                 READY TO <span className="text-primary">STRENGTHEN</span><br />
                 YOUR PROJECTS?
               </h3>
