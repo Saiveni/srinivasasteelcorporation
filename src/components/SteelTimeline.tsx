@@ -209,37 +209,48 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Desktop Version - Horizontal TMT Structural System */}
-        <div className="hidden lg:block relative h-[600px] mt-20">
+        <div className="hidden lg:block relative mt-20">
           {/* Main Structural Spine */}
-          <div className="absolute top-0 left-0 w-full px-12">
+          <div className="w-full">
             <TMTBar orientation="horizontal" />
           </div>
           
-          {/* Hanging Cards */}
-          <div className="flex justify-between items-start px-24 pt-4">
-            <PhysicalHangingSystem cardData={milestones[0]} delay={0.2} />
-            <PhysicalHangingSystem cardData={milestones[1]} delay={0.4} />
-            <PhysicalHangingSystem cardData={milestones[2]} delay={0.6} />
-            <PhysicalHangingSystem cardData={milestones[3]} delay={0.8} />
+          {/* Hanging Cards Grid - Ensuring all 4 fit in viewport without overflow */}
+          <div className="grid grid-cols-4 gap-4 pt-4">
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[0]} delay={0.2} />
+            </div>
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[1]} delay={0.4} />
+            </div>
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[2]} delay={0.6} />
+            </div>
+            <div className="flex justify-center">
+              <PhysicalHangingSystem cardData={milestones[3]} delay={0.8} />
+            </div>
           </div>
         </div>
 
         {/* Mobile Version - Vertical TMT Structural Spine */}
-        <div className="lg:hidden relative flex min-h-[1200px] pt-10">
-          {/* Vertical Spine on Left */}
-          <div className="absolute left-6 top-0 bottom-0 h-full">
-            <TMTBar orientation="vertical" />
-          </div>
-
-          {/* Cards Container */}
-          <div className="flex flex-col gap-24 ml-4 w-full">
+        <div className="lg:hidden relative flex flex-col pt-10 px-2 overflow-x-hidden">
+          {/* Cards Container with Vertical Spine integrated */}
+          <div className="flex flex-col gap-20 w-full">
             {milestones.map((ms, idx) => (
-              <div key={idx} className="relative flex items-center min-h-[220px]">
-                <PhysicalHangingSystem 
-                  orientation="vertical" 
-                  cardData={ms} 
-                  delay={idx * 0.2} 
-                />
+              <div key={idx} className="relative flex min-h-[320px] w-full">
+                {/* Vertical Spine Fragment for this specific milestone */}
+                <div className="absolute left-0 top-0 bottom-0 w-14 flex justify-center">
+                  <TMTBar orientation="vertical" className="h-full" />
+                </div>
+                
+                {/* Hanging System & Card - Positioned to avoid cropping at 320px */}
+                <div className="pl-6 w-full flex items-start overflow-hidden">
+                  <PhysicalHangingSystem 
+                    orientation="vertical" 
+                    cardData={ms} 
+                    delay={idx * 0.15} 
+                  />
+                </div>
               </div>
             ))}
           </div>
