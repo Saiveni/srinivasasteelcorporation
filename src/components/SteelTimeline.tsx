@@ -52,16 +52,16 @@ const SteelRod = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'ho
   }
 
   return (
-    <div className="relative w-[28px] h-full flex justify-center">
+    <div className="relative w-[24px] h-full flex justify-center">
       {/* Silver Machined Rebar from Reference */}
-      <div className="w-[20px] h-full relative overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+      <div className="w-[18px] h-full relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)] border-x border-white/10">
         <img 
           src={timelineRebar.url} 
           alt="" 
-          className="w-full h-full object-cover brightness-[1.2] contrast-[1.1]"
+          className="w-full h-full object-cover brightness-[1.1] contrast-[1.2]"
         />
         {/* Metallic Sheen Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-black/40 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-black/30 mix-blend-overlay" />
       </div>
     </div>
   );
