@@ -104,7 +104,7 @@ export const SteelTimeline = () => {
         {/* Mobile Version - Vertical */}
         <div className="lg:hidden relative flex flex-col items-center pt-4">
           {/* Silver Vertical Line */}
-          <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-gray-400/30 -translate-x-1/2 z-0">
+          <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-ssc-navy/10 -translate-x-1/2 z-0">
             {/* Animated Silver Path */}
             <motion.div 
               style={{ scaleY: scrollYProgress, transformOrigin: "top" }}
