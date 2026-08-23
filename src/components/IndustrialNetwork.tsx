@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Building2, Warehouse, Factory, Target } from 'lucide-react';
+import { Building2, Warehouse, Factory } from 'lucide-react';
 
 const locations = [
   {
@@ -9,8 +9,7 @@ const locations = [
     type: "HEAD OFFICE & GODOWN",
     icon: Building2,
     address: "Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
-    coords: { x: "46.5%", y: "66.5%" },
-
+    coords: { x: "52%", y: "68%" },
   },
   {
     id: "gannavaram",
@@ -18,7 +17,7 @@ const locations = [
     type: "YARD",
     icon: Warehouse,
     address: "Gannavaram Yard, Nuzividu Road, Gannavaram – 521101",
-    coords: { x: "47.5%", y: "67.5%" },
+    coords: { x: "53.5%", y: "69%" },
   },
   {
     id: "vizag",
@@ -26,7 +25,7 @@ const locations = [
     type: "YARD",
     icon: Factory,
     address: "S. No. 156, Plot No. 163A, 163B, AIE Pedagantyada, Vizag – 530044",
-    coords: { x: "57.5%", y: "63.5%" },
+    coords: { x: "58%", y: "63%" },
   }
 ];
 
@@ -69,31 +68,22 @@ export const IndustrialNetwork = () => {
         {/* Network Map / Interactive Visualization - Desktop Only */}
         <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/5 rounded-[32px] overflow-hidden group/map shadow-2xl hidden lg:block">
           {/* India Map Background */}
-          <div className="absolute inset-0 opacity-[0.04] pointer-events-none flex items-center justify-center">
-            <svg viewBox="0 0 1024 1024" className="w-[80%] h-[80%] fill-white stroke-white/20">
-              <path d="M4040 10225 c-14 -8 -40 -14 -58 -15 -64 0 -119 -22 -173 -66 -57 -47 -124 -77 -199 -89 -25 -4 -89 -29 -142 -56 l-97 -49 -17 -56 c-9 -33 -30 -71 -49 -92 -31 -34 -35 -36 -121 -42 -71 -5 -104 -13 -158 -38 -83 -39 -130 -40 -211 -7 -33 14 -91 30 -130 36 -38 6 -86 19 -106 29 -46 24 -69 26 -152 16 -65 -8 -68 -10 -82 -43 -21 -50 -19 -76 10 -103 16 -15 25 -35 25 -54 0 -17 7 -40 15 -50 22 -30 18 -58 -12 -82 -27 -21 -27 -24 -16 -65 10 -38 9 -50 -8 -88 -10 -24 -19 -51 -19 -60 0 -9 28 -44 63 -77 101 -97 102 -98 156 -95 54 2 47 11 67 -89 5 -26 12 -32 57 -44 29 -8 69 -17 90 -21 43 -7 49 -28 18 -66 -15 -19 -30 -24 -84 -27 -62 -4 -67 -6 -95 -42 -17 -20 -45 -43 -63 -50Z" 
-                transform="scale(0.08) translate(0, -6000)" 
-                strokeWidth="2"
+          <div className="absolute inset-0 opacity-[0.06] pointer-events-none flex items-center justify-center translate-y-12">
+            <svg viewBox="0 0 1024 1024" className="w-[850px] h-[850px] fill-transparent stroke-ssc-gold/30">
+              <path 
+                d="M4040 10225 c-14 -8 -40 -14 -58 -15 -64 0 -119 -22 -173 -66 -57 -47 -124 -77 -199 -89 -25 -4 -89 -29 -142 -56 l-97 -49 -17 -56 c-9 -33 -30 -71 -49 -92 -31 -34 -35 -36 -121 -42 -71 -5 -104 -13 -158 -38 -83 -39 -130 -40 -211 -7 -33 14 -91 30 -130 36 -38 6 -86 19 -106 29 -46 24 -69 26 -152 16 -65 -8 -68 -10 -82 -43 -21 -50 -19 -76 10 -103 16 -15 25 -35 25 -54 0 -17 7 -40 15 -50 22 -30 18 -58 -12 -82 -27 -21 -27 -24 -16 -65 10 -38 9 -50 -8 -88 -10 -24 -19 -51 -19 -60 0 -9 28 -44 63 -77 101 -97 102 -98 156 -95 54 2 47 11 67 -89 5 -26 12 -32 57 -44 29 -8 69 -17 90 -21 43 -7 49 -28 18 -66 -15 -19 -30 -24 -84 -27 -62 -4 -67 -6 -95 -42 -17 -20 -45 -43 -63 -50Z" 
+                transform="scale(0.08) translate(-1000, -8500)" 
+                strokeWidth="4" 
               />
             </svg>
           </div>
 
-
-          {/* India Map Background */}
-          <div className="absolute inset-0 opacity-[0.05] pointer-events-none flex items-center justify-center translate-y-10">
-            <svg viewBox="0 0 1024 1024" className="w-[800px] h-[800px] fill-transparent stroke-ssc-gold/20">
-              <path d="M4040 10225 c-14 -8 -40 -14 -58 -15 -64 0 -119 -22 -173 -66 -57 -47 -124 -77 -199 -89 -25 -4 -89 -29 -142 -56 l-97 -49 -17 -56 c-9 -33 -30 -71 -49 -92 -31 -34 -35 -36 -121 -42 -71 -5 -104 -13 -158 -38 -83 -39 -130 -40 -211 -7 -33 14 -91 30 -130 36 -38 6 -86 19 -106 29 -46 24 -69 26 -152 16 -65 -8 -68 -10 -82 -43 -21 -50 -19 -76 10 -103 16 -15 25 -35 25 -54 0 -17 7 -40 15 -50 22 -30 18 -58 -12 -82 -27 -21 -27 -24 -16 -65 10 -38 9 -50 -8 -88 -10 -24 -19 -51 -19 -60 0 -9 28 -44 63 -77 101 -97 102 -98 156 -95 54 2 47 11 67 -89 5 -26 12 -32 57 -44 29 -8 69 -17 90 -21 43 -7 49 -28 18 -66 -15 -19 -30 -24 -84 -27 -62 -4 -67 -6 -95 -42 -17 -20 -45 -43 -63 -50Z" transform="scale(0.08) translate(-1000, -8000)" strokeWidth="4" />
-            </svg>
-          </div>
-
-
           {/* Network Connection Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             <motion.path
-              d="M 46.5% 66.5% Q 55% 65% 57.5% 63.5%"
-
+              d="M 52% 68% L 53.5% 69% Q 57% 67% 58% 63%"
               fill="none"
-              stroke="rgba(197,160,89,0.2)"
+              stroke="rgba(197,160,89,0.3)"
               strokeWidth="1.5"
               strokeDasharray="8 8"
               initial={{ pathLength: 0 }}
@@ -144,7 +134,7 @@ export const IndustrialNetwork = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                        className={`absolute z-[100] w-[280px] sm:w-[340px] bg-[#0C121E] border border-ssc-gold/30 p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] pointer-events-none hidden lg:block opacity-100 scale-100 y-0
+                        className={`absolute z-[100] w-[280px] sm:w-[340px] bg-[#0C121E] border border-ssc-gold/30 p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] pointer-events-none hidden lg:block
                           ${parseFloat(loc.coords.x) > 50 ? '-left-[360px]' : 'left-20'}
                           ${parseFloat(loc.coords.y) > 70 ? 'bottom-0' : 'top-0'}
                         `}
