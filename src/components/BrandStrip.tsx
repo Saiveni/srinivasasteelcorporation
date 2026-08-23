@@ -35,10 +35,10 @@ export const BrandStrip = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-micro text-ssc-gold uppercase mb-4 block tracking-[0.2em]">
+          <span className="text-micro mb-4 block">
             STRATEGIC PARTNERSHIPS
           </span>
-          <h2 className="text-h3 text-ssc-on-dark-primary uppercase tracking-tight">
+          <h2 className="text-ssc-on-dark-primary">
             TRUSTED DEALER RELATIONSHIPS
           </h2>
         </motion.div>

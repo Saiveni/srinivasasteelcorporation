@@ -22,7 +22,7 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
       transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col items-center lg:items-start text-center lg:text-left px-6 py-4 group"
     >
-      <div className="text-micro text-ssc-gold uppercase mb-4">
+      <div className="text-micro mb-4">
         {subLabel}
       </div>
 
@@ -34,7 +34,7 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
         {displayValue}{suffix}
       </div>
 
-      <div className="text-micro text-ssc-on-dark-body uppercase">
+      <div className="text-micro !text-ssc-on-dark-body">
         {label}
       </div>
     </motion.div>
