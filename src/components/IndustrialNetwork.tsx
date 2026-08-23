@@ -33,10 +33,10 @@ export const IndustrialNetwork = () => {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
-    <section id="locations" className="relative py-24 lg:py-32 bg-ssc-navy overflow-hidden">
+    <section id="locations" className="relative py-16 lg:py-24 bg-ssc-navy overflow-hidden">
       {/* Blueprint Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.03]" 
+        <div className="absolute inset-0 opacity-[0.05]" 
              style={{ 
                backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', 
                backgroundSize: '100px 100px' 
@@ -45,16 +45,16 @@ export const IndustrialNetwork = () => {
       </div>
 
       <div className="container-wide relative z-10 px-6 max-w-[1400px] mx-auto">
-        <div className="text-center mb-16 lg:mb-24">
+        <div className="text-center mb-12 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-5 lg:mb-7">
               <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
-              <span className="text-ssc-gold-dark text-micro">
+              <span className="text-ssc-gold-dark text-micro tracking-[0.16em]">
                 Regional Presence
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
@@ -169,7 +169,7 @@ export const IndustrialNetwork = () => {
         </div>
 
         {/* Mobile / Tablet Locations List */}
-        <div className="mt-8 lg:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:hidden">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6 lg:hidden">
 
           {locations.map((loc, idx) => {
             const Icon = loc.icon;
@@ -181,7 +181,7 @@ export const IndustrialNetwork = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-ssc-steel-dark border border-white/10 p-8 rounded-[12px] shadow-premium-soft relative overflow-hidden group"
+                className="bg-ssc-steel-dark border border-white/10 p-6 lg:p-10 rounded-[12px] shadow-premium-soft relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-ssc-gold/10 rounded-tr-[12px]" />
                 <div className="flex items-center gap-4 mb-4">
