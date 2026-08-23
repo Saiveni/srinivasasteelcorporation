@@ -72,7 +72,7 @@ export const BrandStrip = () => {
               </div>
 
               {/* 3. PARTNER NAME — Strong Title */}
-              <h3 className="text-body-large font-bold text-ssc-navy tracking-tight uppercase mb-2 transition-colors duration-300 group-hover:text-ssc-gold">
+              <h3 className="text-body-large font-bold text-ssc-navy tracking-tight mb-2 transition-colors duration-300 group-hover:text-ssc-gold">
                 {brand.name}
               </h3>
 

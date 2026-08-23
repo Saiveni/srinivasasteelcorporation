@@ -70,7 +70,7 @@ export const SteelTimeline = () => {
                   <span className="text-micro text-ssc-gold block mb-2 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-h4 text-ssc-on-dark-primary mb-2 uppercase">
+                  <h4 className="text-ssc-on-dark-primary mb-2">
                     {ms.title}
                   </h4>
                   <p className="text-body text-ssc-on-dark-body">
@@ -104,7 +104,7 @@ export const SteelTimeline = () => {
                   <span className="text-micro text-ssc-gold block mb-1 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-h4 text-ssc-on-dark-primary mb-2 uppercase">
+                  <h4 className="text-ssc-on-dark-primary mb-2">
                     {ms.title}
                   </h4>
                   <p className="text-body text-ssc-on-dark-body">

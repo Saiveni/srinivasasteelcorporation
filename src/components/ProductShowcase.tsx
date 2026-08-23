@@ -82,7 +82,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
               </span>
             </div>
             
-            <h3 className="text-h4 text-ssc-navy mb-3 group-hover:text-ssc-gold-dark transition-colors duration-500 uppercase">
+            <h3 className="text-ssc-navy mb-3 group-hover:text-ssc-gold-dark transition-colors duration-500">
               {product.name}
             </h3>
             

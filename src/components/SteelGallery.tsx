@@ -155,7 +155,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                 <span className="text-micro text-ssc-gold uppercase mb-2">
                   {item.category}
                 </span>
-                <h3 className="text-white text-lg uppercase">
+                <h3 className="text-white text-lg">
                   {item.title}
                 </h3>
               </div>
