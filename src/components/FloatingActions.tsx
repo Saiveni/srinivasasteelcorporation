@@ -40,7 +40,7 @@ export const FloatingActions = () => {
         {`'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            For caller icon use green colour button and remove that black colour background and also remove that black colour background for the drop up`}
+                                            As Whatsapp Icon like that only use original caller icon for the caller button And for drop up Use another background transparent background is not looking good Use black background only For cALLER use original caller icon`}
       </div>
 
       {/* Back to Top */}
@@ -51,7 +51,7 @@ export const FloatingActions = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             onClick={scrollToTop}
-            className={`${buttonClass} !bg-white/10`}
+            className={buttonClass}
             aria-label="Back to top"
           >
             <ArrowUp size={20} strokeWidth={2.5} />
@@ -64,7 +64,7 @@ export const FloatingActions = () => {
         initial={{ opacity: 0, x: 20 }}
         animate={{ opacity: 1, x: 0 }}
         href={`tel:${phoneNumber}`}
-        className={`${buttonClass} !bg-[#34B7F1] !border-none text-white hover:bg-[#075E54] shadow-[0_0_15px_rgba(52,183,241,0.4)]`}
+        className={`${buttonClass} !bg-[#25D366] !border-none text-white hover:bg-[#128C7E] shadow-[0_0_15px_rgba(37,211,102,0.4)]`}
         aria-label="Call us"
       >
         <svg 
