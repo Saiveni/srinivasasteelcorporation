@@ -181,9 +181,10 @@ export const IndustrialNetwork = () => {
               >
                 <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-ssc-gold/10 rounded-tr-[24px]" />
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-ssc-gold/10 flex items-center justify-center border border-ssc-gold/20">
-                    <Icon size={20} className="text-ssc-gold" />
+                  <div className="w-12 h-12 rounded-xl bg-ssc-gold/5 flex items-center justify-center border border-ssc-gold/10 group-hover:border-ssc-gold/30 transition-colors">
+                    <Icon size={20} className="text-ssc-gold/60 group-hover:text-ssc-gold transition-colors" />
                   </div>
+
                   <div>
                     <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.2em] uppercase">
                       {loc.type}
