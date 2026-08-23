@@ -279,8 +279,14 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Desktop Version */}
-        <div className="hidden lg:block relative pb-[500px] mt-32">
-          <motion.div initial={{ width: 0, opacity: 0 }} whileInView={{ width: '100%', opacity: 1 }} viewport={{ once: true }} transition={{ duration: 1.8 }}>
+        <div className="hidden lg:block relative h-[600px] mt-32">
+          <motion.div 
+            initial={{ width: 0, opacity: 0 }} 
+            whileInView={{ width: '100%', opacity: 1 }} 
+            viewport={{ once: true }} 
+            transition={{ duration: 1.8 }}
+            className="relative h-[68px]"
+          >
             <SteelRod orientation="horizontal" />
             <ClampHook position="12%" orientation="horizontal" delay={0.8} cardData={milestones[0]!} />
             <ClampHook position="37%" orientation="horizontal" delay={1.1} cardData={milestones[1]!} />
@@ -288,6 +294,7 @@ export const SteelTimeline = () => {
             <ClampHook position="87%" orientation="horizontal" delay={1.7} cardData={milestones[3]!} />
           </motion.div>
         </div>
+
 
         {/* Mobile/Tablet Version */}
         <div className="lg:hidden relative flex gap-0 sm:gap-12 min-h-[1200px]">
