@@ -78,15 +78,15 @@ export const ProductsComponent = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-primary text-[12px] lg:text-[13px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
-                  OUR PRODUCTS
+                <span className="text-micro text-primary uppercase mb-4 block">
+                  INDUSTRIAL SOLUTIONS
                 </span>
-                <h1 className="text-[44px] lg:text-[68px] text-foreground font-body leading-[1] mb-8 font-[600] tracking-tight uppercase">
-                  STEEL THAT BUILDS <br />
-                  <span className="text-primary">WITH CONFIDENCE.</span>
+                <h1 className="text-h1 text-foreground mb-8 uppercase">
+                  STEEL PRODUCTS BUILT <br />
+                  <span className="text-primary">FOR PERFORMANCE.</span>
                 </h1>
-                <p className="text-[#64748B] text-lg lg:text-xl leading-relaxed mb-10 font-[400] max-w-[540px]">
-                  Steel products and TMT solutions for construction and industrial requirements.
+                <p className="text-body text-foreground/70 max-w-[540px] mb-10">
+                  High-performance steel products engineered for demanding applications. Consistent quality and reliable supply across the region.
                 </p>
                 <Button 
                   onClick={() => document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth' })}
@@ -141,14 +141,14 @@ export const ProductsComponent = () => {
                     />
                   </div>
                   <div className="p-8 lg:p-10">
-                    <h3 className="text-[24px] lg:text-[28px] font-body font-semibold text-foreground mb-4 tracking-tight uppercase">
+                    <h3 className="text-h3 text-foreground mb-4 uppercase">
                       {product.name}
                     </h3>
-                    <p className="text-[#64748B] text-base leading-relaxed mb-8 font-[450]">
+                    <p className="text-body text-foreground/70 mb-8">
                       {product.description}
                     </p>
-                    <Link to="/contact" search={{ product: product.name }} className="inline-flex items-center gap-2 text-[11px] font-body font-bold text-primary uppercase tracking-[0.25em]">
-                      ENQUIRE NOW <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                    <Link to="/contact" search={{ product: product.name }} className="text-micro text-primary uppercase">
+                      REQUEST A QUOTE <ArrowRight className="inline-block ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
                     </Link>
                   </div>
                 </div>
