@@ -9,7 +9,7 @@ export const BrandStrip = () => {
   ];
 
   return (
-    <section className="py-14 bg-white border-y border-ssc-navy/5 overflow-hidden">
+    <section className="section-padding bg-white border-y border-ssc-navy/5 overflow-hidden">
       <div className="container-wide">
         <motion.div 
           initial={{ opacity: 0, y: 15 }}
