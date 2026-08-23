@@ -320,7 +320,7 @@ export const Navbar = () => {
                           
                           <div className="flex flex-col justify-center">
                             <span className={`text-body font-bold tracking-wide transition-colors uppercase leading-none ${
-                              isActive ? "text-ssc-gold-dark" : "text-ssc-navy group-hover:text-ssc-gold-dark"
+                              isActive ? "text-ssc-gold-dark" : "text-white group-hover:text-ssc-gold-dark"
                             }`}>
                               {link.name}
                             </span>
