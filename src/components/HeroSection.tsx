@@ -77,7 +77,7 @@ export const HeroSection = () => {
   );
 
   return (
-    <section className="relative w-full bg-ssc-navy pt-0 lg:h-[calc(100vh-100px)] min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+    <section className="relative w-full bg-ssc-navy pt-0 lg:h-[calc(100vh-72px)] min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
       {/* Full-Screen, Full-Width Hero Background (Full Bleed Carousel) */}
       <div className="absolute inset-0 z-0">
         {imageElement}
