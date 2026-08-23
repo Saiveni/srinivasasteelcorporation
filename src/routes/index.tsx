@@ -40,16 +40,16 @@ function HomePage() {
         <div className="container-wide">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
             <div>
-              <span className="text-primary text-[12px] font-body font-bold tracking-[0.4em] uppercase mb-4 block">
-                OUR GALLERY
+              <span className="text-micro text-primary uppercase mb-4 block">
+                VISUAL PORTFOLIO
               </span>
-              <h2 className="text-[38px] lg:text-[56px] text-foreground font-body leading-[1.1] font-semibold tracking-tight uppercase">
+              <h2 className="text-h2 text-foreground uppercase">
                 STEEL IN <span className="text-primary">ELEMENT.</span>
               </h2>
             </div>
             <div className="flex flex-col items-start lg:items-end">
-              <p className="text-foreground/60 text-lg mb-6 max-w-sm lg:text-right">
-                A closer look at our products and stock operations.
+              <p className="text-body text-foreground/70 max-w-sm lg:text-right">
+                A technical perspective of our products and processing facilities.
               </p>
             </div>
           </div>
