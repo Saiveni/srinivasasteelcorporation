@@ -92,81 +92,85 @@ const PhysicalHangingSystem = ({ orientation = 'horizontal', delay = 0, cardData
   const isHorizontal = orientation === 'horizontal';
   
   return (
-    <div className={`relative ${isHorizontal ? 'flex flex-col items-center' : 'flex items-center ml-2'}`}>
-      {/* 1. Metal Clamp (wraps around the 3 bars) */}
+    <div className={`relative ${isHorizontal ? 'flex flex-col items-center' : 'flex items-center ml-4'}`}>
+      {/* 1. REAL METAL CLAMP (physically wrapping the bars) */}
       <div className="relative z-30">
-        <div className={`bg-gradient-to-br from-[#3A3F47] to-[#1A1C22] border border-white/20 rounded-sm shadow-lg flex items-center justify-center
-          ${isHorizontal ? 'w-10 h-10' : 'w-10 h-10'}`}
+        <div className={`bg-gradient-to-br from-[#4A4E57] to-[#1A1C22] border border-white/20 rounded-md shadow-2xl flex items-center justify-center
+          ${isHorizontal ? 'w-14 h-16 -mt-1' : 'w-16 h-14 -ml-1'}`}
         >
-          {/* Clamp Bolts */}
-          <div className="absolute -top-1 -left-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
-          <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
-          <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
-          <div className="absolute -bottom-1 -right-1 w-2 h-2 rounded-full bg-ssc-gold/40 border border-black/50" />
+          {/* Industrial Bolts */}
+          <div className="absolute top-1 left-1 w-2.5 h-2.5 rounded-full bg-[#1A1C22] border border-white/10 shadow-inner" />
+          <div className="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-[#1A1C22] border border-white/10 shadow-inner" />
+          <div className="absolute bottom-1 left-1 w-2.5 h-2.5 rounded-full bg-[#1A1C22] border border-white/10 shadow-inner" />
+          <div className="absolute bottom-1 right-1 w-2.5 h-2.5 rounded-full bg-[#1A1C22] border border-white/10 shadow-inner" />
           
-          <div className="w-4 h-4 rounded-full border border-ssc-gold/30 bg-black/40 flex items-center justify-center">
-            <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold shadow-[0_0_5px_rgba(197,160,89,0.5)]" />
+          <div className="w-6 h-6 rounded-full border border-ssc-gold/20 bg-black/60 flex items-center justify-center">
+            <div className="w-2.5 h-2.5 rounded-full bg-ssc-gold shadow-[0_0_10px_rgba(197,160,89,0.3)]" />
           </div>
         </div>
       </div>
 
-      {/* 2. Short Metal Connector */}
-      <div className={`z-20 bg-gradient-to-b from-[#2A2D35] to-[#1A1C22] border-x border-white/10 shadow-md
-        ${isHorizontal ? 'w-2 h-8' : 'h-2 w-8'}`} 
+      {/* 2. REAL VERTICAL CONNECTOR (Steel Rod) */}
+      <div className={`z-20 bg-gradient-to-r from-[#2A2D35] via-[#4A4E57] to-[#1A1C22] border-x border-white/10 shadow-xl
+        ${isHorizontal ? 'w-2 h-12' : 'h-2 w-12'}`} 
       />
 
-      {/* 3. Hook */}
-      <div className="relative z-30">
-        <div className={`bg-[#1A1C22] border-2 border-ssc-gold/50 rounded-full flex items-center justify-center shadow-lg
-          ${isHorizontal ? 'w-6 h-6' : 'w-6 h-6'}`}
+      {/* 3. INDUSTRIAL HOOK (physically linking to the card) */}
+      <div className="relative z-40">
+        <div className={`bg-[#1A1C22] border-2 border-[#4A4E57] rounded-full flex items-center justify-center shadow-2xl
+          ${isHorizontal ? 'w-8 h-8 -mb-1' : 'w-8 h-8 -mr-1'}`}
         >
-          <div className="w-2 h-2 rounded-full bg-ssc-gold" />
+          {/* The actual hook loop */}
+          <div className="w-4 h-4 border-b-2 border-r-2 border-ssc-gold rounded-br-lg rotate-45 mt-[-2px]" />
         </div>
       </div>
 
-      {/* 4. Timeline Card */}
-      <div className={`mt-2 ${isHorizontal ? '' : 'ml-4'}`}>
+      {/* 4. TIMELINE CARD (Physically Attached) */}
+      <div className={`${isHorizontal ? '-mt-1' : '-ml-1'}`}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: delay + 0.3, duration: 0.6 }}
-          className="w-[280px] bg-[#0C121E] border border-white/10 p-6 rounded-2xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] relative group"
+          className="w-[280px] bg-[#0C121E] border border-white/10 p-6 rounded-2xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] relative group overflow-hidden"
         >
-          {/* Hanging point on card */}
-          <div className={`absolute ${isHorizontal ? '-top-1 left-1/2 -translate-x-1/2' : 'top-1/2 -left-1 -translate-y-1/2'} w-3 h-3 bg-ssc-gold rounded-full border-2 border-[#0C121E] shadow-sm`} />
+          {/* REAL HANGING POINT ON CARD (Physical Eyelet) */}
+          <div className={`absolute ${isHorizontal ? '-top-3 left-1/2 -translate-x-1/2' : 'top-1/2 -left-3 -translate-y-1/2'} w-6 h-6 bg-[#1A1C22] rounded-full border border-white/10 flex items-center justify-center z-50`}>
+             <div className="w-2.5 h-2.5 bg-ssc-gold rounded-full shadow-[inset_0_1px_2px_rgba(0,0,0,0.5)]" />
+          </div>
           
-          <div className="absolute top-0 left-0 w-1 h-full bg-ssc-gold opacity-30 group-hover:opacity-100 transition-opacity" />
+          <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-ssc-gold via-ssc-gold/40 to-transparent opacity-40 group-hover:opacity-100 transition-opacity" />
           
           <div className="flex items-center justify-between mb-4">
-            <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.25em] uppercase">
+            <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.3em] uppercase">
               {cardData.year}
             </span>
-            <span className="text-white/20 text-[8px] font-technical font-bold tracking-widest">
+            <span className="text-white/20 text-[9px] font-technical font-bold tracking-[0.2em]">
               {cardData.spec}
             </span>
           </div>
           
-          <h4 className="text-white font-heading font-black italic text-xl mb-2 tracking-tight uppercase">
+          <h4 className="text-white font-heading font-black italic text-xl mb-2 tracking-tight uppercase group-hover:text-ssc-gold transition-colors">
             {cardData.title}
           </h4>
           
-          <p className="text-white/50 text-[13px] leading-relaxed font-medium italic">
+          <p className="text-white/60 text-[13px] leading-relaxed font-medium italic">
             {cardData.description}
           </p>
           
-          <div className="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
-            <span className="text-ssc-gold/40 text-[8px] font-technical font-black tracking-widest uppercase">
+          <div className="mt-5 pt-4 border-t border-white/5 flex items-center justify-between">
+            <span className="text-ssc-gold/30 text-[9px] font-technical font-black tracking-[0.2em] uppercase">
               {cardData.zone}
             </span>
-            <div className="flex gap-1">
-              <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
-              <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
-              <div className="w-1 h-1 rounded-full bg-ssc-gold/20" />
+            <div className="flex gap-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold/20" />
+              <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold/20" />
+              <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold/20" />
             </div>
           </div>
         </motion.div>
       </div>
+    </div>
     </div>
   );
 };
