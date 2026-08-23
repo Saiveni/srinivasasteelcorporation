@@ -290,7 +290,7 @@ const MobileCarousel = () => {
 
 export const AboutBusinessCards = () => {
   return (
-    <section id="business-areas" className="relative py-20 lg:py-28 bg-[#080E1A] overflow-hidden">
+    <section id="business-areas" className="relative py-12 lg:py-28 bg-[#080E1A] overflow-hidden">
       {/* Engineered Background System */}
       <div className="absolute inset-0 pointer-events-none">
         <div
