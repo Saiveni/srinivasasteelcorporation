@@ -353,9 +353,9 @@ export const Navbar = () => {
                 </motion.div>
                 
                 {/* Precision Built Label */}
-                <div className="mt-auto pb-4 flex items-center justify-between opacity-30">
-                  <span className="text-[8px] font-body tracking-[0.2em] uppercase">PRECISION BUILT</span>
-                  <span className="text-[8px] font-body tracking-[0.2em] uppercase">VER 2.4.0</span>
+                <div className="mt-auto pb-4 flex items-center justify-between opacity-50">
+                  <span className="text-[8px] font-body tracking-[0.2em] uppercase text-white">PRECISION BUILT</span>
+                  <span className="text-[8px] font-body tracking-[0.2em] uppercase text-white">VER 2.4.0</span>
                 </div>
               </div>
             </div>
