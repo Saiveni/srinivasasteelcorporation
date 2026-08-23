@@ -279,21 +279,16 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Desktop Version */}
-        <div className="hidden lg:block relative h-[600px] mt-32">
-          <motion.div 
-            initial={{ width: 0, opacity: 0 }} 
-            whileInView={{ width: '100%', opacity: 1 }} 
-            viewport={{ once: true }} 
-            transition={{ duration: 1.8 }}
-            className="relative h-[68px]"
-          >
+        <div className="hidden lg:block relative h-[700px] mt-32">
+          <div className="relative h-[68px]">
             <SteelRod orientation="horizontal" />
             <ClampHook position="12%" orientation="horizontal" delay={0.8} cardData={milestones[0]!} />
             <ClampHook position="37%" orientation="horizontal" delay={1.1} cardData={milestones[1]!} />
             <ClampHook position="62%" orientation="horizontal" delay={1.4} cardData={milestones[2]!} />
             <ClampHook position="87%" orientation="horizontal" delay={1.7} cardData={milestones[3]!} />
-          </motion.div>
+          </div>
         </div>
+
 
 
         {/* Mobile/Tablet Version */}
