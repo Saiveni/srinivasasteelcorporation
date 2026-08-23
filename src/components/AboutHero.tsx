@@ -130,17 +130,17 @@ export const AboutHero = () => {
 
                 <div className="flex items-center gap-8 lg:gap-10">
                   <div className="flex flex-col">
-                    <span className="text-h3 text-white italic">30+</span>
+                    <span className="text-h3 text-white">30+</span>
                     <span className="text-primary/50 text-micro mt-1">Years Experience</span>
                   </div>
                   <div className="w-[1px] h-12 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-h3 text-white italic">3</span>
+                    <span className="text-h3 text-white">3</span>
                     <span className="text-primary/50 text-micro mt-1">Regional Yards</span>
                   </div>
                   <div className="w-[1px] h-12 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-h3 text-primary italic">MoU</span>
+                    <span className="text-h3 text-primary">MoU</span>
                     <span className="text-primary/50 text-micro mt-1">Dealer Status</span>
                   </div>
                 </div>
@@ -237,11 +237,11 @@ export const AboutHero = () => {
 
                 <div className="grid grid-cols-2 gap-10 pt-10 border-t border-border/5">
                   <div>
-                    <span className="text-h3 text-foreground italic">100k+</span>
+                    <span className="text-h3 text-foreground">100k+</span>
                     <span className="text-ssc-gray-secondary text-micro block mt-2">Tons Delivered</span>
                   </div>
                   <div>
-                    <span className="text-h3 text-foreground italic">500+</span>
+                    <span className="text-h3 text-foreground">500+</span>
                     <span className="text-ssc-gray-secondary text-micro block mt-2">Major Projects</span>
                   </div>
                 </div>
