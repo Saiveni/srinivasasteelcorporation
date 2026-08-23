@@ -68,11 +68,12 @@ export const HeroSection = () => {
   }, []);
 
   const currentImage = HERO_IMAGES[currentIndex];
-  const imageUrl = currentImage?.url || HERO_IMAGES[0].url;
-  const imageAlt = currentImage?.alt || HERO_IMAGES[0].alt;
+  const firstImage = HERO_IMAGES[0];
+  const imageUrl = currentImage?.url ?? firstImage.url;
+  const imageAlt = currentImage?.alt ?? firstImage.alt;
   const imagePos = isMobile 
-    ? (currentImage?.position.mobile || HERO_IMAGES[0].position.mobile) 
-    : (currentImage?.position.desktop || HERO_IMAGES[0].position.desktop);
+    ? (currentImage?.position.mobile ?? firstImage.position.mobile) 
+    : (currentImage?.position.desktop ?? firstImage.position.desktop);
 
   const imageElement = (
     <AnimatePresence mode="popLayout">
