@@ -117,10 +117,10 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
               }}
               className="flex flex-col items-center mb-10"
             >
-              <h1 className="text-white text-[24px] sm:text-[32px] font-heading font-bold tracking-[0.1em] leading-tight uppercase">
+              <h1 className="text-white text-[24px] sm:text-[32px] font-body font-bold tracking-[0.1em] leading-tight uppercase">
                 SRINIVASA <span className="font-medium opacity-90">STEEL</span>
               </h1>
-              <h2 className="text-[#C5A059] text-[12px] sm:text-[15px] font-technical font-extrabold tracking-[0.45em] leading-tight uppercase mt-3">
+              <h2 className="text-[#D4AF37] text-[12px] sm:text-[15px] font-body font-bold tracking-[0.45em] leading-tight uppercase mt-3">
                 CORPORATION
               </h2>
             </motion.div>
@@ -128,7 +128,7 @@ export const BrandPreloader = ({ onComplete, showIntro = true }: PreloaderProps)
             {/* Loading Line */}
             <div className="w-[180px] sm:w-[240px] h-[1px] bg-white/10 relative overflow-hidden">
               <motion.div
-                className="absolute top-0 left-0 h-full bg-[#C5A059]"
+                className="absolute top-0 left-0 h-full bg-[#D4AF37]"
                 style={{ width: `${progress}%` }}
                 transition={{ ease: "linear" }}
               />

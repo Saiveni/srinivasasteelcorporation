@@ -100,9 +100,9 @@ function ContactPage() {
   const heroImageUrl = "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1600&auto=format&fit=crop";
 
   return (
-    <div className="bg-ssc-navy min-h-screen">
+    <div className="bg-background min-h-screen">
       {/* Contact Hero */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden bg-ssc-navy pt-[80px]">
+      <section className="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden bg-background pt-[80px]">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImageUrl} 
@@ -119,12 +119,12 @@ function ContactPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.4em] uppercase mb-6 block">
+            <span className="text-primary text-[12px] font-body font-bold tracking-[0.4em] uppercase mb-6 block">
               CONTACT SRINIVASA STEEL CORPORATION
             </span>
-            <h1 className="text-[clamp(40px,7vw,72px)] font-heading font-extrabold text-white leading-[0.95] mb-8 tracking-tighter uppercase">
+            <h1 className="text-[clamp(40px,7vw,72px)] font-body font-bold text-white leading-[0.95] mb-8 tracking-tighter uppercase">
               LET'S TALK <br />
-              <span className="text-ssc-gold">STEEL.</span>
+              <span className="text-primary">STEEL.</span>
             </h1>
             <p className="text-white/70 text-lg max-w-xl leading-relaxed font-light">
               Have a steel, TMT or decoiling requirement? Share your requirement with our team.
@@ -134,7 +134,7 @@ function ContactPage() {
       </section>
 
       {/* Quote Form & Team Info */}
-      <section className="section-spacing bg-[#F7F7F4]">
+      <section className="section-spacing bg-[#E6E8EC]">
         <div className="container-wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             
@@ -149,13 +149,13 @@ function ContactPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     className="bg-white rounded-[24px] p-8 lg:p-12 shadow-sm border border-black/5 text-center"
                   >
-                    <div className="w-20 h-20 bg-ssc-gold/10 rounded-full flex items-center justify-center mx-auto mb-8">
-                      <Check className="text-ssc-gold" size={40} />
+                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
+                      <Check className="text-primary" size={40} />
                     </div>
-                    <h2 className="text-3xl font-heading font-bold text-ssc-navy mb-6 tracking-tight uppercase">
+                    <h2 className="text-3xl font-body font-bold text-foreground mb-6 tracking-tight uppercase">
                       REQUEST RECEIVED.
                     </h2>
-                    <p className="text-ssc-navy/60 text-lg mb-10 max-w-md mx-auto leading-relaxed">
+                    <p className="text-foreground/60 text-lg mb-10 max-w-md mx-auto leading-relaxed">
                       Thank you for contacting Srinivasa Steel Corporation. Our team will review your requirement and get in touch with you.
                     </p>
                     <Button 
@@ -171,66 +171,66 @@ function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="bg-white rounded-[24px] p-6 sm:p-8 md:p-12 shadow-sm border border-black/5"
                   >
-                    <h2 id="quote-form" className="text-3xl font-heading font-bold text-ssc-navy mb-10 tracking-tight uppercase">
+                    <h2 id="quote-form" className="text-3xl font-body font-bold text-foreground mb-10 tracking-tight uppercase">
                       REQUEST A QUOTE
                     </h2>
                     
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="fullName" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Full Name *</label>
+                          <label htmlFor="fullName" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Full Name *</label>
                           <Input 
                             {...register("fullName")}
                             id="fullName"
                             placeholder="YOUR NAME" 
-                            className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy ${errors.fullName ? 'border-red-500' : ''}`} 
+                            className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground ${errors.fullName ? 'border-red-500' : ''}`} 
                           />
-                          {errors.fullName && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.fullName.message}</p>}
+                          {errors.fullName && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.fullName.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="companyName" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Company Name</label>
+                          <label htmlFor="companyName" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Company Name</label>
                           <Input 
                             {...register("companyName")}
                             id="companyName"
                             placeholder="ORGANIZATION NAME" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="phoneNumber" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Phone Number *</label>
+                          <label htmlFor="phoneNumber" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Phone Number *</label>
                           <Input 
                             {...register("phoneNumber")}
                             id="phoneNumber"
                             type="tel" 
                             placeholder="10-DIGIT NUMBER" 
-                            className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy ${errors.phoneNumber ? 'border-red-500' : ''}`} 
+                            className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground ${errors.phoneNumber ? 'border-red-500' : ''}`} 
                           />
-                          {errors.phoneNumber && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.phoneNumber.message}</p>}
+                          {errors.phoneNumber && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.phoneNumber.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="emailAddress" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Email Address</label>
+                          <label htmlFor="emailAddress" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Email Address</label>
                           <Input 
                             {...register("emailAddress")}
                             id="emailAddress"
                             type="email" 
                             placeholder="EMAIL@DOMAIN.COM" 
-                            className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy ${errors.emailAddress ? 'border-red-500' : ''}`} 
+                            className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground ${errors.emailAddress ? 'border-red-500' : ''}`} 
                           />
-                          {errors.emailAddress && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.emailAddress.message}</p>}
+                          {errors.emailAddress && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.emailAddress.message}</p>}
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="product" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Product / Requirement *</label>
+                          <label htmlFor="product" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Product / Requirement *</label>
                         <Select 
                           onValueChange={(val) => setValue("product", val)} 
                           value={product || ""}
                         >
-                            <SelectTrigger id="product" className={`h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy uppercase text-[12px] tracking-wide ${errors.product ? 'border-red-500' : ''}`}>
+                            <SelectTrigger id="product" className={`h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground uppercase text-[12px] tracking-wide ${errors.product ? 'border-red-500' : ''}`}>
                               <SelectValue placeholder="SELECT PRODUCT" />
                             </SelectTrigger>
                             <SelectContent className="bg-white border-black/5">
@@ -242,49 +242,49 @@ function ContactPage() {
                               <SelectItem value="OTHER STEEL REQUIREMENT" className="uppercase text-[12px]">Other Steel Requirement</SelectItem>
                             </SelectContent>
                           </Select>
-                          {errors.product && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.product.message}</p>}
+                          {errors.product && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.product.message}</p>}
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="quantity" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Quantity</label>
+                          <label htmlFor="quantity" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Quantity</label>
                           <Input 
                             {...register("quantity")}
                             id="quantity"
                             placeholder="E.G. 10 TONS" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="size" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Required Size / Length</label>
+                          <label htmlFor="size" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Required Size / Length</label>
                           <Input 
                             {...register("size")}
                             id="size"
                             placeholder="SPECIFICATIONS" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                         <div className="space-y-2">
-                          <label htmlFor="deliveryLocation" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Delivery Location</label>
+                          <label htmlFor="deliveryLocation" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Delivery Location</label>
                           <Input 
                             {...register("deliveryLocation")}
                             id="deliveryLocation"
                             placeholder="CITY / YARD" 
-                            className="h-14 rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy" 
+                            className="h-14 rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground" 
                           />
                         </div>
                       </div>
 
                       <div className="space-y-2">
-                        <label htmlFor="message" className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-widest ml-1">Message / Requirement *</label>
+                        <label htmlFor="message" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Message / Requirement *</label>
                         <Textarea 
                           {...register("message")}
                           id="message"
                           placeholder="TELL US ABOUT YOUR PROJECT REQUIREMENTS..." 
-                          className={`min-h-[120px] rounded-xl border-black/5 bg-[#F8F9FA] focus:bg-white transition-all text-ssc-navy resize-none ${errors.message ? 'border-red-500' : ''}`}
+                          className={`min-h-[120px] rounded-xl border-black/5 bg-[#E6E8EC] focus:bg-white transition-all text-foreground resize-none ${errors.message ? 'border-red-500' : ''}`}
                         />
-                        {errors.message && <p className="text-red-500 text-[10px] font-technical uppercase mt-1">{errors.message.message}</p>}
+                        {errors.message && <p className="text-red-500 text-[10px] font-body uppercase mt-1">{errors.message.message}</p>}
                       </div>
 
                       {submitStatus === "error" && (
@@ -316,30 +316,30 @@ function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-[12px] font-technical font-bold tracking-[0.4em] text-ssc-gold uppercase mb-8">
+                <h3 className="text-[12px] font-body font-bold tracking-[0.4em] text-primary uppercase mb-8">
                   CONTACT OUR TEAM
                 </h3>
                 <div className="space-y-6">
                   {team.map((person) => (
                     <div key={person.phone} className="flex items-center gap-5 p-6 bg-white rounded-[24px] border border-black/5 hover:border-ssc-gold/30 transition-all group">
-                      <div className="w-12 h-12 rounded-full bg-ssc-navy/5 flex items-center justify-center group-hover:bg-ssc-navy transition-colors">
-                        <User size={20} className="text-ssc-navy group-hover:text-white" />
+                      <div className="w-12 h-12 rounded-full bg-background/5 flex items-center justify-center group-hover:bg-background transition-colors">
+                        <User size={20} className="text-foreground group-hover:text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-technical font-bold text-ssc-navy uppercase tracking-tight">{person.name}</p>
-                        <a href={`tel:${person.phone}`} className="text-lg font-heading font-medium text-ssc-navy hover:text-ssc-gold transition-colors block leading-tight mt-1 min-h-[44px] flex items-center">
+                        <p className="text-sm font-body font-bold text-foreground uppercase tracking-tight">{person.name}</p>
+                        <a href={`tel:${person.phone}`} className="text-lg font-body font-medium text-foreground hover:text-primary transition-colors block leading-tight mt-1 min-h-[44px] flex items-center">
                           {person.phone}
                         </a>
                       </div>
                     </div>
                   ))}
                   <div className="flex items-center gap-5 p-6 bg-white rounded-[24px] border border-black/5 hover:border-ssc-gold/30 transition-all group">
-                    <div className="w-12 h-12 rounded-full bg-ssc-navy/5 flex items-center justify-center group-hover:bg-ssc-navy transition-colors">
-                      <Mail size={20} className="text-ssc-navy group-hover:text-white" />
+                    <div className="w-12 h-12 rounded-full bg-background/5 flex items-center justify-center group-hover:bg-background transition-colors">
+                      <Mail size={20} className="text-foreground group-hover:text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-technical font-bold text-ssc-navy uppercase tracking-tight">Email Inquiries</p>
-                      <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-base font-heading font-medium text-ssc-navy hover:text-ssc-gold transition-colors break-all block leading-tight mt-1 min-h-[44px] flex items-center">
+                      <p className="text-sm font-body font-bold text-foreground uppercase tracking-tight">Email Inquiries</p>
+                      <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-base font-body font-medium text-foreground hover:text-primary transition-colors break-all block leading-tight mt-1 min-h-[44px] flex items-center">
                         srinivasasteelcorporationvja@gmail.com
                       </a>
                     </div>
@@ -352,31 +352,31 @@ function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="bg-ssc-navy p-10 rounded-[32px] text-white"
+                className="bg-background p-10 rounded-[32px] text-white"
               >
-                <h3 className="text-xl font-heading font-bold mb-8 uppercase tracking-tight">Requirement Scope</h3>
+                <h3 className="text-xl font-body font-bold mb-8 uppercase tracking-tight">Requirement Scope</h3>
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.2em] uppercase mb-4">TMT REBARS</h4>
+                    <h4 className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase mb-4">TMT REBARS</h4>
                     <ul className="grid grid-cols-2 gap-3 text-sm text-white/70">
-                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-ssc-gold" /> 5 mm</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-ssc-gold" /> 5.5 mm</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-ssc-gold" /> 5.5 mm TMT</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-ssc-gold" /> 6 mm TMT</li>
+                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5 mm</li>
+                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5.5 mm</li>
+                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5.5 mm TMT</li>
+                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 6 mm TMT</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.2em] uppercase mb-4">DECOILING</h4>
+                    <h4 className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase mb-4">DECOILING</h4>
                     <p className="text-sm text-white/70 leading-relaxed">
                       Custom cutting and straightening for applicable steel sizes and lengths.
                     </p>
                   </div>
                   <div>
-                    <h4 className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.2em] uppercase mb-4">OTHER PRODUCTS</h4>
+                    <h4 className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase mb-4">OTHER PRODUCTS</h4>
                     <ul className="space-y-2 text-sm text-white/70">
-                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-ssc-gold" /> Binding wire</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-ssc-gold" /> Oil rods</li>
-                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-ssc-gold" /> Other steel requirements</li>
+                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> Binding wire</li>
+                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> Oil rods</li>
+                      <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> Other steel requirements</li>
                     </ul>
                   </div>
                 </div>
@@ -395,10 +395,10 @@ function ContactPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-ssc-navy mb-4 tracking-tight uppercase">
-              OUR <span className="text-ssc-gold">LOCATIONS</span>
+            <h2 className="text-4xl md:text-5xl font-body font-bold text-foreground mb-4 tracking-tight uppercase">
+              OUR <span className="text-primary">LOCATIONS</span>
             </h2>
-            <div className="w-20 h-1 bg-ssc-gold mx-auto" />
+            <div className="w-20 h-1 bg-primary mx-auto" />
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -407,13 +407,13 @@ function ContactPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+              className="bg-[#E6E8EC] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-ssc-navy/5 flex items-center justify-center mb-8 group-hover:bg-ssc-navy transition-colors">
-                <MapPin size={24} className="text-ssc-navy group-hover:text-white" />
+              <div className="w-12 h-12 rounded-[12px] bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
+                <MapPin size={24} className="text-foreground group-hover:text-white" />
               </div>
-              <h3 className="text-[12px] font-technical font-bold tracking-[0.2em] text-ssc-gold uppercase mb-6">HEAD OFFICE</h3>
-              <p className="text-ssc-navy font-heading font-medium leading-relaxed">
+              <h3 className="text-[12px] font-body font-bold tracking-[0.2em] text-primary uppercase mb-6">HEAD OFFICE</h3>
+              <p className="text-foreground font-body font-medium leading-relaxed">
                 Plot No. 90,<br />
                 Iron Complex,<br />
                 Godown Block No. 36/3,<br />
@@ -428,13 +428,13 @@ function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+              className="bg-[#E6E8EC] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-ssc-navy/5 flex items-center justify-center mb-8 group-hover:bg-ssc-navy transition-colors">
-                <MapPin size={24} className="text-ssc-navy group-hover:text-white" />
+              <div className="w-12 h-12 rounded-[12px] bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
+                <MapPin size={24} className="text-foreground group-hover:text-white" />
               </div>
-              <h3 className="text-[12px] font-technical font-bold tracking-[0.2em] text-ssc-gold uppercase mb-6">GANNAVARAM YARD</h3>
-              <p className="text-ssc-navy font-heading font-medium leading-relaxed">
+              <h3 className="text-[12px] font-body font-bold tracking-[0.2em] text-primary uppercase mb-6">GANNAVARAM YARD</h3>
+              <p className="text-foreground font-body font-medium leading-relaxed">
                 Gannavaram Yard,<br />
                 Nuzividu Road,<br />
                 Gannavaram – 521101
@@ -447,13 +447,13 @@ function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-[#F7F7F4] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
+              className="bg-[#E6E8EC] p-10 rounded-[32px] border border-black/5 hover:border-ssc-gold/30 transition-all group"
             >
-              <div className="w-12 h-12 rounded-2xl bg-ssc-navy/5 flex items-center justify-center mb-8 group-hover:bg-ssc-navy transition-colors">
-                <MapPin size={24} className="text-ssc-navy group-hover:text-white" />
+              <div className="w-12 h-12 rounded-[12px] bg-background/5 flex items-center justify-center mb-8 group-hover:bg-background transition-colors">
+                <MapPin size={24} className="text-foreground group-hover:text-white" />
               </div>
-              <h3 className="text-[12px] font-technical font-bold tracking-[0.2em] text-ssc-gold uppercase mb-6">VIZAG BRANCH</h3>
-              <p className="text-ssc-navy font-heading font-medium leading-relaxed">
+              <h3 className="text-[12px] font-body font-bold tracking-[0.2em] text-primary uppercase mb-6">VIZAG BRANCH</h3>
+              <p className="text-foreground font-body font-medium leading-relaxed">
                 S. No. 156,<br />
                 Plot No. 163A, 163B,<br />
                 Vakalapudi,<br />

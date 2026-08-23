@@ -36,11 +36,11 @@ const partners = [
 
 export const PartnerStrip = () => {
   return (
-    <div className="w-full bg-ssc-gray-light py-20 border-y border-black/5">
+    <div className="w-full bg-ssc-steel-light py-20 border-y border-black/5">
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <div className="text-center mb-12 sm:mb-16">
-            <span className="text-[10px] font-technical font-bold text-ssc-navy/40 uppercase tracking-[0.4em] px-4 block">
+            <span className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-[0.4em] px-4 block">
               Trusted By Industrial Leaders
             </span>
           </div>
@@ -54,10 +54,10 @@ export const PartnerStrip = () => {
                 <div className="flex items-center grayscale group-hover:grayscale-0 transition-all duration-700 opacity-60 group-hover:opacity-100">
                   {partner.icon}
                   <div className="flex flex-col">
-                    <span className="text-xl md:text-2xl font-heading leading-none text-ssc-navy tracking-tighter">
+                    <span className="text-xl md:text-2xl font-body leading-none text-foreground tracking-tighter">
                       {partner.brand}
                     </span>
-                    <span className="text-[8px] font-technical font-black text-ssc-gold tracking-[0.2em] mt-1">
+                    <span className="text-[8px] font-body font-bold text-primary tracking-[0.2em] mt-1">
                       {partner.tagline}
                     </span>
                   </div>

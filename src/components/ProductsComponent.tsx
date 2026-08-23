@@ -78,12 +78,12 @@ export const ProductsComponent = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-ssc-gold text-[12px] lg:text-[13px] font-technical font-bold uppercase tracking-[0.25em] mb-4 block">
+                <span className="text-primary text-[12px] lg:text-[13px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
                   OUR PRODUCTS
                 </span>
-                <h1 className="text-[44px] lg:text-[68px] text-ssc-navy font-heading leading-[1] mb-8 font-[600] tracking-tight uppercase">
+                <h1 className="text-[44px] lg:text-[68px] text-foreground font-body leading-[1] mb-8 font-[600] tracking-tight uppercase">
                   STEEL THAT BUILDS <br />
-                  <span className="text-ssc-gold">WITH CONFIDENCE.</span>
+                  <span className="text-primary">WITH CONFIDENCE.</span>
                 </h1>
                 <p className="text-[#64748B] text-lg lg:text-xl leading-relaxed mb-10 font-[400] max-w-[540px]">
                   Steel products and TMT solutions for construction and industrial requirements.
@@ -108,7 +108,7 @@ export const ProductsComponent = () => {
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-ssc-navy/10 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-background/10 mix-blend-multiply" />
               </motion.div>
             </div>
           </div>
@@ -141,13 +141,13 @@ export const ProductsComponent = () => {
                     />
                   </div>
                   <div className="p-8 lg:p-10">
-                    <h3 className="text-[24px] lg:text-[28px] font-heading font-semibold text-ssc-navy mb-4 tracking-tight uppercase">
+                    <h3 className="text-[24px] lg:text-[28px] font-body font-semibold text-foreground mb-4 tracking-tight uppercase">
                       {product.name}
                     </h3>
                     <p className="text-[#64748B] text-base leading-relaxed mb-8 font-[450]">
                       {product.description}
                     </p>
-                    <Link to="/contact" search={{ product: product.name }} className="inline-flex items-center gap-2 text-[11px] font-technical font-bold text-ssc-gold uppercase tracking-[0.25em]">
+                    <Link to="/contact" search={{ product: product.name }} className="inline-flex items-center gap-2 text-[11px] font-body font-bold text-primary uppercase tracking-[0.25em]">
                       ENQUIRE NOW <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                     </Link>
                   </div>
@@ -177,12 +177,12 @@ export const ProductsComponent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-ssc-gold text-[12px] font-technical font-bold uppercase tracking-[0.25em] mb-4 block">
+              <span className="text-primary text-[12px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
                 CAPABILITIES
               </span>
-              <h2 className="text-[38px] lg:text-[56px] text-white font-heading leading-[1.1] mb-8 font-[500] tracking-tight uppercase">
+              <h2 className="text-[38px] lg:text-[56px] text-white font-body leading-[1.1] mb-8 font-[500] tracking-tight uppercase">
                 DECOILING FOR <br />
-                <span className="text-ssc-gold">SPECIFIC REQUIREMENTS.</span>
+                <span className="text-primary">SPECIFIC REQUIREMENTS.</span>
               </h2>
               <p className="text-white/60 text-lg leading-relaxed mb-10 font-[400]">
                 We provide high-precision decoiling solutions for applicable steel sizes and lengths, ensuring your material is straightened and cut to meet exact project specifications.
@@ -201,10 +201,10 @@ export const ProductsComponent = () => {
       <section className="py-14 bg-white border-y border-black/5">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <span className="text-ssc-gold text-[11px] font-technical font-bold tracking-[0.4em] uppercase mb-4 block">
+            <span className="text-primary text-[11px] font-body font-bold tracking-[0.4em] uppercase mb-4 block">
               SUPPLY NETWORK
             </span>
-            <h2 className="text-[28px] lg:text-[32px] text-ssc-navy font-heading font-semibold tracking-tight uppercase">
+            <h2 className="text-[28px] lg:text-[32px] text-foreground font-body font-semibold tracking-tight uppercase">
               TRUSTED STEEL BRANDS
             </h2>
           </div>
@@ -218,10 +218,10 @@ export const ProductsComponent = () => {
                 transition={{ delay: idx * 0.15 }}
                 className="text-center"
               >
-                <div className="text-2xl lg:text-3xl font-heading font-black text-ssc-navy/80 tracking-tighter uppercase mb-2">
+                <div className="text-2xl lg:text-3xl font-body font-bold text-foreground/80 tracking-tighter uppercase mb-2">
                   {brand.name}
                 </div>
-                <div className="text-[9px] font-technical font-bold text-ssc-gold tracking-[0.2em] uppercase">
+                <div className="text-[9px] font-body font-bold text-primary tracking-[0.2em] uppercase">
                   {brand.subtitle}
                 </div>
               </motion.div>
@@ -234,8 +234,8 @@ export const ProductsComponent = () => {
       <section className="section-spacing bg-[#F4F6F8]">
         <div className="container-wide">
           <div className="text-center mb-20">
-            <h2 className="text-[32px] lg:text-[42px] text-ssc-navy font-heading font-semibold tracking-tight uppercase">
-              QUALITY. AVAILABILITY. <span className="text-ssc-gold">SUPPLY.</span>
+            <h2 className="text-[32px] lg:text-[42px] text-foreground font-body font-semibold tracking-tight uppercase">
+              QUALITY. AVAILABILITY. <span className="text-primary">SUPPLY.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
@@ -252,10 +252,10 @@ export const ProductsComponent = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-8 shadow-sm border border-black/5">
-                  <item.icon className="w-8 h-8 text-ssc-gold" />
+                <div className="w-16 h-16 bg-white rounded-[12px] flex items-center justify-center mx-auto mb-8 shadow-sm border border-black/5">
+                  <item.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-heading font-bold text-ssc-navy mb-4 uppercase tracking-wider">{item.title}</h3>
+                <h3 className="text-xl font-body font-bold text-foreground mb-4 uppercase tracking-wider">{item.title}</h3>
                 <p className="text-[#64748B] text-base leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -264,16 +264,16 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="section-spacing bg-ssc-navy relative overflow-hidden text-white text-center">
+      <section className="section-spacing bg-background relative overflow-hidden text-white text-center">
         <div className="absolute inset-0 z-0 opacity-10"
              style={{ 
                backgroundImage: 'radial-gradient(circle at center, #D9A000 0%, transparent 70%)',
              }} 
         />
         <div className="container-wide relative z-10 flex flex-col items-center">
-          <h2 className="text-[42px] lg:text-[64px] font-heading font-semibold leading-[1.1] mb-8 tracking-tight uppercase">
+          <h2 className="text-[42px] lg:text-[64px] font-body font-semibold leading-[1.1] mb-8 tracking-tight uppercase">
             LOOKING FOR THE <br />
-            <span className="text-ssc-gold">RIGHT STEEL?</span>
+            <span className="text-primary">RIGHT STEEL?</span>
           </h2>
           <p className="text-white/60 text-lg lg:text-xl mb-12 max-w-[600px] mx-auto">
             Tell us your requirement and our team can help you with the appropriate steel product or decoiling solution.
@@ -300,7 +300,7 @@ export const ProductsComponent = () => {
 
       {/* Product Detail Modal */}
       <Dialog open={!!selectedProduct} onOpenChange={() => setSelectedProduct(null)}>
-        <DialogContent className="max-w-[95vw] sm:max-w-[700px] p-0 overflow-hidden bg-white rounded-3xl border-none shadow-2xl">
+        <DialogContent className="max-w-[95vw] sm:max-w-[700px] p-0 overflow-hidden bg-white rounded-[16px] border-none shadow-2xl">
           <DialogClose className="absolute right-6 top-6 z-50 w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors">
             <X size={20} />
           </DialogClose>
@@ -314,10 +314,10 @@ export const ProductsComponent = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ssc-navy to-transparent opacity-60" />
               <div className="absolute bottom-8 left-8 right-8">
-                <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.3em] uppercase mb-2 block">
+                <span className="text-primary text-[10px] font-body font-bold tracking-[0.3em] uppercase mb-2 block">
                   PRODUCT SPECIFICATIONS
                 </span>
-                <DialogTitle className="text-white text-[32px] lg:text-[42px] font-heading font-semibold uppercase leading-none m-0">
+                <DialogTitle className="text-white text-[32px] lg:text-[42px] font-body font-semibold uppercase leading-none m-0">
                   {selectedProduct?.name}
                 </DialogTitle>
               </div>
@@ -329,14 +329,14 @@ export const ProductsComponent = () => {
               </p>
               
               <div className="mb-10">
-                <h4 className="text-[11px] font-technical font-bold text-ssc-navy uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
-                  <span className="w-8 h-[1px] bg-ssc-gold" />
+                <h4 className="text-[11px] font-body font-bold text-foreground uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-primary" />
                   Technical Details
                 </h4>
                 <div className="flex flex-wrap gap-3">
                   {selectedProduct?.specs.map((spec) => (
-                    <div key={spec} className="px-5 py-2.5 bg-[#F4F6F8] border border-black/[0.03] rounded-full text-ssc-navy text-[13px] font-technical font-bold tracking-wider flex items-center gap-2">
-                      <CheckCircle2 size={14} className="text-ssc-gold" />
+                    <div key={spec} className="px-5 py-2.5 bg-[#F4F6F8] border border-black/[0.03] rounded-full text-foreground text-[13px] font-body font-bold tracking-wider flex items-center gap-2">
+                      <CheckCircle2 size={14} className="text-primary" />
                       {spec}
                     </div>
                   ))}
@@ -344,8 +344,8 @@ export const ProductsComponent = () => {
               </div>
               
               <Link to="/contact" search={{ product: selectedProduct?.name || "" }} onClick={() => setSelectedProduct(null)}>
-                <Button className="w-full h-16 bg-ssc-navy hover:bg-ssc-navy/90 text-white font-technical font-black uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3">
-                  REQUEST QUOTE <ArrowRight size={20} className="text-ssc-gold" />
+                <Button className="w-full h-16 bg-background hover:bg-background/90 text-white font-body font-bold uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3">
+                  REQUEST QUOTE <ArrowRight size={20} className="text-primary" />
                 </Button>
               </Link>
             </div>

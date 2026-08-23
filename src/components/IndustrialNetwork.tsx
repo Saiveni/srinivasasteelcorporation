@@ -33,7 +33,7 @@ export const IndustrialNetwork = () => {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
-    <section id="locations" className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden">
+    <section id="locations" className="relative py-24 lg:py-32 bg-background overflow-hidden">
       {/* Blueprint Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03]" 
@@ -53,20 +53,20 @@ export const IndustrialNetwork = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
-              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+              <div className="w-8 h-[1px] bg-primary/40" />
+              <span className="text-primary text-micro">
                 Regional Presence
               </span>
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+              <div className="w-8 h-[1px] bg-primary/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
-              STEEL SUPPLY <span className="text-ssc-gold">NETWORK</span>
+            <h2 className="text-white italic uppercase">
+              STEEL SUPPLY <span className="text-primary">NETWORK</span>
             </h2>
           </motion.div>
         </div>
 
         {/* Network Map / Interactive Visualization - Desktop Only */}
-        <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/5 rounded-[32px] overflow-hidden group/map shadow-2xl hidden lg:block">
+        <div className="relative w-full aspect-[16/9] lg:h-[700px] bg-white/[0.02] border border-white/10 rounded-[24px] overflow-hidden group/map shadow-premium-strong hidden lg:block">
           {/* India Map Background - Adjusted scaling and positioning */}
           <div className="absolute inset-0 opacity-[0.08] pointer-events-none flex items-center justify-center translate-y-20">
             <svg viewBox="0 0 1024 1024" className="w-full h-full fill-transparent stroke-ssc-gold/20">
@@ -85,7 +85,7 @@ export const IndustrialNetwork = () => {
             <motion.path
               d="M 50% 65% Q 58% 65% 62% 55%"
               fill="none"
-              stroke="rgba(197,160,89,0.3)"
+              stroke="rgba(212,175,55,0.3)"
               strokeWidth="1.5"
               strokeDasharray="8 8"
               initial={{ pathLength: 0 }}
@@ -114,19 +114,19 @@ export const IndustrialNetwork = () => {
                   {/* Machined Metallic Marker */}
                     <motion.div 
                       animate={isActive ? { scale: 1.2 } : { scale: 1 }}
-                      className="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-[#0C121E] border-2 border-ssc-gold shadow-[0_0_20px_rgba(197,160,89,0.3)] flex items-center justify-center relative z-10 transition-all"
+                      className="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-ssc-steel-dark border-2 border-primary shadow-[0_0_20px_rgba(212,175,55,0.3)] flex items-center justify-center relative z-10 transition-all"
                     >
-                    <Icon size={isActive ? 20 : 16} className="text-ssc-gold" />
+                    <Icon size={isActive ? 20 : 16} className="text-primary" />
                     
                     {/* Glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-ssc-gold/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                   </motion.div>
 
                   {/* Marker Pulse */}
                   <motion.div 
                     animate={{ scale: [1, 2, 1], opacity: [0.3, 0, 0.3] }}
                     transition={{ duration: 4, repeat: Infinity }}
-                    className="absolute inset-[-10px] rounded-full border border-ssc-gold/40 z-0"
+                    className="absolute inset-[-10px] rounded-full border border-primary/40 z-0"
                   />
 
                   {/* Desktop Hover Card */}
@@ -136,27 +136,27 @@ export const IndustrialNetwork = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                        className={`absolute z-[100] w-[280px] sm:w-[340px] bg-[#0C121E] border border-ssc-gold/30 p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] pointer-events-none hidden lg:block
+                        className={`absolute z-[100] w-[280px] sm:w-[340px] bg-ssc-steel-dark border border-primary/30 p-6 rounded-[12px] shadow-premium-strong pointer-events-none hidden lg:block
                           ${parseFloat(loc.coords.x) > 50 ? '-left-[360px]' : 'left-20'}
                           ${parseFloat(loc.coords.y) > 70 ? 'bottom-0' : 'top-0'}
                         `}
                       >
                         {/* Connecting visual line */}
-                        <div className={`absolute top-1/2 -translate-y-1/2 w-8 h-[1px] bg-ssc-gold/30 ${parseFloat(loc.coords.x) > 60 ? '-right-8' : '-left-8'}`} />
+                        <div className={`absolute top-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 ${parseFloat(loc.coords.x) > 60 ? '-right-8' : '-left-8'}`} />
                         
                         <div className="flex items-center gap-2 mb-3">
-                          <div className="w-1 h-3 bg-ssc-gold" />
-                          <span className="text-ssc-gold text-[9px] font-technical font-black tracking-[0.2em] uppercase">
+                          <div className="w-1 h-3 bg-primary" />
+                          <span className="text-primary text-micro">
                             {loc.type}
                           </span>
                         </div>
-                        <h4 className="text-white font-heading font-black italic text-2xl mb-2 tracking-tight">
+                        <h4 className="text-white italic text-2xl mb-2 uppercase">
                           {loc.city}
                         </h4>
-                        <p className="text-white/60 text-xs leading-relaxed font-medium mb-4 italic">
+                        <p className="text-ssc-gray-muted text-small italic mb-4">
                           {loc.address}
                         </p>
-                        <div className="flex items-center gap-2 text-[8px] font-technical font-bold text-ssc-gold/40 uppercase tracking-[0.3em]">
+                        <div className="flex items-center gap-2 text-micro text-primary/40 italic">
                           INDUSTRIAL CORE • {loc.id === 'vijayawada' ? 'ZONE 01' : 'ZONE 02'}
                         </div>
                       </motion.div>
@@ -181,24 +181,24 @@ export const IndustrialNetwork = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white/[0.02] border border-white/5 p-8 rounded-[24px] shadow-xl relative overflow-hidden group"
+                className="bg-ssc-steel-dark border border-white/10 p-8 rounded-[12px] shadow-premium-soft relative overflow-hidden group"
               >
-                <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-ssc-gold/10 rounded-tr-[24px]" />
+                <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-primary/10 rounded-tr-[12px]" />
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-ssc-gold/5 flex items-center justify-center border border-ssc-gold/10 group-hover:border-ssc-gold/30 transition-colors">
-                    <Icon size={20} className="text-ssc-gold/60 group-hover:text-ssc-gold transition-colors" />
+                  <div className="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center border border-primary/10 group-hover:border-primary/30 transition-colors">
+                    <Icon size={20} className="text-primary/60 group-hover:text-primary transition-colors" />
                   </div>
 
                   <div>
-                    <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.2em] uppercase">
+                    <span className="text-primary text-micro">
                       {loc.type}
                     </span>
-                    <h4 className="text-white font-heading font-bold text-xl tracking-tight">
+                    <h4 className="text-white text-xl uppercase italic">
                       {loc.city}
                     </h4>
                   </div>
                 </div>
-                <p className="text-white/60 text-[13px] leading-relaxed font-medium italic">
+                <p className="text-ssc-gray-muted text-small italic">
                   {loc.address}
                 </p>
               </motion.div>

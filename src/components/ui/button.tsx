@@ -5,22 +5,22 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-none text-[12px] font-heading font-bold uppercase tracking-[0.15em] cursor-pointer transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-[8px] text-[15px] font-body font-semibold cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 disabled:cursor-not-allowed [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-[#D9A000] text-[#0B1B33] shadow transition-all duration-300 hover:bg-[#D9A000]/90 hover:translate-y-[-1px]",
+        default: "bg-[#D4AF37] text-[#0B1320] shadow-premium-soft hover:bg-[#D4AF37]/90 active:scale-[0.98]",
         destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-[#0B1B33]/20 bg-background text-[#0B1B33] shadow-sm transition-all duration-300 hover:bg-[#0B1B33]/5 hover:border-[#0B1B33]/40",
-        secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+          "border border-[#D4AF37] bg-transparent text-[#D4AF37] hover:bg-[#D4AF37]/10 active:scale-[0.98]",
+        secondary: "bg-[#1C1F26] text-white border border-white/10 hover:bg-[#1C1F26]/80 active:scale-[0.98]",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-[56px] px-8 py-2",
-        sm: "h-10 px-4 text-[10px]",
-        lg: "h-[64px] px-10",
+        default: "px-[28px] py-[16px]",
+        sm: "h-10 px-4 text-[14px]",
+        lg: "px-[32px] py-[18px] text-[16px]",
         icon: "h-9 w-9",
       },
     },
