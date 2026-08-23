@@ -115,7 +115,7 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
       className="group relative"
     >
       {/* Specification Panel Surface */}
-      <div className="relative h-full bg-[#0C121E] rounded-[20px] border border-white/[0.06] overflow-hidden flex flex-col shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 group-hover:-translate-y-2 group-hover:border-ssc-gold/30 group-hover:shadow-[0_30px_60px_-15px_rgba(197,160,89,0.12)]">
+      <div className="relative h-full bg-[#0C121E] rounded-[20px] border border-white/[0.06] overflow-hidden flex flex-col shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 lg:group-hover:-translate-y-2 lg:group-hover:border-ssc-gold/30 lg:group-hover:shadow-[0_30px_60px_-15px_rgba(197,160,89,0.12)]">
 
         {/* Brushed Metal Texture */}
         <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none z-10" />
@@ -126,12 +126,12 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
             src={area.image}
             alt={area.alt}
             loading="lazy"
-            className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-108"
+            className="w-full h-full object-cover transition-transform duration-1000 ease-out lg:group-hover:scale-108"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0C121E] via-transparent to-transparent" />
 
           {/* Index Chip */}
-          <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#050A14]/70 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5 group-hover:border-ssc-gold/40 transition-colors duration-500">
+          <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#050A14]/70 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5 lg:group-hover:border-ssc-gold/40 transition-colors duration-500">
             <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.3em]">
               {area.index}
             </span>
@@ -139,7 +139,7 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
 
           {/* Technical Code */}
           <div className="absolute top-4 right-4">
-            <span className="text-white/40 text-[8px] font-technical font-bold tracking-[0.3em] uppercase group-hover:text-ssc-gold/70 transition-colors duration-500">
+            <span className="text-white/40 text-[8px] font-technical font-bold tracking-[0.3em] uppercase lg:group-hover:text-ssc-gold/70 transition-colors duration-500">
               {area.code}
             </span>
           </div>
@@ -147,7 +147,7 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
 
         {/* Content Area */}
         <div className="relative z-20 flex-1 flex flex-col p-6 lg:p-7 pt-2">
-          <h3 className="text-white font-heading font-extrabold text-[16px] lg:text-[17px] uppercase tracking-[0.04em] italic leading-tight mb-3 group-hover:text-ssc-gold transition-colors duration-500">
+          <h3 className="text-white font-heading font-extrabold text-[16px] lg:text-[17px] uppercase tracking-[0.04em] italic leading-tight mb-3 lg:group-hover:text-ssc-gold transition-colors duration-500">
             {area.title}
           </h3>
 
@@ -171,7 +171,7 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
         </div>
 
         {/* Gold Accent Hairline */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-ssc-gold/0 to-transparent group-hover:via-ssc-gold/60 transition-all duration-700" />
+        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-ssc-gold/0 to-transparent lg:group-hover:via-ssc-gold/60 transition-all duration-700" />
       </div>
     </motion.div>
   );
