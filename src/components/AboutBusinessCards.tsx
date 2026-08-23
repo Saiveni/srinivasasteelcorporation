@@ -316,8 +316,8 @@ export const AboutBusinessCards = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[1px] bg-primary" />
-              <span className="text-primary text-micro">
-                What We Supply
+              <span className="text-primary text-micro uppercase">
+                DISCOVER OUR CAPABILITIES
               </span>
             </div>
             <h2 className="text-h2 text-white mb-8 uppercase">
