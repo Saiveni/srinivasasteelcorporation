@@ -49,188 +49,212 @@ export const Footer = () => {
     { name: "Structural Steel", path: "/products" as const },
     { name: "Steel Pipes", path: "/products" as const },
     { name: "Steel Coils", path: "/products" as const },
-    { name: "Wire Products", path: "/products" as const },
-    { name: "Decoiling Solutions", path: "/products" as const },
+    { name: "Accessories", path: "/products" as const },
+  ];
+
+  const quickLinks = [
+    { name: "Home", path: "/" as const },
+    { name: "About Us", path: "/about" as const },
+    { name: "Products", path: "/products" as const },
+    { name: "Gallery", path: "/gallery" as const },
+    { name: "Contact Us", path: "/contact" as const },
   ];
 
   return (
-    <footer className="w-full font-poppins">
-      {/* UPPER FOOTER: Premium light/white industrial panel */}
-      <div className="bg-[#F2F4F7] relative overflow-hidden pt-12 md:pt-16 pb-12 border-t border-ssc-gold/20">
-        {/* Subtle steel/industrial texture */}
-        <div 
-          className="absolute inset-0 opacity-[0.02] pointer-events-none" 
-          style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/carbon-fibre.png')` }}
-        />
-        
-        {/* Subtle geometric detailing - Angled gold line as per reference */}
-        <div className="absolute top-0 right-0 w-1/3 h-full pointer-events-none hidden lg:block">
-           <div className="absolute top-0 left-0 w-[2px] h-full bg-ssc-gold/40 -skew-x-[20deg] origin-top"></div>
-        </div>
-
-        <div className="container-wide relative z-10 px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:flex-wrap xl:flex-nowrap gap-12 lg:gap-8">
-            
-            {/* BRAND COLUMN */}
-            <div className="w-full lg:w-[45%] xl:w-1/4 space-y-6 flex flex-col items-center md:items-start text-center md:text-left">
-              <Link to="/" className="flex items-center gap-3">
-                <img src={sscLogo.url} alt="SSC Logo" className="h-14 w-14 md:h-16 md:w-16 object-contain" />
-                <div className="flex flex-col border-l border-ssc-navy/10 pl-4 py-1 text-left">
-                  <span className="text-base md:text-lg font-bold tracking-[0.05em] leading-none uppercase text-ssc-navy">
-                    SRINIVASA <span className="font-medium opacity-80">STEEL</span>
-                  </span>
-                  <span className="text-[10px] md:text-micro text-ssc-gold leading-none mt-2 uppercase">
-                    CORPORATION
-                  </span>
-                </div>
-              </Link>
-              <div className="space-y-6 w-full max-w-sm md:max-w-xs">
-                <p className="text-ssc-navy text-sm leading-relaxed">
-                  Premium steel distribution since 1994. Committed to quality, reliability and customer satisfaction.
-                </p>
-                <div className="flex gap-4 justify-center md:justify-start">
-                  {(['fb', 'li', 'ig', 'yt'] as const).map((type) => (
-                    <a 
-                      key={type} 
-                      href="#" 
-                      aria-label={`Follow us on ${type}`}
-                      className="w-10 h-10 rounded-full bg-ssc-navy text-white flex items-center justify-center hover:bg-ssc-gold hover:-translate-y-1 transition-all duration-300 shadow-lg"
-                    >
-                      <SocialIcon type={type} />
-                    </a>
-                  ))}
-                </div>
+    <footer className="w-full font-poppins bg-[#050B15] text-white">
+      {/* MAIN FOOTER SECTION */}
+      <div className="container-wide pt-20 pb-12 relative overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16 relative z-10">
+          
+          {/* LEFT: Logo & Brand Info */}
+          <div className="space-y-8">
+            <Link to="/" className="flex items-center gap-4 group">
+              <div className="relative">
+                <div className="absolute -inset-2 bg-ssc-gold/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity" />
+                <img src={sscLogo.url} alt="SSC Logo" className="h-16 w-16 object-contain relative z-10" />
               </div>
+              <div className="flex flex-col border-l border-white/20 pl-4 py-1">
+                <span className="text-xl font-bold tracking-[0.1em] uppercase text-white leading-tight">
+                  SRINIVASA <span className="text-ssc-gold">STEEL</span>
+                </span>
+                <span className="text-[10px] tracking-[0.2em] text-white/60 uppercase leading-none mt-1">
+                  CORPORATION
+                </span>
+              </div>
+            </Link>
+            
+            <p className="text-white/70 text-sm leading-relaxed max-w-xs">
+              Trusted steel and TMT supplier serving construction and industrial requirements since 1994.
+            </p>
+            
+            <div className="flex gap-4">
+              {(['fb', 'li', 'ig', 'yt'] as const).map((type) => (
+                <a 
+                  key={type} 
+                  href="#" 
+                  aria-label={`Follow us on ${type}`}
+                  className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80 hover:bg-ssc-gold hover:text-ssc-navy hover:border-ssc-gold transition-all duration-300"
+                >
+                  <SocialIcon type={type} />
+                </a>
+              ))}
             </div>
+          </div>
 
-            {/* QUICK LINKS */}
-            <div className="w-full sm:w-[45%] md:w-[30%] lg:w-[20%] xl:w-[15%] lg:pl-8 lg:border-l border-ssc-navy/5">
-              <h4 className="text-ssc-navy font-bold text-sm uppercase tracking-widest mb-6 md:mb-8 text-center sm:text-left">
-                QUICK LINKS
-              </h4>
-              <ul className="space-y-4 text-sm font-medium flex flex-col items-center sm:items-start">
-                <li><Link to="/" className="text-ssc-navy/70 hover:text-ssc-gold hover:translate-x-1 transition-all inline-block">Home</Link></li>
-                <li><Link to="/about" className="text-ssc-navy/70 hover:text-ssc-gold hover:translate-x-1 transition-all inline-block">About Us</Link></li>
-                <li><Link to="/products" className="text-ssc-navy/70 hover:text-ssc-gold hover:translate-x-1 transition-all inline-block">Products</Link></li>
-                <li><Link to="/gallery" className="text-ssc-navy/70 hover:text-ssc-gold hover:translate-x-1 transition-all inline-block">Gallery</Link></li>
-                <li><Link to="/contact" search={{ product: "" }} className="text-ssc-navy/70 hover:text-ssc-gold hover:translate-x-1 transition-all inline-block">Contact Us</Link></li>
-              </ul>
-            </div>
+          {/* COLUMN 2: Quick Links */}
+          <div className="lg:pl-8">
+            <h4 className="text-ssc-gold font-bold text-sm uppercase tracking-[0.2em] mb-10 relative inline-block">
+              QUICK LINKS
+              <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-ssc-gold" />
+            </h4>
+            <ul className="space-y-5">
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    to={link.path} 
+                    className="text-white/70 hover:text-ssc-gold text-[15px] transition-colors flex items-center gap-2 group"
+                  >
+                    <span className="w-0 h-[1px] bg-ssc-gold transition-all duration-300 group-hover:w-3" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* OUR PRODUCTS */}
-            <div className="w-full sm:w-[45%] md:w-[30%] lg:w-[20%] xl:w-[20%] lg:border-l border-ssc-navy/5">
-              <h4 className="text-ssc-navy font-bold text-sm uppercase tracking-widest mb-6 md:mb-8 text-center sm:text-left">
-                OUR PRODUCTS
-              </h4>
-              <ul className="space-y-4 text-sm font-medium text-ssc-navy/70 grid grid-cols-2 sm:grid-cols-1 gap-x-4 gap-y-4">
-                {products.map((product) => (
-                  <li key={product.name} className="flex justify-center sm:justify-start">
-                    <Link to={product.path} className="hover:text-ssc-gold hover:translate-x-1 transition-all inline-block text-center sm:text-left">
-                      {product.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* COLUMN 3: Our Products */}
+          <div>
+            <h4 className="text-ssc-gold font-bold text-sm uppercase tracking-[0.2em] mb-10 relative inline-block">
+              OUR PRODUCTS
+              <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-ssc-gold" />
+            </h4>
+            <ul className="space-y-5">
+              {products.map((product) => (
+                <li key={product.name}>
+                  <Link 
+                    to={product.path} 
+                    className="text-white/70 hover:text-ssc-gold text-[15px] transition-colors flex items-center gap-2 group"
+                  >
+                    <span className="text-ssc-gold opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300">›</span>
+                    {product.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-            {/* GET IN TOUCH */}
-            <div className="w-full md:w-[60%] lg:w-[45%] xl:w-[30%] relative lg:pl-4 lg:border-l border-ssc-navy/5">
-              <h4 className="text-ssc-navy font-bold text-sm uppercase tracking-widest mb-6 md:mb-8 text-center md:text-left">
-                GET IN TOUCH
-              </h4>
-              <ul className="space-y-5 text-sm text-ssc-navy/80">
-                <li className="flex gap-4 items-start group">
-                  <div className="w-10 h-10 rounded bg-ssc-navy/5 flex items-center justify-center shrink-0 group-hover:bg-ssc-gold/10 transition-colors">
-                    <MapPin size={18} className="text-ssc-navy group-hover:text-ssc-gold transition-colors" />
-                  </div>
+          {/* COLUMN 4: Contact Us */}
+          <div className="relative">
+            <h4 className="text-ssc-gold font-bold text-sm uppercase tracking-[0.2em] mb-10 relative inline-block">
+              CONTACT US
+              <span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-ssc-gold" />
+            </h4>
+            <ul className="space-y-8">
+              <li className="flex gap-4 items-start group">
+                <MapPin size={20} className="text-ssc-gold shrink-0 mt-1" />
+                <div className="space-y-2">
+                  <span className="text-[11px] font-bold tracking-widest text-ssc-gold/80 uppercase">HEAD OFFICE</span>
                   <a 
                     href="https://maps.google.com/?q=Srinivasa+Steel+Corporation+Vijayawada" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-ssc-gold transition-colors leading-relaxed"
+                    className="block text-white/70 hover:text-white transition-colors text-[14px] leading-relaxed"
                   >
                     Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada - 520012, Andhra Pradesh, India
                   </a>
-                </li>
-                <li className="flex gap-4 items-center group">
-                  <div className="w-10 h-10 rounded bg-ssc-navy/5 flex items-center justify-center shrink-0 group-hover:bg-ssc-gold/10 transition-colors">
-                    <Phone size={18} className="text-ssc-navy group-hover:text-ssc-gold transition-colors" />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <a href="tel:+919440170453" className="hover:text-ssc-gold transition-colors font-semibold">+91 9440170453 <span className="font-normal text-xs opacity-70">(M.S.V. Bhaskar)</span></a>
-                    <a href="tel:+919849600403" className="hover:text-ssc-gold transition-colors font-semibold">+91 9849600403 <span className="font-normal text-xs opacity-70">(M.V. Ramana Kumar)</span></a>
-                    <a href="tel:+918125397453" className="hover:text-ssc-gold transition-colors font-semibold">+91 8125397453 <span className="font-normal text-xs opacity-70">(M.V.N.M. Yeshwanth)</span></a>
-                  </div>
-                </li>
-                <li className="flex gap-4 items-center group">
-                  <div className="w-10 h-10 rounded bg-ssc-navy/5 flex items-center justify-center shrink-0 group-hover:bg-ssc-gold/10 transition-colors">
-                    <Mail size={18} className="text-ssc-navy group-hover:text-ssc-gold transition-colors" />
-                  </div>
-                  <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="hover:text-ssc-gold transition-colors break-all">
-                    srinivasasteelcorporationvja@gmail.com
+                </div>
+              </li>
+              <li className="flex gap-4 items-start group">
+                <Phone size={20} className="text-ssc-gold shrink-0 mt-1" />
+                <div className="flex flex-col gap-2">
+                  <a href="tel:+919440170453" className="text-white/70 hover:text-ssc-gold transition-colors text-[14px] flex flex-col">
+                    <span className="font-bold">+91 9440170453</span>
+                    <span className="text-[10px] text-white/40 uppercase tracking-wider">(M.S.V. Bhaskar)</span>
                   </a>
-                </li>
-              </ul>
-
-              {/* INDUSTRIAL VISUAL ELEMENT: Steel rods */}
-              <div className="absolute -top-16 -right-16 md:-right-8 lg:-right-16 w-32 md:w-40 h-[130%] opacity-10 md:opacity-20 pointer-events-none overflow-hidden skew-x-[-15deg] md:skew-x-[-20deg]">
-                <img 
-                  src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop" 
-                  alt="Steel rods background element" 
-                  className="w-full h-full object-cover grayscale brightness-125 md:brightness-100"
-                />
-              </div>
-            </div>
-
+                  <a href="tel:+919849600403" className="text-white/70 hover:text-ssc-gold transition-colors text-[14px] flex flex-col">
+                    <span className="font-bold">+91 9849600403</span>
+                    <span className="text-[10px] text-white/40 uppercase tracking-wider">(M.V. Ramana Kumar)</span>
+                  </a>
+                  <a href="tel:+918125397453" className="text-white/70 hover:text-ssc-gold transition-colors text-[14px] flex flex-col">
+                    <span className="font-bold">+91 8125397453</span>
+                    <span className="text-[10px] text-white/40 uppercase tracking-wider">(M.V.N.M. Yeshwanth)</span>
+                  </a>
+                </div>
+              </li>
+              <li className="flex gap-4 items-center group">
+                <Mail size={20} className="text-ssc-gold shrink-0" />
+                <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-white/70 hover:text-ssc-gold transition-colors text-[14px] break-all">
+                  srinivasasteelcorporationvja@gmail.com
+                </a>
+              </li>
+            </ul>
           </div>
+        </div>
+
+        {/* INDUSTRIAL VISUAL ELEMENT: Blended steel rebar image */}
+        <div className="absolute top-0 right-0 w-[45%] h-full opacity-30 pointer-events-none hidden lg:block">
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent via-[#050B15]/80 to-[#050B15] z-10" />
+          <img 
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=800&auto=format&fit=crop" 
+            alt="Steel rods industrial visual" 
+            className="w-full h-full object-cover grayscale"
+          />
         </div>
       </div>
 
-      {/* LOWER FOOTER STRIP: Dark navy/black industrial strip */}
-      <div className="bg-[#0B1320] text-white py-8 md:py-10 border-t border-white/5">
-        <div className="container-wide px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row justify-between items-center gap-10 md:gap-12">
-            
-            <div className="w-full lg:w-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
-              {/* Credibility 1 */}
-              <div className="flex items-center gap-4 group justify-center sm:justify-start">
-                <div className="text-ssc-gold shrink-0 bg-white/5 p-2 rounded-lg group-hover:bg-ssc-gold group-hover:text-ssc-navy transition-all duration-300">
-                  <ShieldCheck size={28} strokeWidth={1.5} />
+      {/* CREDIBILITY STRIP */}
+      <div className="border-t border-white/5 py-12 relative overflow-hidden">
+        <div className="container-wide">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            {[
+              { 
+                title: "QUALITY ASSURED", 
+                desc: "Tested. Certified. Trusted.", 
+                icon: <ShieldCheck size={28} strokeWidth={1.5} /> 
+              },
+              { 
+                title: "RELIABLE SUPPLY", 
+                desc: "Consistent quality & uninterrupted supply.", 
+                icon: <Truck size={28} strokeWidth={1.5} /> 
+              },
+              { 
+                title: "ON-TIME DELIVERY", 
+                desc: "Delivered on time, every time.", 
+                icon: <Users size={28} strokeWidth={1.5} /> // Using Users for reliability/focus as placeholder for custom clock
+              },
+              { 
+                title: "CUSTOMER FOCUSED", 
+                desc: "Building long-term relationships.", 
+                icon: <Users size={28} strokeWidth={1.5} /> 
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center gap-5 group">
+                <div className="text-ssc-gold group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
                 </div>
-                <div>
-                  <h5 className="text-[11px] font-bold tracking-[0.15em] uppercase text-white mb-0.5">HIGH QUALITY STEEL</h5>
-                  <p className="text-[10px] text-white/40 uppercase font-medium">Tested. Trusted. Delivered.</p>
+                <div className="space-y-1">
+                  <h5 className="text-[12px] font-bold tracking-[0.2em] uppercase text-white">{item.title}</h5>
+                  <p className="text-[11px] text-white/40 uppercase tracking-wider">{item.desc}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Subtle gold line accent */}
+        <div className="absolute bottom-0 right-0 w-48 h-1 bg-ssc-gold skew-x-[-45deg] translate-x-12 translate-y-0.5" />
+      </div>
 
-              {/* Credibility 2 */}
-              <div className="flex items-center gap-4 group justify-center sm:justify-start">
-                <div className="text-ssc-gold shrink-0 bg-white/5 p-2 rounded-lg group-hover:bg-ssc-gold group-hover:text-ssc-navy transition-all duration-300">
-                  <Truck size={28} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h5 className="text-[11px] font-bold tracking-[0.15em] uppercase text-white mb-0.5">TIMELY DELIVERY</h5>
-                  <p className="text-[10px] text-white/40 uppercase font-medium">On-time, Every time.</p>
-                </div>
-              </div>
-
-              {/* Credibility 3 */}
-              <div className="flex items-center gap-4 group justify-center sm:justify-start">
-                <div className="text-ssc-gold shrink-0 bg-white/5 p-2 rounded-lg group-hover:bg-ssc-gold group-hover:text-ssc-navy transition-all duration-300">
-                  <Users size={28} strokeWidth={1.5} />
-                </div>
-                <div>
-                  <h5 className="text-[11px] font-bold tracking-[0.15em] uppercase text-white mb-0.5">CUSTOMER FOCUSED</h5>
-                  <p className="text-[10px] text-white/40 uppercase font-medium">Building long-term trust.</p>
-                </div>
-              </div>
+      {/* COPYRIGHT ROW */}
+      <div className="bg-[#03070E] py-8 border-t border-white/5">
+        <div className="container-wide">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] tracking-[0.15em] text-white/30 uppercase font-medium">
+            <p>© {currentYear} Srinivasa Steel Corporation. All Rights Reserved.</p>
+            <div className="flex items-center gap-8">
+              <Link to="/contact" search={{ product: "" }} className="hover:text-white transition-colors">Privacy Policy</Link>
+              <span className="w-1 h-1 bg-white/20 rounded-full" />
+              <Link to="/contact" search={{ product: "" }} className="hover:text-white transition-colors">Terms & Conditions</Link>
             </div>
-
-            <div className="flex flex-col items-center lg:items-end gap-1.5 text-[10px] md:text-[11px] tracking-[0.1em] text-white/30 uppercase text-center lg:text-right border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-10 w-full lg:w-auto">
-              <p>© {currentYear} Srinivasa Steel Corporation. All Rights Reserved.</p>
-              <p className="hidden md:block">Engineered for Excellence in Construction.</p>
-            </div>
-            
           </div>
         </div>
       </div>
