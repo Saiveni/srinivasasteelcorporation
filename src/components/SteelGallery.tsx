@@ -166,65 +166,85 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
     </>
   );
 
+  const Lightbox = () => (
+    <AnimatePresence>
+      {currentItem && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
+        >
+          <button 
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-8 right-8 text-white/50 hover:text-primary transition-colors z-[110]"
+            aria-label="Close gallery"
+          >
+            <X size={32} />
+          </button>
+
+          <button 
+            onClick={(e) => { e.stopPropagation(); navigateLightbox('prev'); }}
+            className="absolute left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-primary transition-colors z-[110]"
+            aria-label="Previous image"
+          >
+            <ChevronLeft size={48} />
+          </button>
+
+          <button 
+            onClick={(e) => { e.stopPropagation(); navigateLightbox('next'); }}
+            className="absolute right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-primary transition-colors z-[110]"
+            aria-label="Next image"
+          >
+            <ChevronRight size={48} />
+          </button>
+
+          <div className="relative max-w-6xl w-full flex flex-col items-center">
+            <motion.img 
+              key={currentItem.image}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              src={currentItem.image} 
+              alt={currentItem.title}
+              className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl"
+            />
+            <div className="mt-8 text-center">
+              <span className="text-micro text-ssc-gold uppercase mb-2 block">
+                {currentItem.category}
+              </span>
+              <h3 className="text-white text-h3 uppercase">
+                {currentItem.title}
+              </h3>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+
   if (isHomePage) {
     return (
-      <>
-        {galleryGrid}
-        {/* Lightbox */}
-        <AnimatePresence>
-          {currentItem && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
-            >
-              <button 
-                onClick={() => setSelectedImage(null)}
-                className="absolute top-8 right-8 text-white/50 hover:text-primary transition-colors z-[110]"
-                aria-label="Close gallery"
-              >
-                <X size={32} />
-              </button>
-
-              <button 
-                onClick={(e) => { e.stopPropagation(); navigateLightbox('prev'); }}
-                className="absolute left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-primary transition-colors z-[110]"
-                aria-label="Previous image"
-              >
-                <ChevronLeft size={48} />
-              </button>
-
-              <button 
-                onClick={(e) => { e.stopPropagation(); navigateLightbox('next'); }}
-                className="absolute right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-primary transition-colors z-[110]"
-                aria-label="Next image"
-              >
-                <ChevronRight size={48} />
-              </button>
-
-              <div className="relative max-w-6xl w-full flex flex-col items-center">
-                <motion.img 
-                  key={currentItem.image}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  src={currentItem.image} 
-                  alt={currentItem.title}
-                  className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl"
-                />
-                <div className="mt-8 text-center">
-                  <span className="text-micro text-ssc-gold uppercase mb-2 block">
-                    {currentItem.category}
-                  </span>
-                  <h3 className="text-white text-h3 uppercase">
-                    {currentItem.title}
-                  </h3>
-                </div>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </>
+      <section className="section-padding bg-ssc-steel-light/30">
+        <div className="container-wide">
+          <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
+            <div className="max-w-xl">
+              <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
+                VISUAL PORTFOLIO
+              </span>
+              <h2 className="text-h2 text-ssc-navy uppercase">
+                STEEL IN <span className="text-ssc-gold-dark">ELEMENT.</span>
+              </h2>
+            </div>
+            <div className="md:text-right">
+              <p className="text-body text-ssc-gray-body max-w-sm ml-auto">
+                A technical perspective of our products and processing facilities.
+              </p>
+            </div>
+          </div>
+          {galleryGrid}
+        </div>
+        <Lightbox />
+      </section>
     );
   }
 
@@ -298,61 +318,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
           </div>
         </div>
       </section>
-
-      {/* Lightbox */}
-      <AnimatePresence>
-        {currentItem && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-10"
-          >
-            <button 
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-8 right-8 text-white/50 hover:text-primary transition-colors z-[110]"
-              aria-label="Close gallery"
-            >
-              <X size={32} />
-            </button>
-
-            <button 
-              onClick={(e) => { e.stopPropagation(); navigateLightbox('prev'); }}
-              className="absolute left-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-primary transition-colors z-[110]"
-              aria-label="Previous image"
-            >
-              <ChevronLeft size={48} />
-            </button>
-
-            <button 
-              onClick={(e) => { e.stopPropagation(); navigateLightbox('next'); }}
-              className="absolute right-8 top-1/2 -translate-y-1/2 text-white/30 hover:text-primary transition-colors z-[110]"
-              aria-label="Next image"
-            >
-              <ChevronRight size={48} />
-            </button>
-
-            <div className="relative max-w-6xl w-full flex flex-col items-center">
-              <motion.img 
-                key={currentItem.image}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                src={currentItem.image} 
-                alt={currentItem.title}
-                className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl"
-              />
-              <div className="mt-8 text-center">
-                <span className="text-micro text-primary uppercase mb-2 block">
-                  {currentItem.category}
-                </span>
-                <h3 className="text-white text-h3 uppercase">
-                  {currentItem.title}
-                </h3>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Lightbox />
     </div>
   );
 };
