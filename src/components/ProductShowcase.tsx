@@ -52,7 +52,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
         <div className="absolute inset-0 bg-white rounded-[24px] border border-black/[0.04] shadow-[0_8px_32px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col">
           {/* Top 3D Indicator */}
           <div className="absolute top-6 right-8 z-20">
-            <span className="text-[10px] font-body font-bold text-[#D4AF37] tracking-[0.3em] opacity-60">
+            <span className="text-micro text-primary">
               {product.index}
             </span>
           </div>
@@ -76,22 +76,22 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
           {/* Content Area */}
           <div className="flex-1 p-8 relative">
             {/* 3D Label */}
-            <div className="inline-block px-3 py-1 rounded-full bg-[#D4AF37]/10 mb-4">
-              <span className="text-[9px] font-body font-bold text-[#D4AF37] uppercase tracking-widest">
+            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 mb-4">
+              <span className="text-micro text-primary uppercase">
                 PREMIUM GRADE
               </span>
             </div>
             
-            <h3 className="text-[24px] font-body font-bold text-foreground leading-tight tracking-tight mb-3 group-hover:text-primary transition-colors duration-500">
+            <h3 className="text-h4 text-foreground mb-3 group-hover:text-primary transition-colors duration-500 uppercase">
               {product.name}
             </h3>
             
-            <p className="text-[#64748B] text-[14px] leading-relaxed line-clamp-2 font-[450]">
+            <p className="text-body text-foreground/70 line-clamp-2">
               {product.description}
             </p>
 
             {/* Bottom Glow */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37]/0 to-transparent group-hover:via-[#D4AF37]/40 transition-all duration-700" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/40 transition-all duration-700" />
           </div>
         </div>
 
@@ -127,14 +127,14 @@ const ProductShowcase = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-[#D4AF37] text-[12px] lg:text-[13px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
-                CATALOGUE
+              <span className="text-micro text-primary uppercase mb-4 block">
+                INDUSTRIAL SOLUTIONS
               </span>
-              <h2 className="text-[38px] lg:text-[56px] text-foreground font-body leading-[1.1] mb-6 font-[500] tracking-tight uppercase">
-                Steel Products
+              <h2 className="text-h2 text-foreground mb-6 uppercase">
+                Explore Our <span className="text-primary">Products</span>
               </h2>
-              <p className="text-[#4A5568] text-base lg:text-lg leading-relaxed font-[450]">
-                Industrial steel products for construction and manufacturing requirements.
+              <p className="text-body text-foreground/70">
+                High-performance steel products engineered for demanding applications. Consistent quality and reliable supply for construction and manufacturing.
               </p>
             </motion.div>
           </div>
