@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
+import heroSteelWarehouse from "@/assets/images/hero-steel-warehouse.png.asset.json";
 import heroSteelRebar from "@/assets/images/hero-steel-rebar.png.asset.json";
 import heroSteelWire from "@/assets/images/hero-steel-wire.png.asset.json";
 import heroTmtSteel from "@/assets/images/hero-tmt-steel.png.asset.json";
@@ -18,11 +19,11 @@ interface HeroImage {
 
 const HERO_IMAGES: HeroImage[] = [
   {
-    url: heroSteelRebar.url,
-    alt: "Premium bundles of ribbed TMT reinforcement steel bars",
+    url: heroSteelWarehouse.url,
+    alt: "Industrial steel rebar warehouse with high-quality stock",
     position: {
       desktop: "center center",
-      mobile: "65% center"
+      mobile: "center center"
     }
   },
   {
@@ -39,6 +40,14 @@ const HERO_IMAGES: HeroImage[] = [
     position: {
       desktop: "center center",
       mobile: "40% center"
+    }
+  },
+  {
+    url: heroSteelRebar.url,
+    alt: "Premium bundles of ribbed TMT reinforcement steel bars",
+    position: {
+      desktop: "center center",
+      mobile: "65% center"
     }
   }
 ];
@@ -112,7 +121,7 @@ export const HeroSection = () => {
           style={{
             background: 'linear-gradient(90deg, rgba(11,19,32,0.9) 0%, rgba(11,19,32,0.6) 40%, rgba(11,19,32,0.1) 100%)'
           }} 
-        />
+          />
         {/* Bottom Fade for section transition */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ssc-navy to-transparent z-10" />
       </div>
