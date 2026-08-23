@@ -128,11 +128,11 @@ const PhysicalHangingSystem = ({ orientation = 'horizontal', delay = 0, cardData
       {/* 4. TIMELINE CARD (Physically Attached) */}
       <div className={`${isHorizontal ? '-mt-1' : '-ml-1'}`}>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: delay + 0.3, duration: 0.6 }}
-          className="w-[280px] bg-[#0C121E] border border-white/10 p-6 rounded-2xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] relative group overflow-hidden"
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ delay: delay + 0.3, duration: 0.5 }}
+          className={`${isHorizontal ? 'w-[280px]' : 'w-[calc(100vw-90px)] max-w-[320px]'} bg-[#0C121E] border border-white/10 p-5 rounded-2xl shadow-[0_40px_80px_-20px_rgba(0,0,0,0.8)] relative group overflow-hidden`}
         >
           {/* REAL HANGING POINT ON CARD (Physical Eyelet) */}
           <div className={`absolute ${isHorizontal ? '-top-3 left-1/2 -translate-x-1/2' : 'top-1/2 -left-3 -translate-y-1/2'} w-6 h-6 bg-[#1A1C22] rounded-full border border-white/10 flex items-center justify-center z-50`}>
