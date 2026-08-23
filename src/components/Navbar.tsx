@@ -237,7 +237,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[110] bg-white flex flex-col light-theme"
+            className="fixed inset-0 z-[110] bg-white flex flex-col light-theme pointer-events-auto"
           >
             {/* Overlay Header Mirror */}
             <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-white relative border-b border-black/5 shrink-0">
