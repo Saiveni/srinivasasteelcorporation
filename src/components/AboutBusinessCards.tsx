@@ -1,57 +1,105 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-motion';
 import rebarDetail from '@/assets/rebar-detail.jpg.asset.json';
 import rebarWarehouse from '@/assets/rebar-warehouse.jpg.asset.json';
 import wireCoils from '@/assets/wire-coils.jpg';
 import decoiling from '@/assets/decoiling.jpg';
+import tmtRebars from '@/assets/tmt-rebars.jpg';
 
 const businessAreas = [
   {
     index: "01",
-    code: "TMT-550D",
-    title: "TMT / REINFORCEMENT STEEL",
-    description: "High-strength ribbed TMT reinforcement bars for structural construction, supplied in 5mm, 5.5mm and 6mm specifications.",
-    image: rebarDetail.url,
-    alt: "Close-up of ribbed TMT reinforcement steel bars supplied by Srinivasa Steel Corporation",
+    code: "EXP-30Y",
+    title: "30+ YEARS EXPERIENCE",
+    description: "A legacy of trust and excellence in the steel industry since 1994, delivering unmatched reliability across South India.",
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1200", // Foundation rebar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    alt: "Premium steel industrial facility representing 30 years of excellence",
     meta: [
-      { label: "SPEC", value: "FE-550D" },
-      { label: "SIZES", value: "5–6 MM" }
+      { label: "ESTABLISHED", value: "1994" },
+      { label: "LEGACY", value: "3 DECADES" }
     ]
   },
+
   {
     index: "02",
-    code: "WIRE-SEC",
-    title: "WIRE PRODUCTS",
-    description: "Industrial-grade steel wire and binding wire coils engineered for precise reinforcement anchoring on site.",
-    image: wireCoils,
-    alt: "Tightly wound industrial steel wire coils in a steel processing facility",
+    code: "TMT-550D",
+    title: "STEEL & TMT SUPPLY",
+    description: "Primary distributor of high-strength TMT reinforcement bars (FE-550D) for residential and commercial infrastructure.",
+    image: tmtRebars,
+    alt: "High-quality TMT reinforcement steel rebars supplied by Srinivasa Steel Corporation",
     meta: [
-      { label: "FORM", value: "COILS" },
-      { label: "GRADE", value: "INDUSTRIAL" }
+      { label: "GRADE", value: "FE-550D" },
+      { label: "STANDARD", value: "IS 1786" }
     ]
   },
   {
     index: "03",
-    code: "PRC-DECOIL",
-    title: "DECOILING",
-    description: "Precision decoiling, straightening and cut-to-length processing from 2mm to 4.5mm, in lengths of 10 to 40 feet.",
-    image: decoiling,
-    alt: "Steel decoiling machine processing a large rolled steel coil",
+    code: "WIRE-SEC",
+    title: "WIRE PRODUCTS",
+    description: "Comprehensive range of industrial-grade steel wires and binding coils for precise reinforcement anchoring.",
+    image: wireCoils,
+    alt: "Industrial steel wire coils in a processing facility",
     meta: [
-      { label: "RANGE", value: "2–4.5 MM" },
-      { label: "LENGTH", value: "10–40 FT" }
+      { label: "TYPE", value: "GI / BINDING" },
+      { label: "FINISH", value: "MACHINED" }
     ]
   },
   {
     index: "04",
-    code: "DIST-NET",
-    title: "STEEL SUPPLY",
-    description: "Bulk industrial steel stock with timely supply from strategically located yards in Vijayawada, Gannavaram and Vizag.",
-    image: rebarWarehouse.url,
-    alt: "Industrial steel warehouse with stacked reinforcement bar inventory",
+    code: "PRC-DECOIL",
+    title: "DECOILING SOLUTIONS",
+    description: "Precision automated decoiling and straightening services from 2mm to 4.5mm with technical accuracy.",
+    image: decoiling,
+    alt: "Automated steel decoiling machine in operation",
     meta: [
-      { label: "YARDS", value: "3 LOCATIONS" },
-      { label: "SINCE", value: "1994" }
+      { label: "TOLERANCE", value: "+/- 0.5MM" },
+      { label: "CAPACITY", value: "HIGH VOL" }
+    ]
+  },
+  {
+    index: "05",
+    code: "CORP-MOU",
+    title: "MOU / DEALER RELATIONS",
+    description: "Authorized strategic partnerships with India's leading steel manufacturers ensuring consistent supply chains.",
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200", // Industrial partnership visual
+    alt: "Industrial steel supply chain partnership representation",
+    meta: [
+      { label: "PARTNERS", value: "TOP TIER" },
+      { label: "STATUS", value: "AUTHORIZED" }
+    ]
+  },
+  {
+    index: "06",
+    code: "REG-NET",
+    title: "REGIONAL PRESENCE",
+    description: "Robust logistical network spanning Vijayawada, Gannavaram, and Vizag for efficient regional distribution.",
+    image: rebarWarehouse.url,
+    alt: "Industrial distribution center for steel logistics",
+    meta: [
+      { label: "HUBS", value: "3 MAJOR" },
+      { label: "NETWORK", value: "SOUTH INDIA" }
     ]
   }
 ];
@@ -128,6 +176,86 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
   );
 };
 
+const MobileCarousel = () => {
+  const [isPaused, setIsPaused] = useState(false);
+  const controls = useAnimation();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+
+  // Constants for carousel movement
+  const totalCards = businessAreas.length;
+  
+  // Handle auto-scroll logic
+  useEffect(() => {
+    if (isPaused) return;
+
+    const scroll = () => {
+      if (containerRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+        // Continuous slow movement
+        const newScrollLeft = scrollLeft + 0.5;
+        
+        if (newScrollLeft >= scrollWidth - clientWidth) {
+          containerRef.current.scrollLeft = 0;
+        } else {
+          containerRef.current.scrollLeft = newScrollLeft;
+        }
+      }
+    };
+
+    const intervalId = setInterval(scroll, 30);
+    return () => clearInterval(intervalId);
+  }, [isPaused]);
+
+  const handleInteraction = () => {
+    setIsPaused(true);
+    // Resume after 3 seconds of no interaction
+    const timer = setTimeout(() => setIsPaused(false), 3000);
+    return () => clearTimeout(timer);
+  };
+
+  return (
+    <div className="lg:hidden w-full overflow-hidden mt-10">
+      <div 
+        ref={containerRef}
+        className="flex gap-4 px-6 overflow-x-auto snap-x snap-mandatory no-scrollbar"
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={handleInteraction}
+        onScroll={(e) => {
+          const scrollLeft = (e.target as HTMLDivElement).scrollLeft;
+          const cardWidth = (e.target as HTMLDivElement).offsetWidth * 0.85;
+          const index = Math.round(scrollLeft / cardWidth);
+          setActiveIndex(index % totalCards);
+        }}
+      >
+        {businessAreas.map((area, index) => (
+          <div 
+            key={area.index} 
+            className="flex-shrink-0 w-[85%] snap-center"
+          >
+            <SpecCard area={area} index={index} />
+          </div>
+        ))}
+      </div>
+
+      {/* Premium Progress Indicators */}
+      <div className="flex justify-center items-center gap-2 mt-8">
+        {businessAreas.map((_, idx) => (
+          <div
+            key={idx}
+            className={`h-1 transition-all duration-500 rounded-full ${
+              activeIndex === idx 
+                ? 'w-8 bg-ssc-gold' 
+                : 'w-2 bg-white/10'
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const AboutBusinessCards = () => {
   return (
     <section id="business-areas" className="relative py-20 lg:py-28 bg-[#080E1A] overflow-hidden">
@@ -144,9 +272,9 @@ export const AboutBusinessCards = () => {
         <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-ssc-gold/[0.04] blur-[120px]" />
       </div>
 
-      <div className="container-wide relative z-10 max-w-[1400px] mx-auto px-6">
+      <div className="container-wide relative z-10 max-w-[1400px] mx-auto px-6 lg:px-6">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 lg:mb-20">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-10 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -156,11 +284,11 @@ export const AboutBusinessCards = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[1px] bg-ssc-gold" />
-              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+              <span className="text-ssc-gold text-[10px] lg:text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
                 What We Supply
               </span>
             </div>
-            <h2 className="text-[36px] lg:text-[56px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.9]">
+            <h2 className="text-[32px] lg:text-[56px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.95] lg:leading-[0.9]">
               BUILT FOR EVERY <span className="text-ssc-gold">STRUCTURE.</span>
             </h2>
           </motion.div>
@@ -173,16 +301,21 @@ export const AboutBusinessCards = () => {
             className="hidden lg:flex flex-col items-end text-right border-l border-white/10 pl-8"
           >
             <span className="text-white/30 text-[10px] font-technical uppercase tracking-[0.25em] mb-2">SSC / BUSINESS AREAS</span>
-            <span className="text-ssc-gold/60 text-[10px] font-technical uppercase tracking-[0.25em] font-bold">04 DIVISIONS — EST. 1994</span>
+            <span className="text-ssc-gold/60 text-[10px] font-technical uppercase tracking-[0.25em] font-bold">06 DIVISIONS — EST. 1994</span>
           </motion.div>
         </div>
 
-        {/* Specification Panel Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 lg:gap-6">
+        {/* Desktop/Tablet Specification Panel Grid (Locked) */}
+        <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5 lg:gap-6">
+
+
           {businessAreas.map((area, index) => (
             <SpecCard key={area.index} area={area} index={index} />
           ))}
         </div>
+
+        {/* Mobile Horizontal Carousel */}
+        <MobileCarousel />
       </div>
     </section>
   );
