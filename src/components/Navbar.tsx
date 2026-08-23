@@ -240,15 +240,15 @@ export const Navbar = () => {
             className="fixed inset-0 z-[110] bg-white flex flex-col light-theme pointer-events-auto"
           >
             {/* Overlay Header Mirror */}
-            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-white relative border-b border-black/5 shrink-0">
+            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-[#0B1320] relative border-b border-white/5 shrink-0">
               <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 sm:gap-4 relative z-10 cursor-pointer">
                 <div className="h-8 w-8 sm:h-12 sm:w-12">
-                  <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain opacity-95" />
+                  <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain filter brightness-110" />
                 </div>
-                <div className="w-[1px] h-6 sm:h-10 bg-ssc-navy/20" />
+                <div className="w-[1px] h-6 sm:h-10 bg-white/20" />
                 <div className="flex flex-col text-left">
-                  <span className="text-h4 font-bold text-ssc-navy uppercase leading-none">SRINIVASA STEEL</span>
-                  <span className="text-micro text-ssc-gold-dark uppercase mt-1">CORPORATION</span>
+                  <span className="text-h4 font-bold text-white uppercase leading-none">SRINIVASA STEEL</span>
+                  <span className="text-micro text-ssc-gold uppercase mt-1">CORPORATION</span>
                 </div>
               </Link>
 
@@ -256,9 +256,9 @@ export const Navbar = () => {
               <button 
                 onClick={() => setIsOpen(false)}
                 type="button"
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-black/10 bg-white shadow-sm relative z-10 cursor-pointer"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-sm relative z-10 cursor-pointer"
               >
-                <X className="text-black/40 w-5 h-5" strokeWidth={2} />
+                <X className="text-white w-5 h-5" strokeWidth={2} />
               </button>
             </div>
 
