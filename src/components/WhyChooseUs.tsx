@@ -114,7 +114,7 @@ export const WhyChooseUs = () => {
         />
       </div>
 
-      <div className="container-wide relative z-10 mx-auto px-6">
+      <div className="container-wide relative z-10 mx-auto px-6 pt-16">
         {/* Unified Heading Composition */}
         <div className="max-w-2xl mb-8 lg:mb-20">
           <motion.div
