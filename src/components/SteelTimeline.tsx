@@ -26,18 +26,18 @@ const milestones = [
 
 export const SteelTimeline = () => {
   return (
-    <section id="timeline" className="relative py-20 bg-ssc-navy overflow-hidden">
+    <section id="timeline" className="relative py-16 lg:py-24 bg-ssc-navy overflow-hidden">
       <div className="container-wide relative z-10 px-6 max-w-[1200px] mx-auto">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="flex items-center justify-center gap-3 mb-5 lg:mb-7">
               <div className="w-8 h-[1px] bg-ssc-gold/40" />
-                <span className="text-micro text-ssc-gold uppercase">
+                <span className="text-micro text-ssc-gold uppercase tracking-[0.16em]">
                   Corporate Evolution
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold/40" />
@@ -49,7 +49,7 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Desktop Version - Horizontal */}
-        <div className="hidden lg:block relative mt-10">
+        <div className="hidden lg:block relative mt-8 lg:mt-12">
           {/* Timeline Line */}
           <div className="absolute top-1/2 left-0 w-full h-[1px] bg-ssc-on-dark-primary/10 -translate-y-1/2" />
           

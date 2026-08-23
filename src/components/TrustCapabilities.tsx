@@ -27,7 +27,7 @@ export const TrustCapabilities = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full bg-ssc-navy py-20 lg:py-40 overflow-hidden"
+      className="relative w-full bg-ssc-navy py-16 lg:py-24 overflow-hidden"
     >
       {/* Background Parallax Geometry */}
       <motion.div 
@@ -48,7 +48,7 @@ export const TrustCapabilities = () => {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
           
           {/* CONTENT BLOCK */}
-          <div className="w-full lg:w-[46%] order-1 lg:order-1">
+          <div className="w-full lg:w-[45%] order-1 lg:order-1">
             <motion.div
               initial="hidden"
               whileInView="visible"
@@ -61,9 +61,9 @@ export const TrustCapabilities = () => {
                   hidden: { opacity: 0 },
                   visible: { opacity: 1, transition: { duration: 1, delay: 0.2 } }
                 }}
-                className="flex items-center gap-4 mb-8 lg:mb-12"
+                className="flex items-center gap-4 mb-5 lg:mb-7"
               >
-                <span className="text-micro text-ssc-gold uppercase">
+                <span className="text-micro text-ssc-gold uppercase tracking-[0.16em]">
                   CORE STRENGTHS
                 </span>
                 <div className="w-8 lg:w-12 h-[1px] bg-ssc-gold/40" />
@@ -75,7 +75,7 @@ export const TrustCapabilities = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: cubicBezier, delay: 0.4 } }
                 }}
-                className="text-h2 text-ssc-on-dark-primary mb-8 uppercase"
+                className="text-h2 text-ssc-on-dark-primary mb-7 lg:mb-10 uppercase tracking-[-1px] lg:tracking-[-1.5px] leading-[1.05]"
               >
                 CONSISTENT QUALITY. <br />
                 <span className="text-ssc-gold">RELIABLE</span> <br />
@@ -91,12 +91,12 @@ export const TrustCapabilities = () => {
                 className="relative pl-6 lg:pl-8"
               >
                 <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-ssc-gold to-transparent" />
-                <p className="text-body text-ssc-on-dark-body max-w-[500px]">
+                <p className="text-body text-ssc-on-dark-body max-w-[560px]">
                   Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements, specializing in TMT rebars, steel products, wire products and decoiling solutions.
                 </p>
                 
                 {/* Mobile Editorial Detail */}
-                <div className="mt-10 lg:mt-12 flex items-center gap-8">
+                <div className="mt-8 lg:mt-12 flex items-center gap-8">
                   <div className="flex flex-col">
                     <span className="text-micro text-ssc-gold uppercase mb-1">Established</span>
                     <span className="text-body-large font-bold text-ssc-on-dark-primary tracking-wider">1994</span>
@@ -112,7 +112,7 @@ export const TrustCapabilities = () => {
           </div>
 
           {/* VISUAL BLOCK */}
-          <div className="w-full lg:w-[54%] order-2 lg:order-2 mt-8 lg:mt-0">
+          <div className="w-full lg:w-[55%] order-2 lg:order-2 mt-8 lg:mt-0">
             <motion.div
               initial="hidden"
               whileInView="visible"
