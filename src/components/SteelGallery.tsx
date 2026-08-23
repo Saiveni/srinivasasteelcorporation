@@ -100,20 +100,20 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
   const galleryGrid = (
     <>
       {/* Filters */}
-      <div className="flex flex-wrap items-center gap-x-10 gap-y-4 mb-16 border-b border-black/5 pb-6 overflow-x-auto no-scrollbar">
+      <div className="flex flex-wrap items-center gap-x-10 gap-y-4 mb-16 border-b border-ssc-navy/5 pb-6 overflow-x-auto no-scrollbar">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
             className={`text-micro transition-all duration-300 relative py-2 whitespace-nowrap ${
-              filter === cat ? "text-foreground" : "text-foreground/40 hover:text-foreground/70"
+              filter === cat ? "text-ssc-navy" : "text-ssc-navy/40 hover:text-ssc-navy/70"
             }`}
           >
             {cat}
             {filter === cat && (
               <motion.div 
                 layoutId="filter-accent"
-                className="absolute bottom-0 left-0 right-0 h-[2px] bg-primary"
+                className="absolute bottom-0 left-0 right-0 h-[2px] bg-ssc-gold-dark"
               />
             )}
           </button>
@@ -152,7 +152,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                 </div>
               )}
               <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-micro text-primary uppercase mb-2">
+                <span className="text-micro text-ssc-gold uppercase mb-2">
                   {item.category}
                 </span>
                 <h3 className="text-white text-lg uppercase">
@@ -213,7 +213,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                   className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl"
                 />
                 <div className="mt-8 text-center">
-                  <span className="text-micro text-primary uppercase mb-2 block">
+                  <span className="text-micro text-ssc-gold uppercase mb-2 block">
                     {currentItem.category}
                   </span>
                   <h3 className="text-white text-h3 uppercase">
@@ -231,18 +231,18 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-14 lg:pb-24 bg-[#F4F6F8]">
+      <section className="pt-32 pb-14 lg:pb-24 bg-ssc-steel-light">
         <div className="container-wide">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">
-              <span className="text-micro text-primary uppercase mb-6 block">
+              <span className="text-micro text-ssc-gold-dark uppercase mb-6 block">
                 OUR GALLERY
               </span>
-              <h1 className="text-h1 text-foreground mb-8 uppercase">
+              <h1 className="text-h1 text-ssc-navy mb-8 uppercase">
                 STEEL. <br />
                 IN ITS ELEMENT.
               </h1>
-              <p className="text-body text-foreground/70 max-w-md">
+              <p className="text-body text-ssc-gray-body max-w-md">
                 A closer look at our products, steel stock and decoiling capabilities.
               </p>
             </div>
@@ -262,7 +262,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
       <section className="section-spacing bg-white">
         <div className="container-wide">
           <div className="mb-12">
-             <p className="text-body text-foreground/70 border-l-2 border-primary pl-6 py-1 max-w-2xl">
+             <p className="text-body text-ssc-gray-body border-l-2 border-ssc-gold-dark pl-6 py-1 max-w-2xl">
               From reinforcement steel to decoiling and stock handling, every image reflects the materials and capabilities behind Srinivasa Steel Corporation.
             </p>
           </div>
@@ -272,13 +272,13 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
       </section>
 
       {/* CTA Section */}
-      <section className="section-spacing bg-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/[0.05] to-transparent" />
+      <section className="section-spacing bg-ssc-navy relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-ssc-gold/[0.05] to-transparent" />
         <div className="container-wide relative z-10 text-center">
-          <h2 className="text-h2 text-white uppercase mb-6">
-            REQUEST A <span className="text-primary">QUOTE.</span>
+          <h2 className="text-h2 text-ssc-on-dark-primary uppercase mb-6">
+            REQUEST A <span className="text-ssc-gold">QUOTE.</span>
           </h2>
-          <p className="text-white/60 text-body-large max-w-2xl mx-auto mb-12">
+          <p className="text-ssc-on-dark-body text-body-large max-w-2xl mx-auto mb-12">
             Talk to Srinivasa Steel Corporation about TMT, steel products and decoiling requirements.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -291,7 +291,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
             <Button 
               asChild
               variant="outline"
-              className="w-full sm:w-auto border-white/20 text-white hover:bg-white/10"
+              className="w-full sm:w-auto border-ssc-on-dark-primary/20 text-ssc-on-dark-primary hover:bg-ssc-on-dark-primary/10"
             >
               <Link to="/products" search={{ product: "" }}>VIEW PRODUCTS</Link>
             </Button>

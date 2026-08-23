@@ -27,20 +27,20 @@ export const TrustCapabilities = () => {
   return (
     <section 
       ref={containerRef}
-      className="relative w-full bg-[#0B1B33] py-20 lg:py-40 overflow-hidden"
+      className="relative w-full bg-ssc-navy py-20 lg:py-40 overflow-hidden"
     >
       {/* Background Parallax Geometry */}
       <motion.div 
         style={{ y: parallaxY }}
         className="absolute inset-0 pointer-events-none"
       >
-        <div className="absolute top-[15%] right-[5%] w-[1px] h-[60%] bg-white/5" />
-        <div className="absolute top-[30%] right-[-10%] w-[120%] h-[1px] bg-white/5 transform -rotate-6" />
+        <div className="absolute top-[15%] right-[5%] w-[1px] h-[60%] bg-ssc-on-dark-primary/5" />
+        <div className="absolute top-[30%] right-[-10%] w-[120%] h-[1px] bg-ssc-on-dark-primary/5 transform -rotate-6" />
         
         {/* Subtle abstract rods */}
         <div className="absolute -bottom-20 -left-10 w-80 h-80 opacity-[0.04] blur-sm">
-          <div className="w-full h-1.5 bg-gradient-to-r from-transparent via-white to-transparent transform rotate-45 mb-6" />
-          <div className="w-full h-1.5 bg-gradient-to-r from-transparent via-white to-transparent transform rotate-45 mb-6 ml-12" />
+          <div className="w-full h-1.5 bg-gradient-to-r from-transparent via-ssc-on-dark-primary to-transparent transform rotate-45 mb-6" />
+          <div className="w-full h-1.5 bg-gradient-to-r from-transparent via-ssc-on-dark-primary to-transparent transform rotate-45 mb-6 ml-12" />
         </div>
       </motion.div>
 
@@ -63,10 +63,10 @@ export const TrustCapabilities = () => {
                 }}
                 className="flex items-center gap-4 mb-8 lg:mb-12"
               >
-                <span className="text-micro text-primary uppercase">
+                <span className="text-micro text-ssc-gold uppercase">
                   CORE STRENGTHS
                 </span>
-                <div className="w-8 lg:w-12 h-[1px] bg-primary/40" />
+                <div className="w-8 lg:w-12 h-[1px] bg-ssc-gold/40" />
               </motion.div>
 
               {/* Heading - Reveal 2 */}
@@ -75,10 +75,10 @@ export const TrustCapabilities = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: cubicBezier, delay: 0.4 } }
                 }}
-                className="text-h2 text-white mb-8 uppercase"
+                className="text-h2 text-ssc-on-dark-primary mb-8 uppercase"
               >
                 CONSISTENT QUALITY. <br />
-                <span className="text-primary">RELIABLE</span> <br />
+                <span className="text-ssc-gold">RELIABLE</span> <br />
                 SUPPLY.
               </motion.h2>
 
@@ -90,21 +90,21 @@ export const TrustCapabilities = () => {
                 }}
                 className="relative pl-6 lg:pl-8"
               >
-                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary to-transparent" />
-                <p className="text-body text-white/70 max-w-[500px]">
+                <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-ssc-gold to-transparent" />
+                <p className="text-body text-ssc-on-dark-body max-w-[500px]">
                   Srinivasa Steel Corporation is an established steel supplier serving construction and industrial requirements, specializing in TMT rebars, steel products, wire products and decoiling solutions.
                 </p>
                 
                 {/* Mobile Editorial Detail */}
                 <div className="mt-10 lg:mt-12 flex items-center gap-8">
                   <div className="flex flex-col">
-                    <span className="text-micro text-primary uppercase mb-1">Established</span>
-                    <span className="text-body-large font-bold text-white tracking-wider">1994</span>
+                    <span className="text-micro text-ssc-gold uppercase mb-1">Established</span>
+                    <span className="text-body-large font-bold text-ssc-on-dark-primary tracking-wider">1994</span>
                   </div>
-                  <div className="w-[1px] h-6 bg-white/10" />
+                  <div className="w-[1px] h-6 bg-ssc-on-dark-primary/10" />
                   <div className="flex flex-col">
-                    <span className="text-micro text-primary uppercase mb-1">Focus</span>
-                    <span className="text-body-large font-bold text-white tracking-wider uppercase">Steel Supply</span>
+                    <span className="text-micro text-ssc-gold uppercase mb-1">Focus</span>
+                    <span className="text-body-large font-bold text-ssc-on-dark-primary tracking-wider uppercase">Steel Supply</span>
                   </div>
                 </div>
               </motion.div>
@@ -137,7 +137,7 @@ export const TrustCapabilities = () => {
 
               {/* Technical Marker Desktop Only */}
               <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 z-20">
-                <span className="text-[8px] font-body text-white/20 tracking-[0.5em] uppercase block transform rotate-90 origin-center whitespace-nowrap">
+                <span className="text-[8px] font-body text-ssc-on-dark-primary/20 tracking-[0.5em] uppercase block transform rotate-90 origin-center whitespace-nowrap">
                   VERIFIED_MATERIAL_SPEC // 2026
                 </span>
               </div>

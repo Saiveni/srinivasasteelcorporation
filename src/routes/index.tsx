@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <div className="font-body bg-background">
+    <div className="font-body bg-ssc-navy">
       <HeroSection />
       <TrustCapabilities />
       <TrustStatsBar />
@@ -40,15 +40,15 @@ function HomePage() {
         <div className="container-wide">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
             <div>
-              <span className="text-micro text-primary uppercase mb-4 block">
+              <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
                 VISUAL PORTFOLIO
               </span>
-              <h2 className="text-h2 text-foreground uppercase">
-                STEEL IN <span className="text-primary">ELEMENT.</span>
+              <h2 className="text-h2 text-ssc-navy uppercase">
+                STEEL IN <span className="text-ssc-gold-dark">ELEMENT.</span>
               </h2>
             </div>
             <div className="flex flex-col items-start lg:items-end">
-              <p className="text-body text-foreground/70 max-w-sm lg:text-right">
+              <p className="text-body text-ssc-gray-body max-w-sm lg:text-right">
                 A technical perspective of our products and processing facilities.
               </p>
             </div>

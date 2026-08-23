@@ -26,7 +26,7 @@ const milestones = [
 
 export const SteelTimeline = () => {
   return (
-    <section id="timeline" className="relative py-20 bg-background overflow-hidden">
+    <section id="timeline" className="relative py-20 bg-ssc-navy overflow-hidden">
       <div className="container-wide relative z-10 px-6 max-w-[1200px] mx-auto">
         <div className="text-center mb-16">
           <motion.div
@@ -36,14 +36,14 @@ export const SteelTimeline = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[1px] bg-primary/40" />
-                <span className="text-micro text-primary uppercase">
+              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+                <span className="text-micro text-ssc-gold uppercase">
                   Corporate Evolution
               </span>
-              <div className="w-8 h-[1px] bg-primary/40" />
+              <div className="w-8 h-[1px] bg-ssc-gold/40" />
             </div>
-            <h2 className="text-h2 text-white uppercase">
-              COMPANY <span className="text-primary">LEGACY</span>
+            <h2 className="text-h2 text-ssc-on-dark-primary uppercase">
+              COMPANY <span className="text-ssc-gold">LEGACY</span>
             </h2>
           </motion.div>
         </div>
@@ -51,7 +51,7 @@ export const SteelTimeline = () => {
         {/* Desktop Version - Horizontal */}
         <div className="hidden lg:block relative mt-10">
           {/* Timeline Line */}
-          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/10 -translate-y-1/2" />
+          <div className="absolute top-1/2 left-0 w-full h-[1px] bg-ssc-on-dark-primary/10 -translate-y-1/2" />
           
           <div className="grid grid-cols-4 gap-8 relative">
             {milestones.map((ms, idx) => (
@@ -64,16 +64,16 @@ export const SteelTimeline = () => {
                 className="relative flex flex-col items-center text-center group"
               >
                 {/* Milestone Point */}
-                <div className="w-4 h-4 rounded-full bg-background border-2 border-primary shadow-[0_0_10px_rgba(212,175,55,0.3)] mb-8 z-10 relative transition-transform duration-300 group-hover:scale-125" />
+                <div className="w-4 h-4 rounded-full bg-ssc-navy border-2 border-ssc-gold shadow-[0_0_10px_rgba(212,175,55,0.3)] mb-8 z-10 relative transition-transform duration-300 group-hover:scale-125" />
                 
-                <div className="bg-ssc-steel-dark border border-white/10 p-6 rounded-[12px] shadow-premium-soft w-full transition-colors duration-300 group-hover:bg-ssc-steel-dark/80 group-hover:border-primary/20">
-                  <span className="text-micro text-primary block mb-2 uppercase">
+                <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-6 rounded-[12px] shadow-premium-soft w-full transition-colors duration-300 group-hover:bg-ssc-steel-dark/80 group-hover:border-ssc-gold/20">
+                  <span className="text-micro text-ssc-gold block mb-2 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-h4 text-white mb-2 uppercase">
+                  <h4 className="text-h4 text-ssc-on-dark-primary mb-2 uppercase">
                     {ms.title}
                   </h4>
-                  <p className="text-body text-white/60">
+                  <p className="text-body text-ssc-on-dark-body">
                     {ms.description}
                   </p>
                 </div>
@@ -85,7 +85,7 @@ export const SteelTimeline = () => {
         {/* Mobile Version - Vertical */}
         <div className="lg:hidden relative flex flex-col items-center">
           {/* Vertical Line */}
-          <div className="absolute left-6 top-0 bottom-0 w-[1px] bg-white/10" />
+          <div className="absolute left-6 top-0 bottom-0 w-[1px] bg-ssc-on-dark-primary/10" />
           
           <div className="flex flex-col gap-10 w-full">
             {milestones.map((ms, idx) => (
@@ -98,16 +98,16 @@ export const SteelTimeline = () => {
                 className="relative flex items-start w-full pl-6 group"
               >
                 {/* Milestone Point */}
-                <div className="absolute left-[20px] top-8 w-3 h-3 rounded-full bg-background border-2 border-primary shadow-[0_0_8px_rgba(212,175,55,0.3)] z-10" />
+                <div className="absolute left-[20px] top-8 w-3 h-3 rounded-full bg-ssc-navy border-2 border-ssc-gold shadow-[0_0_8px_rgba(212,175,55,0.3)] z-10" />
                 
-                <div className="bg-ssc-steel-dark border border-white/10 p-6 rounded-[12px] shadow-premium-soft w-full ml-6">
-                  <span className="text-micro text-primary block mb-1 uppercase">
+                <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-6 rounded-[12px] shadow-premium-soft w-full ml-6">
+                  <span className="text-micro text-ssc-gold block mb-1 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-h4 text-white mb-2 uppercase">
+                  <h4 className="text-h4 text-ssc-on-dark-primary mb-2 uppercase">
                     {ms.title}
                   </h4>
-                  <p className="text-body text-white/60">
+                  <p className="text-body text-ssc-on-dark-body">
                     {ms.description}
                   </p>
                 </div>

@@ -9,7 +9,7 @@ export const BrandStrip = () => {
   ];
 
   return (
-    <section className="py-14 bg-white border-y border-black/5 overflow-hidden">
+    <section className="py-14 bg-white border-y border-ssc-navy/5 overflow-hidden">
       <div className="container-wide">
         <motion.div 
           initial={{ opacity: 0, y: 15 }}
@@ -17,10 +17,10 @@ export const BrandStrip = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-micro text-primary uppercase mb-4 block">
+          <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
             STRATEGIC PARTNERSHIPS
           </span>
-          <h2 className="text-h3 text-foreground uppercase">
+          <h2 className="text-h3 text-ssc-navy uppercase">
             TRUSTED DEALER RELATIONSHIPS
           </h2>
         </motion.div>
@@ -35,10 +35,10 @@ export const BrandStrip = () => {
               transition={{ delay: idx * 0.15 }}
               className="group flex flex-col items-center text-center"
             >
-              <div className="text-2xl lg:text-3xl font-body font-bold text-foreground/60 group-hover:text-foreground transition-colors duration-500 tracking-tighter uppercase mb-2">
+              <div className="text-2xl lg:text-3xl font-body font-bold text-ssc-navy/60 group-hover:text-ssc-navy transition-colors duration-500 tracking-tighter uppercase mb-2">
                 {brand.logo}
               </div>
-              <div className="text-micro text-primary uppercase">
+              <div className="text-micro text-ssc-gold-dark uppercase">
                 {brand.subtitle}
               </div>
             </motion.div>

@@ -61,12 +61,12 @@ export const ProductsComponent = () => {
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
 
   return (
-    <div className="bg-[#F4F6F8] min-h-screen">
+    <div className="bg-ssc-steel-light min-h-screen">
       {/* Product Page Hero */}
       <section className="relative pt-32 pb-14 lg:pt-48 lg:pb-24 overflow-hidden bg-white border-b border-black/5">
         <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none"
              style={{ 
-               backgroundImage: 'linear-gradient(to right, #0B1B33 1px, transparent 1px), linear-gradient(to bottom, #0B1B33 1px, transparent 1px)',
+               backgroundImage: 'linear-gradient(to right, var(--ssc-navy) 1px, transparent 1px), linear-gradient(to bottom, var(--ssc-navy) 1px, transparent 1px)',
                backgroundSize: '100px 100px'
              }} 
         />
@@ -78,18 +78,19 @@ export const ProductsComponent = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-micro text-primary uppercase mb-4 block">
+                <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
                   INDUSTRIAL SOLUTIONS
                 </span>
-                <h1 className="text-h1 text-foreground mb-8 uppercase">
+                <h1 className="text-h1 text-ssc-navy mb-8 uppercase">
                   STEEL PRODUCTS BUILT <br />
-                  <span className="text-primary">FOR PERFORMANCE.</span>
+                  <span className="text-ssc-gold-dark">FOR PERFORMANCE.</span>
                 </h1>
-                <p className="text-body text-foreground/70 max-w-[540px] mb-10">
+                <p className="text-body text-ssc-gray-body max-w-[540px] mb-10">
                   High-performance steel products engineered for demanding applications. Consistent quality and reliable supply across the region.
                 </p>
                 <Button 
                   onClick={() => document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-ssc-gold text-ssc-navy hover:bg-ssc-gold/90"
                 >
                   VIEW CATALOGUE <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -108,7 +109,7 @@ export const ProductsComponent = () => {
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-background/10 mix-blend-multiply" />
+                <div className="absolute inset-0 bg-ssc-navy/10 mix-blend-multiply" />
               </motion.div>
             </div>
           </div>
@@ -141,13 +142,13 @@ export const ProductsComponent = () => {
                     />
                   </div>
                   <div className="p-8 lg:p-10">
-                    <h3 className="text-h3 text-foreground mb-4 uppercase">
+                    <h3 className="text-h3 text-ssc-navy mb-4 uppercase">
                       {product.name}
                     </h3>
-                    <p className="text-body text-foreground/70 mb-8">
+                    <p className="text-body text-ssc-gray-body mb-8">
                       {product.description}
                     </p>
-                    <Link to="/contact" search={{ product: product.name }} className="text-micro text-primary uppercase">
+                    <Link to="/contact" search={{ product: product.name }} className="text-micro text-ssc-gold-dark hover:text-ssc-navy transition-colors uppercase">
                       REQUEST A QUOTE <ArrowRight className="inline-block ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
                     </Link>
                   </div>
@@ -159,7 +160,7 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Decoiling Feature Section */}
-      <section className="relative section-spacing bg-[#0A121E] overflow-hidden">
+      <section className="relative section-spacing bg-ssc-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={(rebarCoils as any)?.url || "/placeholder.svg"} 
@@ -167,7 +168,7 @@ export const ProductsComponent = () => {
             className="w-full h-full object-cover opacity-10 grayscale"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A121E] via-[#0A121E]/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-ssc-navy via-ssc-navy/90 to-transparent" />
         </div>
         <div className="container-wide relative z-10">
           <div className="max-w-[700px]">
@@ -177,18 +178,18 @@ export const ProductsComponent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-micro text-primary uppercase mb-4 block">
+              <span className="text-micro text-ssc-gold uppercase mb-4 block">
                 CORE CAPABILITIES
               </span>
-              <h2 className="text-h2 text-white mb-8 uppercase">
+              <h2 className="text-h2 text-ssc-on-dark-primary mb-8 uppercase">
                 DECOILING FOR <br />
-                <span className="text-primary">PRECISION.</span>
+                <span className="text-ssc-gold">PRECISION.</span>
               </h2>
-              <p className="text-body text-white/60 mb-10">
+              <p className="text-body text-ssc-on-dark-body mb-10">
                 Precision automated decoiling and straightening services from 2mm to 4.5mm with technical accuracy.
               </p>
               <Link to="/contact" search={{ product: "DECOILED STEEL" }}>
-                <Button className="w-full sm:w-auto">
+                <Button className="w-full sm:w-auto bg-ssc-gold text-ssc-navy hover:bg-ssc-gold/90">
                   ENQUIRE ABOUT DECOILING <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
               </Link>
@@ -198,13 +199,13 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Brands / Supply Partners */}
-      <section className="py-14 bg-white border-y border-black/5">
+      <section className="py-14 bg-white border-y border-ssc-navy/5">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <span className="text-micro text-primary uppercase mb-4 block">
+            <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
               SUPPLY NETWORK
             </span>
-            <h2 className="text-h3 text-foreground mb-16 uppercase">
+            <h2 className="text-h3 text-ssc-navy mb-16 uppercase">
               TRUSTED DEALER RELATIONSHIPS
             </h2>
           </div>
@@ -218,10 +219,10 @@ export const ProductsComponent = () => {
                 transition={{ delay: idx * 0.15 }}
                 className="text-center"
               >
-                <div className="text-2xl lg:text-3xl font-body font-bold text-foreground/80 tracking-tighter uppercase mb-2">
+                <div className="text-2xl lg:text-3xl font-body font-bold text-ssc-navy tracking-tighter uppercase mb-2">
                   {brand.name}
                 </div>
-                <div className="text-micro text-primary uppercase">
+                <div className="text-micro text-ssc-gold-dark uppercase">
                   {brand.subtitle}
                 </div>
               </motion.div>
@@ -231,11 +232,11 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Product Quality Section */}
-      <section className="section-spacing bg-[#F4F6F8]">
+      <section className="section-spacing bg-ssc-steel-light">
         <div className="container-wide">
           <div className="text-center mb-20">
-            <h2 className="text-h2 text-foreground uppercase">
-              QUALITY. AVAILABILITY. <span className="text-primary">SUPPLY.</span>
+            <h2 className="text-h2 text-ssc-navy uppercase">
+              QUALITY. AVAILABILITY. <span className="text-ssc-gold-dark">SUPPLY.</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">
@@ -252,11 +253,11 @@ export const ProductsComponent = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-white rounded-[12px] flex items-center justify-center mx-auto mb-8 shadow-sm border border-black/5">
-                  <item.icon className="w-8 h-8 text-primary" />
+                <div className="w-16 h-16 bg-white rounded-[12px] flex items-center justify-center mx-auto mb-8 shadow-sm border border-ssc-navy/5">
+                  <item.icon className="w-8 h-8 text-ssc-gold-dark" />
                 </div>
-                <h3 className="text-h4 text-foreground mb-4 uppercase">{item.title}</h3>
-                <p className="text-body text-foreground/70">{item.desc}</p>
+                <h3 className="text-h4 text-ssc-navy mb-4 uppercase">{item.title}</h3>
+                <p className="text-body text-ssc-gray-body">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -264,23 +265,23 @@ export const ProductsComponent = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="section-spacing bg-background relative overflow-hidden text-white text-center">
+      <section className="section-spacing bg-ssc-navy relative overflow-hidden text-ssc-on-dark-primary text-center">
         <div className="absolute inset-0 z-0 opacity-10"
              style={{ 
-               backgroundImage: 'radial-gradient(circle at center, #D9A000 0%, transparent 70%)',
+               backgroundImage: 'radial-gradient(circle at center, rgba(212,175,55,0.1) 0%, transparent 70%)',
              }} 
         />
         <div className="container-wide relative z-10 flex flex-col items-center">
-          <h2 className="text-h2 text-white mb-8 uppercase">
-            REQUEST A <span className="text-primary">QUOTE.</span>
+          <h2 className="text-h2 text-ssc-on-dark-primary mb-8 uppercase">
+            REQUEST A <span className="text-ssc-gold">QUOTE.</span>
           </h2>
-          <p className="text-body text-white/60 mb-12 max-w-[600px] mx-auto">
+          <p className="text-ssc-on-dark-body text-body mb-12 max-w-[600px] mx-auto">
             Tell us your requirement and our team can help you with the appropriate steel product or decoiling solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact" search={{ product: "" }} className="w-full sm:w-auto">
               <Button 
-                className="w-full"
+                className="w-full bg-ssc-gold text-ssc-navy hover:bg-ssc-gold/90"
               >
                 GET A QUOTE <ArrowRight className="ml-3" size={20} />
               </Button>
@@ -288,7 +289,7 @@ export const ProductsComponent = () => {
             <Link to="/contact" search={{ product: "" }} className="w-full sm:w-auto">
               <Button 
                 variant="outline"
-                className="w-full border-white/20 hover:bg-white/5 text-white"
+                className="w-full border-ssc-on-dark-primary/20 hover:bg-white/5 text-ssc-on-dark-primary"
               >
                 CONTACT US
               </Button>
@@ -313,10 +314,10 @@ export const ProductsComponent = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-ssc-navy to-transparent opacity-60" />
               <div className="absolute bottom-8 left-8 right-8">
-                <span className="text-primary text-[10px] font-body font-bold tracking-[0.3em] uppercase mb-2 block">
+                <span className="text-ssc-gold text-[10px] font-body font-bold tracking-[0.3em] uppercase mb-2 block">
                   PRODUCT SPECIFICATIONS
                 </span>
-                <DialogTitle className="text-h3 text-white uppercase m-0">
+                <DialogTitle className="text-h3 text-ssc-on-dark-primary uppercase m-0">
                   {selectedProduct?.name}
                 </DialogTitle>
               </div>
@@ -328,14 +329,14 @@ export const ProductsComponent = () => {
               </p>
               
               <div className="mb-10">
-                <h4 className="text-micro text-foreground uppercase mb-6 flex items-center gap-3">
-                  <span className="w-8 h-[1px] bg-primary" />
+                <h4 className="text-micro text-ssc-navy uppercase mb-6 flex items-center gap-3">
+                  <span className="w-8 h-[1px] bg-ssc-gold-dark" />
                   Technical Details
                 </h4>
                 <div className="flex flex-wrap gap-3">
                   {selectedProduct?.specs.map((spec) => (
                     <div key={spec} className="px-5 py-2.5 bg-ssc-steel-light border border-black/[0.03] rounded-full text-foreground text-small font-bold uppercase tracking-wider flex items-center gap-2">
-                      <CheckCircle2 size={14} className="text-primary" />
+                      <CheckCircle2 size={14} className="text-ssc-gold-dark" />
                       {spec}
                     </div>
                   ))}
@@ -343,8 +344,8 @@ export const ProductsComponent = () => {
               </div>
               
               <Link to="/contact" search={{ product: selectedProduct?.name || "" }} onClick={() => setSelectedProduct(null)}>
-                <Button className="w-full h-16 bg-background hover:bg-background/90 text-white font-body font-bold uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3">
-                  REQUEST QUOTE <ArrowRight size={20} className="text-primary" />
+                <Button className="w-full h-16 bg-ssc-navy hover:bg-ssc-navy/90 text-ssc-on-dark-primary font-body font-bold uppercase text-lg tracking-[0.2em] rounded-xl shadow-xl shadow-ssc-navy/10 transition-all flex items-center justify-center gap-3">
+                  REQUEST QUOTE <ArrowRight size={20} className="text-ssc-gold" />
                 </Button>
               </Link>
             </div>
