@@ -103,18 +103,20 @@ export const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="relative">
-            <h4 className="text-ssc-gold font-bold text-sm uppercase tracking-[0.2em] mb-10 relative inline-block">CONTACT US<span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-ssc-gold" /></h4>
-            <ul className="space-y-8">
-              <li className="flex gap-4 items-start"><MapPin size={20} className="text-ssc-gold shrink-0 mt-1" /><div><span className="text-[11px] font-bold tracking-widest text-ssc-gold/80 uppercase">HEAD OFFICE</span><a href="#" className="block text-white/70 hover:text-white text-[14px] leading-relaxed">Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada - 520012, Andhra Pradesh, India</a></div></li>
-              <li className="flex gap-4 items-start"><Phone size={20} className="text-ssc-gold shrink-0 mt-1" />
-                <div className="flex flex-col gap-2">
-                  <a href="tel:+919440170453" className="text-white/70 hover:text-ssc-gold text-[14px] flex flex-col"><span className="font-bold">+91 9440170453</span><span className="text-[10px] text-white/40 uppercase">(M.S.V. Bhaskar)</span></a>
-                  <a href="tel:+919849600403" className="text-white/70 hover:text-ssc-gold text-[14px] flex flex-col"><span className="font-bold">+91 9849600403</span><span className="text-[10px] text-white/40 uppercase">(M.V. Ramana Kumar)</span></a>
-                </div>
-              </li>
-            </ul>
-          </div>
+            <div className="relative">
+              <h4 className="text-ssc-gold font-bold text-sm uppercase tracking-[0.2em] mb-10 relative inline-block">CONTACT US<span className="absolute -bottom-2 left-0 w-8 h-[2px] bg-ssc-gold" /></h4>
+              <ul className="space-y-8">
+                <li className="flex gap-4 items-start"><MapPin size={20} className="text-ssc-gold shrink-0 mt-1" /><div><span className="text-[11px] font-bold tracking-widest text-ssc-gold/80 uppercase">HEAD OFFICE</span><a href="https://maps.google.com/?q=Srinivasa+Steel+Corporation+Vijayawada" target="_blank" rel="noopener noreferrer" className="block text-white/70 hover:text-white text-[14px] leading-relaxed">Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada - 520012, Andhra Pradesh, India</a></div></li>
+                <li className="flex gap-4 items-start"><Phone size={20} className="text-ssc-gold shrink-0 mt-1" />
+                  <div className="flex flex-col gap-2">
+                    <a href="tel:+919440170453" className="text-white/70 hover:text-ssc-gold text-[14px] flex flex-col"><span className="font-bold">+91 9440170453</span><span className="text-[10px] text-white/40 uppercase">(M.S.V. Bhaskar)</span></a>
+                    <a href="tel:+919849600403" className="text-white/70 hover:text-ssc-gold text-[14px] flex flex-col"><span className="font-bold">+91 9849600403</span><span className="text-[10px] text-white/40 uppercase">(M.V. Ramana Kumar)</span></a>
+                    <a href="tel:+918125397453" className="text-white/70 hover:text-ssc-gold text-[14px] flex flex-col"><span className="font-bold">+91 8125397453</span><span className="text-[10px] text-white/40 uppercase">(M.V.N.M. Yeshwanth)</span></a>
+                  </div>
+                </li>
+                <li className="flex gap-4 items-center"><Mail size={20} className="text-ssc-gold shrink-0" /><a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-white/70 hover:text-ssc-gold text-[14px]">srinivasasteelcorporationvja@gmail.com</a></li>
+              </ul>
+            </div>
         </div>
       </div>
       <div className="md:hidden pt-12 pb-8 px-4 space-y-6">
