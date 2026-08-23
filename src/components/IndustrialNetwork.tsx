@@ -194,7 +194,7 @@ export const IndustrialNetwork = () => {
                     </h4>
                   </div>
                 </div>
-                <p className="text-white/50 text-[13px] leading-relaxed font-medium">
+                <p className="text-white/60 text-[13px] leading-relaxed font-medium italic">
                   {loc.address}
                 </p>
               </motion.div>
