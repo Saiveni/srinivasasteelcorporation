@@ -82,13 +82,13 @@ const businessAreas = [
   {
     index: "05",
     code: "CORP-MOU",
-    title: "MOU / DEALER RELATIONS",
-    description: "Authorized strategic partnerships with India's leading steel manufacturers ensuring consistent supply chains.",
-    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200", // Industrial partnership visual
-    alt: "Industrial steel supply chain partnership representation",
+    title: "STRATEGIC PARTNERSHIPS",
+    description: "Our authorized strategic partnerships with India's leading steel manufacturers—Vizag Steel, Jindal Panther, and Simhadri TMT—ensure a robust and reliable supply chain.",
+    image: "/images/partners/vizag-steel-logo.svg",
+    alt: "Strategic Partnerships with Vizag Steel, Jindal Panther, and Simhadri TMT",
     meta: [
       { label: "PARTNERS", value: "TOP TIER" },
-      { label: "STATUS", value: "AUTHORIZED" }
+      { label: "RELATION", value: "DIRECT MOU" }
     ]
   },
   {
