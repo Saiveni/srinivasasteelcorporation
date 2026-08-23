@@ -3,17 +3,11 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-import heroSteelWarehouse from "@/assets/images/hero-steel-warehouse.png.asset.json";
 import heroSteelRebar from "@/assets/images/hero-steel-rebar.png.asset.json";
 import heroSteelWire from "@/assets/images/hero-steel-wire.png.asset.json";
 import heroTmtSteel from "@/assets/images/hero-tmt-steel.png.asset.json";
 
 const HERO_IMAGES = [
-  {
-    url: heroSteelWarehouse.url,
-    alt: "Industrial steel rebar warehouse with high-quality stock",
-    position: "center center"
-  },
   {
     url: heroSteelRebar.url,
     alt: "Premium bundles of ribbed TMT reinforcement steel bars",
