@@ -76,12 +76,19 @@ export const SteelTimeline = () => {
           
           <div className="grid grid-cols-4 gap-8 relative z-10 pt-1">
             {milestones.map((ms, idx) => (
-              <div key={idx} className="relative flex flex-col items-center pt-8">
-                {/* Structural Vertical Connector - Connecting card up to the line */}
-                <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-[2px] h-12 bg-gradient-to-b from-[#b8bec7] to-transparent z-0 opacity-50" />
+              <div key={idx} className="relative flex flex-col items-center pt-20">
+                {/* Structural Hanging Hook Connector */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-20 bg-gradient-to-b from-[#e6e8ec] to-[#b8bec7] z-0" />
+                
+                {/* Hook Head Visual */}
+                <div className="absolute top-14 left-1/2 -translate-x-1/2 w-5 h-5 z-20">
+                  <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-ssc-gold drop-shadow-md">
+                    <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                  </svg>
+                </div>
                 
                 {/* Node Point on the line */}
-                <div className="absolute top-[-3px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-ssc-gold-dark z-30 shadow-sm" />
+                <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-ssc-gold-dark z-30 shadow-sm" />
                 
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -134,10 +141,13 @@ export const SteelTimeline = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6 }}
-                className="relative flex items-start w-full pl-6 group"
+                className="relative flex items-start w-full pl-6 group pt-4"
               >
-                {/* Static Milestone Dot */}
-                <div className="absolute left-[24px] top-6 -translate-x-1/2 w-2 h-2 rounded-full bg-gray-400/50 z-10" />
+                {/* Hanging Hook for Mobile */}
+                <div className="absolute left-[24px] top-0 w-[2px] h-10 bg-gradient-to-b from-ssc-navy/10 to-ssc-navy/30 -translate-x-1/2 z-0" />
+                
+                {/* Static Milestone Dot / Hook Base */}
+                <div className="absolute left-[24px] top-10 -translate-x-1/2 w-3 h-3 rounded-full bg-white border border-ssc-gold z-10 shadow-sm" />
                 
                 <div className="bg-white border border-ssc-navy/5 p-6 rounded-[12px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] w-full ml-10">
                   <span className="text-micro text-ssc-gold block mb-1 uppercase font-bold tracking-widest">
