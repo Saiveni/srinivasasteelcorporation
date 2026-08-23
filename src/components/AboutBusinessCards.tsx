@@ -3,6 +3,7 @@ import { motion, AnimatePresence, useAnimation, useMotionValue } from 'framer-mo
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import rebarDetail from '@/assets/rebar-detail.jpg.asset.json';
 import rebarWarehouse from '@/assets/rebar-warehouse.jpg.asset.json';
+import vizagAsset from '@/assets/vizag-steel-logo.jpg.asset.json';
 import wireCoils from '@/assets/wire-coils.jpg';
 import decoiling from '@/assets/decoiling.jpg';
 import tmtRebars from '@/assets/tmt-rebars.jpg';
@@ -84,7 +85,7 @@ const businessAreas = [
     code: "CORP-MOU",
     title: "STRATEGIC PARTNERSHIPS",
     description: "Our authorized strategic partnerships with India's leading steel manufacturers—Vizag Steel, Jindal Panther, and Simhadri TMT—ensure a robust and reliable supply chain.",
-    image: "/images/partners/vizag-steel-logo.svg",
+    image: vizagAsset.url,
     alt: "Strategic Partnerships with Vizag Steel, Jindal Panther, and Simhadri TMT",
     meta: [
       { label: "PARTNERS", value: "TOP TIER" },
