@@ -7,23 +7,23 @@ import { useState, useEffect } from "react";
 
 const HERO_IMAGES = [
   {
-    url: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
-    alt: "Premium TMT reinforcement steel coils",
+    url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop",
+    alt: "Ultra-realistic high-quality TMT steel rebar bundles in industrial storage",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
-    alt: "Bundled TMT steel bars ready for dispatch",
+    url: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop",
+    alt: "Ribbed steel reinforcement rods organized for construction",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-    alt: "Industrial steel reinforcement stock warehouse",
+    url: "https://images.unsplash.com/photo-1533044309907-0fa3413da946?q=80&w=2000&auto=format&fit=crop",
+    alt: "Close-up of TMT rebar ribs and industrial steel textures",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
-    alt: "High-quality ribbed TMT reinforcement steel detail",
+    url: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop",
+    alt: "Professional industrial photography of steel reinforcement stock",
     position: "center center"
   }
 ];
