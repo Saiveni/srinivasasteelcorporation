@@ -11,17 +11,26 @@ const HERO_IMAGES = [
   {
     url: heroSteelRebar.url,
     alt: "Premium bundles of ribbed TMT reinforcement steel bars",
-    position: "center center"
+    position: {
+      desktop: "center center",
+      mobile: "65% center" // Focus on rebar details for mobile
+    }
   },
   {
     url: heroSteelWire.url,
     alt: "Industrial steel wire coils in distribution center",
-    position: "center center"
+    position: {
+      desktop: "center center",
+      mobile: "center center"
+    }
   },
   {
     url: heroTmtSteel.url,
     alt: "Close-up cinematic shot of TMT 550D steel rebar stacked",
-    position: "center center"
+    position: {
+      desktop: "center center",
+      mobile: "40% center" // Focus on stacks for mobile
+    }
   }
 ];
 
