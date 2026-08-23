@@ -140,6 +140,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <FloatingActions />
       </div>
       <Toaster position="top-right" richColors />
     </QueryClientProvider>
