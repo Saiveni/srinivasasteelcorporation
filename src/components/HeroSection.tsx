@@ -121,7 +121,7 @@ export const HeroSection = () => {
           style={{
             background: 'linear-gradient(90deg, rgba(11,19,32,0.9) 0%, rgba(11,19,32,0.6) 40%, rgba(11,19,32,0.1) 100%)'
           }} 
-        />
+          />
         {/* Bottom Fade for section transition */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ssc-navy to-transparent z-10" />
       </div>
