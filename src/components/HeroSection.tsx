@@ -104,25 +104,25 @@ export const HeroSection = () => {
               {/* Eyebrow Label */}
               <div className="flex items-center gap-3 mb-6">
                 <span className="text-micro text-white lg:text-foreground">
-                  SINCE 1994
+                  ENGINEERED FOR STRENGTH
                 </span>
                 <span className="text-white/20 lg:text-foreground/20">—</span>
                 <span className="text-micro text-primary">
-                  VIJAYAWADA • VIZAG • GANNAVARAM
+                  EST. 1994
                 </span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-white lg:text-foreground mb-7 italic uppercase">
-                <span className="block mb-1">STRONGER STEEL.</span>
+              <h1 className="text-white lg:text-foreground mb-7 uppercase">
+                <span className="block mb-1">BUILDING STRENGTH.</span>
                 <span className="block">
-                  STRONGER <span className="text-primary">TOMORROW.</span>
+                  SHAPING <span className="text-primary">TOMORROW.</span>
                 </span>
               </h1>
               
               {/* Description */}
               <p className="text-body-large text-white/90 lg:text-foreground/70 max-w-[500px] mb-8">
-                Trusted supplier of TMT rebars, steel products and decoiling solutions for construction and industrial requirements since 1994.
+                Engineered steel products for construction and industrial requirements. Reliable supply across Andhra Pradesh since 1994.
               </p>
               
               {/* CTA Buttons */}
