@@ -35,10 +35,10 @@ export const BrandStrip = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-micro text-ssc-gold uppercase mb-4 block tracking-[0.2em]">
+          <span className="text-micro mb-4 block">
             STRATEGIC PARTNERSHIPS
           </span>
-          <h2 className="text-h3 text-ssc-on-dark-primary uppercase tracking-tight">
+          <h2 className="text-ssc-on-dark-primary">
             TRUSTED DEALER RELATIONSHIPS
           </h2>
         </motion.div>
@@ -72,7 +72,7 @@ export const BrandStrip = () => {
               </div>
 
               {/* 3. PARTNER NAME — Strong Title */}
-              <h3 className="text-body-large font-bold text-ssc-navy tracking-tight uppercase mb-2 transition-colors duration-300 group-hover:text-ssc-gold">
+              <h3 className="text-body-large font-bold text-ssc-navy tracking-tight mb-2 transition-colors duration-300 group-hover:text-ssc-gold">
                 {brand.name}
               </h3>
 

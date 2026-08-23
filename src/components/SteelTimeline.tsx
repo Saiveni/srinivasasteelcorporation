@@ -37,12 +37,12 @@ export const SteelTimeline = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-5 lg:mb-7">
               <div className="w-8 h-[1px] bg-ssc-gold/40" />
-                <span className="text-micro text-ssc-gold uppercase tracking-[0.16em]">
+                <span className="text-micro">
                   Corporate Evolution
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold/40" />
             </div>
-            <h2 className="text-h2 text-ssc-on-dark-primary uppercase">
+            <h2 className="text-ssc-on-dark-primary">
               COMPANY <span className="text-ssc-gold">LEGACY</span>
             </h2>
           </motion.div>
@@ -70,7 +70,7 @@ export const SteelTimeline = () => {
                   <span className="text-micro text-ssc-gold block mb-2 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-h4 text-ssc-on-dark-primary mb-2 uppercase">
+                  <h4 className="text-ssc-on-dark-primary mb-2">
                     {ms.title}
                   </h4>
                   <p className="text-body text-ssc-on-dark-body">
@@ -104,7 +104,7 @@ export const SteelTimeline = () => {
                   <span className="text-micro text-ssc-gold block mb-1 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-h4 text-ssc-on-dark-primary mb-2 uppercase">
+                  <h4 className="text-ssc-on-dark-primary mb-2">
                     {ms.title}
                   </h4>
                   <p className="text-body text-ssc-on-dark-body">

@@ -82,7 +82,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
               </span>
             </div>
             
-            <h3 className="text-h4 text-ssc-navy mb-3 group-hover:text-ssc-gold-dark transition-colors duration-500 uppercase">
+            <h3 className="text-ssc-navy mb-3 group-hover:text-ssc-gold-dark transition-colors duration-500">
               {product.name}
             </h3>
             
@@ -127,10 +127,10 @@ const ProductShowcase = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
+                <span className="text-micro mb-4 block">
                 INDUSTRIAL SOLUTIONS
               </span>
-              <h2 className="text-h2 text-ssc-navy mb-6 uppercase">
+              <h2 className="text-ssc-navy mb-6">
                 Explore Our <span className="text-ssc-gold-dark">Products</span>
               </h2>
               <p className="text-body text-ssc-gray-body max-w-[560px]">

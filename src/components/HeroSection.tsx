@@ -103,7 +103,7 @@ export const HeroSection = () => {
             >
               {/* Eyebrow Label */}
               <div className="flex items-center gap-3 mb-5 lg:mb-7">
-                <span className="text-micro text-white lg:text-ssc-navy uppercase tracking-[0.16em]">
+                <span className="text-micro text-white lg:text-ssc-navy">
                   ENGINEERED FOR STRENGTH
                 </span>
                 <span className="text-white/20 lg:text-ssc-navy/20">—</span>
@@ -113,7 +113,7 @@ export const HeroSection = () => {
               </div>
               
               {/* Headline */}
-              <h1 className="text-h1 text-white lg:text-ssc-navy mb-7 lg:mb-10 uppercase tracking-[-1px] lg:tracking-[-1.5px] leading-[1.05]">
+              <h1 className="text-white lg:text-ssc-navy mb-7 lg:mb-10">
                 <span className="block mb-1">BUILDING STRENGTH.</span>
                 <span className="block">
                   SHAPING <span className="text-ssc-gold-dark">TOMORROW.</span>

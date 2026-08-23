@@ -100,13 +100,13 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
   const galleryGrid = (
     <>
       {/* Filters */}
-      <div className="flex flex-wrap items-center gap-x-10 gap-y-4 mb-16 border-b border-ssc-navy/5 pb-6 overflow-x-auto no-scrollbar">
+      <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mb-12 border-b border-ssc-navy/5 pb-4 overflow-x-auto no-scrollbar">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setFilter(cat)}
             className={`text-micro transition-all duration-300 relative py-2 whitespace-nowrap ${
-              filter === cat ? "text-ssc-navy" : "text-ssc-navy/40 hover:text-ssc-navy/70"
+              filter === cat ? "text-ssc-navy" : "text-ssc-navy/30 hover:text-ssc-navy/60"
             }`}
           >
             {cat}
@@ -155,7 +155,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                 <span className="text-micro text-ssc-gold uppercase mb-2">
                   {item.category}
                 </span>
-                <h3 className="text-white text-lg uppercase">
+                <h3 className="text-white text-lg">
                   {item.title}
                 </h3>
               </div>
