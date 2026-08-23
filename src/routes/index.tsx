@@ -4,7 +4,7 @@ import { TrustCapabilities } from "@/components/TrustCapabilities";
 import { TrustStatsBar } from "@/components/TrustStatsBar";
 import ProductShowcase from "@/components/ProductShowcase";
 
-import { AboutSection } from "@/components/AboutSection";
+import { SteelTimeline } from "@/components/SteelTimeline";
 import { BrandStrip } from "@/components/BrandStrip";
 import { SteelGallery } from "@/components/SteelGallery";
 
@@ -34,7 +34,7 @@ function HomePage() {
       <TrustStatsBar />
       <ProductShowcase />
       
-      <AboutSection />
+      <SteelTimeline />
       <BrandStrip />
       <div className="bg-white section-spacing">
         <div className="container-wide">
