@@ -231,18 +231,18 @@ export const AboutHero = () => {
               className="w-full lg:w-[55%]"
             >
               <div className="max-w-[560px]">
-                <p className="text-body text-ssc-gray-body mb-12">
+                <p className="text-body text-ssc-gray-body mb-8 lg:mb-12">
                   Since our inception, Srinivasa Steel Corporation has been at the forefront of the steel industry, bridging the gap between quality manufacturing and reliable construction supply. Our journey is defined by a commitment to excellence, technological adoption in decoiling, and fostering long-term partnerships with India's leading steel producers.
                 </p>
 
-                <div className="grid grid-cols-2 gap-10 pt-10 border-t border-ssc-navy/10">
+                <div className="grid grid-cols-2 gap-6 lg:gap-10 pt-8 lg:pt-10 border-t border-ssc-navy/10">
                   <div>
                     <span className="text-h3 text-ssc-navy font-bold">100k+</span>
-                    <span className="text-ssc-navy/70 text-micro block mt-2">Tons Delivered</span>
+                    <span className="text-ssc-navy/70 text-[11px] lg:text-[12px] uppercase tracking-wider block mt-2 font-medium">Tons Delivered</span>
                   </div>
                   <div>
                     <span className="text-h3 text-ssc-navy font-bold">500+</span>
-                    <span className="text-ssc-navy/70 text-micro block mt-2">Major Projects</span>
+                    <span className="text-ssc-navy/70 text-[11px] lg:text-[12px] uppercase tracking-wider block mt-2 font-medium">Major Projects</span>
                   </div>
                 </div>
               </div>
