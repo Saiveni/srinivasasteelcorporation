@@ -36,18 +36,16 @@ const milestones = [
 const SteelRod = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'horizontal' }) => {
   if (orientation === 'horizontal') {
     return (
-      <div className="absolute top-0 left-0 w-full h-[18px] flex items-center">
-        {/* The Rebar Body */}
-        <div className="w-full h-[12px] bg-[#2A2D35] relative overflow-hidden rounded-full border-y border-white/10 shadow-2xl">
-          {/* Rips/Texture */}
-          <div className="absolute inset-0 opacity-40" 
-               style={{ 
-                 backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 12px)',
-                 backgroundSize: '20px 100%'
-               }} 
+      <div className="absolute top-0 left-0 w-full h-[28px] flex items-center">
+        {/* Silver Machined Rebar from Reference (Horizontal) */}
+        <div className="w-full h-[20px] relative overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)] border-y border-white/5">
+          <img 
+            src={timelineRebar.url} 
+            alt="" 
+            className="w-full h-full object-cover brightness-[1.2] contrast-[1.1] rotate-90 scale-[2]"
           />
-          {/* Steel Sheen */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/30" />
+          {/* Metallic Sheen Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/40 mix-blend-overlay" />
         </div>
       </div>
     );
@@ -196,11 +194,11 @@ export const SteelTimeline = () => {
           </div>
 
           {/* Cards Container */}
-          <div className="flex flex-col gap-24 ml-12 w-full">
+          <div className="flex flex-col gap-24 ml-10 w-full">
             {milestones.map((ms, idx) => (
               <div key={idx} className="relative flex items-center h-[180px]">
                 {/* Connecting Clamp & Arm for Mobile */}
-                <div className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-20 flex items-center">
+                <div className="absolute left-[-26px] top-1/2 -translate-y-1/2 z-20 flex items-center">
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
