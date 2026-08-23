@@ -156,15 +156,15 @@ export const Navbar = () => {
                 <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
                   <Link
                     to={link.href}
-                    className={`relative text-[11px] lg:text-[12px] font-body font-bold tracking-[0.12em] lg:tracking-[0.18em] transition-all py-2 whitespace-nowrap ${
-                      isActive ? "text-[#0B1B33]" : "text-[#0B1B33]/70 hover:text-[#0B1B33]"
+                    className={`relative text-micro transition-all py-2 whitespace-nowrap ${
+                      isActive ? "text-ssc-navy" : "text-ssc-navy/70 hover:text-ssc-navy"
                     }`}
                   >
                     {link.name}
                     {isActive && (
                       <motion.div 
                         layoutId="activeNav"
-                        className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#C5A059] rounded-full shadow-[0_1px_3px_rgba(197,160,89,0.3)]"
+                        className="absolute -bottom-1 left-0 right-0 h-[2px] bg-primary rounded-full shadow-[0_1px_3px_rgba(212,175,55,0.3)]"
                       />
                     )}
                   </Link>
@@ -176,7 +176,7 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="hidden md:block">
             <Link to="/contact" search={{ product: "" }}>
-              <Button className="h-10 lg:h-11 px-4 lg:px-6 bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-lg text-[10px] lg:text-[11px] tracking-[0.1em] font-body font-bold group shadow-sm hover:shadow-md transition-all">
+              <Button size="sm" className="bg-ssc-navy text-white hover:bg-ssc-navy/90 border-none shadow-premium-soft">
                 GET A QUOTE
                 <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -196,9 +196,9 @@ export const Navbar = () => {
               flex flex-col items-center justify-center
               transition-all duration-300
               ${isOpen ? 'rotate-90' : 'hover:-translate-y-[1px] active:translate-y-[0.5px]'}
-              bg-gradient-to-b from-[#F2D7A5] via-[#D4AF37] to-[#B8860B]
-              shadow-[0_4px_12px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.4),inset_0_-1.5px_1px_rgba(0,0,0,0.2)]
-              border border-[#8B6914]/40
+              bg-gradient-to-b from-[#F2D7A5] via-primary to-ssc-gold-dark
+              shadow-premium-medium
+              border border-ssc-gold-dark/40
             `}>
               {/* Machined Bevel Inset */}
               <div className="absolute inset-[1.5px] rounded-[10.5px] border border-white/30 pointer-events-none" />
@@ -240,7 +240,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[110] bg-white flex flex-col"
+            className="fixed inset-0 z-[110] bg-white flex flex-col light-theme"
           >
             {/* Overlay Header Mirror */}
             <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-white relative border-b border-black/5 shrink-0">
@@ -250,8 +250,8 @@ export const Navbar = () => {
                 </div>
                 <div className="w-[1px] h-6 sm:h-10 bg-[#0B1B33]/20" />
                 <div className="flex flex-col">
-                  <span className="text-[12px] sm:text-[18px] font-body font-extrabold text-[#0B1B33] uppercase leading-none">SRINIVASA STEEL</span>
-                  <span className="text-[8px] sm:text-[10px] font-body font-black text-[#C5A059] uppercase tracking-[0.2em] mt-0.5">CORPORATION</span>
+                  <span className="text-[12px] sm:text-[18px] font-bold text-ssc-navy uppercase leading-none">SRINIVASA STEEL</span>
+                  <span className="text-[8px] sm:text-[10px] font-semibold text-primary uppercase tracking-[0.2em] mt-0.5">CORPORATION</span>
                 </div>
               </div>
 
@@ -301,7 +301,7 @@ export const Navbar = () => {
                             }}
                           />
                         </div>
-                        <span className="text-[1.1rem] font-body font-bold text-[#0B1B33] tracking-[0.02em] group-hover:text-[#C5A059] transition-colors">
+                        <span className="text-[1.1rem] font-bold text-ssc-navy tracking-[0.02em] group-hover:text-primary transition-colors">
                           {link.name}
                         </span>
                       </Link>
@@ -317,8 +317,8 @@ export const Navbar = () => {
                   className="mt-8 mb-10"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[54px] text-[13px] tracking-[0.1em] font-body font-bold 
-                                     bg-[#C5A059] text-white hover:bg-[#D6B570] rounded-2xl shadow-md border-b-4 border-[#B8860B] active:border-b-0 active:translate-y-1 transition-all">
+                    <Button className="w-full h-[54px] text-[13px] tracking-[0.1em] font-bold 
+                                     bg-primary text-ssc-navy hover:bg-primary/90 rounded-xl shadow-premium-medium border-b-4 border-ssc-gold-dark active:border-b-0 active:translate-y-1 transition-all">
                       GET A QUOTE <ArrowRight size={18} className="ml-2" />
                     </Button>
                   </Link>
