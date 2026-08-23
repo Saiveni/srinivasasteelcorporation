@@ -65,7 +65,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                  className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
                />
-               <span className="text-primary font-body text-2xl font-bold tracking-tighter opacity-80">
+               <span className="text-primary text-h3 font-bold opacity-80">
                  {leader.initials}
                </span>
             </div>
@@ -86,15 +86,15 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
           {/* Text Content */}
           <div className="w-full">
-            <h3 className="text-white text-2xl lg:text-3xl font-body font-bold mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
+            <h3 className="text-h3 text-white mb-2 group-hover:text-primary transition-colors duration-300 uppercase">
               {leader.name}
             </h3>
             <div className="inline-block px-3 py-1 bg-primary/10 rounded-md mb-6">
-              <span className="text-primary text-[10px] font-body font-bold uppercase tracking-[0.2em]">
+              <span className="text-micro text-primary uppercase">
                 {leader.designation}
               </span>
             </div>
-            <p className="text-white/60 text-sm lg:text-base leading-relaxed font-medium">
+            <p className="text-body text-white/60">
               {leader.description}
             </p>
           </div>
@@ -112,7 +112,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-[#E8EBEF] overflow-hidden">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-ssc-steel-light overflow-hidden">
       {/* Precision Blueprint Background */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div 
@@ -140,12 +140,12 @@ export const LeadershipSection = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-6">
               <div className="w-8 h-[1px] bg-primary/40" />
-              <span className="text-primary text-[12px] font-body font-bold tracking-[0.5em] uppercase">
-                The People
+              <span className="text-micro text-primary uppercase">
+                LEADERSHIP TEAM
               </span>
               <div className="w-8 h-[1px] bg-primary/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-foreground font-body font-bold tracking-tighter uppercase italic leading-[0.85]">
+            <h2 className="text-h2 text-foreground uppercase">
               OUR <span className="text-primary">LEADERSHIP</span>
             </h2>
           </motion.div>

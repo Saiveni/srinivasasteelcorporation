@@ -22,19 +22,19 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
       transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       className="flex flex-col items-center lg:items-start text-center lg:text-left px-6 py-4 group"
     >
-      <div className="text-[10px] font-body tracking-[0.2em] text-[#D4AF37]/60 uppercase mb-4">
+      <div className="text-micro text-primary/60 uppercase mb-4">
         {subLabel}
       </div>
 
-      <div className="text-[#D4AF37] mb-6 transition-transform duration-500 group-hover:scale-110">
+      <div className="text-primary mb-6 transition-transform duration-500 group-hover:scale-110">
         <Icon size={20} strokeWidth={1.5} />
       </div>
 
-      <div className="text-[32px] sm:text-[38px] lg:text-[42px] font-body font-medium text-white leading-none mb-3 tracking-tight">
+      <div className="text-h2 text-white leading-none mb-3">
         {displayValue}{suffix}
       </div>
 
-      <div className="text-[11px] text-white/50 font-body font-[500] uppercase tracking-[0.2em] leading-relaxed">
+      <div className="text-micro text-white/50 uppercase">
         {label}
       </div>
     </motion.div>
@@ -87,16 +87,16 @@ export const TrustStatsBar = () => {
         >
           {/* Inner Highlight & Gold Accent */}
           <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-[#D4AF37] shadow-[0_0_15px_rgba(197,160,89,0.3)]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-primary shadow-[0_0_15px_rgba(212,175,55,0.3)]" />
 
           <div className="px-8 py-12 lg:px-16 lg:py-20">
             {/* Header Area */}
             <div className="mb-16 border-b border-white/5 pb-12">
-              <h3 className="text-[#D4AF37] text-[11px] font-body font-bold tracking-[0.4em] uppercase mb-4">
-                STEEL PERFORMANCE INDEX
+              <h3 className="text-primary text-micro uppercase mb-4">
+                COMPANY CREDIBILITY
               </h3>
-              <h2 className="text-white text-[24px] lg:text-[28px] font-body font-semibold tracking-tight uppercase">
-                BUILT AROUND QUALITY, SUPPLY & SERVICE
+              <h2 className="text-h3 text-white uppercase">
+                ESTABLISHED QUALITY. RELIABLE PERFORMANCE.
               </h2>
             </div>
 

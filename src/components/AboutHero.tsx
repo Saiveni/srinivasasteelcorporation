@@ -90,8 +90,8 @@ export const AboutHero = () => {
             <div className="w-full lg:w-[52%] text-left">
               <motion.div variants={itemVariants} className="flex items-center gap-3 mb-7">
                 <div className="w-10 h-[1px] bg-primary" />
-                <span className="text-primary text-micro tracking-[0.5em] uppercase">
-                  EST. 1994 • VIJAYAWADA, ANDHRA PRADESH
+                <span className="text-primary text-micro uppercase">
+                  ABOUT SRINIVASA STEEL CORPORATION
                 </span>
               </motion.div>
 
@@ -99,23 +99,10 @@ export const AboutHero = () => {
                 <motion.h1
                   custom={0}
                   variants={headlineVariants}
-                  className="text-[40px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-bold text-white uppercase tracking-tighter italic"
+                  className="text-h1 text-white mb-8 uppercase"
                 >
-                  SRINIVASA
-                </motion.h1>
-                <motion.h1
-                  custom={1}
-                  variants={headlineVariants}
-                  className="text-[40px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-bold text-primary uppercase tracking-tighter italic"
-                >
-                  STEEL
-                </motion.h1>
-                <motion.h1
-                  custom={2}
-                  variants={headlineVariants}
-                  className="text-[40px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-bold text-white uppercase tracking-tighter italic"
-                >
-                  CORPORATION
+                  BUILT ON STEEL. <br />
+                  <span className="text-primary">BUILT ON TRUST.</span>
                 </motion.h1>
               </div>
 
@@ -126,7 +113,7 @@ export const AboutHero = () => {
               >
                 {categories.map((cat, i) => (
                   <div key={cat} className="flex items-center gap-5">
-                    <span className="text-white/80 text-[12px] lg:text-[13px] font-bold tracking-[0.35em] uppercase">
+                    <span className="text-primary text-micro uppercase">
                       {cat}
                     </span>
                     {i < categories.length - 1 && (
@@ -143,17 +130,17 @@ export const AboutHero = () => {
 
                 <div className="flex items-center gap-8 lg:gap-10">
                   <div className="flex flex-col">
-                    <span className="text-white text-3xl lg:text-4xl font-bold italic tracking-tighter">30+</span>
+                    <span className="text-h3 text-white">30+</span>
                     <span className="text-primary/50 text-micro mt-1">Years Experience</span>
                   </div>
                   <div className="w-[1px] h-12 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-white text-3xl lg:text-4xl font-bold italic tracking-tighter">3</span>
+                    <span className="text-h3 text-white">3</span>
                     <span className="text-primary/50 text-micro mt-1">Regional Yards</span>
                   </div>
                   <div className="w-[1px] h-12 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-primary text-3xl lg:text-4xl font-bold italic tracking-tighter">MoU</span>
+                    <span className="text-h3 text-primary">MoU</span>
                     <span className="text-primary/50 text-micro mt-1">Dealer Status</span>
                   </div>
                 </div>
@@ -227,11 +214,11 @@ export const AboutHero = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[1px] bg-primary" />
-                <span className="text-primary text-micro">
-                  Our Company
+                <span className="text-micro text-primary uppercase">
+                  COMPANY STORY
                 </span>
               </div>
-              <h2 className="text-foreground italic uppercase">
+              <h2 className="text-h2 text-foreground mb-8 uppercase">
                 A LEGACY BUILT ON <span className="text-primary">PRECISION.</span>
               </h2>
             </motion.div>
@@ -244,17 +231,17 @@ export const AboutHero = () => {
               className="w-full lg:w-1/2"
             >
               <div className="max-w-xl">
-                <p className="text-ssc-gray-body text-body-large mb-12">
+                <p className="text-body text-foreground/70 mb-12">
                   Since our inception, Srinivasa Steel Corporation has been at the forefront of the steel industry, bridging the gap between quality manufacturing and reliable construction supply. Our journey is defined by a commitment to excellence, technological adoption in decoiling, and fostering long-term partnerships with India's leading steel producers.
                 </p>
 
                 <div className="grid grid-cols-2 gap-10 pt-10 border-t border-border/5">
                   <div>
-                    <span className="text-foreground text-3xl lg:text-4xl font-bold italic tracking-tighter">100k+</span>
+                    <span className="text-h3 text-foreground">100k+</span>
                     <span className="text-ssc-gray-secondary text-micro block mt-2">Tons Delivered</span>
                   </div>
                   <div>
-                    <span className="text-foreground text-3xl lg:text-4xl font-bold italic tracking-tighter">500+</span>
+                    <span className="text-h3 text-foreground">500+</span>
                     <span className="text-ssc-gray-secondary text-micro block mt-2">Major Projects</span>
                   </div>
                 </div>

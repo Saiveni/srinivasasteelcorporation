@@ -119,14 +119,14 @@ function ContactPage() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <span className="text-primary text-[12px] font-body font-bold tracking-[0.4em] uppercase mb-6 block">
+            <span className="text-micro text-primary uppercase mb-6 block">
               CONTACT SRINIVASA STEEL CORPORATION
             </span>
-            <h1 className="text-[clamp(40px,7vw,72px)] font-body font-bold text-white leading-[0.95] mb-8 tracking-tighter uppercase">
+            <h1 className="text-h1 text-white mb-8 uppercase">
               LET'S TALK <br />
               <span className="text-primary">STEEL.</span>
             </h1>
-            <p className="text-white/70 text-lg max-w-xl leading-relaxed font-light">
+            <p className="text-body-large text-white/70 max-w-xl">
               Have a steel, TMT or decoiling requirement? Share your requirement with our team.
             </p>
           </motion.div>
@@ -152,10 +152,10 @@ function ContactPage() {
                     <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-8">
                       <Check className="text-primary" size={40} />
                     </div>
-                    <h2 className="text-3xl font-body font-bold text-foreground mb-6 tracking-tight uppercase">
+                    <h2 className="text-h2 text-foreground mb-6 uppercase">
                       REQUEST RECEIVED.
                     </h2>
-                    <p className="text-foreground/60 text-lg mb-10 max-w-md mx-auto leading-relaxed">
+                    <p className="text-body text-foreground/60 mb-10 max-w-md mx-auto">
                       Thank you for contacting Srinivasa Steel Corporation. Our team will review your requirement and get in touch with you.
                     </p>
                     <Button 
@@ -171,14 +171,14 @@ function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="bg-white rounded-[24px] p-6 sm:p-8 md:p-12 shadow-sm border border-black/5"
                   >
-                    <h2 id="quote-form" className="text-3xl font-body font-bold text-foreground mb-10 tracking-tight uppercase">
+                    <h2 id="quote-form" className="text-h2 text-foreground mb-10 uppercase">
                       REQUEST A QUOTE
                     </h2>
                     
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label htmlFor="fullName" className="text-[10px] font-body font-bold text-foreground/40 uppercase tracking-widest ml-1">Full Name *</label>
+                          <label htmlFor="fullName" className="text-micro text-foreground/40 uppercase ml-1">Full Name *</label>
                           <Input 
                             {...register("fullName")}
                             id="fullName"
@@ -316,7 +316,7 @@ function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-[12px] font-body font-bold tracking-[0.4em] text-primary uppercase mb-8">
+                <h3 className="text-micro text-primary uppercase mb-8">
                   CONTACT OUR TEAM
                 </h3>
                 <div className="space-y-6">
@@ -326,8 +326,8 @@ function ContactPage() {
                         <User size={20} className="text-foreground group-hover:text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-body font-bold text-foreground uppercase tracking-tight">{person.name}</p>
-                        <a href={`tel:${person.phone}`} className="text-lg font-body font-medium text-foreground hover:text-primary transition-colors block leading-tight mt-1 min-h-[44px] flex items-center">
+                        <p className="text-micro text-foreground/40 uppercase tracking-tight">{person.name}</p>
+                        <a href={`tel:${person.phone}`} className="text-body text-foreground hover:text-primary transition-colors block leading-tight mt-1 min-h-[44px] flex items-center">
                           {person.phone}
                         </a>
                       </div>
@@ -338,8 +338,8 @@ function ContactPage() {
                       <Mail size={20} className="text-foreground group-hover:text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-body font-bold text-foreground uppercase tracking-tight">Email Inquiries</p>
-                      <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-base font-body font-medium text-foreground hover:text-primary transition-colors break-all block leading-tight mt-1 min-h-[44px] flex items-center">
+                      <p className="text-micro text-foreground/40 uppercase tracking-tight">Email Inquiries</p>
+                      <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-body text-foreground hover:text-primary transition-colors break-all block leading-tight mt-1 min-h-[44px] flex items-center">
                         srinivasasteelcorporationvja@gmail.com
                       </a>
                     </div>
@@ -354,11 +354,11 @@ function ContactPage() {
                 transition={{ delay: 0.2 }}
                 className="bg-background p-10 rounded-[32px] text-white"
               >
-                <h3 className="text-xl font-body font-bold mb-8 uppercase tracking-tight">Requirement Scope</h3>
+                <h3 className="text-h4 text-white mb-8 uppercase">Requirement Scope</h3>
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase mb-4">TMT REBARS</h4>
-                    <ul className="grid grid-cols-2 gap-3 text-sm text-white/70">
+                    <h4 className="text-micro text-primary uppercase mb-4">TMT REBARS</h4>
+                    <ul className="grid grid-cols-2 gap-3 text-small text-white/70">
                       <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5 mm</li>
                       <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5.5 mm</li>
                       <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5.5 mm TMT</li>
@@ -366,8 +366,8 @@ function ContactPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase mb-4">DECOILING</h4>
-                    <p className="text-sm text-white/70 leading-relaxed">
+                    <h4 className="text-micro text-primary uppercase mb-4">DECOILING</h4>
+                    <p className="text-small text-white/70 leading-relaxed">
                       Custom cutting and straightening for applicable steel sizes and lengths.
                     </p>
                   </div>

@@ -105,7 +105,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
           <button
             key={cat}
             onClick={() => setFilter(cat)}
-            className={`text-[11px] font-body font-bold tracking-[0.2em] uppercase transition-all duration-300 relative py-2 whitespace-nowrap ${
+            className={`text-micro transition-all duration-300 relative py-2 whitespace-nowrap ${
               filter === cat ? "text-foreground" : "text-foreground/40 hover:text-foreground/70"
             }`}
           >
@@ -152,10 +152,10 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                 </div>
               )}
               <div className="absolute inset-0 bg-background/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                <span className="text-primary text-[9px] font-body font-bold tracking-[0.3em] uppercase mb-2">
+                <span className="text-micro text-primary uppercase mb-2">
                   {item.category}
                 </span>
-                <h3 className="text-white text-lg font-body font-medium tracking-tight">
+                <h3 className="text-white text-lg uppercase">
                   {item.title}
                 </h3>
               </div>
@@ -213,10 +213,10 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                   className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl"
                 />
                 <div className="mt-8 text-center">
-                  <span className="text-primary text-[10px] font-body font-bold tracking-[0.4em] uppercase mb-2 block">
+                  <span className="text-micro text-primary uppercase mb-2 block">
                     {currentItem.category}
                   </span>
-                  <h3 className="text-white text-2xl font-body font-medium tracking-tight">
+                  <h3 className="text-white text-h3 uppercase">
                     {currentItem.title}
                   </h3>
                 </div>
@@ -235,14 +235,14 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
         <div className="container-wide">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">
-              <span className="text-primary text-[12px] font-body font-bold tracking-[0.4em] uppercase mb-6 block">
+              <span className="text-micro text-primary uppercase mb-6 block">
                 OUR GALLERY
               </span>
-              <h1 className="text-[56px] lg:text-[72px] font-body leading-[1] font-semibold tracking-tight uppercase mb-8 text-foreground">
-                STEEL.<br />
+              <h1 className="text-h1 text-foreground mb-8 uppercase">
+                STEEL. <br />
                 IN ITS ELEMENT.
               </h1>
-              <p className="text-foreground/60 text-lg max-w-md">
+              <p className="text-body text-foreground/70 max-w-md">
                 A closer look at our products, steel stock and decoiling capabilities.
               </p>
             </div>
@@ -262,8 +262,8 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
       <section className="section-spacing bg-white">
         <div className="container-wide">
           <div className="mb-12">
-             <p className="text-[15px] text-foreground/60 font-body uppercase tracking-widest border-l-2 border-ssc-gold pl-6 py-1 italic max-w-2xl">
-              "From reinforcement steel to decoiling and stock handling, every image reflects the materials and capabilities behind Srinivasa Steel Corporation."
+             <p className="text-body text-foreground/70 border-l-2 border-primary pl-6 py-1 max-w-2xl">
+              From reinforcement steel to decoiling and stock handling, every image reflects the materials and capabilities behind Srinivasa Steel Corporation.
             </p>
           </div>
 
@@ -273,12 +273,12 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
 
       {/* CTA Section */}
       <section className="section-spacing bg-background relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-ssc-gold/[0.05] to-transparent" />
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/[0.05] to-transparent" />
         <div className="container-wide relative z-10 text-center">
-          <h2 className="text-[32px] lg:text-[48px] font-body font-semibold tracking-tight text-white uppercase mb-6">
-            LOOKING FOR STEEL FOR YOUR NEXT REQUIREMENT?
+          <h2 className="text-h2 text-white uppercase mb-6">
+            REQUEST A <span className="text-primary">QUOTE.</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto mb-12 font-body tracking-wide">
+          <p className="text-white/60 text-body-large max-w-2xl mx-auto mb-12">
             Talk to Srinivasa Steel Corporation about TMT, steel products and decoiling requirements.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -342,10 +342,10 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
                 className="max-h-[80vh] w-auto object-contain rounded-xl shadow-2xl"
               />
               <div className="mt-8 text-center">
-                <span className="text-primary text-[10px] font-body font-bold tracking-[0.4em] uppercase mb-2 block">
+                <span className="text-micro text-primary uppercase mb-2 block">
                   {currentItem.category}
                 </span>
-                <h3 className="text-white text-2xl font-body font-medium tracking-tight">
+                <h3 className="text-white text-h3 uppercase">
                   {currentItem.title}
                 </h3>
               </div>

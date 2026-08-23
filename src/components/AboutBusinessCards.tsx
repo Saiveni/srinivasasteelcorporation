@@ -147,11 +147,11 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
 
         {/* Content Area */}
         <div className="relative z-20 flex-1 flex flex-col p-6 lg:p-7 pt-2">
-          <h3 className="text-white italic leading-tight mb-3 lg:group-hover:text-primary transition-colors duration-500">
+          <h3 className="text-h4 text-white mb-3 lg:group-hover:text-primary transition-colors duration-500 uppercase">
             {area.title}
           </h3>
 
-          <p className="text-ssc-gray-muted text-small flex-1">
+          <p className="text-body text-white/60 flex-1">
             {area.description}
           </p>
 
@@ -316,12 +316,12 @@ export const AboutBusinessCards = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="w-8 h-[1px] bg-primary" />
-              <span className="text-primary text-micro">
-                What We Supply
+              <span className="text-primary text-micro uppercase">
+                DISCOVER OUR CAPABILITIES
               </span>
             </div>
-            <h2 className="text-white italic leading-[0.95] lg:leading-[0.9] uppercase">
-              BUILT FOR EVERY <span className="text-primary">STRUCTURE.</span>
+            <h2 className="text-h2 text-white mb-8 uppercase">
+              ENGINEERED <span className="text-primary">STEEL</span> SOLUTIONS.
             </h2>
           </motion.div>
 

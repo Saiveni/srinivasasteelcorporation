@@ -78,15 +78,15 @@ export const ProductsComponent = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <span className="text-primary text-[12px] lg:text-[13px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
-                  OUR PRODUCTS
+                <span className="text-micro text-primary uppercase mb-4 block">
+                  INDUSTRIAL SOLUTIONS
                 </span>
-                <h1 className="text-[44px] lg:text-[68px] text-foreground font-body leading-[1] mb-8 font-[600] tracking-tight uppercase">
-                  STEEL THAT BUILDS <br />
-                  <span className="text-primary">WITH CONFIDENCE.</span>
+                <h1 className="text-h1 text-foreground mb-8 uppercase">
+                  STEEL PRODUCTS BUILT <br />
+                  <span className="text-primary">FOR PERFORMANCE.</span>
                 </h1>
-                <p className="text-[#64748B] text-lg lg:text-xl leading-relaxed mb-10 font-[400] max-w-[540px]">
-                  Steel products and TMT solutions for construction and industrial requirements.
+                <p className="text-body text-foreground/70 max-w-[540px] mb-10">
+                  High-performance steel products engineered for demanding applications. Consistent quality and reliable supply across the region.
                 </p>
                 <Button 
                   onClick={() => document.getElementById('product-grid')?.scrollIntoView({ behavior: 'smooth' })}
@@ -141,14 +141,14 @@ export const ProductsComponent = () => {
                     />
                   </div>
                   <div className="p-8 lg:p-10">
-                    <h3 className="text-[24px] lg:text-[28px] font-body font-semibold text-foreground mb-4 tracking-tight uppercase">
+                    <h3 className="text-h3 text-foreground mb-4 uppercase">
                       {product.name}
                     </h3>
-                    <p className="text-[#64748B] text-base leading-relaxed mb-8 font-[450]">
+                    <p className="text-body text-foreground/70 mb-8">
                       {product.description}
                     </p>
-                    <Link to="/contact" search={{ product: product.name }} className="inline-flex items-center gap-2 text-[11px] font-body font-bold text-primary uppercase tracking-[0.25em]">
-                      ENQUIRE NOW <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
+                    <Link to="/contact" search={{ product: product.name }} className="text-micro text-primary uppercase">
+                      REQUEST A QUOTE <ArrowRight className="inline-block ml-2 w-4 h-4 transition-transform group-hover:translate-x-2" />
                     </Link>
                   </div>
                 </div>
@@ -177,15 +177,15 @@ export const ProductsComponent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-primary text-[12px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
-                CAPABILITIES
+              <span className="text-micro text-primary uppercase mb-4 block">
+                CORE CAPABILITIES
               </span>
-              <h2 className="text-[38px] lg:text-[56px] text-white font-body leading-[1.1] mb-8 font-[500] tracking-tight uppercase">
+              <h2 className="text-h2 text-white mb-8 uppercase">
                 DECOILING FOR <br />
-                <span className="text-primary">SPECIFIC REQUIREMENTS.</span>
+                <span className="text-primary">PRECISION.</span>
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-10 font-[400]">
-                We provide high-precision decoiling solutions for applicable steel sizes and lengths, ensuring your material is straightened and cut to meet exact project specifications.
+              <p className="text-body text-white/60 mb-10">
+                Precision automated decoiling and straightening services from 2mm to 4.5mm with technical accuracy.
               </p>
               <Link to="/contact" search={{ product: "DECOILED STEEL" }}>
                 <Button className="w-full sm:w-auto">
@@ -201,11 +201,11 @@ export const ProductsComponent = () => {
       <section className="py-14 bg-white border-y border-black/5">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <span className="text-primary text-[11px] font-body font-bold tracking-[0.4em] uppercase mb-4 block">
+            <span className="text-micro text-primary uppercase mb-4 block">
               SUPPLY NETWORK
             </span>
-            <h2 className="text-[28px] lg:text-[32px] text-foreground font-body font-semibold tracking-tight uppercase">
-              TRUSTED STEEL BRANDS
+            <h2 className="text-h3 text-foreground mb-16 uppercase">
+              TRUSTED DEALER RELATIONSHIPS
             </h2>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-32">
@@ -221,7 +221,7 @@ export const ProductsComponent = () => {
                 <div className="text-2xl lg:text-3xl font-body font-bold text-foreground/80 tracking-tighter uppercase mb-2">
                   {brand.name}
                 </div>
-                <div className="text-[9px] font-body font-bold text-primary tracking-[0.2em] uppercase">
+                <div className="text-micro text-primary uppercase">
                   {brand.subtitle}
                 </div>
               </motion.div>
@@ -234,7 +234,7 @@ export const ProductsComponent = () => {
       <section className="section-spacing bg-[#F4F6F8]">
         <div className="container-wide">
           <div className="text-center mb-20">
-            <h2 className="text-[32px] lg:text-[42px] text-foreground font-body font-semibold tracking-tight uppercase">
+            <h2 className="text-h2 text-foreground uppercase">
               QUALITY. AVAILABILITY. <span className="text-primary">SUPPLY.</span>
             </h2>
           </div>
@@ -255,8 +255,8 @@ export const ProductsComponent = () => {
                 <div className="w-16 h-16 bg-white rounded-[12px] flex items-center justify-center mx-auto mb-8 shadow-sm border border-black/5">
                   <item.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-body font-bold text-foreground mb-4 uppercase tracking-wider">{item.title}</h3>
-                <p className="text-[#64748B] text-base leading-relaxed">{item.desc}</p>
+                <h3 className="text-h4 text-foreground mb-4 uppercase">{item.title}</h3>
+                <p className="text-body text-foreground/70">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -271,11 +271,10 @@ export const ProductsComponent = () => {
              }} 
         />
         <div className="container-wide relative z-10 flex flex-col items-center">
-          <h2 className="text-[42px] lg:text-[64px] font-body font-semibold leading-[1.1] mb-8 tracking-tight uppercase">
-            LOOKING FOR THE <br />
-            <span className="text-primary">RIGHT STEEL?</span>
+          <h2 className="text-h2 text-white mb-8 uppercase">
+            REQUEST A <span className="text-primary">QUOTE.</span>
           </h2>
-          <p className="text-white/60 text-lg lg:text-xl mb-12 max-w-[600px] mx-auto">
+          <p className="text-body text-white/60 mb-12 max-w-[600px] mx-auto">
             Tell us your requirement and our team can help you with the appropriate steel product or decoiling solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -317,25 +316,25 @@ export const ProductsComponent = () => {
                 <span className="text-primary text-[10px] font-body font-bold tracking-[0.3em] uppercase mb-2 block">
                   PRODUCT SPECIFICATIONS
                 </span>
-                <DialogTitle className="text-white text-[32px] lg:text-[42px] font-body font-semibold uppercase leading-none m-0">
+                <DialogTitle className="text-h3 text-white uppercase m-0">
                   {selectedProduct?.name}
                 </DialogTitle>
               </div>
             </div>
             
             <div className="p-8 lg:p-10">
-              <p className="text-[#64748B] text-lg leading-relaxed mb-8">
+              <p className="text-body text-foreground/70 mb-8">
                 {selectedProduct?.longDescription}
               </p>
               
               <div className="mb-10">
-                <h4 className="text-[11px] font-body font-bold text-foreground uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                <h4 className="text-micro text-foreground uppercase mb-6 flex items-center gap-3">
                   <span className="w-8 h-[1px] bg-primary" />
                   Technical Details
                 </h4>
                 <div className="flex flex-wrap gap-3">
                   {selectedProduct?.specs.map((spec) => (
-                    <div key={spec} className="px-5 py-2.5 bg-[#F4F6F8] border border-black/[0.03] rounded-full text-foreground text-[13px] font-body font-bold tracking-wider flex items-center gap-2">
+                    <div key={spec} className="px-5 py-2.5 bg-ssc-steel-light border border-black/[0.03] rounded-full text-foreground text-small font-bold uppercase tracking-wider flex items-center gap-2">
                       <CheckCircle2 size={14} className="text-primary" />
                       {spec}
                     </div>
