@@ -171,7 +171,6 @@ const PhysicalHangingSystem = ({ orientation = 'horizontal', delay = 0, cardData
         </motion.div>
       </div>
     </div>
-    </div>
   );
 };
 
