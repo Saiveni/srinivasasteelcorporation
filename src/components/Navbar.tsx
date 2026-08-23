@@ -288,41 +288,42 @@ export const Navbar = () => {
                           to={link.href}
                           onClick={() => setIsOpen(false)}
                           activeOptions={{ exact: link.href === '/' }}
-                          className={`group flex items-center gap-6 py-4 cursor-pointer transition-all duration-300 ${
-                            isActive ? "translate-x-2" : "hover:translate-x-1"
+                          className={`group flex items-center gap-8 py-5 cursor-pointer transition-all duration-300 ${
+                            isActive ? "translate-x-3" : "hover:translate-x-2"
                           }`}
                         >
                           {/* 3D Realistic Metallic Icons - Perfectly Aligned & Background-Free */}
-                          <div className="w-12 h-12 flex items-center justify-center shrink-0 relative">
-                            {/* Glow effect for active state */}
+                          <div className="w-14 h-14 flex items-center justify-center shrink-0 relative">
+                            {/* Glow effect for active state - enhanced */}
                             {isActive && (
                               <motion.div 
                                 layoutId="mobileIconGlow"
-                                className="absolute inset-0 bg-ssc-gold/20 blur-xl rounded-full"
+                                className="absolute inset-0 bg-ssc-gold/30 blur-2xl rounded-full"
                               />
                             )}
                             <div 
-                              className="w-11 h-11 relative z-10 transition-transform group-hover:scale-110"
+                              className="w-12 h-12 relative z-10 transition-transform group-hover:scale-110 flex items-center justify-center"
                               style={{
                                 backgroundImage: `url('${steelIconsAssetV2.url}')`,
                                 backgroundSize: '100% 500%',
                                 backgroundPosition: `0 ${link.icon * 25}%`,
                                 filter: isActive 
-                                  ? 'contrast(1.1) brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.1))' 
-                                  : 'contrast(1.02) brightness(1.0) grayscale(0.2)',
-                                mixBlendMode: 'multiply' // Removes white background if present in the asset
+                                  ? 'contrast(1.1) brightness(1.05) drop-shadow(0 4px 8px rgba(0,0,0,0.15))' 
+                                  : 'contrast(1.02) brightness(0.98)',
+                                mixBlendMode: 'multiply', // Removes white backgrounds from sprite
+                                backgroundRepeat: 'no-repeat'
                               }}
                             />
                           </div>
                           
-                          <div className="flex flex-col">
-                            <span className={`text-h4 font-bold tracking-tight transition-colors uppercase leading-none ${
+                          <div className="flex flex-col justify-center">
+                            <span className={`text-h3 font-bold tracking-tight transition-colors uppercase leading-none ${
                               isActive ? "text-ssc-gold-dark" : "text-ssc-navy group-hover:text-ssc-gold-dark"
                             }`}>
                               {link.name}
                             </span>
-                            <div className={`h-[2px] mt-1 transition-all duration-300 ${
-                              isActive ? "w-full bg-ssc-gold" : "w-0 bg-ssc-gold/40 group-hover:w-1/2"
+                            <div className={`h-[3px] mt-2 transition-all duration-500 ease-out ${
+                              isActive ? "w-full bg-ssc-gold shadow-[0_1px_4px_rgba(212,175,55,0.4)]" : "w-0 bg-ssc-gold/40 group-hover:w-2/3"
                             }`} />
                           </div>
                         </Link>
