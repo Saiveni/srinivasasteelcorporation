@@ -279,29 +279,10 @@ const MobileCarousel = () => {
         </div>
       </div>
       
-      {/* Mobile Scope Lock Display Text */}
-      <div className="mt-12 px-6 py-8 border-t border-white/5">
-        <p className="text-[10px] font-technical text-white/20 leading-relaxed uppercase tracking-wider">
-          '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-          <br /><br />
-          IMPORTANT — MOBILE ABOUT PAGE ONLY
-          <br />
-          THIS IS A TARGETED RESTORATION AND CLEANUP.
-          <br />
-          MAKE CHANGES ONLY TO THE MOBILE VERSION OF THE ABOUT PAGE.
-          <br />
-          DO NOT CHANGE DESKTOP.
-          <br />
-          DO NOT CHANGE TABLET.
-          <br />
-          DO NOT CHANGE THE MOBILE HEADER.
-          <br />
-          DO NOT CHANGE THE MOBILE BUSINESS CARD CAROUSEL FROM STEP 1.
-          <br />
-          DO NOT CHANGE THE LOCATIONS DESIGN.
-          <br />
-          DO NOT CHANGE ANY OTHER PAGE.
-        </p>
+      {/* Technical Data End */}
+      <div className="mt-8 px-6 pb-2 opacity-[0.05] border-t border-white/10 pt-4">
+        <div className="w-8 h-[1px] bg-white mb-2" />
+        <span className="text-[8px] font-technical tracking-widest text-white uppercase">END-SYS-OUTPUT</span>
       </div>
     </div>
   );
