@@ -177,7 +177,7 @@ export const IndustrialNetwork = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-[#0C121E] border border-white/5 p-8 rounded-[24px] shadow-xl relative overflow-hidden"
+                className="bg-[#0C121E] border border-white/5 p-8 rounded-[24px] shadow-xl relative overflow-hidden group"
               >
                 <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-ssc-gold/10 rounded-tr-[24px]" />
                 <div className="flex items-center gap-4 mb-4">
