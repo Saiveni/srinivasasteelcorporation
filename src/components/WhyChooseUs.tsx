@@ -49,13 +49,13 @@ const strengths = [
 
 export const WhyChooseUs = () => {
   return (
-    <section id="why-ssc" className="relative py-24 lg:py-32 bg-[#E8EBEF] overflow-hidden">
+    <section id="why-ssc" className="relative py-24 lg:py-32 bg-ssc-steel-light overflow-hidden">
       {/* Precision Blueprint Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div 
           className="absolute inset-0 opacity-[0.05]" 
           style={{
-            backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(#0B1320 1px, transparent 1px), linear-gradient(90deg, #0B1320 1px, transparent 1px)',
             backgroundSize: '40px 40px'
           }}
         />
@@ -71,12 +71,12 @@ export const WhyChooseUs = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-[2px] bg-background" />
-                <span className="text-primary text-[12px] font-body font-bold tracking-[0.5em] uppercase">
+                <div className="w-12 h-[2px] bg-foreground" />
+                <span className="text-primary text-micro">
                   Business Strengths
                 </span>
               </div>
-              <h2 className="text-[48px] sm:text-[72px] lg:text-[90px] text-foreground font-body font-black tracking-tighter uppercase italic leading-[0.85]">
+              <h2 className="text-foreground italic uppercase">
                 WHY BUILD WITH <br />
                 <span className="text-primary">SRINIVASA STEEL?</span>
               </h2>
@@ -84,7 +84,7 @@ export const WhyChooseUs = () => {
           </div>
           
           <div className="w-full lg:w-1/2">
-            <p className="text-foreground/70 text-lg lg:text-xl font-medium leading-relaxed max-w-xl">
+            <p className="text-ssc-gray-body text-body-large max-w-xl">
               From premium TMT rebar to industrial decoiling, we provide the physical foundation for regional infrastructure development.
             </p>
           </div>
@@ -99,28 +99,28 @@ export const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="bg-[#0C121E] border border-white/5 p-8 lg:p-10 rounded-[24px] shadow-2xl relative group overflow-hidden"
+              className="bg-ssc-steel-dark border border-white/10 p-8 lg:p-10 rounded-[12px] shadow-premium-soft relative group overflow-hidden"
             >
               {/* Technical Header Strip */}
               <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/5">
-                <span className="text-primary/40 text-[9px] font-body font-bold tracking-[0.2em]">
+                <span className="text-primary/40 text-micro">
                   {item.label}
                 </span>
-                <span className="text-primary text-[9px] font-body font-bold tracking-[0.1em] uppercase bg-primary/5 px-2 py-0.5 rounded">
+                <span className="text-primary text-micro bg-primary/5 px-2 py-0.5 rounded">
                   {item.spec}
                 </span>
               </div>
 
               <div className="flex items-center gap-5 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-[#0C121E] border border-ssc-gold/20 flex items-center justify-center shadow-lg group-hover:border-ssc-gold transition-colors duration-500">
+                <div className="w-14 h-14 rounded-lg bg-ssc-steel-dark border border-primary/20 flex items-center justify-center shadow-lg group-hover:border-primary transition-colors duration-500">
                   <item.icon size={24} className="text-primary" />
                 </div>
-                <h4 className="text-white font-body font-black italic text-xl sm:text-2xl leading-tight tracking-tight">
+                <h4 className="text-white italic text-xl sm:text-2xl uppercase">
                   {item.title}
                 </h4>
               </div>
 
-              <p className="text-white/50 text-sm lg:text-base leading-relaxed font-medium">
+              <p className="text-ssc-gray-muted text-small">
                 {item.description}
               </p>
 
@@ -136,23 +136,23 @@ export const WhyChooseUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative bg-[#050A14] rounded-[32px] p-10 lg:p-20 overflow-hidden shadow-2xl border border-white/5"
+          className="relative bg-ssc-navy rounded-[24px] p-10 lg:p-20 overflow-hidden shadow-premium-strong border border-white/10"
         >
           {/* Subtle background detail */}
           <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left bg-[#0C121E] p-10 lg:p-16 rounded-[24px]">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left bg-ssc-steel-dark p-10 lg:p-16 rounded-[12px]">
             <div>
-              <h3 className="text-white text-[38px] lg:text-[64px] font-body font-black italic uppercase leading-none tracking-tighter mb-4">
+              <h3 className="text-white italic uppercase leading-none tracking-tighter mb-4">
                 READY TO <span className="text-primary">STRENGTHEN</span><br />
                 YOUR PROJECTS?
               </h3>
-              <p className="text-white/40 font-body text-sm tracking-[0.4em] uppercase">
+              <p className="text-white/40 text-micro">
                 30+ Years of Proven Industrial Quality
               </p>
             </div>
             
-            <button className="whitespace-nowrap bg-primary text-foreground px-12 py-5 rounded-full font-body font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all duration-500 shadow-[0_20px_40px_rgba(197,160,89,0.2)] hover:scale-105">
+            <button className="whitespace-nowrap bg-primary text-ssc-navy px-12 py-5 rounded-lg font-semibold text-small uppercase hover:bg-white transition-all duration-500 shadow-premium-medium hover:scale-105">
               GET A CUSTOM QUOTE
             </button>
           </div>
