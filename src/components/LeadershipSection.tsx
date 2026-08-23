@@ -3,22 +3,22 @@ import { motion } from 'framer-motion';
 
 const leaders = [
   {
-    name: "M.S.V. Bhaskar",
-    designation: "Managing Partner",
+    name: "M.S.V. BHASKAR",
+    designation: "MANAGING PARTNER",
     description: "Visionary leader driving the strategic growth and industrial excellence of Srinivasa Steel Corporation since inception.",
-    initials: "MSVB"
+    image: "/__l5e/assets-v1/2ed039f3-80e9-44e2-86ee-359f130097a9/leader-bhaskar.png"
   },
   {
-    name: "M.V. Ramanakumar",
-    designation: "Partner",
+    name: "M.V. RAMANAKUMAR",
+    designation: "PARTNER",
     description: "Expert in supply chain optimization and steel procurement, ensuring the highest standards of material quality.",
-    initials: "MVR"
+    image: "/__l5e/assets-v1/2ed039f3-80e9-44e2-86ee-359f130097a9/leader-raman.png"
   },
   {
-    name: "M.V.N.M. Yeshuvanth",
-    designation: "Partner",
+    name: "M.V.N.M. YESHUVANTH",
+    designation: "PARTNER",
     description: "Focusing on modern engineering solutions and expanding the company's footprint across new industrial sectors.",
-    initials: "MVNY"
+    image: "/__l5e/assets-v1/2ed039f3-80e9-44e2-86ee-359f130097a9/leader-yeshu.png"
   }
 ];
 
