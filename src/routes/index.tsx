@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <div className="font-body bg-ssc-navy overflow-x-hidden">
+    <div className="font-body bg-ssc-navy">
       <HeroSection />
       <TrustCapabilities />
       <TrustStatsBar />
@@ -36,9 +36,9 @@ function HomePage() {
       
       <SteelTimeline />
       <BrandStrip />
-      <div className="bg-white section-spacing">
+      <div className="bg-white py-16 lg:py-24 border-t border-ssc-navy/5">
         <div className="container-wide">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 mb-16">
+          <div className="flex flex-col lg:flex-row items-start justify-between gap-6 mb-12">
             <div>
               <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
                 VISUAL PORTFOLIO
@@ -46,12 +46,17 @@ function HomePage() {
               <h2 className="text-h2 text-ssc-navy uppercase">
                 STEEL IN <span className="text-ssc-gold-dark">ELEMENT.</span>
               </h2>
-            </div>
-            <div className="flex flex-col items-start lg:items-end">
-              <p className="text-body text-ssc-gray-body max-w-sm lg:text-right">
+              <p className="text-body text-ssc-gray-body max-w-sm mt-4">
                 A technical perspective of our products and processing facilities.
               </p>
             </div>
+            {/* Fine structural grid element for industrial feel */}
+            <div className="hidden lg:block w-32 h-32 opacity-10" 
+                 style={{ 
+                   backgroundImage: `linear-gradient(to right, var(--ssc-navy) 1px, transparent 1px), linear-gradient(to bottom, var(--ssc-navy) 1px, transparent 1px)`,
+                   backgroundSize: '20px 20px'
+                 }} 
+            />
           </div>
           <SteelGallery isHomePage={true} />
         </div>

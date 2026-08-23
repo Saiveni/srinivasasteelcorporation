@@ -224,23 +224,8 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
 
   if (isHomePage) {
     return (
-      <section className="section-padding bg-ssc-steel-light/30">
+      <section className="bg-ssc-steel-light/30">
         <div className="container-wide">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-12 gap-6">
-            <div className="max-w-xl">
-              <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
-                VISUAL PORTFOLIO
-              </span>
-              <h2 className="text-h2 text-ssc-navy uppercase">
-                STEEL IN <span className="text-ssc-gold-dark">ELEMENT.</span>
-              </h2>
-            </div>
-            <div className="md:text-right">
-              <p className="text-body text-ssc-gray-body max-w-sm ml-auto">
-                A technical perspective of our products and processing facilities.
-              </p>
-            </div>
-          </div>
           {galleryGrid}
         </div>
         <Lightbox />
