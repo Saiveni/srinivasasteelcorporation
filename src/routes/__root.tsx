@@ -12,6 +12,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BrandPreloader } from "@/components/BrandPreloader";
+import { FloatingActions } from "@/components/FloatingActions";
 
 import appCss from "../styles.css?url";
 import { reportAppError } from "../lib/app-error-reporting";
@@ -139,6 +140,7 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
+        <FloatingActions />
       </div>
       <Toaster position="top-right" richColors />
     </QueryClientProvider>
