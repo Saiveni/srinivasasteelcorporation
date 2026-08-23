@@ -112,7 +112,17 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0C121E] overflow-hidden">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#E8EBEF] overflow-hidden">
+      {/* Precision Blueprint Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+        <div 
+          className="absolute inset-0" 
+          style={{
+            backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }}
+        />
+      </div>
       {/* Background Engineering Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
@@ -135,7 +145,7 @@ export const LeadershipSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
+            <h2 className="text-[42px] lg:text-[72px] text-ssc-navy font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
               OUR <span className="text-ssc-gold">LEADERSHIP</span>
             </h2>
           </motion.div>
@@ -154,7 +164,7 @@ export const LeadershipSection = () => {
           transition={{ delay: 0.5, duration: 1.5 }}
           className="text-center mt-20"
         >
-          <span className="text-white/10 text-[10px] font-technical font-bold tracking-[0.6em] uppercase">
+          <span className="text-ssc-navy/20 text-[10px] font-technical font-bold tracking-[0.6em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION
           </span>
         </motion.div>
