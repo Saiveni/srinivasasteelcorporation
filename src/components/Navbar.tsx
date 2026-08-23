@@ -70,6 +70,7 @@ export const Navbar = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}
       className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-4 pointer-events-none"
+
     >
       {/* Premium Engineered Steel Header Panel - Unified Global Design */}
       <div className={`

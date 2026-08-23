@@ -35,7 +35,7 @@ export const FloatingActions = () => {
   `;
 
   return (
-    <div className="fixed bottom-6 right-6 z-[90] flex flex-col gap-3">
+    <div className="fixed bottom-6 right-6 z-[90] flex flex-col gap-3 max-w-[calc(100vw-48px)]">
       <div className="hidden">
         {`'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
