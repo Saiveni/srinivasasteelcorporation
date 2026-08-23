@@ -47,9 +47,9 @@ const strengths = [
   }
 ];
 
-const StrengthCard = ({ item }: { item: typeof strengths[0] }) => (
-  <div className="bg-white border border-ssc-navy/10 rounded-xl overflow-hidden shadow-premium-soft flex flex-col h-full group">
-    <div className="relative h-48 sm:h-56 overflow-hidden">
+const StrengthCard = ({ item, isMobile = false }: { item: typeof strengths[0], isMobile?: boolean }) => (
+  <div className={`bg-white border border-ssc-navy/10 rounded-xl overflow-hidden shadow-premium-soft flex flex-col group ${isMobile ? 'h-auto min-h-[380px]' : 'h-full'}`}>
+    <div className={`relative overflow-hidden ${isMobile ? 'h-36' : 'h-48 sm:h-56'}`}>
       <img 
         src={item.image} 
         alt={item.alt}
@@ -57,16 +57,22 @@ const StrengthCard = ({ item }: { item: typeof strengths[0] }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ssc-navy/20 to-transparent opacity-60" />
     </div>
-    <div className="p-6 flex flex-col flex-1">
-      <span className="text-micro text-ssc-gold-dark mb-2">
+    <div className={`${isMobile ? 'p-4' : 'p-6'} flex flex-col flex-1`}>
+      <span className="text-micro text-ssc-gold-dark mb-1">
         {item.label}
       </span>
-      <h4 className="text-ssc-navy font-bold text-lg mb-3">
+      <h4 className={`text-ssc-navy font-bold mb-2 ${isMobile ? 'text-base' : 'text-lg'}`}>
         {item.title}
       </h4>
-      <p className="text-ssc-gray-body text-sm leading-relaxed">
+      <p className={`text-ssc-gray-body leading-relaxed mb-3 ${isMobile ? 'text-xs' : 'text-sm'}`}>
         {item.description}
       </p>
+      
+      {/* Small specification details (existing from context, though not explicitly in previous file view, user asked to keep) */}
+      <div className="mt-auto pt-3 border-t border-ssc-navy/5 flex items-center justify-between">
+        <span className="text-[10px] font-bold text-ssc-navy/40 uppercase tracking-tighter">Verified Quality</span>
+        <div className="w-1.5 h-1.5 rounded-full bg-ssc-gold-dark/40" />
+      </div>
     </div>
   </div>
 );
@@ -95,7 +101,7 @@ export const WhyChooseUs = () => {
   };
 
   return (
-    <section id="why-ssc" className="relative py-16 lg:py-24 bg-white overflow-hidden">
+    <section id="why-ssc" className="relative py-12 lg:py-24 bg-white overflow-hidden">
       {/* Structural Background Detail */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div 
@@ -109,7 +115,7 @@ export const WhyChooseUs = () => {
 
       <div className="container-wide relative z-10 mx-auto px-6">
         {/* Unified Heading Composition */}
-        <div className="max-w-2xl mb-12 lg:mb-20">
+        <div className="max-w-2xl mb-8 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -136,32 +142,33 @@ export const WhyChooseUs = () => {
           ))}
         </div>
 
-        {/* Mobile Swipe Carousel */}
-        <div className="lg:hidden">
+        <div className="lg:hidden -mx-6 px-6">
           <div 
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-8"
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-6"
             style={{ WebkitOverflowScrolling: 'touch' }}
           >
             {strengths.map((item, idx) => (
               <div 
                 key={idx} 
-                className="flex-shrink-0 w-[85%] snap-center"
+                className="flex-shrink-0 w-[75%] snap-center"
               >
-                <StrengthCard item={item} />
+                <StrengthCard item={item} isMobile={true} />
               </div>
             ))}
+            {/* Spacer for "next card partially visible" effect on the last card */}
+            <div className="flex-shrink-0 w-4" />
           </div>
           
-          {/* Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-4">
+          {/* Pagination Dots - Reduced gap */}
+          <div className="flex justify-center gap-2 mt-2">
             {strengths.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => scrollTo(idx)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  activeIndex === idx ? 'w-6 bg-ssc-gold-dark' : 'w-2 bg-ssc-navy/10'
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  activeIndex === idx ? 'w-4 bg-ssc-gold-dark' : 'w-1 bg-ssc-navy/10'
                 }`}
               />
             ))}
