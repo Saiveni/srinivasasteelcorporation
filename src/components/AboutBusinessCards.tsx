@@ -132,14 +132,14 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
 
           {/* Index Chip */}
           <div className="absolute top-4 left-4 flex items-center gap-2 bg-[#050A14]/70 backdrop-blur-md border border-white/10 rounded-full px-3 py-1.5 lg:group-hover:border-ssc-gold/40 transition-colors duration-500">
-            <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.3em]">
+            <span className="text-primary text-[9px] font-body font-bold tracking-[0.3em]">
               {area.index}
             </span>
           </div>
 
           {/* Technical Code */}
           <div className="absolute top-4 right-4">
-            <span className="text-white/40 text-[8px] font-technical font-bold tracking-[0.3em] uppercase lg:group-hover:text-ssc-gold/70 transition-colors duration-500">
+            <span className="text-white/40 text-[8px] font-body font-bold tracking-[0.3em] uppercase lg:group-hover:text-primary/70 transition-colors duration-500">
               {area.code}
             </span>
           </div>
@@ -147,7 +147,7 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
 
         {/* Content Area */}
         <div className="relative z-20 flex-1 flex flex-col p-6 lg:p-7 pt-2">
-          <h3 className="text-white font-heading font-extrabold text-[16px] lg:text-[17px] uppercase tracking-[0.04em] italic leading-tight mb-3 lg:group-hover:text-ssc-gold transition-colors duration-500">
+          <h3 className="text-white font-body font-extrabold text-[16px] lg:text-[17px] uppercase tracking-[0.04em] italic leading-tight mb-3 lg:group-hover:text-primary transition-colors duration-500">
             {area.title}
           </h3>
 
@@ -159,10 +159,10 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
           <div className="flex items-center gap-6 pt-4 border-t border-white/[0.06]">
             {area.meta.map((m) => (
               <div key={m.label} className="flex flex-col">
-                <span className="text-white/25 text-[8px] font-technical font-bold tracking-[0.3em] uppercase">
+                <span className="text-white/25 text-[8px] font-body font-bold tracking-[0.3em] uppercase">
                   {m.label}
                 </span>
-                <span className="text-ssc-gold/80 text-[10px] font-technical font-bold tracking-[0.15em] uppercase mt-0.5">
+                <span className="text-primary/80 text-[10px] font-body font-bold tracking-[0.15em] uppercase mt-0.5">
                   {m.value}
                 </span>
               </div>
@@ -246,7 +246,7 @@ const MobileCarousel = () => {
               key={idx}
               className={`h-1 transition-all duration-500 rounded-full ${
                 activeIndex === idx 
-                  ? 'w-8 bg-ssc-gold' 
+                  ? 'w-8 bg-primary' 
                   : 'w-2 bg-white/10'
               }`}
             />
@@ -263,7 +263,7 @@ const MobileCarousel = () => {
             }`}
             aria-label="Previous card"
           >
-            <ChevronLeft className={`w-6 h-6 ${activeIndex === 0 ? 'text-white/20' : 'text-ssc-gold'}`} />
+            <ChevronLeft className={`w-6 h-6 ${activeIndex === 0 ? 'text-white/20' : 'text-primary'}`} />
           </button>
 
           <button
@@ -274,7 +274,7 @@ const MobileCarousel = () => {
             }`}
             aria-label="Next card"
           >
-            <ChevronRight className={`w-6 h-6 ${activeIndex === totalCards - 1 ? 'text-white/20' : 'text-ssc-gold'}`} />
+            <ChevronRight className={`w-6 h-6 ${activeIndex === totalCards - 1 ? 'text-white/20' : 'text-primary'}`} />
           </button>
         </div>
       </div>
@@ -282,7 +282,7 @@ const MobileCarousel = () => {
       {/* Technical Data End */}
       <div className="mt-8 px-6 pb-2 opacity-[0.05] border-t border-white/10 pt-4 mb-2">
         <div className="w-8 h-[1px] bg-white mb-2" />
-        <span className="text-[8px] font-technical tracking-widest text-white uppercase">END-SYS-OUTPUT</span>
+        <span className="text-[8px] font-body tracking-widest text-white uppercase">END-SYS-OUTPUT</span>
       </div>
     </div>
   );
@@ -301,7 +301,7 @@ export const AboutBusinessCards = () => {
           }}
         />
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/20 to-transparent" />
-        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-ssc-gold/[0.04] blur-[120px]" />
+        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-primary/[0.04] blur-[120px]" />
       </div>
 
       <div className="container-wide relative z-10 max-w-[1400px] mx-auto px-6 lg:px-6">
@@ -315,13 +315,13 @@ export const AboutBusinessCards = () => {
             className="max-w-[640px]"
           >
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-[1px] bg-ssc-gold" />
-              <span className="text-ssc-gold text-[10px] lg:text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+              <div className="w-8 h-[1px] bg-primary" />
+              <span className="text-primary text-[10px] lg:text-[12px] font-body font-bold tracking-[0.5em] uppercase">
                 What We Supply
               </span>
             </div>
-            <h2 className="text-[32px] lg:text-[56px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.95] lg:leading-[0.9]">
-              BUILT FOR EVERY <span className="text-ssc-gold">STRUCTURE.</span>
+            <h2 className="text-[32px] lg:text-[56px] text-white font-body font-extrabold tracking-tighter uppercase italic leading-[0.95] lg:leading-[0.9]">
+              BUILT FOR EVERY <span className="text-primary">STRUCTURE.</span>
             </h2>
           </motion.div>
 
@@ -332,8 +332,8 @@ export const AboutBusinessCards = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="hidden lg:flex flex-col items-end text-right border-l border-white/10 pl-8"
           >
-            <span className="text-white/30 text-[10px] font-technical uppercase tracking-[0.25em] mb-2">SSC / BUSINESS AREAS</span>
-            <span className="text-ssc-gold/60 text-[10px] font-technical uppercase tracking-[0.25em] font-bold">06 DIVISIONS — EST. 1994</span>
+            <span className="text-white/30 text-[10px] font-body uppercase tracking-[0.25em] mb-2">SSC / BUSINESS AREAS</span>
+            <span className="text-primary/60 text-[10px] font-body uppercase tracking-[0.25em] font-bold">06 DIVISIONS — EST. 1994</span>
           </motion.div>
         </div>
 

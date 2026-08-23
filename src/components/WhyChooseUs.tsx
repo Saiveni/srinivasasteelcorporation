@@ -71,20 +71,20 @@ export const WhyChooseUs = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-[2px] bg-ssc-navy" />
-                <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+                <div className="w-12 h-[2px] bg-background" />
+                <span className="text-primary text-[12px] font-body font-bold tracking-[0.5em] uppercase">
                   Business Strengths
                 </span>
               </div>
-              <h2 className="text-[48px] sm:text-[72px] lg:text-[90px] text-ssc-navy font-heading font-black tracking-tighter uppercase italic leading-[0.85]">
+              <h2 className="text-[48px] sm:text-[72px] lg:text-[90px] text-foreground font-body font-black tracking-tighter uppercase italic leading-[0.85]">
                 WHY BUILD WITH <br />
-                <span className="text-ssc-gold">SRINIVASA STEEL?</span>
+                <span className="text-primary">SRINIVASA STEEL?</span>
               </h2>
             </motion.div>
           </div>
           
           <div className="w-full lg:w-1/2">
-            <p className="text-ssc-navy/70 text-lg lg:text-xl font-medium leading-relaxed max-w-xl">
+            <p className="text-foreground/70 text-lg lg:text-xl font-medium leading-relaxed max-w-xl">
               From premium TMT rebar to industrial decoiling, we provide the physical foundation for regional infrastructure development.
             </p>
           </div>
@@ -103,19 +103,19 @@ export const WhyChooseUs = () => {
             >
               {/* Technical Header Strip */}
               <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/5">
-                <span className="text-ssc-gold/40 text-[9px] font-technical font-bold tracking-[0.2em]">
+                <span className="text-primary/40 text-[9px] font-body font-bold tracking-[0.2em]">
                   {item.label}
                 </span>
-                <span className="text-ssc-gold text-[9px] font-technical font-bold tracking-[0.1em] uppercase bg-ssc-gold/5 px-2 py-0.5 rounded">
+                <span className="text-primary text-[9px] font-body font-bold tracking-[0.1em] uppercase bg-primary/5 px-2 py-0.5 rounded">
                   {item.spec}
                 </span>
               </div>
 
               <div className="flex items-center gap-5 mb-6">
                 <div className="w-14 h-14 rounded-2xl bg-[#0C121E] border border-ssc-gold/20 flex items-center justify-center shadow-lg group-hover:border-ssc-gold transition-colors duration-500">
-                  <item.icon size={24} className="text-ssc-gold" />
+                  <item.icon size={24} className="text-primary" />
                 </div>
-                <h4 className="text-white font-heading font-black italic text-xl sm:text-2xl leading-tight tracking-tight">
+                <h4 className="text-white font-body font-black italic text-xl sm:text-2xl leading-tight tracking-tight">
                   {item.title}
                 </h4>
               </div>
@@ -125,7 +125,7 @@ export const WhyChooseUs = () => {
               </p>
 
               {/* Bolt detail */}
-              <div className="absolute bottom-4 right-4 w-1.5 h-1.5 rounded-full bg-ssc-gold/20" />
+              <div className="absolute bottom-4 right-4 w-1.5 h-1.5 rounded-full bg-primary/20" />
             </motion.div>
           ))}
         </div>
@@ -143,16 +143,16 @@ export const WhyChooseUs = () => {
           
           <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left bg-[#0C121E] p-10 lg:p-16 rounded-[24px]">
             <div>
-              <h3 className="text-white text-[38px] lg:text-[64px] font-heading font-black italic uppercase leading-none tracking-tighter mb-4">
-                READY TO <span className="text-ssc-gold">STRENGTHEN</span><br />
+              <h3 className="text-white text-[38px] lg:text-[64px] font-body font-black italic uppercase leading-none tracking-tighter mb-4">
+                READY TO <span className="text-primary">STRENGTHEN</span><br />
                 YOUR PROJECTS?
               </h3>
-              <p className="text-white/40 font-technical text-sm tracking-[0.4em] uppercase">
+              <p className="text-white/40 font-body text-sm tracking-[0.4em] uppercase">
                 30+ Years of Proven Industrial Quality
               </p>
             </div>
             
-            <button className="whitespace-nowrap bg-ssc-gold text-ssc-navy px-12 py-5 rounded-full font-heading font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all duration-500 shadow-[0_20px_40px_rgba(197,160,89,0.2)] hover:scale-105">
+            <button className="whitespace-nowrap bg-primary text-foreground px-12 py-5 rounded-full font-body font-black text-sm tracking-[0.2em] uppercase hover:bg-white transition-all duration-500 shadow-[0_20px_40px_rgba(197,160,89,0.2)] hover:scale-105">
               GET A CUSTOM QUOTE
             </button>
           </div>

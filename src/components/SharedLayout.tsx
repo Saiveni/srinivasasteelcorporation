@@ -48,7 +48,7 @@ export const SectionContainer = ({
     id={id} 
     className={cn(
       "py-24 px-6",
-      accent ? "bg-ssc-gray-steel" : "bg-transparent",
+      accent ? "bg-ssc-steel-dark" : "bg-transparent",
       className
     )}
   >

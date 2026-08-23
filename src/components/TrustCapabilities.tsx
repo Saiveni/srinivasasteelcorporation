@@ -63,7 +63,7 @@ export const TrustCapabilities = () => {
                 }}
                 className="flex items-center gap-4 mb-8 lg:mb-12"
               >
-                <span className="text-[11px] lg:text-[12px] font-technical font-bold tracking-[0.4em] text-[#C5A059] uppercase">
+                <span className="text-[11px] lg:text-[12px] font-body font-bold tracking-[0.4em] text-[#C5A059] uppercase">
                   01 / COMPANY
                 </span>
                 <div className="w-8 lg:w-12 h-[1px] bg-[#C5A059]/40" />
@@ -75,7 +75,7 @@ export const TrustCapabilities = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: cubicBezier, delay: 0.4 } }
                 }}
-                className="text-[42px] lg:text-[76px] font-heading font-extrabold text-white leading-[0.95] mb-8 tracking-tighter uppercase"
+                className="text-[42px] lg:text-[76px] font-body font-extrabold text-white leading-[0.95] mb-8 tracking-tighter uppercase"
               >
                 BUILT ON <br />
                 <span className="text-[#C5A059]">30+ YEARS</span> <br />
@@ -98,13 +98,13 @@ export const TrustCapabilities = () => {
                 {/* Mobile Editorial Detail */}
                 <div className="mt-10 lg:mt-12 flex items-center gap-8">
                   <div className="flex flex-col">
-                    <span className="text-[9px] font-technical text-[#C5A059] tracking-widest uppercase mb-1">Established</span>
-                    <span className="text-[16px] lg:text-[18px] font-heading font-bold text-white tracking-wider">1994</span>
+                    <span className="text-[9px] font-body text-[#C5A059] tracking-widest uppercase mb-1">Established</span>
+                    <span className="text-[16px] lg:text-[18px] font-body font-bold text-white tracking-wider">1994</span>
                   </div>
                   <div className="w-[1px] h-6 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-[9px] font-technical text-[#C5A059] tracking-widest uppercase mb-1">Focus</span>
-                    <span className="text-[16px] lg:text-[18px] font-heading font-bold text-white tracking-wider uppercase">Steel Supply</span>
+                    <span className="text-[9px] font-body text-[#C5A059] tracking-widest uppercase mb-1">Focus</span>
+                    <span className="text-[16px] lg:text-[18px] font-body font-bold text-white tracking-wider uppercase">Steel Supply</span>
                   </div>
                 </div>
               </motion.div>
@@ -137,7 +137,7 @@ export const TrustCapabilities = () => {
 
               {/* Technical Marker Desktop Only */}
               <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 z-20">
-                <span className="text-[8px] font-technical text-white/20 tracking-[0.5em] uppercase block transform rotate-90 origin-center whitespace-nowrap">
+                <span className="text-[8px] font-body text-white/20 tracking-[0.5em] uppercase block transform rotate-90 origin-center whitespace-nowrap">
                   VERIFIED_MATERIAL_SPEC // 2026
                 </span>
               </div>

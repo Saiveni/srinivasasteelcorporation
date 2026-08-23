@@ -65,7 +65,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                  className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
                />
-               <span className="text-ssc-gold font-heading text-2xl font-black tracking-tighter opacity-80">
+               <span className="text-primary font-body text-2xl font-black tracking-tighter opacity-80">
                  {leader.initials}
                </span>
             </div>
@@ -74,7 +74,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
             {[0, 90, 180, 270].map((deg) => (
               <div 
                 key={deg}
-                className="absolute w-1.5 h-1.5 rounded-full bg-ssc-gold/30 shadow-inner"
+                className="absolute w-1.5 h-1.5 rounded-full bg-primary/30 shadow-inner"
                 style={{ 
                   top: '50%', 
                   left: '50%', 
@@ -86,11 +86,11 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
           {/* Text Content */}
           <div className="w-full">
-            <h3 className="text-white text-2xl lg:text-3xl font-heading font-bold mb-2 tracking-tight group-hover:text-ssc-gold transition-colors duration-300">
+            <h3 className="text-white text-2xl lg:text-3xl font-body font-bold mb-2 tracking-tight group-hover:text-primary transition-colors duration-300">
               {leader.name}
             </h3>
-            <div className="inline-block px-3 py-1 bg-ssc-gold/10 rounded-md mb-6">
-              <span className="text-ssc-gold text-[10px] font-technical font-bold uppercase tracking-[0.2em]">
+            <div className="inline-block px-3 py-1 bg-primary/10 rounded-md mb-6">
+              <span className="text-primary text-[10px] font-body font-bold uppercase tracking-[0.2em]">
                 {leader.designation}
               </span>
             </div>
@@ -139,14 +139,14 @@ export const LeadershipSection = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
-              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+              <div className="w-8 h-[1px] bg-primary/40" />
+              <span className="text-primary text-[12px] font-body font-bold tracking-[0.5em] uppercase">
                 The People
               </span>
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+              <div className="w-8 h-[1px] bg-primary/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-ssc-navy font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
-              OUR <span className="text-ssc-gold">LEADERSHIP</span>
+            <h2 className="text-[42px] lg:text-[72px] text-foreground font-body font-extrabold tracking-tighter uppercase italic leading-[0.85]">
+              OUR <span className="text-primary">LEADERSHIP</span>
             </h2>
           </motion.div>
         </div>
@@ -164,7 +164,7 @@ export const LeadershipSection = () => {
           transition={{ delay: 0.5, duration: 1.5 }}
           className="text-center mt-20"
         >
-          <span className="text-ssc-navy/20 text-[10px] font-technical font-bold tracking-[0.6em] uppercase">
+          <span className="text-foreground/20 text-[10px] font-body font-bold tracking-[0.6em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION
           </span>
         </motion.div>

@@ -53,14 +53,14 @@ export const IndustrialNetwork = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
-              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+              <div className="w-8 h-[1px] bg-primary/40" />
+              <span className="text-primary text-[12px] font-body font-bold tracking-[0.5em] uppercase">
                 Regional Presence
               </span>
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+              <div className="w-8 h-[1px] bg-primary/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
-              STEEL SUPPLY <span className="text-ssc-gold">NETWORK</span>
+            <h2 className="text-[42px] lg:text-[72px] text-white font-body font-extrabold tracking-tighter uppercase italic leading-[0.85]">
+              STEEL SUPPLY <span className="text-primary">NETWORK</span>
             </h2>
           </motion.div>
         </div>
@@ -116,10 +116,10 @@ export const IndustrialNetwork = () => {
                       animate={isActive ? { scale: 1.2 } : { scale: 1 }}
                       className="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-[#0C121E] border-2 border-ssc-gold shadow-[0_0_20px_rgba(197,160,89,0.3)] flex items-center justify-center relative z-10 transition-all"
                     >
-                    <Icon size={isActive ? 20 : 16} className="text-ssc-gold" />
+                    <Icon size={isActive ? 20 : 16} className="text-primary" />
                     
                     {/* Glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-ssc-gold/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                   </motion.div>
 
                   {/* Marker Pulse */}
@@ -142,21 +142,21 @@ export const IndustrialNetwork = () => {
                         `}
                       >
                         {/* Connecting visual line */}
-                        <div className={`absolute top-1/2 -translate-y-1/2 w-8 h-[1px] bg-ssc-gold/30 ${parseFloat(loc.coords.x) > 60 ? '-right-8' : '-left-8'}`} />
+                        <div className={`absolute top-1/2 -translate-y-1/2 w-8 h-[1px] bg-primary/30 ${parseFloat(loc.coords.x) > 60 ? '-right-8' : '-left-8'}`} />
                         
                         <div className="flex items-center gap-2 mb-3">
-                          <div className="w-1 h-3 bg-ssc-gold" />
-                          <span className="text-ssc-gold text-[9px] font-technical font-black tracking-[0.2em] uppercase">
+                          <div className="w-1 h-3 bg-primary" />
+                          <span className="text-primary text-[9px] font-body font-black tracking-[0.2em] uppercase">
                             {loc.type}
                           </span>
                         </div>
-                        <h4 className="text-white font-heading font-black italic text-2xl mb-2 tracking-tight">
+                        <h4 className="text-white font-body font-black italic text-2xl mb-2 tracking-tight">
                           {loc.city}
                         </h4>
                         <p className="text-white/60 text-xs leading-relaxed font-medium mb-4 italic">
                           {loc.address}
                         </p>
-                        <div className="flex items-center gap-2 text-[8px] font-technical font-bold text-ssc-gold/40 uppercase tracking-[0.3em]">
+                        <div className="flex items-center gap-2 text-[8px] font-body font-bold text-primary/40 uppercase tracking-[0.3em]">
                           INDUSTRIAL CORE • {loc.id === 'vijayawada' ? 'ZONE 01' : 'ZONE 02'}
                         </div>
                       </motion.div>
@@ -185,15 +185,15 @@ export const IndustrialNetwork = () => {
               >
                 <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-ssc-gold/10 rounded-tr-[24px]" />
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-ssc-gold/5 flex items-center justify-center border border-ssc-gold/10 group-hover:border-ssc-gold/30 transition-colors">
-                    <Icon size={20} className="text-ssc-gold/60 group-hover:text-ssc-gold transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/5 flex items-center justify-center border border-ssc-gold/10 group-hover:border-ssc-gold/30 transition-colors">
+                    <Icon size={20} className="text-primary/60 group-hover:text-primary transition-colors" />
                   </div>
 
                   <div>
-                    <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.2em] uppercase">
+                    <span className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase">
                       {loc.type}
                     </span>
-                    <h4 className="text-white font-heading font-bold text-xl tracking-tight">
+                    <h4 className="text-white font-body font-bold text-xl tracking-tight">
                       {loc.city}
                     </h4>
                   </div>

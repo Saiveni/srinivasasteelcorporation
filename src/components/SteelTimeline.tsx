@@ -36,14 +36,14 @@ export const SteelTimeline = () => {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center justify-center gap-3 mb-4">
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
-              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+              <div className="w-8 h-[1px] bg-primary/40" />
+              <span className="text-primary text-[12px] font-body font-bold tracking-[0.5em] uppercase">
                 Corporate Evolution
               </span>
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
+              <div className="w-8 h-[1px] bg-primary/40" />
             </div>
-            <h2 className="text-[36px] lg:text-[56px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-none">
-              COMPANY <span className="text-ssc-gold">LEGACY</span>
+            <h2 className="text-[36px] lg:text-[56px] text-white font-body font-extrabold tracking-tighter uppercase italic leading-none">
+              COMPANY <span className="text-primary">LEGACY</span>
             </h2>
           </motion.div>
         </div>
@@ -67,10 +67,10 @@ export const SteelTimeline = () => {
                 <div className="w-4 h-4 rounded-full bg-[#050A14] border-2 border-ssc-gold shadow-[0_0_10px_rgba(197,160,89,0.3)] mb-8 z-10 relative transition-transform duration-300 group-hover:scale-125" />
                 
                 <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl shadow-xl backdrop-blur-sm w-full transition-colors duration-300 group-hover:bg-white/[0.04]">
-                  <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.3em] uppercase block mb-2">
+                  <span className="text-primary text-[10px] font-body font-bold tracking-[0.3em] uppercase block mb-2">
                     {ms.year}
                   </span>
-                  <h4 className="text-white font-heading font-black italic text-lg mb-2 tracking-tight uppercase">
+                  <h4 className="text-white font-body font-black italic text-lg mb-2 tracking-tight uppercase">
                     {ms.title}
                   </h4>
                   <p className="text-white/50 text-[13px] leading-relaxed font-medium italic">
@@ -101,10 +101,10 @@ export const SteelTimeline = () => {
                 <div className="absolute left-[20px] top-8 w-3 h-3 rounded-full bg-[#050A14] border-2 border-ssc-gold shadow-[0_0_8px_rgba(197,160,89,0.3)] z-10" />
                 
                 <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl shadow-lg backdrop-blur-sm w-full ml-6">
-                  <span className="text-ssc-gold text-[10px] font-technical font-bold tracking-[0.3em] uppercase block mb-1">
+                  <span className="text-primary text-[10px] font-body font-bold tracking-[0.3em] uppercase block mb-1">
                     {ms.year}
                   </span>
-                  <h4 className="text-white font-heading font-bold italic text-lg mb-2 tracking-tight uppercase">
+                  <h4 className="text-white font-body font-bold italic text-lg mb-2 tracking-tight uppercase">
                     {ms.title}
                   </h4>
                   <p className="text-white/50 text-[13px] leading-relaxed font-medium italic">

@@ -18,7 +18,7 @@ export const Route = createFileRoute("/products")({
 
 function ProductsPage() {
   return (
-    <div className="pt-[80px] bg-ssc-navy">
+    <div className="pt-[80px] bg-background">
       <ProductsComponent />
     </div>
   );

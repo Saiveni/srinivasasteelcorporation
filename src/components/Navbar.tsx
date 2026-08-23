@@ -136,10 +136,10 @@ export const Navbar = () => {
             <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
 
             <div className="flex flex-col justify-center">
-              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-heading font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
+              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-body font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
                 SRINIVASA <span className="font-bold">STEEL</span>
               </span>
-              <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-technical font-black tracking-[0.25em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-0.5 sm:mt-1 drop-shadow-sm">
+              <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-body font-black tracking-[0.25em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-0.5 sm:mt-1 drop-shadow-sm">
                 CORPORATION
               </span>
             </div>
@@ -156,7 +156,7 @@ export const Navbar = () => {
                 <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
                   <Link
                     to={link.href}
-                    className={`relative text-[11px] lg:text-[12px] font-technical font-bold tracking-[0.12em] lg:tracking-[0.18em] transition-all py-2 whitespace-nowrap ${
+                    className={`relative text-[11px] lg:text-[12px] font-body font-bold tracking-[0.12em] lg:tracking-[0.18em] transition-all py-2 whitespace-nowrap ${
                       isActive ? "text-[#0B1B33]" : "text-[#0B1B33]/70 hover:text-[#0B1B33]"
                     }`}
                   >
@@ -176,7 +176,7 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="hidden md:block">
             <Link to="/contact" search={{ product: "" }}>
-              <Button className="h-10 lg:h-11 px-4 lg:px-6 bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-lg text-[10px] lg:text-[11px] tracking-[0.1em] font-technical font-bold group shadow-sm hover:shadow-md transition-all">
+              <Button className="h-10 lg:h-11 px-4 lg:px-6 bg-[#0B1B33] text-white hover:bg-[#0B1B33]/90 rounded-lg text-[10px] lg:text-[11px] tracking-[0.1em] font-body font-bold group shadow-sm hover:shadow-md transition-all">
                 GET A QUOTE
                 <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -250,8 +250,8 @@ export const Navbar = () => {
                 </div>
                 <div className="w-[1px] h-6 sm:h-10 bg-[#0B1B33]/20" />
                 <div className="flex flex-col">
-                  <span className="text-[12px] sm:text-[18px] font-heading font-extrabold text-[#0B1B33] uppercase leading-none">SRINIVASA STEEL</span>
-                  <span className="text-[8px] sm:text-[10px] font-technical font-black text-[#C5A059] uppercase tracking-[0.2em] mt-0.5">CORPORATION</span>
+                  <span className="text-[12px] sm:text-[18px] font-body font-extrabold text-[#0B1B33] uppercase leading-none">SRINIVASA STEEL</span>
+                  <span className="text-[8px] sm:text-[10px] font-body font-black text-[#C5A059] uppercase tracking-[0.2em] mt-0.5">CORPORATION</span>
                 </div>
               </div>
 
@@ -301,7 +301,7 @@ export const Navbar = () => {
                             }}
                           />
                         </div>
-                        <span className="text-[1.1rem] font-heading font-bold text-[#0B1B33] tracking-[0.02em] group-hover:text-[#C5A059] transition-colors">
+                        <span className="text-[1.1rem] font-body font-bold text-[#0B1B33] tracking-[0.02em] group-hover:text-[#C5A059] transition-colors">
                           {link.name}
                         </span>
                       </Link>
@@ -317,7 +317,7 @@ export const Navbar = () => {
                   className="mt-8 mb-10"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[54px] text-[13px] tracking-[0.1em] font-technical font-bold 
+                    <Button className="w-full h-[54px] text-[13px] tracking-[0.1em] font-body font-bold 
                                      bg-[#C5A059] text-white hover:bg-[#D6B570] rounded-2xl shadow-md border-b-4 border-[#B8860B] active:border-b-0 active:translate-y-1 transition-all">
                       GET A QUOTE <ArrowRight size={18} className="ml-2" />
                     </Button>
@@ -326,8 +326,8 @@ export const Navbar = () => {
                 
                 {/* Precision Built Label */}
                 <div className="mt-auto pb-4 flex items-center justify-between opacity-30">
-                  <span className="text-[8px] font-technical tracking-[0.2em] uppercase">PRECISION BUILT</span>
-                  <span className="text-[8px] font-technical tracking-[0.2em] uppercase">VER 2.4.0</span>
+                  <span className="text-[8px] font-body tracking-[0.2em] uppercase">PRECISION BUILT</span>
+                  <span className="text-[8px] font-body tracking-[0.2em] uppercase">VER 2.4.0</span>
                 </div>
               </div>
             </div>

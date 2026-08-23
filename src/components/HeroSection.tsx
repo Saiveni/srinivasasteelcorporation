@@ -103,17 +103,17 @@ export const HeroSection = () => {
             >
               {/* Eyebrow Label */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[11px] font-heading font-semibold tracking-[0.25em] text-white lg:text-[#0B1B33] uppercase">
+                <span className="text-[11px] font-body font-semibold tracking-[0.25em] text-white lg:text-[#0B1B33] uppercase">
                   SINCE 1994
                 </span>
                 <span className="text-white/20 lg:text-[#0B1B33]/20">—</span>
-                <span className="text-[11px] font-technical font-semibold tracking-[0.15em] text-[#C5A059] uppercase">
+                <span className="text-[11px] font-body font-semibold tracking-[0.15em] text-[#C5A059] uppercase">
                   VIJAYAWADA • VIZAG • GANNAVARAM
                 </span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[72px] font-heading font-bold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.04em] uppercase italic">
+              <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[72px] font-body font-bold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.04em] uppercase italic">
                 <span className="block mb-1">STRONGER STEEL.</span>
                 <span className="block">
                   STRONGER <span className="text-[#C5A059]">TOMORROW.</span>

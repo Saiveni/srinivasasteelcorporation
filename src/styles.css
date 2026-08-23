@@ -42,7 +42,7 @@
   --color-ssc-gray-secondary: #66707C;
   
   --font-body: "Poppins", sans-serif;
-  --font-heading: "Poppins", sans-serif;
+  --font-body: "Poppins", sans-serif;
   
   --shadow-premium-soft: 0 10px 30px rgba(0,0,0,.20);
   --shadow-premium-medium: 0 15px 40px rgba(0,0,0,.30);
@@ -112,7 +112,7 @@
   }
   
   h1, h2, h3, h4 {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     color: var(--color-foreground);
   }
 

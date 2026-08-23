@@ -13,7 +13,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-ssc-navy text-white pt-20 pb-10">
+    <footer className="bg-background text-white pt-20 pb-10">
       <div className="container-wide">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
@@ -21,10 +21,10 @@ export const Footer = () => {
             <Link to="/" className="flex items-center gap-3">
               <img src={sscLogo.url} alt="SSC Logo" className="h-16 w-16 object-contain filter brightness-0 invert" />
               <div className="flex flex-col border-l border-white/10 pl-4 py-1">
-                <span className="text-[22px] font-heading font-bold tracking-[0.05em] leading-none uppercase text-white">
+                <span className="text-[22px] font-body font-bold tracking-[0.05em] leading-none uppercase text-white">
                   SRINIVASA <span className="font-medium opacity-80 text-[20px]">STEEL</span>
                 </span>
-                <span className="text-[11px] font-technical font-extrabold tracking-[0.3em] text-[#C5A059] leading-none mt-2 uppercase">
+                <span className="text-[11px] font-body font-extrabold tracking-[0.3em] text-[#C5A059] leading-none mt-2 uppercase">
                   CORPORATION
                 </span>
               </div>
@@ -87,10 +87,10 @@ export const Footer = () => {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <p className="text-[13px] font-technical font-bold text-white tracking-[0.1em]">SRINIVASA STEEL CORPORATION</p>
-            <p className="text-[10px] font-technical text-white/40 tracking-[0.2em] mt-1 uppercase">Premium Steel Distribution Since 1994</p>
+            <p className="text-[13px] font-body font-bold text-white tracking-[0.1em]">SRINIVASA STEEL CORPORATION</p>
+            <p className="text-[10px] font-body text-white/40 tracking-[0.2em] mt-1 uppercase">Premium Steel Distribution Since 1994</p>
           </div>
-          <p className="text-[11px] font-technical text-white/40 uppercase tracking-[0.15em]">
+          <p className="text-[11px] font-body text-white/40 uppercase tracking-[0.15em]">
             © {currentYear} ALL RIGHTS RESERVED.
           </p>
         </div>
