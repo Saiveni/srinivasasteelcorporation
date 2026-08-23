@@ -35,11 +35,11 @@ export const Navbar = () => {
   }, [location.pathname, location.searchStr]);
 
   const navLinks = [
-    { name: "HOME", href: "/", icon: 0 },
-    { name: "ABOUT", href: "/about", icon: 1 },
-    { name: "PRODUCTS", href: "/products", icon: 2 },
-    { name: "GALLERY", href: "/gallery", icon: 3 },
-    { name: "CONTACT", href: "/contact", icon: 4 },
+    { name: "HOME", href: "/", Icon: Home },
+    { name: "ABOUT", href: "/about", Icon: Info },
+    { name: "PRODUCTS", href: "/products", Icon: ShoppingBag },
+    { name: "GALLERY", href: "/gallery", Icon: ImageIcon },
+    { name: "CONTACT", href: "/contact", Icon: Phone },
   ];
 
   const containerVariants: Variants = {
