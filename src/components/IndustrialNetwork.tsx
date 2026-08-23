@@ -17,7 +17,7 @@ const locations = [
     type: "YARD",
     icon: Warehouse,
     address: "Gannavaram Yard, Nuzividu Road, Gannavaram – 521101",
-    coords: { x: "38%", y: "68%" },
+    coords: { x: "47.5%", y: "67.5%" },
   },
   {
     id: "vizag",
@@ -25,7 +25,7 @@ const locations = [
     type: "YARD",
     icon: Factory,
     address: "S. No. 156, Plot No. 163A, 163B, AIE Pedagantyada, Vizag – 530044",
-    coords: { x: "78%", y: "55%" },
+    coords: { x: "57.5%", y: "63.5%" },
   }
 ];
 
@@ -91,7 +91,8 @@ export const IndustrialNetwork = () => {
           {/* Network Connection Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             <motion.path
-              d="M 28% 22% L 38% 68% L 78% 55%"
+              d="M 46.5% 66.5% L 47.5% 67.5% L 57.5% 63.5%"
+
               fill="none"
               stroke="rgba(197,160,89,0.2)"
               strokeWidth="1.5"
@@ -145,7 +146,7 @@ export const IndustrialNetwork = () => {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 10 }}
                         className={`absolute z-[100] w-[280px] sm:w-[340px] bg-[#0C121E] border border-ssc-gold/30 p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] pointer-events-none hidden lg:block opacity-100 scale-100 y-0
-                          ${parseFloat(loc.coords.x) > 60 ? '-left-[360px]' : 'left-20'}
+                          ${parseFloat(loc.coords.x) > 50 ? '-left-[360px]' : 'left-20'}
                           ${parseFloat(loc.coords.y) > 70 ? 'bottom-0' : 'top-0'}
                         `}
                       >
