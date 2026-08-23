@@ -35,7 +35,7 @@ export const SteelTimeline = () => {
   const dotY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 bg-ssc-navy overflow-hidden">
+    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-hidden bg-[#f5f6f7]">
       <div className="container-wide relative z-10 mx-auto">
         <div className="text-center mb-12 lg:mb-20">
           <motion.div
@@ -51,7 +51,7 @@ export const SteelTimeline = () => {
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold/40" />
             </div>
-            <h2 className="text-ssc-on-dark-primary">
+            <h2 className="text-ssc-navy">
               COMPANY <span className="text-ssc-gold">LEGACY</span>
             </h2>
           </motion.div>
@@ -60,7 +60,7 @@ export const SteelTimeline = () => {
         {/* Desktop Version - Horizontal */}
         <div className="hidden lg:block relative mt-16 mb-24">
           {/* Silver Timeline Line */}
-          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gray-400/30 -translate-y-1/2 z-0">
+          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-ssc-navy/10 -translate-y-1/2 z-0">
             <motion.div 
               style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
               className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-200 shadow-[0_0_8px_rgba(255,255,255,0.2)]"
@@ -68,7 +68,7 @@ export const SteelTimeline = () => {
             {/* Moving Gold Dot (Horizontal for Desktop) */}
             <motion.div 
               style={{ left: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-ssc-navy"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-[#f5f6f7]"
             />
           </div>
           
@@ -83,7 +83,7 @@ export const SteelTimeline = () => {
                 className="relative flex flex-col items-center text-center group pt-8"
               >
                 {/* Connector Point */}
-                <div className="w-3 h-3 rounded-full bg-ssc-navy border border-gray-400 absolute top-[-7px] z-10" />
+                <div className="w-3 h-3 rounded-full bg-[#f5f6f7] border border-ssc-navy/30 absolute top-[-7px] z-10" />
                 
                 <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-6 rounded-[12px] shadow-premium-strong w-full transition-all duration-500 group-hover:bg-ssc-steel-dark/90 group-hover:border-ssc-gold/30">
                   <span className="text-micro text-ssc-gold block mb-2 uppercase font-bold tracking-widest">
@@ -104,7 +104,7 @@ export const SteelTimeline = () => {
         {/* Mobile Version - Vertical */}
         <div className="lg:hidden relative flex flex-col items-center pt-4">
           {/* Silver Vertical Line */}
-          <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-gray-400/30 -translate-x-1/2 z-0">
+          <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-ssc-navy/10 -translate-x-1/2 z-0">
             {/* Animated Silver Path */}
             <motion.div 
               style={{ scaleY: scrollYProgress, transformOrigin: "top" }}
@@ -113,7 +113,7 @@ export const SteelTimeline = () => {
             {/* Moving Gold Dot */}
             <motion.div 
               style={{ top: dotY }}
-              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-ssc-navy"
+              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-[#f5f6f7]"
             />
           </div>
           
