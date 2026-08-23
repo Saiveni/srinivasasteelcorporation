@@ -77,7 +77,7 @@ export const HeroSection = () => {
   );
 
   return (
-    <section className="relative w-full bg-[#F7F7F4] pt-0 overflow-hidden min-h-[720px] lg:min-h-0">
+    <section className="relative w-full bg-ssc-steel-light pt-0 overflow-hidden min-h-[720px] lg:min-h-0">
       {/* Mobile Hero Background (Full Bleed Carousel) */}
       <div className="absolute inset-0 z-0 lg:hidden">
         {imageElement}
@@ -85,12 +85,12 @@ export const HeroSection = () => {
         <div 
           className="absolute inset-0 z-10" 
           style={{
-            background: 'linear-gradient(180deg, rgba(5,18,35,0.6) 0%, rgba(5,18,35,0.75) 55%, rgba(5,18,35,0.9) 100%)'
+            background: 'linear-gradient(180deg, rgba(11,19,32,0.6) 0%, rgba(11,19,32,0.75) 55%, rgba(11,19,32,0.9) 100%)'
           }} 
         />
       </div>
 
-      <div className="container-wide relative z-10 h-full">
+      <div className="container-ssc relative z-10 h-full">
         <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full pt-[96px] lg:pt-0">
           
           {/* Content Area: 46% Width on Desktop, Full Width on Mobile */}
@@ -103,25 +103,25 @@ export const HeroSection = () => {
             >
               {/* Eyebrow Label */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-[11px] font-body font-semibold tracking-[0.25em] text-white lg:text-[#0B1B33] uppercase">
+                <span className="text-micro text-white lg:text-foreground">
                   SINCE 1994
                 </span>
-                <span className="text-white/20 lg:text-[#0B1B33]/20">—</span>
-                <span className="text-[11px] font-body font-semibold tracking-[0.15em] text-[#C5A059] uppercase">
+                <span className="text-white/20 lg:text-foreground/20">—</span>
+                <span className="text-micro text-primary">
                   VIJAYAWADA • VIZAG • GANNAVARAM
                 </span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-[clamp(42px,11vw,58px)] lg:text-[72px] font-body font-bold leading-[0.98] text-white lg:text-[#0B1B33] mb-7 tracking-[-0.04em] uppercase italic">
+              <h1 className="text-white lg:text-foreground mb-7 italic uppercase">
                 <span className="block mb-1">STRONGER STEEL.</span>
                 <span className="block">
-                  STRONGER <span className="text-[#C5A059]">TOMORROW.</span>
+                  STRONGER <span className="text-primary">TOMORROW.</span>
                 </span>
               </h1>
               
               {/* Description */}
-              <p className="text-[17px] text-white/90 lg:text-[#0B1B33]/70 max-w-[500px] mb-8 leading-[1.65] font-normal">
+              <p className="text-body-large text-white/90 lg:text-foreground/70 max-w-[500px] mb-8">
                 Trusted supplier of TMT rebars, steel products and decoiling solutions for construction and industrial requirements since 1994.
               </p>
               
@@ -135,7 +135,7 @@ export const HeroSection = () => {
                 <Link to="/contact" search={{ product: "" }}>
                   <Button
                     variant="outline"
-                    className="w-full sm:w-auto border-white lg:border-[#0B1B33] bg-white/10 lg:bg-white text-white lg:text-[#0B1B33] hover:bg-white/20 lg:hover:bg-[#0B1B33]/5"
+                    className="w-full sm:w-auto border-white lg:border-primary text-white lg:text-primary hover:bg-white/20 lg:hover:bg-primary/10"
                   >
                     GET A QUOTE
                   </Button>
@@ -155,7 +155,7 @@ export const HeroSection = () => {
               {imageElement}
               
               {/* Subtle Metallic Color Overlay */}
-              <div className="absolute inset-0 bg-[#0B1B33]/10 mix-blend-multiply z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-ssc-navy/10 mix-blend-multiply z-10 pointer-events-none" />
             </div>
           </div>
 
