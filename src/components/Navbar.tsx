@@ -136,10 +136,10 @@ export const Navbar = () => {
             <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
 
             <div className="flex flex-col justify-center">
-              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-bold tracking-[0.01em] text-foreground leading-none uppercase">
+              <span className="text-h4 font-bold text-foreground leading-none uppercase">
                 SRINIVASA <span className="font-bold">STEEL</span>
               </span>
-              <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-semibold tracking-[0.25em] sm:tracking-[0.3em] text-primary leading-none uppercase mt-0.5 sm:mt-1 drop-shadow-sm">
+              <span className="text-micro text-primary leading-none mt-1 uppercase drop-shadow-sm">
                 CORPORATION
               </span>
             </div>
@@ -250,8 +250,8 @@ export const Navbar = () => {
                 </div>
                 <div className="w-[1px] h-6 sm:h-10 bg-[#0B1B33]/20" />
                 <div className="flex flex-col">
-                  <span className="text-[12px] sm:text-[18px] font-bold text-foreground uppercase leading-none">SRINIVASA STEEL</span>
-                  <span className="text-[8px] sm:text-[10px] font-semibold text-primary uppercase tracking-[0.2em] mt-0.5">CORPORATION</span>
+                  <span className="text-h4 font-bold text-foreground uppercase leading-none">SRINIVASA STEEL</span>
+                  <span className="text-micro text-primary uppercase mt-1">CORPORATION</span>
                 </div>
               </div>
 
@@ -301,7 +301,7 @@ export const Navbar = () => {
                             }}
                           />
                         </div>
-                        <span className="text-[1.1rem] font-bold text-foreground tracking-[0.02em] group-hover:text-primary transition-colors">
+                        <span className="text-body font-bold text-foreground group-hover:text-primary transition-colors uppercase">
                           {link.name}
                         </span>
                       </Link>
@@ -317,8 +317,8 @@ export const Navbar = () => {
                   className="mt-8 mb-10"
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
-                    <Button className="w-full h-[54px] text-[13px] tracking-[0.1em] font-bold 
-                                     bg-primary text-foreground hover:bg-primary/90 rounded-xl shadow-premium-medium border-b-4 border-ssc-gold-dark active:border-b-0 active:translate-y-1 transition-all">
+                    <Button className="w-full h-[54px] text-small font-bold 
+                                     bg-primary text-foreground hover:bg-primary/90 rounded-xl shadow-premium-medium border-b-4 border-ssc-gold-dark active:border-b-0 active:translate-y-1 transition-all uppercase">
                       GET A QUOTE <ArrowRight size={18} className="ml-2" />
                     </Button>
                   </Link>
