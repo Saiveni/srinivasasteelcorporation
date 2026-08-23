@@ -36,7 +36,7 @@ export const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-[#D4AF37] text-eyebrow mb-6">Quick Links</h4>
+            <h4 className="text-primary text-micro mb-6">Quick Links</h4>
             <ul className="space-y-4 text-white/70">
               <li><Link to="/" search={{ product: "" }} className="hover:text-white transition-colors">Home</Link></li>
               <li><Link to="/about" search={{ product: "" }} className="hover:text-white transition-colors">About</Link></li>
@@ -48,33 +48,33 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-[#D4AF37] text-eyebrow mb-6">Contact Us</h4>
+            <h4 className="text-primary text-micro mb-6">Contact Us</h4>
             <ul className="space-y-4 text-white/70">
               <li className="flex gap-3">
-                <MapPin className="text-[#D4AF37] shrink-0" size={20} />
+                <MapPin className="text-primary shrink-0" size={20} />
                 <div className="flex flex-col">
                   <span className="text-[13px] font-bold text-white mb-1">Head Office</span>
-                  <span className="text-sm">Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012</span>
+                  <span className="text-small text-white/70">Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012</span>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">
-                <Phone className="text-[#D4AF37] shrink-0" size={20} />
+                <Phone className="text-primary shrink-0" size={20} />
                 <div className="flex flex-col">
-                  <a href="tel:9440170453" className="text-sm hover:text-[#D4AF37] transition-colors">9440170453 (M.S.V. Bhaskar)</a>
-                  <a href="tel:9849600403" className="text-sm hover:text-[#D4AF37] transition-colors">9849600403 (M.V. Ramana Kumar)</a>
-                  <a href="tel:8125397453" className="text-sm hover:text-[#D4AF37] transition-colors">8125397453 (M.V.N.M. Yeshwanth)</a>
+                  <a href="tel:9440170453" className="text-small text-white/70 hover:text-white transition-colors">9440170453 (M.S.V. Bhaskar)</a>
+                  <a href="tel:9849600403" className="text-small text-white/70 hover:text-white transition-colors">9849600403 (M.V. Ramana Kumar)</a>
+                  <a href="tel:8125397453" className="text-small text-white/70 hover:text-white transition-colors">8125397453 (M.V.N.M. Yeshwanth)</a>
                 </div>
               </li>
               <li className="flex gap-3 pt-2">
-                <Mail className="text-[#D4AF37] shrink-0" size={20} />
-                <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-sm hover:text-[#D4AF37] transition-colors">srinivasasteelcorporationvja@gmail.com</a>
+                <Mail className="text-primary shrink-0" size={20} />
+                <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-small text-white/70 hover:text-white transition-colors">srinivasasteelcorporationvja@gmail.com</a>
               </li>
             </ul>
           </div>
 
           {/* Trusted Partners */}
           <div>
-            <h4 className="text-[#D4AF37] text-eyebrow mb-6">Our Partners</h4>
+            <h4 className="text-primary text-micro mb-6">Our Partners</h4>
             <div className="grid grid-cols-2 gap-4">
               {partners.map((partner) => (
                 <div key={partner.name} className="bg-white/5 rounded-lg p-3 flex items-center justify-center hover:bg-white/10 transition-colors group">
@@ -87,10 +87,10 @@ export const Footer = () => {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start">
-            <p className="text-[13px] font-body font-bold text-white tracking-[0.1em]">SRINIVASA STEEL CORPORATION</p>
-            <p className="text-[10px] font-body text-white/40 tracking-[0.2em] mt-1 uppercase">Premium Steel Distribution Since 1994</p>
+            <p className="text-[13px] font-bold text-white tracking-[0.1em]">SRINIVASA STEEL CORPORATION</p>
+            <p className="text-micro text-white/40 mt-1 uppercase">Premium Steel Distribution Since 1994</p>
           </div>
-          <p className="text-[11px] font-body text-white/40 uppercase tracking-[0.15em]">
+          <p className="text-micro text-white/40 uppercase tracking-[0.15em]">
             © {currentYear} ALL RIGHTS RESERVED.
           </p>
         </div>
