@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
-import { Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin, ShieldCheck, Truck, Users } from "lucide-react";
+import { Mail, Phone, MapPin, ShieldCheck, Truck, Users } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -60,11 +60,7 @@ export const Footer = () => {
                 </p>
               </div>
               <div className="flex gap-4 pt-2">
-                {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
-                  <a key={i} href="#" className="w-8 h-8 rounded-full border border-ssc-navy/10 flex items-center justify-center text-ssc-navy hover:bg-ssc-navy hover:text-white transition-all duration-300">
-                    <Icon size={14} />
-                  </a>
-                ))}
+                <span className="text-[10px] text-ssc-navy/40 font-bold tracking-widest uppercase">Stay Connected</span>
               </div>
             </div>
 
