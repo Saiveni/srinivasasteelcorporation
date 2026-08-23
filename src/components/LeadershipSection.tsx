@@ -131,8 +131,8 @@ export const LeadershipSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
             </div>
-            <h2 className="text-h2 text-ssc-navy uppercase">
-              OUR <span className="text-ssc-gold-dark">LEADERSHIP</span>
+            <h2 className="text-h2 text-white uppercase tracking-tight">
+              OUR <span className="text-ssc-gold">LEADERSHIP</span>
             </h2>
           </motion.div>
         </div>
