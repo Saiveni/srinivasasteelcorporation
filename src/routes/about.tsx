@@ -5,6 +5,7 @@ import { AboutBusinessCards } from "@/components/AboutBusinessCards";
 import { LeadershipSection } from "@/components/LeadershipSection";
 import { IndustrialNetwork } from "@/components/IndustrialNetwork";
 import { WhyChooseUs } from "@/components/WhyChooseUs";
+import { BrandStrip } from "@/components/BrandStrip";
 
 export const Route = createFileRoute("/about")({
   component: AboutPage,
@@ -26,7 +27,10 @@ function AboutPage() {
       {/* 01 — PREMIUM ABOUT OPENING & 02 — COMPANY STORY */}
       <AboutHero />
 
-      {/* 03 — BUSINESS AREAS / SPECIFICATION PANELS */}
+      {/* 03 — STRATEGIC PARTNERSHIPS */}
+      <BrandStrip />
+
+      {/* 04 — BUSINESS AREAS / SPECIFICATION PANELS */}
       <AboutBusinessCards />
 
       {/* 04 — INDUSTRIAL TIMELINE */}
