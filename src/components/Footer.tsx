@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
-import { Mail, Phone, MapPin, ShieldCheck, Truck, Users, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, ShieldCheck, Truck, Users } from "lucide-react";
 
 // Lucide-react sometimes has issues with specific exports depending on version, 
 // using generic SVG paths for social icons to ensure build stability and match the visual reference perfectly.
