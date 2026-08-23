@@ -39,7 +39,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
       <motion.div 
         whileHover={{ rotateY: 8, rotateX: -5, translateZ: 20 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="relative bg-[#1C2533] rounded-[16px] p-8 border border-white/5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col items-center text-center overflow-hidden h-full z-10"
+        className="relative bg-[#1C2533] rounded-[16px] p-8 border border-white/5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col items-center text-center h-full z-10 overflow-hidden"
         style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Card Surface Highlight */}

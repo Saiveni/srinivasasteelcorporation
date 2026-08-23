@@ -49,8 +49,8 @@ const strengths = [
 ];
 
 const StrengthCard = ({ item, isMobile = false }: { item: typeof strengths[0], isMobile?: boolean }) => (
-  <div className={`bg-white border border-ssc-navy/10 rounded-xl overflow-hidden shadow-premium-soft flex flex-col group ${isMobile ? 'h-auto min-h-[380px]' : 'h-full'}`}>
-    <div className={`relative overflow-hidden ${isMobile ? 'h-36' : 'h-48 sm:h-56'}`}>
+  <div className={`bg-white border border-ssc-navy/10 rounded-xl shadow-premium-soft flex flex-col group ${isMobile ? 'h-auto min-h-[380px] overflow-hidden' : 'h-full overflow-hidden'}`}>
+    <div className={`relative ${isMobile ? 'h-36 overflow-hidden' : 'h-48 sm:h-56 overflow-hidden'}`}>
       <img 
         src={item.image} 
         alt={item.alt}

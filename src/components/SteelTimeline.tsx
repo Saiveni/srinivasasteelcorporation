@@ -149,7 +149,7 @@ export const SteelTimeline = () => {
                 {/* Static Milestone Dot / Hook Base */}
                 <div className="absolute left-[24px] top-10 -translate-x-1/2 w-3 h-3 rounded-full bg-white border border-ssc-gold z-10 shadow-sm" />
                 
-                <div className="bg-white border border-ssc-navy/5 p-6 rounded-[12px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] w-full ml-10">
+                <div className="bg-white border border-ssc-navy/5 p-6 rounded-[12px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] w-full ml-10 overflow-hidden">
                   <span className="text-micro text-ssc-gold block mb-1 uppercase font-bold tracking-widest">
                     {ms.year}
                   </span>
