@@ -1,21 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import vizagAsset from '@/assets/vizag-steel-logo.jpg.asset.json';
+import jindalAsset from '@/assets/jindal-panther-logo.jpg.asset.json';
+import simhadriAsset from '@/assets/simhadri-tmt-logo.jpg.asset.json';
 
 export const BrandStrip = () => {
   const brands = [
     { 
       name: "VIZAG STEEL", 
-      logo: "/images/partners/vizag-steel-logo.svg", 
+      logo: vizagAsset.url, 
       subtitle: "MOU DEALER" 
     },
     { 
       name: "JINDAL PANTHER", 
-      logo: "/images/partners/jindal-panther-logo.svg", 
+      logo: jindalAsset.url, 
       subtitle: "TMT REBARS DEALER" 
     },
     { 
       name: "SIMHADRI TMT", 
-      logo: "/images/partners/simhadri-tmt-logo.svg", 
+      logo: simhadriAsset.url, 
       subtitle: "SUPPLY PARTNER" 
     }
   ];
