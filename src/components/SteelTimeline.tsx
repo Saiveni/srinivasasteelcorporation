@@ -261,29 +261,23 @@ export const SteelTimeline = () => {
           <p className="text-[10px] font-technical text-white/50 leading-relaxed uppercase tracking-wider max-w-2xl mx-auto text-center">
             '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
             <br /><br />
-            ABOUT PAGE TIMELINE — PART 1 ONLY
+            ABOUT PAGE TIMELINE — PART 2 ONLY
             <br /><br />
-            Fix ONLY the existing About page timeline. Do not change any other section, page, header, navigation, or responsive component.
+            Now fix ONLY the responsive behavior and positioning of the existing About page timeline.
             <br /><br />
-            The current timeline still looks like a generic UI timeline. I need it to look like a REAL INDUSTRIAL STEEL INSTALLATION.
+            Do not redesign the timeline again.
             <br /><br />
-            Use my attached TMT rebar reference as the visual reference.
+            DESKTOP: All 4 timeline cards must be completely visible inside the viewport. No fourth card cropping. No horizontal page overflow. No card extending outside the screen. The TMT bars, clamps, hooks and cards must remain physically aligned.
             <br /><br />
-            1. Replace the current thin horizontal bars with THREE substantial, realistic 3D TMT rebars.
-            <br />
-            The rebars must have: cylindrical thickness, realistic metallic steel surface, raised spiral/helical ribs, realistic highlights and shadows, rounded physical edges, visible depth.
+            MOBILE: Use the same visual design, but reflow it vertically. The TMT steel structure should run along the LEFT side. Cards must fit completely inside the mobile viewport. Test at: 320px, 375px, 390px and 430px.
             <br /><br />
-            2. The timeline cards must ACTUALLY HANG from the TMT bars.
-            <br />
-            REAL TMT BAR → METAL CLAMP → VERTICAL CONNECTOR → HOOK → TIMELINE CARD
+            There must be: no horizontal scrolling, no cropped cards, no cropped text, no disconnected hooks, no overlapping cards, no broken connectors. The cards must remain stable while scrolling.
             <br /><br />
-            3. Remove the unnecessary floating gold dots and decorative circles.
+            Remove any blur, floating movement, shifting or restructuring during scroll. Keep animation subtle: bar → clamp → hook → card gently reveal once when entering the viewport. After appearing, everything stays stable.
             <br /><br />
-            4. Keep the existing timeline content: 1994, 2000s, 2010s, Today.
+            IMPORTANT SCOPE LOCK: ONLY modify the About page timeline responsiveness and positioning. DO NOT CHANGE: header, navigation, hero, about introduction, feature cards, locations, other About sections, Home, Products, Gallery, Contact, desktop header, mobile header.
             <br /><br />
-            5. Use a premium industrial visual style: gunmetal + realistic steel + restrained metallic gold + deep navy.
-            <br /><br />
-            IMPORTANT: Only modify the About timeline. Do not touch anything else. STOP after completing these changes.
+            FINAL CHECK: Desktop = all 4 cards visible. Mobile = every card fully visible. Both versions = realistic TMT bars + physically connected hanging hooks. Zero horizontal overflow.
           </p>
         </div>
       </div>
