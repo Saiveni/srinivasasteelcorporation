@@ -93,12 +93,12 @@ const ClampHook = ({ position, orientation, delay, cardData }: any) => {
         
         {/* Connecting Arm/Hook */}
         <div className={`absolute bg-gradient-to-r from-ssc-gold to-ssc-gold/20 shadow-lg ${
-          isHorizontal ? 'w-[2px] h-16 top-full left-1/2 -translate-x-1/2' : 'h-[2px] w-12 top-1/2 left-full'
+          isHorizontal ? 'w-[2px] h-10 top-full left-1/2 -translate-x-1/2' : 'h-[2px] w-6 top-1/2 left-full'
         }`} />
 
         {/* The Card */}
         <div className={`absolute ${
-          isHorizontal ? 'top-20 left-1/2 -translate-x-1/2' : 'left-24 top-1/2 -translate-y-1/2'
+          isHorizontal ? 'top-12 left-1/2 -translate-x-1/2' : 'left-10 top-1/2 -translate-y-1/2'
         }`}>
           <motion.div
             initial={{ opacity: 0, x: isHorizontal ? 0 : 20, y: isHorizontal ? 20 : 0 }}
