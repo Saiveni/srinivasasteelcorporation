@@ -17,7 +17,7 @@ const HERO_IMAGES = [
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop",
+    url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop",
     alt: "Organized industrial steel reinforcement rods in factory distribution",
     position: "center center"
   },
