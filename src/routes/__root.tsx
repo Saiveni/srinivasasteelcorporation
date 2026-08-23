@@ -135,7 +135,7 @@ function RootComponent() {
       <div className="flex flex-col min-h-screen">
         <BrandPreloader />
         <Navbar />
-        <main className="flex-grow pt-[78px] sm:pt-[88px] md:pt-[92px]">
+        <main className="flex-grow pt-0">
           <Outlet />
         </main>
         <Footer />

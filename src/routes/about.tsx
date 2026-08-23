@@ -23,7 +23,7 @@ export const Route = createFileRoute("/about")({
 
 function AboutPage() {
   return (
-    <div className="bg-ssc-navy flex flex-col">
+    <div className="bg-ssc-navy flex flex-col pt-[62px] sm:pt-[68px] md:pt-[72px]">
       {/* 01 — PREMIUM ABOUT OPENING & 02 — COMPANY STORY */}
       <AboutHero />
 
