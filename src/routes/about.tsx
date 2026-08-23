@@ -29,11 +29,11 @@ function AboutPage() {
       {/* 03 — BUSINESS AREAS / SPECIFICATION PANELS */}
       <AboutBusinessCards />
 
-      {/* 04 — LEADERSHIP / PROMOTERS */}
-      <LeadershipSection />
-      
       {/* 04 — INDUSTRIAL TIMELINE */}
       <SteelTimeline />
+
+      {/* 04 — LEADERSHIP / PROMOTERS */}
+      <LeadershipSection />
       
       {/* 05 — REGIONAL INDUSTRIAL NETWORK */}
       <IndustrialNetwork />
