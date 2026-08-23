@@ -1,314 +1,181 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 
 /**
- * Realistic 3D TMT reinforcement steel rod.
- * Built from layered gradients: cylindrical body shading, diagonal rib geometry,
- * longitudinal main ribs, specular highlight and contact shadow.
+ * High-fidelity 3D TMT reinforcement steel rod (Rebar).
+ * Engineered with realistic rib geometry, cylindrical shading, and metallic finish.
  */
-const SteelRod = ({ orientation = 'horizontal' }: { orientation?: 'horizontal' | 'vertical' }) => {
-  const isH = orientation === 'horizontal';
-
+const RebarSpine = () => {
   return (
-    <div className={`relative ${isH ? 'w-full h-[68px]' : 'w-[52px] h-full'}`}>
-      {/* Cast shadow on the environment */}
-      <div
-        className={`absolute ${isH ? 'left-4 right-4 -bottom-8 h-10' : '-right-8 top-4 bottom-4 w-10'} rounded-full bg-black/80 blur-2xl`}
-      />
-
-      <div className="absolute inset-0 rounded-full overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.85)]">
-        {/* Cylindrical gunmetal body — dark at edges, brighter along the light band */}
-        <div
+    <div className="relative w-[48px] sm:w-[56px] h-full flex flex-col items-center">
+      {/* Cast Shadow */}
+      <div className="absolute right-[-20px] top-0 bottom-0 w-[30px] bg-black/40 blur-xl z-0" />
+      
+      {/* Rebar Body */}
+      <div className="relative w-full h-full rounded-full overflow-hidden shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] z-10">
+        {/* Base Cylindrical Metal Gradient */}
+        <div 
           className="absolute inset-0"
           style={{
-            backgroundImage: isH
-              ? 'linear-gradient(to bottom, #0c0f13 0%, #2b3239 12%, #6f7883 30%, #99a2ad 40%, #6a727c 55%, #363d45 76%, #14181d 92%, #05070a 100%)'
-              : 'linear-gradient(to right, #0c0f13 0%, #2b3239 12%, #6f7883 30%, #99a2ad 40%, #6a727c 55%, #363d45 76%, #14181d 92%, #05070a 100%)',
+            background: 'linear-gradient(to right, #0a0c10 0%, #1a1e24 15%, #4a525d 35%, #7a828d 45%, #4a525d 65%, #1a1e24 85%, #0a0c10 100%)'
           }}
         />
-
-        {/* TMT diagonal rib geometry — dark valley + bright crest, curved by mask */}
-        <div
-          className="absolute inset-0 opacity-90"
+        
+        {/* TMT Ribs (Diagonal) */}
+        <div 
+          className="absolute inset-0 opacity-80"
           style={{
-            backgroundImage: `repeating-linear-gradient(${isH ? '118deg' : '208deg'},
-              rgba(0,0,0,0) 0px,
-              rgba(0,0,0,0) 9px,
-              rgba(0,0,0,0.55) 12px,
-              rgba(0,0,0,0.75) 15px,
-              rgba(255,255,255,0.28) 18px,
-              rgba(255,255,255,0.12) 21px,
-              rgba(0,0,0,0) 24px)`,
-            maskImage: isH
-              ? 'linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.9) 18%, #000 45%, rgba(0,0,0,0.85) 72%, transparent 100%)'
-              : 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.9) 18%, #000 45%, rgba(0,0,0,0.85) 72%, transparent 100%)',
+            backgroundImage: `repeating-linear-gradient(150deg, 
+              transparent 0px, 
+              transparent 12px, 
+              rgba(0,0,0,0.5) 14px, 
+              rgba(0,0,0,0.7) 16px, 
+              rgba(255,255,255,0.15) 18px, 
+              rgba(255,255,255,0.05) 20px, 
+              transparent 24px)`,
+            maskImage: 'linear-gradient(to right, transparent 5%, black 20%, black 80%, transparent 95%)'
           }}
         />
-
-        {/* Longitudinal main ribs */}
-        <div
-          className={`absolute ${isH ? 'left-0 right-0 top-[27%] h-[4px]' : 'top-0 bottom-0 left-[27%] w-[4px]'} bg-[#b9c2cd]/70 blur-[0.5px]`}
-        />
-        <div
-          className={`absolute ${isH ? 'left-0 right-0 top-[31%] h-[3px]' : 'top-0 bottom-0 left-[31%] w-[3px]'} bg-black/60`}
-        />
-        <div
-          className={`absolute ${isH ? 'left-0 right-0 bottom-[24%] h-[2px]' : 'top-0 bottom-0 right-[24%] w-[2px]'} bg-black/50`}
-        />
-
-        {/* Specular highlight band */}
-        <div
-          className={`absolute ${isH ? 'left-0 right-0 top-[20%] h-[10%]' : 'top-0 bottom-0 left-[20%] w-[10%]'} bg-white/25 blur-[3px]`}
-        />
-
-        {/* Slow travelling sheen */}
-        <motion.div
-          animate={isH ? { x: ['-120%', '220%'] } : { y: ['-120%', '220%'] }}
-          transition={{ duration: 11, repeat: Infinity, ease: 'linear' }}
-          className={`absolute inset-0 ${isH ? 'bg-gradient-to-r skew-x-[-25deg]' : 'bg-gradient-to-b'} from-transparent via-white/22 to-transparent`}
-        />
-
-        {/* Machined end faces */}
-        <div
-          className={`absolute ${isH ? 'left-0 top-0 bottom-0 w-10 bg-gradient-to-r' : 'top-0 left-0 right-0 h-10 bg-gradient-to-b'} from-black/85 to-transparent`}
-        />
-        <div
-          className={`absolute ${isH ? 'right-0 top-0 bottom-0 w-10 bg-gradient-to-l' : 'bottom-0 left-0 right-0 h-10 bg-gradient-to-t'} from-black/85 to-transparent`}
-        />
+        
+        {/* Longitudinal Ribs */}
+        <div className="absolute left-[28%] top-0 bottom-0 w-[3px] bg-white/10 blur-[0.5px]" />
+        <div className="absolute right-[28%] top-0 bottom-0 w-[2px] bg-black/40" />
+        
+        {/* Specular Light Band */}
+        <div className="absolute left-[40%] top-0 bottom-0 w-[12%] bg-white/10 blur-[4px]" />
+        
+        {/* Brushed Texture */}
+        <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] mix-blend-overlay" />
       </div>
 
-      {/* Rim darkening to reinforce cylindrical silhouette */}
-      <div className="absolute inset-0 rounded-full pointer-events-none shadow-[inset_0_0_18px_rgba(0,0,0,0.85)]" />
+      {/* Rounded Top Cap */}
+      <div className="absolute -top-[20px] w-full h-[40px] rounded-full bg-gradient-to-b from-[#4a525d] to-[#1a1e24] shadow-lg z-20" />
     </div>
   );
 };
 
-
 /**
- * 3D Metal Information Card.
- * Dark charcoal brushed metal with gold border and realistic depth.
+ * Realistic Machined Steel Hook / Clamp.
+ * Physically connects the card to the rebar spine.
  */
-const MetalCard = ({
-  number,
-  year,
-  title,
-  description,
-  delay = 0,
-  orientation = 'horizontal',
-  isLeft = false,
-}: {
-  number: string;
-  year: string;
-  title: string;
-  description: string;
-  delay?: number;
-  orientation?: 'horizontal' | 'vertical';
-  isLeft?: boolean;
-}) => {
-  const isH = orientation === 'horizontal';
-
+const MetalClamp = ({ delay = 0 }: { delay?: number }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: isH ? -60 : 0, x: isH ? 0 : isLeft ? -50 : 50 }}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ 
-        delay: delay + 0.6, 
-        duration: 1.2, 
-        ease: [0.16, 1, 0.3, 1],
-        y: { type: "spring", stiffness: 40, damping: 15 },
-        x: { type: "spring", stiffness: 40, damping: 15 }
-      }}
-      className={`absolute ${
-        isH 
-          ? 'top-[calc(50%+108px)] left-1/2 -translate-x-1/2 w-[280px]' 
-          : 'top-1/2 w-[160px] xs:w-[200px] sm:w-[240px]'
-      }`}
-      style={!isH ? {
-        left: isLeft ? 'auto' : '50%',
-        right: isLeft ? '50%' : 'auto',
-        transform: 'translateY(-50%)',
-        marginRight: isLeft ? '45px' : '0',
-        marginLeft: isLeft ? '0' : '45px',
-      } : {}}
+      initial={{ opacity: 0, scale: 0.8, x: -20 }}
+      whileInView={{ opacity: 1, scale: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.8, ease: "easeOut" }}
+      className="relative z-30 flex items-center"
     >
-      <div className="relative group">
-        {/* Hanging Eyelets removed per user request */}
-
-        {/* The Card Body (3D Metal Plaque) */}
-        <div className="relative bg-[#0c0f13] rounded-[18px] p-4 sm:p-5 lg:p-8 border border-[#c5a059]/40 shadow-[0_40px_80px_rgba(0,0,0,0.9),inset_0_0_30px_rgba(255,255,255,0.05)] overflow-hidden">
-          {/* Metal Texture Overlay */}
-          <div className="absolute inset-0 opacity-[0.18] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
-          
-          {/* Beveled edge simulation */}
-          <div className="absolute inset-0 border-[0.5px] border-white/10 rounded-[18px] pointer-events-none" />
-          
-          <div className="relative z-10">
-            <div className="flex justify-between items-start mb-3 sm:mb-4">
-              <span className="text-[#C5A059] text-[10px] sm:text-[12px] font-technical font-bold tracking-widest opacity-80 bg-[#C5A059]/10 px-2 py-0.5 rounded">
-                {number}
-              </span>
-              {/* Decorative corner element */}
-              <div className="w-2 h-2 border-t border-r border-[#C5A059]/30" />
-            </div>
-            
-            <h3 className="text-white text-[16px] xs:text-[20px] sm:text-[26px] lg:text-[32px] font-heading font-extrabold mb-0.5 sm:mb-1 tracking-tight">
-              {year}
-            </h3>
-            <h4 className="text-[#C5A059] text-[8px] xs:text-[9px] sm:text-[11px] lg:text-[12px] font-technical font-bold uppercase tracking-[0.2em] mb-2 sm:mb-5 border-b border-[#C5A059]/20 pb-1 sm:pb-2">
-              {title}
-            </h4>
-            <p className="text-white/70 text-[10px] xs:text-[12px] sm:text-[14px] lg:text-[15px] leading-snug xs:leading-relaxed font-medium">
-              {description}
-            </p>
-          </div>
-
-          {/* Bottom gold bar */}
-          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#c5a059] to-transparent shadow-[0_0_15px_rgba(197,160,89,0.3)]" />
-        </div>
-
-        {/* Realistic drop shadow for depth */}
-        <div className="absolute -inset-[4px] bg-black/60 blur-[12px] -z-10 rounded-[22px] translate-y-8" />
+      {/* The Clamp (Collar) */}
+      <div 
+        className="w-[64px] h-[48px] rounded-[6px] relative shadow-[0_10px_20px_rgba(0,0,0,0.5)] overflow-hidden"
+        style={{
+          background: 'linear-gradient(to bottom, #8a6d3b 0%, #c5a059 30%, #f4d088 50%, #c5a059 70%, #8a6d3b 100%)'
+        }}
+      >
+        <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] mix-blend-overlay" />
+        {/* Bolt detail */}
+        <div className="absolute left-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-black/40 shadow-inner" />
+        <div className="absolute right-2 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-black/40 shadow-inner" />
       </div>
+
+      {/* The Hook / Suspension Arm */}
+      <motion.div 
+        initial={{ width: 0 }}
+        whileInView={{ width: 40 }}
+        viewport={{ once: true }}
+        transition={{ delay: delay + 0.3, duration: 0.6 }}
+        className="h-[8px] bg-gradient-to-b from-[#c5a059] via-[#f4d088] to-[#8a6d3b] shadow-md relative"
+      >
+        {/* Arm End Connector */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[12px] h-[16px] bg-[#c5a059] rounded-sm shadow-sm" />
+      </motion.div>
     </motion.div>
   );
 };
 
 /**
- * Physical metal hardware: A brushed gold collar that wraps the cylindrical rod,
- * with a bolt detail and a heavy vertical suspension hook.
+ * Premium Hanging Milestone Card.
+ * Appears physically suspended from the clamp.
  */
-const ClampHook = ({
-  position,
-  orientation = 'horizontal',
-  delay = 0,
-  cardData,
-  offsetSide = 'right',
-}: {
-  position: string;
-  orientation?: 'horizontal' | 'vertical';
-  delay?: number;
-  cardData: { number: string; year: string; title: string; description: string };
-  offsetSide?: 'left' | 'right';
+const HangingCard = ({ 
+  milestone, 
+  delay = 0 
+}: { 
+  milestone: { year: string, title: string, description: string },
+  delay?: number 
 }) => {
-
-  const isH = orientation === 'horizontal';
-
-  const isLeft = !isH && offsetSide === 'left';
-
   return (
-    <div
-      className="absolute z-20 [--hook-width:45px] sm:[--hook-width:80px]"
-      style={isH ? { left: position, top: '50%', transform: 'translateY(-50%)' } : { top: position, left: '50%', transform: 'translateX(-50%)' }}
+    <motion.div
+      initial={{ opacity: 0, y: 30, rotate: -2 }}
+      whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+      viewport={{ once: true }}
+      transition={{ 
+        delay: delay + 0.5, 
+        duration: 1.2, 
+        type: "spring", 
+        stiffness: 50, 
+        damping: 12 
+      }}
+      whileHover={{ rotate: 1, y: -5 }}
+      className="relative ml-[-4px]"
     >
-      {/* Clamp & Hook Structure */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9, y: isH ? -10 : 0, x: isH ? 0 : isLeft ? 10 : -10 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0, x: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-        transition={{ delay: delay + 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-        className="relative"
-      >
-        {/* The Clamp (Collar) */}
-        <div
-          className={`relative ${isH ? 'w-[48px] h-[82px]' : 'w-[82px] h-[48px]'} rounded-[4px] shadow-[0_15px_35px_rgba(0,0,0,0.7)] overflow-hidden`}
-          style={{
-            background: isH
-              ? 'linear-gradient(to bottom, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)'
-              : 'linear-gradient(to right, #8a6d3b 0%, #c5a059 25%, #f4d088 45%, #c5a059 65%, #8a6d3b 100%)',
-          }}
-        >
-          <div className="absolute inset-0 opacity-40 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] mix-blend-overlay" />
-          <div className={`absolute ${isH ? 'inset-x-0 top-0 h-[20%]' : 'inset-y-0 left-0 w-[20%]'} bg-white/30 blur-[2px]`} />
-          <div className={`absolute ${isH ? 'inset-x-0 bottom-0 h-[20%]' : 'inset-y-0 right-0 w-[20%]'} bg-black/30 blur-[2px]`} />
-
-          {/* Machined detail: Side bolts */}
-          <div className={`absolute ${isH ? 'left-1 top-[15%] w-1.5 h-1.5' : 'top-1 left-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
-          <div className={`absolute ${isH ? 'right-1 top-[15%] w-1.5 h-1.5' : 'bottom-1 left-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
-          <div className={`absolute ${isH ? 'left-1 bottom-[15%] w-1.5 h-1.5' : 'top-1 right-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
-          <div className={`absolute ${isH ? 'right-1 bottom-[15%] w-1.5 h-1.5' : 'bottom-1 right-[15%] w-1.5 h-1.5'} rounded-full bg-black/40 shadow-inner`} />
+      <div className="bg-[#0c0f13] border border-[#c5a059]/30 rounded-[12px] p-6 sm:p-8 w-[280px] sm:w-[380px] shadow-[0_30px_60px_rgba(0,0,0,0.8)] relative group">
+        {/* Machined Metal Texture */}
+        <div className="absolute inset-0 opacity-[0.12] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
+        
+        {/* Spec Label */}
+        <div className="absolute top-4 right-4 px-2 py-0.5 border border-[#c5a059]/20 rounded text-[9px] font-technical text-[#c5a059]/60 tracking-widest uppercase">
+          Steel Spec: FE-550D
         </div>
 
-        {/* The Connection Hook */}
-        <motion.div 
-          initial={{ height: 0, opacity: 0 }}
-          whileInView={
-            isH 
-              ? { height: '108px', opacity: 1 } 
-              : { width: 'var(--hook-width)', opacity: 1, x: isLeft ? 'calc(-1 * var(--hook-width))' : 0 }
-          }
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ delay: delay + 0.4, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className={`absolute ${
-            isH 
-              ? 'left-1/2 -bottom-[108px] -translate-x-1/2 flex flex-col items-center' 
-              : isLeft
-                ? 'top-1/2 left-0 -translate-y-1/2 flex items-center flex-row-reverse'
-                : 'top-1/2 right-0 -translate-y-1/2 flex items-center'
-          }`}
-        >
-          {/* Heavy metal vertical chain/rod - simplified connection */}
-          <div
-            className={`${isH ? 'w-[10px] h-[108px]' : 'h-[10px] w-[var(--hook-width)]'} shadow-[4px_0_15px_rgba(0,0,0,0.5)] z-10`}
-            style={{
-              background: isH 
-                ? 'linear-gradient(90deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)'
-                : 'linear-gradient(0deg, #8a6d3b 0%, #f4d088 50%, #8a6d3b 100%)',
-            }}
-          />
+        <div className="relative z-10">
+          <div className="flex items-baseline gap-4 mb-4">
+            <h3 className="text-white text-[32px] sm:text-[42px] font-heading font-black italic tracking-tighter leading-none">
+              {milestone.year}
+            </h3>
+            <div className="h-[2px] flex-grow bg-gradient-to-r from-[#c5a059]/40 to-transparent" />
+          </div>
           
-          {/* Decorative end cap instead of hook loop per user request */}
-          {!isH && (
-            <div 
-              className={`w-[8px] h-[16px] bg-[#f4d088] shadow-[0_0_8px_rgba(197,160,89,0.5)] z-20 ${isLeft ? '-mr-[1px]' : '-ml-[1px]'}`}
-            />
-          )}
-        </motion.div>
+          <h4 className="text-[#c5a059] text-[12px] sm:text-[14px] font-technical font-bold uppercase tracking-[0.2em] mb-4">
+            {milestone.title}
+          </h4>
+          
+          <p className="text-white/60 text-[14px] sm:text-[16px] leading-relaxed font-medium">
+            {milestone.description}
+          </p>
+        </div>
 
-        <div className="absolute inset-0 pointer-events-none shadow-[inset_0_0_15px_rgba(0,0,0,0.8)] opacity-60" />
-      </motion.div>
-
-      {/* The Information Card */}
-      <div>
-        <MetalCard
-          {...cardData}
-          delay={delay}
-          orientation={orientation}
-          isLeft={isLeft}
-        />
+        {/* Realistic Depth Shadow */}
+        <div className="absolute -inset-[2px] bg-gradient-to-br from-white/5 to-transparent rounded-[14px] pointer-events-none" />
+        
+        {/* Corner Bolt Details */}
+        <div className="absolute top-2 left-2 w-1 h-1 rounded-full bg-white/5" />
+        <div className="absolute bottom-2 right-2 w-1 h-1 rounded-full bg-white/5" />
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-
-export const AboutSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  // Animation constants removed as we use simple whileInView reveals per user request
-
-
+export const SteelTimeline = () => {
   const milestones = [
     {
-      number: '01',
       year: '1994',
       title: 'ESTABLISHED',
       description: 'Founded Srinivasa Steel Corporation in Hyderabad.',
     },
     {
-      number: '02',
       year: '2000s',
       title: 'EXPANDED TO VIZAG',
       description: 'Expanded operations to Visakhapatnam steel market.',
     },
     {
-      number: '03',
       year: '2010s',
       title: 'MOU DEALER STATUS',
       description: 'Became MoU Dealer for Vizag Steel Plant.',
     },
     {
-      number: '04',
       year: 'TODAY',
       title: '3 LOCATIONS, 30+ YEARS',
       description: '3 locations. 30+ years of trust. Thousands of tons delivered.',
@@ -316,81 +183,63 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section
-      id="about-timeline"
-      ref={sectionRef}
-      className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden"
-    >
-      {/* Engineered Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.05]"
+    <section id="steel-timeline" className="relative py-24 lg:py-32 bg-[#050A14] overflow-hidden">
+      {/* Engineering Grid Background */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+        <div 
+          className="absolute inset-0" 
           style={{
-            backgroundImage:
-              'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
-            backgroundSize: '80px 80px',
+            backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+            backgroundSize: '60px 60px'
           }}
         />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,160,89,0.05)_0%,rgba(5,10,20,1)_85%)]" />
       </div>
 
-      <div className="container-wide relative z-10 px-6 max-w-[1280px] mx-auto">
-        <div className="text-center mb-24 lg:mb-32">
+      <div className="container-wide relative z-10 px-6 max-w-[1200px] mx-auto">
+        <div className="mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1 }}
           >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
-              <span className="text-ssc-gold text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
-                The Journey
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-[2px] bg-[#c5a059]" />
+              <span className="text-[#c5a059] text-[12px] font-technical font-bold tracking-[0.5em] uppercase">
+                Company Legacy
               </span>
-              <div className="w-8 h-[1px] bg-ssc-gold/40" />
             </div>
-            <h2 className="text-[42px] lg:text-[72px] text-white font-heading font-extrabold tracking-tighter uppercase italic leading-[0.85]">
-              STRONG ROOTS.<br />
-              <span className="text-ssc-gold">STRONGER FUTURE.</span>
+            <h2 className="text-[48px] sm:text-[72px] lg:text-[90px] text-white font-heading font-black tracking-tighter uppercase italic leading-[0.85]">
+              HISTORY <span className="text-white/20">HANGING FROM</span><br />
+              <span className="text-[#c5a059]">SOLID STEEL.</span>
             </h2>
           </motion.div>
         </div>
 
-        <div className="relative flex justify-center pb-20 lg:pb-[500px]">
-          <div className="hidden lg:block w-full relative">
-            <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              whileInView={{ width: '100%', opacity: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative"
-            >
-              <SteelRod orientation="horizontal" />
-              <ClampHook position="12%" orientation="horizontal" delay={0.8} cardData={milestones[0]!} />
-              <ClampHook position="37%" orientation="horizontal" delay={1.1} cardData={milestones[1]!} />
-              <ClampHook position="62%" orientation="horizontal" delay={1.4} cardData={milestones[2]!} />
-              <ClampHook position="87%" orientation="horizontal" delay={1.7} cardData={milestones[3]!} />
-            </motion.div>
+        <div className="relative flex gap-0 sm:gap-12 min-h-[1200px]">
+          {/* THE STEEL ROD (VERTICAL SPINE) */}
+          <div className="h-full absolute left-0 sm:relative">
+            <RebarSpine />
           </div>
 
-          <div className="lg:hidden min-h-[1100px] w-full relative flex justify-center py-10">
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              whileInView={{ height: '100%', opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.2 }}
-              className="h-[1100px] relative"
-            >
-              <SteelRod orientation="vertical" />
-              <ClampHook position="8%" orientation="vertical" delay={0.8} cardData={milestones[0]!} offsetSide="right" />
-              <ClampHook position="32%" orientation="vertical" delay={1.1} cardData={milestones[1]!} offsetSide="left" />
-              <ClampHook position="56%" orientation="vertical" delay={1.4} cardData={milestones[2]!} offsetSide="right" />
-              <ClampHook position="80%" orientation="vertical" delay={1.7} cardData={milestones[3]!} offsetSide="left" />
-            </motion.div>
+          {/* THE MILESTONES */}
+          <div className="flex flex-col gap-24 sm:gap-32 pt-20 pl-16 sm:pl-0">
+            {milestones.map((ms, idx) => (
+              <div key={idx} className="relative flex items-center">
+                {/* Horizontal Physical Hook connecting Spine to Card */}
+                <div className="absolute left-[-64px] sm:left-[-112px] top-1/2 -translate-y-1/2">
+                  <MetalClamp delay={idx * 0.4} />
+                </div>
+                
+                <HangingCard milestone={ms} delay={idx * 0.4} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
+      
+      {/* Bottom Architectural Curve */}
+      <div className="absolute bottom-0 left-0 w-full h-[150px] bg-gradient-to-t from-[#050A14] to-transparent pointer-events-none" />
     </section>
-
   );
 };
-
