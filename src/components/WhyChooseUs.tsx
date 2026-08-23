@@ -136,7 +136,7 @@ export const WhyChooseUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative bg-ssc-navy rounded-[24px] p-10 lg:p-20 overflow-hidden shadow-premium-strong border border-white/10"
+          className="relative bg-background rounded-[24px] p-10 lg:p-20 overflow-hidden shadow-premium-strong border border-white/10"
         >
           {/* Subtle background detail */}
           <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
@@ -152,7 +152,7 @@ export const WhyChooseUs = () => {
               </p>
             </div>
             
-            <button className="whitespace-nowrap bg-primary text-ssc-navy px-12 py-5 rounded-lg font-semibold text-small uppercase hover:bg-white transition-all duration-500 shadow-premium-medium hover:scale-105">
+            <button className="whitespace-nowrap bg-primary text-foreground px-12 py-5 rounded-lg font-semibold text-small uppercase hover:bg-white transition-all duration-500 shadow-premium-medium hover:scale-105">
               GET A CUSTOM QUOTE
             </button>
           </div>

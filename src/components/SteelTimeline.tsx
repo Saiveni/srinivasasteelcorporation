@@ -26,7 +26,7 @@ const milestones = [
 
 export const SteelTimeline = () => {
   return (
-    <section id="timeline" className="relative py-20 bg-ssc-navy overflow-hidden">
+    <section id="timeline" className="relative py-20 bg-background overflow-hidden">
       <div className="container-wide relative z-10 px-6 max-w-[1200px] mx-auto">
         <div className="text-center mb-16">
           <motion.div
@@ -64,7 +64,7 @@ export const SteelTimeline = () => {
                 className="relative flex flex-col items-center text-center group"
               >
                 {/* Milestone Point */}
-                <div className="w-4 h-4 rounded-full bg-ssc-navy border-2 border-primary shadow-[0_0_10px_rgba(212,175,55,0.3)] mb-8 z-10 relative transition-transform duration-300 group-hover:scale-125" />
+                <div className="w-4 h-4 rounded-full bg-background border-2 border-primary shadow-[0_0_10px_rgba(212,175,55,0.3)] mb-8 z-10 relative transition-transform duration-300 group-hover:scale-125" />
                 
                 <div className="bg-ssc-steel-dark border border-white/10 p-6 rounded-[12px] shadow-premium-soft w-full transition-colors duration-300 group-hover:bg-ssc-steel-dark/80 group-hover:border-primary/20">
                   <span className="text-primary text-micro block mb-2">
@@ -98,7 +98,7 @@ export const SteelTimeline = () => {
                 className="relative flex items-start w-full pl-6 group"
               >
                 {/* Milestone Point */}
-                <div className="absolute left-[20px] top-8 w-3 h-3 rounded-full bg-ssc-navy border-2 border-primary shadow-[0_0_8px_rgba(212,175,55,0.3)] z-10" />
+                <div className="absolute left-[20px] top-8 w-3 h-3 rounded-full bg-background border-2 border-primary shadow-[0_0_8px_rgba(212,175,55,0.3)] z-10" />
                 
                 <div className="bg-ssc-steel-dark border border-white/10 p-6 rounded-[12px] shadow-premium-soft w-full ml-6">
                   <span className="text-primary text-micro block mb-1">

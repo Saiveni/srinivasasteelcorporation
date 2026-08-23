@@ -136,7 +136,7 @@ export const Navbar = () => {
             <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
 
             <div className="flex flex-col justify-center">
-              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-bold tracking-[0.01em] text-ssc-navy leading-none uppercase">
+              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-bold tracking-[0.01em] text-foreground leading-none uppercase">
                 SRINIVASA <span className="font-bold">STEEL</span>
               </span>
               <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-semibold tracking-[0.25em] sm:tracking-[0.3em] text-primary leading-none uppercase mt-0.5 sm:mt-1 drop-shadow-sm">
@@ -157,7 +157,7 @@ export const Navbar = () => {
                   <Link
                     to={link.href}
                     className={`relative text-micro transition-all py-2 whitespace-nowrap ${
-                      isActive ? "text-ssc-navy" : "text-ssc-navy/70 hover:text-ssc-navy"
+                      isActive ? "text-foreground" : "text-foreground/70 hover:text-foreground"
                     }`}
                   >
                     {link.name}
@@ -176,7 +176,7 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="hidden md:block">
             <Link to="/contact" search={{ product: "" }}>
-              <Button size="sm" className="bg-ssc-navy text-white hover:bg-ssc-navy/90 border-none shadow-premium-soft">
+              <Button size="sm" className="bg-background text-white hover:bg-background/90 border-none shadow-premium-soft">
                 GET A QUOTE
                 <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -250,7 +250,7 @@ export const Navbar = () => {
                 </div>
                 <div className="w-[1px] h-6 sm:h-10 bg-[#0B1B33]/20" />
                 <div className="flex flex-col">
-                  <span className="text-[12px] sm:text-[18px] font-bold text-ssc-navy uppercase leading-none">SRINIVASA STEEL</span>
+                  <span className="text-[12px] sm:text-[18px] font-bold text-foreground uppercase leading-none">SRINIVASA STEEL</span>
                   <span className="text-[8px] sm:text-[10px] font-semibold text-primary uppercase tracking-[0.2em] mt-0.5">CORPORATION</span>
                 </div>
               </div>
@@ -301,7 +301,7 @@ export const Navbar = () => {
                             }}
                           />
                         </div>
-                        <span className="text-[1.1rem] font-bold text-ssc-navy tracking-[0.02em] group-hover:text-primary transition-colors">
+                        <span className="text-[1.1rem] font-bold text-foreground tracking-[0.02em] group-hover:text-primary transition-colors">
                           {link.name}
                         </span>
                       </Link>
@@ -318,7 +318,7 @@ export const Navbar = () => {
                 >
                   <Link to="/contact" search={{ product: "" }} onClick={() => setIsOpen(false)}>
                     <Button className="w-full h-[54px] text-[13px] tracking-[0.1em] font-bold 
-                                     bg-primary text-ssc-navy hover:bg-primary/90 rounded-xl shadow-premium-medium border-b-4 border-ssc-gold-dark active:border-b-0 active:translate-y-1 transition-all">
+                                     bg-primary text-foreground hover:bg-primary/90 rounded-xl shadow-premium-medium border-b-4 border-ssc-gold-dark active:border-b-0 active:translate-y-1 transition-all">
                       GET A QUOTE <ArrowRight size={18} className="ml-2" />
                     </Button>
                   </Link>

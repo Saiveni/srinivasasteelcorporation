@@ -18,17 +18,17 @@ import { reportAppError } from "../lib/app-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-ssc-gray-light px-4">
+    <div className="flex min-h-screen items-center justify-center bg-ssc-steel-light px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-ssc-navy">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-ssc-navy">Page not found</h2>
+        <h1 className="text-7xl font-bold text-foreground">404</h1>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-xl bg-ssc-gold px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-premium"
+            className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-premium"
           >
             Go back home
           </Link>
@@ -46,9 +46,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-ssc-gray-light px-4">
+    <div className="flex min-h-screen items-center justify-center bg-ssc-steel-light px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-ssc-navy">
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
           This page didn't load
         </h1>
         <p className="mt-2 text-sm text-muted-foreground">
@@ -60,13 +60,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="inline-flex items-center justify-center rounded-xl bg-ssc-navy px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-premium"
+            className="inline-flex items-center justify-center rounded-xl bg-background px-6 py-3 text-sm font-bold text-white transition-all hover:scale-105 hover:shadow-premium"
           >
             Try again
           </button>
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-xl border border-ssc-navy/20 bg-white px-6 py-3 text-sm font-bold text-ssc-navy transition-all hover:bg-ssc-gray-steel"
+            className="inline-flex items-center justify-center rounded-xl border border-border/20 bg-white px-6 py-3 text-sm font-bold text-foreground transition-all hover:bg-ssc-steel-dark"
           >
             Go home
           </Link>

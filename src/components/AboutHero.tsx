@@ -59,7 +59,7 @@ export const AboutHero = () => {
   return (
     <>
       {/* SECTION 1 — PREMIUM OPENING */}
-      <section className="relative bg-ssc-navy flex items-center overflow-hidden pt-28 lg:pt-36 pb-8 lg:pb-24">
+      <section className="relative bg-background flex items-center overflow-hidden pt-28 lg:pt-36 pb-8 lg:pb-24">
         {/* Foundation Background — Engineering Grid + Gold Ambience */}
         <div className="absolute inset-0 pointer-events-none">
           <div

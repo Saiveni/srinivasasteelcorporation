@@ -155,7 +155,7 @@ export const HeroSection = () => {
               {imageElement}
               
               {/* Subtle Metallic Color Overlay */}
-              <div className="absolute inset-0 bg-ssc-navy/10 mix-blend-multiply z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-background/10 mix-blend-multiply z-10 pointer-events-none" />
             </div>
           </div>
 

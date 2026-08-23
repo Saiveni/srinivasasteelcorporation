@@ -33,7 +33,7 @@ export const IndustrialNetwork = () => {
   const [activeId, setActiveId] = useState<string | null>(null);
 
   return (
-    <section id="locations" className="relative py-24 lg:py-32 bg-ssc-navy overflow-hidden">
+    <section id="locations" className="relative py-24 lg:py-32 bg-background overflow-hidden">
       {/* Blueprint Grid Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03]" 
