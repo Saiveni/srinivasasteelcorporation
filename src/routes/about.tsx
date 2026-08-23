@@ -35,9 +35,6 @@ function AboutPage() {
       {/* 04 — LEADERSHIP / PROMOTERS */}
       <LeadershipSection />
       
-      {/* 05 — REGIONAL INDUSTRIAL NETWORK */}
-      <IndustrialNetwork />
-
       {/* 06 — WHY CHOOSE SRINIVASA STEEL? & 07 — STRONG CTA */}
       <WhyChooseUs />
     </div>
