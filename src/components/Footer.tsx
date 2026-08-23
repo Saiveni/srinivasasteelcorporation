@@ -251,9 +251,9 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] tracking-[0.15em] text-white/30 uppercase font-medium">
             <p>© {currentYear} Srinivasa Steel Corporation. All Rights Reserved.</p>
             <div className="flex items-center gap-8">
-              <Link to="/contact" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <Link to="/contact" search={{ product: "" }} className="hover:text-white transition-colors">Privacy Policy</Link>
               <span className="w-1 h-1 bg-white/20 rounded-full" />
-              <Link to="/contact" className="hover:text-white transition-colors">Terms & Conditions</Link>
+              <Link to="/contact" search={{ product: "" }} className="hover:text-white transition-colors">Terms & Conditions</Link>
             </div>
           </div>
         </div>
