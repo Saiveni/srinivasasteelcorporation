@@ -122,7 +122,7 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
         <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none z-10" />
 
         {/* Image Area */}
-        <div className="relative h-[220px] lg:h-[240px] overflow-hidden">
+        <div className="relative h-[160px] sm:h-[180px] lg:h-[240px] overflow-hidden">
           <img
             src={area.image}
             alt={area.alt}
@@ -132,38 +132,38 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
           <div className="absolute inset-0 bg-gradient-to-t from-ssc-steel-dark via-transparent to-transparent" />
 
           {/* Index Chip */}
-          <div className="absolute top-4 left-4 flex items-center gap-2 bg-ssc-navy/70 backdrop-blur-md border border-ssc-on-dark-primary/10 rounded-full px-3 py-1.5 lg:group-hover:border-ssc-gold/40 transition-colors duration-500">
-            <span className="text-ssc-gold text-micro">
+          <div className="absolute top-3 left-3 flex items-center gap-2 bg-ssc-navy/70 backdrop-blur-md border border-ssc-on-dark-primary/10 rounded-full px-2 py-1 lg:group-hover:border-ssc-gold/40 transition-colors duration-500">
+            <span className="text-ssc-gold text-[10px] lg:text-micro">
               {area.index}
             </span>
           </div>
 
           {/* Technical Code */}
-          <div className="absolute top-4 right-4">
-            <span className="text-ssc-on-dark-primary/40 text-micro lg:group-hover:text-ssc-gold/70 transition-colors duration-500">
+          <div className="absolute top-3 right-3">
+            <span className="text-ssc-on-dark-primary/40 text-[10px] lg:text-micro lg:group-hover:text-ssc-gold/70 transition-colors duration-500">
               {area.code}
             </span>
           </div>
         </div>
 
         {/* Content Area */}
-        <div className="relative z-20 flex-1 flex flex-col p-6 lg:p-7 pt-2">
-          <h3 className="text-h4 text-ssc-on-dark-primary mb-3 lg:group-hover:text-ssc-gold transition-colors duration-500 uppercase">
+        <div className="relative z-20 flex-1 flex flex-col p-4 sm:p-5 lg:p-7 pt-2 lg:pt-2">
+          <h3 className="text-base lg:text-h4 text-ssc-on-dark-primary mb-2 lg:mb-3 lg:group-hover:text-ssc-gold transition-colors duration-500 uppercase font-bold">
             {area.title}
           </h3>
 
-          <p className="text-body text-ssc-on-dark-body flex-1">
+          <p className="text-xs lg:text-body text-ssc-on-dark-body flex-1 leading-relaxed">
             {area.description}
           </p>
 
           {/* Industrial Metadata Row */}
-          <div className="flex items-center gap-6 pt-4 border-t border-ssc-on-dark-primary/10">
+          <div className="flex items-center gap-4 lg:gap-6 pt-3 lg:pt-4 border-t border-ssc-on-dark-primary/10 mt-3 lg:mt-0">
             {area.meta.map((m) => (
               <div key={m.label} className="flex flex-col">
-                <span className="text-ssc-on-dark-body text-micro">
+                <span className="text-ssc-on-dark-body text-[9px] lg:text-micro">
                   {m.label}
                 </span>
-                <span className="text-ssc-gold text-small font-semibold uppercase mt-0.5">
+                <span className="text-ssc-gold text-[10px] lg:text-small font-semibold uppercase mt-0.5">
                   {m.value}
                 </span>
               </div>

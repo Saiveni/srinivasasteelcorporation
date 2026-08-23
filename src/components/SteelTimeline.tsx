@@ -24,47 +24,15 @@ const milestones = [
   }
 ];
 
-const SteelRebar = ({ isVertical = false }: { isVertical?: boolean }) => (
-  <div 
-    className={`relative ${isVertical ? 'w-3 h-full mx-auto' : 'w-full h-3 my-auto'} rounded-full overflow-hidden shadow-[inset_0_2px_4px_rgba(0,0,0,0.3),0_1px_2px_rgba(255,255,255,0.1)]`}
-    style={{
-      background: 'linear-gradient(to bottom, #d1d5db, #9ca3af, #4b5563)',
-      backgroundColor: '#9ca3af'
-    }}
-  >
-    {/* Ribbed Texture Overlay */}
-    <div 
-      className="absolute inset-0 opacity-30"
-      style={{
-        backgroundImage: isVertical 
-          ? 'repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(0,0,0,0.5) 8px, rgba(0,0,0,0.5) 10px)'
-          : 'repeating-linear-gradient(90deg, transparent, transparent 8px, rgba(0,0,0,0.5) 8px, rgba(0,0,0,0.5) 10px)',
-      }}
-    />
-    {/* Metallic Highlight */}
-    <div 
-      className={`absolute inset-0 opacity-50 ${isVertical ? 'left-1/4 w-1/4 h-full' : 'top-1/4 h-1/4 w-full'} bg-white/30 blur-[1px]`}
-    />
-  </div>
-);
-
-const Connector = ({ isMobile = false }: { isMobile?: boolean }) => (
-  <div className={`flex flex-col items-center ${isMobile ? 'absolute left-[19px] top-8 -translate-x-1/2' : 'mb-4'}`}>
-    {/* The Hook/Clamp */}
-    <div className="w-5 h-5 rounded-full bg-gradient-to-br from-gray-300 to-gray-600 border border-white/20 shadow-lg flex items-center justify-center relative z-20">
-      <div className="w-2 h-2 rounded-full bg-ssc-gold shadow-[0_0_8px_rgba(212,175,55,0.8)]" />
-    </div>
-    {/* Connecting Rod */}
-    <div className={`w-[2px] bg-gradient-to-b from-gray-400 to-transparent ${isMobile ? 'h-8' : 'h-6'}`} />
-  </div>
-);
-
 export const SteelTimeline = () => {
   const containerRef = React.useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start center", "end center"]
   });
+
+  // Animated position for the gold dot
+  const dotY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
     <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 bg-ssc-navy overflow-hidden">
@@ -90,25 +58,34 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Desktop Version - Horizontal */}
-        <div className="hidden lg:block relative mt-16 mb-12">
-          {/* Steel TMT Bar */}
-          <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 px-4 z-0">
-            <SteelRebar />
+        <div className="hidden lg:block relative mt-16 mb-24">
+          {/* Silver Timeline Line */}
+          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gray-400/30 -translate-y-1/2 z-0">
+            <motion.div 
+              style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+              className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-200 shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+            />
+            {/* Moving Gold Dot (Horizontal for Desktop) */}
+            <motion.div 
+              style={{ left: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-ssc-navy"
+            />
           </div>
           
           <div className="grid grid-cols-4 gap-8 relative z-10">
             {milestones.map((ms, idx) => (
               <motion.div
                 key={idx}
-                style={{ 
-                  y: useTransform(scrollYProgress, [0, 1], [20, -20]),
-                  opacity: useTransform(scrollYProgress, [0.1 + (idx * 0.1), 0.3 + (idx * 0.1)], [0, 1])
-                }}
-                className="relative flex flex-col items-center text-center group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1, duration: 0.5 }}
+                className="relative flex flex-col items-center text-center group pt-8"
               >
-                <Connector />
+                {/* Connector Point */}
+                <div className="w-3 h-3 rounded-full bg-ssc-navy border border-gray-400 absolute top-[-7px] z-10" />
                 
-                <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-6 rounded-[12px] shadow-premium-strong w-full transition-all duration-500 group-hover:bg-ssc-steel-dark/90 group-hover:border-ssc-gold/30 group-hover:-translate-y-1">
+                <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-6 rounded-[12px] shadow-premium-strong w-full transition-all duration-500 group-hover:bg-ssc-steel-dark/90 group-hover:border-ssc-gold/30">
                   <span className="text-micro text-ssc-gold block mb-2 uppercase font-bold tracking-widest">
                     {ms.year}
                   </span>
@@ -126,22 +103,32 @@ export const SteelTimeline = () => {
 
         {/* Mobile Version - Vertical */}
         <div className="lg:hidden relative flex flex-col items-center pt-4">
-          {/* Vertical Steel TMT Bar */}
-          <div className="absolute left-6 top-0 bottom-0 -translate-x-1/2 z-0">
-            <SteelRebar isVertical={true} />
+          {/* Silver Vertical Line */}
+          <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-gray-400/30 -translate-x-1/2 z-0">
+            {/* Animated Silver Path */}
+            <motion.div 
+              style={{ scaleY: scrollYProgress, transformOrigin: "top" }}
+              className="absolute inset-0 bg-gradient-to-b from-gray-400 to-gray-200 shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+            />
+            {/* Moving Gold Dot */}
+            <motion.div 
+              style={{ top: dotY }}
+              className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-ssc-navy"
+            />
           </div>
           
-          <div className="flex flex-col gap-12 w-full relative z-10">
+          <div className="flex flex-col gap-10 w-full relative z-10">
             {milestones.map((ms, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.6 }}
                 className="relative flex items-start w-full pl-6 group"
               >
-                <Connector isMobile={true} />
+                {/* Static Milestone Dot */}
+                <div className="absolute left-[24px] top-6 -translate-x-1/2 w-2 h-2 rounded-full bg-gray-400/50 z-10" />
                 
                 <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-5 rounded-[12px] shadow-premium-strong w-full ml-10">
                   <span className="text-micro text-ssc-gold block mb-1 uppercase font-bold tracking-widest">
