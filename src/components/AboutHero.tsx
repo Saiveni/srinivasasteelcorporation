@@ -90,8 +90,8 @@ export const AboutHero = () => {
             <div className="w-full lg:w-[52%] text-left">
               <motion.div variants={itemVariants} className="flex items-center gap-3 mb-7">
                 <div className="w-10 h-[1px] bg-primary" />
-                <span className="text-primary text-micro tracking-[0.5em] uppercase">
-                  EST. 1994 • VIJAYAWADA, ANDHRA PRADESH
+                <span className="text-primary text-micro uppercase">
+                  ABOUT SRINIVASA STEEL CORPORATION
                 </span>
               </motion.div>
 
@@ -99,23 +99,10 @@ export const AboutHero = () => {
                 <motion.h1
                   custom={0}
                   variants={headlineVariants}
-                  className="text-[40px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-bold text-white uppercase tracking-tighter italic"
+                  className="text-h1 text-white mb-8 uppercase"
                 >
-                  SRINIVASA
-                </motion.h1>
-                <motion.h1
-                  custom={1}
-                  variants={headlineVariants}
-                  className="text-[40px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-bold text-primary uppercase tracking-tighter italic"
-                >
-                  STEEL
-                </motion.h1>
-                <motion.h1
-                  custom={2}
-                  variants={headlineVariants}
-                  className="text-[40px] sm:text-[64px] lg:text-[76px] leading-[0.92] font-bold text-white uppercase tracking-tighter italic"
-                >
-                  CORPORATION
+                  BUILT ON STEEL. <br />
+                  <span className="text-primary">BUILT ON TRUST.</span>
                 </motion.h1>
               </div>
 
@@ -126,7 +113,7 @@ export const AboutHero = () => {
               >
                 {categories.map((cat, i) => (
                   <div key={cat} className="flex items-center gap-5">
-                    <span className="text-white/80 text-[12px] lg:text-[13px] font-bold tracking-[0.35em] uppercase">
+                    <span className="text-primary text-micro uppercase">
                       {cat}
                     </span>
                     {i < categories.length - 1 && (
@@ -143,17 +130,17 @@ export const AboutHero = () => {
 
                 <div className="flex items-center gap-8 lg:gap-10">
                   <div className="flex flex-col">
-                    <span className="text-white text-3xl lg:text-4xl font-bold italic tracking-tighter">30+</span>
+                    <span className="text-h3 text-white italic">30+</span>
                     <span className="text-primary/50 text-micro mt-1">Years Experience</span>
                   </div>
                   <div className="w-[1px] h-12 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-white text-3xl lg:text-4xl font-bold italic tracking-tighter">3</span>
+                    <span className="text-h3 text-white italic">3</span>
                     <span className="text-primary/50 text-micro mt-1">Regional Yards</span>
                   </div>
                   <div className="w-[1px] h-12 bg-white/10" />
                   <div className="flex flex-col">
-                    <span className="text-primary text-3xl lg:text-4xl font-bold italic tracking-tighter">MoU</span>
+                    <span className="text-h3 text-primary italic">MoU</span>
                     <span className="text-primary/50 text-micro mt-1">Dealer Status</span>
                   </div>
                 </div>
