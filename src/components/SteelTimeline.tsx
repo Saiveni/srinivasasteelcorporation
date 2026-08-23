@@ -60,7 +60,7 @@ export const SteelTimeline = () => {
         {/* Desktop Version - Horizontal */}
         <div className="hidden lg:block relative mt-16 mb-24">
           {/* Silver Timeline Line */}
-          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-gray-400/30 -translate-y-1/2 z-0">
+          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-ssc-navy/10 -translate-y-1/2 z-0">
             <motion.div 
               style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
               className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-200 shadow-[0_0_8px_rgba(255,255,255,0.2)]"
