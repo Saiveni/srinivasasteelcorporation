@@ -33,6 +33,7 @@ function AboutPage() {
       {/* 04 — BUSINESS AREAS / SPECIFICATION PANELS */}
       <AboutBusinessCards />
 
+
       {/* 04 — INDUSTRIAL TIMELINE */}
       <SteelTimeline />
 
