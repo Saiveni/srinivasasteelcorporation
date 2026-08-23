@@ -57,46 +57,55 @@ export const SteelTimeline = () => {
           </motion.div>
         </div>
 
-        {/* Desktop Version - Horizontal */}
-        <div className="hidden lg:block relative mt-16 mb-24">
-          {/* Silver Timeline Line */}
-          <div className="absolute top-1/2 left-0 w-full h-[2px] bg-ssc-navy/10 -translate-y-1/2 z-0">
+        {/* Desktop Version - Horizontal Structural Design */}
+        <div className="hidden lg:block relative mt-24 mb-32">
+          {/* Main Horizontal Steel Line - Positioned ABOVE cards */}
+          <div className="absolute top-0 left-0 w-full h-[6px] bg-gradient-to-b from-[#b8bec7] via-[#e6e8ec] to-[#b8bec7] rounded-full shadow-[0_2px_4px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.8)] z-20">
+            {/* Animated Progress Overlay */}
             <motion.div 
               style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-              className="absolute inset-0 bg-gradient-to-r from-gray-400 to-gray-200 shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+              className="absolute inset-0 bg-gradient-to-r from-ssc-gold via-ssc-gold to-ssc-gold-dark rounded-full shadow-[0_0_10px_rgba(212,175,55,0.4)]"
             />
-            {/* Moving Gold Dot (Horizontal for Desktop) */}
+            
+            {/* Moving Gold Focus Node */}
             <motion.div 
               style={{ left: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
-              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.8)] z-20 border-2 border-[#f5f6f7]"
+              className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-5 h-5 rounded-full bg-ssc-gold shadow-[0_0_20px_rgba(212,175,55,0.6)] z-30 border-2 border-white"
             />
           </div>
           
-          <div className="grid grid-cols-4 gap-8 relative z-10">
+          <div className="grid grid-cols-4 gap-8 relative z-10 pt-1">
             {milestones.map((ms, idx) => (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="relative flex flex-col items-center text-center group pt-8"
-              >
-                {/* Connector Point */}
-                <div className="w-3 h-3 rounded-full bg-[#f5f6f7] border border-ssc-navy/30 absolute top-[-7px] z-10" />
+              <div key={idx} className="relative flex flex-col items-center pt-8">
+                {/* Structural Vertical Connector - Connecting card up to the line */}
+                <div className="absolute top-[-4px] left-1/2 -translate-x-1/2 w-[2px] h-12 bg-gradient-to-b from-[#b8bec7] to-transparent z-0 opacity-50" />
                 
-                <div className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-6 rounded-[12px] shadow-premium-strong w-full transition-all duration-500 group-hover:bg-ssc-steel-dark/90 group-hover:border-ssc-gold/30">
-                  <span className="text-micro text-ssc-gold block mb-2 uppercase font-bold tracking-widest">
-                    {ms.year}
-                  </span>
-                  <h4 className="text-ssc-on-dark-primary mb-2 text-base font-bold">
-                    {ms.title}
-                  </h4>
-                  <p className="text-sm text-ssc-on-dark-body leading-relaxed">
-                    {ms.description}
-                  </p>
-                </div>
-              </motion.div>
+                {/* Node Point on the line */}
+                <div className="absolute top-[-3px] left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-ssc-gold-dark z-30 shadow-sm" />
+                
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
+                  className="w-full mt-4"
+                >
+                  <div className="bg-white border border-ssc-navy/5 p-7 rounded-[12px] shadow-[0_10px_30px_rgba(0,0,0,0.05)] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 group relative overflow-hidden">
+                    {/* Subtle metallic corner accent */}
+                    <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl from-ssc-gold/5 to-transparent pointer-events-none" />
+                    
+                    <span className="text-micro text-ssc-gold block mb-3 uppercase font-bold tracking-[0.2em]">
+                      {ms.year}
+                    </span>
+                    <h4 className="text-ssc-navy mb-3 text-lg font-bold tracking-tight">
+                      {ms.title}
+                    </h4>
+                    <p className="text-[14px] text-ssc-gray-body leading-relaxed">
+                      {ms.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
             ))}
           </div>
         </div>
