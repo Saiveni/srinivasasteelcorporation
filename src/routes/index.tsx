@@ -38,25 +38,18 @@ function HomePage() {
       <BrandStrip />
       <div className="bg-white py-16 lg:py-24 border-t border-ssc-navy/5">
         <div className="container-wide">
-          <div className="flex flex-col lg:flex-row items-start justify-between gap-6 mb-12">
-            <div>
-              <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
-                VISUAL PORTFOLIO
-              </span>
-              <h2 className="text-h2 text-ssc-navy uppercase">
+          <div className="flex flex-col items-start gap-4 mb-10">
+            <span className="text-micro">
+              VISUAL PORTFOLIO
+            </span>
+            <div className="flex flex-col gap-2">
+              <h2 className="text-ssc-navy">
                 STEEL IN <span className="text-ssc-gold-dark">ELEMENT.</span>
               </h2>
-              <p className="text-body text-ssc-gray-body max-w-sm mt-4">
+              <p className="text-body text-ssc-gray-body max-w-sm">
                 A technical perspective of our products and processing facilities.
               </p>
             </div>
-            {/* Fine structural grid element for industrial feel */}
-            <div className="hidden lg:block w-32 h-32 opacity-10" 
-                 style={{ 
-                   backgroundImage: `linear-gradient(to right, var(--ssc-navy) 1px, transparent 1px), linear-gradient(to bottom, var(--ssc-navy) 1px, transparent 1px)`,
-                   backgroundSize: '20px 20px'
-                 }} 
-            />
           </div>
           <SteelGallery isHomePage={true} />
         </div>

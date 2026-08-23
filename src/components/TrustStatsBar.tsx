@@ -30,7 +30,7 @@ const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatIt
         <Icon size={20} strokeWidth={1.5} />
       </div>
 
-      <div className="text-h2 text-ssc-on-dark-primary leading-none mb-3">
+      <div className="text-ssc-on-dark-primary leading-none mb-3 text-[32px] lg:text-[40px] font-bold">
         {displayValue}{suffix}
       </div>
 
@@ -92,10 +92,10 @@ export const TrustStatsBar = () => {
           <div className="px-8 py-12 lg:px-16 lg:py-20">
             {/* Header Area */}
             <div className="mb-16 border-b border-ssc-on-dark-primary/5 pb-12">
-              <h3 className="text-ssc-gold text-micro uppercase mb-4">
+              <h3 className="text-micro mb-4">
                 COMPANY CREDIBILITY
               </h3>
-              <h2 className="text-h3 text-ssc-on-dark-primary uppercase">
+              <h2 className="text-ssc-on-dark-primary">
                 ESTABLISHED QUALITY. RELIABLE PERFORMANCE.
               </h2>
             </div>

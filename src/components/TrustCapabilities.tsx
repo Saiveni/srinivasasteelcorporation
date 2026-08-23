@@ -75,7 +75,7 @@ export const TrustCapabilities = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: cubicBezier, delay: 0.4 } }
                 }}
-                className="text-h2 text-ssc-on-dark-primary mb-7 lg:mb-10 uppercase tracking-[-1px] lg:tracking-[-1.5px] leading-[1.05]"
+                className="text-ssc-on-dark-primary mb-7 lg:mb-10 uppercase tracking-[-0.02em] leading-[1.05]"
               >
                 CONSISTENT QUALITY. <br />
                 <span className="text-ssc-gold">RELIABLE</span> <br />
