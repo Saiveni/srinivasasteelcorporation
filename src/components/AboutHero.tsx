@@ -214,11 +214,11 @@ export const AboutHero = () => {
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-[1px] bg-primary" />
-                <span className="text-primary text-micro">
-                  Our Company
+                <span className="text-micro text-primary uppercase">
+                  COMPANY STORY
                 </span>
               </div>
-              <h2 className="text-foreground italic uppercase">
+              <h2 className="text-h2 text-foreground mb-8 uppercase">
                 A LEGACY BUILT ON <span className="text-primary">PRECISION.</span>
               </h2>
             </motion.div>
@@ -231,17 +231,17 @@ export const AboutHero = () => {
               className="w-full lg:w-1/2"
             >
               <div className="max-w-xl">
-                <p className="text-ssc-gray-body text-body-large mb-12">
+                <p className="text-body text-foreground/70 mb-12">
                   Since our inception, Srinivasa Steel Corporation has been at the forefront of the steel industry, bridging the gap between quality manufacturing and reliable construction supply. Our journey is defined by a commitment to excellence, technological adoption in decoiling, and fostering long-term partnerships with India's leading steel producers.
                 </p>
 
                 <div className="grid grid-cols-2 gap-10 pt-10 border-t border-border/5">
                   <div>
-                    <span className="text-foreground text-3xl lg:text-4xl font-bold italic tracking-tighter">100k+</span>
+                    <span className="text-h3 text-foreground italic">100k+</span>
                     <span className="text-ssc-gray-secondary text-micro block mt-2">Tons Delivered</span>
                   </div>
                   <div>
-                    <span className="text-foreground text-3xl lg:text-4xl font-bold italic tracking-tighter">500+</span>
+                    <span className="text-h3 text-foreground italic">500+</span>
                     <span className="text-ssc-gray-secondary text-micro block mt-2">Major Projects</span>
                   </div>
                 </div>
