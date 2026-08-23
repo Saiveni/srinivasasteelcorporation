@@ -310,8 +310,8 @@ export const SteelTimeline = () => {
                 </div>
               ))}
             </div>
-
         </div>
+
       </div>
     </section>
   );
