@@ -280,7 +280,7 @@ const MobileCarousel = () => {
       </div>
       
       {/* Technical Data End */}
-      <div className="mt-8 px-6 pb-2 opacity-[0.05] border-t border-white/10 pt-4">
+      <div className="mt-8 px-6 pb-2 opacity-[0.05] border-t border-white/10 pt-4 mb-2">
         <div className="w-8 h-[1px] bg-white mb-2" />
         <span className="text-[8px] font-technical tracking-widest text-white uppercase">END-SYS-OUTPUT</span>
       </div>

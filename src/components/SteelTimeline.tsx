@@ -148,7 +148,7 @@ const ClampHook = ({ position, orientation, delay, cardData }: any) => {
 
 export const SteelTimeline = () => {
   return (
-    <section id="timeline" className="relative py-12 lg:py-32 bg-[#080E1A] overflow-hidden">
+    <section id="timeline" className="relative py-12 lg:py-20 bg-[#080E1A] overflow-hidden">
       {/* Background System */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03]" 
