@@ -62,8 +62,8 @@ export const HeroSection = () => {
   }, []);
 
   const currentImage = HERO_IMAGES[currentIndex] || HERO_IMAGES[0];
-  const imageUrl = currentImage?.url || "";
-  const imageAlt = currentImage?.alt || "";
+  const imageUrl = currentImage.url;
+  const imageAlt = currentImage.alt;
   const imagePos = isMobile ? currentImage.position.mobile : currentImage.position.desktop;
 
   const imageElement = (
