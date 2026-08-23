@@ -31,6 +31,7 @@ const businessAreas = [
 
 
 
+
     alt: "Premium steel industrial facility representing 30 years of excellence",
     meta: [
       { label: "ESTABLISHED", value: "1994" },
