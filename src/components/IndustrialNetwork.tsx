@@ -109,10 +109,10 @@ export const IndustrialNetwork = () => {
                   onClick={() => setActiveId(isActive ? null : loc.id)}
                 >
                   {/* Machined Metallic Marker */}
-                  <motion.div 
-                    animate={isActive ? { scale: 1.2 } : { scale: 1 }}
-                    className="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-gradient-to-br from-[#1A2333] to-[#050A14] border-2 border-ssc-gold shadow-[0_0_20px_rgba(197,160,89,0.3)] flex items-center justify-center relative z-10 transition-all"
-                  >
+                    <motion.div 
+                      animate={isActive ? { scale: 1.2 } : { scale: 1 }}
+                      className="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-[#0C121E] border-2 border-ssc-gold shadow-[0_0_20px_rgba(197,160,89,0.3)] flex items-center justify-center relative z-10 transition-all"
+                    >
                     <Icon size={isActive ? 20 : 16} className="text-ssc-gold" />
                     
                     {/* Glow effect */}
@@ -133,7 +133,7 @@ export const IndustrialNetwork = () => {
                         initial={{ opacity: 0, scale: 0.9, y: 10 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 10 }}
-                        className={`absolute z-[100] w-[280px] sm:w-[340px] bg-[#0C121E] border border-ssc-gold/30 p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] pointer-events-none hidden lg:block
+                        className={`absolute z-[100] w-[280px] sm:w-[340px] bg-[#0C121E] border border-ssc-gold/30 p-6 rounded-2xl shadow-[0_40px_80px_rgba(0,0,0,0.8)] pointer-events-none hidden lg:block opacity-100 scale-100 y-0
                           ${parseFloat(loc.coords.x) > 60 ? '-left-[360px]' : 'left-20'}
                           ${parseFloat(loc.coords.y) > 70 ? 'bottom-0' : 'top-0'}
                         `}

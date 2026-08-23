@@ -51,9 +51,9 @@ export const WhyChooseUs = () => {
   return (
     <section id="why-ssc" className="relative py-24 lg:py-32 bg-[#E8EBEF] overflow-hidden">
       {/* Precision Blueprint Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+      <div className="absolute inset-0 pointer-events-none">
         <div 
-          className="absolute inset-0" 
+          className="absolute inset-0 opacity-[0.05]" 
           style={{
             backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)',
             backgroundSize: '40px 40px'
@@ -112,7 +112,7 @@ export const WhyChooseUs = () => {
               </div>
 
               <div className="flex items-center gap-5 mb-6">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#1A2333] to-[#050A14] border border-ssc-gold/20 flex items-center justify-center shadow-lg group-hover:border-ssc-gold transition-colors duration-500">
+                <div className="w-14 h-14 rounded-2xl bg-[#0C121E] border border-ssc-gold/20 flex items-center justify-center shadow-lg group-hover:border-ssc-gold transition-colors duration-500">
                   <item.icon size={24} className="text-ssc-gold" />
                 </div>
                 <h4 className="text-white font-heading font-black italic text-xl sm:text-2xl leading-tight tracking-tight">
@@ -141,7 +141,7 @@ export const WhyChooseUs = () => {
           {/* Subtle background detail */}
           <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left bg-[#0C121E] p-10 lg:p-16 rounded-[24px]">
             <div>
               <h3 className="text-white text-[38px] lg:text-[64px] font-heading font-black italic uppercase leading-none tracking-tighter mb-4">
                 READY TO <span className="text-ssc-gold">STRENGTHEN</span><br />
