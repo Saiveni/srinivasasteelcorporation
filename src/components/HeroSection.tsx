@@ -3,27 +3,30 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
-
+import heroSteelWarehouse from "@/assets/images/hero-steel-warehouse.png.asset.json";
+import heroSteelRebar from "@/assets/images/hero-steel-rebar.png.asset.json";
+import heroSteelWire from "@/assets/images/hero-steel-wire.png.asset.json";
+import heroTmtSteel from "@/assets/images/hero-tmt-steel.png.asset.json";
 
 const HERO_IMAGES = [
   {
-    url: "https://images.unsplash.com/photo-1516774662748-bd6678f5e749?q=80&w=2000&auto=format&fit=crop",
-    alt: "Ultra-photorealistic stacked TMT steel rebar bundles with ribbed texture",
+    url: heroSteelWarehouse.url,
+    alt: "Industrial steel rebar warehouse with high-quality stock",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop",
-    alt: "Close-up cinematic shot of ribbed TMT reinforcement steel bars",
+    url: heroSteelRebar.url,
+    alt: "Premium bundles of ribbed TMT reinforcement steel bars",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1533044309907-0fa3413da946?q=80&w=2000&auto=format&fit=crop",
-    alt: "Organized industrial steel reinforcement rods in factory distribution",
+    url: heroSteelWire.url,
+    alt: "Industrial steel wire coils in distribution center",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop",
-    alt: "Cinematic commercial photography of TMT steel bundles for construction",
+    url: heroTmtSteel.url,
+    alt: "Close-up cinematic shot of TMT 550D steel rebar stacked",
     position: "center center"
   }
 ];
