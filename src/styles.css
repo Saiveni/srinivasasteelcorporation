@@ -118,16 +118,16 @@
   }
 
   h1 {
-    font-size: 36px;
+    font-size: 34px;
     font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
+    line-height: 1.05;
+    letter-spacing: -1px;
   }
 
   h2 {
     font-size: 30px;
     font-weight: 600;
-    line-height: 1.15;
+    line-height: 1.1;
   }
 
   h3 {
@@ -141,38 +141,42 @@
   }
 
   @media (min-width: 1024px) {
-    h1 { font-size: 56px; }
+    h1 { 
+      font-size: 56px; 
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+    }
     h2 { font-size: 40px; }
     h3 { font-size: 28px; }
     h4 { font-size: 20px; }
   }
 
   .text-body-large {
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 15px;
+    line-height: 1.6;
   }
   
   @media (min-width: 1024px) {
-    .text-body-large { font-size: 18px; }
+    .text-body-large { font-size: 18px; line-height: 1.65; }
   }
 
   .text-small { font-size: 14px; }
 
   .text-micro {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
   }
   
   @media (min-width: 1024px) {
-    .text-micro { font-size: 12px; }
+    .text-micro { font-size: 12px; letter-spacing: 0.16em; }
   }
 }
 
 @layer utilities {
   .section-padding {
-    @apply py-12 md:py-16 lg:py-24;
+    @apply py-12 lg:py-24;
   }
   
   .container-ssc {

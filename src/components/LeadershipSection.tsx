@@ -112,9 +112,9 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-ssc-steel-light overflow-hidden">
+    <section id="leadership" className="relative py-16 lg:py-24 bg-ssc-steel-light overflow-hidden">
       {/* Precision Blueprint Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
+      <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
         <div 
           className="absolute inset-0" 
           style={{
@@ -131,16 +131,16 @@ export const LeadershipSection = () => {
       </div>
 
       <div className="container-wide relative z-10 px-6 max-w-[1280px] mx-auto">
-        <div className="text-center mb-24 lg:mb-32">
+        <div className="text-center mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-5 lg:mb-7">
               <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
-              <span className="text-micro text-ssc-gold-dark uppercase">
+              <span className="text-micro text-ssc-gold-dark uppercase tracking-[0.16em]">
                 LEADERSHIP TEAM
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
@@ -151,7 +151,7 @@ export const LeadershipSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 max-w-[1200px] mx-auto relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-[1200px] mx-auto relative">
           {leaders.map((leader, idx) => (
             <LeaderCard key={leader.name} leader={leader} index={idx} />
           ))}

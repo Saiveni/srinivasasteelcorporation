@@ -49,7 +49,7 @@ const strengths = [
 
 export const WhyChooseUs = () => {
   return (
-    <section id="why-ssc" className="relative py-24 lg:py-32 bg-ssc-steel-light overflow-hidden">
+    <section id="why-ssc" className="relative py-16 lg:py-24 bg-ssc-steel-light overflow-hidden">
       {/* Precision Blueprint Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div 
@@ -62,8 +62,8 @@ export const WhyChooseUs = () => {
       </div>
 
       <div className="container-wide relative z-10 px-6 max-w-[1400px] mx-auto">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-end mb-20 lg:mb-32">
-          <div className="w-full lg:w-1/2">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-end mb-16 lg:mb-24">
+          <div className="w-full lg:w-[45%]">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -83,7 +83,7 @@ export const WhyChooseUs = () => {
             </motion.div>
           </div>
           
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-[55%]">
             <p className="text-body text-ssc-gray-body max-w-xl">
               From premium TMT rebar to industrial decoiling, we provide the physical foundation for regional infrastructure development.
             </p>

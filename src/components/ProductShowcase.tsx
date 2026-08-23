@@ -107,7 +107,7 @@ const ProductShowcase = () => {
     <section id="products" className="relative section-spacing bg-white overflow-hidden">
       {/* Architectural Background Grid */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-[0.015]" 
+        className="absolute inset-0 pointer-events-none opacity-[0.05]" 
         style={{ 
           backgroundImage: `
             linear-gradient(to right, var(--ssc-navy) 1px, transparent 1px),
@@ -119,8 +119,8 @@ const ProductShowcase = () => {
 
       <div className="container-wide relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 lg:mb-24 gap-8">
-          <div className="max-w-[620px]">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-20 gap-8">
+          <div className="max-w-[650px]">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -133,7 +133,7 @@ const ProductShowcase = () => {
               <h2 className="text-h2 text-ssc-navy mb-6 uppercase">
                 Explore Our <span className="text-ssc-gold-dark">Products</span>
               </h2>
-              <p className="text-body text-ssc-gray-body">
+              <p className="text-body text-ssc-gray-body max-w-[560px]">
                 High-performance steel products engineered for demanding applications. Consistent quality and reliable supply for construction and manufacturing.
               </p>
             </motion.div>
@@ -152,7 +152,7 @@ const ProductShowcase = () => {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {products.map((product, index) => (
             <ProductCard key={product.index} product={product} index={index} />
           ))}
