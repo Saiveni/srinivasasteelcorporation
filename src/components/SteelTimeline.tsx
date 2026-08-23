@@ -51,7 +51,7 @@ export const SteelTimeline = () => {
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold/40" />
             </div>
-            <h2 className="text-ssc-on-dark-primary">
+            <h2 className="text-ssc-navy">
               COMPANY <span className="text-ssc-gold">LEGACY</span>
             </h2>
           </motion.div>
