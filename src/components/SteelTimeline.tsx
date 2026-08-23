@@ -36,7 +36,7 @@ export const SteelTimeline = () => {
 
   return (
     <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-visible bg-[#f5f6f7] z-10">
-      <div className="container-wide relative z-10 mx-auto pt-16 sm:pt-20">
+      <div className="container-wide relative z-10 mx-auto sm:pt-20 pt-[120px]">
         <div className="text-center mb-12 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
