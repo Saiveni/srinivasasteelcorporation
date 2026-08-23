@@ -42,7 +42,7 @@ export const Footer = () => {
               <li><Link to="/about" className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">About</Link></li>
               <li><Link to="/products" className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Products</Link></li>
               <li><Link to="/gallery" className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Gallery</Link></li>
-              <li><Link to="/contact" className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Contact</Link></li>
+              <li><Link to="/contact" search={{ product: "" }} className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Contact</Link></li>
             </ul>
           </div>
 
