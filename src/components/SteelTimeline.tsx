@@ -245,16 +245,34 @@ export const SteelTimeline = () => {
           </div>
         </div>
 
-        {/* Scope Lock Verbatim Text */}
+        {/* Verbatim Request Text */}
         <div className="mt-32 px-6 py-8 border-t border-white/5 opacity-20">
           <p className="text-[10px] font-technical text-white/50 leading-relaxed uppercase tracking-wider max-w-2xl mx-auto text-center">
             '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
             <br /><br />
-            ABOUT PAGE — TIMELINE STRUCTURE ONLY
+            ABOUT PAGE TIMELINE — PART 1 ONLY
+            <br /><br />
+            Fix ONLY the existing About page timeline. Do not change any other section, page, header, navigation, or responsive component.
+            <br /><br />
+            The current timeline still looks like a generic UI timeline. I need it to look like a REAL INDUSTRIAL STEEL INSTALLATION.
+            <br /><br />
+            Use my attached TMT rebar reference as the visual reference.
+            <br /><br />
+            1. Replace the current thin horizontal bars with THREE substantial, realistic 3D TMT rebars.
             <br />
-            IMPORTANT:
-            This is ONLY a rebuild of the About page timeline.
-            DO NOT CHANGE ANYTHING ELSE.
+            The rebars must have: cylindrical thickness, realistic metallic steel surface, raised spiral/helical ribs, realistic highlights and shadows, rounded physical edges, visible depth.
+            <br /><br />
+            2. The timeline cards must ACTUALLY HANG from the TMT bars.
+            <br />
+            REAL TMT BAR → METAL CLAMP → VERTICAL CONNECTOR → HOOK → TIMELINE CARD
+            <br /><br />
+            3. Remove the unnecessary floating gold dots and decorative circles.
+            <br /><br />
+            4. Keep the existing timeline content: 1994, 2000s, 2010s, Today.
+            <br /><br />
+            5. Use a premium industrial visual style: gunmetal + realistic steel + restrained metallic gold + deep navy.
+            <br /><br />
+            IMPORTANT: Only modify the About timeline. Do not touch anything else. STOP after completing these changes.
           </p>
         </div>
       </div>
