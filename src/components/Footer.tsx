@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 import { Mail, Phone, MapPin, ShieldCheck, Truck, Users, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 // Lucide-react sometimes has issues with specific exports depending on version, 
@@ -46,6 +46,14 @@ const SocialIcon = ({ type }: { type: 'fb' | 'li' | 'ig' | 'yt' }) => {
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [activeAccordion, setActiveAccordion] = useState<string | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleAccordion = (id: string) => {
     setActiveAccordion(activeAccordion === id ? null : id);
@@ -261,10 +269,10 @@ export const Footer = () => {
                     <div className="md:hidden text-white/20"><ChevronDown size={12} /></div>
                   </div>
                   <AnimatePresence>
-                    {(activeAccordion === item.id || window.innerWidth >= 768) && (
+                    {(activeAccordion === item.id || isDesktop) && (
                       <motion.p 
-                        initial={window.innerWidth < 768 ? { height: 0, opacity: 0 } : {}}
-                        animate={window.innerWidth < 768 ? { height: 'auto', opacity: 0.4 } : { opacity: 0.4 }}
+                        initial={!isDesktop ? { height: 0, opacity: 0 } : {}}
+                        animate={!isDesktop ? { height: 'auto', opacity: 0.4 } : { opacity: 0.4 }}
                         className="text-[9px] text-white uppercase mt-1 overflow-hidden"
                       >
                         {item.desc}
