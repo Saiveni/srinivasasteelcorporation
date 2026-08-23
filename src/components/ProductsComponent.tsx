@@ -271,11 +271,10 @@ export const ProductsComponent = () => {
              }} 
         />
         <div className="container-wide relative z-10 flex flex-col items-center">
-          <h2 className="text-[42px] lg:text-[64px] font-body font-semibold leading-[1.1] mb-8 tracking-tight uppercase">
-            LOOKING FOR THE <br />
-            <span className="text-primary">RIGHT STEEL?</span>
+          <h2 className="text-h2 text-white mb-8 uppercase">
+            REQUEST A <span className="text-primary">QUOTE.</span>
           </h2>
-          <p className="text-white/60 text-lg lg:text-xl mb-12 max-w-[600px] mx-auto">
+          <p className="text-body text-white/60 mb-12 max-w-[600px] mx-auto">
             Tell us your requirement and our team can help you with the appropriate steel product or decoiling solution.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -317,25 +316,25 @@ export const ProductsComponent = () => {
                 <span className="text-primary text-[10px] font-body font-bold tracking-[0.3em] uppercase mb-2 block">
                   PRODUCT SPECIFICATIONS
                 </span>
-                <DialogTitle className="text-white text-[32px] lg:text-[42px] font-body font-semibold uppercase leading-none m-0">
+                <DialogTitle className="text-h3 text-white uppercase m-0">
                   {selectedProduct?.name}
                 </DialogTitle>
               </div>
             </div>
             
             <div className="p-8 lg:p-10">
-              <p className="text-[#64748B] text-lg leading-relaxed mb-8">
+              <p className="text-body text-foreground/70 mb-8">
                 {selectedProduct?.longDescription}
               </p>
               
               <div className="mb-10">
-                <h4 className="text-[11px] font-body font-bold text-foreground uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                <h4 className="text-micro text-foreground uppercase mb-6 flex items-center gap-3">
                   <span className="w-8 h-[1px] bg-primary" />
                   Technical Details
                 </h4>
                 <div className="flex flex-wrap gap-3">
                   {selectedProduct?.specs.map((spec) => (
-                    <div key={spec} className="px-5 py-2.5 bg-[#F4F6F8] border border-black/[0.03] rounded-full text-foreground text-[13px] font-body font-bold tracking-wider flex items-center gap-2">
+                    <div key={spec} className="px-5 py-2.5 bg-ssc-steel-light border border-black/[0.03] rounded-full text-foreground text-small font-bold uppercase tracking-wider flex items-center gap-2">
                       <CheckCircle2 size={14} className="text-primary" />
                       {spec}
                     </div>
