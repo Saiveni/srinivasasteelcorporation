@@ -150,7 +150,7 @@ export const LeadershipSection = () => {
           transition={{ delay: 0.5, duration: 1.5 }}
           className="text-center mt-20"
         >
-          <span className="text-ssc-navy/20 text-[10px] font-body font-bold tracking-[0.6em] uppercase">
+          <span className="text-white/10 text-[10px] font-body font-bold tracking-[0.6em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION
           </span>
         </motion.div>
