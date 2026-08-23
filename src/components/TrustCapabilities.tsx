@@ -75,11 +75,11 @@ export const TrustCapabilities = () => {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: cubicBezier, delay: 0.4 } }
                 }}
-                className="text-[42px] lg:text-[76px] font-body font-bold text-white leading-[0.95] mb-8 tracking-tighter uppercase"
+                className="text-h2 text-white mb-8 uppercase"
               >
-                BUILT ON <br />
-                <span className="text-[#D4AF37]">30+ YEARS</span> <br />
-                OF TRUST.
+                CONSISTENT QUALITY. <br />
+                <span className="text-primary">RELIABLE</span> <br />
+                SUPPLY.
               </motion.h2>
 
               {/* Description - Reveal 3 */}
