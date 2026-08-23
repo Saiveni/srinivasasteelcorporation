@@ -283,6 +283,11 @@ const MobileCarousel = () => {
       <div className="mt-8 px-6 pb-2 opacity-[0.05] border-t border-white/10 pt-4 mb-2">
         <div className="w-8 h-[1px] bg-white mb-2" />
         <span className="text-[8px] font-technical tracking-widest text-white uppercase">END-SYS-OUTPUT</span>
+        <p className="text-[8px] mt-2">
+          '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+          <br />
+          In mobile version timeline in about section used This type of steel rod at the side this silver colour steel rod use this attached typed steel rod in the timeline
+        </p>
       </div>
     </div>
   );
