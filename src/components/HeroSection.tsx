@@ -7,23 +7,23 @@ import { useState, useEffect } from "react";
 
 const HERO_IMAGES = [
   {
-    url: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
-    alt: "Premium TMT reinforcement steel coils",
+    url: "https://images.unsplash.com/photo-1516774662748-bd6678f5e749?q=80&w=2000&auto=format&fit=crop",
+    alt: "Ultra-photorealistic stacked TMT steel rebar bundles with ribbed texture",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=1200&auto=format&fit=crop",
-    alt: "Bundled TMT steel bars ready for dispatch",
+    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop",
+    alt: "Close-up cinematic shot of ribbed TMT reinforcement steel bars",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop",
-    alt: "Industrial steel reinforcement stock warehouse",
+    url: "https://images.unsplash.com/photo-1533044309907-0fa3413da946?q=80&w=2000&auto=format&fit=crop",
+    alt: "Organized industrial steel reinforcement rods in factory distribution",
     position: "center center"
   },
   {
-    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=1200&auto=format&fit=crop",
-    alt: "High-quality ribbed TMT reinforcement steel detail",
+    url: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop",
+    alt: "Cinematic commercial photography of TMT steel bundles for construction",
     position: "center center"
   }
 ];
@@ -77,25 +77,27 @@ export const HeroSection = () => {
   );
 
   return (
-    <section className="relative w-full bg-ssc-steel-light pt-0 lg:h-[calc(100vh-100px)] min-h-[600px] lg:min-h-[700px] flex items-center">
-      {/* Mobile Hero Background (Full Bleed Carousel) */}
-      <div className="absolute inset-0 z-0 lg:hidden">
+    <section className="relative w-full bg-ssc-navy pt-0 lg:h-[calc(100vh-72px)] min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
+      {/* Full-Screen, Full-Width Hero Background (Full Bleed Carousel) */}
+      <div className="absolute inset-0 z-0">
         {imageElement}
-        {/* Cinematic Dark Navy Overlay for Mobile */}
+        
+        {/* Cinematic Dark Navy Gradient Overlay */}
         <div 
           className="absolute inset-0 z-10" 
           style={{
-            background: 'linear-gradient(180deg, rgba(11,19,32,0.6) 0%, rgba(11,19,32,0.75) 55%, rgba(11,19,32,0.9) 100%)'
+            background: 'linear-gradient(90deg, rgba(11,19,32,0.9) 0%, rgba(11,19,32,0.6) 40%, rgba(11,19,32,0.1) 100%)'
           }} 
         />
+        {/* Bottom Fade for section transition */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-ssc-navy to-transparent z-10" />
       </div>
 
-      <div className="container-ssc relative z-10 h-full">
-        <div className="flex flex-col lg:flex-row items-stretch h-full pt-[80px] sm:pt-[90px] lg:pt-0">
+      <div className="container-ssc relative z-20 h-full">
+        <div className="flex flex-col lg:flex-row items-center h-full pt-[80px] sm:pt-[90px] lg:pt-0">
           
-          {/* Content Area: 45% Width on Desktop, Full Width on Mobile */}
-          <div className="w-full lg:w-[45%] flex flex-col justify-center py-16 lg:py-12 z-30 lg:px-0 relative">
-
+          {/* Content Area: Left 45% Width on Desktop */}
+          <div className="w-full lg:w-[45%] flex flex-col justify-center py-16 lg:py-12 lg:px-0 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -104,39 +106,40 @@ export const HeroSection = () => {
             >
               {/* Eyebrow Label */}
               <div className="flex items-center gap-3 mb-5 lg:mb-7">
-                <span className="text-micro text-white lg:text-ssc-navy">
+                <span className="text-micro text-white/80">
                   ENGINEERED FOR STRENGTH
                 </span>
-                <span className="text-white/20 lg:text-ssc-navy/20">—</span>
+                <span className="text-white/20">—</span>
                 <span className="text-micro text-ssc-gold-dark">
                   EST. 1994
                 </span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-white lg:text-ssc-navy mb-7 lg:mb-10">
-                <span className="block mb-1">BUILDING STRENGTH.</span>
+              <h1 className="text-white mb-7 lg:mb-10 leading-[1.1]">
+                <span className="block mb-1">BUILDING</span>
+                <span className="block mb-1">STRENGTH.</span>
                 <span className="block">
-                  SHAPING <span className="text-ssc-gold-dark">TOMORROW.</span>
+                  SHAPING <span className="text-ssc-gold">TOMORROW.</span>
                 </span>
               </h1>
               
               {/* Description */}
-              <p className="text-body-large text-white/90 lg:text-ssc-gray-body max-w-[560px] mb-8 lg:mb-12">
+              <p className="text-body-large text-white/80 max-w-[500px] mb-8 lg:mb-12">
                 Engineered steel products for construction and industrial requirements. Reliable supply across Andhra Pradesh since 1994.
               </p>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-stretch sm:items-start">
                 <Link to="/products">
-                  <Button className="w-full sm:w-auto bg-ssc-gold text-ssc-navy hover:bg-ssc-on-dark-primary">
+                  <Button className="w-full sm:w-auto bg-ssc-gold text-ssc-navy hover:bg-ssc-gold/90 border-none">
                     EXPLORE PRODUCTS <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
                 <Link to="/contact" search={{ product: "" }}>
                   <Button
                     variant="outline"
-                    className="w-full sm:w-auto border-white lg:border-ssc-gold-dark text-white lg:text-ssc-gold-dark hover:bg-white/20 lg:hover:bg-ssc-gold-dark/10"
+                    className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10"
                   >
                     GET A QUOTE
                   </Button>
@@ -145,21 +148,8 @@ export const HeroSection = () => {
             </motion.div>
           </div>
           
-          {/* Right Side Steel Image Carousel: 54% Width - Desktop Only */}
-          <div className="hidden lg:block lg:w-[55%] relative min-h-full">
-            <div 
-              className="w-full h-full relative overflow-hidden"
-              style={{
-                clipPath: 'ellipse(100% 100% at 100% 50%)'
-              }}
-            >
-              {imageElement}
-              
-              {/* Subtle Metallic Color Overlay */}
-              <div className="absolute inset-0 bg-ssc-navy/10 mix-blend-multiply z-10 pointer-events-none" />
-            </div>
-          </div>
-
+          {/* Right side remains empty to show the TMT steel imagery in the background */}
+          <div className="hidden lg:block lg:w-[55%] h-full" />
         </div>
       </div>
     </section>
