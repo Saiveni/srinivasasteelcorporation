@@ -326,8 +326,8 @@ function ContactPage() {
                         <User size={20} className="text-foreground group-hover:text-white" />
                       </div>
                       <div>
-                        <p className="text-sm font-body font-bold text-foreground uppercase tracking-tight">{person.name}</p>
-                        <a href={`tel:${person.phone}`} className="text-lg font-body font-medium text-foreground hover:text-primary transition-colors block leading-tight mt-1 min-h-[44px] flex items-center">
+                        <p className="text-micro text-foreground/40 uppercase tracking-tight">{person.name}</p>
+                        <a href={`tel:${person.phone}`} className="text-body text-foreground hover:text-primary transition-colors block leading-tight mt-1 min-h-[44px] flex items-center">
                           {person.phone}
                         </a>
                       </div>
@@ -338,8 +338,8 @@ function ContactPage() {
                       <Mail size={20} className="text-foreground group-hover:text-white" />
                     </div>
                     <div>
-                      <p className="text-sm font-body font-bold text-foreground uppercase tracking-tight">Email Inquiries</p>
-                      <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-base font-body font-medium text-foreground hover:text-primary transition-colors break-all block leading-tight mt-1 min-h-[44px] flex items-center">
+                      <p className="text-micro text-foreground/40 uppercase tracking-tight">Email Inquiries</p>
+                      <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-body text-foreground hover:text-primary transition-colors break-all block leading-tight mt-1 min-h-[44px] flex items-center">
                         srinivasasteelcorporationvja@gmail.com
                       </a>
                     </div>
@@ -354,11 +354,11 @@ function ContactPage() {
                 transition={{ delay: 0.2 }}
                 className="bg-background p-10 rounded-[32px] text-white"
               >
-                <h3 className="text-xl font-body font-bold mb-8 uppercase tracking-tight">Requirement Scope</h3>
+                <h3 className="text-h4 text-white mb-8 uppercase">Requirement Scope</h3>
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase mb-4">TMT REBARS</h4>
-                    <ul className="grid grid-cols-2 gap-3 text-sm text-white/70">
+                    <h4 className="text-micro text-primary uppercase mb-4">TMT REBARS</h4>
+                    <ul className="grid grid-cols-2 gap-3 text-small text-white/70">
                       <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5 mm</li>
                       <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5.5 mm</li>
                       <li className="flex items-center gap-2"><CheckCircle2 size={12} className="text-primary" /> 5.5 mm TMT</li>
@@ -366,8 +366,8 @@ function ContactPage() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-primary text-[10px] font-body font-bold tracking-[0.2em] uppercase mb-4">DECOILING</h4>
-                    <p className="text-sm text-white/70 leading-relaxed">
+                    <h4 className="text-micro text-primary uppercase mb-4">DECOILING</h4>
+                    <p className="text-small text-white/70 leading-relaxed">
                       Custom cutting and straightening for applicable steel sizes and lengths.
                     </p>
                   </div>
