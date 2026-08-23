@@ -295,12 +295,12 @@ export const Navbar = () => {
                           {/* 3D Realistic Metallic Icons - Pure Object Visibility */}
                           <div className="w-12 h-12 flex items-center justify-center shrink-0">
                             <div 
-                              className="w-12 h-12 scale-[1.1] drop-shadow-[0_8px_12px_rgba(0,0,0,0.2)]"
+                              className="w-10 h-10 scale-[1.1] drop-shadow-sm"
                               style={{
                                 backgroundImage: `url('${steelIconsAssetV2.url}')`,
                                 backgroundSize: '100% 500%',
                                 backgroundPosition: `0 ${link.icon * 25}%`,
-                                filter: isActive ? 'contrast(1.1) brightness(1.1) drop-shadow(0 0 8px rgba(212,175,55,0.4))' : 'contrast(1.05) brightness(1.02)'
+                                filter: isActive ? 'contrast(1.1) brightness(1.1)' : 'contrast(1.05) brightness(1.02)'
                               }}
                             />
                           </div>
