@@ -192,7 +192,7 @@ export const SteelTimeline = () => {
         {/* Mobile Version - Vertical Rod on Left */}
         <div className="lg:hidden relative flex min-h-[1000px] pt-10">
           {/* Vertical Spine on Left */}
-          <div className="absolute left-2 top-0 bottom-0">
+          <div className="absolute left-[2px] top-0 bottom-0">
             <SteelRod orientation="vertical" />
           </div>
 
