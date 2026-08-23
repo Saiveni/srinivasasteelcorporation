@@ -7,23 +7,23 @@ import { useState, useEffect } from "react";
 
 const HERO_IMAGES = [
   {
-    url: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop",
-    alt: "Ultra-realistic high-quality TMT steel rebar bundles in industrial storage",
+    url: "https://images.unsplash.com/photo-1516774662748-bd6678f5e749?q=80&w=2000&auto=format&fit=crop",
+    alt: "Ultra-photorealistic stacked TMT steel rebar bundles with ribbed texture",
+    position: "center center"
+  },
+  {
+    url: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2000&auto=format&fit=crop",
+    alt: "Close-up cinematic shot of ribbed TMT reinforcement steel bars",
     position: "center center"
   },
   {
     url: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000&auto=format&fit=crop",
-    alt: "Ribbed steel reinforcement rods organized for construction",
-    position: "center center"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1533044309907-0fa3413da946?q=80&w=2000&auto=format&fit=crop",
-    alt: "Close-up of TMT rebar ribs and industrial steel textures",
+    alt: "Organized industrial steel reinforcement rods in factory distribution",
     position: "center center"
   },
   {
     url: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2000&auto=format&fit=crop",
-    alt: "Professional industrial photography of steel reinforcement stock",
+    alt: "Cinematic commercial photography of TMT steel bundles for construction",
     position: "center center"
   }
 ];
