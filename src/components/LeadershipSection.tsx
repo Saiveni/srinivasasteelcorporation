@@ -151,7 +151,7 @@ export const LeadershipSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-[1200px] mx-auto relative">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-[1200px] mx-auto relative items-stretch">
           {leaders.map((leader, idx) => (
             <LeaderCard key={leader.name} leader={leader} index={idx} />
           ))}
