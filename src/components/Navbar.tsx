@@ -136,10 +136,10 @@ export const Navbar = () => {
             <div className="w-[1px] h-7 sm:h-10 bg-[#0B1B33]/20 shadow-[0.5px_0_0_rgba(255,255,255,0.6)]" />
 
             <div className="flex flex-col justify-center">
-              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-body font-extrabold tracking-[0.01em] text-[#0B1B33] leading-none uppercase">
+              <span className="text-[12px] sm:text-[18px] lg:text-[20px] font-bold tracking-[0.01em] text-ssc-navy leading-none uppercase">
                 SRINIVASA <span className="font-bold">STEEL</span>
               </span>
-              <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-body font-black tracking-[0.25em] sm:tracking-[0.3em] text-[#C5A059] leading-none uppercase mt-0.5 sm:mt-1 drop-shadow-sm">
+              <span className="text-[8px] sm:text-[10px] lg:text-[12px] font-semibold tracking-[0.25em] sm:tracking-[0.3em] text-primary leading-none uppercase mt-0.5 sm:mt-1 drop-shadow-sm">
                 CORPORATION
               </span>
             </div>
