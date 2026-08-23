@@ -53,10 +53,10 @@ export const BrandStrip = () => {
                 ease: [0.21, 0.47, 0.32, 0.98]
               }}
               whileHover={{ y: -8 }}
-              className="group flex flex-col items-center text-center p-8 rounded-xl bg-ssc-steel-dark/30 border border-ssc-on-dark-primary/5 shadow-premium-soft hover:shadow-premium-medium hover:border-ssc-gold/20 transition-all duration-500"
+              className="group flex flex-col items-center text-center p-6 md:p-8 rounded-xl bg-ssc-steel-dark/30 border border-ssc-on-dark-primary/5 shadow-premium-soft hover:shadow-premium-medium hover:border-ssc-gold/20 transition-all duration-500"
             >
-              {/* Premium Logo Container - Expanded for visual prominence */}
-              <div className="relative w-full h-48 sm:h-56 flex items-center justify-center mb-8 px-4">
+              {/* Premium Logo Container - Expanded for visual prominence, compact on mobile */}
+              <div className="relative w-full h-36 sm:h-40 md:h-56 flex items-center justify-center mb-4 md:mb-8 px-4">
                 {/* Subtle highlight effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
