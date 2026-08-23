@@ -112,10 +112,10 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="group relative"
+      className="group relative h-full"
     >
       {/* Specification Panel Surface */}
-      <div className="relative h-full bg-[#0C121E] rounded-[20px] border border-white/[0.06] overflow-hidden flex flex-col shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 lg:group-hover:-translate-y-2 lg:group-hover:border-ssc-gold/30 lg:group-hover:shadow-[0_30px_60px_-15px_rgba(197,160,89,0.12)]">
+      <div className="relative h-full bg-[#0C121E] rounded-[20px] border border-white/[0.06] overflow-hidden flex flex-col shadow-[0_20px_50px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 lg:group-hover:-translate-y-2 lg:group-hover:border-ssc-gold/30 lg:group-hover:shadow-[0_30px_60px_-15px_rgba(197,160,89,0.12)] transform-gpu">
 
         {/* Brushed Metal Texture */}
         <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none z-10" />
