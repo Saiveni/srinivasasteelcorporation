@@ -116,36 +116,6 @@ export const SteelTimeline = () => {
           </div>
         </div>
 
-        {/* Verbatim Request Text */}
-        <div className="mt-20 px-6 py-6 border-t border-white/5 opacity-20">
-          <p className="text-[9px] font-technical text-white/50 leading-relaxed uppercase tracking-wider max-w-2xl mx-auto text-center">
-            '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-            <br /><br />
-            ABOUT PAGE — CLEANUP + SIMPLE TIMELINE
-            <br /><br />
-            Make ONLY the following changes on the About page. Do not modify the header, navigation, hero, products, gallery, contact page, or any other existing section.
-            <br /><br />
-            1. REMOVE THE TWO CURRENT BROKEN SECTIONS: floating gold location icons / empty dark map-style area, and the large complicated timeline / TMT-bar timeline area.
-            <br /><br />
-            2. REPLACE THE TIMELINE WITH A PROFESSIONAL SIMPLE TIMELINE. Clean premium corporate timeline. Clean thin timeline line, elegant gold milestone points, four clearly separated milestone cards.
-            <br /><br />
-            3. DESIGN: Deep navy, White, Muted metallic gold, Subtle steel-grey. Premium typography, subtle borders, subtle shadows. No excessive decoration. No floating objects. No mechanical hooks. No TMT bars.
-            <br /><br />
-            4. DESKTOP: Display the four milestones horizontally in a clean sequence. Everything must fit inside the viewport. Zero horizontal overflow.
-            <br /><br />
-            5. MOBILE: Convert the same timeline into a clean vertical timeline. Every card must fit completely inside the screen.
-            <br /><br />
-            6. RESPONSIVENESS: Timeline must work at 320px to 1920px. Use proper responsive CSS/grid/flex.
-            <br /><br />
-            7. SPACING: Rebalance About page spacing. Flow naturally. No huge blank areas or excessive padding.
-            <br /><br />
-            8. ANIMATION: Subtle reveal animation when the timeline enters the viewport. After appearing, everything stays stable.
-            <br /><br />
-            IMPORTANT SCOPE LOCK: ONLY change the two unwanted About sections and replace the timeline. DO NOT change anything else on the website.
-            <br /><br />
-            FINAL REQUIREMENT: Simple, professional, premium, readable and stable.
-          </p>
-        </div>
       </div>
     </section>
   );
