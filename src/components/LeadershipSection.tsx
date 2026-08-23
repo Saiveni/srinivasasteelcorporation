@@ -39,7 +39,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
       <motion.div 
         whileHover={{ rotateY: 8, rotateX: -5, translateZ: 20 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-        className="relative bg-[#1C2533] rounded-[16px] p-8 border border-white/5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col items-center text-center overflow-hidden h-full z-10"
+        className="relative bg-[#1C2533] rounded-[16px] p-8 border border-white/5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col items-center text-center h-full z-10 overflow-hidden"
         style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Card Surface Highlight */}
@@ -92,7 +92,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-hidden">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-visible z-[50]">
       {/* Dynamic Geometric Technical Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.05]" 
@@ -107,7 +107,7 @@ export const LeadershipSection = () => {
              }} />
       </div>
 
-      <div className="container-wide relative z-10 mx-auto">
+      <div className="container-wide relative z-10 mx-auto sm:pt-20 pt-[120px]">
         <div className="text-center mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -128,7 +128,7 @@ export const LeadershipSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-[1200px] mx-auto relative items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-12 max-w-[1200px] mx-auto relative items-stretch px-6 md:px-0 py-8">
           {leaders.map((leader, idx) => (
             <LeaderCard key={leader.name} leader={leader} index={idx} />
           ))}

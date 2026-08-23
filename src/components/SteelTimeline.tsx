@@ -35,8 +35,8 @@ export const SteelTimeline = () => {
   const dotY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-hidden bg-[#f5f6f7]">
-      <div className="container-wide relative z-10 mx-auto">
+    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-visible bg-[#f5f6f7] z-[50]">
+      <div className="container-wide relative z-10 mx-auto sm:pt-20 pt-[120px]">
         <div className="text-center mb-12 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,7 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Mobile Version - Vertical */}
-        <div className="lg:hidden relative flex flex-col items-center pt-4">
+        <div className="lg:hidden relative flex flex-col items-center pt-8 pb-12">
           {/* Silver Vertical Line */}
           <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-ssc-navy/10 -translate-x-1/2 z-0">
             {/* Animated Silver Path */}
@@ -149,7 +149,7 @@ export const SteelTimeline = () => {
                 {/* Static Milestone Dot / Hook Base */}
                 <div className="absolute left-[24px] top-10 -translate-x-1/2 w-3 h-3 rounded-full bg-white border border-ssc-gold z-10 shadow-sm" />
                 
-                <div className="bg-white border border-ssc-navy/5 p-6 rounded-[12px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] w-full ml-10">
+                <div className="bg-white border border-ssc-navy/5 p-6 rounded-[12px] shadow-[0_5px_15px_rgba(0,0,0,0.05)] w-full ml-10 overflow-hidden">
                   <span className="text-micro text-ssc-gold block mb-1 uppercase font-bold tracking-widest">
                     {ms.year}
                   </span>
