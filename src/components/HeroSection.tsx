@@ -7,46 +7,73 @@ import heroSteelRebar from "@/assets/images/hero-steel-rebar.png.asset.json";
 import heroSteelWire from "@/assets/images/hero-steel-wire.png.asset.json";
 import heroTmtSteel from "@/assets/images/hero-tmt-steel.png.asset.json";
 
-const HERO_IMAGES = [
+interface HeroImage {
+  url: string;
+  alt: string;
+  position: {
+    desktop: string;
+    mobile: string;
+  };
+}
+
+const HERO_IMAGES: HeroImage[] = [
   {
     url: heroSteelRebar.url,
     alt: "Premium bundles of ribbed TMT reinforcement steel bars",
-    position: "center center"
+    position: {
+      desktop: "center center",
+      mobile: "65% center"
+    }
   },
   {
     url: heroSteelWire.url,
     alt: "Industrial steel wire coils in distribution center",
-    position: "center center"
+    position: {
+      desktop: "center center",
+      mobile: "center center"
+    }
   },
   {
     url: heroTmtSteel.url,
     alt: "Close-up cinematic shot of TMT 550D steel rebar stacked",
-    position: "center center"
+    position: {
+      desktop: "center center",
+      mobile: "40% center"
+    }
   }
 ];
 
 export const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Preload images
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
     HERO_IMAGES.forEach((img) => {
-      if (img.url) {
-        const image = new Image();
-        image.src = img.url;
-      }
+      const image = new Image();
+      image.src = img.url;
     });
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 5000);
-    return () => clearInterval(timer);
+    
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
-  const currentImage = HERO_IMAGES[currentIndex] || HERO_IMAGES[0];
-  const imageUrl = currentImage?.url || "";
-  const imageAlt = currentImage?.alt || "";
-  const imagePos = currentImage?.position || "center center";
+  const currentImage = HERO_IMAGES[currentIndex] as HeroImage | undefined;
+  const firstImage = HERO_IMAGES[0] as HeroImage;
+  const imageUrl = currentImage?.url ?? firstImage.url;
+  const imageAlt = currentImage?.alt ?? firstImage.alt;
+  const imagePos = isMobile 
+    ? (currentImage?.position.mobile ?? firstImage.position.mobile) 
+    : (currentImage?.position.desktop ?? firstImage.position.desktop);
 
   const imageElement = (
     <AnimatePresence mode="popLayout">
