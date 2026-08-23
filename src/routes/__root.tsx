@@ -20,9 +20,9 @@ function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-ssc-steel-light px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <h1 className="text-h1 text-foreground">404</h1>
+        <h2 className="mt-4 text-h4 text-foreground uppercase">Page not found</h2>
+        <p className="mt-2 text-body text-foreground/60">
           The page you're looking for doesn't exist or has been moved.
         </p>
         <div className="mt-6">
@@ -48,10 +48,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-ssc-steel-light px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+        <h1 className="text-h4 text-foreground uppercase">
           This page didn't load
         </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
+        <p className="mt-2 text-body text-foreground/60">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
@@ -66,7 +66,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           </button>
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-xl border border-border/20 bg-white px-6 py-3 text-sm font-bold text-foreground transition-all hover:bg-ssc-steel-dark"
+            className="inline-flex items-center justify-center rounded-xl border border-border/20 bg-white px-6 py-3 text-small font-bold text-foreground transition-all hover:bg-ssc-steel-dark"
           >
             Go home
           </Link>
