@@ -78,15 +78,13 @@ export const IndustrialNetwork = () => {
           </div>
 
 
-          {/* Map Grid Detail */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none">
-            <svg className="w-full h-full">
-              <pattern id="dotPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                <circle cx="2" cy="2" r="1" fill="rgba(197,160,89,0.3)" />
-              </pattern>
-              <rect width="100%" height="100%" fill="url(#dotPattern)" />
+          {/* India Map Background */}
+          <div className="absolute inset-0 opacity-[0.05] pointer-events-none flex items-center justify-center translate-y-10">
+            <svg viewBox="0 0 1024 1024" className="w-[800px] h-[800px] fill-transparent stroke-ssc-gold/20">
+              <path d="M4040 10225 c-14 -8 -40 -14 -58 -15 -64 0 -119 -22 -173 -66 -57 -47 -124 -77 -199 -89 -25 -4 -89 -29 -142 -56 l-97 -49 -17 -56 c-9 -33 -30 -71 -49 -92 -31 -34 -35 -36 -121 -42 -71 -5 -104 -13 -158 -38 -83 -39 -130 -40 -211 -7 -33 14 -91 30 -130 36 -38 6 -86 19 -106 29 -46 24 -69 26 -152 16 -65 -8 -68 -10 -82 -43 -21 -50 -19 -76 10 -103 16 -15 25 -35 25 -54 0 -17 7 -40 15 -50 22 -30 18 -58 -12 -82 -27 -21 -27 -24 -16 -65 10 -38 9 -50 -8 -88 -10 -24 -19 -51 -19 -60 0 -9 28 -44 63 -77 101 -97 102 -98 156 -95 54 2 47 11 67 -89 5 -26 12 -32 57 -44 29 -8 69 -17 90 -21 43 -7 49 -28 18 -66 -15 -19 -30 -24 -84 -27 -62 -4 -67 -6 -95 -42 -17 -20 -45 -43 -63 -50Z" transform="scale(0.08) translate(-1000, -8000)" strokeWidth="4" />
             </svg>
           </div>
+
 
           {/* Network Connection Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
