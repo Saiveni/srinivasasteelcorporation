@@ -1,130 +1,109 @@
-import { useState, useEffect, useRef } from "react";
-import { motion, useInView, useReducedMotion } from "framer-motion";
-import { Award, MapPin, Factory, Settings2 } from "lucide-react";
+import { motion } from "framer-motion";
+import { Award, ShieldCheck, TrendingUp, Gem } from "lucide-react";
 
-interface StatItemProps {
-  number?: string;
-  suffix?: string;
-  label: string;
-  subLabel: string;
+interface CredibilityCardProps {
+  title: string;
+  description: string;
   icon: any;
   index: number;
 }
 
-const StatItem = ({ number, suffix, label, subLabel, icon: Icon, index }: StatItemProps) => {
-  const displayValue = number;
-
+const CredibilityCard = ({ title, description, icon: Icon, index }: CredibilityCardProps) => {
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: 0.2 + index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col items-center lg:items-start text-center lg:text-left px-6 py-4 group"
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="group relative bg-ssc-steel-dark/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 lg:p-8 hover:border-ssc-gold/30 transition-all duration-300 shadow-premium-soft"
     >
-      <div className="text-micro mb-4">
-        {subLabel}
+      {/* Gold Accent Corner */}
+      <div className="absolute top-0 right-0 w-8 h-8 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-1px] right-[-1px] w-[1px] h-4 bg-ssc-gold/50" />
+        <div className="absolute top-[-1px] right-[-1px] w-4 h-[1px] bg-ssc-gold/50" />
       </div>
 
-      <div className="text-ssc-gold mb-6 transition-transform duration-500 group-hover:scale-110">
-        <Icon size={20} strokeWidth={1.5} />
+      <div className="flex flex-col gap-4">
+        <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-ssc-navy border border-ssc-gold/20 text-ssc-gold group-hover:scale-110 transition-transform duration-300">
+          <Icon size={24} strokeWidth={1.5} />
+        </div>
+        
+        <div>
+          <h4 className="text-white mb-2 group-hover:text-ssc-gold transition-colors duration-300">
+            {title}
+          </h4>
+          <p className="text-small text-ssc-gray-muted line-clamp-3">
+            {description}
+          </p>
+        </div>
       </div>
-
-      <div className="text-ssc-on-dark-primary leading-none mb-3 text-[32px] lg:text-[40px] font-bold">
-        {displayValue}{suffix}
-      </div>
-
-      <div className="text-micro !text-ssc-on-dark-body">
-        {label}
-      </div>
+      
+      {/* Subtle Bottom Glow */}
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-ssc-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </motion.div>
   );
 };
 
 export const TrustStatsBar = () => {
-  const stats = [
-    { number: "30", suffix: "+", label: "Years of Trust", subLabel: "01 / HERITAGE", icon: Award },
-    { number: "3", suffix: "", label: "Business Locations", subLabel: "02 / NETWORK", icon: MapPin },
-    { number: "STEEL", suffix: "", label: "Supply", subLabel: "03 / MATERIAL", icon: Factory },
-    { number: "DECOILING", suffix: "", label: "Services", subLabel: "04 / CAPABILITY", icon: Settings2 },
+  const items = [
+    {
+      title: "30+ YEARS EXPERIENCE",
+      description: "Established in 1994, building a legacy of excellence in the steel industry across generations.",
+      icon: Award
+    },
+    {
+      title: "TRUSTED STEEL SUPPLY",
+      description: "Reliable distribution partner for India's leading steel brands, ensuring material integrity.",
+      icon: ShieldCheck
+    },
+    {
+      title: "REGIONAL PRESENCE",
+      description: "Strategically located facilities in Vijayawada, Vizag, and Gannavaram to serve you better.",
+      icon: TrendingUp
+    },
+    {
+      title: "QUALITY & RELIABILITY",
+      description: "Stringent quality benchmarks and commitment to timely delivery for every project scale.",
+      icon: Gem
+    }
   ];
 
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-
   return (
-    <section className="w-full relative z-20 bg-ssc-navy section-spacing overflow-hidden border-t border-ssc-on-dark-primary/5">
-      {/* Technical Blueprint Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.05]" 
+    <section className="w-full bg-ssc-navy py-20 lg:py-32 relative overflow-hidden border-t border-white/5">
+      {/* Structural Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
            style={{ 
-             backgroundImage: 'linear-gradient(to right, var(--ssc-gold) 1px, transparent 1px), linear-gradient(to bottom, var(--ssc-gold) 1px, transparent 1px)',
-             backgroundSize: '100px 100px'
+             backgroundImage: 'radial-gradient(var(--ssc-gold) 0.5px, transparent 0.5px)',
+             backgroundSize: '32px 32px'
            }} 
       />
-      
-      {/* Subtle Metallic/Measurement Marks */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-[0.03]">
-        <div className="absolute top-10 left-10 w-20 h-[1px] bg-ssc-on-dark-primary" />
-        <div className="absolute top-10 left-10 w-[1px] h-20 bg-ssc-on-dark-primary" />
-        <div className="absolute bottom-10 right-10 w-20 h-[1px] bg-ssc-on-dark-primary" />
-        <div className="absolute bottom-10 right-10 w-[1px] h-20 bg-ssc-on-dark-primary" />
-        
-        {/* Horizontal Measurement Line */}
-        <div className="absolute top-1/2 left-0 w-full h-[1px] bg-ssc-on-dark-primary/20 flex justify-between px-20">
-          {[...Array(12)].map((_, i) => (
-            <div key={i} className="w-[1px] h-4 bg-ssc-on-dark-primary/40 -mt-2" />
+
+      <div className="container-wide relative z-10">
+        <div className="flex flex-col items-center text-center mb-16 lg:mb-20">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-micro mb-4"
+          >
+            CORPORATE EXCELLENCE
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-white max-w-2xl"
+          >
+            OUR COMMITMENT TO <span className="text-ssc-gold">INDUSTRY STANDARDS</span>
+          </motion.h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+          {items.map((item, index) => (
+            <CredibilityCard key={index} {...item} index={index} />
           ))}
         </div>
-      </div>
-
-      <div className="container-wide relative">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="relative w-full mx-auto backdrop-blur-2xl bg-ssc-on-dark-primary/5 rounded-[40px] shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] border border-ssc-on-dark-primary/10 overflow-hidden"
-        >
-          {/* Inner Highlight & Gold Accent */}
-          <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-ssc-on-dark-primary/10 to-transparent" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[2px] bg-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.3)]" />
-
-          <div className="px-8 py-12 lg:px-16 lg:py-20">
-            {/* Header Area */}
-            <div className="mb-16 border-b border-ssc-on-dark-primary/5 pb-12">
-              <h3 className="text-micro mb-4">
-                COMPANY CREDIBILITY
-              </h3>
-              <h2 className="text-ssc-on-dark-primary">
-                ESTABLISHED QUALITY. RELIABLE PERFORMANCE.
-              </h2>
-            </div>
-
-            {/* Grid Area */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-12 lg:gap-y-0 relative">
-              {/* Dividers */}
-              <div className="hidden lg:block absolute left-1/4 top-0 bottom-0 w-[1px] bg-ssc-on-dark-primary/5" />
-              <div className="hidden lg:block absolute left-2/4 top-0 bottom-0 w-[1px] bg-ssc-on-dark-primary/5" />
-              <div className="hidden lg:block absolute left-3/4 top-0 bottom-0 w-[1px] bg-ssc-on-dark-primary/5" />
-
-              {stats.map((stat, index) => (
-                <StatItem 
-                  key={index} 
-                  {...stat} 
-                  index={index}
-                />
-              ))}
-            </div>
-          </div>
-          
-          {/* Micro-annotations */}
-          <div className="absolute bottom-6 left-16 hidden lg:block">
-            <span className="text-[8px] text-ssc-on-dark-primary/20 font-body tracking-[0.3em] uppercase">SYSTEM // AUTH_VERIFIED</span>
-          </div>
-          <div className="absolute bottom-6 right-16 hidden lg:block">
-            <span className="text-[8px] text-ssc-on-dark-primary/20 font-body tracking-[0.3em] uppercase">VIJAYAWADA • VIZAG • GANNAVARAM</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
