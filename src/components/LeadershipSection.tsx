@@ -107,7 +107,7 @@ export const LeadershipSection = () => {
              }} />
       </div>
 
-      <div className="container-wide relative z-10 mx-auto pt-16">
+      <div className="container-wide relative z-10 mx-auto sm:pt-16 pt-24">
         <div className="text-center mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
