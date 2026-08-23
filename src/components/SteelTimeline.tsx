@@ -37,12 +37,12 @@ export const SteelTimeline = () => {
           >
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="w-8 h-[1px] bg-primary/40" />
-                <span className="text-primary text-micro">
+                <span className="text-micro text-primary uppercase">
                   Corporate Evolution
               </span>
               <div className="w-8 h-[1px] bg-primary/40" />
             </div>
-            <h2 className="text-white italic uppercase">
+            <h2 className="text-h2 text-white uppercase">
               COMPANY <span className="text-primary">LEGACY</span>
             </h2>
           </motion.div>
@@ -67,13 +67,13 @@ export const SteelTimeline = () => {
                 <div className="w-4 h-4 rounded-full bg-background border-2 border-primary shadow-[0_0_10px_rgba(212,175,55,0.3)] mb-8 z-10 relative transition-transform duration-300 group-hover:scale-125" />
                 
                 <div className="bg-ssc-steel-dark border border-white/10 p-6 rounded-[12px] shadow-premium-soft w-full transition-colors duration-300 group-hover:bg-ssc-steel-dark/80 group-hover:border-primary/20">
-                  <span className="text-primary text-micro block mb-2">
+                  <span className="text-micro text-primary block mb-2 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-white italic text-lg mb-2 uppercase">
+                  <h4 className="text-h4 text-white mb-2 uppercase">
                     {ms.title}
                   </h4>
-                  <p className="text-ssc-gray-muted text-small italic">
+                  <p className="text-body text-white/60">
                     {ms.description}
                   </p>
                 </div>
@@ -101,13 +101,13 @@ export const SteelTimeline = () => {
                 <div className="absolute left-[20px] top-8 w-3 h-3 rounded-full bg-background border-2 border-primary shadow-[0_0_8px_rgba(212,175,55,0.3)] z-10" />
                 
                 <div className="bg-ssc-steel-dark border border-white/10 p-6 rounded-[12px] shadow-premium-soft w-full ml-6">
-                  <span className="text-primary text-micro block mb-1">
+                  <span className="text-micro text-primary block mb-1 uppercase">
                     {ms.year}
                   </span>
-                  <h4 className="text-white italic text-lg mb-2 uppercase">
+                  <h4 className="text-h4 text-white mb-2 uppercase">
                     {ms.title}
                   </h4>
-                  <p className="text-ssc-gray-muted text-small italic">
+                  <p className="text-body text-white/60">
                     {ms.description}
                   </p>
                 </div>
