@@ -319,14 +319,17 @@ export const Navbar = () => {
                           </div>
                           
                           <div className="flex flex-col justify-center">
-                            <span className={`text-h3 font-bold tracking-tight transition-colors uppercase leading-none ${
+                            <span className={`text-body font-bold tracking-wide transition-colors uppercase leading-none ${
                               isActive ? "text-ssc-gold-dark" : "text-ssc-navy group-hover:text-ssc-gold-dark"
                             }`}>
                               {link.name}
                             </span>
-                            <div className={`h-[3px] mt-2 transition-all duration-500 ease-out ${
-                              isActive ? "w-full bg-ssc-gold shadow-[0_1px_4px_rgba(212,175,55,0.4)]" : "w-0 bg-ssc-gold/40 group-hover:w-2/3"
-                            }`} />
+                            {isActive && (
+                              <motion.div 
+                                layoutId="mobileActiveUnderline"
+                                className="h-[2px] mt-1.5 w-full bg-ssc-gold shadow-[0_1px_3px_rgba(212,175,55,0.3)]"
+                              />
+                            )}
                           </div>
                         </Link>
                       </motion.div>
