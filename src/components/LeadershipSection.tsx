@@ -36,7 +36,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
       className="relative group w-full"
     >
       {/* 3D Engineered Panel Card */}
-      <div className="relative bg-ssc-steel-dark rounded-[24px] p-8 lg:p-10 border border-white/5 shadow-2xl overflow-hidden group-hover:translate-y-[-8px] transition-all duration-500">
+      <div className="relative bg-ssc-steel-dark rounded-[24px] p-8 lg:p-10 border border-white/5 shadow-2xl overflow-hidden group-hover:translate-y-[-8px] transition-all duration-500 flex flex-col h-full">
         
         {/* Brushed Metal Texture */}
         <div className="absolute inset-0 opacity-[0.07] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
@@ -51,7 +51,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
         {/* Inner Glow / Lighting */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.05] pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="relative z-10 flex flex-col items-center text-center flex-1">
           {/* Abstract Steel Monogram / Silhouette */}
           <div className="relative w-32 h-32 mb-8 group-hover:scale-110 transition-transform duration-700">
             {/* Machined Metal Ring */}

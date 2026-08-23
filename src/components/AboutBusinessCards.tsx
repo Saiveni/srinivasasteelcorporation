@@ -122,7 +122,7 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
         <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none z-10" />
 
         {/* Image Area */}
-        <div className="relative h-[160px] sm:h-[180px] lg:h-[240px] overflow-hidden">
+        <div className="relative h-[160px] sm:h-[180px] lg:h-[240px] overflow-hidden shrink-0">
           <img
             src={area.image}
             alt={area.alt}
@@ -147,12 +147,12 @@ const SpecCard = ({ area, index }: { area: typeof businessAreas[0], index: numbe
         </div>
 
         {/* Content Area */}
-        <div className="relative z-20 flex-1 flex flex-col p-4 sm:p-5 lg:p-7 pt-2 lg:pt-2">
+        <div className="relative z-20 flex-1 flex flex-col p-4 sm:p-5 lg:p-7 pt-2 lg:pt-2 overflow-hidden">
           <h3 className="text-base lg:text-h4 text-ssc-on-dark-primary mb-2 lg:mb-3 lg:group-hover:text-ssc-gold transition-colors duration-500 uppercase font-bold">
             {area.title}
           </h3>
 
-          <p className="text-xs lg:text-body text-ssc-on-dark-body flex-1 leading-relaxed">
+          <p className="text-xs lg:text-body text-ssc-on-dark-body flex-1 leading-relaxed line-clamp-3 sm:line-clamp-none">
             {area.description}
           </p>
 
