@@ -63,8 +63,8 @@ export const BrandStrip = () => {
                 <img 
                   src={brand.logo} 
                   alt={`${brand.name} Logo`}
-                  className="max-w-[80%] max-h-full object-contain filter drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
+                  className="max-w-full max-h-full object-contain filter brightness-110 drop-shadow-lg transition-transform duration-500 group-hover:scale-110"
+                  loading="eager"
                 />
               </div>
 
