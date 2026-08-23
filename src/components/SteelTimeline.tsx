@@ -36,7 +36,6 @@ const TMTBar = ({ orientation = 'horizontal', className = "" }: { orientation?: 
   const isHorizontal = orientation === 'horizontal';
   
   return (
-  return (
     <div className={`relative ${isHorizontal ? 'h-14 w-full' : 'w-14 h-full'} ${className}`}>
       {/* Three Substantial, Realistic 3D TMT Rebars */}
       <div className={`flex ${isHorizontal ? 'flex-col justify-between h-full' : 'flex-row justify-between w-full'}`}>
