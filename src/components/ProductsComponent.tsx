@@ -177,15 +177,15 @@ export const ProductsComponent = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-primary text-[12px] font-body font-bold uppercase tracking-[0.25em] mb-4 block">
-                CAPABILITIES
+              <span className="text-micro text-primary uppercase mb-4 block">
+                CORE CAPABILITIES
               </span>
-              <h2 className="text-[38px] lg:text-[56px] text-white font-body leading-[1.1] mb-8 font-[500] tracking-tight uppercase">
+              <h2 className="text-h2 text-white mb-8 uppercase">
                 DECOILING FOR <br />
-                <span className="text-primary">SPECIFIC REQUIREMENTS.</span>
+                <span className="text-primary">PRECISION.</span>
               </h2>
-              <p className="text-white/60 text-lg leading-relaxed mb-10 font-[400]">
-                We provide high-precision decoiling solutions for applicable steel sizes and lengths, ensuring your material is straightened and cut to meet exact project specifications.
+              <p className="text-body text-white/60 mb-10">
+                Precision automated decoiling and straightening services from 2mm to 4.5mm with technical accuracy.
               </p>
               <Link to="/contact" search={{ product: "DECOILED STEEL" }}>
                 <Button className="w-full sm:w-auto">
@@ -201,11 +201,11 @@ export const ProductsComponent = () => {
       <section className="py-14 bg-white border-y border-black/5">
         <div className="container-wide">
           <div className="text-center mb-16">
-            <span className="text-primary text-[11px] font-body font-bold tracking-[0.4em] uppercase mb-4 block">
+            <span className="text-micro text-primary uppercase mb-4 block">
               SUPPLY NETWORK
             </span>
-            <h2 className="text-[28px] lg:text-[32px] text-foreground font-body font-semibold tracking-tight uppercase">
-              TRUSTED STEEL BRANDS
+            <h2 className="text-h3 text-foreground mb-16 uppercase">
+              TRUSTED DEALER RELATIONSHIPS
             </h2>
           </div>
           <div className="flex flex-wrap items-center justify-center gap-12 lg:gap-32">
@@ -221,7 +221,7 @@ export const ProductsComponent = () => {
                 <div className="text-2xl lg:text-3xl font-body font-bold text-foreground/80 tracking-tighter uppercase mb-2">
                   {brand.name}
                 </div>
-                <div className="text-[9px] font-body font-bold text-primary tracking-[0.2em] uppercase">
+                <div className="text-micro text-primary uppercase">
                   {brand.subtitle}
                 </div>
               </motion.div>
@@ -234,7 +234,7 @@ export const ProductsComponent = () => {
       <section className="section-spacing bg-[#F4F6F8]">
         <div className="container-wide">
           <div className="text-center mb-20">
-            <h2 className="text-[32px] lg:text-[42px] text-foreground font-body font-semibold tracking-tight uppercase">
+            <h2 className="text-h2 text-foreground uppercase">
               QUALITY. AVAILABILITY. <span className="text-primary">SUPPLY.</span>
             </h2>
           </div>
@@ -255,8 +255,8 @@ export const ProductsComponent = () => {
                 <div className="w-16 h-16 bg-white rounded-[12px] flex items-center justify-center mx-auto mb-8 shadow-sm border border-black/5">
                   <item.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-body font-bold text-foreground mb-4 uppercase tracking-wider">{item.title}</h3>
-                <p className="text-[#64748B] text-base leading-relaxed">{item.desc}</p>
+                <h3 className="text-h4 text-foreground mb-4 uppercase">{item.title}</h3>
+                <p className="text-body text-foreground/70">{item.desc}</p>
               </motion.div>
             ))}
           </div>
