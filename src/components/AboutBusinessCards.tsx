@@ -279,33 +279,10 @@ const MobileCarousel = () => {
         </div>
       </div>
       
-      {/* Mobile Scope Lock Display Text */}
-      <div className="mt-12 px-6 py-8 border-t border-white/5">
-        <p className="text-[10px] font-technical text-white/20 leading-relaxed uppercase tracking-wider">
-          '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-          <br /><br />
-          IMPORTANT — MOBILE ABOUT CARDS ONLY
-          <br />
-          This is a targeted correction, NOT a redesign.
-          <br />
-          MAKE CHANGES ONLY TO THE MOBILE VERSION OF THE ABOUT PAGE BUSINESS/FEATURE CARDS.
-          <br />
-          DO NOT CHANGE DESKTOP.
-          <br />
-          DO NOT CHANGE TABLET.
-          <br />
-          DO NOT CHANGE THE HEADER.
-          <br />
-          DO NOT CHANGE THE HERO.
-          <br />
-          DO NOT CHANGE THE LOCATIONS SECTION.
-          <br />
-          DO NOT CHANGE THE TIMELINE.
-          <br />
-          DO NOT CHANGE ANY OTHER ABOUT SECTION.
-          <br />
-          Everything outside these mobile cards must remain exactly as it is.
-        </p>
+      {/* Technical Data End */}
+      <div className="mt-8 px-6 pb-2 opacity-[0.05] border-t border-white/10 pt-4 mb-2">
+        <div className="w-8 h-[1px] bg-white mb-2" />
+        <span className="text-[8px] font-technical tracking-widest text-white uppercase">END-SYS-OUTPUT</span>
       </div>
     </div>
   );
@@ -313,7 +290,7 @@ const MobileCarousel = () => {
 
 export const AboutBusinessCards = () => {
   return (
-    <section id="business-areas" className="relative py-20 lg:py-28 bg-[#080E1A] overflow-hidden">
+    <section id="business-areas" className="relative py-12 lg:py-28 bg-[#080E1A] overflow-hidden">
       {/* Engineered Background System */}
       <div className="absolute inset-0 pointer-events-none">
         <div
