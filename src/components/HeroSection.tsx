@@ -77,7 +77,7 @@ export const HeroSection = () => {
   );
 
   return (
-    <section className="relative w-full bg-ssc-steel-light pt-0 min-h-[600px] lg:min-h-0">
+    <section className="relative w-full bg-ssc-steel-light pt-0 lg:h-[calc(100vh-88px)] min-h-[600px] lg:min-h-[700px] flex items-center">
       {/* Mobile Hero Background (Full Bleed Carousel) */}
       <div className="absolute inset-0 z-0 lg:hidden">
         {imageElement}
@@ -91,10 +91,11 @@ export const HeroSection = () => {
       </div>
 
       <div className="container-ssc relative z-10 h-full">
-        <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full pt-[80px] sm:pt-[90px] lg:pt-0">
+        <div className="flex flex-col lg:flex-row items-stretch h-full pt-[80px] sm:pt-[90px] lg:pt-0">
           
-          {/* Content Area: 46% Width on Desktop, Full Width on Mobile */}
-          <div className="w-full lg:w-[45%] flex flex-col justify-center py-16 lg:py-0 z-30 lg:px-0 relative h-full">
+          {/* Content Area: 45% Width on Desktop, Full Width on Mobile */}
+          <div className="w-full lg:w-[45%] flex flex-col justify-center py-16 lg:py-12 z-30 lg:px-0 relative">
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -145,7 +146,7 @@ export const HeroSection = () => {
           </div>
           
           {/* Right Side Steel Image Carousel: 54% Width - Desktop Only */}
-          <div className="hidden lg:block lg:w-[55%] relative min-h-full -mt-2">
+          <div className="hidden lg:block lg:w-[55%] relative min-h-full">
             <div 
               className="w-full h-full relative overflow-hidden"
               style={{

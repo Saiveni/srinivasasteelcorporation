@@ -28,8 +28,9 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <div className="font-body bg-ssc-navy pt-0">
+    <div className="font-body bg-ssc-navy pt-[88px] lg:pt-[92px]">
       <HeroSection />
+
       <TrustCapabilities />
       <TrustStatsBar />
       <ProductShowcase />
