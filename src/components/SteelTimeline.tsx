@@ -189,16 +189,16 @@ export const SteelTimeline = () => {
         {/* Mobile Version - Vertical Rod on Left */}
         <div className="lg:hidden relative flex min-h-[1000px] pt-10">
           {/* Vertical Spine on Left */}
-          <div className="absolute left-2 top-0 bottom-0">
+          <div className="absolute left-2.5 top-0 bottom-0">
             <SteelRod orientation="vertical" />
           </div>
 
           {/* Cards Container */}
-          <div className="flex flex-col gap-24 ml-10 w-full">
+          <div className="flex flex-col gap-24 ml-8 w-full">
             {milestones.map((ms, idx) => (
               <div key={idx} className="relative flex items-center h-[180px]">
                 {/* Connecting Clamp & Arm for Mobile */}
-                <div className="absolute left-[-26px] top-1/2 -translate-y-1/2 z-20 flex items-center">
+                <div className="absolute left-[-22px] top-1/2 -translate-y-1/2 z-20 flex items-center">
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
