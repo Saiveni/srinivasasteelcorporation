@@ -292,27 +292,29 @@ export const Navbar = () => {
                             isActive ? "translate-x-3" : "hover:translate-x-2"
                           }`}
                         >
-                          {/* 3D Realistic Metallic Icons - Perfectly Aligned & Background-Free */}
-                          <div className="w-14 h-14 flex items-center justify-center shrink-0 relative">
-                            {/* Glow effect for active state - enhanced */}
-                            {isActive && (
-                              <motion.div 
-                                layoutId="mobileIconGlow"
-                                className="absolute inset-0 bg-ssc-gold/30 blur-2xl rounded-full"
-                              />
-                            )}
-                            <div 
-                              className="w-12 h-12 relative z-10 transition-transform group-hover:scale-110 flex items-center justify-center"
-                              style={{
-                                backgroundImage: `url('${steelIconsAssetV2.url}')`,
-                                backgroundSize: '100% 500%',
-                                backgroundPosition: `0 ${link.icon * 25}%`,
-                                filter: isActive 
-                                  ? 'contrast(1.1) brightness(1.05) drop-shadow(0 4px 8px rgba(0,0,0,0.15))' 
-                                  : 'contrast(1.02) brightness(0.98)',
-                                mixBlendMode: 'multiply', // Removes white backgrounds from sprite
-                                backgroundRepeat: 'no-repeat'
-                              }}
+                          {/* Premium 3D Circular Navigation Icons - Engineered Industrial Style */}
+                          <div className="w-12 h-12 flex items-center justify-center shrink-0 relative group/icon">
+                            {/* Machined Metallic Circular Base */}
+                            <div className={`
+                              absolute inset-0 rounded-full
+                              bg-gradient-to-br from-ssc-navy via-[#1e2a3a] to-black
+                              border-[1.5px] transition-all duration-300
+                              ${isActive 
+                                ? "border-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.4)] scale-105" 
+                                : "border-ssc-gold/30 shadow-lg group-hover/icon:border-ssc-gold/60 group-hover/icon:scale-105"
+                              }
+                            `} />
+                            
+                            {/* Inner Metallic Highlight */}
+                            <div className="absolute inset-[2px] rounded-full border border-white/5 pointer-events-none" />
+                            
+                            {/* Icon Component */}
+                            <link.Icon 
+                              size={20} 
+                              className={`relative z-10 transition-all duration-300 ${
+                                isActive ? "text-ssc-gold scale-110" : "text-ssc-gold/70 group-hover/icon:text-ssc-gold group-hover/icon:scale-110"
+                              }`}
+                              strokeWidth={1.5}
                             />
                           </div>
                           
