@@ -27,7 +27,7 @@ const milestones = [
 export const SteelTimeline = () => {
   return (
     <section id="timeline" className="relative py-16 lg:py-24 bg-ssc-navy overflow-hidden">
-      <div className="container-wide relative z-10 px-6 max-w-[1200px] mx-auto">
+      <div className="container-wide relative z-10 mx-auto">
         <div className="text-center mb-12 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

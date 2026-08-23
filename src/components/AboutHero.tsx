@@ -78,7 +78,7 @@ export const AboutHero = () => {
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-ssc-on-dark-primary/10 to-transparent" />
         </div>
 
-        <div className="container-wide relative z-10 w-full max-w-[1400px] mx-auto">
+        <div className="container-wide relative z-10 w-full mx-auto">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -203,7 +203,7 @@ export const AboutHero = () => {
           />
         </div>
 
-        <div className="container-wide relative z-10 max-w-[1280px] mx-auto px-6">
+        <div className="container-wide relative z-10 mx-auto">
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

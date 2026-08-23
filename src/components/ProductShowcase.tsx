@@ -117,7 +117,7 @@ const ProductShowcase = () => {
         }} 
       />
 
-      <div className="container-wide relative z-10">
+      <div className="container-wide relative z-10 mx-auto">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 lg:mb-20 gap-8">
           <div className="max-w-[650px]">

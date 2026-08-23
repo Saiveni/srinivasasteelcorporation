@@ -179,8 +179,8 @@
     @apply py-12 lg:py-24;
   }
   
-  .container-ssc {
-    @apply w-[92%] md:w-[94%] lg:max-w-[1280px] mx-auto;
+  .container-ssc, .container-wide {
+    @apply w-[92%] md:w-[94%] lg:max-w-[1280px] mx-auto px-4 md:px-6 lg:px-0;
   }
 
   .grid-ssc {
