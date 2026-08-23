@@ -3,131 +3,117 @@ import { motion } from 'framer-motion';
 
 const leaders = [
   {
-    name: "M.S.V. Bhaskar",
-    designation: "Managing Partner",
+    name: "M.S.V. BHASKAR",
+    designation: "MANAGING PARTNER",
     description: "Visionary leader driving the strategic growth and industrial excellence of Srinivasa Steel Corporation since inception.",
-    initials: "MSVB"
+    image: "/__l5e/assets-v1/2ed039f3-80e9-44e2-86ee-359f130097a9/leader-bhaskar.png"
   },
   {
-    name: "M.V. Ramanakumar",
-    designation: "Partner",
+    name: "M.V. RAMANAKUMAR",
+    designation: "PARTNER",
     description: "Expert in supply chain optimization and steel procurement, ensuring the highest standards of material quality.",
-    initials: "MVR"
+    image: "/__l5e/assets-v1/2ed039f3-80e9-44e2-86ee-359f130097a9/leader-raman.png"
   },
   {
-    name: "M.V.N.M. Yeshuvanth",
-    designation: "Partner",
+    name: "M.V.N.M. YESHUVANTH",
+    designation: "PARTNER",
     description: "Focusing on modern engineering solutions and expanding the company's footprint across new industrial sectors.",
-    initials: "MVNY"
+    image: "/__l5e/assets-v1/2ed039f3-80e9-44e2-86ee-359f130097a9/leader-yeshu.png"
   }
 ];
 
 const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: number }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30, x: index % 2 === 0 ? -20 : 20 }}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ 
-        delay: index * 0.2, 
+        delay: index * 0.15, 
         duration: 0.8, 
         ease: [0.21, 1, 0.36, 1] 
       }}
-      className="relative group w-full"
+      className="relative group w-full pt-16"
     >
-      {/* 3D Engineered Panel Card */}
-      <div className="relative bg-ssc-steel-dark rounded-[24px] p-8 lg:p-10 border border-white/5 shadow-2xl overflow-hidden group-hover:translate-y-[-8px] transition-all duration-500 flex flex-col h-full">
-        
-        {/* Brushed Metal Texture */}
-        <div className="absolute inset-0 opacity-[0.07] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
-        
-        {/* Engineering Grid Overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-             style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-
-        {/* Beveled Edge Highlight */}
-        <div className="absolute inset-0 border-[0.5px] border-white/10 rounded-[24px] pointer-events-none group-hover:border-ssc-gold/30 transition-colors duration-500" />
-        
-        {/* Inner Glow / Lighting */}
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/[0.02] to-white/[0.05] pointer-events-none" />
-
-        <div className="relative z-10 flex flex-col items-center text-center flex-1">
-          {/* Abstract Steel Monogram / Silhouette */}
-          <div className="relative w-32 h-32 mb-8 group-hover:scale-110 transition-transform duration-700">
-            {/* Machined Metal Ring */}
-            <div className="absolute inset-0 rounded-full border-2 border-ssc-gold/20 shadow-[0_0_20px_rgba(197,160,89,0.1)]" />
-            
-            {/* Metallic Inner Surface */}
-            <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1A2333] to-ssc-navy flex items-center justify-center shadow-inner overflow-hidden">
-               {/* Subtle metallic reflection line */}
-               <motion.div 
-                 animate={{ x: ['-100%', '100%'] }}
-                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                 className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
-               />
-               <span className="text-ssc-gold text-h3 font-bold opacity-80">
-                 {leader.initials}
-               </span>
-            </div>
-            
-            {/* Bolt Details */}
-            {[0, 90, 180, 270].map((deg) => (
-              <div 
-                key={deg}
-                className="absolute w-1.5 h-1.5 rounded-full bg-ssc-gold/30 shadow-inner"
-                style={{ 
-                  top: '50%', 
-                  left: '50%', 
-                  transform: `rotate(${deg}deg) translate(58px) rotate(-${deg}deg)` 
-                }}
-              />
-            ))}
-          </div>
-
-          {/* Text Content */}
-          <div className="w-full">
-            <h3 className="text-h3 text-ssc-on-dark-primary mb-2 group-hover:text-ssc-gold transition-colors duration-300 uppercase">
-              {leader.name}
-            </h3>
-            <div className="inline-block px-3 py-1 bg-ssc-gold/10 rounded-md mb-6">
-              <span className="text-micro text-ssc-gold uppercase">
-                {leader.designation}
-              </span>
-            </div>
-            <p className="text-body text-ssc-on-dark-body">
-              {leader.description}
-            </p>
-          </div>
-        </div>
-
-        {/* Bottom Gold Accent Bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-ssc-gold/40 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+      {/* Hanging Hook Visual Element */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-16 bg-gradient-to-b from-[#b8bec7] to-[#e6e8ec] z-0" />
+      <div className="absolute top-12 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 border-[#b8bec7] z-10" />
+      <div className="absolute top-[52px] left-1/2 -translate-x-1/2 w-6 h-6 z-20">
+        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-ssc-gold drop-shadow-md">
+          <path d="M12 2C6.47 2 2 6.47 2 12C2 17.53 6.47 22 12 22C17.53 22 22 17.53 22 12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+        </svg>
       </div>
 
-      {/* Deep Shadow */}
-      <div className="absolute -inset-2 bg-black/40 blur-2xl -z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4" />
+      {/* 3D Animated Card */}
+      <motion.div 
+        whileHover={{ rotateY: 8, rotateX: -5, translateZ: 20 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+        className="relative bg-[#1C2533] rounded-[16px] p-8 border border-white/5 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] flex flex-col items-center text-center overflow-hidden h-full z-10"
+        style={{ transformStyle: 'preserve-3d' }}
+      >
+        {/* Card Surface Highlight */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent pointer-events-none" />
+        
+        {/* Net/Square Image Implementation */}
+        <div className="relative w-40 h-40 mb-8 overflow-hidden rounded-[12px] shadow-2xl border border-white/10 group-hover:scale-105 transition-transform duration-700">
+          <img 
+            src={leader.image} 
+            alt={leader.name} 
+            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+          />
+          {/* Subtle light sweep */}
+          <motion.div 
+             animate={{ x: ['-100%', '200%'] }}
+             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+             className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
+           />
+        </div>
+
+        {/* Text Content */}
+        <div className="relative z-10 flex flex-col items-center flex-1">
+          <h3 className="text-[20px] lg:text-[22px] text-white mb-2 font-bold tracking-tight uppercase">
+            {leader.name}
+          </h3>
+          
+          <div className="inline-block px-4 py-1.5 bg-ssc-gold/10 border border-ssc-gold/20 rounded-full mb-6">
+            <span className="text-[11px] text-ssc-gold font-bold tracking-[0.1em] uppercase">
+              {leader.designation}
+            </span>
+          </div>
+          
+          <p className="text-[14px] text-ssc-gray-muted leading-relaxed max-w-[280px]">
+            {leader.description}
+          </p>
+        </div>
+
+        {/* Bottom Detail */}
+        <div className="mt-8 pt-6 border-t border-white/5 w-full">
+          <div className="flex justify-center gap-2">
+            {[1, 2, 3].map(i => (
+              <div key={i} className="w-1 h-1 rounded-full bg-ssc-gold/30" />
+            ))}
+          </div>
+        </div>
+      </motion.div>
     </motion.div>
   );
 };
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-16 lg:py-24 bg-ssc-steel-light overflow-hidden">
-      {/* Precision Blueprint Background */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.05]">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'linear-gradient(var(--ssc-navy) 1px, transparent 1px), linear-gradient(90deg, var(--ssc-navy) 1px, transparent 1px)',
-            backgroundSize: '40px 40px'
-          }}
-        />
-      </div>
-      {/* Background Engineering Elements */}
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-hidden">
+      {/* Dynamic Geometric Technical Background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')]" />
-        <div className="absolute inset-0 opacity-[0.02]" 
-             style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
+        <div className="absolute inset-0 opacity-[0.05]" 
+             style={{ 
+               backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(212, 175, 55, 0.2) 1px, transparent 0)', 
+               backgroundSize: '40px 40px' 
+             }} />
+        <div className="absolute top-0 left-0 w-full h-full opacity-[0.02]" 
+             style={{ 
+               backgroundImage: 'linear-gradient(45deg, transparent 48%, #fff 50%, transparent 52%)',
+               backgroundSize: '100px 100px'
+             }} />
       </div>
 
       <div className="container-wide relative z-10 mx-auto">
@@ -145,8 +131,8 @@ export const LeadershipSection = () => {
               </span>
               <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
             </div>
-            <h2 className="text-h2 text-ssc-navy uppercase">
-              OUR <span className="text-ssc-gold-dark">LEADERSHIP</span>
+            <h2 className="text-h2 text-white uppercase tracking-tight">
+              OUR <span className="text-ssc-gold">LEADERSHIP</span>
             </h2>
           </motion.div>
         </div>
@@ -164,7 +150,7 @@ export const LeadershipSection = () => {
           transition={{ delay: 0.5, duration: 1.5 }}
           className="text-center mt-20"
         >
-          <span className="text-ssc-navy/20 text-[10px] font-body font-bold tracking-[0.6em] uppercase">
+          <span className="text-white/10 text-[10px] font-body font-bold tracking-[0.6em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION
           </span>
         </motion.div>
