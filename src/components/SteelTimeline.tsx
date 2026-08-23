@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import timelineRebar from '@/assets/timeline-rebar.png.asset.json';
 
 const milestones = [
   {
@@ -36,32 +35,36 @@ const milestones = [
 const SteelRod = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'horizontal' }) => {
   if (orientation === 'horizontal') {
     return (
-      <div className="absolute top-0 left-0 w-full h-[28px] flex items-center">
-        {/* Silver Machined Rebar from Reference (Horizontal) */}
-        <div className="w-full h-[20px] relative overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)] border-y border-white/5">
-          <img 
-            src={timelineRebar.url} 
-            alt="" 
-            className="w-full h-full object-cover brightness-[1.2] contrast-[1.1] rotate-90 scale-[2]"
+      <div className="absolute top-0 left-0 w-full h-[18px] flex items-center">
+        {/* The Rebar Body */}
+        <div className="w-full h-[12px] bg-[#2A2D35] relative overflow-hidden rounded-full border-y border-white/10 shadow-2xl">
+          {/* Rips/Texture */}
+          <div className="absolute inset-0 opacity-40" 
+               style={{ 
+                 backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, #000 10px, #000 12px)',
+                 backgroundSize: '20px 100%'
+               }} 
           />
-          {/* Metallic Sheen Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/40 mix-blend-overlay" />
+          {/* Steel Sheen */}
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/30" />
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative w-[24px] h-full flex justify-center">
-      {/* Silver Machined Rebar from Reference */}
-      <div className="w-[18px] h-full relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)] border-x border-white/10">
-        <img 
-          src={timelineRebar.url} 
-          alt="" 
-          className="w-full h-full object-cover brightness-[1.1] contrast-[1.2]"
+    <div className="relative w-[18px] h-full flex justify-center">
+      {/* The Rebar Body */}
+      <div className="w-[12px] h-full bg-[#2A2D35] relative overflow-hidden rounded-full border-x border-white/10 shadow-2xl">
+        {/* Rips/Texture */}
+        <div className="absolute inset-0 opacity-40" 
+             style={{ 
+               backgroundImage: 'repeating-linear-gradient(135deg, transparent, transparent 10px, #000 10px, #000 12px)',
+               backgroundSize: '100% 20px'
+             }} 
         />
-        {/* Metallic Sheen Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-black/30 mix-blend-overlay" />
+        {/* Steel Sheen */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-black/30" />
       </div>
     </div>
   );
@@ -93,12 +96,12 @@ const ClampHook = ({ position, orientation, delay, cardData }: any) => {
         
         {/* Connecting Arm/Hook */}
         <div className={`absolute bg-gradient-to-r from-ssc-gold to-ssc-gold/20 shadow-lg ${
-          isHorizontal ? 'w-[2px] h-10 top-full left-1/2 -translate-x-1/2' : 'h-[2px] w-6 top-1/2 left-full'
+          isHorizontal ? 'w-[2px] h-16 top-full left-1/2 -translate-x-1/2' : 'h-[2px] w-12 top-1/2 left-full'
         }`} />
 
         {/* The Card */}
         <div className={`absolute ${
-          isHorizontal ? 'top-12 left-1/2 -translate-x-1/2' : 'left-10 top-1/2 -translate-y-1/2'
+          isHorizontal ? 'top-20 left-1/2 -translate-x-1/2' : 'left-24 top-1/2 -translate-y-1/2'
         }`}>
           <motion.div
             initial={{ opacity: 0, x: isHorizontal ? 0 : 20, y: isHorizontal ? 20 : 0 }}
@@ -189,16 +192,16 @@ export const SteelTimeline = () => {
         {/* Mobile Version - Vertical Rod on Left */}
         <div className="lg:hidden relative flex min-h-[1000px] pt-10">
           {/* Vertical Spine on Left */}
-          <div className="absolute left-2.5 top-0 bottom-0">
+          <div className="absolute left-4 top-0 bottom-0">
             <SteelRod orientation="vertical" />
           </div>
 
           {/* Cards Container */}
-          <div className="flex flex-col gap-24 ml-8 w-full">
+          <div className="flex flex-col gap-24 ml-12 w-full">
             {milestones.map((ms, idx) => (
               <div key={idx} className="relative flex items-center h-[180px]">
                 {/* Connecting Clamp & Arm for Mobile */}
-                <div className="absolute left-[-22px] top-1/2 -translate-y-1/2 z-20 flex items-center">
+                <div className="absolute left-[-40px] top-1/2 -translate-y-1/2 z-20 flex items-center">
                   <motion.div
                     initial={{ scale: 0, opacity: 0 }}
                     whileInView={{ scale: 1, opacity: 1 }}
