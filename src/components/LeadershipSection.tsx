@@ -130,7 +130,7 @@ export const LeadershipSection = () => {
              style={{ backgroundImage: 'linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)', backgroundSize: '80px 80px' }} />
       </div>
 
-      <div className="container-wide relative z-10 px-6 max-w-[1280px] mx-auto">
+      <div className="container-wide relative z-10 mx-auto">
         <div className="text-center mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

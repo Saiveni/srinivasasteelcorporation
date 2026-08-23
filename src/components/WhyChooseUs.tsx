@@ -61,7 +61,7 @@ export const WhyChooseUs = () => {
         />
       </div>
 
-      <div className="container-wide relative z-10 px-6 max-w-[1400px] mx-auto">
+      <div className="container-wide relative z-10 mx-auto">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-end mb-16 lg:mb-24">
           <div className="w-full lg:w-[45%]">
             <motion.div

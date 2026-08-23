@@ -44,7 +44,7 @@ export const IndustrialNetwork = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(197,160,89,0.05)_0%,rgba(5,10,20,1)_80%)]" />
       </div>
 
-      <div className="container-wide relative z-10 px-6 max-w-[1400px] mx-auto">
+      <div className="container-wide relative z-10 mx-auto">
         <div className="text-center mb-12 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

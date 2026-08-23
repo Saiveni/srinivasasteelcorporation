@@ -44,7 +44,7 @@ export const TrustCapabilities = () => {
         </div>
       </motion.div>
 
-      <div className="container-wide relative z-10">
+      <div className="container-wide relative z-10 mx-auto">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-center">
           
           {/* CONTENT BLOCK */}
