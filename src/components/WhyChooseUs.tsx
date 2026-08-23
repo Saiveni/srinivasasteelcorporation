@@ -102,7 +102,7 @@ export const WhyChooseUs = () => {
   };
 
   return (
-    <section id="why-ssc" className="relative py-12 lg:py-24 bg-white overflow-hidden">
+    <section id="why-ssc" className="relative py-12 lg:py-24 bg-white overflow-visible">
       {/* Structural Background Detail */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div 
@@ -143,33 +143,37 @@ export const WhyChooseUs = () => {
           ))}
         </div>
 
-        <div className="lg:hidden -mx-6 px-6">
+        <div className="lg:hidden -mx-6 px-6 relative">
           <div 
             ref={scrollRef}
             onScroll={handleScroll}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-6"
-            style={{ WebkitOverflowScrolling: 'touch' }}
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar py-8 px-4"
+            style={{ 
+              WebkitOverflowScrolling: 'touch',
+              scrollPaddingLeft: '1rem',
+              scrollPaddingRight: '1rem'
+            }}
           >
             {strengths.map((item, idx) => (
               <div 
                 key={idx} 
-                className="flex-shrink-0 w-[75%] snap-center"
+                className="flex-shrink-0 w-[85%] snap-center"
               >
                 <StrengthCard item={item} isMobile={true} />
               </div>
             ))}
-            {/* Spacer for "next card partially visible" effect on the last card */}
+            {/* Spacer for proper alignment of the last card */}
             <div className="flex-shrink-0 w-4" />
           </div>
           
-          {/* Pagination Dots - Reduced gap */}
-          <div className="flex justify-center gap-2 mt-2">
+          {/* Pagination Dots - Better spacing */}
+          <div className="flex justify-center gap-2 mt-4">
             {strengths.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => scrollTo(idx)}
-                className={`h-1 rounded-full transition-all duration-300 ${
-                  activeIndex === idx ? 'w-4 bg-ssc-gold-dark' : 'w-1 bg-ssc-navy/10'
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  activeIndex === idx ? 'w-6 bg-ssc-gold-dark' : 'w-2 bg-ssc-navy/10'
                 }`}
               />
             ))}

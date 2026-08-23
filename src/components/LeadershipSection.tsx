@@ -92,7 +92,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-hidden">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-visible">
       {/* Dynamic Geometric Technical Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.05]" 
@@ -128,7 +128,7 @@ export const LeadershipSection = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-[1200px] mx-auto relative items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-12 max-w-[1200px] mx-auto relative items-stretch px-6 md:px-0 py-8">
           {leaders.map((leader, idx) => (
             <LeaderCard key={leader.name} leader={leader} index={idx} />
           ))}

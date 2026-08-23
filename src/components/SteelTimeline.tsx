@@ -35,7 +35,7 @@ export const SteelTimeline = () => {
   const dotY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-hidden bg-[#f5f6f7]">
+    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-visible bg-[#f5f6f7]">
       <div className="container-wide relative z-10 mx-auto">
         <div className="text-center mb-12 lg:mb-20">
           <motion.div
@@ -118,7 +118,7 @@ export const SteelTimeline = () => {
         </div>
 
         {/* Mobile Version - Vertical */}
-        <div className="lg:hidden relative flex flex-col items-center pt-4">
+        <div className="lg:hidden relative flex flex-col items-center pt-8 pb-12">
           {/* Silver Vertical Line */}
           <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-ssc-navy/10 -translate-x-1/2 z-0">
             {/* Animated Silver Path */}
