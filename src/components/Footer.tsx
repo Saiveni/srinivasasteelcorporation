@@ -18,7 +18,7 @@ export const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-3">
+            <Link to="/" className="flex items-center gap-3 cursor-pointer">
               <img src={sscLogo.url} alt="SSC Logo" className="h-16 w-16 object-contain filter brightness-0 invert" />
               <div className="flex flex-col border-l border-ssc-on-dark-primary/10 pl-4 py-1">
                 <span className="text-h4 font-bold tracking-[0.05em] leading-none uppercase text-ssc-on-dark-primary">
@@ -38,11 +38,11 @@ export const Footer = () => {
           <div>
             <h4 className="text-micro text-ssc-gold uppercase mb-6">Quick Links</h4>
             <ul className="space-y-4 text-ssc-on-dark-body">
-              <li><Link to="/" search={{ product: "" }} className="hover:text-ssc-on-dark-primary transition-colors">Home</Link></li>
-              <li><Link to="/about" search={{ product: "" }} className="hover:text-ssc-on-dark-primary transition-colors">About</Link></li>
-              <li><Link to="/products" search={{ product: "" }} className="hover:text-ssc-on-dark-primary transition-colors">Products</Link></li>
-              <li><Link to="/gallery" search={{ product: "" }} className="hover:text-ssc-on-dark-primary transition-colors">Gallery</Link></li>
-              <li><Link to="/contact" search={{ product: "" }} className="hover:text-ssc-on-dark-primary transition-colors">Contact</Link></li>
+              <li><Link to="/" activeOptions={{ exact: true }} className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Home</Link></li>
+              <li><Link to="/about" className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">About</Link></li>
+              <li><Link to="/products" className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Products</Link></li>
+              <li><Link to="/gallery" className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Gallery</Link></li>
+              <li><Link to="/contact" search={{ product: "" }} className="hover:text-ssc-on-dark-primary transition-colors cursor-pointer data-[status=active]:text-ssc-gold">Contact</Link></li>
             </ul>
           </div>
 

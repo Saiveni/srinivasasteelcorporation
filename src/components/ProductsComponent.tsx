@@ -63,7 +63,7 @@ export const ProductsComponent = () => {
   return (
     <div className="bg-ssc-steel-light min-h-screen">
       {/* Product Page Hero */}
-      <section className="relative pt-32 pb-14 lg:pt-48 lg:pb-24 overflow-hidden bg-white border-b border-black/5">
+      <section className="relative pt-24 pb-14 lg:pt-36 lg:pb-24 overflow-hidden bg-white border-b border-black/5">
         <div className="absolute inset-0 z-0 opacity-[0.02] pointer-events-none"
              style={{ 
                backgroundImage: 'linear-gradient(to right, var(--ssc-navy) 1px, transparent 1px), linear-gradient(to bottom, var(--ssc-navy) 1px, transparent 1px)',

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 
 const strengths = [
   {
@@ -136,7 +137,7 @@ export const WhyChooseUs = () => {
         </div>
 
         {/* Desktop Grid (Locked) */}
-        <div className="hidden lg:grid grid-cols-3 gap-8">
+        <div className="hidden lg:grid grid-cols-3 gap-8 items-stretch">
           {strengths.map((item) => (
             <StrengthCard key={item.title} item={item} />
           ))}
@@ -196,9 +197,9 @@ export const WhyChooseUs = () => {
               </p>
             </div>
             
-            <button className="whitespace-nowrap bg-ssc-gold text-ssc-navy px-12 py-5 rounded-lg font-bold text-sm uppercase hover:bg-white transition-all duration-500 shadow-premium-medium hover:scale-105 cursor-pointer">
+            <Link to="/contact" search={{ product: "" }} className="whitespace-nowrap bg-ssc-gold text-ssc-navy px-12 py-5 rounded-lg font-bold text-sm uppercase hover:bg-white transition-all duration-500 shadow-premium-medium hover:scale-105 cursor-pointer flex items-center justify-center">
               GET A CUSTOM QUOTE
-            </button>
+            </Link>
           </div>
         </motion.div>
       </div>

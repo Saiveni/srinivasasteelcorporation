@@ -102,7 +102,7 @@ function ContactPage() {
   return (
     <div className="bg-ssc-navy min-h-screen">
       {/* Contact Hero */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden bg-background pt-[80px]">
+      <section className="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden bg-background pt-[62px] sm:pt-[68px] md:pt-[72px]">
         <div className="absolute inset-0 z-0">
           <img 
             src={heroImageUrl} 

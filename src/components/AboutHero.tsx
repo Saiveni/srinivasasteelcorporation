@@ -185,14 +185,14 @@ export const AboutHero = () => {
 
         {/* Curve Transition into Company Story */}
         <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] transform translate-y-[1px]">
-          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] lg:h-[60px] fill-ssc-steel-light">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[30px] lg:h-[60px] fill-white">
             <path d="M0,120 C300,100 900,100 1200,120 L1200,120 L0,120 Z" />
           </svg>
         </div>
       </section>
 
       {/* SECTION 2 — COMPANY STORY */}
-      <section id="company-story" className="relative py-16 lg:py-24 bg-ssc-steel-light overflow-hidden">
+      <section id="company-story" className="relative py-16 lg:py-24 bg-white overflow-hidden">
         <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
           <div
             className="absolute inset-0"

@@ -106,10 +106,12 @@
     overflow-x: hidden;
     width: 100%;
     max-width: 100vw;
+    scroll-behavior: smooth;
   }
   
   html {
     overflow-x: hidden;
+    background-color: var(--color-background);
   }
   
   h1, h2, h3, h4 {

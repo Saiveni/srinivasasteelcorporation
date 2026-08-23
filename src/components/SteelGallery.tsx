@@ -236,7 +236,7 @@ export const SteelGallery = ({ isHomePage = false }: { isHomePage?: boolean }) =
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="pt-32 pb-14 lg:pb-24 bg-ssc-steel-light">
+      <section className="pt-24 pb-14 lg:pb-24 bg-ssc-steel-light">
         <div className="container-wide">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">

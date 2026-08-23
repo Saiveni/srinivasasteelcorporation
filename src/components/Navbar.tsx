@@ -117,12 +117,7 @@ export const Navbar = () => {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 py-2">
           <Link 
             to="/" 
-            onClick={() => {
-              if (location.pathname === "/") {
-                window.location.reload();
-              }
-            }}
-            className="flex items-center gap-2 sm:gap-4 relative group shrink-0"
+            className="flex items-center gap-2 sm:gap-4 relative group shrink-0 cursor-pointer"
           >
             <div className="h-9 w-9 sm:h-12 sm:w-12 shrink-0 drop-shadow-[0_2px_4px_rgba(0,0,0,0.1)]">
               <img
@@ -156,7 +151,8 @@ export const Navbar = () => {
                 <motion.div key={link.name} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 * i }}>
                   <Link
                     to={link.href}
-                    className={`relative text-micro transition-all py-2 whitespace-nowrap ${
+                    activeOptions={{ exact: link.href === '/' }}
+                    className={`relative text-micro transition-all py-2 whitespace-nowrap cursor-pointer ${
                       isActive ? "text-ssc-navy" : "text-ssc-navy/70 hover:text-ssc-navy"
                     }`}
                   >
@@ -190,6 +186,7 @@ export const Navbar = () => {
             className="md:hidden relative z-[120] group outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
+            type="button"
           >
             <div className={`
               relative w-11 h-10 sm:w-13 sm:h-12 rounded-[12px]
@@ -240,25 +237,26 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[110] bg-white flex flex-col light-theme"
+            className="fixed inset-0 z-[110] bg-white flex flex-col light-theme pointer-events-auto"
           >
             {/* Overlay Header Mirror */}
             <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-white relative border-b border-black/5 shrink-0">
-              <div className="flex items-center gap-2 sm:gap-4 relative z-10">
+              <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 sm:gap-4 relative z-10 cursor-pointer">
                 <div className="h-8 w-8 sm:h-12 sm:w-12">
                   <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain opacity-95" />
                 </div>
                 <div className="w-[1px] h-6 sm:h-10 bg-ssc-navy/20" />
-                <div className="flex flex-col">
+                <div className="flex flex-col text-left">
                   <span className="text-h4 font-bold text-ssc-navy uppercase leading-none">SRINIVASA STEEL</span>
                   <span className="text-micro text-ssc-gold-dark uppercase mt-1">CORPORATION</span>
                 </div>
-              </div>
+              </Link>
 
               {/* Close Button Trigger */}
               <button 
                 onClick={() => setIsOpen(false)}
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-black/10 bg-white shadow-sm relative z-10"
+                type="button"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-black/10 bg-white shadow-sm relative z-10 cursor-pointer"
               >
                 <X className="text-black/40 w-5 h-5" strokeWidth={2} />
               </button>
@@ -277,36 +275,44 @@ export const Navbar = () => {
               {/* Navigation Items */}
               <div className="relative z-10 h-full flex flex-col py-6 px-8 overflow-y-auto">
                 <div className="flex flex-col gap-1">
-                  {navLinks.map((link, i) => (
-                    <motion.div
-                      key={link.name}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
-                    >
-                      <Link
-                        to={link.href}
-                        onClick={() => setIsOpen(false)}
-                        className="group flex items-center gap-5 py-3"
+                  {navLinks.map((link, i) => {
+                    const isActive = location.pathname === link.href;
+                    return (
+                      <motion.div
+                        key={link.name}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
                       >
-                        {/* 3D Realistic Metallic Icons - Pure Object Visibility */}
-                        <div className="w-12 h-12 flex items-center justify-center shrink-0">
-                          <div 
-                            className="w-12 h-12 scale-[1.1] drop-shadow-[0_8px_12px_rgba(0,0,0,0.2)]"
-                            style={{
-                              backgroundImage: `url('${steelIconsAssetV2.url}')`,
-                              backgroundSize: '100% 500%',
-                              backgroundPosition: `0 ${link.icon * 25}%`,
-                              filter: 'contrast(1.05) brightness(1.02)'
-                            }}
-                          />
-                        </div>
-                        <span className="text-body font-bold text-ssc-navy group-hover:text-ssc-gold-dark transition-colors uppercase">
-                          {link.name}
-                        </span>
-                      </Link>
-                    </motion.div>
-                  ))}
+                        <Link
+                          to={link.href}
+                          onClick={() => setIsOpen(false)}
+                          activeOptions={{ exact: link.href === '/' }}
+                          className={`group flex items-center gap-5 py-3 cursor-pointer transition-colors ${
+                            isActive ? "text-ssc-gold-dark" : ""
+                          }`}
+                        >
+                          {/* 3D Realistic Metallic Icons - Pure Object Visibility */}
+                          <div className="w-12 h-12 flex items-center justify-center shrink-0">
+                            <div 
+                              className="w-12 h-12 scale-[1.1] drop-shadow-[0_8px_12px_rgba(0,0,0,0.2)]"
+                              style={{
+                                backgroundImage: `url('${steelIconsAssetV2.url}')`,
+                                backgroundSize: '100% 500%',
+                                backgroundPosition: `0 ${link.icon * 25}%`,
+                                filter: isActive ? 'contrast(1.1) brightness(1.1) drop-shadow(0 0 8px rgba(212,175,55,0.4))' : 'contrast(1.05) brightness(1.02)'
+                              }}
+                            />
+                          </div>
+                          <span className={`text-body font-bold transition-colors uppercase ${
+                            isActive ? "text-ssc-gold-dark" : "text-ssc-navy group-hover:text-ssc-gold-dark"
+                          }`}>
+                            {link.name}
+                          </span>
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
                 </div>
 
                 {/* GET A QUOTE Button */}
