@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ArrowRight, X } from "lucide-react";
+import { ArrowRight, X, Home, Info, ShoppingBag, Image as ImageIcon, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import sscLogo from "@/assets/ssc-logo-transparent.png.asset.json";
 import steelIconsAssetV2 from "@/assets/steel-nav-icons-v2.png.asset.json";
@@ -35,11 +35,11 @@ export const Navbar = () => {
   }, [location.pathname, location.searchStr]);
 
   const navLinks = [
-    { name: "HOME", href: "/", icon: 0 },
-    { name: "ABOUT", href: "/about", icon: 1 },
-    { name: "PRODUCTS", href: "/products", icon: 2 },
-    { name: "GALLERY", href: "/gallery", icon: 3 },
-    { name: "CONTACT", href: "/contact", icon: 4 },
+    { name: "HOME", href: "/", Icon: Home },
+    { name: "ABOUT", href: "/about", Icon: Info },
+    { name: "PRODUCTS", href: "/products", Icon: ShoppingBag },
+    { name: "GALLERY", href: "/gallery", Icon: ImageIcon },
+    { name: "CONTACT", href: "/contact", Icon: Phone },
   ];
 
   const containerVariants: Variants = {
@@ -237,18 +237,18 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-            className="fixed inset-0 z-[110] bg-white flex flex-col light-theme pointer-events-auto"
+            className="fixed inset-0 z-[110] bg-[#0B1320] flex flex-col pointer-events-auto"
           >
             {/* Overlay Header Mirror */}
-            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-white relative border-b border-black/5 shrink-0">
+            <div className="h-[68px] sm:h-[78px] w-full flex items-center justify-between px-4 sm:px-8 bg-[#0B1320] relative border-b border-white/5 shrink-0">
               <Link to="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2 sm:gap-4 relative z-10 cursor-pointer">
                 <div className="h-8 w-8 sm:h-12 sm:w-12">
-                  <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain opacity-95" />
+                  <img src={sscLogo.url} alt="SSC" className="h-full w-full object-contain filter brightness-110" />
                 </div>
-                <div className="w-[1px] h-6 sm:h-10 bg-ssc-navy/20" />
+                <div className="w-[1px] h-6 sm:h-10 bg-white/20" />
                 <div className="flex flex-col text-left">
-                  <span className="text-h4 font-bold text-ssc-navy uppercase leading-none">SRINIVASA STEEL</span>
-                  <span className="text-micro text-ssc-gold-dark uppercase mt-1">CORPORATION</span>
+                  <span className="text-h4 font-bold text-white uppercase leading-none">SRINIVASA STEEL</span>
+                  <span className="text-micro text-ssc-gold uppercase mt-1">CORPORATION</span>
                 </div>
               </Link>
 
@@ -256,18 +256,18 @@ export const Navbar = () => {
               <button 
                 onClick={() => setIsOpen(false)}
                 type="button"
-                className="w-10 h-10 flex items-center justify-center rounded-full border border-black/10 bg-white shadow-sm relative z-10 cursor-pointer"
+                className="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-sm relative z-10 cursor-pointer"
               >
-                <X className="text-black/40 w-5 h-5" strokeWidth={2} />
+                <X className="text-white w-5 h-5" strokeWidth={2} />
               </button>
             </div>
 
             {/* Content Area with White Engineering Grid */}
-            <div className="flex-1 relative overflow-hidden bg-ssc-steel-light">
+            <div className="flex-1 relative overflow-hidden bg-[#0B1320]">
               <div 
-                className="absolute inset-0 opacity-[0.2] pointer-events-none z-[1]" 
+                className="absolute inset-0 opacity-[0.05] pointer-events-none z-[1]" 
                 style={{ 
-                  backgroundImage: `linear-gradient(to right, var(--ssc-navy) 0.05, transparent 1px), linear-gradient(to bottom, var(--ssc-navy) 0.05, transparent 1px)`,
+                  backgroundImage: `linear-gradient(to right, #D4AF37 0.05px, transparent 1px), linear-gradient(to bottom, #D4AF37 0.05px, transparent 1px)`,
                   backgroundSize: '40px 40px'
                 }} 
               />
@@ -288,43 +288,48 @@ export const Navbar = () => {
                           to={link.href}
                           onClick={() => setIsOpen(false)}
                           activeOptions={{ exact: link.href === '/' }}
-                          className={`group flex items-center gap-8 py-5 cursor-pointer transition-all duration-300 ${
-                            isActive ? "translate-x-3" : "hover:translate-x-2"
+                          className={`group flex items-center gap-6 py-3 cursor-pointer transition-all duration-300 ${
+                            isActive ? "translate-x-1" : "hover:translate-x-1"
                           }`}
                         >
-                          {/* 3D Realistic Metallic Icons - Perfectly Aligned & Background-Free */}
-                          <div className="w-14 h-14 flex items-center justify-center shrink-0 relative">
-                            {/* Glow effect for active state - enhanced */}
-                            {isActive && (
-                              <motion.div 
-                                layoutId="mobileIconGlow"
-                                className="absolute inset-0 bg-ssc-gold/30 blur-2xl rounded-full"
-                              />
-                            )}
-                            <div 
-                              className="w-12 h-12 relative z-10 transition-transform group-hover:scale-110 flex items-center justify-center"
-                              style={{
-                                backgroundImage: `url('${steelIconsAssetV2.url}')`,
-                                backgroundSize: '100% 500%',
-                                backgroundPosition: `0 ${link.icon * 25}%`,
-                                filter: isActive 
-                                  ? 'contrast(1.1) brightness(1.05) drop-shadow(0 4px 8px rgba(0,0,0,0.15))' 
-                                  : 'contrast(1.02) brightness(0.98)',
-                                mixBlendMode: 'multiply', // Removes white backgrounds from sprite
-                                backgroundRepeat: 'no-repeat'
-                              }}
+                          {/* Premium 3D Circular Navigation Icons - Engineered Industrial Style */}
+                          <div className="w-12 h-12 flex items-center justify-center shrink-0 relative group/icon">
+                            {/* Machined Metallic Circular Base */}
+                            <div className={`
+                              absolute inset-0 rounded-full
+                              bg-gradient-to-br from-ssc-navy via-[#1e2a3a] to-black
+                              border-[1.5px] transition-all duration-300
+                              ${isActive 
+                                ? "border-ssc-gold shadow-[0_0_15px_rgba(212,175,55,0.4)] scale-105" 
+                                : "border-ssc-gold/30 shadow-lg group-hover/icon:border-ssc-gold/60 group-hover/icon:scale-105"
+                              }
+                            `} />
+                            
+                            {/* Inner Metallic Highlight */}
+                            <div className="absolute inset-[2px] rounded-full border border-white/5 pointer-events-none" />
+                            
+                            {/* Icon Component */}
+                            <link.Icon 
+                              size={20} 
+                              className={`relative z-10 transition-all duration-300 ${
+                                isActive ? "text-ssc-gold scale-110" : "text-ssc-gold/70 group-hover/icon:text-ssc-gold group-hover/icon:scale-110"
+                              }`}
+                              strokeWidth={1.5}
                             />
                           </div>
                           
                           <div className="flex flex-col justify-center">
-                            <span className={`text-h3 font-bold tracking-tight transition-colors uppercase leading-none ${
-                              isActive ? "text-ssc-gold-dark" : "text-ssc-navy group-hover:text-ssc-gold-dark"
+                            <span className={`text-body font-bold tracking-wide transition-colors uppercase leading-none ${
+                              isActive ? "text-ssc-gold-dark" : "text-white group-hover:text-ssc-gold-dark"
                             }`}>
                               {link.name}
                             </span>
-                            <div className={`h-[3px] mt-2 transition-all duration-500 ease-out ${
-                              isActive ? "w-full bg-ssc-gold shadow-[0_1px_4px_rgba(212,175,55,0.4)]" : "w-0 bg-ssc-gold/40 group-hover:w-2/3"
-                            }`} />
+                            {isActive && (
+                              <motion.div 
+                                layoutId="mobileActiveUnderline"
+                                className="h-[2px] mt-1.5 w-full bg-ssc-gold shadow-[0_1px_3px_rgba(212,175,55,0.3)]"
+                              />
+                            )}
                           </div>
                         </Link>
                       </motion.div>
@@ -348,9 +353,9 @@ export const Navbar = () => {
                 </motion.div>
                 
                 {/* Precision Built Label */}
-                <div className="mt-auto pb-4 flex items-center justify-between opacity-30">
-                  <span className="text-[8px] font-body tracking-[0.2em] uppercase">PRECISION BUILT</span>
-                  <span className="text-[8px] font-body tracking-[0.2em] uppercase">VER 2.4.0</span>
+                <div className="mt-auto pb-4 flex items-center justify-between opacity-50">
+                  <span className="text-[8px] font-body tracking-[0.2em] uppercase text-white">PRECISION BUILT</span>
+                  <span className="text-[8px] font-body tracking-[0.2em] uppercase text-white">VER 2.4.0</span>
                 </div>
               </div>
             </div>
