@@ -55,14 +55,16 @@ const SteelRod = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'ho
   return (
     <div className="relative w-[32px] h-full flex justify-center">
       {/* SSC Branded TMT Bar (Vertical) */}
-      <div className="w-[28px] h-full relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+      <div className="w-[32px] h-full relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)]">
         <img 
           src={sscTmtBar.url} 
           alt="SSC Branded TMT Bar" 
           className="w-full h-full object-cover brightness-[1.1] contrast-[1.1] scale-[1.05]"
         />
         {/* Metallic Sheen Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-transparent to-black/40 mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-black/50 mix-blend-overlay pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-[2px] bg-white/20 blur-[1px]" />
+        <div className="absolute inset-y-0 right-0 w-[2px] bg-black/40 blur-[1px]" />
       </div>
     </div>
   );
