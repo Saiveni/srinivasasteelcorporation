@@ -238,11 +238,11 @@ export const AboutHero = () => {
                 <div className="grid grid-cols-2 gap-10 pt-10 border-t border-ssc-navy/10">
                   <div>
                     <span className="text-h3 text-ssc-navy font-bold">100k+</span>
-                    <span className="text-ssc-navy/60 text-micro block mt-2">Tons Delivered</span>
+                    <span className="text-ssc-navy/70 text-micro block mt-2">Tons Delivered</span>
                   </div>
                   <div>
                     <span className="text-h3 text-ssc-navy font-bold">500+</span>
-                    <span className="text-ssc-navy/60 text-micro block mt-2">Major Projects</span>
+                    <span className="text-ssc-navy/70 text-micro block mt-2">Major Projects</span>
                   </div>
                 </div>
               </div>
