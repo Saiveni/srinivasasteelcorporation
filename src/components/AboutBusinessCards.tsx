@@ -284,27 +284,23 @@ const MobileCarousel = () => {
         <p className="text-[10px] font-technical text-white/20 leading-relaxed uppercase tracking-wider">
           '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
           <br /><br />
-          IMPORTANT — MOBILE ABOUT CARDS ONLY
+          IMPORTANT — MOBILE ABOUT PAGE ONLY
           <br />
-          This is a targeted correction, NOT a redesign.
+          THIS IS A TARGETED RESTORATION AND CLEANUP.
           <br />
-          MAKE CHANGES ONLY TO THE MOBILE VERSION OF THE ABOUT PAGE BUSINESS/FEATURE CARDS.
+          MAKE CHANGES ONLY TO THE MOBILE VERSION OF THE ABOUT PAGE.
           <br />
           DO NOT CHANGE DESKTOP.
           <br />
           DO NOT CHANGE TABLET.
           <br />
-          DO NOT CHANGE THE HEADER.
+          DO NOT CHANGE THE MOBILE HEADER.
           <br />
-          DO NOT CHANGE THE HERO.
+          DO NOT CHANGE THE MOBILE BUSINESS CARD CAROUSEL FROM STEP 1.
           <br />
-          DO NOT CHANGE THE LOCATIONS SECTION.
+          DO NOT CHANGE THE LOCATIONS DESIGN.
           <br />
-          DO NOT CHANGE THE TIMELINE.
-          <br />
-          DO NOT CHANGE ANY OTHER ABOUT SECTION.
-          <br />
-          Everything outside these mobile cards must remain exactly as it is.
+          DO NOT CHANGE ANY OTHER PAGE.
         </p>
       </div>
     </div>
