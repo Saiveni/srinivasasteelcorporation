@@ -36,8 +36,13 @@ const HERO_IMAGES = [
 
 export const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
     // Preload images
     HERO_IMAGES.forEach((img) => {
       if (img.url) {
@@ -49,13 +54,17 @@ export const HeroSection = () => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % HERO_IMAGES.length);
     }, 5000);
-    return () => clearInterval(timer);
+    
+    return () => {
+      clearInterval(timer);
+      window.removeEventListener('resize', checkMobile);
+    };
   }, []);
 
   const currentImage = HERO_IMAGES[currentIndex] || HERO_IMAGES[0];
   const imageUrl = currentImage?.url || "";
   const imageAlt = currentImage?.alt || "";
-  const imagePos = currentImage?.position || "center center";
+  const imagePos = isMobile ? currentImage.position.mobile : currentImage.position.desktop;
 
   const imageElement = (
     <AnimatePresence mode="popLayout">
