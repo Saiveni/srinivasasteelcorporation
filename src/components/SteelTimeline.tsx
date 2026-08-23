@@ -297,8 +297,9 @@ export const SteelTimeline = () => {
             <RebarSpine />
           </div>
             <div className="text-white text-[10px] opacity-30 mb-8 max-w-[300px]">
-              '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            SCOPE LOCK:\n\nThis request is NOT a global redesign.\n\nOnly modify the explicitly mentioned breakpoint/version.\n\nMOBILE ONLY means desktop code/design must remain unchanged.\n\nDESKTOP ONLY means mobile code/design must remain unchanged.\n\nDo not "improve" or synchronize the other breakpoint.\n\nPreserve all currently approved layouts outside the requested breakpoint.\n\nBefore making changes, identify which responsive styles/components are being modified and ensure the opposite breakpoint is protected.
+              {"'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''\n                                        \n                                            \n                                            SCOPE LOCK:\n\nThis request is NOT a global redesign.\n\nOnly modify the explicitly mentioned breakpoint/version.\n\nMOBILE ONLY means desktop code/design must remain unchanged.\n\nDESKTOP ONLY means mobile code/design must remain unchanged.\n\nDo not \"improve\" or synchronize the other breakpoint.\n\nPreserve all currently approved layouts outside the requested breakpoint.\n\nBefore making changes, identify which responsive styles/components are being modified and ensure the opposite breakpoint is protected."}
             </div>
+
             {milestones.map((ms, idx) => (
               <div key={idx} className="relative flex items-center">
                 <div className="absolute left-[-64px] sm:left-[-112px] top-1/2 -translate-y-1/2">
