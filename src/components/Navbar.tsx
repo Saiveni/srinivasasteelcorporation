@@ -288,27 +288,43 @@ export const Navbar = () => {
                           to={link.href}
                           onClick={() => setIsOpen(false)}
                           activeOptions={{ exact: link.href === '/' }}
-                          className={`group flex items-center gap-5 py-3 cursor-pointer transition-colors ${
-                            isActive ? "text-ssc-gold-dark" : ""
+                          className={`group flex items-center gap-6 py-4 cursor-pointer transition-all duration-300 ${
+                            isActive ? "translate-x-2" : "hover:translate-x-1"
                           }`}
                         >
-                          {/* 3D Realistic Metallic Icons - Pure Object Visibility */}
-                          <div className="w-12 h-12 flex items-center justify-center shrink-0">
+                          {/* 3D Realistic Metallic Icons - Perfectly Aligned & Background-Free */}
+                          <div className="w-12 h-12 flex items-center justify-center shrink-0 relative">
+                            {/* Glow effect for active state */}
+                            {isActive && (
+                              <motion.div 
+                                layoutId="mobileIconGlow"
+                                className="absolute inset-0 bg-ssc-gold/20 blur-xl rounded-full"
+                              />
+                            )}
                             <div 
-                              className="w-10 h-10 scale-[1.1] drop-shadow-sm"
+                              className="w-11 h-11 relative z-10 transition-transform group-hover:scale-110"
                               style={{
                                 backgroundImage: `url('${steelIconsAssetV2.url}')`,
                                 backgroundSize: '100% 500%',
                                 backgroundPosition: `0 ${link.icon * 25}%`,
-                                filter: isActive ? 'contrast(1.1) brightness(1.1)' : 'contrast(1.05) brightness(1.02)'
+                                filter: isActive 
+                                  ? 'contrast(1.1) brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.1))' 
+                                  : 'contrast(1.02) brightness(1.0) grayscale(0.2)',
+                                mixBlendMode: 'multiply' // Removes white background if present in the asset
                               }}
                             />
                           </div>
-                          <span className={`text-body font-bold transition-colors uppercase ${
-                            isActive ? "text-ssc-gold-dark" : "text-ssc-navy group-hover:text-ssc-gold-dark"
-                          }`}>
-                            {link.name}
-                          </span>
+                          
+                          <div className="flex flex-col">
+                            <span className={`text-h4 font-bold tracking-tight transition-colors uppercase leading-none ${
+                              isActive ? "text-ssc-gold-dark" : "text-ssc-navy group-hover:text-ssc-gold-dark"
+                            }`}>
+                              {link.name}
+                            </span>
+                            <div className={`h-[2px] mt-1 transition-all duration-300 ${
+                              isActive ? "w-full bg-ssc-gold" : "w-0 bg-ssc-gold/40 group-hover:w-1/2"
+                            }`} />
+                          </div>
                         </Link>
                       </motion.div>
                     );
