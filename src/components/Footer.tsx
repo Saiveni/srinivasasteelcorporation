@@ -119,19 +119,129 @@ export const Footer = () => {
             </div>
         </div>
       </div>
-      <div className="md:hidden pt-12 pb-8 px-4 space-y-6">
-        <div className="text-center space-y-6 mb-8"><img src={sscLogo.url} alt="SSC Logo" className="h-16 w-16 mx-auto" /><p className="text-white/70 text-sm">Trusted steel and TMT supplier serving construction and industrial requirements since 1994.</p><div className="flex justify-center gap-4">{(['fb', 'li', 'ig', 'yt'] as const).map((t) => <a key={t} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center"><SocialIcon type={t} /></a>)}</div></div>
-        {[
-          { id: 'quick', title: 'QUICK LINKS', items: quickLinks.map(l => l.name) },
-          { id: 'prod', title: 'OUR PRODUCTS', items: products.map(p => p.name) },
-          { id: 'contact', title: 'CONTACT US', content: 'Vijayawada Head Office...' }
-        ].map((sec) => (
-          <div key={sec.id} className="border-b border-white/10 pb-4"><button onClick={() => toggleAccordion(sec.id)} className="w-full flex justify-between items-center text-ssc-gold font-bold text-sm uppercase">{sec.title} {activeAccordion === sec.id ? <ChevronUp size={16} /> : <ChevronDown size={16} />}</button>
+      <div className="md:hidden pt-12 pb-8 px-4 space-y-6 bg-[#050B15]">
+        <div className="text-center space-y-6 mb-8">
+          <img src={sscLogo.url} alt="SSC Logo" className="h-16 w-16 mx-auto" />
+          <p className="text-white/70 text-sm px-4">Trusted steel and TMT supplier serving construction and industrial requirements since 1994.</p>
+          <div className="flex justify-center gap-4">
+            {(['fb', 'li', 'ig', 'yt'] as const).map((t) => (
+              <a key={t} href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white/80"><SocialIcon type={t} /></a>
+            ))}
+          </div>
+        </div>
+
+        {/* ACCORDIONS */}
+        <div className="space-y-4">
+          {/* QUICK LINKS */}
+          <div className="border border-white/10 rounded-lg overflow-hidden">
+            <button 
+              onClick={() => toggleAccordion('quick')} 
+              className="w-full flex justify-between items-center p-4 text-ssc-gold font-bold text-sm uppercase bg-white/5"
+            >
+              <div className="flex items-center gap-3">
+                <ChevronDown size={18} className="text-ssc-gold" />
+                QUICK LINKS
+              </div>
+              {activeAccordion === 'quick' ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
             <AnimatePresence>
-              {activeAccordion === sec.id && (<motion.ul initial={{height:0}} animate={{height:'auto'}} exit={{height:0}} className="overflow-hidden mt-4 space-y-3">{sec.items?.map((item, i) => <li key={i} className="text-white/70 text-[14px]">{item}</li>)}</motion.ul>)}
+              {activeAccordion === 'quick' && (
+                <motion.ul 
+                  initial={{ height: 0, opacity: 0 }} 
+                  animate={{ height: 'auto', opacity: 1 }} 
+                  exit={{ height: 0, opacity: 0 }} 
+                  className="overflow-hidden bg-[#03070E] px-4 py-2"
+                >
+                  {quickLinks.map((link) => (
+                    <li key={link.name}>
+                      <Link to={link.path} className="block py-3 text-white/70 text-[14px] border-b border-white/5 last:border-0">{link.name}</Link>
+                    </li>
+                  ))}
+                </motion.ul>
+              )}
             </AnimatePresence>
           </div>
-        ))}
+
+          {/* OUR PRODUCTS */}
+          <div className="border border-white/10 rounded-lg overflow-hidden">
+            <button 
+              onClick={() => toggleAccordion('prod')} 
+              className="w-full flex justify-between items-center p-4 text-ssc-gold font-bold text-sm uppercase bg-white/5"
+            >
+              <div className="flex items-center gap-3">
+                <ChevronDown size={18} className="text-ssc-gold" />
+                OUR PRODUCTS
+              </div>
+              {activeAccordion === 'prod' ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            <AnimatePresence>
+              {activeAccordion === 'prod' && (
+                <motion.ul 
+                  initial={{ height: 0, opacity: 0 }} 
+                  animate={{ height: 'auto', opacity: 1 }} 
+                  exit={{ height: 0, opacity: 0 }} 
+                  className="overflow-hidden bg-[#03070E] px-4 py-2"
+                >
+                  {products.map((p) => (
+                    <li key={p.name}>
+                      <Link to={p.path} className="block py-3 text-white/70 text-[14px] border-b border-white/5 last:border-0">{p.name}</Link>
+                    </li>
+                  ))}
+                </motion.ul>
+              )}
+            </AnimatePresence>
+          </div>
+
+          {/* CONTACT US */}
+          <div className="border border-white/10 rounded-lg overflow-hidden">
+            <button 
+              onClick={() => toggleAccordion('contact')} 
+              className="w-full flex justify-between items-center p-4 text-ssc-gold font-bold text-sm uppercase bg-white/5"
+            >
+              <div className="flex items-center gap-3">
+                <ChevronDown size={18} className="text-ssc-gold" />
+                CONTACT US
+              </div>
+              {activeAccordion === 'contact' ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+            </button>
+            <AnimatePresence>
+              {activeAccordion === 'contact' && (
+                <motion.div 
+                  initial={{ height: 0, opacity: 0 }} 
+                  animate={{ height: 'auto', opacity: 1 }} 
+                  exit={{ height: 0, opacity: 0 }} 
+                  className="overflow-hidden bg-[#03070E] p-5 space-y-6"
+                >
+                  <div className="flex gap-4 items-start">
+                    <MapPin size={20} className="text-ssc-gold shrink-0" />
+                    <p className="text-white/70 text-[13px] leading-relaxed">Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada - 520012</p>
+                  </div>
+                  <div className="flex gap-4 items-start">
+                    <Phone size={20} className="text-ssc-gold shrink-0" />
+                    <div className="flex flex-col gap-3">
+                      <a href="tel:+919440170453" className="text-white/70 text-[13px]">+91 9440170453 (Bhaskar)</a>
+                      <a href="tel:+919849600403" className="text-white/70 text-[13px]">+91 9849600403 (Ramana Kumar)</a>
+                      <a href="tel:+918125397453" className="text-white/70 text-[13px]">+91 8125397453 (Yeshwanth)</a>
+                    </div>
+                  </div>
+                  <div className="flex gap-4 items-center">
+                    <Mail size={20} className="text-ssc-gold shrink-0" />
+                    <a href="mailto:srinivasasteelcorporationvja@gmail.com" className="text-white/70 text-[13px] break-all">srinivasasteelcorporationvja@gmail.com</a>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+
+        {/* MOBILE TMT BAR IMAGE */}
+        <div className="mt-8 px-4 opacity-40">
+           <img 
+            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400&auto=format&fit=crop" 
+            alt="Steel rods" 
+            className="w-full h-24 object-cover rounded-lg grayscale border border-white/10"
+           />
+        </div>
       </div>
       <div className="border-t border-white/5 py-8"><div className="container-wide"><div className="grid grid-cols-2 lg:grid-cols-4 gap-6">{[
         {t:'QUALITY ASSURED', i:<ShieldCheck />}, {t:'RELIABLE SUPPLY', i:<Truck />}, {t:'ON-TIME DELIVERY', i:<Users />}, {t:'CUSTOMER FOCUSED', i:<Users />}
