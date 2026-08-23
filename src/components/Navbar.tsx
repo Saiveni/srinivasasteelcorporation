@@ -263,11 +263,11 @@ export const Navbar = () => {
             </div>
 
             {/* Content Area with White Engineering Grid */}
-            <div className="flex-1 relative overflow-hidden bg-ssc-steel-light">
+            <div className="flex-1 relative overflow-hidden bg-[#0B1320]">
               <div 
-                className="absolute inset-0 opacity-[0.2] pointer-events-none z-[1]" 
+                className="absolute inset-0 opacity-[0.05] pointer-events-none z-[1]" 
                 style={{ 
-                  backgroundImage: `linear-gradient(to right, var(--ssc-navy) 0.05, transparent 1px), linear-gradient(to bottom, var(--ssc-navy) 0.05, transparent 1px)`,
+                  backgroundImage: `linear-gradient(to right, #D4AF37 0.05px, transparent 1px), linear-gradient(to bottom, #D4AF37 0.05px, transparent 1px)`,
                   backgroundSize: '40px 40px'
                 }} 
               />
