@@ -243,10 +243,50 @@ export const Footer = () => {
            />
         </div>
       </div>
-      <div className="border-t border-white/5 py-8"><div className="container-wide"><div className="grid grid-cols-2 lg:grid-cols-4 gap-6">{[
-        {t:'QUALITY ASSURED', i:<ShieldCheck />}, {t:'RELIABLE SUPPLY', i:<Truck />}, {t:'ON-TIME DELIVERY', i:<Users />}, {t:'CUSTOMER FOCUSED', i:<Users />}
-      ].map((i, k) => <div key={k} className="flex items-center gap-3"><div className="text-ssc-gold">{i.i}</div><span className="text-[10px] font-bold text-white">{i.t}</span></div>)}</div></div></div>
-      <div className="bg-[#03070E] py-6 text-center text-[10px] text-white/30 tracking-widest uppercase">© 2026 Srinivasa Steel Corporation. All Rights Reserved.</div>
+      {/* CREDIBILITY & COPYRIGHT */}
+      <div className="border-t border-white/5 py-10 bg-[#050B15]">
+        <div className="container-wide px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { id: 'qa', title: 'QUALITY ASSURED', desc: 'Tested. Certified. Trusted.', icon: <ShieldCheck size={28} /> },
+              { id: 'rs', title: 'RELIABLE SUPPLY', desc: 'Consistent quality supply.', icon: <Truck size={28} /> },
+              { id: 'otd', title: 'ON-TIME DELIVERY', desc: 'Delivered every time.', icon: <Users size={28} /> },
+              { id: 'cf', title: 'CUSTOMER FOCUSED', desc: 'Long-term trust.', icon: <Users size={28} /> }
+            ].map((item) => (
+              <div key={item.id} className="flex items-center gap-4 group cursor-pointer" onClick={() => toggleAccordion(item.id)}>
+                <div className="text-ssc-gold bg-white/5 p-2 rounded group-hover:bg-ssc-gold group-hover:text-ssc-navy transition-all">{item.icon}</div>
+                <div className="flex-1">
+                  <div className="flex justify-between items-center">
+                    <h5 className="text-[10px] font-bold tracking-widest text-white uppercase">{item.title}</h5>
+                    <div className="md:hidden text-white/20"><ChevronDown size={12} /></div>
+                  </div>
+                  <AnimatePresence>
+                    {(activeAccordion === item.id || window.innerWidth >= 768) && (
+                      <motion.p 
+                        initial={window.innerWidth < 768 ? { height: 0, opacity: 0 } : {}}
+                        animate={window.innerWidth < 768 ? { height: 'auto', opacity: 0.4 } : { opacity: 0.4 }}
+                        className="text-[9px] text-white uppercase mt-1 overflow-hidden"
+                      >
+                        {item.desc}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <div className="bg-[#03070E] py-8 text-center text-[10px] text-white/30 tracking-widest uppercase px-4 leading-relaxed">
+        <div className="container-wide flex flex-col md:flex-row justify-between items-center gap-4">
+          <p>© 2026 Srinivasa Steel Corporation. All Rights Reserved.</p>
+          <div className="flex gap-6 md:gap-8">
+            <Link to="/contact" search={{ product: "" }} className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/contact" search={{ product: "" }} className="hover:text-white transition-colors">Terms & Conditions</Link>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 };
