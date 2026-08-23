@@ -69,12 +69,12 @@ export const Navbar = () => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as any }}
-      className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-4"
+      className="fixed left-0 right-0 z-[100] transition-all duration-500 top-0 px-3 sm:px-4 md:px-0 pt-3 sm:pt-4 md:pt-4 pointer-events-none"
     >
       {/* Premium Engineered Steel Header Panel - Unified Global Design */}
       <div className={`
         relative mx-auto w-full md:max-w-[94%] lg:max-w-[1280px] flex items-center justify-between px-4 sm:px-6 md:px-8
-        transition-all duration-500 ease-in-out
+        transition-all duration-500 ease-in-out pointer-events-auto
         ${scrolled 
           ? "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]" 
           : "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]"
