@@ -9,7 +9,7 @@ const locations = [
     type: "HEAD OFFICE & GODOWN",
     icon: Building2,
     address: "Plot No. 90, Iron Complex, Godown Block No. 36/3, Bhavanipuram, Vijayawada – 520012",
-    coords: { x: "28%", y: "22%" },
+    coords: { x: "46.5%", y: "66.5%" },
   },
   {
     id: "gannavaram",
