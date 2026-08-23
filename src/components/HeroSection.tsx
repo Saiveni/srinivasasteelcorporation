@@ -31,7 +31,7 @@ const HERO_IMAGES: HeroImage[] = [
     alt: "Industrial steel wire coils in distribution center",
     position: {
       desktop: "center center",
-      mobile: "center center"
+      mobile: "45% center"
     }
   },
   {
