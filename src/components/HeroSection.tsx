@@ -94,7 +94,7 @@ export const HeroSection = () => {
         <div className="flex flex-col lg:flex-row items-stretch lg:h-[600px] h-full pt-[64px] lg:pt-0">
           
           {/* Content Area: 46% Width on Desktop, Full Width on Mobile */}
-          <div className="w-full lg:w-[45%] flex flex-col justify-center py-16 lg:py-0 z-30 lg:pl-16 relative h-full">
+          <div className="w-full lg:w-[45%] flex flex-col justify-center py-16 lg:py-0 z-30 lg:px-0 relative h-full">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

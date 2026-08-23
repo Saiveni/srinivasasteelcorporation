@@ -73,7 +73,7 @@ export const Navbar = () => {
     >
       {/* Premium Engineered Steel Header Panel - Unified Global Design */}
       <div className={`
-        relative mx-auto w-full md:max-w-[95%] lg:max-w-[1400px] flex items-center justify-between px-4 sm:px-8
+        relative mx-auto w-full md:max-w-[94%] lg:max-w-[1280px] flex items-center justify-between px-4 sm:px-6 md:px-8
         transition-all duration-500 ease-in-out
         ${scrolled 
           ? "h-[62px] sm:h-[68px] md:h-[72px] shadow-[0_12px_40px_rgba(0,0,0,0.3)]" 
