@@ -36,7 +36,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
       className="relative group w-full"
     >
       {/* 3D Engineered Panel Card */}
-      <div className="relative bg-[#1C1F26] rounded-[24px] p-8 lg:p-10 border border-white/5 shadow-2xl overflow-hidden group-hover:translate-y-[-8px] transition-all duration-500">
+      <div className="relative bg-ssc-steel-dark rounded-[24px] p-8 lg:p-10 border border-white/5 shadow-2xl overflow-hidden group-hover:translate-y-[-8px] transition-all duration-500">
         
         {/* Brushed Metal Texture */}
         <div className="absolute inset-0 opacity-[0.07] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
@@ -58,14 +58,14 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
             <div className="absolute inset-0 rounded-full border-2 border-ssc-gold/20 shadow-[0_0_20px_rgba(197,160,89,0.1)]" />
             
             {/* Metallic Inner Surface */}
-            <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1A2333] to-[#0B1320] flex items-center justify-center shadow-inner overflow-hidden">
+            <div className="absolute inset-2 rounded-full bg-gradient-to-br from-[#1A2333] to-ssc-navy flex items-center justify-center shadow-inner overflow-hidden">
                {/* Subtle metallic reflection line */}
                <motion.div 
                  animate={{ x: ['-100%', '100%'] }}
                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
                  className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
                />
-               <span className="text-primary text-h3 font-bold opacity-80">
+               <span className="text-ssc-gold text-h3 font-bold opacity-80">
                  {leader.initials}
                </span>
             </div>
@@ -74,7 +74,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
             {[0, 90, 180, 270].map((deg) => (
               <div 
                 key={deg}
-                className="absolute w-1.5 h-1.5 rounded-full bg-primary/30 shadow-inner"
+                className="absolute w-1.5 h-1.5 rounded-full bg-ssc-gold/30 shadow-inner"
                 style={{ 
                   top: '50%', 
                   left: '50%', 
@@ -86,15 +86,15 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
           {/* Text Content */}
           <div className="w-full">
-            <h3 className="text-h3 text-white mb-2 group-hover:text-primary transition-colors duration-300 uppercase">
+            <h3 className="text-h3 text-ssc-on-dark-primary mb-2 group-hover:text-ssc-gold transition-colors duration-300 uppercase">
               {leader.name}
             </h3>
-            <div className="inline-block px-3 py-1 bg-primary/10 rounded-md mb-6">
-              <span className="text-micro text-primary uppercase">
+            <div className="inline-block px-3 py-1 bg-ssc-gold/10 rounded-md mb-6">
+              <span className="text-micro text-ssc-gold uppercase">
                 {leader.designation}
               </span>
             </div>
-            <p className="text-body text-white/60">
+            <p className="text-body text-ssc-on-dark-body">
               {leader.description}
             </p>
           </div>
@@ -118,7 +118,7 @@ export const LeadershipSection = () => {
         <div 
           className="absolute inset-0" 
           style={{
-            backgroundImage: 'linear-gradient(#0B1B33 1px, transparent 1px), linear-gradient(90deg, #0B1B33 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(var(--ssc-navy) 1px, transparent 1px), linear-gradient(90deg, var(--ssc-navy) 1px, transparent 1px)',
             backgroundSize: '40px 40px'
           }}
         />
@@ -139,14 +139,14 @@ export const LeadershipSection = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex items-center justify-center gap-3 mb-6">
-              <div className="w-8 h-[1px] bg-primary/40" />
-              <span className="text-micro text-primary uppercase">
+              <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
+              <span className="text-micro text-ssc-gold-dark uppercase">
                 LEADERSHIP TEAM
               </span>
-              <div className="w-8 h-[1px] bg-primary/40" />
+              <div className="w-8 h-[1px] bg-ssc-gold-dark/40" />
             </div>
-            <h2 className="text-h2 text-foreground uppercase">
-              OUR <span className="text-primary">LEADERSHIP</span>
+            <h2 className="text-h2 text-ssc-navy uppercase">
+              OUR <span className="text-ssc-gold-dark">LEADERSHIP</span>
             </h2>
           </motion.div>
         </div>
@@ -164,7 +164,7 @@ export const LeadershipSection = () => {
           transition={{ delay: 0.5, duration: 1.5 }}
           className="text-center mt-20"
         >
-          <span className="text-foreground/20 text-[10px] font-body font-bold tracking-[0.6em] uppercase">
+          <span className="text-ssc-navy/20 text-[10px] font-body font-bold tracking-[0.6em] uppercase">
             THREE PEOPLE • ONE FOUNDATION • ONE ORGANIZATION
           </span>
         </motion.div>

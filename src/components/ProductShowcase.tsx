@@ -49,10 +49,10 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
     >
       <div className="relative w-full h-full transition-all duration-700 preserve-3d group-hover:rotate-y-12">
         {/* Main Card Surface */}
-        <div className="absolute inset-0 bg-white rounded-[24px] border border-black/[0.04] shadow-[0_8px_32px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col">
+        <div className="absolute inset-0 bg-white rounded-[24px] border border-ssc-navy/10 shadow-[0_8px_32px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col">
           {/* Top 3D Indicator */}
           <div className="absolute top-6 right-8 z-20">
-            <span className="text-micro text-primary">
+            <span className="text-micro text-ssc-gold-dark">
               {product.index}
             </span>
           </div>
@@ -76,22 +76,22 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
           {/* Content Area */}
           <div className="flex-1 p-8 relative">
             {/* 3D Label */}
-            <div className="inline-block px-3 py-1 rounded-full bg-primary/10 mb-4">
-              <span className="text-micro text-primary uppercase">
+            <div className="inline-block px-3 py-1 rounded-full bg-ssc-gold-dark/10 mb-4">
+              <span className="text-micro text-ssc-gold-dark uppercase">
                 PREMIUM GRADE
               </span>
             </div>
             
-            <h3 className="text-h4 text-foreground mb-3 group-hover:text-primary transition-colors duration-500 uppercase">
+            <h3 className="text-h4 text-ssc-navy mb-3 group-hover:text-ssc-gold-dark transition-colors duration-500 uppercase">
               {product.name}
             </h3>
             
-            <p className="text-body text-foreground/70 line-clamp-2">
+            <p className="text-body text-ssc-gray-body line-clamp-2">
               {product.description}
             </p>
 
             {/* Bottom Glow */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/40 transition-all duration-700" />
+            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-ssc-gold-dark/0 to-transparent group-hover:via-ssc-gold-dark/40 transition-all duration-700" />
           </div>
         </div>
 
@@ -104,14 +104,14 @@ const ProductCard = ({ product, index }: { product: typeof products[0], index: n
 
 const ProductShowcase = () => {
   return (
-    <section id="products" className="relative section-spacing bg-[#F4F6F8] overflow-hidden">
+    <section id="products" className="relative section-spacing bg-white overflow-hidden">
       {/* Architectural Background Grid */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-[0.015]" 
         style={{ 
           backgroundImage: `
-            linear-gradient(to right, #111C2F 1px, transparent 1px),
-            linear-gradient(to bottom, #111C2F 1px, transparent 1px)
+            linear-gradient(to right, var(--ssc-navy) 1px, transparent 1px),
+            linear-gradient(to bottom, var(--ssc-navy) 1px, transparent 1px)
           `,
           backgroundSize: '100px 100px'
         }} 
@@ -127,13 +127,13 @@ const ProductShowcase = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className="text-micro text-primary uppercase mb-4 block">
+              <span className="text-micro text-ssc-gold-dark uppercase mb-4 block">
                 INDUSTRIAL SOLUTIONS
               </span>
-              <h2 className="text-h2 text-foreground mb-6 uppercase">
-                Explore Our <span className="text-primary">Products</span>
+              <h2 className="text-h2 text-ssc-navy mb-6 uppercase">
+                Explore Our <span className="text-ssc-gold-dark">Products</span>
               </h2>
-              <p className="text-body text-foreground/70">
+              <p className="text-body text-ssc-gray-body">
                 High-performance steel products engineered for demanding applications. Consistent quality and reliable supply for construction and manufacturing.
               </p>
             </motion.div>
@@ -144,10 +144,10 @@ const ProductShowcase = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="hidden lg:flex flex-col items-end text-right border-l border-black/10 pl-10"
+            className="hidden lg:flex flex-col items-end text-right border-l border-ssc-navy/10 pl-10"
           >
-            <span className="text-[11px] font-body uppercase tracking-[0.2em] text-[#A0AEC0] mb-2">SSC / PRODUCT SPECIFICATIONS</span>
-            <span className="text-[11px] font-body uppercase tracking-[0.2em] text-[#D4AF37]/60 font-bold">EST. 1994</span>
+            <span className="text-[11px] font-body uppercase tracking-[0.2em] text-ssc-gray-secondary mb-2">SSC / PRODUCT SPECIFICATIONS</span>
+            <span className="text-[11px] font-body uppercase tracking-[0.2em] text-ssc-gold-dark/60 font-bold">EST. 1994</span>
           </motion.div>
         </div>
 

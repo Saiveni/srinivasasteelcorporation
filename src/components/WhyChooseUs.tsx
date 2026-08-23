@@ -55,7 +55,7 @@ export const WhyChooseUs = () => {
         <div 
           className="absolute inset-0 opacity-[0.05]" 
           style={{
-            backgroundImage: 'linear-gradient(#0B1320 1px, transparent 1px), linear-gradient(90deg, #0B1320 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(var(--ssc-navy) 1px, transparent 1px), linear-gradient(90deg, var(--ssc-navy) 1px, transparent 1px)',
             backgroundSize: '40px 40px'
           }}
         />
@@ -71,20 +71,20 @@ export const WhyChooseUs = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-[2px] bg-foreground" />
-                <span className="text-micro text-primary uppercase">
+                <div className="w-12 h-[2px] bg-ssc-gold-dark" />
+                <span className="text-micro text-ssc-gold-dark uppercase">
                   BUSINESS STRENGTHS
                 </span>
               </div>
-              <h2 className="text-h2 text-foreground mb-8 uppercase">
+              <h2 className="text-h2 text-ssc-navy mb-8 uppercase">
                 WHY BUILD WITH <br />
-                <span className="text-primary">SRINIVASA STEEL?</span>
+                <span className="text-ssc-gold-dark">SRINIVASA STEEL?</span>
               </h2>
             </motion.div>
           </div>
           
           <div className="w-full lg:w-1/2">
-            <p className="text-body text-foreground/70 max-w-xl">
+            <p className="text-body text-ssc-gray-body max-w-xl">
               From premium TMT rebar to industrial decoiling, we provide the physical foundation for regional infrastructure development.
             </p>
           </div>
@@ -99,33 +99,33 @@ export const WhyChooseUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.8 }}
-              className="bg-ssc-steel-dark border border-white/10 p-8 lg:p-10 rounded-[12px] shadow-premium-soft relative group overflow-hidden"
+              className="bg-ssc-steel-dark border border-ssc-on-dark-primary/10 p-8 lg:p-10 rounded-[12px] shadow-premium-soft relative group overflow-hidden"
             >
               {/* Technical Header Strip */}
-              <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/5">
-                <span className="text-primary/40 text-micro">
+              <div className="flex justify-between items-center mb-8 pb-4 border-b border-ssc-on-dark-primary/5">
+                <span className="text-ssc-gold/40 text-micro">
                   {item.label}
                 </span>
-                <span className="text-primary text-micro bg-primary/5 px-2 py-0.5 rounded">
+                <span className="text-ssc-gold text-micro bg-ssc-gold/5 px-2 py-0.5 rounded">
                   {item.spec}
                 </span>
               </div>
 
               <div className="flex items-center gap-5 mb-6">
-                <div className="w-14 h-14 rounded-lg bg-ssc-steel-dark border border-primary/20 flex items-center justify-center shadow-lg group-hover:border-primary transition-colors duration-500">
-                  <item.icon size={24} className="text-primary" />
+                <div className="w-14 h-14 rounded-lg bg-ssc-steel-dark border border-ssc-gold/20 flex items-center justify-center shadow-lg group-hover:border-ssc-gold transition-colors duration-500">
+                  <item.icon size={24} className="text-ssc-gold" />
                 </div>
-                <h4 className="text-white text-h4 uppercase">
+                <h4 className="text-ssc-on-dark-primary text-h4 uppercase">
                   {item.title}
                 </h4>
               </div>
 
-              <p className="text-body text-white/60">
+              <p className="text-body text-ssc-on-dark-body">
                 {item.description}
               </p>
 
               {/* Bolt detail */}
-              <div className="absolute bottom-4 right-4 w-1.5 h-1.5 rounded-full bg-primary/20" />
+              <div className="absolute bottom-4 right-4 w-1.5 h-1.5 rounded-full bg-ssc-gold/20" />
             </motion.div>
           ))}
         </div>
@@ -136,23 +136,23 @@ export const WhyChooseUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          className="relative bg-background rounded-[24px] p-10 lg:p-20 overflow-hidden shadow-premium-strong border border-white/10"
+          className="relative bg-ssc-navy rounded-[24px] p-10 lg:p-20 overflow-hidden shadow-premium-strong border border-ssc-on-dark-primary/10"
         >
           {/* Subtle background detail */}
           <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] pointer-events-none" />
           
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left bg-ssc-steel-dark p-10 lg:p-16 rounded-[12px]">
+          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 text-center lg:text-left bg-ssc-navy p-10 lg:p-16 rounded-[12px]">
             <div>
-              <h3 className="text-white text-h3 uppercase leading-none tracking-tighter mb-4">
-                READY TO <span className="text-primary">STRENGTHEN</span><br />
+              <h3 className="text-ssc-on-dark-primary text-h3 uppercase leading-none tracking-tighter mb-4">
+                READY TO <span className="text-ssc-gold">STRENGTHEN</span><br />
                 YOUR PROJECTS?
               </h3>
-              <p className="text-white/40 text-micro">
+              <p className="text-ssc-on-dark-primary/40 text-micro">
                 30+ Years of Proven Industrial Quality
               </p>
             </div>
             
-            <button className="whitespace-nowrap bg-primary text-foreground px-12 py-5 rounded-lg font-semibold text-small uppercase hover:bg-white transition-all duration-500 shadow-premium-medium hover:scale-105">
+            <button className="whitespace-nowrap bg-ssc-gold text-ssc-navy px-12 py-5 rounded-lg font-semibold text-small uppercase hover:bg-ssc-on-dark-primary transition-all duration-500 shadow-premium-medium hover:scale-105 cursor-pointer">
               GET A CUSTOM QUOTE
             </button>
           </div>

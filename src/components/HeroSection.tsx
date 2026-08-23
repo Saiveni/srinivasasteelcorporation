@@ -103,39 +103,39 @@ export const HeroSection = () => {
             >
               {/* Eyebrow Label */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-micro text-white lg:text-foreground uppercase">
+                <span className="text-micro text-white lg:text-ssc-navy uppercase">
                   ENGINEERED FOR STRENGTH
                 </span>
-                <span className="text-white/20 lg:text-foreground/20">—</span>
-                <span className="text-micro text-primary">
+                <span className="text-white/20 lg:text-ssc-navy/20">—</span>
+                <span className="text-micro text-ssc-gold-dark">
                   EST. 1994
                 </span>
               </div>
               
               {/* Headline */}
-              <h1 className="text-h1 text-white lg:text-foreground mb-7 uppercase">
+              <h1 className="text-h1 text-white lg:text-ssc-navy mb-7 uppercase">
                 <span className="block mb-1">BUILDING STRENGTH.</span>
                 <span className="block">
-                  SHAPING <span className="text-primary">TOMORROW.</span>
+                  SHAPING <span className="text-ssc-gold-dark">TOMORROW.</span>
                 </span>
               </h1>
               
               {/* Description */}
-              <p className="text-body-large text-white/90 lg:text-foreground/70 max-w-[500px] mb-8">
+              <p className="text-body-large text-white/90 lg:text-ssc-gray-body max-w-[500px] mb-8">
                 Engineered steel products for construction and industrial requirements. Reliable supply across Andhra Pradesh since 1994.
               </p>
               
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-5 items-stretch sm:items-start">
                 <Link to="/products">
-                  <Button className="w-full sm:w-auto">
+                  <Button className="w-full sm:w-auto bg-ssc-gold text-ssc-navy hover:bg-ssc-on-dark-primary">
                     EXPLORE PRODUCTS <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </Link>
                 <Link to="/contact" search={{ product: "" }}>
                   <Button
                     variant="outline"
-                    className="w-full sm:w-auto border-white lg:border-primary text-white lg:text-primary hover:bg-white/20 lg:hover:bg-primary/10"
+                    className="w-full sm:w-auto border-white lg:border-ssc-gold-dark text-white lg:text-ssc-gold-dark hover:bg-white/20 lg:hover:bg-ssc-gold-dark/10"
                   >
                     GET A QUOTE
                   </Button>
@@ -155,7 +155,7 @@ export const HeroSection = () => {
               {imageElement}
               
               {/* Subtle Metallic Color Overlay */}
-              <div className="absolute inset-0 bg-background/10 mix-blend-multiply z-10 pointer-events-none" />
+              <div className="absolute inset-0 bg-ssc-navy/10 mix-blend-multiply z-10 pointer-events-none" />
             </div>
           </div>
 
