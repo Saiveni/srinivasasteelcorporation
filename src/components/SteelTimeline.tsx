@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import timelineRebar from '@/assets/timeline-rebar.png.asset.json';
+import sscTmtBar from '@/assets/ssc-tmt-bar.png.asset.json';
 
 const milestones = [
   {
@@ -36,32 +37,32 @@ const milestones = [
 const SteelRod = ({ orientation = 'vertical' }: { orientation?: 'vertical' | 'horizontal' }) => {
   if (orientation === 'horizontal') {
     return (
-      <div className="absolute top-0 left-0 w-full h-[28px] flex items-center">
-        {/* Silver Machined Rebar from Reference (Horizontal) */}
-        <div className="w-full h-[20px] relative overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)] border-y border-white/5">
+      <div className="absolute top-0 left-0 w-full h-[32px] flex items-center">
+        {/* SSC Branded TMT Bar (Horizontal) */}
+        <div className="w-full h-[24px] relative overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.05)]">
           <img 
-            src={timelineRebar.url} 
-            alt="" 
-            className="w-full h-full object-cover brightness-[1.2] contrast-[1.1] rotate-90 scale-[2]"
+            src={sscTmtBar.url} 
+            alt="SSC Branded TMT Bar" 
+            className="w-full h-full object-contain brightness-[1.1] contrast-[1.1] rotate-90 scale-[3.5]"
           />
           {/* Metallic Sheen Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/40 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-black/30 mix-blend-overlay pointer-events-none" />
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative w-[24px] h-full flex justify-center">
-      {/* Silver Machined Rebar from Reference */}
-      <div className="w-[18px] h-full relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)] border-x border-white/10">
+    <div className="relative w-[32px] h-full flex justify-center">
+      {/* SSC Branded TMT Bar (Vertical) */}
+      <div className="w-[28px] h-full relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.05)]">
         <img 
-          src={timelineRebar.url} 
-          alt="" 
-          className="w-full h-full object-cover brightness-[1.1] contrast-[1.2]"
+          src={sscTmtBar.url} 
+          alt="SSC Branded TMT Bar" 
+          className="w-full h-full object-cover brightness-[1.1] contrast-[1.1] scale-[1.05]"
         />
         {/* Metallic Sheen Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/10 via-transparent to-black/30 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-gradient-to-r from-white/15 via-transparent to-black/40 mix-blend-overlay pointer-events-none" />
       </div>
     </div>
   );
