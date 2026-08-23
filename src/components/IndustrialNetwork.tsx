@@ -90,7 +90,7 @@ export const IndustrialNetwork = () => {
           {/* Network Connection Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             <motion.path
-              d="M 46.5% 66.5% L 47.5% 67.5% L 57.5% 63.5%"
+              d="M 46.5% 66.5% Q 55% 65% 57.5% 63.5%"
 
               fill="none"
               stroke="rgba(197,160,89,0.2)"
