@@ -102,7 +102,7 @@ export const WhyChooseUs = () => {
   };
 
   return (
-    <section id="why-ssc" className="relative py-12 lg:py-24 bg-white overflow-visible">
+    <section id="why-ssc" className="relative py-12 lg:py-24 bg-white overflow-visible z-10">
       {/* Structural Background Detail */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div 

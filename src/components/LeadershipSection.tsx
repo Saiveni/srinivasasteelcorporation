@@ -92,7 +92,7 @@ const LeaderCard = ({ leader, index }: { leader: typeof leaders[0], index: numbe
 
 export const LeadershipSection = () => {
   return (
-    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-visible">
+    <section id="leadership" className="relative py-24 lg:py-32 bg-[#0F1621] overflow-visible z-10">
       {/* Dynamic Geometric Technical Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.05]" 

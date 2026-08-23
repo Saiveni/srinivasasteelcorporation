@@ -35,7 +35,7 @@ export const SteelTimeline = () => {
   const dotY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-visible bg-[#f5f6f7]">
+    <section id="timeline" ref={containerRef} className="relative py-16 lg:py-24 legacy-grid-bg overflow-visible bg-[#f5f6f7] z-10">
       <div className="container-wide relative z-10 mx-auto">
         <div className="text-center mb-12 lg:mb-20">
           <motion.div
