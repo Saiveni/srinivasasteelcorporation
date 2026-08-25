@@ -13,6 +13,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { BrandPreloader } from "@/components/BrandPreloader";
 import { FloatingActions } from "@/components/FloatingActions";
+import { SmoothScrollController } from "@/components/SmoothScrollController";
 
 import appCss from "../styles.css?url";
 import { reportAppError } from "../lib/app-error-reporting";
@@ -133,6 +134,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <SmoothScrollController />
       <div className="flex flex-col min-h-screen">
         <BrandPreloader />
         <Navbar />

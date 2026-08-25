@@ -9,7 +9,7 @@ export const getRouter = () => {
     routeTree,
     context: { queryClient },
     scrollRestoration: true,
-    scrollRestorationBehavior: 'auto',
+    scrollRestorationBehavior: 'smooth',
     defaultPreload: 'intent',
     defaultPreloadStaleTime: 0,
   });
